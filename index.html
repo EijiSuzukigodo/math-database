@@ -1,1 +1,274 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>みんなの数学データベース</title><style>:root{--navy:#17365d;--blue:#2764a5}*{box-sizing:border-box}body{margin:0;background:#f5f7fa;color:#243247;font-family:-apple-system,BlinkMacSystemFont,'Noto Sans JP',Meiryo,sans-serif;line-height:1.7}header{background:#fff;border-bottom:1px solid #dfe6ef}.wrap{max-width:1000px;margin:auto;padding:0 20px}.head{padding:20px 0;font-weight:800;color:var(--navy)}.hero{background:linear-gradient(120deg,#17365d,#2764a5);color:white;padding:55px 0}.hero h1{font-size:clamp(27px,5vw,42px);margin:0 0 8px}.hero p{margin:0}.main{padding:32px 20px 70px}h2{color:var(--navy)}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}.card{display:block;text-decoration:none;color:inherit;background:white;border:1px solid #dfe6ef;border-radius:16px;padding:24px;box-shadow:0 5px 18px #17365d0b}.card h3{color:var(--navy);margin:0 0 9px}.card p{margin:0 0 16px}.button{display:inline-block;background:var(--navy);color:white;padding:10px 16px;border-radius:9px;font-weight:700}.soon{color:#69788a;font-size:14px}footer{background:#132c4a;color:#e5efff;padding:24px 0;font-size:13px}</style></head><body><header><div class="wrap head">∑ みんなの数学データベース</div></header><section class="hero"><div class="wrap"><h1>みんなの数学データベース</h1><p>高校数学から大学数学まで、わかりやすく学ぶ数学サイト</p></div></section><main class="wrap main"><h2>数学を学ぶ</h2><div class="cards"><a class="card" href="functions.html"><h3>関数とグラフ</h3><p>一次・二次・三角関数などのグラフを描き、微分と積分を視覚的に学びます。</p><span class="button">関数とグラフを開く →</span></a><a class="card" href="basics.html"><h3>数学の基礎</h3><p>数と式、方程式・不等式、二次方程式、図形と三角比、集合と論理を学びます。</p><span class="button">数学の基礎を開く →</span></a><section class="card"><h3>微分・積分</h3><p>極限、導関数、積分の考え方を詳しく学べる教材を今後追加します。</p><span class="soon">準備中</span></section><section class="card"><h3>大学数学</h3><p>解析学、線形代数などの学習内容を今後追加します。</p><span class="soon">準備中</span></section></div></main><footer><div class="wrap">© みんなの数学データベース</div></footer></body></html>
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="高校数学から大学数学まで、公式・グラフ・計算・問題を調べられる無料の数学学習サイトです。" name="description"/>
+<meta content="#17365d" name="theme-color"/>
+<title>みんなの数学データベース</title>
+<style>
+    :root {
+      --navy: #17365d;
+      --blue: #2764a5;
+      --sky: #eaf2fb;
+      --ink: #1d2939;
+      --muted: #667085;
+      --line: #e4e9f0;
+      --paper: #ffffff;
+      --bg: #f5f7fa;
+      --radius: 18px;
+      --shadow: 0 8px 28px rgba(23, 54, 93, .08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--bg); color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans JP",
+                   "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+      line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+    .wrap { width: min(1120px, calc(100% - 36px)); margin: 0 auto; }
+    header { background: var(--paper); border-bottom: 1px solid var(--line); }
+    .header-inner {
+      min-height: 74px; display: flex; align-items: center;
+      justify-content: space-between; gap: 18px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; color: var(--navy); }
+    .brand-mark {
+      width: 42px; height: 42px; display: grid; place-items: center;
+      color: white; background: var(--navy); border-radius: 13px;
+      font-size: 22px; font-weight: 700;
+    }
+    .brand-name { font-size: 18px; letter-spacing: .02em; }
+    nav { display: flex; gap: 24px; align-items: center; color: #475467; font-size: 14px; }
+    nav a:hover { color: var(--blue); }
+    .hero {
+      color: white; background: linear-gradient(120deg, #17365d, #245b91);
+      padding: 66px 0 58px; overflow: hidden;
+    }
+    .hero-content { max-width: 760px; }
+    .eyebrow {
+      display: inline-block; padding: 5px 12px; border: 1px solid rgba(255,255,255,.3);
+      border-radius: 999px; font-size: 12px; letter-spacing: .08em; color: #e4efff;
+    }
+    h1 { font-size: clamp(30px, 5vw, 48px); line-height: 1.25; margin: 18px 0 12px; letter-spacing: .015em; }
+    .hero p { color: #e5eef9; font-size: clamp(15px, 2vw, 18px); margin: 0 0 26px; }
+    .search {
+      display: flex; gap: 10px; padding: 8px; background: white;
+      border-radius: 14px; box-shadow: 0 12px 30px rgba(0,0,0,.14);
+      max-width: 690px;
+    }
+    .search input {
+      min-width: 0; flex: 1; border: 0; outline: 0; padding: 11px 12px;
+      color: var(--ink); background: transparent;
+    }
+    .search button {
+      border: 0; background: #eaf2fb; color: var(--navy); border-radius: 10px;
+      padding: 10px 20px; font-weight: 700; cursor: pointer;
+    }
+    .search button:hover { background: #d8e7f8; }
+    main { padding: 42px 0 64px; }
+    .section-head {
+      display: flex; align-items: end; justify-content: space-between; gap: 14px;
+      margin-bottom: 18px;
+    }
+    h2 { color: var(--navy); font-size: 24px; margin: 0; }
+    .section-head p { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
+    .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .card {
+      background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 22px; box-shadow: var(--shadow); min-height: 180px;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(23,54,93,.12); }
+    .icon {
+      width: 46px; height: 46px; display: grid; place-items: center;
+      border-radius: 14px; background: var(--sky); color: var(--navy);
+      font-size: 23px; margin-bottom: 15px;
+    }
+    .card h3 { margin: 0 0 6px; font-size: 17px; color: var(--navy); }
+    .card p { margin: 0; font-size: 13px; color: var(--muted); }
+    .card .tag { display: inline-block; margin-top: 15px; font-size: 12px; color: var(--blue); font-weight: 700; }
+    .subjects { margin-top: 48px; }
+    .formula-section { margin-top: 48px; }
+    .formula-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .formula-card { background: white; border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; }
+    .formula-card h3 { margin: 0 0 8px; color: var(--navy); font-size: 16px; }
+    .formula { font-family: Georgia, "Times New Roman", serif; font-size: 22px; color: #17365d; padding: 8px 0; overflow-wrap: anywhere; }
+    .formula-card p { margin: 4px 0 0; color: var(--muted); font-size: 13px; }
+    .section-note { color: var(--muted); font-size: 13px; margin-top: 12px; }
+    @media (max-width: 560px) { .formula-grid { grid-template-columns: 1fr; } }
+    .subject-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .subject {
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      padding: 16px 18px; background: white; border: 1px solid var(--line);
+      border-radius: 13px; font-weight: 650; color: #344054;
+    }
+    .subject span:last-child { color: #98a2b3; font-size: 20px; }
+    .subject:hover { border-color: #a9c5e5; background: #fbfdff; }
+    .notice {
+      margin-top: 42px; padding: 22px 24px; border-radius: var(--radius);
+      background: #eaf2fb; color: #344054; display: flex; gap: 16px; align-items: flex-start;
+    }
+    .notice strong { color: var(--navy); }
+    .notice p { margin: 4px 0 0; font-size: 14px; }
+    footer { background: #132c4a; color: #d7e2ef; padding: 28px 0; font-size: 13px; }
+    footer .foot { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .empty { display:none; padding: 18px; color: var(--muted); background:white; border-radius:12px; margin-top:12px; }
+    @media (max-width: 850px) {
+      .grid { grid-template-columns: repeat(2, 1fr); }
+      .subject-list { grid-template-columns: repeat(2, 1fr); }
+      nav { gap: 14px; }
+    }
+    @media (max-width: 560px) {
+      .wrap { width: min(100% - 28px, 1120px); }
+      .header-inner { min-height: 66px; }
+      .brand-name { font-size: 15px; }
+      .brand-mark { width: 38px; height: 38px; }
+      nav { display: none; }
+      .hero { padding: 48px 0 42px; }
+      .search { gap: 4px; }
+      .search button { padding: 9px 13px; }
+      main { padding-top: 32px; }
+      .grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .card { padding: 16px; min-height: 166px; }
+      .card h3 { font-size: 15px; }
+      .card p { font-size: 12px; }
+      .icon { width: 40px; height: 40px; font-size: 20px; }
+      .subject-list { grid-template-columns: 1fr; }
+      .section-head { align-items: start; flex-direction: column; }
+      .notice { padding: 18px; }
+    }
+  </style>
+<style>
+.formula-details { margin-top: 14px; border-top: 1px solid #e4e9f0; padding-top: 10px; }
+.formula-details summary { cursor: pointer; color: #245b91; font-weight: 700; padding: 7px 0; }
+.formula-details h4 { color: #17365d; margin: 14px 0 3px; font-size: 14px; }
+.formula-details p { font-size: 14px; color: #344054; line-height: 1.8; overflow-wrap: anywhere; }
+.search-count { margin: 10px 0 0; font-size: 14px; color: #dcecff; }
+</style></head>
+<body>
+<header>
+<div class="wrap header-inner">
+<a aria-label="トップページ" class="brand" href="#">
+<span class="brand-mark">∑</span>
+<span class="brand-name">みんなの数学データベース</span>
+</a>
+<nav aria-label="メインメニュー">
+<a href="#features">機能</a>
+<a href="#subjects">数学分野</a>
+<a href="formulas.html">公式データベース</a>
+<a href="functions.html">関数</a>
+<a href="#about">このサイトについて</a>
+</nav>
+</div>
+</header>
+<section class="hero">
+<div class="wrap hero-content">
+<span class="eyebrow">MATHEMATICS FOR EVERYONE</span>
+<h1>数学を、調べる。<br/>理解する。楽しむ。</h1>
+<p>高校数学から大学数学まで。公式・グラフ・計算・問題を、ひとつの場所で。</p>
+<form class="search" id="searchForm" role="search">
+<input aria-label="数学コンテンツを検索" id="searchInput" placeholder="例：二次関数、微分、積分、ベクトル" type="search"/>
+<button type="submit">検索する</button>
+</form><p class="search-count" id="searchCount" role="status"></p>
+<div class="empty" id="emptyMessage" role="status">該当する項目はまだありません。別の言葉で検索してください。</div>
+</div>
+</section>
+<main class="wrap">
+<section id="features">
+<div class="section-head">
+<div>
+<h2>数学を学ぶ・使う</h2>
+<p>目的に合わせて入口を選べます。</p>
+</div>
+</div>
+<div class="grid" id="featureGrid">
+<a class="card searchable" data-keywords="公式 公式集 定理 定義 数学" href="formulas.html">
+<div class="icon">📘</div><h3>公式・定理を調べる</h3>
+<p>公式の意味、使い方、証明や関連項目を確認。</p>
+<span class="tag">公式データベース →</span>
+</a>
+<a class="card searchable" data-keywords="グラフ 関数 描画 二次関数 三角関数" href="functions.html">
+<div class="icon">📈</div><h3>関数のグラフ</h3>
+<p>関数の形や変化を視覚的に理解。</p>
+<span class="tag">グラフ作成 →</span>
+</a>
+<a class="card searchable" data-keywords="計算 微分 積分 極限 行列 数式" href="#subjects">
+<div class="icon">∫</div><h3>数学計算ツール</h3>
+<p>微分・積分・方程式などの計算を支援。</p>
+<span class="tag">計算ツール →</span>
+</a>
+<a class="card searchable" data-keywords="問題 例題 演習 解答 解説 学習" href="#subjects">
+<div class="icon">✏️</div><h3>問題・解説を読む</h3>
+<p>例題と解説で、解き方を一歩ずつ学習。</p>
+<span class="tag">問題データベース →</span>
+</a>
+</div>
+</section>
+<section class="subjects" id="subjects">
+<div class="section-head">
+<div>
+<h2>数学分野から探す</h2>
+<p>高校数学・大学数学の主要分野をまとめます。</p>
+</div>
+</div>
+<div class="subject-list" id="subjectList">
+<a class="subject searchable" href="subjects.html#math1a" data-keywords="数学Ⅰ 数と式 二次関数 集合 命題"><span>高校数学Ⅰ・A</span><span>›</span></a>
+<a class="subject searchable" href="subjects.html#math2b" data-keywords="数学Ⅱ 数学B 三角関数 指数 対数 数列"><span>高校数学Ⅱ・B</span><span>›</span></a>
+<a class="subject searchable" href="subjects.html#math3c" data-keywords="数学Ⅲ 数学C 極限 微分 積分 ベクトル"><span>高校数学Ⅲ・C</span><span>›</span></a>
+<a class="subject searchable" href="subjects.html#linear" data-keywords="線形代数 行列 固有値 ベクトル空間"><span>線形代数</span><span>›</span></a>
+<a class="subject searchable" href="subjects.html#analysis" data-keywords="解析学 実数 列 極限 連続 関数"><span>解析学</span><span>›</span></a>
+<a class="subject searchable" href="subjects.html#diffeq" data-keywords="微分方程式 常微分方程式 偏微分方程式"><span>微分方程式</span><span>›</span></a>
+<a class="subject searchable" href="subjects.html#statistics" data-keywords="確率 統計 分布 推定 検定"><span>確率・統計</span><span>›</span></a>
+<a class="subject searchable" href="subjects.html#complex" data-keywords="複素解析 複素数 正則関数 積分"><span>複素解析</span><span>›</span></a>
+<a class="subject searchable" href="subjects.html#numerical" data-keywords="数値計算 数値解析 近似 最適化"><span>数値計算・応用数学</span><span>›</span></a>
+</div>
+</section>
+<section class="notice" id="about">
+<div aria-hidden="true" style="font-size:25px">💡</div>
+<div>
+<strong>このサイトについて</strong>
+<p>「みんなの数学データベース」は、数学を学ぶ人・教える人・仕事で使う人のための公開サイトを目指しています。公式集・関数グラフに加え、高校数学・大学数学の分野別ガイドを用意しています。内容を順次充実させていきます。</p>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap foot">
+<span>© みんなの数学データベース</span>
+<span>高校数学・大学数学を、もっと身近に。</span>
+</div>
+</footer>
+<script>
+    const form = document.getElementById('searchForm');
+    const input = document.getElementById('searchInput');
+    const items = [...document.querySelectorAll('.searchable')];
+    const empty = document.getElementById('emptyMessage');
+    const counter = document.getElementById('searchCount');
+
+    function searchItems(query) {
+      const q = query.trim().toLowerCase();
+      let visible = 0;
+      items.forEach(item => {
+        const haystack = (item.innerText + ' ' + (item.dataset.keywords || '')).toLowerCase();
+        const match = !q || haystack.includes(q);
+        item.style.display = match ? '' : 'none';
+        if (match) visible++;
+      });
+      empty.style.display = q && visible === 0 ? 'block' : 'none';
+      counter.textContent = q ? `検索結果：${visible}件` : `掲載項目：${items.length}件（公式は専用ページに掲載）`;
+    }
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      searchItems(input.value);
+      document.getElementById('features').scrollIntoView({ behavior: 'smooth' });
+    });
+    input.addEventListener('input', () => searchItems(input.value));
+  
+    searchItems('');
+</script>
+</body>
+</html>
