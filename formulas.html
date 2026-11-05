@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>公式データベース | みんなの数学データベース</title><style>
+:root{--navy:#17365d;--blue:#2764a5;--bg:#f5f7fa;--line:#dce5ee}*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;color:#1c3048;line-height:1.8}header{background:white;border-bottom:1px solid var(--line);padding:14px max(18px,calc((100% - 1060px)/2));display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}header strong{color:var(--navy);font-size:1.1rem}a{color:var(--blue)}nav{display:flex;gap:15px;flex-wrap:wrap;font-size:.9rem}.hero{background:linear-gradient(110deg,#17365d,#2764a5);color:white;padding:44px 20px}.wrap{max-width:1060px;margin:auto}.hero h1{margin:0 0 8px;font-size:clamp(1.6rem,4vw,2.5rem)}.hero p{margin:0}.tools{padding:22px 0 10px}input{width:100%;font:inherit;padding:13px 16px;border:1px solid #b7c9d9;border-radius:12px;background:white}section{margin:24px 0 32px}h2{color:var(--navy);border-left:5px solid #2764a5;padding-left:12px}h3{margin:0 0 9px;color:var(--navy)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}.card{background:white;border:1px solid var(--line);border-radius:14px;padding:19px;box-shadow:0 3px 12px #17365d09}.formula{background:#eef5fc;border-radius:9px;padding:12px 14px;font-size:1.08rem;overflow-x:auto;white-space:nowrap;color:#122f50}.note{font-size:.94rem;margin:12px 0 0}.tag{font-size:.8rem;color:#4b647d}.empty{display:none;background:white;padding:20px;border-radius:12px}footer{text-align:center;padding:28px;color:#526579}main{padding:0 18px}sup,sub{line-height:0}@media(max-width:550px){header{align-items:flex-start}.hero{padding:34px 18px}}
+</style></head><body>
+<header><strong>∑ みんなの数学データベース</strong><nav><a href="index.html">トップ</a><a href="subjects.html">数学分野</a><a href="functions.html">関数のグラフ</a><a href="basics.html">数学の基礎</a></nav></header>
+<div class="hero"><div class="wrap"><h1>公式データベース</h1><p>高校数学から大学数学まで。公式の意味・条件・使い方を確認できます。</p></div></div>
+<main class="wrap"><div class="tools"><label for="search"><strong>公式を検索</strong></label><input id="search" type="search" placeholder="例：二次方程式、三角関数、微分、積分" autocomplete="off"><p class="tag">公式名・分野・説明から検索できます。</p></div>
+<section><h2>高校数学Ⅰ・A</h2><div class="grid">
+<article class="card" data-keywords="二次方程式 解の公式 判別式"><h3>二次方程式の解の公式</h3><div class="formula">x = (−b ± √(b² − 4ac)) / 2a</div><p class="note">ax² + bx + c = 0（a ≠ 0）の解。実数解を考えるときは判別式 D = b² − 4ac を確認します。</p></article>
+<article class="card" data-keywords="二次関数 頂点 平方完成"><h3>二次関数の頂点</h3><div class="formula">y = a(x − p)² + q</div><p class="note">a ≠ 0 のとき頂点は (p, q)、軸は x = p です。</p></article>
+<article class="card" data-keywords="三平方 ピタゴラス 直角三角形"><h3>三平方の定理</h3><div class="formula">a² + b² = c²</div><p class="note">直角三角形で、c を斜辺とすると成り立ちます。</p></article>
+<article class="card" data-keywords="確率 組合せ 順列"><h3>組合せ</h3><div class="formula">ₙCᵣ = n! / (r!(n − r)!)</div><p class="note">n 個から順序を区別せず r 個選ぶ場合の数（0 ≤ r ≤ n）。</p></article>
+</div></section>
+<section><h2>高校数学Ⅱ・B・C</h2><div class="grid">
+<article class="card" data-keywords="三角関数 加法定理 sin cos"><h3>三角関数の加法定理</h3><div class="formula">sin(α + β) = sinα cosβ + cosα sinβ</div><p class="note">角の和の正弦を計算できます。角度の単位をそろえて使います。</p></article>
+<article class="card" data-keywords="三角関数 基本 恒等式"><h3>三角関数の基本恒等式</h3><div class="formula">sin²θ + cos²θ = 1</div><p class="note">すべての実数 θ について成立します。</p></article>
+<article class="card" data-keywords="指数 対数 対数法則"><h3>対数の積の公式</h3><div class="formula">logₐ(MN) = logₐM + logₐN</div><p class="note">a &gt; 0、a ≠ 1、M &gt; 0、N &gt; 0 のとき成立します。</p></article>
+<article class="card" data-keywords="数列 等差数列 和"><h3>等差数列の和</h3><div class="formula">Sₙ = n(a₁ + aₙ) / 2</div><p class="note">初項 a₁、末項 aₙ、項数 n の等差数列の和です。</p></article>
+<article class="card" data-keywords="数列 等比数列 和"><h3>等比数列の和</h3><div class="formula">Sₙ = a(1 − rⁿ) / (1 − r)</div><p class="note">初項 a、公比 r ≠ 1。r = 1 のとき Sₙ = na です。</p></article>
+</div></section>
+<section><h2>高校数学Ⅲ・大学数学の基礎</h2><div class="grid">
+<article class="card" data-keywords="微分 導関数 べき関数"><h3>べき関数の微分</h3><div class="formula">d(xⁿ)/dx = nxⁿ⁻¹</div><p class="note">整数 n について、式が定義される範囲で成立します。</p></article>
+<article class="card" data-keywords="微分 積の微分法"><h3>積の微分法</h3><div class="formula">(fg)′ = f′g + fg′</div><p class="note">f、g が微分可能なときに使います。</p></article>
+<article class="card" data-keywords="微分 合成関数 連鎖律"><h3>合成関数の微分</h3><div class="formula">(f(g(x)))′ = f′(g(x))g′(x)</div><p class="note">合成関数を内側と外側に分けて微分します。</p></article>
+<article class="card" data-keywords="積分 不定積分 べき関数"><h3>べき関数の不定積分</h3><div class="formula">∫xⁿ dx = xⁿ⁺¹/(n + 1) + C</div><p class="note">n ≠ −1。C は積分定数です。実数指数では定義域にも注意します。</p></article>
+<article class="card" data-keywords="積分 微積分学の基本定理 定積分"><h3>微積分学の基本定理</h3><div class="formula">∫ₐᵇ f(x)dx = F(b) − F(a)</div><p class="note">f が [a, b] で連続、F′ = f のとき成立します。</p></article>
+<article class="card" data-keywords="線形代数 行列式 2次 正方行列"><h3>2×2 行列の行列式</h3><div class="formula">det [[a, b], [c, d]] = ad − bc</div><p class="note">行列式が 0 でなければ、その行列は逆行列を持ちます。</p></article>
+</div></section><p id="empty" class="empty">一致する公式がありません。別の言葉で検索してください。</p></main>
+<footer>みんなの数学データベース · <a href="index.html">トップページへ戻る</a></footer>
+<script>const search=document.getElementById('search');const cards=[...document.querySelectorAll('.card')];search.addEventListener('input',()=>{const q=search.value.trim().toLowerCase();let count=0;cards.forEach(card=>{const show=card.textContent.toLowerCase().includes(q)||(card.dataset.keywords||'').toLowerCase().includes(q);card.hidden=!show;if(show)count++});document.querySelectorAll('section').forEach(section=>{section.hidden=![...section.querySelectorAll('.card')].some(card=>!card.hidden)});document.getElementById('empty').style.display=count?'none':'block'});</script>
+</body></html>
