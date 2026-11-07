@@ -149,6 +149,13 @@
 .formula-details h4 { color: #17365d; margin: 14px 0 3px; font-size: 14px; }
 .formula-details p { font-size: 14px; color: #344054; line-height: 1.8; overflow-wrap: anywhere; }
 .search-count { margin: 10px 0 0; font-size: 14px; color: #dcecff; }
+</style><style>
+.exam-section{margin:0 0 44px;padding:26px;border-radius:18px;background:#edf4fc;border:1px solid #d7e5f5}
+.exam-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:18px}
+.exam-link{display:block;padding:22px;background:white;border:1px solid #d7e3f0;border-radius:14px;box-shadow:var(--shadow)}
+.exam-link strong{display:block;font-size:20px;color:var(--navy)}
+.exam-link span{display:block;color:var(--muted);font-size:14px;margin-top:5px}
+@media(max-width:560px){.exam-grid{grid-template-columns:1fr}.exam-section{padding:18px}}
 </style></head>
 <body>
 <header>
@@ -157,7 +164,7 @@
 <span class="brand-mark">∑</span>
 <span class="brand-name">みんなの数学データベース</span>
 </a>
-<nav aria-label="メインメニュー">
+<nav aria-label="メインメニュー"><a href="#entrance-exams">大学入試問題</a>
 <a href="#features">機能</a>
 <a href="#subjects">数学分野</a>
 <a href="formulas.html">公式データベース</a>
@@ -178,7 +185,13 @@
 <div class="empty" id="emptyMessage" role="status">該当する項目はまだありません。別の言葉で検索してください。</div>
 </div>
 </section>
-<main class="wrap">
+<main class="wrap"><section class="exam-section" id="entrance-exams">
+<div class="section-head"><div><h2>🎓 大学入試問題</h2><p>共通テスト・東京大学の数学を年度別に探す</p></div></div>
+<div class="exam-grid">
+<a class="exam-link searchable" data-keywords="大学入試 共通テスト 過去問 数学 年度" href="entrance_exams.html#common"><strong>共通テスト</strong><span>年度別に問題・解答・解説を探す →</span></a>
+<a class="exam-link searchable" data-keywords="大学入試 東京大学 東大 過去問 数学 年度" href="entrance_exams.html#tokyo"><strong>東京大学</strong><span>年度別に問題・解答・解説を探す →</span></a>
+</div><p class="section-note">問題文は無断転載せず、公式の公開元に案内します。独自の解答・解説は順次追加します。</p>
+</section>
 <section id="features">
 <div class="section-head">
 <div>
@@ -203,15 +216,15 @@
 </div>
 </div>
 <div class="subject-list" id="subjectList">
-<a class="subject searchable" href="subjects.html#math1a" data-keywords="数学Ⅰ 数と式 二次関数 集合 命題"><span>高校数学Ⅰ・A</span><span>›</span></a>
-<a class="subject searchable" href="subjects.html#math2b" data-keywords="数学Ⅱ 数学B 三角関数 指数 対数 数列"><span>高校数学Ⅱ・B</span><span>›</span></a>
-<a class="subject searchable" href="subjects.html#math3c" data-keywords="数学Ⅲ 数学C 極限 微分 積分 ベクトル"><span>高校数学Ⅲ・C</span><span>›</span></a>
-<a class="subject searchable" href="subjects.html#linear" data-keywords="線形代数 行列 固有値 ベクトル空間"><span>線形代数</span><span>›</span></a>
-<a class="subject searchable" href="subjects.html#analysis" data-keywords="解析学 実数 列 極限 連続 関数"><span>解析学</span><span>›</span></a>
-<a class="subject searchable" href="subjects.html#diffeq" data-keywords="微分方程式 常微分方程式 偏微分方程式"><span>微分方程式</span><span>›</span></a>
-<a class="subject searchable" href="subjects.html#statistics" data-keywords="確率 統計 分布 推定 検定"><span>確率・統計</span><span>›</span></a>
-<a class="subject searchable" href="subjects.html#complex" data-keywords="複素解析 複素数 正則関数 積分"><span>複素解析</span><span>›</span></a>
-<a class="subject searchable" href="subjects.html#numerical" data-keywords="数値計算 数値解析 近似 最適化"><span>数値計算・応用数学</span><span>›</span></a>
+<a class="subject searchable" data-keywords="数学Ⅰ 数と式 二次関数 集合 命題" href="subjects.html#math1a"><span>高校数学Ⅰ・A</span><span>›</span></a>
+<a class="subject searchable" data-keywords="数学Ⅱ 数学B 三角関数 指数 対数 数列" href="subjects.html#math2b"><span>高校数学Ⅱ・B</span><span>›</span></a>
+<a class="subject searchable" data-keywords="数学Ⅲ 数学C 極限 微分 積分 ベクトル" href="subjects.html#math3c"><span>高校数学Ⅲ・C</span><span>›</span></a>
+<a class="subject searchable" data-keywords="線形代数 行列 固有値 ベクトル空間" href="subjects.html#linear"><span>線形代数</span><span>›</span></a>
+<a class="subject searchable" data-keywords="解析学 実数 列 極限 連続 関数" href="subjects.html#analysis"><span>解析学</span><span>›</span></a>
+<a class="subject searchable" data-keywords="微分方程式 常微分方程式 偏微分方程式" href="subjects.html#diffeq"><span>微分方程式</span><span>›</span></a>
+<a class="subject searchable" data-keywords="確率 統計 分布 推定 検定" href="subjects.html#statistics"><span>確率・統計</span><span>›</span></a>
+<a class="subject searchable" data-keywords="複素解析 複素数 正則関数 積分" href="subjects.html#complex"><span>複素解析</span><span>›</span></a>
+<a class="subject searchable" data-keywords="数値計算 数値解析 近似 最適化" href="subjects.html#numerical"><span>数値計算・応用数学</span><span>›</span></a>
 </div>
 </section>
 <section class="notice" id="about">
@@ -250,7 +263,7 @@
     form.addEventListener('submit', event => {
       event.preventDefault();
       searchItems(input.value);
-      document.getElementById('features').scrollIntoView({ behavior: 'smooth' });
+      document.getElementById('entrance-exams').scrollIntoView({ behavior: 'smooth' });
     });
     input.addEventListener('input', () => searchItems(input.value));
   
