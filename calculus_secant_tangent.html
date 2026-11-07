@@ -1,0 +1,66 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>割線から接線へ | みんなの数学データベース</title><style>*{box-sizing:border-box}body{margin:0;background:#f3f7fd;color:#203047;font-family:-apple-system,BlinkMacSystemFont,'Hiragino Kaku Gothic ProN',Meiryo,sans-serif;line-height:1.65}header{background:#17365d;color:white;padding:18px}main{max-width:980px;margin:auto;padding:20px 14px 50px}a{color:#2670a9}header a{color:white}.panel{background:white;border:1px solid #d9e4f1;border-radius:16px;padding:16px;margin:14px 0}h1{font-size:clamp(23px,4vw,32px);margin:6px 0}h2{font-size:20px;color:#17365d}canvas{display:block;width:100%;height:auto;background:#fff;border:1px solid #d8e3ef;border-radius:12px}label{display:block;margin:10px 0;font-weight:600}input[type=range]{width:100%;accent-color:#1676b7}button,select{border:1px solid #9ab5d0;border-radius:9px;padding:9px 13px;background:#e8f2ff;color:#17365d;font-size:16px}button{cursor:pointer}button:focus-visible{outline:3px solid #e59b00}.buttons{display:flex;gap:9px;flex-wrap:wrap}.readout{background:#edf5fc;padding:12px;border-radius:10px;min-height:58px;font-variant-numeric:tabular-nums}.muted{color:#52657b;font-size:14px}</style></head><body data-mode="tangent"><header><div style="max-width:980px;margin:auto"><a href="high_school.html">← 高校数学の目次へ</a><h1>割線から接線へ</h1><div>数学Ⅲ｜微分・積分｜動かして理解する教材</div></div></header><main><section class="panel"><h2>考え方</h2><p>2点の間隔 h を小さくして、割線が接線に近づく様子を観察します。</p><p id="formula">f(x)=x²/4+0.6。x=1 と x=1+h の割線の傾きは (f(1+h)−f(1))/h。h→0 で f′(1)=0.5 に近づきます。</p></section><section class="panel"><canvas id="graph" width="900" height="520" role="img" aria-label="割線から接線へのグラフ"></canvas><label for="slider">2点の間隔 h：<output id="val"></output></label><input id="slider" type="range" min="0.02" max="2.5" step="0.02" value="2.5"><div class="buttons"><button id="play" type="button">▶ 再生</button><button id="reset" type="button">↺ 最初から</button></div><p id="info" class="readout" aria-live="polite"></p><p class="muted">スライダーは指で動かせます。再生を押すと自動で変化します。通信不要で動作します。</p></section></main><script>
+const canvas=document.getElementById('graph'),ctx=canvas.getContext('2d');
+const mode=document.body.dataset.mode;
+const slider=document.getElementById('slider'),val=document.getElementById('val'),info=document.getElementById('info');
+const formula=document.getElementById('formula');
+const f=x=>x*x/4+0.6, df=x=>x/2;
+let progress=0,playing=false,raf=0,last=0;
+const W=900,H=520, X=x=>W/2+x*85, Y=y=>H/2-y*70;
+const fmt=n=>Number(n).toFixed(3).replace(/\.?0+$/,'');
+function line(x1,y1,x2,y2,color='#244c73',width=2,dash=[]){ctx.beginPath();ctx.setLineDash(dash);ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.strokeStyle=color;ctx.lineWidth=width;ctx.stroke();ctx.setLineDash([])}
+function dot(x,y,color='#e56a35',r=6){ctx.beginPath();ctx.arc(x,y,r,0,2*Math.PI);ctx.fillStyle=color;ctx.fill()}
+function text(s,x,y,color='#244c73',size=16){ctx.fillStyle=color;ctx.font=`${size}px system-ui`;ctx.fillText(s,x,y)}
+function poly(fn,a,b,color='#1876b9',width=3,steps=250){ctx.beginPath();for(let i=0;i<=steps;i++){let x=a+(b-a)*i/steps,y=fn(x);if(i===0)ctx.moveTo(X(x),Y(y));else ctx.lineTo(X(x),Y(y))}ctx.strokeStyle=color;ctx.lineWidth=width;ctx.stroke()}
+function axes(){ctx.clearRect(0,0,W,H);ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);for(let i=-5;i<=5;i++){line(X(i),0,X(i),H,'#e7edf5',1);line(0,Y(i),W,Y(i),'#e7edf5',1)}line(0,Y(0),W,Y(0),'#73859b',1.5);line(X(0),0,X(0),H,'#73859b',1.5);for(let i=-4;i<=4;i++){if(i)text(String(i),X(i)+3,Y(0)+18,'#66778b',12)}text('x',W-22,Y(0)-9);text('y',X(0)+10,18)}
+function render(){
+ const v=+slider.value;val.textContent=fmt(v);axes();
+ if(mode==='tangent'){
+  const x0=1,h=v,p=f(x0),q=f(x0+h),m=(q-p)/h;
+  poly(f,-4.5,4.5);
+  line(X(-4.5),Y(p+df(x0)*(-4.5-x0)),X(4.5),Y(p+df(x0)*(4.5-x0)),'#1e9b6b',2,[9,6]);
+  line(X(-4.5),Y(p+m*(-4.5-x0)),X(4.5),Y(p+m*(4.5-x0)),'#e46b38',3);
+  dot(X(x0),Y(p));dot(X(x0+h),Y(q),'#e46b38');text('P',X(x0)+10,Y(p)-10);text('Q',X(x0+h)+10,Y(q)-10);
+  info.textContent=`h = ${fmt(h)} ／ 割線の傾き = ${fmt(m)} ／ 接線の傾き f′(1) = 0.5`;
+ }else if(mode==='derivative'){
+  const x=v,dx=0.001;
+  poly(f,-4.5,4.5,'#1876b9',3);
+  line(X(-4.5),Y(f(x)+df(x)*(-4.5-x)),X(4.5),Y(f(x)+df(x)*(4.5-x)),'#e46b38',2);
+  dot(X(x),Y(f(x)));
+  // 導関数は下半分に重ねて表示
+  poly(df,-4.5,-4.5+(x+4.5)*progress,'#1d9b70',4);
+  dot(X(x),Y(df(x)),'#1d9b70');
+  info.textContent=`x = ${fmt(x)} ／ f(x) = ${fmt(f(x))} ／ 接線の傾き f′(x) = ${fmt(df(x))}。緑が導関数 y=x/2。`;
+ }else if(mode==='riemann'){
+  const n=Math.round(v),a=0,b=3,dx=(b-a)/n;let sum=0;
+  for(let i=0;i<n;i++){let x=a+i*dx,y=f(x);sum+=y*dx;ctx.fillStyle='rgba(38,137,209,.20)';ctx.fillRect(X(x),Y(y),dx*85,Y(0)-Y(y));ctx.strokeStyle='#357eaf';ctx.lineWidth=1;ctx.strokeRect(X(x),Y(y),dx*85,Y(0)-Y(y))}
+  poly(f,-1,4.5);
+  const exact=3**3/12+0.6*3;
+  info.textContent=`長方形 ${n} 個 ／ 左端和 ${fmt(sum)} ／ 正確な積分値 ${fmt(exact)} ／ 誤差 ${fmt(Math.abs(sum-exact))}`;
+ }else if(mode==='area'){
+  const x=v;const a=0;
+  for(let i=0;i<240;i++){const t=x*i/240,dt=x/240;ctx.fillStyle='rgba(42,157,111,.23)';ctx.fillRect(X(t),Y(f(t)),Math.max(1,85*dt+0.5),Y(0)-Y(f(t)))}
+  poly(f,-1,4.5);
+  line(X(x),Y(0),X(x),Y(f(x)),'#e46b38',2,[6,4]);dot(X(x),Y(f(x)));
+  const A=x*x*x/12+0.6*x;
+  info.textContent=`x = ${fmt(x)} ／ 面積 A(x) = ${fmt(A)} ／ A′(x) = ${fmt(f(x))} = f(x)`;
+ }else if(mode==='volume'){
+  const n=Math.round(v),a=0,b=3,dx=(b-a)/n;let sum=0;
+  // x 軸周りの回転体を簡易透視投影（楕円断面）で描く
+  const originX=145,baseY=275,scaleX=190,scaleR=34;
+  function cross(x,r,fill){const cx=originX+x*scaleX,ry=r*scaleR;ctx.beginPath();ctx.ellipse(cx,baseY,Math.max(3,ry*.42),ry,0,0,2*Math.PI);ctx.fillStyle=fill;ctx.fill();ctx.strokeStyle='#327ea7';ctx.lineWidth=1;ctx.stroke()}
+  ctx.clearRect(0,0,W,H);ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
+  line(originX,baseY,originX+3.15*scaleX,baseY,'#687a90',2);
+  for(let i=0;i<n;i++){let x=(i+.5)*dx,r=f(x);sum+=Math.PI*r*r*dx;const cx=originX+(i+.5)*dx*scaleX;ctx.fillStyle='rgba(41,132,207,.16)';ctx.fillRect(originX+i*dx*scaleX,baseY-r*scaleR,Math.max(1,dx*scaleX),2*r*scaleR);if(n<=45||i%Math.ceil(n/45)===0)cross(x,r,'rgba(38,137,209,.12)')}
+  cross(3,f(3),'rgba(230,106,53,.18)');
+  text('x軸',originX+3.15*scaleX,baseY+22);
+  text('円板の厚さ Δx = '+fmt(dx),30,42);
+  const exact=Math.PI*(3**5/80+0.1*3**3+0.36*3);
+  info.textContent=`円板 ${n} 枚 ／ 体積の近似 ${fmt(sum)} ／ 正確な体積 ${fmt(exact)} ／ 誤差 ${fmt(Math.abs(sum-exact))}`;
+ }
+}
+function tick(ts){if(!playing)return;if(!last)last=ts;if(ts-last>40){last=ts;if(mode==='derivative'){progress=Math.min(1,progress+.007);slider.value=-4.5+9*progress}else{const step=(+slider.max- +slider.min)/150;slider.value=Math.min(+slider.max,+slider.valueAsNumber+step)}render();if(progress>=1&&mode==='derivative'||(mode==='tangent'?slider.valueAsNumber<=+slider.min:slider.valueAsNumber>=+slider.max)&&mode!=='derivative'){playing=false;document.getElementById('play').textContent='▶ 再生';return}}raf=requestAnimationFrame(tick)}
+document.getElementById('play').onclick=()=>{playing=!playing;document.getElementById('play').textContent=playing?'⏸ 一時停止':'▶ 再生';last=0;if(playing){if(mode==='tangent'?slider.valueAsNumber<=+slider.min:slider.valueAsNumber>=+slider.max){slider.value=mode==='tangent'?slider.max:slider.min;progress=0}raf=requestAnimationFrame(tick)}else cancelAnimationFrame(raf)};
+document.getElementById('reset').onclick=()=>{playing=false;cancelAnimationFrame(raf);progress=0;slider.value=mode==='tangent'?slider.max:slider.min;document.getElementById('play').textContent='▶ 再生';render()};
+slider.oninput=()=>{if(mode==='derivative')progress=(+slider.value+4.5)/9;render()};
+render();
+</script></body></html>
