@@ -1,0 +1,22 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>2026 数学Ⅱ・B・C 第1問 図形と方程式</title><style>body{font-family:system-ui,-apple-system,sans-serif;line-height:1.7;margin:auto;max-width:900px;padding:18px;color:#17324d;background:#f5f9ff}main{background:white;border-radius:18px;padding:24px;box-shadow:0 4px 20px #bcd2e455}h1{color:#125a9e}a{color:#125a9e}nav a{margin-right:12px}canvas{width:100%;max-width:680px;height:auto;border:1px solid #d5e2ef;border-radius:12px;background:#fff}label{display:block;margin:12px 0}input{width:220px;max-width:65%;vertical-align:middle}button{background:#1269ac;color:white;border:0;border-radius:9px;padding:10px 16px}small,.note{color:#536779}.warn{background:#fff5d8;padding:12px;border-radius:9px}</style></head><body><main><nav><a href="math2bc_2026_index.html">← 数学Ⅱ・B・C目次</a><a href="entrance_exams.html">入試目次（既存サイト）</a></nav><h1>2026年度 共通テスト 数学Ⅱ・B・C</h1><h2>第1問：図形と方程式</h2><p><strong>学習テーマ：</strong>2円の位置関係・領域</p><p>円の中心と半径を動かし、2円の位置関係を観察します。</p><p class="warn"><strong>教材の位置づけ：</strong>これは2026年度本試験の出題分野に対応した<strong>操作型の概念学習教材</strong>です。公式問題の設問・空欄・正解を完全に再現した解答教材ではありません。</p><h3>操作して確かめる</h3><label>円1の半径 <input id="a" type="range" min="0.2" max="5" step="0.1" value="2"></label><label>円2の半径 <input id="b" type="range" min="0.2" max="5" step="0.1" value="3"></label><p id="values"></p><svg id="graph" viewBox="0 0 680 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="2つの円の位置関係。青い円と赤い円が描かれています。" style="display:block;width:100%;max-width:680px;height:auto;aspect-ratio:17/10;border:1px solid #d5e2ef;border-radius:12px;background:#fff">
+<rect width="680" height="400" fill="#fff"/>
+<path d="M0 200 H680 M340 0 V400" stroke="#8998aa" stroke-width="2"/>
+<circle id="circle1" cx="310" cy="170" r="60" fill="#1379be" fill-opacity=".12" stroke="#1379be" stroke-width="3"/>
+<circle id="circle2" cx="370" cy="215" r="90" fill="#d35b47" fill-opacity=".12" stroke="#d35b47" stroke-width="3"/>
+<circle cx="310" cy="170" r="5" fill="#1379be"/><circle cx="370" cy="215" r="5" fill="#d35b47"/>
+<text x="285" y="156" fill="#1379be" font-size="18">円1</text><text x="380" y="207" fill="#d35b47" font-size="18">円2</text>
+</svg><p class="note">※図はSVG形式です。スクリプトが使えないプレビュー画面でも初期の円を表示できます。スライダーを動かすにはSafariで開いてください。</p><h3>学習のポイント</h3><p>2円の位置関係・領域の基本概念を、数値を変えながら確認しましょう。図は理解を助ける模式図です。正確な問題文・選択肢は公式問題をご参照ください。</p><p><a href="https://www.dnc.ac.jp/kyotsu/kakomondai/index.html" target="_blank" rel="noopener">大学入試センター：公式問題・正解</a></p><small>iPad・PC対応／外部ライブラリ不要／教材版 2026-11-07</small></main><script>
+(function(){
+  const a=document.getElementById('a'),b=document.getElementById('b');
+  const c1=document.getElementById('circle1'),c2=document.getElementById('circle2');
+  const values=document.getElementById('values');
+  function draw(){
+    const r1=Number(a.value),r2=Number(b.value);
+    c1.setAttribute('r',String(r1*30));c2.setAttribute('r',String(r2*30));
+    const d=2.5;
+    let relation=d>r1+r2?'離れている':Math.abs(d-(r1+r2))<0.0001?'外接':d<Math.abs(r1-r2)?'一方が他方の内部':Math.abs(d-Math.abs(r1-r2))<0.0001?'内接':'2点で交わる';
+    values.textContent='円1の半径：'+r1+'、円2の半径：'+r2+'／中心間の距離：2.5 ／ '+relation;
+  }
+  a.addEventListener('input',draw);b.addEventListener('input',draw);draw();
+})();
+</script></body></html>
