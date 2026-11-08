@@ -1,6 +1,26 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>高校数学 | みんなの数学データベース</title><style>*{box-sizing:border-box}body{margin:0;background:#f5f7fa;color:#1d2939;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.7}header{background:#17365d;color:white;padding:26px 0}.wrap{width:min(1000px,calc(100% - 32px));margin:auto}h1{margin:8px 0}h2{color:#17365d}main{padding:28px 0 60px}a{color:#245b91}.back{color:white;text-decoration:none}details{margin:12px 0;background:white;border:1px solid #dce5ef;border-radius:14px;overflow:hidden}summary{cursor:pointer;list-style:none;padding:16px 20px;font-size:19px;font-weight:bold;color:#17365d}summary::-webkit-details-marker{display:none}summary:before{content:'＋ ';color:#3474aa}details[open]>summary:before{content:'－ '}details[open]>summary{background:#eaf2fb}.inner{padding:12px 18px 20px}.unit{margin:10px 0;background:#f9fbff}.unit summary{font-size:16px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.card{display:block;padding:16px;border:1px solid #dce5ef;background:white;border-radius:12px;text-decoration:none;color:#17365d;font-weight:bold}.card small{display:block;color:#3474aa;margin-top:6px}.note{color:#667085;padding:8px}footer{background:#132c4a;color:white;padding:20px 0}</style></head><body><header><div class="wrap"><a class="back" href="index.html">← トップページに戻る</a><h1>📐 高校数学</h1><div>科目 → 単元 → 教材の順に選んで学ぶ</div></div></header><main class="wrap"><h2>① 科目を選ぶ</h2><p>科目を押すと単元が表示されます。単元を押すと教材が表示されます。</p>
-<details ><summary>数学Ⅰ</summary><div class="inner"><h2>② 単元を選ぶ</h2>
-<details class="unit" ><summary>数と式</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>高校数学 | みんなの数学データベース</title><style>*{box-sizing:border-box}body{margin:0;background:#f5f7fa;color:#1d2939;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.7}header{background:#17365d;color:white;padding:26px 0}.wrap{width:min(1000px,calc(100% - 32px));margin:auto}h1{margin:8px 0}h2{color:#17365d}main{padding:28px 0 60px}a{color:#245b91}.back{color:white;text-decoration:none}details{margin:12px 0;background:white;border:1px solid #dce5ef;border-radius:14px;overflow:hidden}summary{cursor:pointer;list-style:none;padding:16px 20px;font-size:19px;font-weight:bold;color:#17365d}summary::-webkit-details-marker{display:none}summary:before{content:'＋ ';color:#3474aa}details[open]>summary:before{content:'－ '}details[open]>summary{background:#eaf2fb}.inner{padding:12px 18px 20px}.unit{margin:10px 0;background:#f9fbff}.unit summary{font-size:16px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.card{display:block;padding:16px;border:1px solid #dce5ef;background:white;border-radius:12px;text-decoration:none;color:#17365d;font-weight:bold}.card small{display:block;color:#3474aa;margin-top:6px}.note{color:#667085;padding:8px}footer{background:#132c4a;color:white;padding:20px 0}
+/* 追加ナビゲーション：既存の教材カードやリンク先は変更しません */
+.quick-intro{background:linear-gradient(125deg,#e8f2fe,#f8fbff);border:1px solid #cddff2;border-radius:17px;padding:20px;margin:20px 0 24px}
+.quick-intro h2{margin:0 0 5px;font-size:1.3rem}.quick-intro p{margin:0 0 14px;color:#4c6179}
+.quick-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:14px}
+.quick-links a,.exam-shortcuts a{display:block;border-radius:11px;border:1px solid #bad2e9;background:white;padding:12px 14px;color:#174e7e;text-decoration:none;font-weight:700}
+.quick-links a:hover,.quick-links a:focus-visible,.exam-shortcuts a:hover,.exam-shortcuts a:focus-visible{background:#eaf4ff;outline-offset:3px}
+.exam-shortcuts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.exam-shortcuts a{background:#175b93;color:white;border-color:#175b93}
+.exam-shortcuts a:hover,.exam-shortcuts a:focus-visible{background:#0f4674;color:white}
+.search-tools{background:#fff;border:1px solid #dce5ef;border-radius:14px;padding:16px;margin:16px 0}
+.search-tools label{font-weight:700;display:block;margin-bottom:8px;color:#17365d}
+.search-tools input{width:100%;font:inherit;padding:12px;border-radius:9px;border:1px solid #aabfd4;font-size:16px}
+.search-tools input:focus-visible{outline:3px solid #78b7ed;outline-offset:2px}
+.search-results{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:9px;margin-top:12px}
+.search-results a{padding:12px;border-radius:9px;background:#f4f8ff;border:1px solid #d8e6f5;text-decoration:none;font-weight:650}
+.search-results a:hover{background:#e4f1ff}.search-results small{display:block;color:#536b83;font-weight:400}
+.search-status{margin:10px 0 0;color:#50657a;font-size:.92rem}
+@media(max-width:620px){.quick-links{grid-template-columns:repeat(2,minmax(0,1fr))}.exam-shortcuts{grid-template-columns:1fr}.quick-intro{padding:16px}}
+</style></head><body><header><div class="wrap"><a class="back" href="index.html">← トップページに戻る</a><h1>📐 高校数学</h1><div>科目 → 単元 → 教材の順に選んで学ぶ</div></div></header><main class="wrap"><h2>① 科目を選ぶ</h2><p>科目を押すと単元が表示されます。単元を押すと教材が表示されます。</p><section aria-label="教材への近道" class="quick-intro"><h2>学びたい内容をすぐに見つける</h2><p>科目から探すことも、教材名から検索することもできます。科目を選ぶと、このページの該当箇所へ移動します。</p><div class="quick-links"><a href="#math1">数学Ⅰ</a><a href="#math2">数学Ⅱ</a><a href="#math3">数学Ⅲ</a><a href="#matha">数学A</a><a href="#mathb">数学B</a><a href="#mathc">数学C</a></div><div class="exam-shortcuts"><a href="math1a_2026_index.html">2026年度 共通テスト 数学Ⅰ・A｜8教材 →</a><a href="math2bc_2026_index.html">2026年度 共通テスト 数学Ⅱ・B・C｜7教材 →</a></div><div class="search-tools"><label for="lessonSearch">🔎 高校数学の教材を探す</label><input aria-describedby="searchStatus" autocomplete="off" id="lessonSearch" placeholder="例：ベクトル、微分、複素数、確率" type="search"/><p class="search-status" id="searchStatus" role="status">教材名を入力すると、一致する教材がここに表示されます。</p><div class="search-results" id="searchResults"></div></div></section>
+<details id="math1"><summary>数学Ⅰ</summary><div class="inner"><h2>② 単元を選ぶ</h2>
+<details class="unit"><summary>数と式</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
 <div class="cards">
 <a class="card" href="basics.html">数学の基礎<small>教材を開く →</small></a>
 <a class="card" href="expansion_factorization.html">展開と因数分解を図で理解する<small>教材を開く →</small></a>
@@ -8,13 +28,13 @@
 <a class="card" href="linear_inequalities.html">1次不等式を数直線で理解する<small>教材を開く →</small></a>
 </div>
 </div></details>
-<details class="unit" ><summary>集合と命題</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
+<details class="unit"><summary>集合と命題</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
 <div class="cards">
 <a class="card" href="sets_venn.html">集合とベン図を動かして理解する<small>教材を開く →</small></a>
 <a class="card" href="propositions_conditions.html">命題と必要条件・十分条件<small>教材を開く →</small></a>
 </div>
 </div></details>
-<details class="unit" ><summary>2次関数</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
+<details class="unit"><summary>2次関数</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
 <div class="cards">
 <a class="card" href="functions.html">関数のグラフ<small>教材を開く →</small></a>
 <a class="card" href="visualizations.html">図とグラフで学ぶ数学<small>教材を開く →</small></a>
@@ -24,20 +44,20 @@
 <a class="card" href="quadratic_inequalities.html">2次不等式をグラフで理解する<small>教材を開く →</small></a>
 </div>
 </div></details>
-<details class="unit" ><summary>図形と計量</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
+<details class="unit"><summary>図形と計量</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
 <div class="cards">
 <a class="card" href="trigonometric_ratios.html">三角比（sin・cos・tan）を動かして理解する<small>教材を開く →</small></a>
 <a class="card" href="sine_cosine_rules.html">正弦定理・余弦定理を動かして理解する<small>教材を開く →</small></a>
 </div>
 </div></details>
-<details class="unit" ><summary>データの分析</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
+<details class="unit"><summary>データの分析</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
 <div class="cards">
 <a class="card" href="data_analysis.html">データの分析を動かして理解する<small>教材を開く →</small></a>
 </div>
 </div></details>
 </div></details>
-<details ><summary>数学Ⅱ</summary><div class="inner"><h2>② 単元を選ぶ</h2>
-<details class="unit" ><summary>式と証明</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
+<details id="math2"><summary>数学Ⅱ</summary><div class="inner"><h2>② 単元を選ぶ</h2>
+<details class="unit"><summary>式と証明</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
 <div class="cards">
 <a class="card" href="polynomial_identity_interactive.html">恒等式と係数比較を動かして理解する<small>係数を変えてグラフの一致を確かめる →</small></a>
 <a class="card" href="equality_proof_visual.html">等式の証明を図と式で理解する<small>面積の図と式を動かして恒等式を確かめる →</small></a>
@@ -46,20 +66,20 @@
 <a class="card" href="high_school_pascal_binomial.html">パスカルの三角形と二項定理<small>係数と展開の関係を図で理解する →</small></a>
 </div>
 </div></details>
-<details class="unit" ><summary>複素数と方程式</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
+<details class="unit"><summary>複素数と方程式</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
 <div class="cards">
 <a class="card" href="quadratic_roots_interactive.html">2次方程式の解を動かして理解する<small>判別式と放物線の変化を確かめる →</small></a>
 <a class="card" href="roots_coefficients_interactive.html">解と係数の関係を動かして理解する<small>放物線と複素数平面で解の和・積を確かめる →</small></a>
 </div>
 </div></details>
-<details class="unit" ><summary>図形と方程式</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
+<details class="unit"><summary>図形と方程式</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
 <div class="cards">
 <a class="card" href="geometry_equations_interactive.html">図形と方程式を動かして学ぶ<small>教材を開く →</small></a>
 <a class="card" href="locus_midpoint_circle.html">中点の軌跡を動かして理解する<small>教材を開く →</small></a>
 <a class="card" href="locus_internal_division_updated.html">内分点の軌跡を動かして理解する（改良版）<small>教材を開く →</small></a>
 </div>
 </div></details>
-<details class="unit" ><summary>三角関数</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
+<details class="unit"><summary>三角関数</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
 <div class="cards">
 <a class="card" href="functions.html">関数のグラフ<small>教材を開く →</small></a>
 <a class="card" href="trigonometry_interactive.html">三角関数を動かして学ぶ<small>単位円と sin・cos のグラフを連動させる →</small></a>
@@ -68,13 +88,13 @@
 <a class="card" href="trigonometry_equations_inequalities.html">三角関数の方程式・不等式を動かして理解する<small>sin・cos・tan の解と範囲を図で確かめる →</small></a>
 </div>
 </div></details>
-<details class="unit" ><summary>指数関数・対数関数</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
+<details class="unit"><summary>指数関数・対数関数</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
 <div class="cards">
 <a class="card" href="functions.html">関数のグラフ<small>教材を開く →</small></a>
 <a class="card" href="exponential_logarithm_interactive.html">指数関数・対数関数を動かして学ぶ<small>教材を開く →</small></a>
 </div>
 </div></details>
-<details class="unit" ><summary>微分・積分</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
+<details class="unit"><summary>微分・積分</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
 <div class="cards">
 <a class="card" href="calculus.html">微分・積分<small>教材を開く →</small></a>
 <a class="card" href="calculus_extended.html">微分・積分を動かして学ぶ・拡張版<small>教材を開く →</small></a>
@@ -82,15 +102,15 @@
 </div>
 </div></details>
 </div></details>
-<details ><summary>数学Ⅲ</summary><div class="inner"><h2>② 単元を選ぶ</h2>
-<details class="unit" ><summary>極限</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
+<details id="math3"><summary>数学Ⅲ</summary><div class="inner"><h2>② 単元を選ぶ</h2>
+<details class="unit"><summary>極限</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
 <div class="cards">
 <a class="card" href="high_school_infinite_geometric_series.html">無限等比級数と面積<small>公比と項数を変えて無限和を観察 →</small></a>
 <a class="card" href="sequence_limits.html">数列の極限<small>教材を開く →</small></a>
 <a class="card" href="high_school_function_limits_continuity.html">関数の極限と連続性を動かして理解する<small>左右の極限と関数値をグラフで比較する →</small></a>
 </div>
 </div></details>
-<details class="unit" ><summary>微分法</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
+<details class="unit"><summary>微分法</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
 <div class="cards">
 <a class="card" href="high_school_newton_method.html">ニュートン法と方程式の近似解<small>接線を使って方程式の解へ近づく →</small></a>
 <a class="card" href="calculus.html">微分・積分<small>教材を開く →</small></a>
@@ -98,7 +118,7 @@
 <a class="card" href="mean_value_theorem_interactive.html">平均値の定理を動かして理解する<small>割線と接線、ロルの定理と証明を学ぶ →</small></a>
 </div>
 </div></details>
-<details class="unit" ><summary>積分法</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
+<details class="unit"><summary>積分法</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
 <div class="cards">
 <a class="card" href="fundamental_theorem_calculus.html">微分積分学の基本定理を動かして理解する<small>面積の変化と接線の傾きの関係を確かめる →</small></a>
 <a class="card" href="calculus.html">微分・積分<small>教材を開く →</small></a>
@@ -106,29 +126,27 @@
 </div>
 </div></details>
 </div></details>
-<details ><summary>数学A</summary><div class="inner"><h2>② 単元を選ぶ</h2>
-<details class="unit" ><summary>図形の性質</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
+<details id="matha"><summary>数学A</summary><div class="inner"><h2>② 単元を選ぶ</h2>
+<details class="unit"><summary>図形の性質</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
 <div class="cards">
 <a class="card" href="high_school_euler_nine_point.html">オイラー線と九点円<small>頂点を動かして外心・重心・垂心・九点円を観察 →</small></a>
 <a class="card" href="triangle_centers.html">三角形の五心を動かして理解する<small>教材を開く →</small></a>
 <a class="card" href="high_school_circle_tangent_chord.html">円の性質と接弦定理<small>円周角・中心角・接線と弦を動かす →</small></a>
 </div>
 </div></details>
-<details class="unit" ><summary>場合の数と確率</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
+<details class="unit"><summary>場合の数と確率</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
 <div class="cards">
 <a class="card" href="probability.html">場合の数と確率を動かして理解する<small>教材を開く →</small></a>
 <a class="card" href="conditional_probability_bayes.html">条件付き確率とベイズの定理を動かして理解する<small>樹形図・検査の例・シミュレーションで学ぶ →</small></a>
 </div>
 </div></details>
-<details class="unit" ><summary>数学と人間の活動</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
-
+<details class="unit"><summary>数学と人間の活動</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
 <div class="cards"><a class="card" href="high_school_euclidean_algorithm.html">ユークリッドの互除法を図で理解する<small>整数を入力し、最大公約数を図と計算で確かめる →</small></a>
 <a class="card" href="high_school_prime_sieve.html">素数とエラトステネスのふるい<small>倍数を順番に消して素数を発見する →</small></a></div>
-
 </div></details>
 </div></details>
-<details ><summary>数学B</summary><div class="inner"><h2>② 単元を選ぶ</h2>
-<details class="unit" ><summary>数列</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
+<details id="mathb"><summary>数学B</summary><div class="inner"><h2>② 単元を選ぶ</h2>
+<details class="unit"><summary>数列</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
 <div class="cards">
 <a class="card" href="sequences.html">等差数列・等比数列を動かして理解する<small>教材を開く →</small></a>
 <a class="card" href="recurrence.html">漸化式の解法14パターン<small>教材を開く →</small></a>
@@ -137,7 +155,7 @@
 <a class="card" href="high_school_mathematical_induction.html">数学的帰納法を図で理解する<small>ドミノと和の公式で証明の仕組みを学ぶ →</small></a>
 </div>
 </div></details>
-<details class="unit" ><summary>統計的な推測</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
+<details class="unit"><summary>統計的な推測</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
 <div class="cards">
 <a class="card" href="high_school_confidence_intervals.html">標本平均と信頼区間<small>標本抽出を繰り返し95%信頼区間を観察 →</small></a>
 <a class="card" href="statistical_inference.html">正規分布と統計的な推測を動かして理解する<small>教材を開く →</small></a>
@@ -145,8 +163,8 @@
 </div>
 </div></details>
 </div></details>
-<details open><summary>数学C</summary><div class="inner"><h2>② 単元を選ぶ</h2>
-<details class="unit" ><summary>平面ベクトル</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
+<details id="mathc" open=""><summary>数学C</summary><div class="inner"><h2>② 単元を選ぶ</h2>
+<details class="unit"><summary>平面ベクトル</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
 <div class="cards">
 <a class="card" href="vector_add_subtract.html">平面ベクトルの加法・減法を動かして理解する<small>矢印を動かして和・差と平行四辺形の法則を学ぶ →</small></a>
 <a class="card" href="vector_dot_product.html">平面ベクトルの内積を動かして理解する<small>なす角と内積の正・0・負を図で確かめる →</small></a>
@@ -154,7 +172,7 @@
 <a class="card" href="vector_locus_region.html">ベクトルによる点の存在範囲を動かして理解する<small>三角形・線分・平行四辺形の範囲を図で確かめる →</small></a>
 </div>
 </div></details>
-<details class="unit" ><summary>空間ベクトル</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
+<details class="unit"><summary>空間ベクトル</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
 <div class="cards">
 <a class="card" href="vector_3d_interactive.html">空間ベクトルを3次元で動かして理解する<small>指で立体を回転し、座標・加法・内積・なす角を確かめる →</small></a>
 <a class="card" href="vector_line_plane_3d.html">空間の直線と平面の方程式を動かして理解する<small>3次元で直線・平面を回転し、交点や平行の関係を確かめる →</small></a>
@@ -162,14 +180,14 @@
 <a class="card" href="sphere_plane_section_3d.html">球面の方程式と平面による切断を動かして理解する<small>球の中心・半径と切断面を変えて、断面の円を3次元で確かめる →</small></a>
 </div>
 </div></details>
-<details class="unit" open><summary>複素数平面</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
+<details class="unit" open=""><summary>複素数平面</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
 <div class="cards">
 <a class="card" href="complex_plane.html">複素数と複素平面を動かして学ぶ<small>教材を開く →</small></a>
 <a class="card" href="complex_arithmetic_interactive.html">複素数の四則演算を動かして理解する<small>複素数平面で演算と回転・拡大縮小を確かめる →</small></a>
 <a class="card" href="high_school_de_moivre.html">ド・モアブルの定理と複素数の累乗<small>回転・累乗・1のn乗根を図で学ぶ →</small></a>
 </div>
 </div></details>
-<details class="unit" ><summary>式と曲線（2次曲線）</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
+<details class="unit"><summary>式と曲線（2次曲線）</summary><div class="inner"><h2>③ 教材を選ぶ</h2>
 <div class="cards">
 <a class="card" href="parabola_interactive.html">放物線を焦点と準線から理解する<small>焦点や曲線を動かして学ぶ →</small></a>
 <a class="card" href="ellipse_interactive.html">楕円を2つの焦点から理解する<small>焦点や曲線を動かして学ぶ →</small></a>
@@ -180,11 +198,44 @@
 </div></details>
 <details class="unit"><summary>大学数学への発展</summary><div class="inner"><h2>③ 教材を選ぶ</h2><div class="cards"><a class="card" href="matrix_transformation.html">行列と一次変換を動かして理解する<small>格子と図形の変形・行列式を観察する →</small></a></div></div></details>
 </div></details>
-<details><summary>これまでの教材をまとめて見る</summary><div class="inner cards">
+<details id="archive"><summary>これまでの教材をまとめて見る</summary><div class="inner cards">
 <a class="card" href="basics.html">数学の基礎<small>教材を開く →</small></a>
 <a class="card" href="functions.html">関数のグラフ<small>教材を開く →</small></a>
 <a class="card" href="visualizations.html">図とグラフで学ぶ数学<small>教材を開く →</small></a>
 <a class="card" href="sequence_limits.html">数列の極限<small>教材を開く →</small></a>
 <a class="card" href="calculus.html">微分・積分<small>教材を開く →</small></a>
 <a class="card" href="riemann_sum.html">区分求積法<small>教材を開く →</small></a>
-</div></details></main><footer><div class="wrap">みんなの数学データベース</div></footer></body></html>
+</div></details></main><footer><div class="wrap">みんなの数学データベース</div></footer><script>
+(function(){
+  const input=document.getElementById('lessonSearch');
+  const result=document.getElementById('searchResults');
+  const status=document.getElementById('searchStatus');
+  const lessons=Array.from(document.querySelectorAll('main details a.card')).map(a=>({
+    name:a.childNodes[0] ? a.childNodes[0].textContent.trim() : a.textContent.trim(),
+    details:a.textContent.trim(),
+    href:a.getAttribute('href'),
+    subject:(a.closest('details[id]')?.querySelector(':scope > summary')?.textContent || '').trim(),
+    unit:(a.closest('details.unit')?.querySelector(':scope > summary')?.textContent || '').trim()
+  }));
+  function render(){
+    const q=input.value.normalize('NFKC').trim().toLocaleLowerCase('ja');
+    result.replaceChildren();
+    if(!q){status.textContent='教材名を入力すると、一致する教材がここに表示されます。';return;}
+    const seen=new Set();
+    const matches=lessons.filter(x=>{
+      const key=x.href+'|'+x.name;
+      const ok=(x.name+' '+x.details+' '+x.subject+' '+x.unit).normalize('NFKC').toLocaleLowerCase('ja').includes(q);
+      if(!ok||seen.has(key))return false;
+      seen.add(key);return true;
+    });
+    status.textContent=matches.length+'件の教材が見つかりました。';
+    matches.forEach(x=>{
+      const a=document.createElement('a');a.href=x.href;
+      a.textContent=x.name;
+      const small=document.createElement('small');small.textContent=[x.subject,x.unit].filter(Boolean).join(' ／ ');
+      a.appendChild(small);result.appendChild(a);
+    });
+  }
+  input.addEventListener('input',render);
+})();
+</script></body></html>
