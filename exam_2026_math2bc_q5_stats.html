@@ -1,5 +1,15 @@
 <!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>2026 数学Ⅱ・B・C 第5問 統計的な推測</title><style>
-:root{font-family:system-ui,-apple-system,sans-serif;color:#18354c;background:#f2f7fc}*{box-sizing:border-box}body{margin:0;padding:16px}main{max-width:900px;margin:auto;background:white;padding:clamp(16px,4vw,32px);border-radius:20px;box-shadow:0 5px 20px #b8d1e455}h1{font-size:clamp(23px,4vw,32px);color:#125b9d}h2{color:#135c97;margin-top:34px}h3{margin-bottom:8px}p{line-height:1.8}nav{display:flex;gap:15px;flex-wrap:wrap}a{color:#1266a7}.note{background:#fff5da;padding:13px;border-radius:10px}.panel{background:#f7faff;border:1px solid #d9e6f2;border-radius:14px;padding:16px;margin:14px 0}.controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:8px 20px}label{display:block;line-height:1.7;font-weight:600}input[type=range]{width:100%;accent-color:#1475b8;touch-action:pan-y}input[type=number]{width:95px;padding:8px;font-size:16px;border:1px solid #a9bfd3;border-radius:8px}button{background:#1269ac;color:white;border:0;border-radius:9px;padding:11px 16px;font-size:16px;cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid orange}svg{width:100%;height:auto;border:1px solid #d7e4ef;border-radius:12px;background:white}output,.result{font-weight:700;color:#145b96}.result{font-size:1.08rem}details{border:1px solid #d9e6f2;border-radius:10px;padding:12px;margin:12px 0}summary{font-weight:700;cursor:pointer}small{color:#536779}.step{background:#edf4fd;border-radius:9px;padding:12px;min-height:65px}.buttons{display:flex;gap:10px;flex-wrap:wrap}.math{overflow-wrap:anywhere}ul{line-height:1.9}</style></head><body><main>
+:root{font-family:system-ui,-apple-system,sans-serif;color:#18354c;background:#f2f7fc}*{box-sizing:border-box}body{margin:0;padding:16px}main{max-width:900px;margin:auto;background:white;padding:clamp(16px,4vw,32px);border-radius:20px;box-shadow:0 5px 20px #b8d1e455}h1{font-size:clamp(23px,4vw,32px);color:#125b9d}h2{color:#135c97;margin-top:34px}h3{margin-bottom:8px}p{line-height:1.8}nav{display:flex;gap:15px;flex-wrap:wrap}a{color:#1266a7}.note{background:#fff5da;padding:13px;border-radius:10px}.panel{background:#f7faff;border:1px solid #d9e6f2;border-radius:14px;padding:16px;margin:14px 0}.controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:8px 20px}label{display:block;line-height:1.7;font-weight:600}input[type=range]{width:100%;accent-color:#1475b8;touch-action:pan-y}input[type=number]{width:95px;padding:8px;font-size:16px;border:1px solid #a9bfd3;border-radius:8px}button{background:#1269ac;color:white;border:0;border-radius:9px;padding:11px 16px;font-size:16px;cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid orange}svg{width:100%;height:auto;border:1px solid #d7e4ef;border-radius:12px;background:white}output,.result{font-weight:700;color:#145b96}.result{font-size:1.08rem}details{border:1px solid #d9e6f2;border-radius:10px;padding:12px;margin:12px 0}summary{font-weight:700;cursor:pointer}small{color:#536779}.step{background:#edf4fd;border-radius:9px;padding:12px;min-height:65px}.buttons{display:flex;gap:10px;flex-wrap:wrap}.math{overflow-wrap:anywhere}ul{line-height:1.9}
+/* 教科書風の分数・解説 */
+.lesson{background:#fff;border:1px solid #d9e6f2;border-radius:15px;padding:18px;margin:20px 0}
+.lesson h3{color:#135c97;margin-top:12px}.solved{border-left:4px solid #227ab8;background:#f2f8ff;padding:14px;border-radius:8px;margin:12px 0}
+.formula{overflow-x:auto;padding:12px;background:#f0f6fd;border-radius:10px;text-align:center;font-size:1.12rem;line-height:2.4;white-space:nowrap}
+.frac{display:inline-flex;vertical-align:middle;flex-direction:column;text-align:center;line-height:1.25;margin:0 .15em;font-size:.96em;white-space:nowrap}
+.frac>.num{display:block;border-bottom:1.4px solid currentColor;padding:0 .22em .13em}.frac>.den{display:block;padding:.13em .22em 0}
+.mathline{margin:10px 0;overflow-x:auto}.lesson details{background:#fff}.tag{display:inline-block;color:#135c97;background:#e5f2fd;padding:3px 9px;border-radius:999px;font-size:.88rem;font-weight:700}
+.answer{font-weight:750;color:#145b96}.subtle{color:#536779;font-size:.94rem}
+@media(max-width:600px){.lesson{padding:13px}.formula{font-size:1.01rem}}
+</style></head><body><main>
 <nav><a href="math2bc_2026_index.html">← 数学Ⅱ・B・C目次</a><a href="entrance_exams.html">入試目次（既存サイト）</a></nav>
 <h1>2026年度 共通テスト 数学Ⅱ・B・C</h1><h2>第5問：統計的な推測</h2><p>正規分布・標本平均・信頼区間・母比率の検定を、数値とグラフを動かして学びます。</p>
 <p class="note"><strong>教材の位置づけ：</strong>2026年度本試験の出題分野に対応した操作型の概念学習教材です。公式問題の設問・空欄・正解を完全に再現した解答教材ではありません。下の数値例は学習用の例です。</p>
@@ -13,7 +23,66 @@
 <section class="panel"><div class="controls"><label>仮説の母比率 p₀：<input id="p0" type="number" value="0.5" min="0.01" max="0.99" step="0.05"></label><label>標本の大きさ n：<input id="testN" type="number" value="100" min="1" step="1"></label><label>該当する個数 x：<input id="success" type="number" value="60" min="0" step="1"></label></div><p id="testResult" class="result" aria-live="polite"></p><svg id="testGraph" viewBox="0 0 680 250" role="img" aria-label="標準正規分布の両側棄却域と検定統計量"></svg><p><small>有意水準5％、両側検定。正規近似は np₀ と n(1−p₀) が十分大きいときに利用します。検定結果は帰無仮説が真である確率を示すものではありません。</small></p></section>
 <h2>5. 解法の着眼点を順番に学ぶ</h2><div class="panel"><p id="stepText" class="step" aria-live="polite"></p><div class="buttons"><button id="prev">前の説明</button><button id="next">次の説明</button></div><p id="stepCount"></p></div>
 <h2>6. 練習問題</h2><details><summary>練習①：σ=8、n=64 の標準誤差は？</summary><p>σ/√n = 8/8 = <strong>1</strong> です。</p></details><details><summary>練習②：x̄=40、σ=10、n=100 の95％信頼区間は？</summary><p>40 ± 1.96×10/10 = 40 ± 1.96。したがって <strong>[38.04, 41.96]</strong> です。</p></details><details><summary>練習③：p₀=0.5、n=100、x=60 の両側5％検定では？</summary><p>p̂=0.6、標準誤差=0.05、z=2。|z|&gt;1.96 なので <strong>帰無仮説を棄却</strong>します（正規近似）。</p></details>
-<p><a href="https://www.dnc.ac.jp/kyotsu/kakomondai/index.html" target="_blank" rel="noopener">大学入試センター：公式問題・正解</a></p><small>iPad・PC対応／外部ライブラリ不要／改良版 2026-11-08</small></main>
+
+<section class="lesson" id="worked-examples">
+  <span class="tag">解答・詳しい解説</span>
+  <h2>7. 例題を解きながら理解する</h2>
+  <p>以下は、この教材の学習用に作成した例題です。2026年度共通テスト本試験の設問・正答ではありません。</p>
+  <h3>例題① 正規分布と標準化</h3>
+  <p><strong>問題：</strong>確率変数 X が平均50、標準偏差10の正規分布に従うとき、40以上60以下となる確率を求めましょう。</p>
+  <div class="solved"><strong>解答</strong><p>平均からのずれを標準偏差で割って標準化します。</p>
+    <div class="formula">Z = <span class="frac"><span class="num">X − 50</span><span class="den">10</span></span></div>
+    <p>下端40は Z = −1、上端60は Z = 1 に対応します。したがって、</p>
+    <div class="formula">P(40 ≦ X ≦ 60) = P(−1 ≦ Z ≦ 1) ≈ 0.6827</div>
+    <p class="answer">答え：約68.27％</p>
+  </div>
+  <p class="subtle">ポイント：平均 ±1σ の範囲の確率は約68.27％、±2σ は約95.45％です。「95％信頼区間」の1.96とは意味が異なるので区別しましょう。</p>
+  <h3>例題② 標本平均の標準誤差</h3>
+  <p><strong>問題：</strong>母標準偏差 σ = 12、標本の大きさ n = 36 のとき、標本平均の標準偏差を求めましょう。</p>
+  <div class="solved"><strong>解答</strong>
+    <div class="formula">標準誤差 = <span class="frac"><span class="num">σ</span><span class="den">√n</span></span> = <span class="frac"><span class="num">12</span><span class="den">√36</span></span> = <span class="frac"><span class="num">12</span><span class="den">6</span></span> = 2</div>
+    <p class="answer">答え：2</p>
+    <p>標本の大きさを4倍にすると、標準誤差は半分になります。これは分母に √n があるからです。</p>
+  </div>
+  <h3>例題③ 母平均の95％信頼区間</h3>
+  <p><strong>問題：</strong>標本平均が50、既知の母標準偏差が12、標本の大きさが36とします。正規モデルのもとで母平均の95％信頼区間を求めましょう。</p>
+  <div class="solved"><strong>解答</strong>
+    <p>まず標準誤差を求めます。</p>
+    <div class="formula"><span class="frac"><span class="num">12</span><span class="den">√36</span></span> = 2</div>
+    <p>続いて、標準正規分布の95％に対応する値1.96を利用します。</p>
+    <div class="formula">50 ± 1.96 × 2 = 50 ± 3.92</div>
+    <p class="answer">答え：46.08 以上 53.92 以下</p>
+  </div>
+  <p class="subtle">95％とは、同じ方法で標本抽出と区間構成を繰り返したとき、約95％の区間が真の母平均を含むという意味です。</p>
+  <h3>例題④ 母比率の仮説検定</h3>
+  <p><strong>問題：</strong>母比率が0.5であるという帰無仮説のもと、100人中60人が該当しました。有意水準5％の両側検定を行いましょう。</p>
+  <div class="solved"><strong>解答</strong>
+    <p>標本比率は 60 ÷ 100 = 0.6 です。帰無仮説の比率 p₀ = 0.5 を使って計算します。</p>
+    <div class="formula">z = <span class="frac"><span class="num">0.6 − 0.5</span><span class="den">√(0.5 × 0.5 ÷ 100)</span></span> = <span class="frac"><span class="num">0.1</span><span class="den">0.05</span></span> = 2</div>
+    <p>両側5％の臨界値は ±1.96。今回は 2 ＞ 1.96 です。</p>
+    <p class="answer">答え：帰無仮説を棄却する（正規近似による判定）。</p>
+    <p>両側p値は約0.0455です。なお、「帰無仮説が誤りである確率が95％」という意味ではありません。</p>
+  </div>
+</section>
+<section class="lesson" id="proofs">
+  <span class="tag">公式の根拠</span>
+  <h2>8. なぜ標準誤差は σ/√n なのか</h2>
+  <p>互いに独立で、いずれも分散が σ² の確率変数 X₁, …, Xₙ を考えます。標本平均を次のように定めます。</p>
+  <div class="formula">X̄ = <span class="frac"><span class="num">X₁ + X₂ + … + Xₙ</span><span class="den">n</span></span></div>
+  <p>独立な確率変数の和の分散は、各分散の和になるため、</p>
+  <div class="formula">V(X̄) = <span class="frac"><span class="num">nσ²</span><span class="den">n²</span></span> = <span class="frac"><span class="num">σ²</span><span class="den">n</span></span></div>
+  <p>標準偏差は分散の正の平方根なので、</p>
+  <div class="formula">SD(X̄) = <span class="frac"><span class="num">σ</span><span class="den">√n</span></span></div>
+  <p>これが、標本平均の<strong>標準誤差</strong>です。独立性などの仮定が重要です。</p>
+  <details><summary>発展：標準化と95％信頼区間の関係</summary><p>標本平均が正規分布に従い、母標準偏差 σ が既知なら、標準化した量 (X̄−μ)/(σ/√n) は標準正規分布に従います。この量が −1.96 から 1.96 に入る確率が約95％であることを変形すると、母平均 μ の信頼区間が得られます。</p></details>
+</section>
+<section class="lesson" id="practice-more">
+  <span class="tag">理解度チェック</span><h2>9. 追加の練習問題</h2>
+  <details><summary>問題① 母標準偏差15、標本の大きさ100。標準誤差は？</summary><p class="answer">答え：1.5</p><p>15 ÷ √100 = 15 ÷ 10 = 1.5。</p></details>
+  <details><summary>問題② 標本平均80、母標準偏差20、標本数100。95％信頼区間は？</summary><p class="answer">答え：76.08 以上 83.92 以下</p><p>標準誤差は20 ÷ 10 = 2。誤差幅は1.96×2 = 3.92。80 ± 3.92 を計算します。</p></details>
+  <details><summary>問題③ 有意水準5％の両側検定で z = 1.5。棄却する？</summary><p class="answer">答え：棄却できない</p><p>|1.5| は1.96より小さいため、5％水準では帰無仮説を棄却できません。「帰無仮説が正しいと証明された」という意味ではありません。</p></details>
+</section>
+<p><a href="https://www.dnc.ac.jp/kyotsu/kakomondai/index.html" target="_blank" rel="noopener">大学入試センター：公式問題・正解</a></p><small>iPad・PC対応／外部ライブラリ不要／解答・証明追加版 2026-11-08</small></main>
 <script>
 (()=>{'use strict';const $=id=>document.getElementById(id),ns='http://www.w3.org/2000/svg';function el(svg,tag,attrs){const e=document.createElementNS(ns,tag);Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,v));svg.appendChild(e);return e}function clear(svg){svg.replaceChildren()}function line(s,x1,y1,x2,y2,color='#b7cad9',w=1){el(s,'line',{x1,y1,x2,y2,stroke:color,'stroke-width':w})}function txt(s,x,y,t,size=14){const e=el(s,'text',{x,y,fill:'#36536b','font-size':size,'text-anchor':'middle'});e.textContent=t}function phi(z){const sign=z<0?-1:1,x=Math.abs(z)/Math.sqrt(2),t=1/(1+.3275911*x);const erf=1-(((((1.061405429*t-1.453152027)*t)+1.421413741)*t-.284496736)*t+.254829592)*t*Math.exp(-x*x);return .5*(1+sign*erf)}const pdf=z=>Math.exp(-z*z/2)/Math.sqrt(2*Math.PI);const fmt=x=>Number(x).toFixed(2);function axes(s,w,h,y){line(s,35,y,w-20,y,'#738da3',2)}
 function normal(){let m=+$('mu').value,sd=+$('sd').value,k=+$('k').value;$('muVal').textContent=m;$('sdVal').textContent=sd;$('kVal').textContent=k;const s=$('normal');clear(s);let lo=-13,hi=13,x=v=>35+(v-lo)/(hi-lo)*620,y=v=>252-v*195;axes(s,680,300,252);let pts=[],fill=[];for(let i=0;i<=520;i++){let v=lo+(hi-lo)*i/520,d=pdf((v-m)/sd)/sd;pts.push(x(v)+','+y(d));if(v>=m-k*sd&&v<=m+k*sd)fill.push([x(v),y(d)])}if(fill.length){let d='M'+x(m-k*sd)+' 252 L'+fill.map(p=>p.join(' ')).join(' L')+' L'+x(m+k*sd)+' 252 Z';el(s,'path',{d,fill:'#b7e0f6'})}el(s,'polyline',{points:pts.join(' '),fill:'none',stroke:'#1379be','stroke-width':3});line(s,x(m),52,x(m),252,'#ed8936',2);txt(s,x(m),275,'μ='+m);$('normalResult').textContent='P(μ−'+k+'σ ≤ X ≤ μ+'+k+'σ) ≈ '+fmt((2*phi(k)-1)*100)+'％'}
