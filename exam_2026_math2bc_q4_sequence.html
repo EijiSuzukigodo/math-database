@@ -1,5 +1,112 @@
 <!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>2026 共通テスト 数学Ⅱ・B・C 第4問 数列｜操作型改良教材</title><style>
 :root{font-family:-apple-system,BlinkMacSystemFont,'Hiragino Kaku Gothic ProN',Meiryo,sans-serif;color:#17324d;background:#f3f7fd}*{box-sizing:border-box}body{margin:0;line-height:1.75}header{background:#17365d;color:white;padding:20px 16px}header>div,main{max-width:950px;margin:auto}header a{color:#eaf5ff}h1{font-size:clamp(22px,4vw,30px);line-height:1.4}main{padding:12px}section{background:#fff;border:1px solid #d9e5f1;border-radius:15px;padding:18px;margin:15px 0}h2{color:#17365d;font-size:21px}h3{font-size:17px;color:#1e608e}a{color:#11689d}.note{background:#fff6dc;border-left:4px solid #d9a431;padding:12px;border-radius:7px}.muted{color:#566a7b;font-size:14px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}.control{background:#f0f6fc;padding:12px;border-radius:12px}label{font-weight:bold;display:block}input[type=range]{width:100%;accent-color:#1976bd;min-height:30px}button{background:#176ea8;color:white;border:0;border-radius:9px;padding:11px 15px;font-size:15px;cursor:pointer;margin:4px 4px 4px 0}button:focus-visible,input:focus-visible{outline:3px solid #e9a72b}button.secondary{background:#536b85}.math{background:#eaf3fc;padding:12px;border-radius:10px;font-weight:600;overflow-wrap:anywhere}svg{display:block;width:100%;height:auto;border:1px solid #dce5ef;border-radius:10px;background:#fff}.scroll{overflow-x:auto}table{border-collapse:collapse;width:100%;min-width:510px}th,td{border:1px solid #dce5ef;text-align:center;padding:8px}th{background:#eaf2fb}details{border:1px solid #d9e5f1;border-radius:10px;padding:12px;margin:10px 0}summary{cursor:pointer;font-weight:700}output{font-variant-numeric:tabular-nums}nav a{margin-right:12px}#stepbox{min-height:100px} .legend{display:flex;gap:16px;flex-wrap:wrap;font-size:14px}.dot{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:5px} @media(max-width:600px){section{padding:13px}main{padding:8px}}
-</style></head><body><header><div><a href="entrance_exams.html#common2026">← 2026年度 共通テスト一覧へ</a><h1>数学Ⅱ・B・C 第4問：数列</h1><div>階差数列・部分和・漸化式を動かして理解する</div></div></header><main><nav><a href="math2bc_2026_index.html">数学Ⅱ・B・C目次</a><a href="entrance_exams.html">入試目次</a></nav><section><p class="note"><strong>教材の位置づけ：</strong>2026年度共通テストの「数列」の学習に役立つ、独自の概念・解法研究教材です。以下の例題は学習用に作成したもので、2026年度本試験の設問・解答を再現したものではありません。実際の設問・正解は<a href="https://www.dnc.ac.jp/kyotsu/kako_shiken_jouhou/r8/index.html" target="_blank" rel="noopener">大学入試センターの公式資料</a>と照合してください。</p><h2>1. 等差数列を操作する</h2><p>初項 <strong>a₁</strong> と公差 <strong>d</strong> を動かし、各項・階差・部分和がどう変化するか比べましょう。</p><div class="grid"><div class="control"><label for="first">初項 a₁：<output id="firstVal">2</output></label><input id="first" type="range" min="-5" max="8" step="0.5" value="2"></div><div class="control"><label for="diff">公差 d：<output id="diffVal">1</output></label><input id="diff" type="range" min="-3" max="3" step="0.5" value="1"></div><div class="control"><label for="count">表示する項数 n：<output id="countVal">8</output></label><input id="count" type="range" min="3" max="12" step="1" value="8"></div></div><button type="button" id="reset" class="secondary">初期値に戻す</button><div class="math" id="formula" aria-live="polite"></div><div class="scroll"><table><thead><tr id="thead"></tr></thead><tbody><tr id="terms"></tr><tr id="diffs"></tr><tr id="sums"></tr></tbody></table></div></section><section><h2>2. グラフで比べる</h2><p class="muted">横軸は項番号。縦軸はそれぞれの数値です。部分和が負になる場合も表示します。</p><h3>各項 aₙ</h3><svg id="termGraph" viewBox="0 0 680 250" role="img" aria-label="等差数列の各項の棒グラフ"></svg><h3>階差 aₙ₊₁ − aₙ</h3><svg id="diffGraph" viewBox="0 0 680 250" role="img" aria-label="階差数列の棒グラフ"></svg><h3>部分和 Sₙ</h3><svg id="sumGraph" viewBox="0 0 680 250" role="img" aria-label="部分和の棒グラフ"></svg><div class="legend"><span><i class="dot" style="background:#2678b7"></i>正の値</span><span><i class="dot" style="background:#df8b4b"></i>負の値</span></div></section><section><h2>3. 解法の着眼点を順番に学ぶ</h2><p>「隣り合う項の差が一定」という特徴を見つけることが、一般項や和を求める第一歩です。</p><div id="stepbox" class="math" aria-live="polite"></div><button id="prev" type="button" class="secondary">前の説明</button><button id="next" type="button">次の説明</button><p id="stepCount" class="muted"></p></section><section><h2>4. 漸化式から考える</h2><p>等差数列は <strong>aₙ₊₁ = aₙ + d</strong> と表せます。現在のスライダーの値で、隣り合う項の関係を確かめましょう。</p><div class="math" id="recurrence" aria-live="polite"></div><details><summary>なぜ部分和の公式が成り立つのか</summary><p>同じ和を順向きと逆向きに書くと、対応する2項の和は常に <strong>2a₁+(n−1)d</strong> になります。n組あるため、2Sₙ=n[2a₁+(n−1)d]。よって Sₙ=n[2a₁+(n−1)d]/2 です。</p></details><details><summary>練習問題（学習用）</summary><p>初項3、公差2の等差数列について、第10項と初項から第10項までの和を求めましょう。</p><details><summary>解答・解説を見る</summary><p>a₁₀=3+9×2=21。S₁₀=10(3+21)/2=120。まず一般項を求め、そのあと和の公式に代入します。</p></details></details></section><section><h2>5. 入試問題を研究するときのポイント</h2><p>与えられた数列が等差数列とは限りません。まず階差を調べ、一定でない場合は階差の規則性、部分和との関係、漸化式の変形などを検討します。公式問題の条件を確認してから、適切な方法を選びましょう。</p><p class="muted">iPad・PC対応／外部ライブラリ不要／2026-11-08 改良版</p></section></main><script>
+
+.frac{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;line-height:1.15;margin:0 .12em;font-weight:600}
+.frac .num{border-bottom:1.4px solid currentColor;padding:0 .18em .08em}
+.frac .den{padding:.08em .18em 0}
+.mathline{font-size:1.08rem;line-height:2.1;background:#eaf3fc;padding:12px;border-radius:10px;overflow-x:auto}
+.answer{background:#f2f8f2;border-left:4px solid #43865a;padding:12px;border-radius:8px}
+</style></head><body><header><div><a href="entrance_exams.html#common2026">← 2026年度 共通テスト一覧へ</a><h1>数学Ⅱ・B・C 第4問：数列</h1><div>階差数列・部分和・漸化式を動かして理解する</div></div></header><main><nav><a href="math2bc_2026_index.html">数学Ⅱ・B・C目次</a><a href="entrance_exams.html">入試目次</a></nav><section><p class="note"><strong>教材の位置づけ：</strong>2026年度共通テストの「数列」の学習に役立つ、独自の概念・解法研究教材です。以下の例題は学習用に作成したもので、2026年度本試験の設問・解答を再現したものではありません。実際の設問・正解は<a href="https://www.dnc.ac.jp/kyotsu/kako_shiken_jouhou/r8/index.html" target="_blank" rel="noopener">大学入試センターの公式資料</a>と照合してください。</p><h2>1. 等差数列を操作する</h2><p>初項 <strong>a₁</strong> と公差 <strong>d</strong> を動かし、各項・階差・部分和がどう変化するか比べましょう。</p><div class="grid"><div class="control"><label for="first">初項 a₁：<output id="firstVal">2</output></label><input id="first" type="range" min="-5" max="8" step="0.5" value="2"></div><div class="control"><label for="diff">公差 d：<output id="diffVal">1</output></label><input id="diff" type="range" min="-3" max="3" step="0.5" value="1"></div><div class="control"><label for="count">表示する項数 n：<output id="countVal">8</output></label><input id="count" type="range" min="3" max="12" step="1" value="8"></div></div><button type="button" id="reset" class="secondary">初期値に戻す</button><div class="math" id="formula" aria-live="polite"></div><div class="scroll"><table><thead><tr id="thead"></tr></thead><tbody><tr id="terms"></tr><tr id="diffs"></tr><tr id="sums"></tr></tbody></table></div></section><section><h2>2. グラフで比べる</h2><p class="muted">横軸は項番号。縦軸はそれぞれの数値です。部分和が負になる場合も表示します。</p><h3>各項 aₙ</h3><svg id="termGraph" viewBox="0 0 680 250" role="img" aria-label="等差数列の各項の棒グラフ"></svg><h3>階差 aₙ₊₁ − aₙ</h3><svg id="diffGraph" viewBox="0 0 680 250" role="img" aria-label="階差数列の棒グラフ"></svg><h3>部分和 Sₙ</h3><svg id="sumGraph" viewBox="0 0 680 250" role="img" aria-label="部分和の棒グラフ"></svg><div class="legend"><span><i class="dot" style="background:#2678b7"></i>正の値</span><span><i class="dot" style="background:#df8b4b"></i>負の値</span></div></section><section><h2>3. 解法の着眼点を順番に学ぶ</h2><p>「隣り合う項の差が一定」という特徴を見つけることが、一般項や和を求める第一歩です。</p><div id="stepbox" class="math" aria-live="polite"></div><button id="prev" type="button" class="secondary">前の説明</button><button id="next" type="button">次の説明</button><p id="stepCount" class="muted"></p></section><section><h2>4. 漸化式から考える</h2><p>等差数列は <strong>aₙ₊₁ = aₙ + d</strong> と表せます。現在のスライダーの値で、隣り合う項の関係を確かめましょう。</p><div class="math" id="recurrence" aria-live="polite"></div><details><summary>なぜ部分和の公式が成り立つのか</summary><p>同じ和を順向きと逆向きに書くと、対応する2項の和は常に <strong>2a₁+(n−1)d</strong> になります。n組あるため、2Sₙ=n[2a₁+(n−1)d]。よって Sₙ=n[2a₁+(n−1)d]/2 です。</p></details><details><summary>練習問題（学習用）</summary><p>初項3、公差2の等差数列について、第10項と初項から第10項までの和を求めましょう。</p><details><summary>解答・解説を見る</summary><p>a₁₀=3+9×2=21。S₁₀=10(3+21)/2=120。まず一般項を求め、そのあと和の公式に代入します。</p></details></details></section><section><h2>5. 入試問題を研究するときのポイント</h2><p>与えられた数列が等差数列とは限りません。まず階差を調べ、一定でない場合は階差の規則性、部分和との関係、漸化式の変形などを検討します。公式問題の条件を確認してから、適切な方法を選びましょう。</p><p class="muted">iPad・PC対応／外部ライブラリ不要／2026-11-08 改良版</p></section>
+<section>
+<h2>6. 等比数列を理解する</h2>
+<p>等比数列は、隣り合う項の比が一定の数列です。その一定の比を<strong>公比 r</strong>といいます。</p>
+<div class="mathline">一般項：
+a<sub>n</sub> = a<sub>1</sub> × r<sup>n−1</sup>
+</div>
+<h3>例題1：一般項を求める</h3>
+<p>初項が 3、公比が 2 の等比数列について、第5項を求めます。</p>
+<details open><summary>解答・詳しい解説を見る</summary>
+<p>第5項は、初項に公比を4回掛けたものです。</p>
+<div class="mathline">a<sub>5</sub> = 3 × 2<sup>5−1</sup> = 3 × 16 = 48</div>
+<p class="answer"><strong>答え：48</strong></p>
+</details>
+<h3>等比数列の和</h3>
+<p>公比 r が 1 でないとき、初項から第 n 項までの和は次の式で求められます。</p>
+<div class="mathline">
+S<sub>n</sub> =
+<span class="frac"><span class="num">a<sub>1</sub>(1−r<sup>n</sup>)</span><span class="den">1−r</span></span>
+</div>
+<p>例：初項 3、公比 2 の等比数列の最初の5項の和は、3+6+12+24+48=93 です。</p>
+</section>
+
+<section>
+<h2>7. 階差数列から一般項を考える</h2>
+<p>数列 a<sub>1</sub>, a<sub>2</sub>, … に対して、隣り合う項の差 b<sub>n</sub>=a<sub>n+1</sub>−a<sub>n</sub> を階差数列といいます。</p>
+<h3>例題2：階差数列を使う</h3>
+<p>a<sub>1</sub>=1、階差数列が b<sub>n</sub>=2n+1 であるとき、a<sub>n</sub> を求めます。</p>
+<details open><summary>解答・詳しい解説を見る</summary>
+<p>隣り合う項の差を順に足すと、</p>
+<div class="mathline">
+a<sub>n</sub> = a<sub>1</sub> + b<sub>1</sub> + b<sub>2</sub> + ⋯ + b<sub>n−1</sub>
+</div>
+<p>したがって、</p>
+<div class="mathline">
+a<sub>n</sub> = 1 + (3+5+⋯+(2n−1)) = 1+(n−1)n+(n−1) = n<sup>2</sup>
+</div>
+<p class="answer"><strong>答え：</strong> a<sub>n</sub>=n<sup>2</sup></p>
+<p>※階差の和を計算すると、1+3+5+⋯+(2n−1)=n<sup>2</sup> になります。</p>
+</details>
+</section>
+
+<section>
+<h2>8. 漸化式の解き方</h2>
+<p>漸化式は、ある項とその前の項との関係を表す式です。初項と漸化式が分かると、数列を順に決められます。</p>
+<h3>例題3：a<sub>n+1</sub>=2a<sub>n</sub>+1、a<sub>1</sub>=1</h3>
+<details open><summary>解答・詳しい解説を見る</summary>
+<p>そのままでは定数項 +1 があるので、両辺に注目して 1 を足した数列を考えます。</p>
+<p>b<sub>n</sub>=a<sub>n</sub>+1 とおくと、</p>
+<div class="mathline">
+b<sub>n+1</sub>=a<sub>n+1</sub>+1=2a<sub>n</sub>+2=2b<sub>n</sub>
+</div>
+<p>また b<sub>1</sub>=a<sub>1</sub>+1=2 です。よって b<sub>n</sub> は初項2、公比2の等比数列です。</p>
+<div class="mathline">
+b<sub>n</sub>=2×2<sup>n−1</sup>=2<sup>n</sup>
+</div>
+<p>したがって a<sub>n</sub>=b<sub>n</sub>−1 なので、</p>
+<p class="answer"><strong>答え：</strong> a<sub>n</sub>=2<sup>n</sup>−1</p>
+</details>
+</section>
+
+<section>
+<h2>9. 数学的帰納法で公式を証明する</h2>
+<p>数学的帰納法は、自然数 n について成り立つ命題を証明する方法です。</p>
+<h3>例題4：1+2+⋯+n = n(n+1)/2 の証明</h3>
+<details open><summary>証明を順番に見る</summary>
+<p><strong>① n=1 のとき</strong></p>
+<p>左辺は 1、右辺も 1×2÷2=1 なので成り立ちます。</p>
+<p><strong>② n=k で成り立つと仮定する</strong></p>
+<div class="mathline">
+1+2+⋯+k = <span class="frac"><span class="num">k(k+1)</span><span class="den">2</span></span>
+</div>
+<p><strong>③ n=k+1 でも成り立つことを示す</strong></p>
+<div class="mathline">
+1+2+⋯+k+(k+1)<br>
+= <span class="frac"><span class="num">k(k+1)</span><span class="den">2</span></span> +(k+1)<br>
+= <span class="frac"><span class="num">(k+1)(k+2)</span><span class="den">2</span></span>
+</div>
+<p>これは n=k+1 のときの公式です。</p>
+<p class="answer"><strong>結論：</strong> n=1 で成り立ち、n=k で成り立つと n=k+1 でも成り立つので、すべての自然数 n で公式が成り立ちます。</p>
+</details>
+</section>
+
+<section>
+<h2>10. 練習問題（学習用）</h2>
+<details><summary>問題1：等差数列</summary>
+<p>初項 5、公差 3 の等差数列の第12項を求めましょう。</p>
+<details><summary>解答を見る</summary>
+<p>a<sub>12</sub>=5+(12−1)×3=5+33=38</p><p class="answer"><strong>答え：38</strong></p>
+</details></details>
+<details><summary>問題2：等比数列</summary>
+<p>初項 2、公比 3 の等比数列の第4項を求めましょう。</p>
+<details><summary>解答を見る</summary>
+<p>a<sub>4</sub>=2×3<sup>3</sup>=54</p><p class="answer"><strong>答え：54</strong></p>
+</details></details>
+<details><summary>問題3：漸化式</summary>
+<p>a<sub>1</sub>=4、a<sub>n+1</sub>=a<sub>n</sub>+3 のとき、a<sub>6</sub> を求めましょう。</p>
+<details><summary>解答を見る</summary>
+<p>a<sub>6</sub>=4+5×3=19</p><p class="answer"><strong>答え：19</strong></p>
+</details></details>
+</section>
+</main><script>
 (()=>{'use strict';const $=id=>document.getElementById(id),first=$('first'),diff=$('diff'),count=$('count');let step=0;const fmt=x=>Number.isInteger(x)?String(x):Number(x.toFixed(3)).toString();const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');function plot(id,data){const svg=$(id),W=680,H=250,L=54,R=15,T=20,B=38;const lo=Math.min(0,...data),hi=Math.max(0,...data),span=Math.max(1,hi-lo),y=v=>T+(hi-v)/span*(H-T-B),base=y(0),slot=(W-L-R)/data.length,bw=Math.min(30,slot*.58);let out=`<rect width="680" height="250" fill="white"/><line x1="${L}" y1="${base}" x2="${W-R}" y2="${base}" stroke="#51657a" stroke-width="1.5"/>`;for(let k=0;k<=4;k++){let v=lo+span*k/4,yy=y(v);out+=`<line x1="${L}" y1="${yy}" x2="${W-R}" y2="${yy}" stroke="#e6edf4"/><text x="${L-7}" y="${yy+4}" text-anchor="end" font-size="12" fill="#50677d">${fmt(v)}</text>`;}data.forEach((v,i)=>{const x=L+slot*(i+.5),yy=y(v),h=Math.max(1,Math.abs(base-yy));out+=`<rect x="${x-bw/2}" y="${Math.min(base,yy)}" width="${bw}" height="${h}" rx="3" fill="${v<0?'#df8b4b':'#2678b7'}"/><text x="${x}" y="${H-14}" text-anchor="middle" font-size="13" fill="#42566d">${i+1}</text>`;});svg.innerHTML=out;}function draw(){const a=+first.value,d=+diff.value,n=+count.value,terms=Array.from({length:n},(_,i)=>a+i*d),sums=terms.map((_,i)=>(i+1)*(2*a+i*d)/2),ds=terms.map((_,i)=>i===0?null:d);$('firstVal').textContent=fmt(a);$('diffVal').textContent=fmt(d);$('countVal').textContent=n;$('formula').textContent=`一般項 aₙ = ${fmt(a)} + (n−1)×(${fmt(d)}) ／ 第${n}項 = ${fmt(terms[n-1])} ／ 第${n}項までの和 = ${fmt(sums[n-1])}`;$('thead').innerHTML='<th>項番号</th>'+terms.map((_,i)=>`<th>${i+1}</th>`).join('');$('terms').innerHTML='<th>各項 aₙ</th>'+terms.map(v=>`<td>${esc(fmt(v))}</td>`).join('');$('diffs').innerHTML='<th>階差</th>'+ds.map(v=>`<td>${v===null?'—':esc(fmt(v))}</td>`).join('');$('sums').innerHTML='<th>部分和 Sₙ</th>'+sums.map(v=>`<td>${esc(fmt(v))}</td>`).join('');plot('termGraph',terms);plot('diffGraph',ds.slice(1));plot('sumGraph',sums);$('recurrence').textContent=`a₁=${fmt(a)}、a₂=a₁+(${fmt(d)})=${fmt(a+d)}、a₃=a₂+(${fmt(d)})=${fmt(a+2*d)}。一般に aₙ₊₁=aₙ+(${fmt(d)})`;showStep();}function showStep(){const a=+first.value,d=+diff.value,n=+count.value,items=[`① 隣り合う項を引き算：a₂−a₁=${fmt(d)}、a₃−a₂=${fmt(d)}。差が一定なので等差数列です。`,`② 第n項までに公差を足す回数は n−1 回。したがって aₙ=a₁+(n−1)d。`,`③ 第${n}項は ${fmt(a)}+(${n}−1)×(${fmt(d)})=${fmt(a+(n-1)*d)}。`,`④ 和は Sₙ=n(a₁+aₙ)/2。第${n}項までなら ${n}×(${fmt(a)}+${fmt(a+(n-1)*d)})/2=${fmt(n*(2*a+(n-1)*d)/2)}。`];$('stepbox').textContent=items[step];$('stepCount').textContent=`${step+1} / ${items.length}`;$('prev').disabled=step===0;$('next').disabled=step===items.length-1;}[first,diff,count].forEach(el=>el.addEventListener('input',draw));$('prev').addEventListener('click',()=>{step=Math.max(0,step-1);showStep();});$('next').addEventListener('click',()=>{step=Math.min(3,step+1);showStep();});$('reset').addEventListener('click',()=>{first.value=2;diff.value=1;count.value=8;step=0;draw();});draw();})();
 </script></body></html>
