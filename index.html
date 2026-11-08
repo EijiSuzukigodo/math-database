@@ -156,6 +156,16 @@
 .exam-link strong{display:block;font-size:20px;color:var(--navy)}
 .exam-link span{display:block;color:var(--muted);font-size:14px;margin-top:5px}
 @media(max-width:560px){.exam-grid{grid-template-columns:1fr}.exam-section{padding:18px}}
+</style><style>
+.exam-quick{margin:0 0 26px;padding:26px;border-radius:18px;background:#fff;border:1px solid #d7e5f5;box-shadow:var(--shadow)}
+.exam-quick .exam-quick-intro{color:var(--muted);margin:8px 0 18px}
+.exam-quick-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.exam-quick-card{display:flex;flex-direction:column;gap:8px;padding:22px;border:1px solid #cddff1;border-radius:14px;background:#f5f9ff;text-decoration:none}
+.exam-quick-card:hover,.exam-quick-card:focus-visible{border-color:#2764a5;outline-offset:3px}
+.exam-quick-card strong{font-size:20px;color:var(--navy)}
+.exam-quick-card span{font-size:14px;color:#475467}
+.exam-quick-card em{font-style:normal;color:#176399;font-weight:700;margin-top:auto}
+@media(max-width:560px){.exam-quick{padding:18px}.exam-quick-grid{grid-template-columns:1fr}}
 </style></head>
 <body>
 <header>
@@ -185,7 +195,14 @@
 <div class="empty" id="emptyMessage" role="status">該当する項目はまだありません。別の言葉で検索してください。</div>
 </div>
 </section>
-<main class="wrap"><section class="exam-section" id="entrance-exams">
+<main class="wrap"><section aria-labelledby="common-test-title" class="exam-quick" id="common-test-2026">
+<h2 id="common-test-title">📚 2026年度 共通テスト 数学の学習教材</h2>
+<p class="exam-quick-intro">解説を読み、図やグラフを操作しながら理解を深めましょう。iPad・パソコンの両方で学習できます。</p>
+<div class="exam-quick-grid">
+<a class="exam-quick-card searchable" data-keywords="2026 共通テスト 数学Ⅰ 数学A 数学1A 集合 図形 二次関数 データ 確率" href="math1a_2026_index.html"><strong>数学Ⅰ・A</strong><span>第1問〜第4問の8教材を分野ごとに紹介</span><em>専用目次を見る →</em></a>
+<a class="exam-quick-card searchable" data-keywords="2026 共通テスト 数学Ⅱ 数学B 数学C 数学2BC 三角関数 微分 積分 数列 統計 ベクトル 複素数" href="math2bc_2026_index.html"><strong>数学Ⅱ・B・C</strong><span>第1問〜第7問の7教材をまとめて紹介</span><em>専用目次を見る →</em></a>
+</div><p class="section-note">出題分野に対応した独自の概念学習教材です。公式試験の設問・解答をそのまま再現するものではありません。</p>
+</section><section class="exam-section" id="entrance-exams">
 <div class="section-head"><div><h2>🎓 大学入試問題</h2><p>共通テスト・東京大学の数学を年度別に探す</p></div></div>
 <div class="exam-grid">
 <a class="exam-link searchable" data-keywords="大学入試 共通テスト 過去問 数学 年度" href="entrance_exams.html#common"><strong>共通テスト</strong><span>年度別に問題・解答・解説を探す →</span></a>
