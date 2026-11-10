@@ -175,6 +175,13 @@
 #practice-lessons{background:linear-gradient(135deg,#eef9f4,#fbfefd);border-color:#badfcc}
 #practice-lessons a{background:#176b54}
 #practice-lessons a:hover{background:#115740}
+</style><style>
+.hero p{margin-bottom:0}
+#question-corner{background:linear-gradient(135deg,#fff6eb,#fffcf7);border-color:#ead4ba}
+#question-corner a{background:#9b5819}
+#question-corner a:hover{background:#80430c}
+.visit-counter{font-size:13px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:14px;color:#d7e2ef}
+.visit-counter strong{color:#fff}
 </style></head>
 <body>
 <header>
@@ -197,25 +204,15 @@
 <span class="eyebrow">MATHEMATICS FOR EVERYONE</span>
 <h1>数学を、調べる。<br/>理解する。楽しむ。</h1>
 <p>高校数学から大学数学まで。公式・グラフ・計算・問題を、ひとつの場所で。</p>
-<form class="search" id="searchForm" role="search">
-<input aria-label="数学コンテンツを検索" id="searchInput" placeholder="例：二次関数、微分、積分、ベクトル" type="search"/>
-<button type="submit">検索する</button>
-</form><p class="search-count" id="searchCount" role="status"></p>
-<div class="empty" id="emptyMessage" role="status">該当する項目はまだありません。別の言葉で検索してください。</div>
+
+
 </div>
 </section>
-<main class="wrap"><section class="lesson-entry" id="video-lessons" aria-labelledby="lesson-entry-title"><h2 id="lesson-entry-title">🎬 高校生のための授業</h2><p>数学Ⅰ・Ⅱ・Ⅲ・A・B・Cを、科目・単元・講義の順に学べる新しいコーナーです。音声付き授業の試作から、少しずつ動画を増やしていきます。</p><a class="searchable" data-keywords="高校生のための授業 動画 ビデオ 数学1 2 3 A B C 複素数平面" href="high_school_video_lessons.html">授業一覧を見る →</a></section><section class="lesson-entry" id="practice-lessons" aria-labelledby="practice-entry-title"><h2 id="practice-entry-title">📝 高校生のための問題演習</h2><p>数学Ⅰ・Ⅱ・Ⅲ・A・B・Cの問題を科目・単元別に整理する新しいコーナーです。基本・標準・応用問題を、ヒントや詳しい解答・解説とともに順次公開します。</p><a class="searchable" data-keywords="高校生のための問題演習 練習問題 演習 問題集 数学Ⅰ 数学Ⅱ 数学Ⅲ 数学A 数学B 数学C 平面上の曲線" href="high_school_practice.html">問題演習一覧を見る →</a></section><section aria-labelledby="common-test-title" class="exam-quick" id="common-test-2026">
-<h2 id="common-test-title">📚 2026年度 共通テスト 数学の学習教材</h2>
-<p class="exam-quick-intro">解説を読み、図やグラフを操作しながら理解を深めましょう。iPad・パソコンの両方で学習できます。</p>
-<div class="exam-quick-grid">
-<a class="exam-quick-card searchable" data-keywords="2026 共通テスト 数学Ⅰ 数学A 数学1A 集合 図形 二次関数 データ 確率" href="math1a_2026_index.html"><strong>数学Ⅰ・A</strong><span>第1問〜第4問の8教材を分野ごとに紹介</span><em>専用目次を見る →</em></a>
-<a class="exam-quick-card searchable" data-keywords="2026 共通テスト 数学Ⅱ 数学B 数学C 数学2BC 三角関数 微分 積分 数列 統計 ベクトル 複素数" href="math2bc_2026_index.html"><strong>数学Ⅱ・B・C</strong><span>第1問〜第7問の7教材をまとめて紹介</span><em>専用目次を見る →</em></a>
-</div><p class="section-note">出題分野に対応した独自の概念学習教材です。公式試験の設問・解答をそのまま再現するものではありません。</p>
-</section><section class="exam-section" id="entrance-exams">
-<div class="section-head"><div><h2>🎓 大学入試問題</h2><p>共通テスト・東京大学の数学を年度別に探す</p></div></div>
+<main class="wrap"><section aria-labelledby="lesson-entry-title" class="lesson-entry" id="video-lessons"><h2 id="lesson-entry-title">🎬 高校生のための授業</h2><p>数学Ⅰ・Ⅱ・Ⅲ・A・B・Cを、科目・単元・講義の順に学べる新しいコーナーです。音声付き授業の試作から、少しずつ動画を増やしていきます。</p><a class="searchable" data-keywords="高校生のための授業 動画 ビデオ 数学1 2 3 A B C 複素数平面" href="high_school_video_lessons.html">授業一覧を見る →</a></section><section aria-labelledby="practice-entry-title" class="lesson-entry" id="practice-lessons"><h2 id="practice-entry-title">📝 高校生のための問題演習</h2><p>数学Ⅰ・Ⅱ・Ⅲ・A・B・Cの問題を科目・単元別に整理する新しいコーナーです。基本・標準・応用問題を、ヒントや詳しい解答・解説とともに順次公開します。</p><a class="searchable" data-keywords="高校生のための問題演習 練習問題 演習 問題集 数学Ⅰ 数学Ⅱ 数学Ⅲ 数学A 数学B 数学C 平面上の曲線" href="high_school_practice.html">問題演習一覧を見る →</a></section><section aria-labelledby="question-corner-title" class="lesson-entry" id="question-corner"><h2 id="question-corner-title">💬 高校生のための質問コーナー</h2><p>数学の疑問や質問を受け付け、内容を確認したうえで選んだ質問と詳しい解説を公開します。質問受付フォームは現在準備中です。</p><a href="high_school_questions.html">質問コーナーを見る →</a></section><section class="exam-section" id="entrance-exams">
+<div class="section-head"><div><h2>🎓 大学入試問題</h2><p>共通テスト・国公立大学2次試験の数学を探す</p></div></div>
 <div class="exam-grid">
 <a class="exam-link searchable" data-keywords="大学入試 共通テスト 過去問 数学 年度" href="entrance_exams.html#common"><strong>共通テスト</strong><span>年度別に問題・解答・解説を探す →</span></a>
-<a class="exam-link searchable" data-keywords="大学入試 東京大学 東大 過去問 数学 年度" href="entrance_exams.html#tokyo"><strong>東京大学</strong><span>年度別に問題・解答・解説を探す →</span></a>
+<a class="exam-link searchable" data-keywords="大学入試 国公立大学 二次試験 2次試験 大学別 過去問 数学" href="national_university_exams.html"><strong>国公立大学2次試験</strong><span>大学別に問題・解説を探す →</span></a>
 </div><p class="section-note">問題文は無断転載せず、公式の公開元に案内します。独自の解答・解説は順次追加します。</p>
 </section>
 <section id="features">
@@ -265,35 +262,8 @@
 <div class="wrap foot">
 <span>© みんなの数学データベース</span>
 <span>高校数学・大学数学を、もっと身近に。</span>
-</div>
+</div><div aria-label="訪問カウンター準備中" class="visit-counter">訪問カウンター：準備中（外部計測サービス設定後に表示）</div>
 </footer>
-<script>
-    const form = document.getElementById('searchForm');
-    const input = document.getElementById('searchInput');
-    const items = [...document.querySelectorAll('.searchable')];
-    const empty = document.getElementById('emptyMessage');
-    const counter = document.getElementById('searchCount');
 
-    function searchItems(query) {
-      const q = query.trim().toLowerCase();
-      let visible = 0;
-      items.forEach(item => {
-        const haystack = (item.innerText + ' ' + (item.dataset.keywords || '')).toLowerCase();
-        const match = !q || haystack.includes(q);
-        item.style.display = match ? '' : 'none';
-        if (match) visible++;
-      });
-      empty.style.display = q && visible === 0 ? 'block' : 'none';
-      counter.textContent = q ? `検索結果：${visible}件` : `掲載項目：${items.length}件（公式は専用ページに掲載）`;
-    }
-    form.addEventListener('submit', event => {
-      event.preventDefault();
-      searchItems(input.value);
-      document.getElementById('entrance-exams').scrollIntoView({ behavior: 'smooth' });
-    });
-    input.addEventListener('input', () => searchItems(input.value));
-  
-    searchItems('');
-</script>
 </body>
 </html>
