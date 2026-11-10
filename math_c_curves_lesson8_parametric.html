@@ -1,10 +1,37 @@
 <!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#16375e"><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><title>第8講 曲線の媒介変数表示｜みんなの数学データベース</title><style>
 :root{--navy:#16375e;--blue:#176cae;--teal:#078a8e;--ink:#203449;--pale:#f2f7fc}*{box-sizing:border-box}body{margin:0;background:var(--pale);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,'Hiragino Kaku Gothic ProN',Meiryo,sans-serif;line-height:1.85}header{background:linear-gradient(110deg,#16375e,#246ba0);color:#fff;padding:25px 16px}header a{color:#fff}.wrap{max-width:900px;margin:auto}h1{margin:10px 0;font-size:clamp(25px,4vw,34px);line-height:1.45}h2{font-size:clamp(21px,3vw,25px);color:var(--navy);margin:0 0 12px}h3{color:var(--navy)}main{padding:18px 14px 55px}.card{background:white;border:1px solid #d5e4f0;border-radius:17px;padding:clamp(16px,3vw,26px);margin:17px 0;box-shadow:0 5px 18px #16375e09}.tag{display:inline-block;padding:3px 11px;background:#e4f2ff;color:#145985;border-radius:99px;font-weight:700;font-size:13px}.formula{background:#edf4ff;border-radius:12px;padding:16px 10px;overflow-x:auto;text-align:center;margin:12px 0}.explain{background:#eaf7f7;border-left:4px solid var(--teal);padding:12px 16px;border-radius:9px;margin:12px 0}.plot{width:100%;display:block;border-radius:12px;border:1px solid #d5e4f0;background:#fff;touch-action:pan-y}label{display:block;font-weight:700;margin:10px 0 4px}input[type=range]{width:100%;accent-color:#087f91;min-height:32px}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:13px}button{border:1px solid #a7c6da;background:#fff;color:#175476;border-radius:9px;padding:10px 15px;font-weight:700;font-size:15px;cursor:pointer}button.primary{background:#07838d;color:#fff;border-color:#07838d}select{font-size:16px;padding:10px;width:100%;border-radius:9px;border:1px solid #b8cad8;background:white}.status{font-weight:700;color:#11537d;background:#eaf4fc;padding:10px 12px;border-radius:10px;margin:10px 0;font-variant-numeric:tabular-nums}.small{font-size:14px;color:#51677b}details{border:1px solid #caddea;padding:12px 15px;border-radius:10px;margin:12px 0;background:#f9fcff}summary{font-weight:700;cursor:pointer}a{color:var(--blue)}footer{text-align:center;color:#536a7b;padding:18px}.math-scroll{overflow-x:auto} @media(max-width:520px){.card{padding:15px}.actions button{flex:1} .MathJax{font-size:105%!important}}
+
+/* 追加した各曲線の独立した角度操作パネル */
+.theta-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:15px;margin:18px 0}
+.theta-panel{border:1px solid #d7e5ef;border-radius:14px;padding:15px;background:#fbfdff;min-width:0}
+.theta-panel h3{margin:0 0 6px}.theta-panel .plot{max-height:280px;aspect-ratio:620/340}
+.theta-panel .status{font-size:14px;overflow-wrap:anywhere}
+.theta-panel .formula{padding:10px 5px;font-size:15px}
+.theta-panel label{font-size:14px}.theta-panel button{padding:8px 12px}
+.note{border-left:4px solid #2687ab;background:#eef6ff;padding:10px 15px;border-radius:8px;margin:10px 0}
+@media(max-width:580px){.theta-grid{display:block}.theta-panel{margin:13px 0}.theta-panel .formula{font-size:14px}}
 </style></head><body><header><div class="wrap"><a href="high_school_video_lessons.html#subject5">← 高校生のための授業・数学Cへ戻る</a><h1>第8講 曲線の媒介変数表示</h1><div>数学C｜平面上の曲線 ― 動く図・教科書形式の数式・日本語読み上げ</div></div></header><main class="wrap"><section class="card"><span class="tag">この授業の学習目標</span><h2>媒介変数と点の軌跡の関係を理解しよう</h2><p>式が表す点の動きを、グラフと結び付けて理解しましょう。スライダーを動かしてから式を読むと、意味がつかみやすくなります。</p><div class="actions"><button class="primary" onclick="speak(document.querySelector('#lead').textContent)">▶ この説明を読み上げる</button><button onclick="stopSpeech()">■ 読み上げ停止</button></div><p id="lead" class="small">媒介変数と点の軌跡の関係を理解しよう。各点の位置を動かしながら、式の意味を順に確かめましょう。</p></section>
 <section class="card"><span class="tag">1 基本</span><h2>媒介変数表示とは</h2><p>点の座標 \(x,y\) を、別の変数 \(t\) を使って表す方法を<strong>媒介変数表示</strong>（パラメータ表示）といいます。</p><div class="formula">\[\boxed{x=f(t),\qquad y=g(t)}\]</div><p>同じ曲線を表していても、\(t\) の動く範囲によって描かれる部分や進む向きが変わります。例えば</p><div class="formula">\[x=t-1,\qquad y=t^2-4t+3\]</div><p>では \(t=x+1\) を代入して</p><div class="formula">\[y=(x+1)^2-4(x+1)+3=x^2-2x\]</div><div class="explain">媒介変数 \(t\) を消去すると、見慣れた直交座標の方程式になります。ただし、媒介変数の範囲の確認も必要です。</div></section>
 <section class="card"><span class="tag">2 動く図</span><h2>さまざまな曲線を \(t\) で描いてみよう</h2><label for="kind">曲線を選ぶ</label><select id="kind"><option value="parabola">放物線：x=t−1, y=t²−4t+3</option><option value="circle">円：x=3cos t, y=3sin t</option><option value="ellipse">楕円：x=4cos t, y=2sin t</option><option value="hyperbola">双曲線：x=2sec t, y=1.5tan t</option><option value="cycloid">サイクロイド：x=t−sin t, y=1−cos t</option><option value="astroid">アステロイド：x=3cos³t, y=3sin³t</option><option value="cardioid">カージオイド：x=2(1−cos t)cos t, y=2(1−cos t)sin t</option></select><canvas id="chart" class="plot" width="720" height="460" role="img" aria-label="媒介変数による曲線と動く点のグラフ"></canvas><label for="tSlider">媒介変数 \(t\)： <span id="tVal">0.00</span></label><input id="tSlider" type="range" min="0" max="1000" value="200" step="1"><div class="status" id="status" aria-live="polite"></div><div class="formula" id="eq">\[x=t-1,\quad y=t^2-4t+3\]</div><div class="actions"><button class="primary" id="animate">▶ 点を動かす</button><button id="reset">初めに戻す</button><button onclick="speak('媒介変数を動かすと、曲線上の点が移動します。円では、コサインが横の座標、サインが縦の座標を表します。')">▶ 図の解説を読み上げる</button></div><p class="small">青：曲線／赤：動く点P／橙の破線：点Pの座標を示す補助線。双曲線では \(\cos t=0\) の近くを避けて表示しています。</p></section>
 <section class="card"><span class="tag">3 重要公式</span><h2>円・楕円・双曲線</h2><h3>円</h3><div class="formula">\[\boxed{x=a\cos t,\quad y=a\sin t}\quad(0\le t<2\pi)\]</div><p>両辺をそれぞれ2乗して加えると、\(x^2+y^2=a^2\) となります。</p><h3>楕円</h3><div class="formula">\[\boxed{x=a\cos t,\quad y=b\sin t}\]</div><div class="formula">\[\frac{x^2}{a^2}+\frac{y^2}{b^2}=\cos^2t+\sin^2t=1\]</div><h3>双曲線</h3><div class="formula">\[\boxed{x=\frac{a}{\cos t},\quad y=b\tan t}\quad(\cos t\ne0)\]</div><div class="formula">\[\frac{x^2}{a^2}-\frac{y^2}{b^2}=\frac{1}{\cos^2t}-\tan^2t=1\]</div><div class="explain">双曲線では、分母の \(\cos t\) が0にならない範囲を使います。</div></section>
 <section class="card"><span class="tag">4 回転する円から生まれる曲線</span><h2>サイクロイド・アステロイド・カージオイド</h2><h3>サイクロイド</h3><p>半径 \(a\) の円が直線上を滑らずに転がるとき、円周上の点が描く曲線です。</p><div class="formula">\[\boxed{x=a(t-\sin t),\quad y=a(1-\cos t)}\]</div><h3>アステロイド（星芒形）</h3><p>大小の円が内接しながら転がる運動から現れる曲線の一つです。</p><div class="formula">\[\boxed{x=a\cos^3t,\quad y=a\sin^3t}\]</div><h3>カージオイド（心臓形）</h3><p>同じ大きさの円が外側を転がる運動で得られる曲線を、回転や拡大縮小した形で表せます。</p><div class="formula">\[\boxed{x=a(1-\cos t)\cos t,\quad y=a(1-\cos t)\sin t}\]</div><p class="small">図の選択欄でこれらを切り替えると、式と形を比較できます。</p></section>
+
+<section class="card" id="theta-studios">
+<span class="tag">追加授業・各曲線を角度で動かす</span>
+<h2>6種類の曲線を、それぞれ \(\theta\) で動かそう</h2>
+<p>先ほどの曲線選択グラフに加えて、円・楕円・双曲線・サイクロイド・アステロイド・カージオイドに<strong>それぞれ専用の角度スライダー</strong>を用意しました。青い線が曲線、赤い点が \(P\) です。スライダーは指でも操作できます。</p>
+<p class="note">\(\theta\) は弧度法（ラジアン）で表示します。\(\theta=\pi\) は180°、\(2\pi\) は360°です。双曲線では \(\cos\theta=0\) に対応する点は定義されません。</p>
+<div class="theta-grid">
+<div class="theta-panel"><h3>① 円</h3><p>原点を中心とする半径3の円。点が一周します。</p><div class="formula">\[x=3\cos\theta,\quad y=3\sin\theta\]</div><canvas class="plot theta-canvas" data-curve="circle" width="620" height="340" aria-label="円の角度と動く点"></canvas><label>角度 \(\theta\)：<output data-angle="circle"></output></label><input aria-label="円の角度" type="range" data-slider="circle" min="0" max="1000" value="125"><div class="status" data-status="circle"></div><div class="actions"><button data-play="circle">▶ 自動で動かす</button><button data-reset="circle">最初に戻す</button></div></div>
+<div class="theta-panel"><h3>② 楕円</h3><p>横半径4、縦半径2。円との違いを比べましょう。</p><div class="formula">\[x=4\cos\theta,\quad y=2\sin\theta\]</div><canvas class="plot theta-canvas" data-curve="ellipse" width="620" height="340" aria-label="楕円の角度と動く点"></canvas><label>角度 \(\theta\)：<output data-angle="ellipse"></output></label><input aria-label="楕円の角度" type="range" data-slider="ellipse" min="0" max="1000" value="125"><div class="status" data-status="ellipse"></div><div class="actions"><button data-play="ellipse">▶ 自動で動かす</button><button data-reset="ellipse">最初に戻す</button></div></div>
+<div class="theta-panel"><h3>③ 双曲線</h3><p>左右に2つの枝があります。右と左、両方の枝を観察してください。</p><div class="formula">\[x=\frac{2}{\cos\theta},\quad y=1.5\tan\theta\]</div><canvas class="plot theta-canvas" data-curve="hyperbola" width="620" height="340" aria-label="双曲線の角度と動く点"></canvas><label>角度 \(\theta\)：<output data-angle="hyperbola"></output></label><input aria-label="双曲線の角度" type="range" data-slider="hyperbola" min="0" max="1000" value="125"><div class="status" data-status="hyperbola"></div><div class="actions"><button data-play="hyperbola">▶ 自動で動かす</button><button data-reset="hyperbola">最初に戻す</button></div></div>
+<div class="theta-panel"><h3>④ サイクロイド</h3><p>円が直線上を滑らずに転がるとき、円周上の点が描く軌跡です。</p><div class="formula">\[x=\theta-\sin\theta,\quad y=1-\cos\theta\]</div><canvas class="plot theta-canvas" data-curve="cycloid" width="620" height="340" aria-label="サイクロイドの角度と動く点"></canvas><label>角度 \(\theta\)：<output data-angle="cycloid"></output></label><input aria-label="サイクロイドの角度" type="range" data-slider="cycloid" min="0" max="1000" value="125"><div class="status" data-status="cycloid"></div><div class="actions"><button data-play="cycloid">▶ 自動で動かす</button><button data-reset="cycloid">最初に戻す</button></div></div>
+<div class="theta-panel"><h3>⑤ アステロイド</h3><p>4つの尖った頂点を持つ曲線。\(\cos^3\theta\)、\(\sin^3\theta\) に注目しましょう。</p><div class="formula">\[x=3\cos^3\theta,\quad y=3\sin^3\theta\]</div><canvas class="plot theta-canvas" data-curve="astroid" width="620" height="340" aria-label="アステロイドの角度と動く点"></canvas><label>角度 \(\theta\)：<output data-angle="astroid"></output></label><input aria-label="アステロイドの角度" type="range" data-slider="astroid" min="0" max="1000" value="125"><div class="status" data-status="astroid"></div><div class="actions"><button data-play="astroid">▶ 自動で動かす</button><button data-reset="astroid">最初に戻す</button></div></div>
+<div class="theta-panel"><h3>⑥ カージオイド</h3><p>心臓形の曲線。原点に尖点が現れます。</p><div class="formula">\[x=2(1-\cos\theta)\cos\theta,\quad y=2(1-\cos\theta)\sin\theta\]</div><canvas class="plot theta-canvas" data-curve="cardioid" width="620" height="340" aria-label="カージオイドの角度と動く点"></canvas><label>角度 \(\theta\)：<output data-angle="cardioid"></output></label><input aria-label="カージオイドの角度" type="range" data-slider="cardioid" min="0" max="1000" value="125"><div class="status" data-status="cardioid"></div><div class="actions"><button data-play="cardioid">▶ 自動で動かす</button><button data-reset="cardioid">最初に戻す</button></div></div>
+</div>
+<div class="actions"><button class="primary" onclick="speak('円と楕円はサインとコサインで点が一周します。双曲線ではコサインがゼロになる角度を除いて、左右の枝を表します。サイクロイドは転がる円の点の軌跡です。アステロイドは四つの尖った頂点があり、カージオイドには心臓形のくぼみがあります。各スライダーを動かし、点の軌跡と数式を比べましょう。')">▶ この6種類を読み上げる</button></div>
+</section>
+
 <section class="card"><span class="tag">5 確認問題</span><h2>媒介変数を消去してみよう</h2><p><strong>問1</strong>　\(x=t+2,\ y=t^2\) の媒介変数を消去しましょう。</p><details><summary>解答・解説を表示</summary><p>\(t=x-2\) より</p><div class="formula">\[\boxed{y=(x-2)^2}\]</div></details><p><strong>問2</strong>　\(x=3\cos t,\ y=2\sin t\) の曲線の方程式を求めましょう。</p><details><summary>解答・解説を表示</summary><div class="formula">\[\boxed{\frac{x^2}{9}+\frac{y^2}{4}=1}\]</div><p>三角関数の恒等式 \(\cos^2t+\sin^2t=1\) を使います。</p></details><div class="actions"><button onclick="speak('媒介変数表示は、点の横座標と縦座標を、一つのパラメーターで同時に表します。媒介変数を消すと、ふつうの曲線の方程式に直せます。')">▶ まとめを読み上げる</button></div></section></main><footer>みんなの数学データベース｜数学C・独自作成の解説教材</footer><script>
 function speak(text){if(!('speechSynthesis' in window)){alert('このブラウザでは読み上げを利用できません');return;}speechSynthesis.cancel();const utter=new SpeechSynthesisUtterance(text);utter.lang='ja-JP';utter.rate=.9; const voices=speechSynthesis.getVoices();let j=voices.find(v=>v.lang.toLowerCase().startsWith('ja'));if(j)utter.voice=j;speechSynthesis.speak(utter)}
 function stopSpeech(){if('speechSynthesis' in window)speechSynthesis.cancel()}
@@ -26,4 +53,61 @@ cardioid:{start:0,end:TWO,fn:t=>[2*(1-Math.cos(t))*Math.cos(t),2*(1-Math.cos(t))
 function stop(){if(animation){cancelAnimationFrame(animation);animation=null}document.querySelector('#animate').textContent='▶ 点を動かす'}
 function render(){const d=defs[sel.value],t=d.start+(d.end-d.start)*(+slider.value)/1000;drawCurve(chart,d.fn,d.start,d.end,t,sel.value==='cycloid'?48:42);let p=d.fn(t);document.querySelector('#tVal').textContent=t.toFixed(2);document.querySelector('#status').textContent=p?'現在の点 P = ('+p[0].toFixed(2)+', '+p[1].toFixed(2)+')':'この値では座標が定義されません';}
 sel.addEventListener('change',()=>{stop();slider.value=200;document.querySelector('#eq').innerHTML=defs[sel.value].expr;if(window.MathJax)MathJax.typesetPromise([document.querySelector('#eq')]);render()});slider.addEventListener('input',()=>{stop();render()});document.querySelector('#reset').onclick=()=>{stop();slider.value=200;render()};document.querySelector('#animate').onclick=()=>{if(animation){stop();return}document.querySelector('#animate').textContent='■ 停止';frameTime=0;const go=ts=>{if(!frameTime)frameTime=ts;let n=((ts-frameTime)/40)%1000;slider.value=n;render();animation=requestAnimationFrame(go)};animation=requestAnimationFrame(go)};render();
-</script></body></html>
+</script><script>
+
+(function(){
+const tau=2*Math.PI;
+const curves={
+ circle:{start:0,end:tau,fn:t=>[3*Math.cos(t),3*Math.sin(t)],box:[-4.8,4.8,-3.7,3.7]},
+ ellipse:{start:0,end:tau,fn:t=>[4*Math.cos(t),2*Math.sin(t)],box:[-5,5,-3.2,3.2]},
+ hyperbola:{start:0,end:tau,fn:t=>Math.abs(Math.cos(t))<.025?null:[2/Math.cos(t),1.5*Math.tan(t)],box:[-9,9,-5,5]},
+ cycloid:{start:0,end:tau,fn:t=>[t-Math.sin(t),1-Math.cos(t)],box:[-.8,7,-.8,3]},
+ astroid:{start:0,end:tau,fn:t=>[3*Math.cos(t)**3,3*Math.sin(t)**3],box:[-4,4,-3.7,3.7]},
+ cardioid:{start:0,end:tau,fn:t=>[2*(1-Math.cos(t))*Math.cos(t),2*(1-Math.cos(t))*Math.sin(t)],box:[-4.6,2,-3.7,3.7]}
+};
+const timers={};
+function draw(name){
+ const d=curves[name],canvas=document.querySelector('[data-curve="'+name+'"]'); if(!canvas)return;
+ const slider=document.querySelector('[data-slider="'+name+'"]');
+ const theta=d.start+(d.end-d.start)*Number(slider.value)/1000;
+ const ctx=canvas.getContext('2d'),w=canvas.width,h=canvas.height;
+ const [xmin,xmax,ymin,ymax]=d.box;
+ const pad=17,scale=Math.min((w-2*pad)/(xmax-xmin),(h-2*pad)/(ymax-ymin));
+ const xx=x=>w/2+(x-(xmin+xmax)/2)*scale,yy=y=>h/2-(y-(ymin+ymax)/2)*scale;
+ ctx.clearRect(0,0,w,h);ctx.fillStyle='#fff';ctx.fillRect(0,0,w,h);
+ ctx.lineWidth=1;ctx.strokeStyle='#e6edf5';
+ for(let x=Math.ceil(xmin);x<=Math.floor(xmax);x++){ctx.beginPath();ctx.moveTo(xx(x),0);ctx.lineTo(xx(x),h);ctx.stroke()}
+ for(let y=Math.ceil(ymin);y<=Math.floor(ymax);y++){ctx.beginPath();ctx.moveTo(0,yy(y));ctx.lineTo(w,yy(y));ctx.stroke()}
+ ctx.strokeStyle='#7795a8';ctx.lineWidth=1.7;ctx.beginPath();ctx.moveTo(xx(0),0);ctx.lineTo(xx(0),h);ctx.moveTo(0,yy(0));ctx.lineTo(w,yy(0));ctx.stroke();
+ ctx.strokeStyle='#167db1';ctx.lineWidth=3;ctx.beginPath();let started=false,previous=null;
+ const n=1800;
+ for(let i=0;i<=n;i++){
+   const t=d.start+(d.end-d.start)*i/n,p=d.fn(t);
+   if(!p||!p.every(Number.isFinite)||p[0]<xmin-1||p[0]>xmax+1||p[1]<ymin-1||p[1]>ymax+1){started=false;previous=null;continue}
+   if(previous && Math.hypot(p[0]-previous[0],p[1]-previous[1])>1.2){started=false}
+   if(!started){ctx.moveTo(xx(p[0]),yy(p[1]));started=true}else ctx.lineTo(xx(p[0]),yy(p[1])); previous=p;
+ }
+ ctx.stroke();
+ const p=d.fn(theta),valid=p&&p.every(Number.isFinite)&&Math.abs(p[0])<1000&&Math.abs(p[1])<1000;
+ if(valid){ctx.strokeStyle='#e9a15b';ctx.lineWidth=2;ctx.setLineDash([5,5]);ctx.beginPath();ctx.moveTo(xx(p[0]),yy(0));ctx.lineTo(xx(p[0]),yy(p[1]));ctx.lineTo(xx(0),yy(p[1]));ctx.stroke();ctx.setLineDash([]);
+   if(p[0]>=xmin&&p[0]<=xmax&&p[1]>=ymin&&p[1]<=ymax){ctx.fillStyle='#e35a52';ctx.beginPath();ctx.arc(xx(p[0]),yy(p[1]),6.5,0,tau);ctx.fill();ctx.font='bold 17px sans-serif';ctx.fillStyle='#17365d';ctx.fillText('P',xx(p[0])+9,yy(p[1])-9)}
+ }
+ document.querySelector('[data-angle="'+name+'"]').textContent=theta.toFixed(2)+' rad（'+(theta*180/Math.PI).toFixed(0)+'°）';
+ document.querySelector('[data-status="'+name+'"]').textContent=valid?'点 P = ('+p[0].toFixed(2)+', '+p[1].toFixed(2)+')'+((p[0]<xmin||p[0]>xmax||p[1]<ymin||p[1]>ymax)?'／表示範囲の外':''):'この角度では点の座標が定義されません';
+}
+function stop(name){if(timers[name]){cancelAnimationFrame(timers[name]);timers[name]=null}let b=document.querySelector('[data-play="'+name+'"]');if(b)b.textContent='▶ 自動で動かす'}
+Object.keys(curves).forEach(name=>{
+ const slider=document.querySelector('[data-slider="'+name+'"]');if(!slider)return;
+ slider.addEventListener('input',()=>{stop(name);draw(name)});
+ document.querySelector('[data-reset="'+name+'"]').addEventListener('click',()=>{stop(name);slider.value=0;draw(name)});
+ document.querySelector('[data-play="'+name+'"]').addEventListener('click',()=>{
+   if(timers[name]){stop(name);return}
+   let start=null,base=Number(slider.value);document.querySelector('[data-play="'+name+'"]').textContent='■ 停止';
+   function step(ts){if(start===null)start=ts;slider.value=(base+(ts-start)/40)%1001;draw(name);timers[name]=requestAnimationFrame(step)}
+   timers[name]=requestAnimationFrame(step);
+ });draw(name)
+});
+})();
+
+</script>
+</body></html>

@@ -1,10 +1,66 @@
 <!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#16375e"><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><title>第9講 極座標と極方程式｜みんなの数学データベース</title><style>
 :root{--navy:#16375e;--blue:#176cae;--teal:#078a8e;--ink:#203449;--pale:#f2f7fc}*{box-sizing:border-box}body{margin:0;background:var(--pale);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,'Hiragino Kaku Gothic ProN',Meiryo,sans-serif;line-height:1.85}header{background:linear-gradient(110deg,#16375e,#246ba0);color:#fff;padding:25px 16px}header a{color:#fff}.wrap{max-width:900px;margin:auto}h1{margin:10px 0;font-size:clamp(25px,4vw,34px);line-height:1.45}h2{font-size:clamp(21px,3vw,25px);color:var(--navy);margin:0 0 12px}h3{color:var(--navy)}main{padding:18px 14px 55px}.card{background:white;border:1px solid #d5e4f0;border-radius:17px;padding:clamp(16px,3vw,26px);margin:17px 0;box-shadow:0 5px 18px #16375e09}.tag{display:inline-block;padding:3px 11px;background:#e4f2ff;color:#145985;border-radius:99px;font-weight:700;font-size:13px}.formula{background:#edf4ff;border-radius:12px;padding:16px 10px;overflow-x:auto;text-align:center;margin:12px 0}.explain{background:#eaf7f7;border-left:4px solid var(--teal);padding:12px 16px;border-radius:9px;margin:12px 0}.plot{width:100%;display:block;border-radius:12px;border:1px solid #d5e4f0;background:#fff;touch-action:pan-y}label{display:block;font-weight:700;margin:10px 0 4px}input[type=range]{width:100%;accent-color:#087f91;min-height:32px}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:13px}button{border:1px solid #a7c6da;background:#fff;color:#175476;border-radius:9px;padding:10px 15px;font-weight:700;font-size:15px;cursor:pointer}button.primary{background:#07838d;color:#fff;border-color:#07838d}select{font-size:16px;padding:10px;width:100%;border-radius:9px;border:1px solid #b8cad8;background:white}.status{font-weight:700;color:#11537d;background:#eaf4fc;padding:10px 12px;border-radius:10px;margin:10px 0;font-variant-numeric:tabular-nums}.small{font-size:14px;color:#51677b}details{border:1px solid #caddea;padding:12px 15px;border-radius:10px;margin:12px 0;background:#f9fcff}summary{font-weight:700;cursor:pointer}a{color:var(--blue)}footer{text-align:center;color:#536a7b;padding:18px}.math-scroll{overflow-x:auto} @media(max-width:520px){.card{padding:15px}.actions button{flex:1} .MathJax{font-size:105%!important}}
+
+/* 追加した各曲線の独立した角度操作パネル */
+.theta-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:15px;margin:18px 0}
+.theta-panel{border:1px solid #d7e5ef;border-radius:14px;padding:15px;background:#fbfdff;min-width:0}
+.theta-panel h3{margin:0 0 6px}.theta-panel .plot{max-height:280px;aspect-ratio:620/340}
+.theta-panel .status{font-size:14px;overflow-wrap:anywhere}
+.theta-panel .formula{padding:10px 5px;font-size:15px}
+.theta-panel label{font-size:14px}.theta-panel button{padding:8px 12px}
+.note{border-left:4px solid #2687ab;background:#eef6ff;padding:10px 15px;border-radius:8px;margin:10px 0}
+@media(max-width:580px){.theta-grid{display:block}.theta-panel{margin:13px 0}.theta-panel .formula{font-size:14px}}
 </style></head><body><header><div class="wrap"><a href="high_school_video_lessons.html#subject5">← 高校生のための授業・数学Cへ戻る</a><h1>第9講 極座標と極方程式</h1><div>数学C｜平面上の曲線 ― 動く図・教科書形式の数式・日本語読み上げ</div></div></header><main class="wrap"><section class="card"><span class="tag">この授業の学習目標</span><h2>距離と角度で点・曲線を表してみよう</h2><p>式が表す点の動きを、グラフと結び付けて理解しましょう。スライダーを動かしてから式を読むと、意味がつかみやすくなります。</p><div class="actions"><button class="primary" onclick="speak(document.querySelector('#lead').textContent)">▶ この説明を読み上げる</button><button onclick="stopSpeech()">■ 読み上げ停止</button></div><p id="lead" class="small">距離と角度で点・曲線を表してみよう。各点の位置を動かしながら、式の意味を順に確かめましょう。</p></section>
 <section class="card"><span class="tag">1 基本</span><h2>極座標とは</h2><p>点 \(P\) の位置を、原点 \(O\) からの距離 \(r\) と、正の \(x\) 軸から測った角 \(\theta\) で表します。\(r\) を<strong>動径</strong>、\(\theta\) を<strong>偏角</strong>といいます。</p><div class="formula">\[\boxed{x=r\cos\theta,\qquad y=r\sin\theta}\]</div><div class="formula">\[\boxed{r^2=x^2+y^2,\qquad \tan\theta=\frac{y}{x}}\quad(x\ne0)\]</div><div class="explain">\(\tan\theta\) だけでは象限が決まりません。偏角は \(x,y\) の符号も確かめて決めます。点 \(O\) では \(r=0\) です。</div></section>
 <section class="card"><span class="tag">2 動く図</span><h2>極座標の点と極方程式</h2><p>曲線を選び、角度 \(\theta\) を変えて点の位置を観察しましょう。青い線が曲線、オレンジが動径です。</p><label for="polarKind">極方程式を選ぶ</label><select id="polarKind"><option value="circle">円：r=2</option><option value="offset">原点を通る円：r=2cos θ</option><option value="cardioid">カージオイド：r=2(1+cos θ)</option><option value="rose">四弁のバラ曲線：r=2cos 2θ</option><option value="spiral">アルキメデスの螺旋：r=0.25θ</option></select><canvas id="polarChart" class="plot" width="720" height="460" role="img" aria-label="極方程式の曲線と動く点"></canvas><label for="angleSlider">偏角 \(\theta\)：<span id="thetaOut">0.00</span> rad</label><input type="range" id="angleSlider" min="0" max="1000" value="160" step="1"><div class="status" id="polarStatus" aria-live="polite"></div><div class="formula" id="polarEquation">\[r=2\]</div><div class="actions"><button class="primary" id="polarPlay">▶ 点を動かす</button><button id="polarReset">初めに戻す</button><button onclick="speak('極座標では、原点からの距離と、向きを表す角度によって点を指定します。角度を少しずつ変えると、極方程式から曲線が描かれます。')">▶ 図の解説を読み上げる</button></div><p class="small">一部の曲線では \(r\) が負になります。そのとき点は角 \(\theta\) と反対側に現れます。</p></section>
 <section class="card"><span class="tag">3 極方程式を変形する</span><h2>極方程式と直交座標の方程式</h2><h3>円 \(r=2\)</h3><div class="formula">\[r=2\quad\Longleftrightarrow\quad x^2+y^2=4\]</div><h3>原点を通る円 \(r=2\cos\theta\)</h3><p>両辺に \(r\) をかけると、\(r^2=2r\cos\theta\) となるので</p><div class="formula">\[x^2+y^2=2x\]</div><div class="formula">\[\boxed{(x-1)^2+y^2=1}\]</div><p>中心 \((1,0)\)、半径1の円を表します。</p><h3>媒介変数表示とのつながり</h3><p>極方程式 \(r=f(\theta)\) は、\(\theta\) を媒介変数とみなすと</p><div class="formula">\[\boxed{x=f(\theta)\cos\theta,\quad y=f(\theta)\sin\theta}\]</div><p>と表すことができます。</p></section>
 <section class="card"><span class="tag">4 特徴的な曲線</span><h2>カージオイド・バラ曲線・螺旋</h2><div class="formula">\[r=a(1+\cos\theta)\]</div><p>カージオイドは心臓のようなくぼみを持つ閉曲線です。</p><div class="formula">\[r=a\cos(2\theta)\]</div><p>4つの花びらの形が現れます。\(r\) が負になる角にも注目しましょう。</p><div class="formula">\[r=a\theta\quad(a>0)\]</div><p>角度が増えるにつれて、原点から徐々に離れていく螺旋です。</p></section>
+
+<section class="card" id="polar-coordinate-lab">
+<span class="tag">追加授業 1</span>
+<h2>角度 \(\theta\) と距離 \(r\) から点を動かそう</h2>
+<p>極座標は、原点（極）からの距離と向きの組 \((r,\theta)\) です。角度を動かすと点が円周上を動き、距離を変えると原点から近づいたり遠ざかったりします。</p>
+<div class="formula">\[\boxed{x=r\cos\theta,\qquad y=r\sin\theta}\]</div>
+<canvas id="polarBasicsCanvas" class="plot" width="720" height="410" role="img" aria-label="動径と角度で動く極座標の点"></canvas>
+<label for="polarBasicTheta">偏角 \(\theta\)：<output id="polarBasicThetaValue"></output></label><input id="polarBasicTheta" type="range" min="0" max="1000" step="1" value="160" aria-label="偏角を変える">
+<label for="polarBasicRadius">極径 \(r\)：<output id="polarBasicRadiusValue"></output></label><input id="polarBasicRadius" type="range" min="-4" max="4" step="0.1" value="3" aria-label="極径を変える">
+<div id="polarBasicStatus" class="status" aria-live="polite"></div>
+<div class="actions"><button class="primary" id="polarBasicPlay">▶ 角度を自動で動かす</button><button id="polarBasicReset">初めに戻す</button><button onclick="speak('極座標は、極からの距離アールと、始線から測る角度シータで点を指定します。エックスはアール コサイン シータ、ワイはアール サイン シータです。極径が負の場合は、角度と反対の方向に点が現れます。')">▶ 極座標の説明を読み上げる</button></div>
+<div class="note">\(r\) が負のときは、角度 \(\theta\) と<strong>反対向き</strong>に点が現れます。同じ点は \((r,\theta+2\pi)\) や \((-r,\theta+\pi)\) でも表せます。</div>
+</section>
+<section class="card" id="polar-coordinates-formulas">
+<span class="tag">追加授業 2</span><h2>極座標と直交座標の変換を丁寧に学ぶ</h2>
+<div class="formula">\[r=\sqrt{x^2+y^2},\qquad r\ne 0\ \text{なら}\quad \cos\theta=\frac{x}{r},\ \sin\theta=\frac{y}{r}\]</div>
+<h3>例① 極座標から直交座標へ</h3><p>\(P(2,\frac{\pi}{4})\) なら、</p>
+<div class="formula">\[x=2\cos\frac{\pi}{4}=\sqrt{2},\qquad y=2\sin\frac{\pi}{4}=\sqrt{2}\]</div>
+<h3>例② 直交座標から極座標へ</h3><p>\(P(-1,\sqrt{3})\) の極径は2、点は第2象限にあるので、</p>
+<div class="formula">\[r=\sqrt{(-1)^2+(\sqrt{3})^2}=2,\qquad \theta=\frac{2\pi}{3}\]</div>
+<p>角度を \(0\le\theta&lt;2\pi\) の範囲に限ると、原点以外の点には \(r&gt;0\) の極座標を1つ選べます。原点では角度を一意に定められません。</p>
+</section>
+<section class="card" id="polar-equation-lines">
+<span class="tag">追加授業 3</span><h2>直線・円・二次曲線を極方程式で表す</h2>
+<p>極 \(O\) から距離 \(d\) にあり、法線の向きが \(\alpha\) の直線は、次の形で表せます。</p>
+<div class="formula">\[\boxed{r\cos(\theta-\alpha)=d}\]</div>
+<p>特に \(x=2\) は \(r\cos\theta=2\) です。</p>
+<h3>円の極方程式</h3>
+<div class="formula">\[r=2a\cos\theta\quad\Longleftrightarrow\quad (x-a)^2+y^2=a^2\]</div>
+<h3>離心率とのつながり</h3><p>極を焦点に置き、準線を \(x=d\)（\(d&gt;0\)）とすると、焦点と準線の距離の比が \(e\) の点は、点が準線の左側にある範囲で</p>
+<div class="formula">\[r=e(d-r\cos\theta)\quad\Longrightarrow\quad\boxed{r=\frac{ed}{1+e\cos\theta}}\]</div>
+<p>\(0&lt;e&lt;1\) では楕円、\(e=1\) では放物線、\(e&gt;1\) では双曲線に対応します。ただし、双曲線では式の分母が0となる向きや、負の極径の解釈に注意します。</p>
+<div class="actions"><button onclick="speak('極方程式は、距離アールと角度シータの関係で曲線を表します。例えば、アール コサイン シータ イコール 2 は、直交座標ではエックス イコール 2 という直線です。離心率を使うと、楕円、放物線、双曲線を一つの形で表せます。')">▶ 極方程式の説明を読み上げる</button></div>
+</section>
+<section class="card" id="polar-extra-drawings">
+<span class="tag">追加授業 4</span><h2>極方程式の曲線を、\(\theta\) で動かして比較する</h2>
+<p>既存の極方程式グラフに加えて、直線と離心率を使った二次曲線を見られるようにしました。曲線を選んでから、偏角スライダーを動かしてみましょう。</p>
+<canvas id="extraPolarCanvas" class="plot" width="720" height="420" role="img" aria-label="極方程式の追加例と動く点"></canvas>
+<label for="extraPolarKind">表示する極方程式</label>
+<select id="extraPolarKind"><option value="line">直線：r cosθ = 2</option><option value="ellipse">楕円：e=0.6, d=3</option><option value="parabola">放物線：e=1, d=3</option><option value="hyperbola">双曲線：e=1.4, d=3</option></select>
+<label for="extraPolarSlider">偏角 \(\theta\)：<output id="extraPolarTheta"></output></label><input id="extraPolarSlider" type="range" min="0" max="1000" value="500" step="1" aria-label="極方程式の偏角">
+<div class="status" id="extraPolarStatus" aria-live="polite"></div>
+<div class="actions"><button class="primary" id="extraPolarPlay">▶ 点を自動で動かす</button><button id="extraPolarReset">初めに戻す</button></div>
+<p class="small">直線は極径が正の枝・負の枝を含めて描いています。\(r\) が負のとき点は角度と逆向きです。双曲線の分母が0に近い角度では、表示範囲外になります。</p>
+</section>
+
 <section class="card"><span class="tag">5 確認問題</span><h2>自分で変換してみよう</h2><p><strong>問1</strong>　極座標 \((2,\frac{\pi}{3})\) の直交座標を求めましょう。</p><details><summary>解答・解説を表示</summary><div class="formula">\[x=2\cos\frac{\pi}{3}=1,\quad y=2\sin\frac{\pi}{3}=\sqrt{3}\]</div><p>答えは \(\boxed{(1,\sqrt{3})}\) です。</p></details><p><strong>問2</strong>　極方程式 \(r=4\cos\theta\) の直交座標の方程式を求めましょう。</p><details><summary>解答・解説を表示</summary><div class="formula">\[r^2=4r\cos\theta\Rightarrow x^2+y^2=4x\]</div><div class="formula">\[\boxed{(x-2)^2+y^2=4}\]</div><p>中心 \((2,0)\)、半径2の円です。</p></details><div class="actions"><button onclick="speak('極座標を直交座標に直すときは、エックス イコール アール コサイン シータ、ワイ イコール アール サイン シータ、の関係を使います。')">▶ まとめを読み上げる</button></div></section></main><footer>みんなの数学データベース｜数学C・独自作成の解説教材</footer><script>
 function speak(text){if(!('speechSynthesis' in window)){alert('このブラウザでは読み上げを利用できません');return;}speechSynthesis.cancel();const utter=new SpeechSynthesisUtterance(text);utter.lang='ja-JP';utter.rate=.9; const voices=speechSynthesis.getVoices();let j=voices.find(v=>v.lang.toLowerCase().startsWith('ja'));if(j)utter.voice=j;speechSynthesis.speak(utter)}
 function stopSpeech(){if('speechSynthesis' in window)speechSynthesis.cancel()}
@@ -17,4 +73,40 @@ const polars={circle:{end:P2,f:t=>2,expr:'\\[r=2\\]'},offset:{end:P2,f:t=>2*Math
 function halt(){if(panimation){cancelAnimationFrame(panimation);panimation=null}document.querySelector('#polarPlay').textContent='▶ 点を動かす'}
 function polarRender(){let d=polars[pk.value],th=d.end*(+ps.value)/1000;function position(a){const r=d.f(a);return [r*Math.cos(a),r*Math.sin(a)]}drawCurve(pcanvas,position,0,d.end,th,pk.value==='cardioid'?38:55,{polar:true});const r=d.f(th),p=position(th);document.querySelector('#thetaOut').textContent=th.toFixed(2);document.querySelector('#polarStatus').textContent='r = '+r.toFixed(2)+' ／ P = ('+p[0].toFixed(2)+', '+p[1].toFixed(2)+')';}
 pk.onchange=()=>{halt();ps.value=160;document.querySelector('#polarEquation').innerHTML=polars[pk.value].expr;if(window.MathJax)MathJax.typesetPromise([document.querySelector('#polarEquation')]);polarRender()};ps.oninput=()=>{halt();polarRender()};document.querySelector('#polarReset').onclick=()=>{halt();ps.value=160;polarRender()};document.querySelector('#polarPlay').onclick=()=>{if(panimation){halt();return}document.querySelector('#polarPlay').textContent='■ 停止';pt0=0;function go(ts){if(!pt0)pt0=ts;ps.value=((ts-pt0)/45)%1000;polarRender();panimation=requestAnimationFrame(go)}panimation=requestAnimationFrame(go)};polarRender();
-</script></body></html>
+</script><script>
+
+(function(){
+const tau=Math.PI*2;
+function grid(c,w,h,unit){c.clearRect(0,0,w,h);c.fillStyle='white';c.fillRect(0,0,w,h);const ox=w/2,oy=h/2;
+ c.strokeStyle='#e8eef4';c.lineWidth=1;
+ for(let i=-10;i<=10;i++){c.beginPath();c.moveTo(ox+i*unit,0);c.lineTo(ox+i*unit,h);c.moveTo(0,oy+i*unit);c.lineTo(w,oy+i*unit);c.stroke()}
+ c.strokeStyle='#7999b0';c.lineWidth=1.5;c.beginPath();c.moveTo(0,oy);c.lineTo(w,oy);c.moveTo(ox,0);c.lineTo(ox,h);c.stroke();return [ox,oy]}
+function point(c,ox,oy,unit,x,y){c.strokeStyle='#e58f37';c.lineWidth=2;c.beginPath();c.moveTo(ox,oy);c.lineTo(ox+x*unit,oy-y*unit);c.stroke();c.fillStyle='#e75d53';c.beginPath();c.arc(ox+x*unit,oy-y*unit,7,0,tau);c.fill();c.fillStyle='#17365d';c.font='bold 16px sans-serif';c.fillText('P',ox+x*unit+10,oy-y*unit-9)}
+const bt=document.querySelector('#polarBasicTheta'),br=document.querySelector('#polarBasicRadius'),bc=document.querySelector('#polarBasicsCanvas');let btimer=null;
+function basicRender(){let th=tau*Number(bt.value)/1000,r=Number(br.value),x=r*Math.cos(th),y=r*Math.sin(th);const c=bc.getContext('2d'),w=bc.width,h=bc.height,unit=40,[ox,oy]=grid(c,w,h,unit);
+ c.strokeStyle='#abd9e8';c.lineWidth=2;c.beginPath();c.arc(ox,oy,Math.abs(r)*unit,0,tau);c.stroke();
+ c.strokeStyle='#0b7baf';c.lineWidth=1.5;c.beginPath();c.moveTo(ox,oy);c.lineTo(ox+Math.cos(th)*150,oy-Math.sin(th)*150);c.stroke();point(c,ox,oy,unit,x,y);
+ document.querySelector('#polarBasicThetaValue').textContent=th.toFixed(2)+' rad（'+(th*180/Math.PI).toFixed(0)+'°）';
+ document.querySelector('#polarBasicRadiusValue').textContent=r.toFixed(1);
+ document.querySelector('#polarBasicStatus').textContent='P = ('+x.toFixed(2)+', '+y.toFixed(2)+') ／ '+(r<0?'負の極径：反対方向に点を取ります':r===0?'原点です':'動径の方向に点を取ります')}
+function basicStop(){if(btimer){cancelAnimationFrame(btimer);btimer=null}document.querySelector('#polarBasicPlay').textContent='▶ 角度を自動で動かす'}
+bt.oninput=br.oninput=()=>{basicStop();basicRender()};document.querySelector('#polarBasicReset').onclick=()=>{basicStop();bt.value=160;br.value=3;basicRender()};
+document.querySelector('#polarBasicPlay').onclick=()=>{if(btimer){basicStop();return}let start=null,base=Number(bt.value);document.querySelector('#polarBasicPlay').textContent='■ 停止';function step(ts){if(start===null)start=ts;bt.value=(base+(ts-start)/38)%1001;basicRender();btimer=requestAnimationFrame(step)}btimer=requestAnimationFrame(step)};basicRender();
+const pk=document.querySelector('#extraPolarKind'),ps=document.querySelector('#extraPolarSlider'),pc=document.querySelector('#extraPolarCanvas');let ptimer=null;
+const options={line:{start:0,end:tau,f:t=>Math.abs(Math.cos(t))<.025?null:2/Math.cos(t)},ellipse:{start:0,end:tau,f:t=>1.8/(1+.6*Math.cos(t))},parabola:{start:-2.3,end:2.3,f:t=>3/(1+Math.cos(t))},hyperbola:{start:-2.25,end:2.25,f:t=>Math.abs(1+1.4*Math.cos(t))<.025?null:4.2/(1+1.4*Math.cos(t))}};
+function extraRender(){const d=options[pk.value],theta=d.start+(d.end-d.start)*Number(ps.value)/1000;const c=pc.getContext('2d'),w=pc.width,h=pc.height,unit=34,[ox,oy]=grid(c,w,h,unit);const evalp=t=>{const r=d.f(t);return r===null?null:[r*Math.cos(t),r*Math.sin(t),r]};
+ c.strokeStyle='#157eb4';c.lineWidth=3;c.beginPath();let active=false,prev=null;
+ for(let i=0;i<=2200;i++){const t=d.start+(d.end-d.start)*i/2200,p=evalp(t);
+ if(!p||p.some(v=>!Number.isFinite(v))||Math.abs(p[0])>25||Math.abs(p[1])>25){active=false;prev=null;continue}
+ if(prev&&Math.hypot(p[0]-prev[0],p[1]-prev[1])>1){active=false}
+ if(!active){c.moveTo(ox+p[0]*unit,oy-p[1]*unit);active=true}else c.lineTo(ox+p[0]*unit,oy-p[1]*unit);prev=p;
+ }c.stroke();
+ const p=evalp(theta);if(p&&p.every(Number.isFinite)&&Math.abs(p[0])<9&&Math.abs(p[1])<6){point(c,ox,oy,unit,p[0],p[1])}
+ document.querySelector('#extraPolarTheta').textContent=theta.toFixed(2)+' rad';
+ document.querySelector('#extraPolarStatus').textContent=p&&p.every(Number.isFinite)?'r = '+p[2].toFixed(2)+' ／ P = ('+p[0].toFixed(2)+', '+p[1].toFixed(2)+')'+((Math.abs(p[0])>=9||Math.abs(p[1])>=6)?'／点は表示範囲外':''):'この角度では極径が定義されません';}
+function extraStop(){if(ptimer){cancelAnimationFrame(ptimer);ptimer=null}document.querySelector('#extraPolarPlay').textContent='▶ 点を自動で動かす'}
+ps.oninput=()=>{extraStop();extraRender()};pk.onchange=()=>{extraStop();ps.value=500;extraRender()};document.querySelector('#extraPolarReset').onclick=()=>{extraStop();ps.value=500;extraRender()};document.querySelector('#extraPolarPlay').onclick=()=>{if(ptimer){extraStop();return}let start=null,base=Number(ps.value);document.querySelector('#extraPolarPlay').textContent='■ 停止';function step(ts){if(start===null)start=ts;ps.value=(base+(ts-start)/45)%1001;extraRender();ptimer=requestAnimationFrame(step)}ptimer=requestAnimationFrame(step)};extraRender();
+})();
+
+</script>
+</body></html>
