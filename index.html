@@ -182,6 +182,7 @@
 #question-corner a:hover{background:#80430c}
 .visit-counter{font-size:13px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:14px;color:#d7e2ef}
 .visit-counter strong{color:#fff}
+.counter-note{font-size:11px;color:#c5d5e8}
 </style></head>
 <body>
 <header>
@@ -262,8 +263,13 @@
 <div class="wrap foot">
 <span>© みんなの数学データベース</span>
 <span>高校数学・大学数学を、もっと身近に。</span>
-</div><div aria-label="訪問カウンター準備中" class="visit-counter">訪問カウンター：準備中（外部計測サービス設定後に表示）</div>
+</div><div class="visit-counter" aria-label="トップページの累計表示回数">
+  <span>📊 トップページの累計表示回数：</span>
+  <div class="counterapi" ns="eijisuzukigodo.github.io" key="math-database-home" action="view" label="回" noIcon="true" bg="transparent" color="#ffffff" noLink="true" noAnim="true" style="min-height:32px"></div>
+  <span class="counter-note">※2026年11月の設置後から計測。閲覧者数とは異なります。</span>
+</div>
 </footer>
 
+<script async src="https://counterapi.com/c.js"></script>
 </body>
 </html>
