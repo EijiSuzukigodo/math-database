@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第6講 二次曲線と直線の共有点｜みんなの数学データベース</title>
+<style>
+:root{--navy:#17365d;--blue:#2265a0;--teal:#087e8b;--bg:#f1f6fc;--line:#d5e3f2;--ink:#203449}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;color:var(--ink);line-height:1.8}
+header{background:linear-gradient(110deg,#17365d,#25669d);color:white;padding:22px max(16px,calc((100vw - 920px)/2))}header a{color:#e7f6ff}h1{font-size:clamp(22px,4.2vw,34px);line-height:1.4;margin:10px 0}header p{margin:0}
+.wrap{max-width:950px;margin:auto;padding:18px 14px 55px}.card{background:white;border:1px solid var(--line);border-radius:16px;padding:clamp(15px,3vw,27px);margin-bottom:18px;box-shadow:0 3px 14px #12345b0a}
+h2{color:var(--navy);font-size:clamp(19px,3vw,24px);margin:0 0 10px}h3{color:#194f7b;margin:18px 0 8px}.pill{background:#e4f2ff;color:#175581;padding:4px 10px;border-radius:999px;font-weight:700;font-size:13px;display:inline-block}
+.eq{background:#eef5fe;border:1px solid #dae9fa;border-radius:10px;padding:13px 10px;text-align:center;overflow-x:auto;margin:12px 0}.small{font-size:14px;color:#526b82}.note{border-left:4px solid var(--teal);background:#eaf7f8;padding:12px;border-radius:8px}.warn{border-left:4px solid #cc8e19;background:#fff8e8;padding:11px;border-radius:8px}
+button{font:inherit;border-radius:10px;border:1px solid #bad4e9;padding:10px 14px;background:#fff;color:#165581;font-weight:700;cursor:pointer;touch-action:manipulation}button.active,button.primary{color:white;background:#087e8b;border-color:#087e8b}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #f2a93a;outline-offset:2px}.tabs,.btns{display:flex;gap:8px;flex-wrap:wrap;margin:13px 0}.controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:12px;margin:14px 0}.control{background:#f2f7fd;border:1px solid #dce9f7;border-radius:10px;padding:12px}.control label{display:block;font-weight:700;font-size:14px}.control input[type=range]{width:100%;accent-color:#087e8b;min-height:32px}
+#graph{display:block;width:100%;height:auto;border:1px solid #cfdfee;background:#fff;border-radius:10px}.readout{background:#f2f8ff;border-radius:9px;padding:12px;font-weight:600;overflow-wrap:anywhere}.steps{padding-left:1.4em}.steps li{margin-bottom:9px}details{border:1px solid #d3e4f2;border-radius:10px;padding:10px 14px;margin:10px 0}summary{cursor:pointer;font-weight:bold;color:#155d91}footer{text-align:center;color:#54718a;font-size:13px}mjx-container{max-width:100%}@media(max-width:520px){.tabs button{flex:1 1 28%}.eq{font-size:.91em}.card{padding:15px}}
+</style>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head><body>
+<header><a href="high_school_video_lessons.html#subject5">← 高校数学の授業目次へ</a><h1>数学C｜平面上の曲線 第6講<br>二次曲線と直線の共有点</h1><p>動く図・教科書形式の数式・日本語読み上げで理解しよう</p></header>
+<main class="wrap">
+<section class="card"><span class="pill">この授業の学習目標</span><h2>交点が2個・1個・0個になる理由を理解しよう</h2>
+<p>二次曲線と直線を連立して交点を求めます。直線を動かしながら、<strong>交点の個数と判別式の関係</strong>を確認しましょう。</p>
+<div class="eq">\[D=B^2-4AC\]</div>
+<div class="btns"><button type="button" class="primary" data-speak="二次曲線と直線の共有点を調べましょう。連立方程式から二次方程式をつくり、判別式で交点の個数を判断します。">▶ この説明を読み上げる</button><button type="button" class="stop">■ 読み上げ停止</button></div>
+</section>
+<section class="card" id="interactive"><span class="pill">1 動く図</span><h2>直線を動かして共有点を観察する</h2>
+<p>まず曲線を選び、スライダーを左右に動かしてください。オレンジ色が直線、青色が二次曲線、赤い点が共有点です。</p>
+<div class="tabs" role="group" aria-label="曲線を選択"><button type="button" class="active" data-curve="parabola" aria-pressed="true">放物線</button><button type="button" data-curve="ellipse" aria-pressed="false">楕円</button><button type="button" data-curve="hyperbola" aria-pressed="false">双曲線</button></div>
+<div id="curveEq" class="eq" aria-live="polite">\[y=x^2\qquad y=k\]</div>
+<div class="controls"><div class="control"><label for="kSlider">直線の位置 \(k\) ： <output id="kValue">1.0</output></label><input id="kSlider" type="range" min="-4" max="4" step="0.1" value="1" aria-label="直線の位置"></div><div class="control"><label>特別な位置へ移動</label><div class="btns" style="margin:5px 0"><button type="button" data-place="two">2個</button><button type="button" data-place="one">1個</button><button type="button" data-place="zero">0個</button></div></div></div>
+<canvas id="graph" width="820" height="520" role="img" aria-label="二次曲線と直線、その共有点を示す動くグラフ"></canvas>
+<p class="small">曲線と直線を見やすくするため、グラフの座標の目盛りは各方向で共通です。</p>
+<div class="readout" id="readout" role="status" aria-live="polite">交点の個数：2個</div>
+<div class="btns"><button type="button" class="primary" id="speakState">▶ 現在の図を読み上げる</button><button type="button" class="stop">■ 読み上げ停止</button></div>
+<div class="note"><strong>大切：</strong>「交点1個」がいつでも「接する」とは限りません。二次曲線と直線を連立した結果が<strong>一次方程式になる特別な場合</strong>もあります。この教材では、交点が重なる通常の接線の例を扱います。</div>
+</section>
+<section class="card"><span class="pill">2 判別式</span><h2>なぜ交点の個数が分かるのか</h2>
+<p>曲線と直線の式を連立し、1つの文字を消去すると、一般には次の二次方程式が得られます。</p>
+<div class="eq">\[Ax^2+Bx+C=0\qquad (A\neq0)\]</div>
+<p>その判別式を \(D=B^2-4AC\) とすると、実数解の個数により交点の個数が分かります。</p>
+<div class="eq">\[\begin{array}{c|c}D>0&\text{交点は2個}\\D=0&\text{交点は1個（接する）}\\D<0&\text{交点は0個}\end{array}\]</div>
+<p class="small">上の対応は、消去後が本当に二次方程式で、各解が異なる共有点を与える場合です。係数 \(A=0\) になる場合は、一次方程式として別に調べます。</p>
+<div class="btns"><button type="button" class="primary" data-speak="交点を調べるには、二次曲線と直線を連立し、一文字を消去します。二次方程式の判別式が正なら交点が二個、ゼロなら一個、負ならゼロ個です。ただし二次の項が消えるときは一次方程式として調べます。">▶ 判別式の説明を読み上げる</button><button type="button" class="stop">■ 読み上げ停止</button></div>
+</section>
+<section class="card"><span class="pill">3 例題</span><h2>放物線と直線の交点の個数</h2><p>放物線 \(y=x^2\) と直線 \(y=x+k\) の共有点の個数を、\(k\) の値によって調べましょう。</p>
+<ol class="steps"><li>連立して \(y\) を消去します。<div class="eq">\[x^2=x+k\quad\Longleftrightarrow\quad x^2-x-k=0\]</div></li>
+<li>判別式を計算します。<div class="eq">\[D=(-1)^2-4\cdot1\cdot(-k)=1+4k\]</div></li>
+<li>したがって共有点の個数は、<div class="eq">\[\begin{cases}2\text{個}&k>-\dfrac14\\1\text{個}&k=-\dfrac14\\0\text{個}&k<-\dfrac14\end{cases}\]</div></li></ol>
+<details><summary>共有点の座標も求めてみる</summary><p>\(k=2\) なら \(x^2-x-2=0\) より \((x-2)(x+1)=0\) なので、\(x=2,-1\) 。対応する \(y=x+2\) を用いて、共有点は \((2,4),(-1,1)\) です。</p></details>
+<div class="btns"><button type="button" class="primary" data-speak="例題です。放物線ワイイコールエックス二乗と、直線ワイイコールエックスプラスケーの交点を考えます。連立するとエックス二乗マイナスエックスマイナスケーイコールゼロ。判別式は一プラス四ケーです。ケーがマイナス四分の一より大きければ二個、等しければ一個、小さければゼロ個になります。">▶ 例題を読み上げる</button><button type="button" class="stop">■ 読み上げ停止</button></div>
+</section>
+<section class="card"><span class="pill">4 楕円・双曲線</span><h2>連立方程式から交点を調べる</h2>
+<h3>楕円と水平な直線</h3><div class="eq">\[\frac{x^2}{9}+\frac{y^2}{4}=1,\qquad y=k\]</div>
+<div class="eq">\[x^2=9\left(1-\frac{k^2}{4}\right)\]</div><p>\(|k|<2\) なら2個、\(|k|=2\) なら1個、\(|k|>2\) なら0個です。</p>
+<h3>双曲線と垂直な直線</h3><div class="eq">\[\frac{x^2}{4}-\frac{y^2}{4}=1,\qquad x=k\]</div>
+<div class="eq">\[y^2=k^2-4\]</div><p>\(|k|>2\) なら2個、\(|k|=2\) なら1個、\(|k|<2\) なら0個です。双曲線の左右の頂点で、縦の直線が接します。</p>
+<div class="btns"><button type="button" class="primary" data-speak="楕円は、水平な直線を中央から外側へ動かすと、交点が二個から一個、そしてゼロ個になります。双曲線では、縦の直線を使って調べると、中央ではゼロ個、頂点で一個、外側で二個になります。">▶ 楕円と双曲線を読み上げる</button><button type="button" class="stop">■ 読み上げ停止</button></div></section>
+<section class="card"><span class="pill">5 中点</span><h2>交点を結ぶ線分の中点</h2><p>放物線 \(y=x^2\) と直線 \(y=2x+3\) の共有点を結ぶ線分の中点を求めましょう。</p>
+<ol class="steps"><li>連立すると<div class="eq">\[x^2=2x+3\quad\Longleftrightarrow\quad(x-3)(x+1)=0\]</div></li><li>共有点は \((3,9)\) と \((-1,1)\) です。</li><li>したがって中点 \(M\) は<div class="eq">\[M\left(\frac{3+(-1)}{2},\frac{9+1}{2}\right)=\boxed{(1,5)}\]</div></li></ol>
+<div class="note">直線との交点を考えるときは、共有点を求める方程式だけでなく、それぞれの座標が元の2つの式を満たすか確認しましょう。</div></section>
+<section class="card"><span class="pill">6 練習問題</span><h2>自分で考えてから解答を開こう</h2>
+<details><summary>問題1：放物線 \(y=x^2\) と直線 \(y=3\) の共有点は？</summary><div class="eq">\[x^2=3\quad\Longrightarrow\quad (\sqrt3,3),\ (-\sqrt3,3)\]</div><p>共有点は2個です。</p></details>
+<details><summary>問題2：楕円 \(\frac{x^2}{9}+\frac{y^2}{4}=1\) と \(y=2\) の共有点は？</summary><div class="eq">\[\frac{x^2}{9}+1=1\quad\Longrightarrow\quad x=0\]</div><p>共有点は \((0,2)\) の1個。接しています。</p></details>
+<details><summary>問題3：双曲線 \(\frac{x^2}{4}-\frac{y^2}{4}=1\) と \(x=1\) の共有点は？</summary><div class="eq">\[\frac14-\frac{y^2}{4}=1\quad\Longrightarrow\quad y^2=-3\]</div><p>実数解がないため、共有点は0個です。</p></details>
+<details><summary>問題4：\(y=x^2\) と \(y=x+k\) が接するときの \(k\) は？</summary><div class="eq">\[D=1+4k=0\quad\Longrightarrow\quad\boxed{k=-\frac14}\]</div><p>接点は \(\left(\frac12,\frac14\right)\) です。</p></details>
+<details><summary>発展：二次方程式にならない場合は？</summary><p>双曲線 \(x^2-y^2=1\) と直線 \(y=x-1\) を連立すると、\(x^2-(x-1)^2=1\) から \(2x-1=1\)、つまり \(x=1\)、\(y=0\) です。共有点は1個ですが、この直線はその点での接線ではありません。<strong>消去後に二次の項が消えた場合、判別式だけで接線と決めつけない</strong>ことが大切です。</p></details>
+<div class="btns"><button type="button" class="primary" data-speak="練習問題に取り組みましょう。解答を見る前に、連立方程式を立て、交点の個数を考えてください。問題の見出しを押すと解答が開きます。">▶ 練習の説明を読み上げる</button><button type="button" class="stop">■ 読み上げ停止</button></div></section>
+<section class="card"><h2>まとめ</h2><p>交点の個数を調べる基本は、<strong>連立 → 一文字を消去 → 解の個数を調べる</strong>ことです。動く図に戻って、交点の変化をもう一度観察しましょう。</p><p><a href="#interactive">↑ 動く図に戻る</a>　／　<a href="high_school_video_lessons.html#subject5">高校数学の授業目次へ</a></p></section>
+<footer>みんなの数学データベース｜数学C「平面上の曲線」</footer></main>
+<script>
+(()=>{'use strict';
+const canvas=document.getElementById('graph'),ctx=canvas.getContext('2d'),slider=document.getElementById('kSlider'),output=document.getElementById('kValue'),readout=document.getElementById('readout'),eq=document.getElementById('curveEq');
+let mode='parabola';const W=820,H=520,scale=50,OX=W/2,OY=H/2;
+const X=x=>OX+scale*x,Y=y=>OY-scale*y;
+function line(x1,y1,x2,y2,color,width=1.4,dash=[]){ctx.beginPath();ctx.setLineDash(dash);ctx.moveTo(X(x1),Y(y1));ctx.lineTo(X(x2),Y(y2));ctx.strokeStyle=color;ctx.lineWidth=width;ctx.stroke();ctx.setLineDash([])}
+function plot(fn,low,high,color='#197db6',width=3){ctx.beginPath();let started=false;for(let u=low;u<=high+1e-7;u+=(high-low)/450){const xy=fn(u);if(!xy||!Number.isFinite(xy[0])||!Number.isFinite(xy[1])){started=false;continue}const [x,y]=xy;if(!started){ctx.moveTo(X(x),Y(y));started=true}else ctx.lineTo(X(x),Y(y))}ctx.strokeStyle=color;ctx.lineWidth=width;ctx.stroke()}
+function dot(x,y){ctx.beginPath();ctx.arc(X(x),Y(y),6,0,Math.PI*2);ctx.fillStyle='#d84b46';ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=2;ctx.stroke()}
+function fmt(n){return Math.abs(n)<.00001?'0':n.toFixed(2).replace(/\.00$/,'')}
+function getData(k){const e=1e-7;if(mode==='parabola'){const p=k>e?[[Math.sqrt(k),k],[-Math.sqrt(k),k]]:Math.abs(k)<e?[[0,0]]:[];return {p,desc:'放物線 y = x² と水平線 y = '+fmt(k),expr:'x² = '+fmt(k)}}
+if(mode==='ellipse'){const delta=1-k*k/4,p=delta>e?[[3*Math.sqrt(delta),k],[-3*Math.sqrt(delta),k]]:Math.abs(delta)<e?[[0,k]]:[];return {p,desc:'楕円 x²/9 + y²/4 = 1 と水平線 y = '+fmt(k),expr:'x² = '+fmt(9*delta)}}
+const delta=k*k-4,p=delta>e?[[k,Math.sqrt(delta)],[k,-Math.sqrt(delta)]]:Math.abs(delta)<e?[[k,0]]:[];return {p,desc:'双曲線 x²/4 − y²/4 = 1 と垂直線 x = '+fmt(k),expr:'y² = '+fmt(delta)}}
+function draw(){const k=Number(slider.value),info=getData(k);output.value=k.toFixed(1);output.textContent=k.toFixed(1);ctx.clearRect(0,0,W,H);ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
+for(let n=-8;n<=8;n++){line(n,-5.2,n,5.2,'#edf2f7',1);if(n>=-5&&n<=5)line(-8.3,n,8.3,n,'#edf2f7',1)}line(-8.2,0,8.2,0,'#78889a',1.7);line(0,-5.2,0,5.2,'#78889a',1.7);ctx.font='18px sans-serif';ctx.fillStyle='#52697f';ctx.fillText('x',W-24,Y(0)-9);ctx.fillText('y',X(0)+9,22);
+if(mode==='parabola'){plot(x=>[x,x*x],-2.3,2.3)}else if(mode==='ellipse'){plot(t=>[3*Math.cos(t),2*Math.sin(t)],0,Math.PI*2)}else{for(const s of [-1,1]){plot(t=>[s*2*Math.cosh(t),2*Math.sinh(t)],-1.25,1.25)}}
+if(mode==='hyperbola')line(k,-5.2,k,5.2,'#e18b2f',3.3);else line(-8.3,k,8.3,k,'#e18b2f',3.3);info.p.forEach(p=>dot(...p));const n=info.p.length;
+readout.textContent=info.desc+'。共有点は '+n+' 個。'+(n? ' 共有点の座標：'+info.p.map(p=>'('+fmt(p[0])+', '+fmt(p[1])+')').join('、')+'。':' 共有点はありません。')+' 連立して得られる式：'+info.expr+'。';}
+document.querySelectorAll('[data-curve]').forEach(b=>b.addEventListener('click',()=>{mode=b.dataset.curve;document.querySelectorAll('[data-curve]').forEach(v=>{v.classList.toggle('active',v===b);v.setAttribute('aria-pressed',v===b?'true':'false')});slider.value=mode==='hyperbola'?'3':'1';eq.textContent=mode==='parabola'?'\\[y=x^2\\qquad y=k\\]':mode==='ellipse'?'\\[\\frac{x^2}{9}+\\frac{y^2}{4}=1\\qquad y=k\\]':'\\[\\frac{x^2}{4}-\\frac{y^2}{4}=1\\qquad x=k\\]';if(window.MathJax&&MathJax.typesetPromise)MathJax.typesetPromise([eq]);draw()}));
+document.querySelectorAll('[data-place]').forEach(b=>b.addEventListener('click',()=>{const kind=b.dataset.place;slider.value=mode==='parabola'?({two:2,one:0,zero:-1})[kind]:mode==='ellipse'?({two:0,one:2,zero:3})[kind]:({two:3,one:2,zero:0})[kind];draw()}));slider.addEventListener('input',draw);draw();
+function speak(msg){if(!('speechSynthesis'in window)){alert('このブラウザは読み上げに対応していません。');return}speechSynthesis.cancel();const utterance=new SpeechSynthesisUtterance(msg);utterance.lang='ja-JP';utterance.rate=.92;const voices=speechSynthesis.getVoices();const ja=voices.find(v=>v.lang.toLowerCase().startsWith('ja'));if(ja)utterance.voice=ja;speechSynthesis.speak(utterance)}
+document.querySelectorAll('[data-speak]').forEach(b=>b.addEventListener('click',()=>speak(b.dataset.speak)));document.getElementById('speakState').addEventListener('click',()=>speak(readout.textContent.replaceAll('/',' わる ')));document.querySelectorAll('.stop').forEach(b=>b.addEventListener('click',()=>{if('speechSynthesis'in window)speechSynthesis.cancel()}));window.addEventListener('pagehide',()=>{if('speechSynthesis'in window)speechSynthesis.cancel()});
+})();
+</script>
+</body></html>
