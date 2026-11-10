@@ -16,6 +16,25 @@
 .course-note{background:#e5f2ff;border-left:5px solid #2a80bc;padding:17px;border-radius:10px;margin:14px 0}
 .card:focus-visible,.card:hover{outline:2px solid #3283c2;outline-offset:1px}
 @media (max-width:360px){.subject-grid,.unit .lessons,.unit .grid{grid-template-columns:1fr}}
+
+/* Responsive card layout: 1 / 2 / 3 / 4 columns by screen width. */
+.wrap{max-width:1360px}
+.subject-grid,.lesson-grid,.unit .lessons,.unit .grid,main .grid{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  gap:14px;
+}
+.subject-grid>* ,.lesson-grid>* ,.unit .lessons>li,.unit .grid>* ,main .grid>*{min-width:0;overflow-wrap:anywhere}
+@media (min-width:600px){
+  .subject-grid,.lesson-grid,.unit .lessons,.unit .grid,main .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (min-width:920px){
+  .subject-grid,.lesson-grid,.unit .lessons,.unit .grid,main .grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (min-width:1260px){
+  .subject-grid,.lesson-grid,.unit .lessons,.unit .grid,main .grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+
 </style></head><body>
 <header><div class="wrap"><a href="index.html">← トップページ</a><h1>高校生のための授業</h1><p>みんなの数学データベース｜高校生のための授業</p></div></header>
 <main class="wrap"><p class="intro">科目を選ぶと、その科目の授業一覧ページに移動します。授業は横2列で表示され、タイトルから各教材を開けます。</p><h2>科目を選ぶ</h2><div class="subject-grid"><a class="card" href="math_subject_1.html"><h3>数学Ⅰ</h3><p>数と式・集合と命題・2次関数・図形と計量・データの分析</p><span class="go">教材一覧を見る →</span></a>

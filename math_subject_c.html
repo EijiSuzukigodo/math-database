@@ -16,6 +16,25 @@
 .course-note{background:#e5f2ff;border-left:5px solid #2a80bc;padding:17px;border-radius:10px;margin:14px 0}
 .card:focus-visible,.card:hover{outline:2px solid #3283c2;outline-offset:1px}
 @media (max-width:360px){.subject-grid,.unit .lessons,.unit .grid{grid-template-columns:1fr}}
+
+/* Responsive card layout: 1 / 2 / 3 / 4 columns by screen width. */
+.wrap{max-width:1360px}
+.subject-grid,.lesson-grid,.unit .lessons,.unit .grid,main .grid{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  gap:14px;
+}
+.subject-grid>* ,.lesson-grid>* ,.unit .lessons>li,.unit .grid>* ,main .grid>*{min-width:0;overflow-wrap:anywhere}
+@media (min-width:600px){
+  .subject-grid,.lesson-grid,.unit .lessons,.unit .grid,main .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (min-width:920px){
+  .subject-grid,.lesson-grid,.unit .lessons,.unit .grid,main .grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (min-width:1260px){
+  .subject-grid,.lesson-grid,.unit .lessons,.unit .grid,main .grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+
 </style></head><body>
 <header><div class="wrap"><a href="index.html">← トップページ</a><h1>数学Cの授業</h1><p>みんなの数学データベース｜高校生のための授業</p></div></header>
 <main class="wrap"><div class="navline"><a href="high_school_video_lessons.html">← 科目一覧へ戻る</a><a href="high_school.html">高校数学の教材一覧</a></div><p class="course-note">平面上のベクトル・空間のベクトル・平面上の曲線・複素数平面。各教材のタイトルをタップすると授業ページが開きます。</p><section class="unit"><h2>数学C</h2><div class="grid"><div class="card"><h3>平面上のベクトル</h3><p>〜｜ベクトルの基本から直線・円の方程式まで</p><span class="pill">〜公開</span><p style="margin:12px 0 0"><a href="vector_plane_lesson01.html" style="font-weight:700">ベクトルの意味と表し方（教科書形式・例題・練習問題） →</a></p><p style="margin:12px 0 0"><a href="vector_plane_lesson02.html" style="font-weight:700">ベクトルの加法・減法・実数倍（教科書形式・例題・練習問題） →</a></p><p style="margin:12px 0 0"><a href="vector_plane_lesson03.html" style="font-weight:700">ベクトルの成分表示と大きさ（教科書形式・例題・練習問題） →</a></p><p style="margin:12px 0 0"><a href="vector_plane_lesson04.html" style="font-weight:700">内積とベクトルのなす角（教科書形式・例題・練習問題） →</a></p><p style="margin:12px 0 0"><a href="vector_plane_lesson05.html" style="font-weight:700">位置ベクトル（教科書形式・例題・練習問題） →</a></p><p style="margin:12px 0 0"><a href="vector_plane_lesson06.html" style="font-weight:700">内分点・外分点と三角形の重心（教科書形式・例題・練習問題） →</a></p><p style="margin:12px 0 0"><a href="vector_plane_lesson07.html" style="font-weight:700">ベクトルと平面図形（教科書形式・例題・練習問題） →</a></p><p style="margin:12px 0 0"><a href="vector_plane_lesson08.html" style="font-weight:700">直線のベクトル方程式（教科書形式・例題・練習問題） →</a></p><p style="margin:12px 0 0"><a href="vector_plane_lesson09.html" style="font-weight:700">円のベクトル方程式（教科書形式・例題・練習問題） →</a></p><p style="margin:12px 0 0"><a href="vector_plane_lesson10.html" style="font-weight:700">点と直線の距離・総合演習（教科書形式・例題・練習問題） →</a></p></div><div class="card"><h3>空間のベクトル</h3><p>空間座標・空間ベクトルの演算・直線と平面・球面</p><span class="pill">授業教材を準備中</span></div><div class="card"><h3>平面上の曲線</h3><p>放物線・楕円・双曲線</p><span class="pill">〜を公開中</span><p style="margin:12px 0 0"><a href="math_c_curves_lesson1_parabola.html" style="font-weight:700">放物線と焦点・準線（動く図・日本語読み上げ） →</a></p><p style="margin:12px 0 0"><a href="math_c_curves_lesson2_ellipse.html" style="font-weight:700">楕円の定義と方程式（動く図・日本語読み上げ・教科書形式の数式） →</a></p><p style="margin:12px 0 0"><a href="math_c_curves_lesson3_hyperbola.html" style="font-weight:700">双曲線と焦点・漸近線（動く図・日本語読み上げ・教科書形式の数式） →</a></p><p style="margin:12px 0 0"><a href="math_c_curves_lesson4_translation.html" style="font-weight:700">二次曲線の平行移動と直線との共有点（動く図・日本語読み上げ・教科書形式の数式） →</a></p><p style="margin:12px 0 0"><a href="math_c_curves_lesson5_tangents.html" style="font-weight:700">二次曲線と接線（動く図・日本語読み上げ・教科書形式の数式） →</a></p><p style="margin:12px 0 0"><a href="math_c_curves_lesson6_intersections.html" style="font-weight:700">二次曲線と直線の共有点（動く図・日本語読み上げ・教科書形式の数式） →</a></p><p style="margin:12px 0 0"><a href="math_c_curves_lesson7_eccentricity.html" style="font-weight:700">離心率と焦点・準線（動く図・日本語読み上げ・教科書形式の数式） →</a></p><p style="margin:12px 0 0"><a href="math_c_curves_lesson8_parametric.html" style="font-weight:700">曲線の媒介変数表示（動く図・日本語読み上げ・教科書形式の数式） →</a></p><p style="margin:12px 0 0"><a href="math_c_curves_lesson9_polar.html" style="font-weight:700">極座標と極方程式（動く図・日本語読み上げ・教科書形式の数式） →</a></p></div><a class="card" href="math_c_complex_video_lessons.html"><h3>複素数平面</h3><p>4講の授業構成を用意</p><span class="go">〜へ →</span></a></div></section><p><a href="high_school_video_lessons.html">← 科目一覧へ戻る</a></p></main><footer><div class="wrap">みんなの数学データベース｜高校生のための授業</div></footer></body></html>
