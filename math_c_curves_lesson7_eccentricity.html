@@ -8,7 +8,7 @@
 </head><body>
 <header><a href="high_school_video_lessons.html#subject5">← 高校生のための授業・数学Cに戻る</a><h1>第7講　離心率と焦点・準線</h1><p>数学C｜平面上の曲線　— 動く図・教科書形式の数式・日本語読み上げ</p></header>
 <main class="wrap">
-<section class="card"><span class="tag">この授業の目標</span><h2>1つの比で、3種類の曲線がつながる</h2><p>平面上の点 \(P\) から、固定された焦点 \(F\) までの距離と、固定された準線 \(\ell\) までの距離の<strong>比が一定</strong>である点の集まりを考えましょう。</p><div class="math">\[\boxed{\frac{PF}{PH}=e\qquad(e>0)}\]</div><p>ここで \(H\) は点 \(P\) から準線 \(\ell\) に下ろした垂線の足です。この \(e\) を<strong>離心率</strong>といいます。</p><div class="grid"><div class="mini"><h3>\(0<e<1\)</h3><p><strong>楕円</strong>：閉じた曲線</p></div><div class="mini"><h3>\(e=1\)</h3><p><strong>放物線</strong>：1方向へ開く曲線</p></div><div class="mini"><h3>\(e>1\)</h3><p><strong>双曲線</strong>：2つの枝をもつ曲線</p></div></div><div class="buttons speech"><button class="btn" onclick="speak('離心率は、点から焦点までの距離を、準線までの距離で割った比です。離心率が1より小さいと楕円、1なら放物線、1より大きいと双曲線になります。')">▶ この説明を読み上げる</button><button class="btn alt" onclick="stopSpeech()">■ 読み上げ停止</button></div></section>
+<section class="card"><span class="tag">この授業の目標</span><h2>1つの比で、3種類の曲線がつながる</h2><p>平面上の点 \(P\) から、固定された焦点 \(F\) までの距離と、固定された準線 \(\ell\) までの距離の<strong>比が一定</strong>である点の集まりを考えましょう。</p><div class="math">\[\boxed{\frac{PF}{PH}=e\qquad(e>0)}\]</div><p>ここで \(H\) は点 \(P\) から準線 \(\ell\) に下ろした垂線の足です。この \(e\) を<strong>離心率</strong>といいます。</p><div class="grid"><div class="mini"><h3>\(0&lt;e&lt;1\)</h3><p><strong>楕円</strong>：閉じた曲線</p></div><div class="mini"><h3>\(e=1\)</h3><p><strong>放物線</strong>：1方向へ開く曲線</p></div><div class="mini"><h3>\(e>1\)</h3><p><strong>双曲線</strong>：2つの枝をもつ曲線</p></div></div><div class="buttons speech"><button class="btn" onclick="speak('離心率は、点から焦点までの距離を、準線までの距離で割った比です。離心率が1より小さいと楕円、1なら放物線、1より大きいと双曲線になります。')">▶ この説明を読み上げる</button><button class="btn alt" onclick="stopSpeech()">■ 読み上げ停止</button></div></section>
 <section class="card"><span class="tag">1 動く図</span><h2>離心率を動かして、曲線の形を比べる</h2><p>焦点を \(F(2,0)\)、準線を \(x=0\) に固定します。スライダーを動かすと、<strong>同じ条件式から曲線が変化</strong>します。</p>
 <div class="controls"><label for="ecc">離心率 \(e\)</label><input id="ecc" type="range" min="0.2" max="1.8" step="0.05" value="0.65"><strong id="eccVal" aria-live="polite">0.65</strong></div>
 <div class="buttons"><button class="btn alt" onclick="setE(0.5)">楕円 e=0.5</button><button class="btn alt" onclick="setE(1)">放物線 e=1</button><button class="btn alt" onclick="setE(1.4)">双曲線 e=1.4</button></div>
@@ -19,7 +19,7 @@
 <div class="math">\[\sqrt{(x-2)^2+y^2}=e\,|x|\]</div>
 <p>この条件を2乗して整理すると、次の式になります。</p><div class="math">\[\boxed{(1-e^2)x^2+y^2-4x+4=0}\]</div>
 <div class="buttons speech"><button class="btn" onclick="speak('焦点と準線を固定して、離心率だけを変えています。離心率が1を通過すると、楕円から放物線、そして双曲線へと曲線が変化します。オレンジ色の点を動かしても、距離の比は離心率と一致します。')">▶ 動く図の説明を読み上げる</button><button class="btn alt" onclick="stopSpeech()">■ 読み上げ停止</button></div></section>
-<section class="card"><span class="tag">2 公式と証明</span><h2>楕円・双曲線の離心率を求める</h2><h3>楕円</h3><p>長半径が \(a\)、短半径が \(b\)、中心から焦点までの距離が \(c\) なら、\(a^2=b^2+c^2\) です。</p><div class="math">\[\frac{x^2}{a^2}+\frac{y^2}{b^2}=1,\quad c=\sqrt{a^2-b^2},\quad \boxed{e=\frac{c}{a}}\]</div><p>\(0<c<a\) なので \(0<e<1\)。焦点が中心に近いほど円に近く、\(e\) が大きくなると細長くなります。円は \(e=0\) と考える特別な場合です。</p>
+<section class="card"><span class="tag">2 公式と証明</span><h2>楕円・双曲線の離心率を求める</h2><h3>楕円</h3><p>長半径が \(a\)、短半径が \(b\)、中心から焦点までの距離が \(c\) なら、\(a^2=b^2+c^2\) です。</p><div class="math">\[\frac{x^2}{a^2}+\frac{y^2}{b^2}=1,\quad c=\sqrt{a^2-b^2},\quad \boxed{e=\frac{c}{a}}\]</div><p>\(0&lt;c&lt;a\) なので \(0&lt;e&lt;1\)。焦点が中心に近いほど円に近く、\(e\) が大きくなると細長くなります。円は \(e=0\) と考える特別な場合です。</p>
 <h3>双曲線</h3><p>双曲線では \(c^2=a^2+b^2\) なので、焦点は頂点よりも中心から遠くなります。</p><div class="math">\[\frac{x^2}{a^2}-\frac{y^2}{b^2}=1,\quad c=\sqrt{a^2+b^2},\quad \boxed{e=\frac{c}{a}>1}\]</div>
 <h3>放物線</h3><p>焦点と準線から等距離にある点の集まりです。したがって \(e=1\) です。</p><div class="math">\[PF=PH\quad\Longleftrightarrow\quad\boxed{e=1}\]</div>
 <div class="buttons speech"><button class="btn" onclick="speak('楕円も双曲線も、離心率は中心から焦点までの距離 c を、長さ a で割ったものです。ただし、楕円では c は a より小さく、双曲線では c は a より大きくなります。放物線の離心率は1です。')">▶ 公式の説明を読み上げる</button><button class="btn alt" onclick="stopSpeech()">■ 読み上げ停止</button></div></section>
@@ -27,7 +27,7 @@
 <section class="card"><span class="tag">4 練習問題</span><h2>離心率を計算してみよう</h2><p><strong>問題1：</strong> 楕円 \(\frac{x^2}{25}+\frac{y^2}{9}=1\) の離心率を求めましょう。</p><details><summary>解答・解説を表示</summary><p>\(a=5,\ b=3\) なので \(c=\sqrt{25-9}=4\)。したがって</p><div class="math">\[\boxed{e=\frac45}\]</div></details>
 <p><strong>問題2：</strong> 双曲線 \(\frac{x^2}{9}-\frac{y^2}{16}=1\) の離心率を求めましょう。</p><details><summary>解答・解説を表示</summary><p>\(a=3,\ b=4\) なので \(c=\sqrt{9+16}=5\)。したがって</p><div class="math">\[\boxed{e=\frac53}\]</div></details>
 <p><strong>問題3：</strong> 焦点と準線からの距離の比が \(3:2\) のとき、できる曲線は何でしょうか。</p><details><summary>解答・解説を表示</summary><p>\(e=\frac32>1\) なので <strong>双曲線</strong> です。</p></details>
-<div class="note"><strong>まとめ：</strong> \(e<1\) は楕円、\(e=1\) は放物線、\(e>1\) は双曲線。距離の比という1つの考え方で、二次曲線を統一的に理解できます。</div></section>
+<div class="note"><strong>まとめ：</strong> \(e&lt;1\) は楕円、\(e=1\) は放物線、\(e>1\) は双曲線。距離の比という1つの考え方で、二次曲線を統一的に理解できます。</div></section>
 <footer>みんなの数学データベース｜数学C・平面上の曲線</footer></main>
 <script>
 'use strict';
