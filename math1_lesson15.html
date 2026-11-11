@@ -1,1 +1,662 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>数学Ⅰ 第15講 2次不等式｜みんなの数学データベース</title><style>*{box-sizing:border-box}body{margin:0;background:#f2f7fc;color:#22354b;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.85}a{color:#136caa}header{background:linear-gradient(125deg,#17375f,#276b9e);color:#fff;padding:23px max(18px,calc((100vw - 900px)/2))}header a{color:#e9f4ff}header h1{font-size:clamp(23px,4vw,33px);margin:9px 0}main{max-width:900px;margin:auto;padding:18px 16px 60px}.card{background:white;border:1px solid #d6e5f2;border-radius:15px;padding:clamp(16px,3.6vw,28px);margin:20px 0;box-shadow:0 5px 20px #193f6310}h2{color:#164c7f;font-size:22px;border-bottom:2px solid #d8e9f6;padding-bottom:7px}h3{color:#225a85;margin-top:0}.label{display:inline-block;background:#e0f0fc;color:#185c8b;border-radius:25px;padding:2px 12px;font-size:13px;font-weight:700}.formula{background:#f0f7ff;border-left:5px solid #2479b6;border-radius:8px;padding:18px 8px;margin:16px 0;overflow-x:auto;text-align:center}.sample{border-left:5px solid #da9d38;background:#fff9ee;border-radius:8px;padding:14px 17px;margin:14px 0}.practice{border:1px solid #bdd5e8;background:#fafcff;border-radius:11px;padding:16px}details{margin-top:12px}summary{cursor:pointer;color:#075f9c;font-weight:700}nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:space-between;margin-top:25px}.navbutton{display:inline-block;background:#e2f0fb;padding:9px 14px;border-radius:10px;text-decoration:none;font-weight:700}svg{max-width:100%;height:auto}figure{margin:16px auto;text-align:center}.controls{background:#f1f7ff;border:1px solid #c9dfed;border-radius:12px;padding:12px 16px}input[type=range]{width:min(100%,420px)}.small{font-size:14px;color:#5e7182}.katex,.MathJax{font-size:110%}footer{background:#122f4f;color:#fff;text-align:center;padding:17px}@media(max-width:500px){.card{padding:15px}.formula{font-size:14px}}</style><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre']}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script></head><body><header><a href="high_school_video_lessons.html#subject0">← 高校生のための授業・数学Ⅰ</a><h1>第15講 2次不等式</h1><span>第3章 2次関数　｜　数学Ⅰ 全28講</span></header><main><article class="card"><span class="label">授業のねらい</span><p>2次関数の正負をグラフの上下で判断して解きます。</p><h2>定義・重要公式</h2><div class="formula">\((x-\alpha)(x-\beta)>0\quad(\alpha<\beta)\Rightarrow x<\alpha\;\text{または}\;x>\beta\)</div><h2>なぜそうなるのか</h2><p>上に開く放物線では、2つの根の外側で正、間で負です。</p></article><section class="card"><h2>例題と解説</h2><div class="sample"><strong>例題</strong><p>\(x^2-5x+6\le0\) を解く。</p></div><h3>解き方</h3><p>\((x-2)(x-3)\le0\) なので \(2\le x\le3\)。</p></section><section class="card"><h2>動かして確かめよう</h2><p id="vizCaption">スライダーを動かすと図が変化します。</p><div class="controls"><label for="vslider">パラメータ：<strong id="vvalue">1</strong></label><input id="vslider" type="range" min="-3" max="3" step="0.25" value="1"></div><figure><svg id="plot" viewBox="0 0 540 320" role="img" aria-label="操作できるグラフ・座標図"></svg></figure></section><script>(function(){const svg=document.getElementById('plot'),slider=document.getElementById('vslider'),txt=document.getElementById('vvalue');const mode='quad';function draw(){let val=Number(slider.value);txt.textContent=val;let W=540,H=320,ox=270,oy=160,unit=38;let lines='';for(let x=-6;x<=6;x++)lines+=`<line x1="${ox+x*unit}" y1="0" x2="${ox+x*unit}" y2="${H}" stroke="#e7edf3"/>`;for(let y=-4;y<=4;y++)lines+=`<line x1="0" y1="${oy+y*unit}" x2="${W}" y2="${oy+y*unit}" stroke="#e7edf3"/>`;lines+=`<line x1="0" y1="${oy}" x2="${W}" y2="${oy}" stroke="#6b849c" stroke-width="2"/><line x1="${ox}" y1="0" x2="${ox}" y2="${H}" stroke="#6b849c" stroke-width="2"/>`;let shape='';if(mode==='quad'){let d='';for(let px=0;px<=W;px+=3){let x=(px-ox)/unit,y=.3*(x-val)**2-1;d+=(px===0?'M':'L')+px+','+(oy-y*unit)+' ';}shape=`<path d="${d}" fill="none" stroke="#146eae" stroke-width="3"/><circle cx="${ox+val*unit}" cy="${oy+unit}" r="6" fill="#dd7d34"/><text x="10" y="26" fill="#153d62">y=0.3(x−${val})²−1</text>`;}else if(mode==='trig'){const a=(val+3)*Math.PI/6,x=ox+90*Math.cos(a),y=oy-90*Math.sin(a);shape=`<circle cx="${ox}" cy="${oy}" r="90" fill="none" stroke="#146eae" stroke-width="2"/><line x1="${ox}" y1="${oy}" x2="${x}" y2="${y}" stroke="#ed8634" stroke-width="4"/><line x1="${x}" y1="${y}" x2="${x}" y2="${oy}" stroke="#96a9bf" stroke-dasharray="5 5"/><circle cx="${x}" cy="${y}" r="6" fill="#ed8634"/><text x="10" y="26">cos θ=${Math.cos(a).toFixed(2)}  sin θ=${Math.sin(a).toFixed(2)}</text>`;}else{let points=[[1,2],[2,3],[3,2],[4,5],[5,4]];for(let [x,y] of points){shape+=`<circle cx="${ox+(x-3)*unit}" cy="${oy-(y-3)*unit*0.7*(1+val/6)}" r="7" fill="#1681bf"/>`;}shape+=`<text x="10" y="26">散布図：縦方向の広がりを調整</text>`;}svg.innerHTML=lines+shape;}slider.addEventListener('input',draw);draw()})()</script><section class="card"><h2>練習問題</h2><div class="practice"><strong>問</strong><p>\(x^2-x-6>0\) を解きなさい。</p><details><summary>解答・解説を見る</summary><p>\(x<-2\) または \(x>3\)。</p></details></div></section><nav><a class="navbutton" href="math1_lesson14.html">← 前の講義</a><a class="navbutton" href="high_school_video_lessons.html#subject0">数学Ⅰの目次</a><a class="navbutton" href="math1_lesson16.html">次の講義 →</a></nav><p class="small">※公式・問題文・図はこのサイト用に独自に作成しています。数式はオンラインでMathJaxを読み込みます。</p></main><footer>みんなの数学データベース｜数学Ⅰ</footer></body></html>
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>グラフと2次不等式｜数学Ⅰ｜みんなの数学データベース</title><style>*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f1f6fb;color:#21374e;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.82}header{background:linear-gradient(120deg,#18395f,#286d9e);color:white;padding:24px max(16px,calc((100vw - 1030px)/2))}header a{color:#fff}header h1{font-size:clamp(25px,4vw,35px);margin:9px 0 0}header p{margin:3px 0;color:#e5f2fe}main{max-width:1030px;margin:auto;padding:16px 16px 54px}a{color:#176ea9}.toc{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.toc a{background:white;border:1px solid #cfe0ed;border-radius:9px;padding:7px 11px;text-decoration:none;font-weight:700;font-size:14px}.card{background:white;border:1px solid #d8e5ef;border-radius:15px;padding:clamp(15px,3vw,28px);margin:16px 0;box-shadow:0 4px 20px #21466b11}h2{font-size:clamp(22px,3.4vw,29px);color:#194d79;margin:4px 0 12px}h3{font-size:clamp(18px,2.9vw,22px);color:#195b8b;border-bottom:2px solid #dce9f4;padding-bottom:7px;margin:22px 0 10px}p{margin:10px 0}.formula{background:#edf5ff;border-left:5px solid #2783bc;border-radius:10px;padding:13px 15px;overflow-x:auto;margin:15px 0}.example{background:#fff9ed;border-left:5px solid #e0a34a;border-radius:10px;padding:14px 16px;margin:14px 0}.note{background:#f5f9fd;border:1px solid #d7e4f0;border-radius:11px;padding:12px 16px;margin:12px 0}.practice{background:#fbfdff;border:1px solid #c9deed;border-radius:10px;padding:15px;margin:13px 0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:12px}.grid>*{min-width:0}ol,ul{padding-left:1.3em}li{margin:7px 0}details{margin-top:8px}summary{cursor:pointer;color:#176ca8;font-weight:700}table{border-collapse:collapse;width:100%}th,td{border:1px solid #cbdeed;padding:9px 7px;text-align:center}th{background:#e9f2fb}tr:nth-child(odd){background:#f9fbfe}.scroll{overflow-x:auto}.graph-wrap{border:1px solid #d5e4f0;background:#fcfeff;border-radius:12px;padding:12px;margin:15px auto}.graph-wrap canvas{display:block;width:100%;height:auto;max-width:760px;margin:0 auto;aspect-ratio: 720 / 370}.sliders{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:12px;margin:12px auto;max-width:760px}.sliders label{background:#eaf4fc;padding:9px 11px;border-radius:10px;font-weight:700}.sliders input{display:block;width:100%;accent-color:#196da9}.hint{font-size:14px;color:#4d657b}.nav{display:flex;justify-content:space-between;gap:9px;flex-wrap:wrap;margin:22px 0}.nav a{background:#e5f1fb;border-radius:10px;padding:9px 13px;text-decoration:none;font-weight:700}footer{background:#173452;color:#fff;padding:18px;text-align:center}@media(max-width:600px){main{padding:10px 11px 42px}.card{padding:15px}.formula{padding:12px 8px}} .math-render.display{display:block;overflow-x:auto;text-align:center;margin:.4em auto}.math-render.inline{display:inline}.math-render math{font-size:1.12em}</style></head><body><header><a href="math_subject_1.html">← 数学Ⅰの授業一覧へ</a><h1>グラフと2次不等式</h1><p>数学Ⅰ ／ 第3章 2次関数 ／ グラフによる解法・連立・文章題</p></header><main><nav class="toc"><a href="#s1">グラフを利用して2次不等式を解く</a><a href="#s2">重解の場合と実数解がない場合</a><a href="#s3">負の係数と不等号の向き</a><a href="#s4">連立2次不等式</a><a href="#s5">2次不等式の応用</a></nav><section class="card" id="s1"><h2>グラフを利用して2次不等式を解く</h2><p>2次不等式は<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>+</mo>
+  <mi>b</mi>
+  <mi>x</mi>
+  <mo>+</mo>
+  <mi>c</mi>
+</math></span>の符号が正か負かを、放物線がx軸より上か下かで考えます。</p><div class="graph-wrap"><p><strong>グラフを動かして確かめよう</strong></p><canvas id="quadratic" width="720" height="370" aria-label="2次関数の動くグラフ"></canvas><div class="sliders"><label>a：<output id="oa">1</output><input id="ia" type="range" min="-3" max="3" step="0.5" value="1"></label><label>b：<output id="ob">-2</output><input id="ib" type="range" min="-6" max="6" step="0.5" value="-2"></label><label>c：<output id="oc">-3</output><input id="ic" type="range" min="-7" max="7" step="0.5" value="-3"></label></div><p id="graphStatus" class="hint" aria-live="polite"></p></div><div class="example"><b>例題｜異なる2つの根をもつ場合</b><p><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>&#x2212;</mo>
+  <mn>2</mn>
+  <mi>x</mi>
+  <mo>&#x2212;</mo>
+  <mn>3</mn>
+  <mo>&lt;</mo>
+  <mn>0</mn>
+</math></span> を解きます。</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo>&#x2212;</mo>
+  <mn>3</mn>
+  <mo stretchy="false">)</mo>
+  <mo>&lt;</mo>
+  <mn>0</mn>
+</math></span></div><p>上に開く放物線がx軸より下にあるのは根の間なので、</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+  <mo>&lt;</mo>
+  <mi>x</mi>
+  <mo>&lt;</mo>
+  <mn>3</mn>
+</math></span></div><p>です。<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo>&#x2212;</mo>
+  <mn>3</mn>
+  <mo stretchy="false">)</mo>
+  <mo>&#x2265;</mo>
+  <mn>0</mn>
+</math></span> なら逆に<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>&#x2264;</mo>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span> または<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>&#x2265;</mo>
+  <mn>3</mn>
+</math></span>です。</p></div></section><section class="card" id="s2"><h2>重解の場合と実数解がない場合</h2><h3>重解（D = 0）のとき</h3><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo>&#x2212;</mo>
+  <mn>2</mn>
+  <msup>
+    <mo stretchy="false">)</mo>
+    <mn>2</mn>
+  </msup>
+  <mo>&#x2265;</mo>
+  <mn>0</mn>
+  <mstyle scriptlevel="0">
+    <mspace width="1em"></mspace>
+  </mstyle>
+  <mtext>&#x306F;&#x3059;&#x3079;&#x3066;&#x306E;&#x5B9F;&#x6570;&#x3067;&#x6210;&#x7ACB;</mtext>
+</math></span></div><p>等号が成り立つのは<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>=</mo>
+  <mn>2</mn>
+</math></span>です。<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo>&#x2212;</mo>
+  <mn>2</mn>
+  <msup>
+    <mo stretchy="false">)</mo>
+    <mn>2</mn>
+  </msup>
+  <mo>&gt;</mo>
+  <mn>0</mn>
+</math></span>は<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mi>e</mi>
+  <mn>2</mn>
+</math></span>、<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo>&#x2212;</mo>
+  <mn>2</mn>
+  <msup>
+    <mo stretchy="false">)</mo>
+    <mn>2</mn>
+  </msup>
+  <mo>&lt;</mo>
+  <mn>0</mn>
+</math></span>は解なしです。</p><h3>実数解がない（D &lt; 0）とき</h3><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>+</mo>
+  <mn>2</mn>
+  <mi>x</mi>
+  <mo>+</mo>
+  <mn>3</mn>
+  <mo>=</mo>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+  <msup>
+    <mo stretchy="false">)</mo>
+    <mn>2</mn>
+  </msup>
+  <mo>+</mo>
+  <mn>2</mn>
+  <mo>&gt;</mo>
+  <mn>0</mn>
+</math></span></div><p>したがって<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>+</mo>
+  <mn>2</mn>
+  <mi>x</mi>
+  <mo>+</mo>
+  <mn>3</mn>
+  <mo>&gt;</mo>
+  <mn>0</mn>
+</math></span>の解はすべての実数で、<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>+</mo>
+  <mn>2</mn>
+  <mi>x</mi>
+  <mo>+</mo>
+  <mn>3</mn>
+  <mo>&lt;</mo>
+  <mn>0</mn>
+</math></span>は解なしです。</p></section><section class="card" id="s3"><h2>負の係数と不等号の向き</h2><p>2次の係数が負のときは、両辺に<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span>を掛けてから考えると確実です。<strong>不等号の向きが逆</strong>になる点に注意しましょう。</p><div class="example"><b>例題｜負の係数</b><p><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo>&#x2212;</mo>
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>+</mo>
+  <mn>3</mn>
+  <mi>x</mi>
+  <mo>+</mo>
+  <mn>4</mn>
+  <mo>&#x2265;</mo>
+  <mn>0</mn>
+</math></span> を解く。</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true" columnalign="right left" columnspacing="0em" rowspacing="3pt">
+    <mtr>
+      <mtd>
+        <mo>&#x2212;</mo>
+        <msup>
+          <mi>x</mi>
+          <mn>2</mn>
+        </msup>
+        <mo>+</mo>
+        <mn>3</mn>
+        <mi>x</mi>
+        <mo>+</mo>
+        <mn>4</mn>
+      </mtd>
+      <mtd>
+        <mi></mi>
+        <mo>&#x2265;</mo>
+        <mn>0</mn>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <msup>
+          <mi>x</mi>
+          <mn>2</mn>
+        </msup>
+        <mo>&#x2212;</mo>
+        <mn>3</mn>
+        <mi>x</mi>
+        <mo>&#x2212;</mo>
+        <mn>4</mn>
+      </mtd>
+      <mtd>
+        <mi></mi>
+        <mo>&#x2264;</mo>
+        <mn>0</mn>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo>&#x2212;</mo>
+        <mn>4</mn>
+        <mo stretchy="false">)</mo>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo>+</mo>
+        <mn>1</mn>
+        <mo stretchy="false">)</mo>
+      </mtd>
+      <mtd>
+        <mi></mi>
+        <mo>&#x2264;</mo>
+        <mn>0</mn>
+      </mtd>
+    </mtr>
+  </mtable>
+</math></span></div><p>上に開く放物線でx軸以下の範囲なので、<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+  <mo>&#x2264;</mo>
+  <mi>x</mi>
+  <mo>&#x2264;</mo>
+  <mn>4</mn>
+</math></span>。</p></div><div class="practice"><b>練習問題</b><p>1. <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>&#x2212;</mo>
+  <mn>5</mn>
+  <mi>x</mi>
+  <mo>+</mo>
+  <mn>6</mn>
+  <mo>&lt;</mo>
+  <mn>0</mn>
+</math></span> を解きなさい。</p><details><summary>解答と途中計算を開く</summary><p><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo>&#x2212;</mo>
+  <mn>2</mn>
+  <mo stretchy="false">)</mo>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo>&#x2212;</mo>
+  <mn>3</mn>
+  <mo stretchy="false">)</mo>
+  <mo>&lt;</mo>
+  <mn>0</mn>
+</math></span> より<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mo>&lt;</mo>
+  <mi>x</mi>
+  <mo>&lt;</mo>
+  <mn>3</mn>
+</math></span>。</p></details><p>2. <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>&#x2212;</mo>
+  <mn>3</mn>
+  <mi>x</mi>
+  <mo>&#x2212;</mo>
+  <mn>2</mn>
+  <mo>&#x2265;</mo>
+  <mn>0</mn>
+</math></span> を解きなさい。</p><details><summary>解答と途中計算を開く</summary><p><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mn>2</mn>
+  <mi>x</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo>&#x2212;</mo>
+  <mn>2</mn>
+  <mo stretchy="false">)</mo>
+  <mo>&#x2265;</mo>
+  <mn>0</mn>
+</math></span> より<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>&#x2264;</mo>
+  <mo>&#x2212;</mo>
+  <mfrac>
+    <mn>1</mn>
+    <mn>2</mn>
+  </mfrac>
+</math></span> または<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>&#x2265;</mo>
+  <mn>2</mn>
+</math></span>。</p></details><p>3. <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo>&#x2212;</mo>
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>+</mo>
+  <mn>4</mn>
+  <mi>x</mi>
+  <mo>&#x2212;</mo>
+  <mn>4</mn>
+  <mo>&gt;</mo>
+  <mn>0</mn>
+</math></span> を解きなさい。</p><details><summary>解答と途中計算を開く</summary><p><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo>&#x2212;</mo>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo>&#x2212;</mo>
+  <mn>2</mn>
+  <msup>
+    <mo stretchy="false">)</mo>
+    <mn>2</mn>
+  </msup>
+  <mo>&gt;</mo>
+  <mn>0</mn>
+</math></span> は不可能なので、解なし。</p></details></div></section><section class="card" id="s4"><h2>連立2次不等式</h2><p>複数の不等式が同時に成立する範囲は、各々の解の<strong>共通範囲</strong>を求めます。</p><div class="example"><b>例題｜連立不等式</b><p><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>+</mo>
+  <mi>x</mi>
+  <mo>&#x2212;</mo>
+  <mn>2</mn>
+  <mo>&lt;</mo>
+  <mn>0</mn>
+</math></span> かつ<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>&#x2212;</mo>
+  <mn>4</mn>
+  <mo>&#x2265;</mo>
+  <mn>0</mn>
+</math></span> を解きます。</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true" columnalign="right left" columnspacing="0em" rowspacing="3pt">
+    <mtr>
+      <mtd>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo>+</mo>
+        <mn>2</mn>
+        <mo stretchy="false">)</mo>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo>&#x2212;</mo>
+        <mn>1</mn>
+        <mo stretchy="false">)</mo>
+        <mo>&lt;</mo>
+        <mn>0</mn>
+      </mtd>
+      <mtd>
+        <mstyle scriptlevel="0">
+          <mspace width="1em"></mspace>
+        </mstyle>
+        <mo stretchy="false">&#x27F9;</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="1em"></mspace>
+        </mstyle>
+        <mo>&#x2212;</mo>
+        <mn>2</mn>
+        <mo>&lt;</mo>
+        <mi>x</mi>
+        <mo>&lt;</mo>
+        <mn>1</mn>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo>&#x2212;</mo>
+        <mn>2</mn>
+        <mo stretchy="false">)</mo>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo>+</mo>
+        <mn>2</mn>
+        <mo stretchy="false">)</mo>
+        <mo>&#x2265;</mo>
+        <mn>0</mn>
+      </mtd>
+      <mtd>
+        <mstyle scriptlevel="0">
+          <mspace width="1em"></mspace>
+        </mstyle>
+        <mo stretchy="false">&#x27F9;</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="1em"></mspace>
+        </mstyle>
+        <mi>x</mi>
+        <mo>&#x2264;</mo>
+        <mo>&#x2212;</mo>
+        <mn>2</mn>
+        <mtext>&#xA0;</mtext>
+        <mtext>&#x307E;&#x305F;&#x306F;</mtext>
+        <mtext>&#xA0;</mtext>
+        <mi>x</mi>
+        <mo>&#x2265;</mo>
+        <mn>2</mn>
+      </mtd>
+    </mtr>
+  </mtable>
+</math></span></div><p>両者の共通範囲はないので、<strong>解なし</strong>です。</p></div><div class="example"><b>例題｜共通範囲がある例</b><p><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+  <mo>&lt;</mo>
+  <mn>0</mn>
+</math></span> と<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>&#x2212;</mo>
+  <mi>x</mi>
+  <mo>&#x2212;</mo>
+  <mn>2</mn>
+  <mo>&lt;</mo>
+  <mn>0</mn>
+</math></span> の共通範囲を求めます。</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true" columnalign="right" columnspacing="" rowspacing="3pt">
+    <mtr>
+      <mtd>
+        <mo>&#x2212;</mo>
+        <mn>1</mn>
+        <mo>&lt;</mo>
+        <mi>x</mi>
+        <mo>&lt;</mo>
+        <mn>1</mn>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mo>&#x2212;</mo>
+        <mn>1</mn>
+        <mo>&lt;</mo>
+        <mi>x</mi>
+        <mo>&lt;</mo>
+        <mn>2</mn>
+      </mtd>
+    </mtr>
+  </mtable>
+</math></span></div><p>共通範囲は<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+  <mo>&lt;</mo>
+  <mi>x</mi>
+  <mo>&lt;</mo>
+  <mn>1</mn>
+</math></span>です。</p></div></section><section class="card" id="s5"><h2>2次不等式の応用</h2><p>文章題では、求める範囲を不等式で表し、時間や長さなどの条件も併せて確認します。</p><div class="example"><b>例題｜物体を投げ上げる問題</b><p>ある物体の高さを<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>h</mi>
+  <mo>=</mo>
+  <mo>&#x2212;</mo>
+  <mn>5</mn>
+  <msup>
+    <mi>t</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>+</mo>
+  <mn>50</mn>
+  <mi>t</mi>
+</math></span>（m、<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+  <mo>&#x2265;</mo>
+  <mn>0</mn>
+</math></span>）とします。高さが80m以上120m以下となる時間を求めます。</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mn>80</mn>
+  <mo>&#x2264;</mo>
+  <mo>&#x2212;</mo>
+  <mn>5</mn>
+  <msup>
+    <mi>t</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>+</mo>
+  <mn>50</mn>
+  <mi>t</mi>
+  <mo>&#x2264;</mo>
+  <mn>120</mn>
+</math></span></div><p>まず<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>h</mi>
+  <mo>&#x2265;</mo>
+  <mn>80</mn>
+</math></span>から</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mo>&#x2212;</mo>
+  <mn>5</mn>
+  <msup>
+    <mi>t</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>+</mo>
+  <mn>50</mn>
+  <mi>t</mi>
+  <mo>&#x2265;</mo>
+  <mn>80</mn>
+  <mstyle scriptlevel="0">
+    <mspace width="1em"></mspace>
+  </mstyle>
+  <mo stretchy="false">&#x27FA;</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="1em"></mspace>
+  </mstyle>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo>&#x2212;</mo>
+  <mn>2</mn>
+  <mo stretchy="false">)</mo>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo>&#x2212;</mo>
+  <mn>8</mn>
+  <mo stretchy="false">)</mo>
+  <mo>&#x2264;</mo>
+  <mn>0</mn>
+</math></span></div><p>すなわち<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mo>&#x2264;</mo>
+  <mi>t</mi>
+  <mo>&#x2264;</mo>
+  <mn>8</mn>
+</math></span>。一方<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>h</mi>
+  <mo>&#x2264;</mo>
+  <mn>120</mn>
+</math></span>から</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mo>&#x2212;</mo>
+  <mn>5</mn>
+  <msup>
+    <mi>t</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>+</mo>
+  <mn>50</mn>
+  <mi>t</mi>
+  <mo>&#x2264;</mo>
+  <mn>120</mn>
+  <mstyle scriptlevel="0">
+    <mspace width="1em"></mspace>
+  </mstyle>
+  <mo stretchy="false">&#x27FA;</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="1em"></mspace>
+  </mstyle>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo>&#x2212;</mo>
+  <mn>4</mn>
+  <mo stretchy="false">)</mo>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo>&#x2212;</mo>
+  <mn>6</mn>
+  <mo stretchy="false">)</mo>
+  <mo>&#x2265;</mo>
+  <mn>0</mn>
+</math></span></div><p>ゆえに<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+  <mo>&#x2264;</mo>
+  <mn>4</mn>
+</math></span>または<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+  <mo>&#x2265;</mo>
+  <mn>6</mn>
+</math></span>。共通範囲は</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mn>2</mn>
+  <mo>&#x2264;</mo>
+  <mi>t</mi>
+  <mo>&#x2264;</mo>
+  <mn>4</mn>
+  <mstyle scriptlevel="0">
+    <mspace width="1em"></mspace>
+  </mstyle>
+  <mtext>&#x307E;&#x305F;&#x306F;</mtext>
+  <mstyle scriptlevel="0">
+    <mspace width="1em"></mspace>
+  </mstyle>
+  <mn>6</mn>
+  <mo>&#x2264;</mo>
+  <mi>t</mi>
+  <mo>&#x2264;</mo>
+  <mn>8</mn>
+</math></span></div></div><div class="practice"><b>練習問題</b><p>1. <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>&#x2212;</mo>
+  <mn>4</mn>
+  <mi>x</mi>
+  <mo>+</mo>
+  <mn>3</mn>
+  <mo>&#x2264;</mo>
+  <mn>0</mn>
+</math></span> の解を求めなさい。</p><details><summary>解答と途中計算を開く</summary><p><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo>&#x2212;</mo>
+  <mn>3</mn>
+  <mo stretchy="false">)</mo>
+  <mo>&#x2264;</mo>
+  <mn>0</mn>
+</math></span> より<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+  <mo>&#x2264;</mo>
+  <mi>x</mi>
+  <mo>&#x2264;</mo>
+  <mn>3</mn>
+</math></span>。</p></details><p>2. <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>+</mo>
+  <mn>2</mn>
+  <mi>x</mi>
+  <mo>+</mo>
+  <mn>5</mn>
+  <mo>&lt;</mo>
+  <mn>0</mn>
+</math></span> の解を求めなさい。</p><details><summary>解答と途中計算を開く</summary><p><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+  <msup>
+    <mo stretchy="false">)</mo>
+    <mn>2</mn>
+  </msup>
+  <mo>+</mo>
+  <mn>4</mn>
+  <mo>&lt;</mo>
+  <mn>0</mn>
+</math></span>は不可能。解なし。</p></details></div></section><nav class="nav"><a href="math1_lesson14.html">← 前の教材</a><a href="math_subject_1.html">数学Ⅰの授業一覧</a><a href="math1_lesson16.html">次の教材 →</a></nav><p class="hint">教科書写真の学習範囲を参考に、解説・例題・図はこのサイトのために独自制作しています。数式はあらかじめHTMLに変換しています。</p></main><footer>みんなの数学データベース｜数学Ⅰ</footer><script>(()=>{const cvs=document.getElementById('quadratic');if(!cvs)return;const ctx=cvs.getContext('2d');let I=['a','b','c'].map(n=>document.getElementById('i'+n));function draw(){let [a,b,c]=I.map(i=>Number(i.value));I.forEach((v,j)=>document.getElementById('o'+['a','b','c'][j]).textContent=v.value);let W=cvs.width,H=cvs.height,ox=355,oy=200,u=34;ctx.clearRect(0,0,W,H);ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);ctx.strokeStyle='#e8eff5';ctx.lineWidth=1;for(let x=ox%u;x<W;x+=u){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke()}for(let y=oy%u;y<H;y+=u){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke()}ctx.strokeStyle='#667e93';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(0,oy);ctx.lineTo(W,oy);ctx.moveTo(ox,0);ctx.lineTo(ox,H);ctx.stroke();ctx.fillStyle='#294a64';ctx.font='14px sans-serif';ctx.fillText('0',ox+7,oy+16);ctx.fillText('x',W-17,oy-8);ctx.fillText('y',ox+8,17);let f=x=>a*x*x+b*x+c;ctx.strokeStyle='#176faf';ctx.lineWidth=3;ctx.beginPath();for(let xp=0;xp<=W;xp+=2){let x=(xp-ox)/u,y=oy-f(x)*u;if(xp==0)ctx.moveTo(xp,y);else ctx.lineTo(xp,y)}ctx.stroke();let D=b*b-4*a*c, status=document.getElementById('graphStatus');if(a!==0){let p=-b/(2*a),q=f(p),xp=ox+p*u,yp=oy-q*u;ctx.fillStyle='#dc7f35';ctx.beginPath();ctx.arc(xp,yp,5,0,Math.PI*2);ctx.fill();let roots=D>0?[(-b-Math.sqrt(D))/(2*a),(-b+Math.sqrt(D))/(2*a)]:D===0?[p]:[];ctx.fillStyle='#dd4d45';for(let r of roots){ctx.beginPath();ctx.arc(ox+r*u,oy,5,0,Math.PI*2);ctx.fill()}status.textContent='判別式 D = '+Number(D.toFixed(3))+' ／ x軸との交点 '+(D>0?'2個':D===0?'1個（接する）':'0個')+' ／ 頂点 ('+Number(p.toFixed(2))+', '+Number(q.toFixed(2))+')';}else{status.textContent='a=0 なのでグラフは直線です。2次関数を確かめるにはaを0以外にしてください。';}}I.forEach(i=>i.addEventListener('input',draw));draw();})();</script></body></html>

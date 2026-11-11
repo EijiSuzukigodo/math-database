@@ -1,1 +1,566 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>数学Ⅰ 第13講 2次方程式と解の公式｜みんなの数学データベース</title><style>*{box-sizing:border-box}body{margin:0;background:#f2f7fc;color:#22354b;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.85}a{color:#136caa}header{background:linear-gradient(125deg,#17375f,#276b9e);color:#fff;padding:23px max(18px,calc((100vw - 900px)/2))}header a{color:#e9f4ff}header h1{font-size:clamp(23px,4vw,33px);margin:9px 0}main{max-width:900px;margin:auto;padding:18px 16px 60px}.card{background:white;border:1px solid #d6e5f2;border-radius:15px;padding:clamp(16px,3.6vw,28px);margin:20px 0;box-shadow:0 5px 20px #193f6310}h2{color:#164c7f;font-size:22px;border-bottom:2px solid #d8e9f6;padding-bottom:7px}h3{color:#225a85;margin-top:0}.label{display:inline-block;background:#e0f0fc;color:#185c8b;border-radius:25px;padding:2px 12px;font-size:13px;font-weight:700}.formula{background:#f0f7ff;border-left:5px solid #2479b6;border-radius:8px;padding:18px 8px;margin:16px 0;overflow-x:auto;text-align:center}.sample{border-left:5px solid #da9d38;background:#fff9ee;border-radius:8px;padding:14px 17px;margin:14px 0}.practice{border:1px solid #bdd5e8;background:#fafcff;border-radius:11px;padding:16px}details{margin-top:12px}summary{cursor:pointer;color:#075f9c;font-weight:700}nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:space-between;margin-top:25px}.navbutton{display:inline-block;background:#e2f0fb;padding:9px 14px;border-radius:10px;text-decoration:none;font-weight:700}svg{max-width:100%;height:auto}figure{margin:16px auto;text-align:center}.controls{background:#f1f7ff;border:1px solid #c9dfed;border-radius:12px;padding:12px 16px}input[type=range]{width:min(100%,420px)}.small{font-size:14px;color:#5e7182}.katex,.MathJax{font-size:110%}footer{background:#122f4f;color:#fff;text-align:center;padding:17px}@media(max-width:500px){.card{padding:15px}.formula{font-size:14px}}</style><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre']}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script></head><body><header><a href="high_school_video_lessons.html#subject0">← 高校生のための授業・数学Ⅰ</a><h1>第13講 2次方程式と解の公式</h1><span>第3章 2次関数　｜　数学Ⅰ 全28講</span></header><main><article class="card"><span class="label">授業のねらい</span><p>2次方程式の解は因数分解、平方完成、解の公式で求めます。</p><h2>定義・重要公式</h2><div class="formula">\(ax^2+bx+c=0\ (a\ne0),\quad x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\)</div><h2>なぜそうなるのか</h2><p>両辺を \(a\) で割って平方完成し、平方根を取れば解の公式が導かれます。</p></article><section class="card"><h2>例題と解説</h2><div class="sample"><strong>例題</strong><p>\(2x^2-3x-2=0\) を解く。</p></div><h3>解き方</h3><p>\(x=\frac{3\pm\sqrt{9+16}}4=\frac{3\pm5}4\) より \(x=2,-\frac12\)。</p></section><section class="card"><h2>動かして確かめよう</h2><p id="vizCaption">スライダーを動かすと図が変化します。</p><div class="controls"><label for="vslider">パラメータ：<strong id="vvalue">1</strong></label><input id="vslider" type="range" min="-3" max="3" step="0.25" value="1"></div><figure><svg id="plot" viewBox="0 0 540 320" role="img" aria-label="操作できるグラフ・座標図"></svg></figure></section><script>(function(){const svg=document.getElementById('plot'),slider=document.getElementById('vslider'),txt=document.getElementById('vvalue');const mode='quad';function draw(){let val=Number(slider.value);txt.textContent=val;let W=540,H=320,ox=270,oy=160,unit=38;let lines='';for(let x=-6;x<=6;x++)lines+=`<line x1="${ox+x*unit}" y1="0" x2="${ox+x*unit}" y2="${H}" stroke="#e7edf3"/>`;for(let y=-4;y<=4;y++)lines+=`<line x1="0" y1="${oy+y*unit}" x2="${W}" y2="${oy+y*unit}" stroke="#e7edf3"/>`;lines+=`<line x1="0" y1="${oy}" x2="${W}" y2="${oy}" stroke="#6b849c" stroke-width="2"/><line x1="${ox}" y1="0" x2="${ox}" y2="${H}" stroke="#6b849c" stroke-width="2"/>`;let shape='';if(mode==='quad'){let d='';for(let px=0;px<=W;px+=3){let x=(px-ox)/unit,y=.3*(x-val)**2-1;d+=(px===0?'M':'L')+px+','+(oy-y*unit)+' ';}shape=`<path d="${d}" fill="none" stroke="#146eae" stroke-width="3"/><circle cx="${ox+val*unit}" cy="${oy+unit}" r="6" fill="#dd7d34"/><text x="10" y="26" fill="#153d62">y=0.3(x−${val})²−1</text>`;}else if(mode==='trig'){const a=(val+3)*Math.PI/6,x=ox+90*Math.cos(a),y=oy-90*Math.sin(a);shape=`<circle cx="${ox}" cy="${oy}" r="90" fill="none" stroke="#146eae" stroke-width="2"/><line x1="${ox}" y1="${oy}" x2="${x}" y2="${y}" stroke="#ed8634" stroke-width="4"/><line x1="${x}" y1="${y}" x2="${x}" y2="${oy}" stroke="#96a9bf" stroke-dasharray="5 5"/><circle cx="${x}" cy="${y}" r="6" fill="#ed8634"/><text x="10" y="26">cos θ=${Math.cos(a).toFixed(2)}  sin θ=${Math.sin(a).toFixed(2)}</text>`;}else{let points=[[1,2],[2,3],[3,2],[4,5],[5,4]];for(let [x,y] of points){shape+=`<circle cx="${ox+(x-3)*unit}" cy="${oy-(y-3)*unit*0.7*(1+val/6)}" r="7" fill="#1681bf"/>`;}shape+=`<text x="10" y="26">散布図：縦方向の広がりを調整</text>`;}svg.innerHTML=lines+shape;}slider.addEventListener('input',draw);draw()})()</script><section class="card"><h2>練習問題</h2><div class="practice"><strong>問</strong><p>\(x^2-4x-5=0\) を解きなさい。</p><details><summary>解答・解説を見る</summary><p>\(x=5,-1\)</p></details></div></section><nav><a class="navbutton" href="math1_lesson12.html">← 前の講義</a><a class="navbutton" href="high_school_video_lessons.html#subject0">数学Ⅰの目次</a><a class="navbutton" href="math1_lesson14.html">次の講義 →</a></nav><p class="small">※公式・問題文・図はこのサイト用に独自に作成しています。数式はオンラインでMathJaxを読み込みます。</p></main><footer>みんなの数学データベース｜数学Ⅰ</footer></body></html>
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>2次方程式｜数学Ⅰ｜みんなの数学データベース</title><style>*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f1f6fb;color:#21374e;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.82}header{background:linear-gradient(120deg,#18395f,#286d9e);color:white;padding:24px max(16px,calc((100vw - 1030px)/2))}header a{color:#fff}header h1{font-size:clamp(25px,4vw,35px);margin:9px 0 0}header p{margin:3px 0;color:#e5f2fe}main{max-width:1030px;margin:auto;padding:16px 16px 54px}a{color:#176ea9}.toc{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.toc a{background:white;border:1px solid #cfe0ed;border-radius:9px;padding:7px 11px;text-decoration:none;font-weight:700;font-size:14px}.card{background:white;border:1px solid #d8e5ef;border-radius:15px;padding:clamp(15px,3vw,28px);margin:16px 0;box-shadow:0 4px 20px #21466b11}h2{font-size:clamp(22px,3.4vw,29px);color:#194d79;margin:4px 0 12px}h3{font-size:clamp(18px,2.9vw,22px);color:#195b8b;border-bottom:2px solid #dce9f4;padding-bottom:7px;margin:22px 0 10px}p{margin:10px 0}.formula{background:#edf5ff;border-left:5px solid #2783bc;border-radius:10px;padding:13px 15px;overflow-x:auto;margin:15px 0}.example{background:#fff9ed;border-left:5px solid #e0a34a;border-radius:10px;padding:14px 16px;margin:14px 0}.note{background:#f5f9fd;border:1px solid #d7e4f0;border-radius:11px;padding:12px 16px;margin:12px 0}.practice{background:#fbfdff;border:1px solid #c9deed;border-radius:10px;padding:15px;margin:13px 0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:12px}.grid>*{min-width:0}ol,ul{padding-left:1.3em}li{margin:7px 0}details{margin-top:8px}summary{cursor:pointer;color:#176ca8;font-weight:700}table{border-collapse:collapse;width:100%}th,td{border:1px solid #cbdeed;padding:9px 7px;text-align:center}th{background:#e9f2fb}tr:nth-child(odd){background:#f9fbfe}.scroll{overflow-x:auto}.graph-wrap{border:1px solid #d5e4f0;background:#fcfeff;border-radius:12px;padding:12px;margin:15px auto}.graph-wrap canvas{display:block;width:100%;height:auto;max-width:760px;margin:0 auto;aspect-ratio: 720 / 370}.sliders{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:12px;margin:12px auto;max-width:760px}.sliders label{background:#eaf4fc;padding:9px 11px;border-radius:10px;font-weight:700}.sliders input{display:block;width:100%;accent-color:#196da9}.hint{font-size:14px;color:#4d657b}.nav{display:flex;justify-content:space-between;gap:9px;flex-wrap:wrap;margin:22px 0}.nav a{background:#e5f1fb;border-radius:10px;padding:9px 13px;text-decoration:none;font-weight:700}footer{background:#173452;color:#fff;padding:18px;text-align:center}@media(max-width:600px){main{padding:10px 11px 42px}.card{padding:15px}.formula{padding:12px 8px}} .math-render.display{display:block;overflow-x:auto;text-align:center;margin:.4em auto}.math-render.inline{display:inline}.math-render math{font-size:1.12em}</style></head><body><header><a href="math_subject_1.html">← 数学Ⅰの授業一覧へ</a><h1>2次方程式</h1><p>数学Ⅰ ／ 第3章 2次関数 ／ 因数分解・解の公式・判別式</p></header><main><nav class="toc"><a href="#s1">2次方程式と因数分解</a><a href="#s2">平方完成と解の公式の導出</a><a href="#s3">判別式と解の個数</a><a href="#s4">まとめ</a></nav><section class="card" id="s1"><h2>2次方程式と因数分解</h2><p>2次方程式は、未知数の2次の項を含む方程式です。次の形に整理して解きます。</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>a</mi>
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>+</mo>
+  <mi>b</mi>
+  <mi>x</mi>
+  <mo>+</mo>
+  <mi>c</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+  <mstyle scriptlevel="0">
+    <mspace width="2em"></mspace>
+  </mstyle>
+  <mo stretchy="false">(</mo>
+  <mi>a</mi>
+  <mo>&#x2260;</mo>
+  <mn>0</mn>
+  <mo stretchy="false">)</mo>
+</math></span></div><h3>積が0になる条件</h3><p>積が0なら、少なくとも一方の因数が0です。</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>A</mi>
+  <mi>B</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+  <mstyle scriptlevel="0">
+    <mspace width="1em"></mspace>
+  </mstyle>
+  <mo stretchy="false">&#x27FA;</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="1em"></mspace>
+  </mstyle>
+  <mi>A</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+  <mtext>&#xA0;</mtext>
+  <mtext>&#x307E;&#x305F;&#x306F;</mtext>
+  <mtext>&#xA0;</mtext>
+  <mi>B</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span></div><div class="example"><b>例題｜因数分解による解法</b><p><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>&#x2212;</mo>
+  <mn>2</mn>
+  <mi>x</mi>
+  <mo>&#x2212;</mo>
+  <mn>3</mn>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> を解く。</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true" columnalign="right left" columnspacing="0em" rowspacing="3pt">
+    <mtr>
+      <mtd>
+        <msup>
+          <mi>x</mi>
+          <mn>2</mn>
+        </msup>
+        <mo>&#x2212;</mo>
+        <mn>2</mn>
+        <mi>x</mi>
+        <mo>&#x2212;</mo>
+        <mn>3</mn>
+      </mtd>
+      <mtd>
+        <mi></mi>
+        <mo>=</mo>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo>+</mo>
+        <mn>1</mn>
+        <mo stretchy="false">)</mo>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo>&#x2212;</mo>
+        <mn>3</mn>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mn>0</mn>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mi>x</mi>
+        <mo>+</mo>
+        <mn>1</mn>
+      </mtd>
+      <mtd>
+        <mi></mi>
+        <mo>=</mo>
+        <mn>0</mn>
+        <mtext>&#xA0;</mtext>
+        <mtext>&#x307E;&#x305F;&#x306F;</mtext>
+        <mtext>&#xA0;</mtext>
+        <mi>x</mi>
+        <mo>&#x2212;</mo>
+        <mn>3</mn>
+        <mo>=</mo>
+        <mn>0</mn>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mi>x</mi>
+      </mtd>
+      <mtd>
+        <mi></mi>
+        <mo>=</mo>
+        <mo>&#x2212;</mo>
+        <mn>1</mn>
+        <mo>,</mo>
+        <mtext>&#xA0;</mtext>
+        <mn>3</mn>
+      </mtd>
+    </mtr>
+  </mtable>
+</math></span></div></div><div class="practice"><b>練習問題</b><p>1. <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>&#x2212;</mo>
+  <mn>6</mn>
+  <mi>x</mi>
+  <mo>+</mo>
+  <mn>5</mn>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> を解きなさい。</p><details><summary>解答と途中計算を開く</summary><p><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo>&#x2212;</mo>
+  <mn>5</mn>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> なので、<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mn>5</mn>
+</math></span>。</p></details><p>2. <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>+</mo>
+  <mn>5</mn>
+  <mi>x</mi>
+  <mo>+</mo>
+  <mn>2</mn>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> を解きなさい。</p><details><summary>解答と途中計算を開く</summary><p><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mn>2</mn>
+  <mi>x</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo>+</mo>
+  <mn>2</mn>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> なので、<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>=</mo>
+  <mo>&#x2212;</mo>
+  <mfrac>
+    <mn>1</mn>
+    <mn>2</mn>
+  </mfrac>
+  <mo>,</mo>
+  <mo>&#x2212;</mo>
+  <mn>2</mn>
+</math></span>。</p></details></div></section><section class="card" id="s2"><h2>平方完成と解の公式の導出</h2><p>因数分解できない2次方程式には<strong>解の公式</strong>を使います。公式は平方完成から導けます。</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true" columnalign="right left" columnspacing="0em" rowspacing="3pt">
+    <mtr>
+      <mtd>
+        <mi>a</mi>
+        <msup>
+          <mi>x</mi>
+          <mn>2</mn>
+        </msup>
+        <mo>+</mo>
+        <mi>b</mi>
+        <mi>x</mi>
+        <mo>+</mo>
+        <mi>c</mi>
+      </mtd>
+      <mtd>
+        <mi></mi>
+        <mo>=</mo>
+        <mn>0</mn>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <msup>
+          <mi>x</mi>
+          <mn>2</mn>
+        </msup>
+        <mo>+</mo>
+        <mfrac>
+          <mi>b</mi>
+          <mi>a</mi>
+        </mfrac>
+        <mi>x</mi>
+      </mtd>
+      <mtd>
+        <mi></mi>
+        <mo>=</mo>
+        <mo>&#x2212;</mo>
+        <mfrac>
+          <mi>c</mi>
+          <mi>a</mi>
+        </mfrac>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <msup>
+          <mrow data-mjx-texclass="INNER">
+            <mo data-mjx-texclass="OPEN">(</mo>
+            <mi>x</mi>
+            <mo>+</mo>
+            <mfrac>
+              <mi>b</mi>
+              <mrow>
+                <mn>2</mn>
+                <mi>a</mi>
+              </mrow>
+            </mfrac>
+            <mo data-mjx-texclass="CLOSE">)</mo>
+          </mrow>
+          <mn>2</mn>
+        </msup>
+      </mtd>
+      <mtd>
+        <mi></mi>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <msup>
+              <mi>b</mi>
+              <mn>2</mn>
+            </msup>
+            <mo>&#x2212;</mo>
+            <mn>4</mn>
+            <mi>a</mi>
+            <mi>c</mi>
+          </mrow>
+          <mrow>
+            <mn>4</mn>
+            <msup>
+              <mi>a</mi>
+              <mn>2</mn>
+            </msup>
+          </mrow>
+        </mfrac>
+      </mtd>
+    </mtr>
+  </mtable>
+</math></span></div><p>右辺が0以上のとき平方根をとり、整理すると、</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <menclose notation="box">
+    <mrow data-mjx-texclass="ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow data-mjx-texclass="ORD">
+          <mstyle displaystyle="true" scriptlevel="0">
+            <mi>x</mi>
+            <mo>=</mo>
+            <mfrac>
+              <mrow>
+                <mo>&#x2212;</mo>
+                <mi>b</mi>
+                <mo>&#xB1;</mo>
+                <msqrt>
+                  <msup>
+                    <mi>b</mi>
+                    <mn>2</mn>
+                  </msup>
+                  <mo>&#x2212;</mo>
+                  <mn>4</mn>
+                  <mi>a</mi>
+                  <mi>c</mi>
+                </msqrt>
+              </mrow>
+              <mrow>
+                <mn>2</mn>
+                <mi>a</mi>
+              </mrow>
+            </mfrac>
+          </mstyle>
+        </mrow>
+      </mstyle>
+    </mrow>
+  </menclose>
+</math></span></div><p>となります（<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mi>e</mi>
+  <mn>0</mn>
+</math></span>、<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>b</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>&#x2212;</mo>
+  <mn>4</mn>
+  <mi>a</mi>
+  <mi>c</mi>
+  <mo>&#x2265;</mo>
+  <mn>0</mn>
+</math></span>）。</p><div class="example"><b>例題｜解の公式で解く</b><p><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>3</mn>
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>&#x2212;</mo>
+  <mn>5</mn>
+  <mi>x</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> では、<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mo>=</mo>
+  <mn>3</mn>
+  <mo>,</mo>
+  <mi>b</mi>
+  <mo>=</mo>
+  <mo>&#x2212;</mo>
+  <mn>5</mn>
+  <mo>,</mo>
+  <mi>c</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>。</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>x</mi>
+  <mo>=</mo>
+  <mfrac>
+    <mrow>
+      <mn>5</mn>
+      <mo>&#xB1;</mo>
+      <msqrt>
+        <mo stretchy="false">(</mo>
+        <mo>&#x2212;</mo>
+        <mn>5</mn>
+        <msup>
+          <mo stretchy="false">)</mo>
+          <mn>2</mn>
+        </msup>
+        <mo>&#x2212;</mo>
+        <mn>4</mn>
+        <mo>&#x22C5;</mo>
+        <mn>3</mn>
+        <mo>&#x22C5;</mo>
+        <mn>1</mn>
+      </msqrt>
+    </mrow>
+    <mrow>
+      <mn>2</mn>
+      <mo>&#x22C5;</mo>
+      <mn>3</mn>
+    </mrow>
+  </mfrac>
+  <mo>=</mo>
+  <mfrac>
+    <mrow>
+      <mn>5</mn>
+      <mo>&#xB1;</mo>
+      <msqrt>
+        <mn>13</mn>
+      </msqrt>
+    </mrow>
+    <mn>6</mn>
+  </mfrac>
+</math></span></div></div><div class="practice"><b>練習問題</b><p>1. <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>+</mo>
+  <mn>3</mn>
+  <mi>x</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> を解きなさい。</p><details><summary>解答と途中計算を開く</summary><p><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>D</mi>
+  <mo>=</mo>
+  <msup>
+    <mn>3</mn>
+    <mn>2</mn>
+  </msup>
+  <mo>&#x2212;</mo>
+  <mn>4</mn>
+  <mo>&#x22C5;</mo>
+  <mn>2</mn>
+  <mo>&#x22C5;</mo>
+  <mo stretchy="false">(</mo>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mn>17</mn>
+</math></span>。したがって</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>x</mi>
+  <mo>=</mo>
+  <mfrac>
+    <mrow>
+      <mo>&#x2212;</mo>
+      <mn>3</mn>
+      <mo>&#xB1;</mo>
+      <msqrt>
+        <mn>17</mn>
+      </msqrt>
+    </mrow>
+    <mn>4</mn>
+  </mfrac>
+</math></span></div></details><p>2. <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>+</mo>
+  <mn>2</mn>
+  <mi>x</mi>
+  <mo>+</mo>
+  <mn>5</mn>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> は実数解をもつか。</p><details><summary>解答と途中計算を開く</summary><p><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>D</mi>
+  <mo>=</mo>
+  <msup>
+    <mn>2</mn>
+    <mn>2</mn>
+  </msup>
+  <mo>&#x2212;</mo>
+  <mn>4</mn>
+  <mo>&#x22C5;</mo>
+  <mn>1</mn>
+  <mo>&#x22C5;</mo>
+  <mn>5</mn>
+  <mo>=</mo>
+  <mo>&#x2212;</mo>
+  <mn>16</mn>
+  <mo>&lt;</mo>
+  <mn>0</mn>
+</math></span> なので実数解をもちません。</p></details></div></section><section class="card" id="s3"><h2>判別式と解の個数</h2><p>解の公式の根号の中にある数を<strong>判別式</strong>といいます。</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>D</mi>
+  <mo>=</mo>
+  <msup>
+    <mi>b</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>&#x2212;</mo>
+  <mn>4</mn>
+  <mi>a</mi>
+  <mi>c</mi>
+</math></span></div><div class="scroll"><table><thead><tr><th>判別式</th><th>実数解</th><th>個数</th></tr></thead><tbody><tr><td>D &gt; 0</td><td>異なる2つの実数解</td><td>2個</td></tr><tr><td>D = 0</td><td>重解</td><td>1個</td></tr><tr><td>D &lt; 0</td><td>実数解なし</td><td>0個</td></tr></tbody></table></div><div class="example"><b>例題｜文字を含む方程式</b><p><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>&#x2212;</mo>
+  <mn>6</mn>
+  <mi>x</mi>
+  <mo>+</mo>
+  <mi>m</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> が異なる2つの実数解をもつ条件は、</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>D</mi>
+  <mo>=</mo>
+  <mn>36</mn>
+  <mo>&#x2212;</mo>
+  <mn>4</mn>
+  <mi>m</mi>
+  <mo>&gt;</mo>
+  <mn>0</mn>
+  <mstyle scriptlevel="0">
+    <mspace width="1em"></mspace>
+  </mstyle>
+  <mo stretchy="false">&#x27FA;</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="1em"></mspace>
+  </mstyle>
+  <mi>m</mi>
+  <mo>&lt;</mo>
+  <mn>9</mn>
+</math></span></div></div><div class="practice"><b>練習問題</b><p>1. <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>+</mo>
+  <mn>4</mn>
+  <mi>x</mi>
+  <mo>+</mo>
+  <mi>m</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> が重解をもつmを求めなさい。</p><details><summary>解答と途中計算を開く</summary><p><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>D</mi>
+  <mo>=</mo>
+  <mn>16</mn>
+  <mo>&#x2212;</mo>
+  <mn>4</mn>
+  <mi>m</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> なので<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mo>=</mo>
+  <mn>4</mn>
+</math></span>。そのとき重解は<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>=</mo>
+  <mo>&#x2212;</mo>
+  <mn>2</mn>
+</math></span>。</p></details><p>2. <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>&#x2212;</mo>
+  <mn>4</mn>
+  <mi>x</mi>
+  <mo>+</mo>
+  <mi>m</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> が実数解をもたないmの範囲を求めなさい。</p><details><summary>解答と途中計算を開く</summary><p><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>D</mi>
+  <mo>=</mo>
+  <mn>16</mn>
+  <mo>&#x2212;</mo>
+  <mn>8</mn>
+  <mi>m</mi>
+  <mo>&lt;</mo>
+  <mn>0</mn>
+</math></span> なので<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mo>&gt;</mo>
+  <mn>2</mn>
+</math></span>。</p></details></div></section><section class="card" id="s4"><h2>まとめ</h2><div class="note"><b>解法の順序</b><p>① まず因数分解できるか確認 → ② 難しければ解の公式 → ③ 実数解の個数は判別式で判定、という流れで整理します。</p></div></section><nav class="nav"><a href="math1_quadratic_determination.html">← 前の教材</a><a href="math_subject_1.html">数学Ⅰの授業一覧</a><a href="math1_lesson14.html">次の教材 →</a></nav><p class="hint">教科書写真の学習範囲を参考に、解説・例題・図はこのサイトのために独自制作しています。数式はあらかじめHTMLに変換しています。</p></main><footer>みんなの数学データベース｜数学Ⅰ</footer><script>(()=>{const cvs=document.getElementById('quadratic');if(!cvs)return;const ctx=cvs.getContext('2d');let I=['a','b','c'].map(n=>document.getElementById('i'+n));function draw(){let [a,b,c]=I.map(i=>Number(i.value));I.forEach((v,j)=>document.getElementById('o'+['a','b','c'][j]).textContent=v.value);let W=cvs.width,H=cvs.height,ox=355,oy=200,u=34;ctx.clearRect(0,0,W,H);ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);ctx.strokeStyle='#e8eff5';ctx.lineWidth=1;for(let x=ox%u;x<W;x+=u){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke()}for(let y=oy%u;y<H;y+=u){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke()}ctx.strokeStyle='#667e93';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(0,oy);ctx.lineTo(W,oy);ctx.moveTo(ox,0);ctx.lineTo(ox,H);ctx.stroke();ctx.fillStyle='#294a64';ctx.font='14px sans-serif';ctx.fillText('0',ox+7,oy+16);ctx.fillText('x',W-17,oy-8);ctx.fillText('y',ox+8,17);let f=x=>a*x*x+b*x+c;ctx.strokeStyle='#176faf';ctx.lineWidth=3;ctx.beginPath();for(let xp=0;xp<=W;xp+=2){let x=(xp-ox)/u,y=oy-f(x)*u;if(xp==0)ctx.moveTo(xp,y);else ctx.lineTo(xp,y)}ctx.stroke();let D=b*b-4*a*c, status=document.getElementById('graphStatus');if(a!==0){let p=-b/(2*a),q=f(p),xp=ox+p*u,yp=oy-q*u;ctx.fillStyle='#dc7f35';ctx.beginPath();ctx.arc(xp,yp,5,0,Math.PI*2);ctx.fill();let roots=D>0?[(-b-Math.sqrt(D))/(2*a),(-b+Math.sqrt(D))/(2*a)]:D===0?[p]:[];ctx.fillStyle='#dd4d45';for(let r of roots){ctx.beginPath();ctx.arc(ox+r*u,oy,5,0,Math.PI*2);ctx.fill()}status.textContent='判別式 D = '+Number(D.toFixed(3))+' ／ x軸との交点 '+(D>0?'2個':D===0?'1個（接する）':'0個')+' ／ 頂点 ('+Number(p.toFixed(2))+', '+Number(q.toFixed(2))+')';}else{status.textContent='a=0 なのでグラフは直線です。2次関数を確かめるにはaを0以外にしてください。';}}I.forEach(i=>i.addEventListener('input',draw));draw();})();</script></body></html>
