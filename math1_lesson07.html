@@ -1,1 +1,653 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>数学Ⅰ 第7講 集合とその表し方｜みんなの数学データベース</title><style>*{box-sizing:border-box}body{margin:0;background:#f2f7fc;color:#22354b;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.85}a{color:#136caa}header{background:linear-gradient(125deg,#17375f,#276b9e);color:#fff;padding:23px max(18px,calc((100vw - 900px)/2))}header a{color:#e9f4ff}header h1{font-size:clamp(23px,4vw,33px);margin:9px 0}main{max-width:900px;margin:auto;padding:18px 16px 60px}.card{background:white;border:1px solid #d6e5f2;border-radius:15px;padding:clamp(16px,3.6vw,28px);margin:20px 0;box-shadow:0 5px 20px #193f6310}h2{color:#164c7f;font-size:22px;border-bottom:2px solid #d8e9f6;padding-bottom:7px}h3{color:#225a85;margin-top:0}.label{display:inline-block;background:#e0f0fc;color:#185c8b;border-radius:25px;padding:2px 12px;font-size:13px;font-weight:700}.formula{background:#f0f7ff;border-left:5px solid #2479b6;border-radius:8px;padding:18px 8px;margin:16px 0;overflow-x:auto;text-align:center}.sample{border-left:5px solid #da9d38;background:#fff9ee;border-radius:8px;padding:14px 17px;margin:14px 0}.practice{border:1px solid #bdd5e8;background:#fafcff;border-radius:11px;padding:16px}details{margin-top:12px}summary{cursor:pointer;color:#075f9c;font-weight:700}nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:space-between;margin-top:25px}.navbutton{display:inline-block;background:#e2f0fb;padding:9px 14px;border-radius:10px;text-decoration:none;font-weight:700}svg{max-width:100%;height:auto}figure{margin:16px auto;text-align:center}.controls{background:#f1f7ff;border:1px solid #c9dfed;border-radius:12px;padding:12px 16px}input[type=range]{width:min(100%,420px)}.small{font-size:14px;color:#5e7182}.katex,.MathJax{font-size:110%}footer{background:#122f4f;color:#fff;text-align:center;padding:17px}@media(max-width:500px){.card{padding:15px}.formula{font-size:14px}}</style><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre']}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script></head><body><header><a href="high_school_video_lessons.html#subject0">← 高校生のための授業・数学Ⅰ</a><h1>第7講 集合とその表し方</h1><span>第2章 集合と命題　｜　数学Ⅰ 全28講</span></header><main><article class="card"><span class="label">授業のねらい</span><p>ある条件を満たすものの集まりを集合といい、要素の列挙や条件で表します。</p><h2>定義・重要公式</h2><div class="formula">\(A\cap B\)：共通部分、\quad A\cup B\)：和集合</div><h2>なぜそうなるのか</h2><p>共通部分は「両方」、和集合は「少なくとも一方」に含まれる要素です。</p></article><section class="card"><h2>例題と解説</h2><div class="sample"><strong>例題</strong><p>\(A=\{1,2,3\},B=\{3,4\}\) の共通部分を求める。</p></div><h3>解き方</h3><p>両方にある要素は3のみ。\(A\cap B=\{3\}\)。</p></section><section class="card"><h2>練習問題</h2><div class="practice"><strong>問</strong><p>同じ集合で \(A\cup B\) を求めなさい。</p><details><summary>解答・解説を見る</summary><p>\(\{1,2,3,4\}\)</p></details></div></section><nav><a class="navbutton" href="math1_lesson06.html">← 前の講義</a><a class="navbutton" href="high_school_video_lessons.html#subject0">数学Ⅰの目次</a><a class="navbutton" href="math1_lesson08.html">次の講義 →</a></nav><p class="small">※公式・問題文・図はこのサイト用に独自に作成しています。数式はオンラインでMathJaxを読み込みます。</p></main><footer>みんなの数学データベース｜数学Ⅰ</footer></body></html>
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>集合｜数学Ⅰ｜みんなの数学データベース</title><style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f1f6fb;color:#20354d;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;line-height:1.83}header{background:linear-gradient(125deg,#17365c,#286b9d);color:white;padding:25px max(18px,calc((100vw - 1040px)/2))}header a{color:#eaf4ff}header h1{font-size:clamp(25px,4vw,36px);margin:10px 0 4px}header p{margin:0;color:#e7f1fa}main{max-width:1040px;margin:auto;padding:18px 16px 55px}a{color:#146aa6}.toc{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.toc a{padding:8px 12px;background:white;border:1px solid #d6e4f0;border-radius:10px;font-weight:700;text-decoration:none;font-size:14px}.card{background:white;border:1px solid #d9e6f2;border-radius:16px;padding:clamp(17px,3.5vw,28px);margin:18px 0;box-shadow:0 6px 20px #163f6210}h2{color:#184e7c;font-size:clamp(23px,3.5vw,28px);margin:0 0 16px}h3{color:#1b5987;font-size:clamp(19px,3vw,23px);border-bottom:2px solid #dce9f4;padding-bottom:7px;margin:26px 0 12px}h4{color:#1c5e8d;margin:17px 0 7px}p{margin:10px 0}.tag{display:inline-block;border-radius:999px;background:#e5f1fd;color:#175985;font-weight:700;padding:4px 12px;font-size:13px}.formula{background:#eff6ff;border-left:5px solid #2b83bc;border-radius:10px;padding:14px 18px;margin:14px 0;overflow-x:auto}.example{background:#fff9ee;border-left:5px solid #d99c34;padding:15px 18px;border-radius:10px;margin:17px 0}.proof{background:#f4f8fd;border:1px solid #d0e2f0;padding:15px 18px;border-radius:12px;margin:15px 0}.practice{background:#fbfdff;border:1px solid #cbdfee;padding:15px 18px;border-radius:12px;margin:15px 0}details{margin-top:8px}summary{cursor:pointer;color:#1169a2;font-weight:750}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}.grid>*{min-width:0}.tip{color:#516b80;font-size:14px}.math-render math{font-size:1.12em}.math-render.display{display:block;text-align:center;overflow-x:auto;margin:.4em auto}.math-render.inline{display:inline}.diagram{width:100%;height:auto;max-width:620px;display:block;margin:auto}.figure{background:#f7fbff;border:1px solid #d7e6f4;border-radius:12px;padding:10px;margin:16px 0}.figcap{text-align:center;font-size:14px;color:#526b7e}.nav{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin-top:24px}.nav a{padding:9px 14px;background:#e4f1fb;border-radius:9px;text-decoration:none;font-weight:700}footer{background:#12304f;text-align:center;color:#eaf3fb;padding:17px}.hint{background:#f1f7ff;padding:12px;border-radius:9px}ol,ul{padding-left:1.4em}li{margin:7px 0}svg text{font-family:Arial,sans-serif;fill:#203b59}svg .circle{stroke:#2a5d84;stroke-width:2.5}.status{font-weight:700;color:#16598b}@media(max-width:600px){main{padding:12px 12px 45px}.card{padding:16px}}
+ .math-render.display{display:block;overflow-x:auto;text-align:center;margin:.4em auto}.math-render.inline{display:inline}.math-render math{font-size:1.12em}</style></head><body><header><a href="math_subject_1.html">← 数学Ⅰの授業一覧へ戻る</a><h1>集合</h1><p>数学Ⅰ ／ 第2章 集合と命題 ／ 集合の表し方・演算・ベン図</p></header><main><nav class="toc"><a href="#sec1">授業のねらい</a><a href="#sec2">集合とその表し方</a><a href="#sec3">部分集合・空集合・集合の相等</a><a href="#sec4">共通部分と和集合</a><a href="#sec5">補集合・ド・モルガンの法則</a><a href="#sec6">集合の要素の個数とまとめ</a></nav><section class="card" id="sec1"><span class="tag">授業のねらい</span><h2>集合を理解する</h2><p>教科書の構成を参考に、定義・図・例題・練習問題の順に学習できます。数式はオフラインでも読める形で表示します。</p></section><section class="card" id="sec2"><h3>集合とその表し方</h3><p>「5以下の正の整数の集まり」のように、含まれるものがはっきり決まる集まりを<strong>集合</strong>といいます。集合に属する一つ一つのものを<strong>要素</strong>といいます。</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>A</mi>
+  <mo>=</mo>
+  <mo fence="false" stretchy="false">{</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mn>1</mn>
+    <mo>,</mo>
+    <mn>2</mn>
+    <mo>,</mo>
+    <mn>3</mn>
+    <mo>,</mo>
+    <mn>4</mn>
+    <mo>,</mo>
+    <mn>5</mn>
+    <mo fence="false" stretchy="false">}</mo>
+  </mrow>
+  <mo>,</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="2em"></mspace>
+  </mstyle>
+  <mn>3</mn>
+  <mo>&#x2208;</mo>
+  <mi>A</mi>
+  <mo>,</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="2em"></mspace>
+  </mstyle>
+  <mn>8</mn>
+  <mo>&#x2209;</mo>
+  <mi>A</mi>
+</math></span></div><p>集合は、要素を並べて書く方法と、条件で表す方法があります。</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>B</mi>
+  <mo>=</mo>
+  <mo fence="false" stretchy="false">{</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mn>2</mn>
+    <mo>,</mo>
+    <mn>4</mn>
+    <mo>,</mo>
+    <mn>6</mn>
+    <mo>,</mo>
+    <mn>8</mn>
+    <mo fence="false" stretchy="false">}</mo>
+  </mrow>
+  <mo>=</mo>
+  <mo fence="false" stretchy="false">{</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mi>x</mi>
+    <mo>&#x2223;</mo>
+    <mi>x</mi>
+    <mtext>&#xA0;&#x306F;&#xA0;</mtext>
+    <mn>8</mn>
+    <mtext>&#xA0;&#x4EE5;&#x4E0B;&#x306E;&#x6B63;&#x306E;&#x5076;&#x6570;</mtext>
+    <mo fence="false" stretchy="false">}</mo>
+  </mrow>
+</math></span></div><div class="example"><b>例題：条件で表された集合</b><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>C</mi>
+  <mo>=</mo>
+  <mo fence="false" stretchy="false">{</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mi>x</mi>
+    <mo>&#x2223;</mo>
+    <mi>x</mi>
+    <mtext>&#xA0;&#x306F;&#x81EA;&#x7136;&#x6570;</mtext>
+    <mo>,</mo>
+    <mtext>&#xA0;</mtext>
+    <mn>1</mn>
+    <mo>&#x2264;</mo>
+    <mi>x</mi>
+    <mo>&lt;</mo>
+    <mn>7</mn>
+    <mo>,</mo>
+    <mtext>&#xA0;</mtext>
+    <mn>3</mn>
+    <mo>&#x2223;</mo>
+    <mi>x</mi>
+    <mo fence="false" stretchy="false">}</mo>
+  </mrow>
+</math></span></div><p>3の倍数は3と6だから、</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>C</mi>
+  <mo>=</mo>
+  <mo fence="false" stretchy="false">{</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mn>3</mn>
+    <mo>,</mo>
+    <mn>6</mn>
+    <mo fence="false" stretchy="false">}</mo>
+  </mrow>
+</math></span></div></div><div class="practice"><b>練習1</b><ol><li><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo fence="false" stretchy="false">{</mo>
+  <mi>x</mi>
+  <mo>&#x2223;</mo>
+  <mi>x</mi>
+  <mtext>&#xA0;&#x306F;&#xA0;</mtext>
+  <mn>12</mn>
+  <mtext>&#xA0;&#x306E;&#x6B63;&#x306E;&#x7D04;&#x6570;</mtext>
+  <mo fence="false" stretchy="false">}</mo>
+</math></span> を要素を書き並べて表しなさい。</li><li><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>D</mi>
+  <mo>=</mo>
+  <mo fence="false" stretchy="false">{</mo>
+  <mn>2</mn>
+  <mo>,</mo>
+  <mn>4</mn>
+  <mo>,</mo>
+  <mn>6</mn>
+  <mo>,</mo>
+  <mn>8</mn>
+  <mo fence="false" stretchy="false">}</mo>
+</math></span> に対し、<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>4</mn>
+  <mo>&#x2208;</mo>
+  <mi>D</mi>
+</math></span> と <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>5</mn>
+  <mo>&#x2208;</mo>
+  <mi>D</mi>
+</math></span> の真偽を答えなさい。</li></ol><details><summary>解答・詳しい解説を見る</summary><ol><li><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo fence="false" stretchy="false">{</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mn>2</mn>
+  <mo>,</mo>
+  <mn>3</mn>
+  <mo>,</mo>
+  <mn>4</mn>
+  <mo>,</mo>
+  <mn>6</mn>
+  <mo>,</mo>
+  <mn>12</mn>
+  <mo fence="false" stretchy="false">}</mo>
+</math></span>。正の約数を小さい順に列挙します。</li><li><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>4</mn>
+  <mo>&#x2208;</mo>
+  <mi>D</mi>
+</math></span> は真、<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>5</mn>
+  <mo>&#x2208;</mo>
+  <mi>D</mi>
+</math></span> は偽。5は集合の要素ではありません。</li></ol></details></div></section><section class="card" id="sec3"><h3>部分集合・空集合・集合の相等</h3><p>集合 <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>A</mi>
+</math></span> のすべての要素が集合 <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>B</mi>
+</math></span> に属するとき、<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>A</mi>
+</math></span> は <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>B</mi>
+</math></span> の<strong>部分集合</strong>です。</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>A</mi>
+  <mo>&#x2286;</mo>
+  <mi>B</mi>
+  <mtext>&#xA0;</mtext>
+  <mo stretchy="false">&#x27FA;</mo>
+  <mtext>&#xA0;</mtext>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo>&#x2208;</mo>
+  <mi>A</mi>
+  <mo stretchy="false">&#x21D2;</mo>
+  <mi>x</mi>
+  <mo>&#x2208;</mo>
+  <mi>B</mi>
+  <mo stretchy="false">)</mo>
+</math></span></div><p>要素を一つも持たない集合を<strong>空集合</strong>といい、<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi data-mjx-alternate="1">&#x2205;</mi>
+</math></span> と書きます。集合が等しいとは、互いに相手の部分集合になることです。</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>A</mi>
+  <mo>=</mo>
+  <mi>B</mi>
+  <mtext>&#xA0;</mtext>
+  <mo stretchy="false">&#x27FA;</mo>
+  <mtext>&#xA0;</mtext>
+  <mo stretchy="false">(</mo>
+  <mi>A</mi>
+  <mo>&#x2286;</mo>
+  <mi>B</mi>
+  <mtext>&#xA0;</mtext>
+  <mtext>&#x304B;&#x3064;</mtext>
+  <mtext>&#xA0;</mtext>
+  <mi>B</mi>
+  <mo>&#x2286;</mo>
+  <mi>A</mi>
+  <mo stretchy="false">)</mo>
+</math></span></div><div class="example"><b>例題：部分集合を求める</b><p><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>A</mi>
+  <mo>=</mo>
+  <mo fence="false" stretchy="false">{</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mn>2</mn>
+  <mo fence="false" stretchy="false">}</mo>
+</math></span> の部分集合は次の4つです。</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi data-mjx-alternate="1">&#x2205;</mi>
+  <mo>,</mo>
+  <mtext>&#xA0;</mtext>
+  <mo fence="false" stretchy="false">{</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mn>1</mn>
+    <mo fence="false" stretchy="false">}</mo>
+  </mrow>
+  <mo>,</mo>
+  <mtext>&#xA0;</mtext>
+  <mo fence="false" stretchy="false">{</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mn>2</mn>
+    <mo fence="false" stretchy="false">}</mo>
+  </mrow>
+  <mo>,</mo>
+  <mtext>&#xA0;</mtext>
+  <mo fence="false" stretchy="false">{</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mn>1</mn>
+    <mo>,</mo>
+    <mn>2</mn>
+    <mo fence="false" stretchy="false">}</mo>
+  </mrow>
+</math></span></div><p>要素が <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 個の有限集合の部分集合は、各要素を「選ぶ・選ばない」の2通りから考えて <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>2</mn>
+    <mi>n</mi>
+  </msup>
+</math></span> 個です。</p></div><div class="practice"><b>練習2</b><ol><li><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>A</mi>
+  <mo>=</mo>
+  <mo fence="false" stretchy="false">{</mo>
+  <mi>a</mi>
+  <mo>,</mo>
+  <mi>b</mi>
+  <mo>,</mo>
+  <mi>c</mi>
+  <mo fence="false" stretchy="false">}</mo>
+</math></span> の部分集合はいくつありますか。</li><li><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>A</mi>
+  <mo>=</mo>
+  <mo fence="false" stretchy="false">{</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mn>3</mn>
+  <mo fence="false" stretchy="false">}</mo>
+  <mo>,</mo>
+  <mtext>&#xA0;</mtext>
+  <mi>B</mi>
+  <mo>=</mo>
+  <mo fence="false" stretchy="false">{</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mn>2</mn>
+  <mo>,</mo>
+  <mn>3</mn>
+  <mo fence="false" stretchy="false">}</mo>
+</math></span> のとき、<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>A</mi>
+  <mo>&#x2286;</mo>
+  <mi>B</mi>
+</math></span> が成り立つか答えなさい。</li></ol><details><summary>解答・詳しい解説を見る</summary><ol><li><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>2</mn>
+    <mn>3</mn>
+  </msup>
+  <mo>=</mo>
+  <mn>8</mn>
+</math></span> 個です。空集合と集合自身も含みます。</li><li>成り立ちます。Aの1と3はいずれもBに属します。</li></ol></details></div></section><section class="card" id="sec4"><h3>共通部分と和集合</h3><p>両方に属する要素の集合が<strong>共通部分</strong>、少なくとも一方に属する要素の集合が<strong>和集合</strong>です。</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>A</mi>
+  <mo>&#x2229;</mo>
+  <mi>B</mi>
+  <mo>=</mo>
+  <mo fence="false" stretchy="false">{</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mi>x</mi>
+    <mo>&#x2223;</mo>
+    <mi>x</mi>
+    <mo>&#x2208;</mo>
+    <mi>A</mi>
+    <mtext>&#xA0;</mtext>
+    <mtext>&#x304B;&#x3064;</mtext>
+    <mtext>&#xA0;</mtext>
+    <mi>x</mi>
+    <mo>&#x2208;</mo>
+    <mi>B</mi>
+    <mo fence="false" stretchy="false">}</mo>
+  </mrow>
+</math></span></div><div class="figure"><svg viewBox="0 0 620 290" role="img" aria-label="集合Aと集合Bのベン図" class="diagram"><defs><clipPath id="clipA"><circle cx="235" cy="146" r="92"/></clipPath></defs><rect x="65" y="17" width="490" height="250" rx="7" fill="#ffffff" stroke="#527a9b" stroke-width="2"/><text x="81" y="40" font-size="18">U</text><circle cx="350" cy="146" r="92" fill="#7dc4e8" clip-path="url(#clipA)"/><circle class="circle" cx="235" cy="146" r="92" fill="none"/><circle class="circle" cx="350" cy="146" r="92" fill="none"/><text x="185" y="140" font-size="22">A</text><text x="390" y="140" font-size="22">B</text></svg></div><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>A</mi>
+  <mo>&#x222A;</mo>
+  <mi>B</mi>
+  <mo>=</mo>
+  <mo fence="false" stretchy="false">{</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mi>x</mi>
+    <mo>&#x2223;</mo>
+    <mi>x</mi>
+    <mo>&#x2208;</mo>
+    <mi>A</mi>
+    <mtext>&#xA0;</mtext>
+    <mtext>&#x307E;&#x305F;&#x306F;</mtext>
+    <mtext>&#xA0;</mtext>
+    <mi>x</mi>
+    <mo>&#x2208;</mo>
+    <mi>B</mi>
+    <mo fence="false" stretchy="false">}</mo>
+  </mrow>
+</math></span></div><div class="figure"><svg viewBox="0 0 620 290" role="img" aria-label="集合Aと集合Bのベン図" class="diagram"><defs><clipPath id="clipA"><circle cx="235" cy="146" r="92"/></clipPath></defs><rect x="65" y="17" width="490" height="250" rx="7" fill="#ffffff" stroke="#527a9b" stroke-width="2"/><text x="81" y="40" font-size="18">U</text><circle cx="235" cy="146" r="92" fill="#a2dbf0"/><circle cx="350" cy="146" r="92" fill="#a2dbf0"/><circle class="circle" cx="235" cy="146" r="92" fill="none"/><circle class="circle" cx="350" cy="146" r="92" fill="none"/><text x="185" y="140" font-size="22">A</text><text x="390" y="140" font-size="22">B</text></svg></div><div class="example"><b>例題：共通部分と和集合</b><p><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>A</mi>
+  <mo>=</mo>
+  <mo fence="false" stretchy="false">{</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mn>2</mn>
+  <mo>,</mo>
+  <mn>3</mn>
+  <mo>,</mo>
+  <mn>5</mn>
+  <mo fence="false" stretchy="false">}</mo>
+</math></span>、<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>B</mi>
+  <mo>=</mo>
+  <mo fence="false" stretchy="false">{</mo>
+  <mn>2</mn>
+  <mo>,</mo>
+  <mn>4</mn>
+  <mo>,</mo>
+  <mn>5</mn>
+  <mo>,</mo>
+  <mn>6</mn>
+  <mo fence="false" stretchy="false">}</mo>
+</math></span> のとき、</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>A</mi>
+  <mo>&#x2229;</mo>
+  <mi>B</mi>
+  <mo>=</mo>
+  <mo fence="false" stretchy="false">{</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mn>2</mn>
+    <mo>,</mo>
+    <mn>5</mn>
+    <mo fence="false" stretchy="false">}</mo>
+  </mrow>
+  <mo>,</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="2em"></mspace>
+  </mstyle>
+  <mi>A</mi>
+  <mo>&#x222A;</mo>
+  <mi>B</mi>
+  <mo>=</mo>
+  <mo fence="false" stretchy="false">{</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mn>1</mn>
+    <mo>,</mo>
+    <mn>2</mn>
+    <mo>,</mo>
+    <mn>3</mn>
+    <mo>,</mo>
+    <mn>4</mn>
+    <mo>,</mo>
+    <mn>5</mn>
+    <mo>,</mo>
+    <mn>6</mn>
+    <mo fence="false" stretchy="false">}</mo>
+  </mrow>
+</math></span></div></div><div class="practice"><b>練習3</b><ol><li><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>A</mi>
+  <mo>=</mo>
+  <mo fence="false" stretchy="false">{</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mn>3</mn>
+  <mo>,</mo>
+  <mn>5</mn>
+  <mo>,</mo>
+  <mn>7</mn>
+  <mo fence="false" stretchy="false">}</mo>
+</math></span>、<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>B</mi>
+  <mo>=</mo>
+  <mo fence="false" stretchy="false">{</mo>
+  <mn>2</mn>
+  <mo>,</mo>
+  <mn>3</mn>
+  <mo>,</mo>
+  <mn>6</mn>
+  <mo>,</mo>
+  <mn>7</mn>
+  <mo fence="false" stretchy="false">}</mo>
+</math></span> の共通部分と和集合を求めなさい。</li></ol><details><summary>解答・詳しい解説を見る</summary><ol><li>共通部分は<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo fence="false" stretchy="false">{</mo>
+  <mn>3</mn>
+  <mo>,</mo>
+  <mn>7</mn>
+  <mo fence="false" stretchy="false">}</mo>
+</math></span>、和集合は<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo fence="false" stretchy="false">{</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mn>2</mn>
+  <mo>,</mo>
+  <mn>3</mn>
+  <mo>,</mo>
+  <mn>5</mn>
+  <mo>,</mo>
+  <mn>6</mn>
+  <mo>,</mo>
+  <mn>7</mn>
+  <mo fence="false" stretchy="false">}</mo>
+</math></span>です。</li></ol></details></div></section><section class="card" id="sec5"><h3>補集合・ド・モルガンの法則</h3><p>全体集合 <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>U</mi>
+</math></span> の中で集合 <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>A</mi>
+</math></span> に属さないものの集合を、<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>A</mi>
+</math></span> の<strong>補集合</strong>といいます。</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mover>
+    <mi>A</mi>
+    <mo accent="true">&#x2015;</mo>
+  </mover>
+  <mo>=</mo>
+  <mo fence="false" stretchy="false">{</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mi>x</mi>
+    <mo>&#x2208;</mo>
+    <mi>U</mi>
+    <mo>&#x2223;</mo>
+    <mi>x</mi>
+    <mo>&#x2209;</mo>
+    <mi>A</mi>
+    <mo fence="false" stretchy="false">}</mo>
+  </mrow>
+</math></span></div><div class="figure"><svg viewBox="0 0 620 290" role="img" aria-label="集合Aと集合Bのベン図" class="diagram"><defs><clipPath id="clipA"><circle cx="235" cy="146" r="92"/></clipPath></defs><rect x="65" y="17" width="490" height="250" rx="7" fill="#ffffff" stroke="#527a9b" stroke-width="2"/><text x="81" y="40" font-size="18">U</text><path d="M65 17H555V267H65Z M235 54a92 92 0 1 0 0 184a92 92 0 1 0 0-184" fill="#a2dbf0" fill-rule="evenodd"/><circle class="circle" cx="235" cy="146" r="92" fill="none"/><circle class="circle" cx="350" cy="146" r="92" fill="none"/><text x="185" y="140" font-size="22">A</text><text x="390" y="140" font-size="22">B</text></svg></div><p>補集合は次の重要な性質を満たします。</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>A</mi>
+  <mo>&#x2229;</mo>
+  <mover>
+    <mi>A</mi>
+    <mo accent="true">&#x2015;</mo>
+  </mover>
+  <mo>=</mo>
+  <mi data-mjx-alternate="1">&#x2205;</mi>
+  <mo>,</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="2em"></mspace>
+  </mstyle>
+  <mi>A</mi>
+  <mo>&#x222A;</mo>
+  <mover>
+    <mi>A</mi>
+    <mo accent="true">&#x2015;</mo>
+  </mover>
+  <mo>=</mo>
+  <mi>U</mi>
+</math></span></div><p>共通部分と和集合の補集合は、ド・モルガンの法則で変換できます。</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mover>
+    <mrow>
+      <mi>A</mi>
+      <mo>&#x222A;</mo>
+      <mi>B</mi>
+    </mrow>
+    <mo accent="true">&#x2015;</mo>
+  </mover>
+  <mo>=</mo>
+  <mover>
+    <mi>A</mi>
+    <mo accent="true">&#x2015;</mo>
+  </mover>
+  <mo>&#x2229;</mo>
+  <mover>
+    <mi>B</mi>
+    <mo accent="true">&#x2015;</mo>
+  </mover>
+  <mo>,</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="2em"></mspace>
+  </mstyle>
+  <mover>
+    <mrow>
+      <mi>A</mi>
+      <mo>&#x2229;</mo>
+      <mi>B</mi>
+    </mrow>
+    <mo accent="true">&#x2015;</mo>
+  </mover>
+  <mo>=</mo>
+  <mover>
+    <mi>A</mi>
+    <mo accent="true">&#x2015;</mo>
+  </mover>
+  <mo>&#x222A;</mo>
+  <mover>
+    <mi>B</mi>
+    <mo accent="true">&#x2015;</mo>
+  </mover>
+</math></span></div><div class="example"><b>例題：補集合を求める</b><p><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>U</mi>
+  <mo>=</mo>
+  <mo fence="false" stretchy="false">{</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mn>2</mn>
+  <mo>,</mo>
+  <mn>3</mn>
+  <mo>,</mo>
+  <mn>4</mn>
+  <mo>,</mo>
+  <mn>5</mn>
+  <mo>,</mo>
+  <mn>6</mn>
+  <mo fence="false" stretchy="false">}</mo>
+</math></span>、<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>A</mi>
+  <mo>=</mo>
+  <mo fence="false" stretchy="false">{</mo>
+  <mn>2</mn>
+  <mo>,</mo>
+  <mn>4</mn>
+  <mo>,</mo>
+  <mn>6</mn>
+  <mo fence="false" stretchy="false">}</mo>
+</math></span> のとき、</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mover>
+    <mi>A</mi>
+    <mo accent="true">&#x2015;</mo>
+  </mover>
+  <mo>=</mo>
+  <mo fence="false" stretchy="false">{</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mn>1</mn>
+    <mo>,</mo>
+    <mn>3</mn>
+    <mo>,</mo>
+    <mn>5</mn>
+    <mo fence="false" stretchy="false">}</mo>
+  </mrow>
+</math></span></div></div><div class="practice"><b>練習4</b><ol><li><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>U</mi>
+  <mo>=</mo>
+  <mo fence="false" stretchy="false">{</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mn>2</mn>
+  <mo>,</mo>
+  <mn>3</mn>
+  <mo>,</mo>
+  <mn>4</mn>
+  <mo>,</mo>
+  <mn>5</mn>
+  <mo>,</mo>
+  <mn>6</mn>
+  <mo>,</mo>
+  <mn>7</mn>
+  <mo fence="false" stretchy="false">}</mo>
+</math></span>、<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>A</mi>
+  <mo>=</mo>
+  <mo fence="false" stretchy="false">{</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mn>2</mn>
+  <mo>,</mo>
+  <mn>4</mn>
+  <mo fence="false" stretchy="false">}</mo>
+</math></span>、<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>B</mi>
+  <mo>=</mo>
+  <mo fence="false" stretchy="false">{</mo>
+  <mn>2</mn>
+  <mo>,</mo>
+  <mn>3</mn>
+  <mo>,</mo>
+  <mn>5</mn>
+  <mo fence="false" stretchy="false">}</mo>
+</math></span> に対し <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mover>
+    <mrow>
+      <mi>A</mi>
+      <mo>&#x222A;</mo>
+      <mi>B</mi>
+    </mrow>
+    <mo accent="true">&#x2015;</mo>
+  </mover>
+</math></span> を求めなさい。</li></ol><details><summary>解答・詳しい解説を見る</summary><ol><li><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>A</mi>
+  <mo>&#x222A;</mo>
+  <mi>B</mi>
+  <mo>=</mo>
+  <mo fence="false" stretchy="false">{</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mn>2</mn>
+  <mo>,</mo>
+  <mn>3</mn>
+  <mo>,</mo>
+  <mn>4</mn>
+  <mo>,</mo>
+  <mn>5</mn>
+  <mo fence="false" stretchy="false">}</mo>
+</math></span> より、<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mover>
+    <mrow>
+      <mi>A</mi>
+      <mo>&#x222A;</mo>
+      <mi>B</mi>
+    </mrow>
+    <mo accent="true">&#x2015;</mo>
+  </mover>
+  <mo>=</mo>
+  <mo fence="false" stretchy="false">{</mo>
+  <mn>6</mn>
+  <mo>,</mo>
+  <mn>7</mn>
+  <mo fence="false" stretchy="false">}</mo>
+</math></span> です。</li></ol></details></div></section><section class="card" id="sec6"><h3>集合の要素の個数とまとめ</h3><p>有限集合で、重複する部分を一度だけ数えるときは次を使います。</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>n</mi>
+  <mo stretchy="false">(</mo>
+  <mi>A</mi>
+  <mo>&#x222A;</mo>
+  <mi>B</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mi>n</mi>
+  <mo stretchy="false">(</mo>
+  <mi>A</mi>
+  <mo stretchy="false">)</mo>
+  <mo>+</mo>
+  <mi>n</mi>
+  <mo stretchy="false">(</mo>
+  <mi>B</mi>
+  <mo stretchy="false">)</mo>
+  <mo>&#x2212;</mo>
+  <mi>n</mi>
+  <mo stretchy="false">(</mo>
+  <mi>A</mi>
+  <mo>&#x2229;</mo>
+  <mi>B</mi>
+  <mo stretchy="false">)</mo>
+</math></span></div><div class="example"><b>例題：人数の問題</b><p>数学が好きな人が18人、理科が好きな人が15人、両方好きな人が7人なら、少なくともどちらかが好きな人は</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mn>18</mn>
+  <mo>+</mo>
+  <mn>15</mn>
+  <mo>&#x2212;</mo>
+  <mn>7</mn>
+  <mo>=</mo>
+  <mn>26</mn>
+  <mtext>&#xA0;</mtext>
+  <mtext>&#x4EBA;</mtext>
+</math></span></div></div><div class="practice"><b>章末チェック</b><ol><li>30人のクラスでAの条件を満たす人が20人、Bの条件を満たす人が18人、両方を満たす人が10人。どちらも満たさない人は何人ですか。</li></ol><details><summary>解答・詳しい解説を見る</summary><ol><li>少なくとも一方が28人なので、<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>30</mn>
+  <mo>&#x2212;</mo>
+  <mn>28</mn>
+  <mo>=</mo>
+  <mn>2</mn>
+</math></span> 人。</li></ol></details></div></section><nav class="nav"><a href="math_subject_1.html">← 前の教材</a><a href="math_subject_1.html">数学Ⅰの授業一覧</a><a href="math1_lesson08.html">次の教材 →</a></nav><p class="tip">※教科書の写真は構成・学習範囲の参考とし、文章・例題・図は独自に制作しています。</p></main><footer>みんなの数学データベース｜数学Ⅰ</footer></body></html>

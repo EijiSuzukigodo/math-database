@@ -1,1 +1,502 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>数学Ⅰ 第9講 必要条件・十分条件と証明｜みんなの数学データベース</title><style>*{box-sizing:border-box}body{margin:0;background:#f2f7fc;color:#22354b;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.85}a{color:#136caa}header{background:linear-gradient(125deg,#17375f,#276b9e);color:#fff;padding:23px max(18px,calc((100vw - 900px)/2))}header a{color:#e9f4ff}header h1{font-size:clamp(23px,4vw,33px);margin:9px 0}main{max-width:900px;margin:auto;padding:18px 16px 60px}.card{background:white;border:1px solid #d6e5f2;border-radius:15px;padding:clamp(16px,3.6vw,28px);margin:20px 0;box-shadow:0 5px 20px #193f6310}h2{color:#164c7f;font-size:22px;border-bottom:2px solid #d8e9f6;padding-bottom:7px}h3{color:#225a85;margin-top:0}.label{display:inline-block;background:#e0f0fc;color:#185c8b;border-radius:25px;padding:2px 12px;font-size:13px;font-weight:700}.formula{background:#f0f7ff;border-left:5px solid #2479b6;border-radius:8px;padding:18px 8px;margin:16px 0;overflow-x:auto;text-align:center}.sample{border-left:5px solid #da9d38;background:#fff9ee;border-radius:8px;padding:14px 17px;margin:14px 0}.practice{border:1px solid #bdd5e8;background:#fafcff;border-radius:11px;padding:16px}details{margin-top:12px}summary{cursor:pointer;color:#075f9c;font-weight:700}nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:space-between;margin-top:25px}.navbutton{display:inline-block;background:#e2f0fb;padding:9px 14px;border-radius:10px;text-decoration:none;font-weight:700}svg{max-width:100%;height:auto}figure{margin:16px auto;text-align:center}.controls{background:#f1f7ff;border:1px solid #c9dfed;border-radius:12px;padding:12px 16px}input[type=range]{width:min(100%,420px)}.small{font-size:14px;color:#5e7182}.katex,.MathJax{font-size:110%}footer{background:#122f4f;color:#fff;text-align:center;padding:17px}@media(max-width:500px){.card{padding:15px}.formula{font-size:14px}}</style><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre']}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script></head><body><header><a href="high_school_video_lessons.html#subject0">← 高校生のための授業・数学Ⅰ</a><h1>第9講 必要条件・十分条件と証明</h1><span>第2章 集合と命題　｜　数学Ⅰ 全28講</span></header><main><article class="card"><span class="label">授業のねらい</span><p>二つの条件の包含関係から、必要条件と十分条件を判断します。</p><h2>定義・重要公式</h2><div class="formula">\(p\Rightarrow q\) ならば \(p\) は \(q\) の十分条件、\(q\) は \(p\) の必要条件。</div><h2>なぜそうなるのか</h2><p>同値 \(p\Leftrightarrow q\) ならば必要十分条件といいます。反例は全称命題を否定するのに有効です。</p></article><section class="card"><h2>例題と解説</h2><div class="sample"><strong>例題</strong><p>「\(x=2\)」と「\(x^2=4\)」の関係を調べる。</p></div><h3>解き方</h3><p>\(x=2\) なら必ず \(x^2=4\)。逆は \(x=-2\) もあるので不成立。前者は後者の十分条件。</p></section><section class="card"><h2>練習問題</h2><div class="practice"><strong>問</strong><p>「4の倍数」と「2の倍数」の関係を答えなさい。</p><details><summary>解答・解説を見る</summary><p>4の倍数であることは2の倍数であることの十分条件。</p></details></div></section><nav><a class="navbutton" href="math1_lesson08.html">← 前の講義</a><a class="navbutton" href="high_school_video_lessons.html#subject0">数学Ⅰの目次</a><a class="navbutton" href="math1_lesson10.html">次の講義 →</a></nav><p class="small">※公式・問題文・図はこのサイト用に独自に作成しています。数式はオンラインでMathJaxを読み込みます。</p></main><footer>みんなの数学データベース｜数学Ⅰ</footer></body></html>
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>命題と証明｜数学Ⅰ｜みんなの数学データベース</title><style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f1f6fb;color:#20354d;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;line-height:1.83}header{background:linear-gradient(125deg,#17365c,#286b9d);color:white;padding:25px max(18px,calc((100vw - 1040px)/2))}header a{color:#eaf4ff}header h1{font-size:clamp(25px,4vw,36px);margin:10px 0 4px}header p{margin:0;color:#e7f1fa}main{max-width:1040px;margin:auto;padding:18px 16px 55px}a{color:#146aa6}.toc{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.toc a{padding:8px 12px;background:white;border:1px solid #d6e4f0;border-radius:10px;font-weight:700;text-decoration:none;font-size:14px}.card{background:white;border:1px solid #d9e6f2;border-radius:16px;padding:clamp(17px,3.5vw,28px);margin:18px 0;box-shadow:0 6px 20px #163f6210}h2{color:#184e7c;font-size:clamp(23px,3.5vw,28px);margin:0 0 16px}h3{color:#1b5987;font-size:clamp(19px,3vw,23px);border-bottom:2px solid #dce9f4;padding-bottom:7px;margin:26px 0 12px}h4{color:#1c5e8d;margin:17px 0 7px}p{margin:10px 0}.tag{display:inline-block;border-radius:999px;background:#e5f1fd;color:#175985;font-weight:700;padding:4px 12px;font-size:13px}.formula{background:#eff6ff;border-left:5px solid #2b83bc;border-radius:10px;padding:14px 18px;margin:14px 0;overflow-x:auto}.example{background:#fff9ee;border-left:5px solid #d99c34;padding:15px 18px;border-radius:10px;margin:17px 0}.proof{background:#f4f8fd;border:1px solid #d0e2f0;padding:15px 18px;border-radius:12px;margin:15px 0}.practice{background:#fbfdff;border:1px solid #cbdfee;padding:15px 18px;border-radius:12px;margin:15px 0}details{margin-top:8px}summary{cursor:pointer;color:#1169a2;font-weight:750}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}.grid>*{min-width:0}.tip{color:#516b80;font-size:14px}.math-render math{font-size:1.12em}.math-render.display{display:block;text-align:center;overflow-x:auto;margin:.4em auto}.math-render.inline{display:inline}.diagram{width:100%;height:auto;max-width:620px;display:block;margin:auto}.figure{background:#f7fbff;border:1px solid #d7e6f4;border-radius:12px;padding:10px;margin:16px 0}.figcap{text-align:center;font-size:14px;color:#526b7e}.nav{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin-top:24px}.nav a{padding:9px 14px;background:#e4f1fb;border-radius:9px;text-decoration:none;font-weight:700}footer{background:#12304f;text-align:center;color:#eaf3fb;padding:17px}.hint{background:#f1f7ff;padding:12px;border-radius:9px}ol,ul{padding-left:1.4em}li{margin:7px 0}svg text{font-family:Arial,sans-serif;fill:#203b59}svg .circle{stroke:#2a5d84;stroke-width:2.5}.status{font-weight:700;color:#16598b}@media(max-width:600px){main{padding:12px 12px 45px}.card{padding:16px}}
+ .math-render.display{display:block;overflow-x:auto;text-align:center;margin:.4em auto}.math-render.inline{display:inline}.math-render math{font-size:1.12em}</style></head><body><header><a href="math_subject_1.html">← 数学Ⅰの授業一覧へ戻る</a><h1>命題と証明</h1><p>数学Ⅰ ／ 第2章 集合と命題 ／ 逆・裏・対偶・背理法</p></header><main><nav class="toc"><a href="#sec1">授業のねらい</a><a href="#sec2">命題の逆・裏・対偶</a><a href="#sec3">対偶を利用した証明</a><a href="#sec4">背理法</a><a href="#sec5">「すべて」と「ある」の否定</a><a href="#sec6">命題と証明のまとめ</a></nav><section class="card" id="sec1"><span class="tag">授業のねらい</span><h2>命題と証明を理解する</h2><p>教科書の構成を参考に、定義・図・例題・練習問題の順に学習できます。数式はオフラインでも読める形で表示します。</p></section><section class="card" id="sec2"><h3>命題の逆・裏・対偶</h3><p>命題 <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+  <mo stretchy="false">&#x21D2;</mo>
+  <mi>q</mi>
+</math></span> に対して、次の3つの命題を考えます。</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true" columnalign="right left" columnspacing="0em" rowspacing="3pt">
+    <mtr>
+      <mtd>
+        <mtext>&#x3082;&#x3068;&#x306E;&#x547D;&#x984C;</mtext>
+      </mtd>
+      <mtd>
+        <mi></mi>
+        <mo>:</mo>
+        <mi>p</mi>
+        <mo stretchy="false">&#x21D2;</mo>
+        <mi>q</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext>&#x9006;</mtext>
+      </mtd>
+      <mtd>
+        <mi></mi>
+        <mo>:</mo>
+        <mi>q</mi>
+        <mo stretchy="false">&#x21D2;</mo>
+        <mi>p</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext>&#x88CF;</mtext>
+      </mtd>
+      <mtd>
+        <mi></mi>
+        <mo>:</mo>
+        <mi mathvariant="normal">&#xAC;</mi>
+        <mi>p</mi>
+        <mo stretchy="false">&#x21D2;</mo>
+        <mi mathvariant="normal">&#xAC;</mi>
+        <mi>q</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext>&#x5BFE;&#x5076;</mtext>
+      </mtd>
+      <mtd>
+        <mi></mi>
+        <mo>:</mo>
+        <mi mathvariant="normal">&#xAC;</mi>
+        <mi>q</mi>
+        <mo stretchy="false">&#x21D2;</mo>
+        <mi mathvariant="normal">&#xAC;</mi>
+        <mi>p</mi>
+      </mtd>
+    </mtr>
+  </mtable>
+</math></span></div><p><strong>もとの命題と対偶は常に同じ真偽</strong>です。逆と裏も同じ真偽ですが、もとの命題と逆が同じ真偽になるとは限りません。</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mo stretchy="false">(</mo>
+  <mi>p</mi>
+  <mo stretchy="false">&#x21D2;</mo>
+  <mi>q</mi>
+  <mo stretchy="false">)</mo>
+  <mo stretchy="false">&#x27FA;</mo>
+  <mo stretchy="false">(</mo>
+  <mi mathvariant="normal">&#xAC;</mi>
+  <mi>q</mi>
+  <mo stretchy="false">&#x21D2;</mo>
+  <mi mathvariant="normal">&#xAC;</mi>
+  <mi>p</mi>
+  <mo stretchy="false">)</mo>
+</math></span></div><div class="example"><b>例題：逆・裏・対偶</b><p>整数 <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> に対し「<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> が4の倍数なら <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> は偶数」の</p><ul><li>逆：<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> が偶数なら <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> は4の倍数（偽）</li><li>裏：<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> が4の倍数でなければ <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> は偶数でない（偽）</li><li>対偶：<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> が偶数でなければ <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> は4の倍数ではない（真）</li></ul></div><div class="practice"><b>練習1</b><ol><li>「実数 <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span> が <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>&gt;</mo>
+  <mn>2</mn>
+</math></span> なら <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>&gt;</mo>
+  <mn>0</mn>
+</math></span>」の対偶を書きなさい。</li></ol><details><summary>解答・詳しい解説を見る</summary><ol><li>「<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>&#x2264;</mo>
+  <mn>0</mn>
+</math></span> なら <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>&#x2264;</mo>
+  <mn>2</mn>
+</math></span>」です。不等号と等号に注意します。</li></ol></details></div></section><section class="card" id="sec3"><h3>対偶を利用した証明</h3><p><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+  <mo stretchy="false">&#x21D2;</mo>
+  <mi>q</mi>
+</math></span> を直接証明しにくいとき、対偶 <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">&#xAC;</mi>
+  <mi>q</mi>
+  <mo stretchy="false">&#x21D2;</mo>
+  <mi mathvariant="normal">&#xAC;</mi>
+  <mi>p</mi>
+</math></span> を証明します。</p><div class="example"><b>例題：命題を証明する</b><p><strong>命題：</strong>整数 <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> について、<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>n</mi>
+    <mn>2</mn>
+  </msup>
+</math></span> が偶数なら <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> も偶数である。</p><div class="proof"><b>証明（対偶）</b><p>対偶「<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> が奇数なら <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>n</mi>
+    <mn>2</mn>
+  </msup>
+</math></span> も奇数」を示す。</p><p>奇数 <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> はある整数 <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> を使い <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>=</mo>
+  <mn>2</mn>
+  <mi>k</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+</math></span> と書ける。よって</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <msup>
+    <mi>n</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>=</mo>
+  <mo stretchy="false">(</mo>
+  <mn>2</mn>
+  <mi>k</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+  <msup>
+    <mo stretchy="false">)</mo>
+    <mn>2</mn>
+  </msup>
+  <mo>=</mo>
+  <mn>4</mn>
+  <msup>
+    <mi>k</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>+</mo>
+  <mn>4</mn>
+  <mi>k</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo>=</mo>
+  <mn>2</mn>
+  <mo stretchy="false">(</mo>
+  <mn>2</mn>
+  <msup>
+    <mi>k</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>+</mo>
+  <mn>2</mn>
+  <mi>k</mi>
+  <mo stretchy="false">)</mo>
+  <mo>+</mo>
+  <mn>1</mn>
+</math></span></div><p><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <msup>
+    <mi>k</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>+</mo>
+  <mn>2</mn>
+  <mi>k</mi>
+</math></span> は整数だから <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>n</mi>
+    <mn>2</mn>
+  </msup>
+</math></span> は奇数。対偶が真なので、元の命題も真。■</p></div></div><div class="practice"><b>練習2</b><ol><li>整数 <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> に対し、「<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>n</mi>
+    <mn>2</mn>
+  </msup>
+</math></span> が3の倍数なら <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> は3の倍数」を対偶で証明しなさい。</li></ol><details><summary>解答・詳しい解説を見る</summary><ol><li>対偶は「<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> が3の倍数でなければ <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>n</mi>
+    <mn>2</mn>
+  </msup>
+</math></span> も3の倍数でない」。整数 <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> は <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>3</mn>
+  <mi>k</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+</math></span> または <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>3</mn>
+  <mi>k</mi>
+  <mo>+</mo>
+  <mn>2</mn>
+</math></span> の形。平方はそれぞれ <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>3</mn>
+  <mo stretchy="false">(</mo>
+  <mn>3</mn>
+  <msup>
+    <mi>k</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>+</mo>
+  <mn>2</mn>
+  <mi>k</mi>
+  <mo stretchy="false">)</mo>
+  <mo>+</mo>
+  <mn>1</mn>
+</math></span>、<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>3</mn>
+  <mo stretchy="false">(</mo>
+  <mn>3</mn>
+  <msup>
+    <mi>k</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>+</mo>
+  <mn>4</mn>
+  <mi>k</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+  <mo>+</mo>
+  <mn>1</mn>
+</math></span> だから3で割った余りは1。したがって対偶は真。</li></ol></details></div></section><section class="card" id="sec4"><h3>背理法</h3><p>証明したい結論が偽だと仮定し、既知の事実と矛盾することを導いて、元の結論が真だと示す方法を<strong>背理法</strong>といいます。</p><div class="example"><b>例題：√2 が無理数であることを証明する</b><div class="proof"><b>証明（背理法）</b><p><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msqrt>
+    <mn>2</mn>
+  </msqrt>
+</math></span> が有理数であると仮定する。既約分数を使い、互いに素な正整数 <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mo>,</mo>
+  <mi>b</mi>
+</math></span> で</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <msqrt>
+    <mn>2</mn>
+  </msqrt>
+  <mo>=</mo>
+  <mfrac>
+    <mi>a</mi>
+    <mi>b</mi>
+  </mfrac>
+</math></span></div><p>と表せる。両辺を2乗して</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <msup>
+    <mi>a</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>=</mo>
+  <mn>2</mn>
+  <msup>
+    <mi>b</mi>
+    <mn>2</mn>
+  </msup>
+</math></span></div><p>よって <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>a</mi>
+    <mn>2</mn>
+  </msup>
+</math></span> は偶数。前節の対偶の証明から <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+</math></span> は偶数だから <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mo>=</mo>
+  <mn>2</mn>
+  <mi>c</mi>
+</math></span> とおける。代入すると</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mn>4</mn>
+  <msup>
+    <mi>c</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>=</mo>
+  <mn>2</mn>
+  <msup>
+    <mi>b</mi>
+    <mn>2</mn>
+  </msup>
+  <mstyle scriptlevel="0">
+    <mspace width="1em"></mspace>
+  </mstyle>
+  <mo stretchy="false">&#x21D2;</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="1em"></mspace>
+  </mstyle>
+  <msup>
+    <mi>b</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>=</mo>
+  <mn>2</mn>
+  <msup>
+    <mi>c</mi>
+    <mn>2</mn>
+  </msup>
+</math></span></div><p>よって <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>b</mi>
+</math></span> も偶数となる。しかし、<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mo>,</mo>
+  <mi>b</mi>
+</math></span> がともに偶数なのは「互いに素」に矛盾する。</p><p>したがって <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msqrt>
+    <mn>2</mn>
+  </msqrt>
+</math></span> は無理数である。■</p></div></div><div class="practice"><b>練習3</b><ol><li><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msqrt>
+    <mn>3</mn>
+  </msqrt>
+</math></span> が無理数であることを、背理法を使って説明しなさい。</li></ol><details><summary>解答・詳しい解説を見る</summary><ol><li><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msqrt>
+    <mn>3</mn>
+  </msqrt>
+  <mo>=</mo>
+  <mi>a</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>b</mi>
+</math></span>（<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mo>,</mo>
+  <mi>b</mi>
+</math></span> は互いに素な正整数）と仮定すると、<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>a</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>=</mo>
+  <mn>3</mn>
+  <msup>
+    <mi>b</mi>
+    <mn>2</mn>
+  </msup>
+</math></span>。<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>a</mi>
+    <mn>2</mn>
+  </msup>
+</math></span> が3の倍数なら <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+</math></span> は3の倍数なので <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mo>=</mo>
+  <mn>3</mn>
+  <mi>c</mi>
+</math></span>。すると <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>b</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>=</mo>
+  <mn>3</mn>
+  <msup>
+    <mi>c</mi>
+    <mn>2</mn>
+  </msup>
+</math></span> から <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>b</mi>
+</math></span> も3の倍数となり矛盾します。</li></ol></details></div></section><section class="card" id="sec5"><h3>「すべて」と「ある」の否定</h3><p>量化された命題の否定では、<strong>「すべて」⇔「ある」</strong> が入れ替わります。</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi mathvariant="normal">&#xAC;</mi>
+  <mo stretchy="false">(</mo>
+  <mi mathvariant="normal">&#x2200;</mi>
+  <mi>x</mi>
+  <mtext>&#xA0;</mtext>
+  <mi>P</mi>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo stretchy="false">)</mo>
+  <mo stretchy="false">)</mo>
+  <mtext>&#xA0;</mtext>
+  <mo stretchy="false">&#x27FA;</mo>
+  <mtext>&#xA0;</mtext>
+  <mi mathvariant="normal">&#x2203;</mi>
+  <mi>x</mi>
+  <mtext>&#xA0;</mtext>
+  <mi mathvariant="normal">&#xAC;</mi>
+  <mi>P</mi>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo stretchy="false">)</mo>
+</math></span></div><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi mathvariant="normal">&#xAC;</mi>
+  <mo stretchy="false">(</mo>
+  <mi mathvariant="normal">&#x2203;</mi>
+  <mi>x</mi>
+  <mtext>&#xA0;</mtext>
+  <mi>P</mi>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo stretchy="false">)</mo>
+  <mo stretchy="false">)</mo>
+  <mtext>&#xA0;</mtext>
+  <mo stretchy="false">&#x27FA;</mo>
+  <mtext>&#xA0;</mtext>
+  <mi mathvariant="normal">&#x2200;</mi>
+  <mi>x</mi>
+  <mtext>&#xA0;</mtext>
+  <mi mathvariant="normal">&#xAC;</mi>
+  <mi>P</mi>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo stretchy="false">)</mo>
+</math></span></div><div class="example"><b>例題：否定をつくる</b><p>「すべての実数 <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span> について <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>&gt;</mo>
+  <mn>0</mn>
+</math></span>」の否定は「<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>&#x2264;</mo>
+  <mn>0</mn>
+</math></span> を満たす実数 <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span> がある」です。例えば <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> が当てはまります。</p></div><div class="practice"><b>練習4</b><ol><li>「ある整数 <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> について <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>n</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>&lt;</mo>
+  <mn>0</mn>
+</math></span>」の否定を述べなさい。</li></ol><details><summary>解答・詳しい解説を見る</summary><ol><li>「すべての整数 <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> について <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>n</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>&#x2265;</mo>
+  <mn>0</mn>
+</math></span>」です。これは真です。</li></ol></details></div></section><section class="card" id="sec6"><h3>命題と証明のまとめ</h3><p>証明方法の選び方を整理します。</p><div class="grid"><div class="proof"><b>直接証明</b><p>仮定から結論を順に導く。</p></div><div class="proof"><b>対偶による証明</b><p>結論を否定した側から仮定の否定を導く。</p></div><div class="proof"><b>背理法</b><p>結論の否定を仮定し、矛盾を導く。</p></div></div><div class="practice"><b>章末チェック</b><ol><li>「<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+  <mo stretchy="false">&#x21D2;</mo>
+  <mi>q</mi>
+</math></span> が真なら、その逆も真である」という主張は正しいですか。</li><li><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msqrt>
+    <mn>2</mn>
+  </msqrt>
+</math></span> が無理数であることを利用し、<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+  <mo>+</mo>
+  <msqrt>
+    <mn>2</mn>
+  </msqrt>
+</math></span> も無理数であることを証明しなさい。</li></ol><details><summary>解答・詳しい解説を見る</summary><ol><li>正しくありません。例えば「4の倍数なら偶数」は真ですが、その逆は偽です。</li><li>もし <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+  <mo>+</mo>
+  <msqrt>
+    <mn>2</mn>
+  </msqrt>
+</math></span> が有理数なら、そこから有理数1を引いた <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msqrt>
+    <mn>2</mn>
+  </msqrt>
+</math></span> も有理数となって矛盾します。</li></ol></details></div></section><nav class="nav"><a href="math1_lesson08.html">← 前の教材</a><a href="math_subject_1.html">数学Ⅰの授業一覧</a><a href="math1_lesson10.html">次の教材 →</a></nav><p class="tip">※教科書の写真は構成・学習範囲の参考とし、文章・例題・図は独自に制作しています。</p></main><footer>みんなの数学データベース｜数学Ⅰ</footer></body></html>

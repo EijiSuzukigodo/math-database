@@ -1,1 +1,363 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>数学Ⅰ 第8講 命題と条件｜みんなの数学データベース</title><style>*{box-sizing:border-box}body{margin:0;background:#f2f7fc;color:#22354b;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.85}a{color:#136caa}header{background:linear-gradient(125deg,#17375f,#276b9e);color:#fff;padding:23px max(18px,calc((100vw - 900px)/2))}header a{color:#e9f4ff}header h1{font-size:clamp(23px,4vw,33px);margin:9px 0}main{max-width:900px;margin:auto;padding:18px 16px 60px}.card{background:white;border:1px solid #d6e5f2;border-radius:15px;padding:clamp(16px,3.6vw,28px);margin:20px 0;box-shadow:0 5px 20px #193f6310}h2{color:#164c7f;font-size:22px;border-bottom:2px solid #d8e9f6;padding-bottom:7px}h3{color:#225a85;margin-top:0}.label{display:inline-block;background:#e0f0fc;color:#185c8b;border-radius:25px;padding:2px 12px;font-size:13px;font-weight:700}.formula{background:#f0f7ff;border-left:5px solid #2479b6;border-radius:8px;padding:18px 8px;margin:16px 0;overflow-x:auto;text-align:center}.sample{border-left:5px solid #da9d38;background:#fff9ee;border-radius:8px;padding:14px 17px;margin:14px 0}.practice{border:1px solid #bdd5e8;background:#fafcff;border-radius:11px;padding:16px}details{margin-top:12px}summary{cursor:pointer;color:#075f9c;font-weight:700}nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:space-between;margin-top:25px}.navbutton{display:inline-block;background:#e2f0fb;padding:9px 14px;border-radius:10px;text-decoration:none;font-weight:700}svg{max-width:100%;height:auto}figure{margin:16px auto;text-align:center}.controls{background:#f1f7ff;border:1px solid #c9dfed;border-radius:12px;padding:12px 16px}input[type=range]{width:min(100%,420px)}.small{font-size:14px;color:#5e7182}.katex,.MathJax{font-size:110%}footer{background:#122f4f;color:#fff;text-align:center;padding:17px}@media(max-width:500px){.card{padding:15px}.formula{font-size:14px}}</style><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre']}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script></head><body><header><a href="high_school_video_lessons.html#subject0">← 高校生のための授業・数学Ⅰ</a><h1>第8講 命題と条件</h1><span>第2章 集合と命題　｜　数学Ⅰ 全28講</span></header><main><article class="card"><span class="label">授業のねらい</span><p>真偽が定まる文を命題といいます。仮定と結論、逆・裏・対偶を整理しましょう。</p><h2>定義・重要公式</h2><div class="formula">\(p\Rightarrow q\) の対偶は \(\lnot q\Rightarrow\lnot p\)</div><h2>なぜそうなるのか</h2><p>命題とその対偶は、常に同じ真偽になります。「逆」と混同しないようにします。</p></article><section class="card"><h2>例題と解説</h2><div class="sample"><strong>例題</strong><p>「整数 \(n\) が偶数ならば \(n^2\) は偶数」の対偶を述べる。</p></div><h3>解き方</h3><p>「\(n^2\) が奇数ならば \(n\) は奇数」。</p></section><section class="card"><h2>練習問題</h2><div class="practice"><strong>問</strong><p>「\(x>3\) ならば \(x>1\)」の逆を述べ、真偽を答えなさい。</p><details><summary>解答・解説を見る</summary><p>逆「\(x>1\) ならば \(x>3\)」は偽。例えば \(x=2\)。</p></details></div></section><nav><a class="navbutton" href="math1_lesson07.html">← 前の講義</a><a class="navbutton" href="high_school_video_lessons.html#subject0">数学Ⅰの目次</a><a class="navbutton" href="math1_lesson09.html">次の講義 →</a></nav><p class="small">※公式・問題文・図はこのサイト用に独自に作成しています。数式はオンラインでMathJaxを読み込みます。</p></main><footer>みんなの数学データベース｜数学Ⅰ</footer></body></html>
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>命題と条件｜数学Ⅰ｜みんなの数学データベース</title><style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f1f6fb;color:#20354d;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;line-height:1.83}header{background:linear-gradient(125deg,#17365c,#286b9d);color:white;padding:25px max(18px,calc((100vw - 1040px)/2))}header a{color:#eaf4ff}header h1{font-size:clamp(25px,4vw,36px);margin:10px 0 4px}header p{margin:0;color:#e7f1fa}main{max-width:1040px;margin:auto;padding:18px 16px 55px}a{color:#146aa6}.toc{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.toc a{padding:8px 12px;background:white;border:1px solid #d6e4f0;border-radius:10px;font-weight:700;text-decoration:none;font-size:14px}.card{background:white;border:1px solid #d9e6f2;border-radius:16px;padding:clamp(17px,3.5vw,28px);margin:18px 0;box-shadow:0 6px 20px #163f6210}h2{color:#184e7c;font-size:clamp(23px,3.5vw,28px);margin:0 0 16px}h3{color:#1b5987;font-size:clamp(19px,3vw,23px);border-bottom:2px solid #dce9f4;padding-bottom:7px;margin:26px 0 12px}h4{color:#1c5e8d;margin:17px 0 7px}p{margin:10px 0}.tag{display:inline-block;border-radius:999px;background:#e5f1fd;color:#175985;font-weight:700;padding:4px 12px;font-size:13px}.formula{background:#eff6ff;border-left:5px solid #2b83bc;border-radius:10px;padding:14px 18px;margin:14px 0;overflow-x:auto}.example{background:#fff9ee;border-left:5px solid #d99c34;padding:15px 18px;border-radius:10px;margin:17px 0}.proof{background:#f4f8fd;border:1px solid #d0e2f0;padding:15px 18px;border-radius:12px;margin:15px 0}.practice{background:#fbfdff;border:1px solid #cbdfee;padding:15px 18px;border-radius:12px;margin:15px 0}details{margin-top:8px}summary{cursor:pointer;color:#1169a2;font-weight:750}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}.grid>*{min-width:0}.tip{color:#516b80;font-size:14px}.math-render math{font-size:1.12em}.math-render.display{display:block;text-align:center;overflow-x:auto;margin:.4em auto}.math-render.inline{display:inline}.diagram{width:100%;height:auto;max-width:620px;display:block;margin:auto}.figure{background:#f7fbff;border:1px solid #d7e6f4;border-radius:12px;padding:10px;margin:16px 0}.figcap{text-align:center;font-size:14px;color:#526b7e}.nav{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin-top:24px}.nav a{padding:9px 14px;background:#e4f1fb;border-radius:9px;text-decoration:none;font-weight:700}footer{background:#12304f;text-align:center;color:#eaf3fb;padding:17px}.hint{background:#f1f7ff;padding:12px;border-radius:9px}ol,ul{padding-left:1.4em}li{margin:7px 0}svg text{font-family:Arial,sans-serif;fill:#203b59}svg .circle{stroke:#2a5d84;stroke-width:2.5}.status{font-weight:700;color:#16598b}@media(max-width:600px){main{padding:12px 12px 45px}.card{padding:16px}}
+ .math-render.display{display:block;overflow-x:auto;text-align:center;margin:.4em auto}.math-render.inline{display:inline}.math-render math{font-size:1.12em}</style></head><body><header><a href="math_subject_1.html">← 数学Ⅰの授業一覧へ戻る</a><h1>命題と条件</h1><p>数学Ⅰ ／ 第2章 集合と命題 ／ 命題の真偽・必要条件・十分条件</p></header><main><nav class="toc"><a href="#sec1">授業のねらい</a><a href="#sec2">命題の真偽と反例</a><a href="#sec3">条件と命題の関係</a><a href="#sec4">必要条件・十分条件・必要十分条件</a><a href="#sec5">条件の否定と「かつ」「または」</a><a href="#sec6">章末チェック</a></nav><section class="card" id="sec1"><span class="tag">授業のねらい</span><h2>命題と条件を理解する</h2><p>教科書の構成を参考に、定義・図・例題・練習問題の順に学習できます。数式はオフラインでも読める形で表示します。</p></section><section class="card" id="sec2"><h3>命題の真偽と反例</h3><p>正しいか正しくないかを判断できる文や式を<strong>命題</strong>といいます。正しい命題は<strong>真</strong>、正しくない命題は<strong>偽</strong>です。</p><div class="example"><b>例題：命題の真偽</b><p>「すべての整数 <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> について、<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>n</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>&#x2265;</mo>
+  <mn>0</mn>
+</math></span>」は真です。一方「すべての実数 <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span> について、<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>&gt;</mo>
+  <mi>x</mi>
+</math></span>」は偽です。<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>=</mo>
+  <mfrac>
+    <mn>1</mn>
+    <mn>2</mn>
+  </mfrac>
+</math></span> なら <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mfrac>
+    <mn>1</mn>
+    <mn>4</mn>
+  </mfrac>
+  <mo>&gt;</mo>
+  <mfrac>
+    <mn>1</mn>
+    <mn>2</mn>
+  </mfrac>
+</math></span> は成り立たないからです。</p><p>このように、全称命題を偽と示す具体例を<strong>反例</strong>といいます。</p></div><div class="practice"><b>練習1</b><ol><li>「すべての素数は奇数である」は真ですか。</li><li>「<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span> が実数なら <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo>&gt;</mo>
+  <mn>0</mn>
+</math></span>」は真ですか。</li></ol><details><summary>解答・詳しい解説を見る</summary><ol><li>偽です。2は素数で偶数なので反例です。</li><li>真です。<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>&#x2265;</mo>
+  <mn>0</mn>
+</math></span> だから <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo>&#x2265;</mo>
+  <mn>1</mn>
+  <mo>&gt;</mo>
+  <mn>0</mn>
+</math></span>。</li></ol></details></div></section><section class="card" id="sec3"><h3>条件と命題の関係</h3><p>文字の値によって真偽が変わる文を<strong>条件</strong>といいます。2つの条件を <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+</math></span>、<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+</math></span> とすると、「<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+</math></span> ならば <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+</math></span>」を次のように書きます。</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>p</mi>
+  <mo stretchy="false">&#x21D2;</mo>
+  <mi>q</mi>
+</math></span></div><p>この命題が真であるのは、<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+</math></span> を満たす値が必ず <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+</math></span> も満たすときです。<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+</math></span> の真理集合を <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>P</mi>
+</math></span>、<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+</math></span> の真理集合を <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>Q</mi>
+</math></span> とすれば、</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>p</mi>
+  <mo stretchy="false">&#x21D2;</mo>
+  <mi>q</mi>
+  <mtext>&#xA0;&#x304C;&#x771F;</mtext>
+  <mstyle scriptlevel="0">
+    <mspace width="1em"></mspace>
+  </mstyle>
+  <mo stretchy="false">&#x27FA;</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="1em"></mspace>
+  </mstyle>
+  <mi>P</mi>
+  <mo>&#x2286;</mo>
+  <mi>Q</mi>
+</math></span></div><div class="example"><b>例題：条件の包含</b><p>実数 <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span> に対し <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+  <mo>:</mo>
+  <mi>x</mi>
+  <mo>&gt;</mo>
+  <mn>3</mn>
+</math></span>、<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+  <mo>:</mo>
+  <mi>x</mi>
+  <mo>&gt;</mo>
+  <mn>1</mn>
+</math></span> とすると、<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+  <mo stretchy="false">&#x21D2;</mo>
+  <mi>q</mi>
+</math></span> は真です。<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>&gt;</mo>
+  <mn>3</mn>
+</math></span> は必ず <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>&gt;</mo>
+  <mn>1</mn>
+</math></span> を満たすためです。</p><p>逆に <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+  <mo stretchy="false">&#x21D2;</mo>
+  <mi>p</mi>
+</math></span> は偽です。例えば <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>=</mo>
+  <mn>2</mn>
+</math></span> が反例です。</p></div></section><section class="card" id="sec4"><h3>必要条件・十分条件・必要十分条件</h3><p><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+  <mo stretchy="false">&#x21D2;</mo>
+  <mi>q</mi>
+</math></span> が真なら、<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+</math></span> は <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+</math></span> の<strong>十分条件</strong>、<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+</math></span> は <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+</math></span> の<strong>必要条件</strong>です。</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>p</mi>
+  <mo stretchy="false">&#x21D2;</mo>
+  <mi>q</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="1em"></mspace>
+  </mstyle>
+  <mo stretchy="false">&#x21D2;</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="1em"></mspace>
+  </mstyle>
+  <mi>p</mi>
+  <mo>:</mo>
+  <mtext>&#x5341;&#x5206;&#x6761;&#x4EF6;</mtext>
+  <mo>,</mo>
+  <mtext>&#xA0;</mtext>
+  <mi>q</mi>
+  <mo>:</mo>
+  <mtext>&#x5FC5;&#x8981;&#x6761;&#x4EF6;</mtext>
+</math></span></div><p><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+  <mo stretchy="false">&#x21D2;</mo>
+  <mi>q</mi>
+</math></span> と <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+  <mo stretchy="false">&#x21D2;</mo>
+  <mi>p</mi>
+</math></span> が両方真のとき、互いに必要十分条件です。</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>p</mi>
+  <mo stretchy="false">&#x27FA;</mo>
+  <mi>q</mi>
+</math></span></div><div class="example"><b>例題：正方形と長方形</b><p>「四角形が正方形である」は「長方形である」ための<strong>十分条件</strong>ですが、必要条件ではありません。長方形であっても正方形とは限らないからです。</p></div><div class="practice"><b>練習2</b><ol><li>実数 <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span> について「<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>=</mo>
+  <mn>2</mn>
+</math></span>」は「<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>=</mo>
+  <mn>4</mn>
+</math></span>」の何条件ですか。</li><li>実数 <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span> について「<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>&gt;</mo>
+  <mn>0</mn>
+</math></span>」は「<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>&gt;</mo>
+  <mn>0</mn>
+</math></span>」の何条件ですか。</li></ol><details><summary>解答・詳しい解説を見る</summary><ol><li>十分条件ですが必要条件ではありません。<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>=</mo>
+  <mo>&#x2212;</mo>
+  <mn>2</mn>
+</math></span> も <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>=</mo>
+  <mn>4</mn>
+</math></span> を満たすためです。</li><li>十分条件ですが必要条件ではありません。<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>=</mo>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span> も <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>&gt;</mo>
+  <mn>0</mn>
+</math></span> を満たします。</li></ol></details></div></section><section class="card" id="sec5"><h3>条件の否定と「かつ」「または」</h3><p>「<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>&gt;</mo>
+  <mn>2</mn>
+</math></span>」の否定は「<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>&#x2264;</mo>
+  <mn>2</mn>
+</math></span>」です。等号を含むかどうかにも注意します。</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi mathvariant="normal">&#xAC;</mi>
+  <mo stretchy="false">(</mo>
+  <mi>p</mi>
+  <mo>&#x2227;</mo>
+  <mi>q</mi>
+  <mo stretchy="false">)</mo>
+  <mo stretchy="false">&#x27FA;</mo>
+  <mo stretchy="false">(</mo>
+  <mi mathvariant="normal">&#xAC;</mi>
+  <mi>p</mi>
+  <mo stretchy="false">)</mo>
+  <mo>&#x2228;</mo>
+  <mo stretchy="false">(</mo>
+  <mi mathvariant="normal">&#xAC;</mi>
+  <mi>q</mi>
+  <mo stretchy="false">)</mo>
+</math></span></div><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi mathvariant="normal">&#xAC;</mi>
+  <mo stretchy="false">(</mo>
+  <mi>p</mi>
+  <mo>&#x2228;</mo>
+  <mi>q</mi>
+  <mo stretchy="false">)</mo>
+  <mo stretchy="false">&#x27FA;</mo>
+  <mo stretchy="false">(</mo>
+  <mi mathvariant="normal">&#xAC;</mi>
+  <mi>p</mi>
+  <mo stretchy="false">)</mo>
+  <mo>&#x2227;</mo>
+  <mo stretchy="false">(</mo>
+  <mi mathvariant="normal">&#xAC;</mi>
+  <mi>q</mi>
+  <mo stretchy="false">)</mo>
+</math></span></div><p>「かつ」を否定すると「または」に、「または」を否定すると「かつ」になります。</p><div class="example"><b>例題：条件を否定する</b><p>「<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>&gt;</mo>
+  <mn>1</mn>
+</math></span> かつ <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>&lt;</mo>
+  <mn>4</mn>
+</math></span>」の否定は「<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>&#x2264;</mo>
+  <mn>1</mn>
+</math></span> または <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>&#x2265;</mo>
+  <mn>4</mn>
+</math></span>」です。</p></div><div class="practice"><b>練習3</b><ol><li>「<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>&lt;</mo>
+  <mo>&#x2212;</mo>
+  <mn>2</mn>
+</math></span> または <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>&#x2265;</mo>
+  <mn>5</mn>
+</math></span>」の否定を答えなさい。</li><li>「<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mo>&gt;</mo>
+  <mn>0</mn>
+</math></span> かつ <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>b</mi>
+  <mo>&gt;</mo>
+  <mn>0</mn>
+</math></span>」の否定を答えなさい。</li></ol><details><summary>解答・詳しい解説を見る</summary><ol><li><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>&#x2265;</mo>
+  <mo>&#x2212;</mo>
+  <mn>2</mn>
+</math></span> かつ <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>&lt;</mo>
+  <mn>5</mn>
+</math></span>、すなわち <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo>&#x2212;</mo>
+  <mn>2</mn>
+  <mo>&#x2264;</mo>
+  <mi>x</mi>
+  <mo>&lt;</mo>
+  <mn>5</mn>
+</math></span>。</li><li><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mo>&#x2264;</mo>
+  <mn>0</mn>
+</math></span> または <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>b</mi>
+  <mo>&#x2264;</mo>
+  <mn>0</mn>
+</math></span>。</li></ol></details></div></section><section class="card" id="sec6"><h3>章末チェック</h3><p>命題は真偽を判断し、偽なら反例を一つ示します。「ならば」の真偽は条件を満たす値の集合の包含関係で考えましょう。</p><div class="practice"><b>確認問題</b><ol><li>整数 <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> に対し、「<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> は6の倍数」は「<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> は3の倍数」の何条件ですか。</li><li>実数 <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span> に対し「<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>=</mo>
+  <mn>9</mn>
+</math></span>」の否定を答えなさい。</li></ol><details><summary>解答・詳しい解説を見る</summary><ol><li>十分条件であり、必要条件ではありません。3は3の倍数ですが6の倍数ではありません。</li><li><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>&#x2260;</mo>
+  <mn>9</mn>
+</math></span>、すなわち <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>&#x2260;</mo>
+  <mn>3</mn>
+</math></span> かつ <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>&#x2260;</mo>
+  <mo>&#x2212;</mo>
+  <mn>3</mn>
+</math></span>。</li></ol></details></div></section><nav class="nav"><a href="math1_lesson07.html">← 前の教材</a><a href="math_subject_1.html">数学Ⅰの授業一覧</a><a href="math1_lesson09.html">次の教材 →</a></nav><p class="tip">※教科書の写真は構成・学習範囲の参考とし、文章・例題・図は独自に制作しています。</p></main><footer>みんなの数学データベース｜数学Ⅰ</footer></body></html>
