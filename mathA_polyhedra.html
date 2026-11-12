@@ -1,1 +1,62 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>多面体｜みんなの数学データベース</title><style>body{margin:0;background:#f0f5fb;color:#18344c;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",sans-serif;line-height:1.85}header{background:#184c76;color:white;padding:28px 5%}main{max-width:940px;margin:24px auto;padding:0 16px}.panel{background:white;border-radius:15px;padding:22px;margin:20px 0;box-shadow:0 2px 8px #cbd7e2}h2{border-left:5px solid #2285b4;padding-left:12px}button,select{font:inherit;border:1px solid #9ab5c8;border-radius:9px;padding:9px 15px;background:#fff;color:#174c72;cursor:pointer}button.primary{background:#176c9d;color:white}button:disabled{opacity:.4}svg{width:100%;height:auto;max-height:480px;background:#fbfdff;border:1px solid #d9e5f0;border-radius:10px}svg text{font-size:16px;fill:#18344c}.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.note{background:#eaf5fc;border-radius:8px;padding:12px}.formula{font-family:Georgia,serif;font-size:1.2em;text-align:center;background:#eef5fb;padding:14px;border-radius:9px}details{margin:12px 0;border:1px solid #d5e3ee;border-radius:8px;padding:10px}summary{cursor:pointer;font-weight:bold}a{color:#176c9d}</style></head><body><header><small>数学A｜図形の性質</small><h1>多面体</h1><p>5種類の正多面体とオイラーの多面体定理</p></header><main><p><a href="math_subject_a.html">← 数学Aの授業一覧へ</a></p><section class="panel"><h2>1　多面体と正多面体</h2><p>多角形の面で囲まれた立体を多面体といいます。すべての面が合同な正多角形で、各頂点に集まる面の数が同じである凸多面体を正多面体といいます。</p><p>正多面体は次の5種類だけです。表の名前を押すと図が変わります。</p><div class="controls" id="choices"></div><svg id="solid" viewBox="0 0 520 360"></svg><p id="solidInfo" class="note"></p><div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%;min-width:480px" id="tbl"><thead><tr><th>種類</th><th>面の形</th><th>面F</th><th>頂点V</th><th>辺E</th></tr></thead><tbody></tbody></table></div></section><section class="panel"><h2>2　オイラーの多面体定理</h2><p>凸多面体の頂点の数をV、辺の数をE、面の数をFとすると、次の関係が成り立ちます。</p><div class="formula">V − E ＋ F ＝ 2</div><p>例えば正六面体（立方体）は、頂点8個、辺12本、面6枚なので、8 − 12 ＋ 6 ＝ 2です。</p><details><summary>練習問題：正十二面体で確認</summary><p>頂点20、辺30、面12なので、20 − 30 ＋ 12 ＝ 2です。</p></details></section><section class="panel"><h2>3　正多面体が5種類しかない理由</h2><p>1つの頂点には3枚以上の面が集まり、その内角の和は360°より小さくなります。</p><p>正三角形（60°）なら3枚・4枚・5枚、正方形（90°）なら3枚、正五角形（108°）なら3枚だけが可能です。正六角形は120°×3＝360°となり、立体の頂点を作れません。</p></section><section class="panel"><h2>4　多面体から切り取った立体</h2><p>立方体の各面の中心を結ぶと正八面体、正四面体の各辺の中点を結ぶと正八面体ができます。切断面の形や辺の長さを考えてみましょう。</p><details><summary>考えてみよう</summary><p>立方体の6つの面の中心を頂点とする立体の面・辺・頂点の数は？</p><p><strong>答え：</strong>正八面体で、面8、辺12、頂点6です。</p></details></section><script>const solids=[['正四面体','正三角形',4,4,6],['正六面体（立方体）','正方形',6,8,12],['正八面体','正三角形',8,6,12],['正十二面体','正五角形',12,20,30],['正二十面体','正三角形',20,12,30]];const pts=[[260,40],[105,265],[415,265],[260,170],[130,85],[390,85],[130,260],[390,260],[260,305],[260,170]];const edge=(a,b)=>`<line x1="${pts[a][0]}" y1="${pts[a][1]}" x2="${pts[b][0]}" y2="${pts[b][1]}" stroke="#176b99" stroke-width="3"/>`;function show(i){const s=solids[i];let edges;if(i===0)edges=[[0,1],[0,2],[0,3],[1,2],[1,3],[2,3]];else if(i===1)edges=[[4,5],[5,7],[7,6],[6,4],[1,2],[2,8],[8,3],[3,1],[4,1],[5,2],[7,8],[6,3]];else if(i===2)edges=[[0,4],[0,5],[0,6],[0,7],[8,4],[8,5],[8,6],[8,7],[4,5],[5,7],[7,6],[6,4]];else edges=[[0,4],[0,5],[0,6],[0,7],[4,5],[5,7],[7,6],[6,4],[8,4],[8,5],[8,6],[8,7],[1,4],[1,6],[2,5],[2,7],[3,6],[3,7]];document.getElementById('solid').innerHTML=edges.map(e=>edge(...e)).join('')+pts.map((p,j)=>`<circle cx="${p[0]}" cy="${p[1]}" r="3" fill="#176b99"/>`).join('');document.getElementById('solidInfo').textContent=`${s[0]}：${s[1]}の面が${s[2]}枚、頂点${s[3]}個、辺${s[4]}本。${s[3]} − ${s[4]} ＋ ${s[2]} ＝ 2。※図は立体の構造を考えるための模式図です。`}solids.forEach((s,i)=>{const b=document.createElement('button');b.textContent=s[0];b.onclick=()=>show(i);document.getElementById('choices').append(b);const tr=document.createElement('tr');tr.innerHTML=s.map(x=>`<td style="padding:8px;border-bottom:1px solid #ddd">${x}</td>`).join('');document.querySelector('#tbl tbody').append(tr)});show(0)</script></main></body></html>
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>多面体｜みんなの数学データベース</title><style>body{margin:0;background:#f0f5fb;color:#18344c;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",sans-serif;line-height:1.85}header{background:#184c76;color:white;padding:28px 5%}main{max-width:940px;margin:24px auto;padding:0 16px}.panel{background:white;border-radius:15px;padding:22px;margin:20px 0;box-shadow:0 2px 8px #cbd7e2}h2{border-left:5px solid #2285b4;padding-left:12px}button,select{font:inherit;border:1px solid #9ab5c8;border-radius:9px;padding:9px 15px;background:#fff;color:#174c72;cursor:pointer}button.primary{background:#176c9d;color:white}button:disabled{opacity:.4}svg{width:100%;height:auto;max-height:480px;background:#fbfdff;border:1px solid #d9e5f0;border-radius:10px}svg text{font-size:16px;fill:#18344c}.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.note{background:#eaf5fc;border-radius:8px;padding:12px}.formula{font-family:Georgia,serif;font-size:1.2em;text-align:center;background:#eef5fb;padding:14px;border-radius:9px}details{margin:12px 0;border:1px solid #d5e3ee;border-radius:8px;padding:10px}summary{cursor:pointer;font-weight:bold}a{color:#176c9d}</style></head><body><header><small>数学A｜図形の性質</small><h1>多面体</h1><p>5種類の正多面体とオイラーの多面体定理</p></header><main><p><a href="math_subject_a.html">← 数学Aの授業一覧へ</a></p><section class="panel"><h2>1　多面体と正多面体</h2><p>多角形の面で囲まれた立体を多面体といいます。すべての面が合同な正多角形で、各頂点に集まる面の数が同じである凸多面体を正多面体といいます。</p><p>正多面体は次の5種類だけです。名前のボタンを押すと、教科書のような立体図に切り替わります。裏側の辺は破線で示します。</p><div class="controls" id="choices"></div><svg id="solid" viewBox="0 0 520 360" role="img" aria-label="正多面体の立体図"></svg><div class="controls"><label for="turn">図を回転：</label><input id="turn" type="range" min="-180" max="180" value="0" step="2"><button id="resetTurn" type="button">元の向きに戻す</button></div><p id="solidInfo" class="note"></p><div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%;min-width:480px" id="tbl"><thead><tr><th>種類</th><th>面の形</th><th>面F</th><th>頂点V</th><th>辺E</th></tr></thead><tbody></tbody></table></div></section><section class="panel"><h2>2　オイラーの多面体定理</h2><p>凸多面体の頂点の数をV、辺の数をE、面の数をFとすると、次の関係が成り立ちます。</p><div class="formula">V − E ＋ F ＝ 2</div><p>例えば正六面体（立方体）は、頂点8個、辺12本、面6枚なので、8 − 12 ＋ 6 ＝ 2です。</p><details><summary>練習問題：正十二面体で確認</summary><p>頂点20、辺30、面12なので、20 − 30 ＋ 12 ＝ 2です。</p></details></section><section class="panel"><h2>3　正多面体が5種類しかない理由</h2><p>1つの頂点には3枚以上の面が集まり、その内角の和は360°より小さくなります。</p><p>正三角形（60°）なら3枚・4枚・5枚、正方形（90°）なら3枚、正五角形（108°）なら3枚だけが可能です。正六角形は120°×3＝360°となり、立体の頂点を作れません。</p></section><section class="panel"><h2>4　多面体から切り取った立体</h2><p>立方体の各面の中心を結ぶと正八面体、正四面体の各辺の中点を結ぶと正八面体ができます。切断面の形や辺の長さを考えてみましょう。</p><details><summary>考えてみよう</summary><p>立方体の6つの面の中心を頂点とする立体の面・辺・頂点の数は？</p><p><strong>答え：</strong>正八面体で、面8、辺12、頂点6です。</p></details></section><script>
+const solids=[['正四面体','正三角形',4,4,6],['正六面体（立方体）','正方形',6,8,12],['正八面体','正三角形',8,6,12],['正十二面体','正五角形',12,20,30],['正二十面体','正三角形',20,12,30]];
+const geometries=[{"v":[[1.0,1.0,1.0],[1.0,-1.0,-1.0],[-1.0,1.0,-1.0],[-1.0,-1.0,1.0]],"f":[[2,0,1],[3,0,2],[2,1,3],[1,0,3]]},{"v":[[-1.0,-1.0,-1.0],[-1.0,-1.0,1.0],[-1.0,1.0,-1.0],[-1.0,1.0,1.0],[1.0,-1.0,-1.0],[1.0,-1.0,1.0],[1.0,1.0,-1.0],[1.0,1.0,1.0]],"f":[[4,0,2,6],[1,0,4,5],[5,4,6,7],[2,0,1,3],[6,2,3,7],[3,1,5,7]]},{"v":[[1.0,0.0,0.0],[-1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,-1.0,0.0],[0.0,0.0,1.0],[0.0,0.0,-1.0]],"f":[[3,1,5],[5,0,3],[4,1,3],[3,0,4],[2,0,5],[5,1,2],[4,0,2],[2,1,4]]},{"v":[[-1.0,-1.0,-1.0],[-1.0,-1.0,1.0],[-1.0,1.0,-1.0],[-1.0,1.0,1.0],[1.0,-1.0,-1.0],[1.0,-1.0,1.0],[1.0,1.0,-1.0],[1.0,1.0,1.0],[0.0,-0.6180339887498948,-1.618033988749895],[-0.6180339887498948,-1.618033988749895,0.0],[-1.618033988749895,0.0,-0.6180339887498948],[0.0,-0.6180339887498948,1.618033988749895],[-0.6180339887498948,1.618033988749895,0.0],[1.618033988749895,0.0,-0.6180339887498948],[0.0,0.6180339887498948,-1.618033988749895],[0.6180339887498948,-1.618033988749895,0.0],[-1.618033988749895,0.0,0.6180339887498948],[0.0,0.6180339887498948,1.618033988749895],[0.6180339887498948,1.618033988749895,0.0],[1.618033988749895,0.0,0.6180339887498948]],"f":[[6,13,4,8,14],[14,8,0,10,2],[16,10,0,9,1],[3,12,2,10,16],[5,11,1,9,15],[15,9,0,8,4],[5,15,4,13,19],[3,16,1,11,17],[17,11,5,19,7],[6,14,2,12,18],[19,13,6,18,7],[18,12,3,17,7]]},{"v":[[0.0,-1.0,-1.618033988749895],[-1.0,-1.618033988749895,0.0],[-1.618033988749895,0.0,-1.0],[0.0,-1.0,1.618033988749895],[-1.0,1.618033988749895,0.0],[1.618033988749895,0.0,-1.0],[0.0,1.0,-1.618033988749895],[1.0,-1.618033988749895,0.0],[-1.618033988749895,0.0,1.0],[0.0,1.0,1.618033988749895],[1.0,1.618033988749895,0.0],[1.618033988749895,0.0,1.0]],"f":[[2,0,1],[6,2,4],[5,0,6],[6,0,2],[3,1,7],[7,0,5],[1,0,7],[2,8,4],[1,8,2],[3,8,1],[9,8,3],[4,8,9],[4,9,10],[4,10,6],[6,10,5],[5,11,7],[9,3,11],[11,3,7],[10,9,11],[5,10,11]]}];
+let selected=0;
+const svg=document.getElementById('solid');
+const NS='http://www.w3.org/2000/svg';
+function element(tag,attrs){const e=document.createElementNS(NS,tag);Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,v));return e}
+function rotate(p,angle){
+ const y=angle*Math.PI/180+0.43, x=-0.35;
+ let xx=p[0]*Math.cos(y)+p[2]*Math.sin(y);
+ let zz=-p[0]*Math.sin(y)+p[2]*Math.cos(y);
+ return [xx,p[1]*Math.cos(x)-zz*Math.sin(x),p[1]*Math.sin(x)+zz*Math.cos(x)];
+}
+function render(){
+ const geom=geometries[selected], angle=Number(document.getElementById('turn').value);
+ const v=geom.v.map(p=>rotate(p,angle));
+ const scale=112;
+ const pos=v.map(p=>[260+p[0]*scale,180-p[1]*scale]);
+ svg.replaceChildren();
+ const faces=geom.f.map(face=>{
+  const a=v[face[0]],b=v[face[1]],c=v[face[2]];
+  const cross=[(b[1]-a[1])*(c[2]-a[2])-(b[2]-a[2])*(c[1]-a[1]),(b[2]-a[2])*(c[0]-a[0])-(b[0]-a[0])*(c[2]-a[2]),(b[0]-a[0])*(c[1]-a[1])-(b[1]-a[1])*(c[0]-a[0])];
+  const centroid=face.reduce((acc,k)=>acc.map((q,j)=>q+v[k][j]/face.length),[0,0,0]);
+  const outward=cross.reduce((t,q,j)=>t+q*centroid[j],0)>0?1:-1;
+  return {face,front:cross[2]*outward>0,z:centroid[2]};
+ });
+ // 背面は淡く、手前の面は薄い青で表現
+ faces.sort((a,b)=>a.z-b.z);
+ faces.forEach((f,i)=>{
+  const polygon=element('polygon',{points:f.face.map(k=>pos[k].join(',')).join(' '),fill:f.front?(i%2?'#e1f0f5':'#cfe6f1'):'#f8fbfd',opacity:f.front?'0.94':'0.28',stroke:'none'});
+  svg.append(polygon);
+ });
+ const edgeMap=new Map();
+ faces.forEach(f=>f.face.forEach((p,j)=>{
+  const q=f.face[(j+1)%f.face.length],key=[p,q].sort((a,b)=>a-b).join('-');
+  if(!edgeMap.has(key))edgeMap.set(key,{p,q,front:false});
+  if(f.front)edgeMap.get(key).front=true;
+ }));
+ // 裏側の辺を先に破線で、見えている辺を実線で描画
+ [...edgeMap.values()].sort((a,b)=>Number(a.front)-Number(b.front)).forEach(e=>{
+  const attrs={x1:pos[e.p][0],y1:pos[e.p][1],x2:pos[e.q][0],y2:pos[e.q][1],stroke:e.front?'#28566f':'#809aaa','stroke-width':e.front?'2.5':'1.6','stroke-linecap':'round'};
+  if(!e.front)attrs['stroke-dasharray']='6 5';
+  svg.append(element('line',attrs));
+ });
+}
+function show(i){
+ selected=i;
+ document.querySelectorAll('#choices button').forEach((b,j)=>{b.classList.toggle('primary',j===i);b.setAttribute('aria-pressed',j===i?'true':'false')});
+ document.getElementById('turn').value='0';
+ const s=solids[i];
+ document.getElementById('solidInfo').textContent=`${s[0]}：${s[1]}の面が${s[2]}枚、頂点${s[3]}個、辺${s[4]}本。${s[3]} − ${s[4]} ＋ ${s[2]} ＝ 2。実線は手前の辺、破線は裏側の辺です。`;
+ render();
+}
+solids.forEach((s,i)=>{
+ const b=document.createElement('button');b.textContent=s[0];b.type='button';b.onclick=()=>show(i);document.getElementById('choices').append(b);
+ const tr=document.createElement('tr');tr.innerHTML=s.map(x=>`<td style="padding:8px;border-bottom:1px solid #ddd">${x}</td>`).join('');
+ document.querySelector('#tbl tbody').append(tr);
+});
+document.getElementById('turn').addEventListener('input',render);
+document.getElementById('resetTurn').addEventListener('click',()=>{document.getElementById('turn').value='0';render()});
+show(0);
+</script></main></body></html>
