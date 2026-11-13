@@ -2,7 +2,7 @@
 <html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>展開と因数分解を図で理解する | みんなの数学データベース</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f5f7fa;color:#1d2939;font-family:-apple-system,BlinkMacSystemFont,'Hiragino Kaku Gothic ProN',Meiryo,sans-serif;line-height:1.7}header{background:#17365d;color:#fff;padding:24px 0}.wrap{width:min(900px,calc(100% - 28px));margin:auto}h1{font-size:clamp(24px,4vw,34px);margin:6px 0}h2{color:#17365d;font-size:23px}h3{color:#17365d}a{color:#245b91}.back{color:white;text-decoration:none}main{padding:22px 0 60px}.panel{background:#fff;border:1px solid #e1e7ef;border-radius:16px;padding:20px;margin:18px 0;box-shadow:0 4px 16px #17365d0a}.lead{font-size:18px}.formula{background:#eaf2fb;border-radius:12px;padding:14px;text-align:center;font-size:clamp(19px,4vw,26px);font-weight:bold;color:#17365d;overflow-wrap:anywhere}.controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:20px 0}.control{background:#f1f6fc;border-radius:12px;padding:12px}input[type=range]{width:100%;min-height:34px;accent-color:#245b91}.diagram{width:min(100%,490px);display:block;margin:14px auto}.diagram text{font-family:Arial,sans-serif;font-weight:700;fill:#17365d}.small{font-size:14px;color:#667085}.pill{display:inline-block;background:#eaf2fb;color:#17365d;padding:4px 10px;border-radius:99px;font-weight:700}details{border:1px solid #d9e3ee;border-radius:12px;padding:12px 15px;margin:12px 0;background:#fff}summary{cursor:pointer;font-weight:700;color:#17365d}button{border:0;border-radius:10px;background:#17365d;color:#fff;padding:12px 18px;font-size:16px;font-weight:700;cursor:pointer;min-height:44px}.answer{background:#f0f7ed;border-radius:10px;padding:12px;margin-top:10px}.exercise{background:#f7f9fc;padding:14px;border-radius:12px;margin:10px 0}footer{background:#132c4a;color:white;padding:20px 0}@media(max-width:550px){.controls{grid-template-columns:1fr}.panel{padding:15px}}
-</style></head><body>
+</style><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script></head><body>
 <header><div class="wrap"><a class="back" href="high_school.html">← 高校数学に戻る</a><h1>📐 展開と因数分解を図で理解する</h1><div>数学Ⅰ → 数と式</div></div></header>
 <main class="wrap">
 <p class="lead">文字式の公式は、図形の<strong>面積</strong>として考えると、仕組みが見えてきます。</p>
@@ -31,10 +31,48 @@
 </section>
 <section class="panel"><h2>2. なぜ真ん中が 2ab なの？</h2><p>図を見ると、縦 a・横 b の長方形と、縦 b・横 a の長方形があります。どちらの面積も <strong>ab</strong> なので、合わせて <strong>2ab</strong> です。</p><div class="formula">a² + ab + ab + b² = a² + 2ab + b²</div><p>つまり、<strong>(a+b)² は a²+b² ではありません。</strong>真ん中の2つの長方形を忘れないようにしましょう。</p></section>
 <section class="panel"><h2>3. 因数分解は展開の逆向き</h2><p>展開は「かっこを外す」操作、因数分解は「式を積の形にまとめる」操作です。</p><div class="formula">a² + 2ab + b² = (a+b)²</div><p>たとえば <strong>x²+6x+9</strong> は、a=x、b=3 と考えると、<strong>(x+3)²</strong> に因数分解できます。</p><details><summary>もう一つの公式も確認する</summary><p><strong>(a−b)² = a²−2ab+b²</strong></p><p>引き算の場合は真ん中が −2ab になります。</p></details><details><summary>和と差の積の公式を見る</summary><p><strong>(a+b)(a−b)=a²−b²</strong></p><p>展開すると +ab と −ab が打ち消し合います。</p></details></section>
-<section class="panel"><h2>4. 練習問題</h2><p>答えを考えてから「答えを見る」を押してください。</p>
+
+<section class="panel"><h2>4. 因数分解の基本公式を整理しよう</h2><p>公式は展開を逆にたどれば確かめられます。文字は実数・複素数のいずれでも成り立ちます。</p>
+<div class="formula">\[a^2+2ab+b^2=(a+b)^2\]</div>
+<div class="formula">\[a^2-2ab+b^2=(a-b)^2\]</div>
+<div class="formula">\[a^2-b^2=(a+b)(a-b)\]</div>
+<div class="formula">\[x^2+(p+q)x+pq=(x+p)(x+q)\]</div>
+<p>最後の公式では、<strong>和が \(p+q\)、積が \(pq\)</strong> になる2数を探します。</p>
+<div class="example"><strong>例題</strong>　\(x^2-7x+12\) を因数分解せよ。<p>和が \(-7\)、積が \(12\) になる2数は \(-3,-4\) です。</p><div class="formula">\[x^2-7x+12=(x-3)(x-4)\]</div></div>
+</section>
+<section class="panel"><h2>5. 3乗の公式とその証明</h2>
+<div class="formula">\[a^3+b^3=(a+b)(a^2-ab+b^2)\]</div>
+<div class="formula">\[a^3-b^3=(a-b)(a^2+ab+b^2)\]</div>
+<div class="formula">\[(a+b)^3=a^3+3a^2b+3ab^2+b^3\]</div>
+<div class="formula">\[(a-b)^3=a^3-3a^2b+3ab^2-b^3\]</div>
+<h3>なぜ成り立つのか</h3><p>和の3乗の因数分解は、右辺を展開して確認できます。</p><div class="formula">\[\begin{aligned}(a+b)(a^2-ab+b^2)&=a^3-a^2b+ab^2\\&\quad+a^2b-ab^2+b^3\\&=a^3+b^3\end{aligned}\]</div>
+<div class="example"><strong>例題1</strong>　\(x^3+8\) を因数分解せよ。<p>\(8=2^3\) に着目します。</p><div class="formula">\[x^3+8=(x+2)(x^2-2x+4)\]</div></div>
+<div class="example"><strong>例題2</strong>　\(8x^3-27y^3\) を因数分解せよ。<div class="formula">\[\begin{aligned}8x^3-27y^3&=(2x)^3-(3y)^3\\&=(2x-3y)(4x^2+6xy+9y^2)\end{aligned}\]</div></div>
+</section>
+<section class="panel"><h2>6. 複雑な因数分解の考え方</h2><h3>① 共通因数を先にくくり出す</h3>
+<div class="example"><strong>例題</strong>　\(3x^3-12x\)<div class="formula">\[3x^3-12x=3x(x^2-4)=3x(x-2)(x+2)\]</div></div>
+<h3>② ひとまとまりを置き換える</h3><div class="example"><strong>例題</strong>　\((x^2+2x)^2-5(x^2+2x)+6\)<p>\(t=x^2+2x\) とおくと、\(t^2-5t+6=(t-2)(t-3)\) です。</p><div class="formula">\[(x^2+2x-2)(x^2+2x-3)\]</div><p>元の文字に戻すのを忘れないようにします。さらに因数分解できる場合は続けます。</p></div>
+<h3>③ 組に分けて共通因数を作る</h3><div class="example"><strong>例題</strong>　\(ax+ay+bx+by\)<div class="formula">\[\begin{aligned}ax+ay+bx+by&=a(x+y)+b(x+y)\\&=(a+b)(x+y)\end{aligned}\]</div></div>
+</section>
+<section class="panel"><h2>7. 2文字以上の式を因数分解する</h2><p>複数の文字があるときは、<strong>1つの文字について整理</strong>すると見通しがよくなります。</p>
+<div class="example"><strong>例題1</strong>　\(x^2+xy-2y^2\) を因数分解せよ。<p>\(x\) についての2次式と考えます。\(2y+(-y)=y\)、\((2y)(-y)=-2y^2\) なので、</p><div class="formula">\[x^2+xy-2y^2=(x+2y)(x-y)\]</div></div>
+<div class="example"><strong>例題2</strong>　\(x^2-y^2+2x+1\) を因数分解せよ。<p>\(x\) に関する部分を平方にまとめます。</p><div class="formula">\[\begin{aligned}x^2-y^2+2x+1&=(x+1)^2-y^2\\&=(x+1-y)(x+1+y)\end{aligned}\]</div></div>
+<div class="example"><strong>例題3</strong>　\(x^2+3xy+2y^2-x-2y\) を因数分解せよ。<p>まず \(x\) について整理します。</p><div class="formula">\[x^2+(3y-1)x+(2y^2-2y)\]</div><p>\(3y-1=(y-1)+2y\)、\((y-1)\cdot 2y=2y^2-2y\) だから、</p><div class="formula">\[(x+y-1)(x+2y)\]</div></div>
+</section>
+<section class="panel"><h2>8. 入試につながる応用例題</h2>
+<div class="example"><strong>応用例題1</strong>　\(x^4+4\) を因数分解せよ。<p>そのままでは和の平方に見えませんが、\(4x^2\) を加えて引きます。</p><div class="formula">\[\begin{aligned}x^4+4&=(x^2+2)^2-(2x)^2\\&=(x^2-2x+2)(x^2+2x+2)\end{aligned}\]</div><p>平方の差に持ち込む工夫です。</p></div>
+<div class="example"><strong>応用例題2</strong>　\(x^3+y^3+z^3-3xyz\) を因数分解せよ。<div class="formula">\[\begin{aligned}&x^3+y^3+z^3-3xyz\\&=(x+y+z)(x^2+y^2+z^2-xy-yz-zx)\end{aligned}\]</div><p>右辺を展開すると、混合項が打ち消し合って左辺になります。</p><p>特に \(x+y+z=0\) のとき、\(x^3+y^3+z^3=3xyz\) が成り立ちます。</p></div>
+</section>
+<section class="panel"><h2>9. 練習問題</h2><p>答えを考えてから「答えを見る」を押してください。</p>
 <div class="exercise"><strong>問題1：</strong> (x+4)² を展開しなさい。<details><summary>答えを見る</summary><div class="answer">x²+8x+16。真ん中は 2×x×4 = 8x。</div></details></div>
 <div class="exercise"><strong>問題2：</strong> x²+10x+25 を因数分解しなさい。<details><summary>答えを見る</summary><div class="answer">(x+5)²。25=5²、10x=2×x×5。</div></details></div>
 <div class="exercise"><strong>問題3：</strong> (x+7)(x−7) を展開しなさい。<details><summary>答えを見る</summary><div class="answer">x²−49。和と差の積の公式を使います。</div></details></div>
+
+<div class="exercise"><strong>問題4：</strong> \(x^3-64\) を因数分解しなさい。<details><summary>解答・解説を表示</summary><div class="answer">\[x^3-64=(x-4)(x^2+4x+16)\] \(64=4^3\) として3乗の差の公式を使います。</div></details></div>
+<div class="exercise"><strong>問題5：</strong> \(2x^3-18x\) を因数分解しなさい。<details><summary>解答・解説を表示</summary><div class="answer">\[2x^3-18x=2x(x^2-9)=2x(x-3)(x+3)\] 共通因数を先にくくります。</div></details></div>
+<div class="exercise"><strong>問題6：</strong> \(x^2-xy-6y^2\) を因数分解しなさい。<details><summary>解答・解説を表示</summary><div class="answer">\[x^2-xy-6y^2=(x-3y)(x+2y)\] 和が \(-y\)、積が \(-6y^2\) となる組を探します。</div></details></div>
+<div class="exercise"><strong>問題7：</strong> \(x^4+4y^4\) を因数分解しなさい。<details><summary>解答・解説を表示</summary><div class="answer">\[\begin{aligned}x^4+4y^4&=(x^2+2y^2)^2-(2xy)^2\\&=(x^2-2xy+2y^2)(x^2+2xy+2y^2)\end{aligned}\]</div></details></div>
+<div class="exercise"><strong>問題8：</strong> \(x^3+y^3+z^3-3xyz\) について、\(x+y+z=0\) のときの値を求めなさい。<details><summary>解答・解説を表示</summary><div class="answer">因数分解公式より、\(x+y+z=0\) ならば値は \(0\) です。</div></details></div>
 </section>
 <p><a href="high_school.html">← 高校数学の単元一覧に戻る</a></p>
 </main><footer><div class="wrap">みんなの数学データベース</div></footer>
