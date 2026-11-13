@@ -1,1 +1,85 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>仮説検定の考え方｜みんなの数学データベース</title><style>*{box-sizing:border-box}body{margin:0;background:#f3f6fb;color:#20354a;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.85}header{background:#164b78;color:white;padding:18px max(18px,calc((100vw - 920px)/2))}header a{color:white}main{max-width:920px;margin:auto;padding:12px 14px 50px}section{background:#fff;border:1px solid #d9e4ee;border-radius:14px;padding:20px;margin:16px 0}h1{font-size:clamp(23px,4vw,32px);margin:8px 0}h2{color:#155781;border-bottom:2px solid #d8e8f5;padding-bottom:6px}h3{color:#216489}.formula{background:#eaf4fc;border-left:4px solid #267bb1;padding:15px 8px;text-align:center;font-size:clamp(17px,3vw,23px);overflow-x:auto;white-space:nowrap}.fraction{display:inline-flex;vertical-align:middle;flex-direction:column;text-align:center;line-height:1.25;font-size:.88em}.fraction>span:first-child{border-bottom:1.6px solid currentColor;padding:0 5px}.fraction>span:last-child{padding:0 5px}.example{background:#fff9e9;border-left:4px solid #d99d30;padding:12px 16px}.controls{background:#eef6ff;border-radius:12px;padding:14px}input[type=range]{width:100%}button{border:0;background:#176fa4;color:white;padding:10px 14px;border-radius:9px;margin:4px;font-size:16px}table{border-collapse:collapse;width:100%;margin:12px 0}td,th{border:1px solid #cbdce9;padding:8px;text-align:center}th{background:#e7f2fb}svg{width:100%;height:auto;max-height:310px}details{padding:12px;background:#f0f7fd;border-radius:8px}summary{font-weight:bold;color:#155781;cursor:pointer}nav{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin:25px 0}nav a{padding:9px;background:#e4f2fb;border-radius:8px;color:#13517c}small{color:#52677c}strong{color:#164d76}</style></head><body><header><a href="math_subject_1.html">← 数学Ⅰの目次</a><h1>仮説検定の考え方</h1><div>第5章 データの分析｜第6講</div></header><main><section><h2>1　仮説検定とは</h2><p>ある主張が正しいかをデータから考える方法の1つが<strong>仮説検定</strong>です。まず「特別な効果はない」「偶然の違いである」といった<strong>帰無仮説</strong>を立てます。</p><p>帰無仮説が正しいとしたとき、実際に得られた結果と同じくらい、またはそれ以上に極端な結果がどの程度起こりやすいかを考えます。</p></section><section><h2>2　例題：新しいペンの書きやすさ</h2><div class="example"><p>30人にA・Bのペンを比べてもらったところ、21人がBを選びました。Bが選ばれる確率が本当に1/2だとしたら、この結果は珍しいでしょうか。</p><p>帰無仮説：AとBが選ばれる確率はどちらも1/2。</p><p>30人中21人以上がBを選ぶ確率を考えます（片側検定）。</p></div><div class="formula">P(X ≥ 21) = <span class="fraction"><span>Σ C(30,k)　(k = 21 ～ 30)</span><span>2³⁰</span></span></div><p>この確率は約 <strong>2.14%</strong> です。例えば基準を5%と決めていれば、帰無仮説のもとでは珍しい結果と判断し、帰無仮説を棄却します。</p><p><strong>注意：</strong>これは「Bが優れている確率が97.86%」という意味ではありません。また、帰無仮説が正しい確率を直接求めたものでもありません。</p></section><section><h2>3　コイン投げで体験</h2><p>公平なコインを10回投げるとき、表が何回出るかを調べます。スライダーで観測された表の回数を変えてみましょう。</p><div class="controls"><label>表が出た回数：<output id="headsLabel">8</output> 回<input type="range" id="heads" min="5" max="10" value="8"></label><p id="prob"></p></div><svg id="binom" viewBox="0 0 620 280" role="img" aria-label="公平なコインの表の回数の確率分布"></svg></section><section><h2>4　判断の流れ</h2><ol><li>帰無仮説と対立仮説を決める。</li><li>判断の基準（有意水準など）をあらかじめ決める。</li><li>帰無仮説のもとで結果が起こる確率を調べる。</li><li>結果を解釈する。珍しい結果でも偶然の可能性は残ります。</li></ol></section><section><h2>5　練習問題</h2><p>有意水準5%で、p値が8%だった場合、帰無仮説を棄却できますか。</p><details><summary>解答を見る</summary><p>棄却できません。ただし「帰無仮説が正しいと証明された」という意味ではありません。</p></details></section><nav><a href="math1_data_relationship.html">← 前の教材</a><a href="math_subject_1.html">数学Ⅰの目次</a><a href="math_subject_1.html">次の教材 →</a></nav><small>教科書の学習順序を参考に、文章・例題・図は独自に作成しています。数式はオフラインでも表示できます。</small></main><script>const C=(n,k)=>{let z=1;for(let j=1;j<=k;j++)z=z*(n-j+1)/j;return z};function renderH(){let h=+document.getElementById('heads').value;document.getElementById('headsLabel').textContent=h;let p=0;for(let k=h;k<=10;k++)p+=C(10,k)/1024;document.getElementById('prob').textContent=`公平なコインで表が${h}回以上出る確率（片側）: ${(p*100).toFixed(2)}%`;document.getElementById('binom').innerHTML='<line x1="45" y1="240" x2="595" y2="240" stroke="#42617b" stroke-width="2"/>'+Array.from({length:11},(_,k)=>{let pr=C(10,k)/1024,height=pr*700,x=52+k*49;return `<rect x="${x}" y="${240-height}" width="34" height="${height}" fill="${k>=h?'#d88a35':'#73b4d8'}"/><text x="${x+17}" y="261" text-anchor="middle" font-size="14">${k}</text>`}).join('')}document.getElementById('heads').addEventListener('input',renderH);renderH();</script></body></html>
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>仮説検定の考え方｜数学Ⅰ｜みんなの数学データベース</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f1f6fb;color:#21364b;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.85}
+header{background:linear-gradient(110deg,#15385d,#236e9b);color:white;padding:22px max(16px,calc((100vw - 920px)/2))}
+header a{color:white}.wrap{max-width:920px;margin:20px auto 70px;padding:0 15px}.paper{background:white;border:1px solid #dce7f0;border-radius:14px;padding:clamp(16px,3vw,32px)}
+h1{font-size:clamp(24px,4vw,34px);margin:8px 0}h2{font-size:21px;color:#17527c;border-bottom:2px solid #dceaf5;padding-bottom:7px;margin-top:32px}h3{color:#17527c;font-size:17px}
+.formula{background:#f1f8ff;border-left:4px solid #2781b7;border-radius:7px;padding:14px 8px;overflow-x:auto;margin:13px 0;text-align:center}
+.example{background:#f8fbfe;border:1px solid #d1e3ef;border-radius:10px;padding:15px;margin:16px 0}
+.note{background:#fff8e8;border-left:4px solid #dca843;padding:13px;border-radius:7px}
+details{background:#f3faf4;border:1px solid #c7dfcf;padding:10px 14px;border-radius:8px;margin:10px 0}summary{cursor:pointer;font-weight:700;color:#276849}
+label{display:block;font-weight:700}input[type=range]{width:100%;accent-color:#176fa4}
+#bars{width:100%;height:auto;display:block;background:#fbfdff;border:1px solid #dce7f0;border-radius:8px}
+.legend{font-size:14px;color:#49657a}.nav{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:18px}.nav a{padding:8px 12px;background:#e3f0fa;border-radius:8px;text-decoration:none}
+.math{overflow-x:auto}footer{text-align:center;padding:20px;background:#183a59;color:white}
+</style>
+<script>
+window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head><body>
+<header><a href="math_subject_1.html">← 数学Ⅰの目次</a><h1>仮説検定の考え方</h1><p>第5章 データの分析｜第6講</p></header>
+<main class="wrap"><article class="paper">
+<h2>1　仮説検定とは</h2>
+<p>ある主張がデータと矛盾していないかを調べる方法の一つが<strong>仮説検定</strong>です。まず「差がない」「偶然の結果である」などの<strong>帰無仮説</strong>を置き、その仮説のもとで観測結果がどのくらい珍しいかを考えます。</p>
+<p>帰無仮説と対立する主張を<strong>対立仮説</strong>といいます。あらかじめ判断の基準となる<strong>有意水準</strong>を決めます（例：5％）。</p>
+<div class="note"><strong>重要：</strong>「棄却できない」は「帰無仮説が正しいと証明できた」という意味ではありません。</div>
+<h2>2　例題：新しいペンの書きやすさ</h2>
+<div class="example">
+<p><strong>例題1</strong>　30人がAとBのペンを比べたところ、21人がBを選びました。Bが選ばれる確率が本当に \(\dfrac12\) なら、この結果は珍しいでしょうか。</p>
+<p><strong>帰無仮説：</strong>各人がBを選ぶ確率は \(\dfrac12\) である。各人の選択は独立と仮定します。</p>
+<p><strong>対立仮説：</strong>Bを選ぶ確率は \(\dfrac12\) より大きい。</p>
+<p>Bを選んだ人数を \(X\) とすると、帰無仮説のもとで \(X\) は二項分布 \(B(30,\frac12)\) に従います。</p>
+<div class="formula">\[
+P(X\geqq21)=\sum_{k=21}^{30}{}_ {30}C_k
+\left(\frac12\right)^k\left(\frac12\right)^{30-k}
+=\frac{\displaystyle\sum_{k=21}^{30}{}_{30}C_k}{2^{30}}
+\approx 0.02139
+\]</div>
+<p>したがって、21人以上がBを選ぶ確率は<strong>約2.14％</strong>です。これは5％より小さいので、片側検定・有意水準5％では帰無仮説を棄却します。</p>
+<p class="note">約2.14％は「帰無仮説が正しい確率」でも「Bが優れている確率が97.86％」でもありません。観測結果と同程度以上に極端な結果が、帰無仮説のもとで起こる確率です。</p>
+</div>
+<h2>3　コイン投げで体験（動く確率分布）</h2>
+<p>公平なコインを10回投げたときの表の回数 \(X\) を考えます。スライダーを動かし、「観測した回数以上」の確率を比較してみましょう。</p>
+<div class="example">
+<label for="observed">観測した表の回数：<output id="count">8</output> 回</label>
+<input id="observed" type="range" min="0" max="10" value="8" step="1">
+<svg id="bars" viewBox="0 0 680 290" role="img" aria-label="公平なコイン10回の二項分布と片側確率を示す棒グラフ"></svg>
+<p class="legend">青：観測回数未満　／　オレンジ：観測回数以上</p>
+<div class="formula" id="tailFormula">\(P(X\geqq8)=\dfrac{56}{1024}\approx5.47\%\)</div>
+<p id="decision" aria-live="polite"></p>
+</div>
+<h2>4　仮説検定の判断の流れ</h2>
+<ol><li>帰無仮説と対立仮説を決める。</li><li>有意水準を<strong>データを見る前に</strong>決める。</li><li>帰無仮説のもとで、観測結果と同じくらい極端な結果が出る確率（p値）を求める。</li><li>p値が有意水準以下なら帰無仮説を棄却する。そうでなければ棄却しない。</li></ol>
+<h2>5　片側検定と両側検定</h2>
+<p>「Bが選ばれやすいか」のように一方向だけを調べるときは<strong>片側検定</strong>を使います。「AとBに違いがあるか」のように両方向を調べるときは<strong>両側検定</strong>を使います。どちらを使うかは、結果を見る前に決めます。</p>
+<div class="example"><h3>例題2　コインを10回投げて表が9回</h3>
+<p>「表が出やすい」という片側検定では、帰無仮説のもとで</p>
+<div class="formula">\[P(X\geqq9)=\frac{{}_{10}C_9+{}_{10}C_{10}}{2^{10}}=\frac{11}{1024}\approx1.07\%\]</div>
+<p>5％より小さいため、有意水準5％では帰無仮説を棄却します。</p></div>
+<h2>6　練習問題</h2>
+<div class="example"><p><strong>問題1</strong>　有意水準5％でp値が8％なら、帰無仮説を棄却できますか。</p><details><summary>解答・解説</summary><p>棄却できません。8％は5％より大きいためです。帰無仮説が正しいと証明されたわけではありません。</p></details></div>
+<div class="example"><p><strong>問題2</strong>　公平なコインを10回投げて表が8回以上出る確率を求めなさい。</p><details><summary>解答・解説</summary><div class="formula">\[P(X\geqq8)=\frac{{}_{10}C_8+{}_{10}C_9+{}_{10}C_{10}}{2^{10}}=\frac{56}{1024}=\frac7{128}\approx5.47\%\]</div><p>5％より大きいので、片側検定・有意水準5％では棄却しません。</p></details></div>
+<div class="example"><p><strong>問題3</strong>　p値が2％だったとき、「帰無仮説が正しい確率は2％」と言えますか。</p><details><summary>解答・解説</summary><p>言えません。p値は、帰無仮説が正しいと仮定したときに、観測結果と同程度以上に極端な結果が起こる確率です。</p></details></div>
+<div class="example"><p><strong>問題4</strong>　有意水準1％でp値が2％なら、帰無仮説を棄却できますか。</p><details><summary>解答・解説</summary><p>棄却できません。2％は1％より大きいためです。有意水準5％なら結論が異なることにも注意しましょう。</p></details></div>
+<p class="note">数式はインターネット接続時にMathJaxで教科書形式になります。動く確率分布はインターネット接続がなくても動作します。</p>
+</article><nav class="nav"><a href="math_subject_1.html">← 数学Ⅰの目次へ戻る</a></nav></main>
+<footer>みんなの数学データベース｜高校生のための授業</footer>
+<script>
+(function(){
+const svg=document.getElementById('bars'),slider=document.getElementById('observed'),count=document.getElementById('count'),tail=document.getElementById('tailFormula'),decision=document.getElementById('decision');
+const coeff=[1,10,45,120,210,252,210,120,45,10,1],ns='http://www.w3.org/2000/svg';
+function add(tag,attrs,text){const el=document.createElementNS(ns,tag);Object.entries(attrs).forEach(([k,v])=>el.setAttribute(k,v));if(text!==undefined)el.textContent=text;svg.appendChild(el);return el;}
+function draw(){const n=Number(slider.value);count.textContent=n;svg.replaceChildren();
+add('line',{x1:42,y1:240,x2:652,y2:240,stroke:'#8296a8','stroke-width':1.5});
+for(let k=0;k<=10;k++){let h=coeff[k]/252*186,x=51+k*54;add('rect',{x,y:240-h,width:35,height:h,rx:3,fill:k>=n?'#e99442':'#398bc0'});add('text',{x:x+17.5,y:260,'text-anchor':'middle','font-size':14,fill:'#324b60'},String(k));}
+add('text',{x:345,y:283,'text-anchor':'middle','font-size':13,fill:'#49657a'},'表の回数');
+const numerator=coeff.slice(n).reduce((a,b)=>a+b,0),pct=100*numerator/1024;
+tail.textContent='P(X ≧ '+n+') = '+numerator+'/1024 ≈ '+pct.toFixed(2)+'％';
+decision.textContent='片側検定・有意水準5％：'+(pct<=5?'帰無仮説を棄却します。':'帰無仮説を棄却しません。');
+}
+slider.addEventListener('input',draw);draw();
+})();
+</script></body></html>
