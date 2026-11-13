@@ -1,0 +1,44 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>不等式の証明｜数学Ⅱ｜みんなの数学データベース</title><style>*{box-sizing:border-box}body{margin:0;background:#f2f6fb;color:#20364b;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.85}header{background:linear-gradient(115deg,#15375f,#23699b);color:#fff;padding:24px max(18px,calc((100vw - 930px)/2))}header a{color:#eff8ff}h1{font-size:clamp(25px,4vw,35px);margin:8px 0}.wrap{max-width:930px;margin:20px auto 70px;padding:0 16px}.paper{background:white;border:1px solid #dce6ef;border-radius:14px;padding:clamp(16px,3vw,32px);margin:18px 0}h2{color:#174a75;border-bottom:2px solid #d5e7f5;padding-bottom:7px;font-size:22px}h3{color:#174a75;font-size:18px}.formula{background:#f3f8ff;border-left:5px solid #2d80ba;border-radius:8px;padding:14px 10px;margin:12px 0;overflow-x:auto}.example{background:#fafcff;border:1px solid #cbdfe9;padding:15px;border-radius:10px;margin:13px 0}.note{background:#fff9eb;border-left:4px solid #dba547;padding:12px;border-radius:8px}.nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:space-between}.nav a{background:#e5f1fb;border-radius:8px;padding:9px 13px;text-decoration:none;font-weight:bold}details{background:#f5fbf6;border:1px solid #d0e3d5;border-radius:9px;padding:10px 14px;margin:12px 0}summary{cursor:pointer;color:#226b49;font-weight:bold}.small{color:#60778a;font-size:14px}footer{text-align:center;background:#183452;color:white;padding:18px}a{color:#116da6}@media(max-width:600px){.paper{padding:16px}.formula{padding:12px 5px}}</style><script>window.MathJax={tex:{inlineMath:[['\(','\)']],displayMath:[['\[','\]']]}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script></head><body><header><a href="math_subject_2.html">← 数学Ⅱの授業一覧</a><h1>不等式の証明</h1><p>数学Ⅱ・第1章 式と証明｜教科書形式の講義</p></header><main class="wrap"><article class="paper">
+<h2>1. 不等式の証明とは</h2><p>実数の大小関係を用いて、与えられた不等式が指定された条件のもとで常に成立することを示します。特に、<strong>差をとって符号を調べる</strong>方法が基本です。</p><div class="formula">\[A\ge B\ \Longleftrightarrow\ A-B\ge0\]</div><p>\(A>B\) の場合は \(A-B>0\) を示します。</p>
+<h2>2. 実数の大小関係</h2><div class="formula">\[\begin{aligned}&a>b,\ b>c\ \Longrightarrow\ a>c\\&a>b\ \Longrightarrow\ a+c>b+c\\&a>b,\ c>0\ \Longrightarrow\ ac>bc\\&a>b,\ c<0\ \Longrightarrow\ ac<bc\end{aligned}\]</div><p>負の数を掛けたり割ったりすると、不等号の向きが逆になります。</p>
+<h2>3. 平方は0以上</h2><div class="formula">\[x^2\ge0\quad(x\text{ は実数})\]</div><div class="example"><h3>例題1　\(a^2+b^2\ge2ab\) を証明せよ</h3><p><strong>証明</strong>　左辺から右辺を引くと、</p><div class="formula">\[a^2+b^2-2ab=(a-b)^2\ge0\]</div><p>よって成立する。等号は \(a=b\) のとき。</p></div>
+<h2>4. 因数分解して符号を調べる</h2><div class="example"><h3>例題2　\(a>b>0\) のとき \(a^2>b^2\) を証明せよ</h3><div class="formula">\[a^2-b^2=(a-b)(a+b)\]</div><p>\(a-b>0\)、\(a+b>0\) だから積は正。したがって \(a^2>b^2\)。</p></div>
+<h2>5. 相加平均と相乗平均</h2><p>\(a\ge0,\ b\ge0\) のとき、</p><div class="formula">\[\frac{a+b}{2}\ge\sqrt{ab}\]</div><p><strong>証明</strong>　\((\sqrt a-\sqrt b)^2\ge0\) より、</p><div class="formula">\[a+b-2\sqrt{ab}\ge0\]</div><p>したがって成立する。等号は \(a=b\) のとき。</p><div class="example"><h3>例題3　\(x>0\) のとき \(x+\dfrac1x\ge2\) を証明せよ</h3><div class="formula">\[x+\frac1x\ge2\sqrt{x\cdot\frac1x}=2\]</div><p>等号は \(x=1\) のとき。</p></div>
+<h2>6. 平方完成を利用する</h2><div class="example"><h3>例題4　すべての実数 \(x\) について \(x^2-4x+5\ge1\) を証明せよ</h3><div class="formula">\[x^2-4x+5=(x-2)^2+1\ge1\]</div><p>等号は \(x=2\) のとき。</p></div>
+<h2>7. 2変数の発展例題</h2><div class="example"><h3>例題5　実数 \(a,b\) に対し \(2(a^2+b^2)\ge(a+b)^2\) を証明せよ</h3><div class="formula">\[\begin{aligned}2(a^2+b^2)-(a+b)^2&=a^2-2ab+b^2\\&=(a-b)^2\ge0\end{aligned}\]</div><p>よって成立する。等号は \(a=b\) のとき。</p></div>
+<h2>8. 練習問題</h2>
+<div class="example"><p><strong>問題1</strong>　実数 \(a,b\) に対し \(a^2+b^2\ge2ab\) を差を使って証明せよ。</p><details><summary>解答・解説を表示</summary><p>\(a^2+b^2-2ab=(a-b)^2\ge0\)。等号は \(a=b\)。</p></details></div>
+<div class="example"><p><strong>問題2</strong>　\(x>0\) のとき \(x+\dfrac4x\ge4\) を証明せよ。</p><details><summary>解答・解説を表示</summary><div class="formula">\[x+\frac4x\ge2\sqrt{x\cdot\frac4x}=4\]</div><p>等号は \(x=2\)。</p></details></div>
+<div class="example"><p><strong>問題3</strong>　\(x^2+6x+10\ge1\) を証明せよ。</p><details><summary>解答・解説を表示</summary><p>\(x^2+6x+10=(x+3)^2+1\ge1\)。等号は \(x=-3\)。</p></details></div>
+<div class="example"><p><strong>問題4</strong>　\(a>b>0\) のとき \(\dfrac1a<\dfrac1b\) を証明せよ。</p><details><summary>解答・解説を表示</summary><div class="formula">\[\frac1b-\frac1a=\frac{a-b}{ab}>0\]</div><p>したがって \(\dfrac1a<\dfrac1b\)。</p></details></div>
+<div class="example"><p><strong>問題5</strong>　実数 \(a,b,c\) に対し \(a^2+b^2+c^2\ge ab+bc+ca\) を証明せよ。</p><details><summary>解答・解説を表示</summary><div class="formula">\[a^2+b^2+c^2-ab-bc-ca=\frac12\bigl((a-b)^2+(b-c)^2+(c-a)^2\bigr)\ge0\]</div><p>等号は \(a=b=c\)。</p></details></div>
+
+<h2>8. 正の数の大小と平方の大小</h2>
+<p>\(A>0,\ B>0\) のとき、\(A>B\) と \(A^2>B^2\) は同値です。平方して比較するときは、まず両辺が正であることを確認します。</p>
+<div class="example"><h3>例題6　\(a>0,\ b>0\) のとき \(\sqrt a+\sqrt b>\sqrt{a+b}\) を示せ</h3>
+<p>両辺は正なので平方を比較します。</p>
+<div class="formula">\[(\sqrt a+\sqrt b)^2-(\sqrt{a+b})^2=2\sqrt{ab}>0\]</div>
+<p>したがって \(\sqrt a+\sqrt b>\sqrt{a+b}\) です。</p></div>
+<h2>9. 絶対値と不等式</h2>
+<p>実数 \(a\) について \(|a|\ge0\)、\(-|a|\le a\le|a|\) が成り立ちます。</p>
+<div class="formula">\[|a+b|\le|a|+|b|\]</div>
+<div class="example"><h3>例題7　三角不等式の証明</h3>
+<p>\(ab\le|ab|=|a||b|\) なので、</p>
+<div class="formula">\[\begin{aligned}(|a|+|b|)^2-(a+b)^2
+&=2(|a||b|-ab)\ge0.\end{aligned}\]</div>
+<p>両辺が0以上であることから \(|a+b|\le|a|+|b|\)。等号成立は \(ab\ge0\) のときです。</p></div>
+<h2>10. 相加平均・相乗平均の応用</h2>
+<div class="example"><h3>例題8　\(x>0\) のとき \(x+\dfrac1x\ge2\) を証明せよ</h3>
+<div class="formula">\[x+\frac1x\ge2\sqrt{x\cdot\frac1x}=2\]</div>
+<p>等号は \(x=1\) のとき。</p></div>
+<div class="example"><h3>例題9　\(a>0,\ b>0\) のとき \((a+b)(\dfrac1a+\dfrac1b)\ge4\) を証明せよ</h3>
+<div class="formula">\[(a+b)\left(\frac1a+\frac1b\right)=2+\frac ab+\frac ba\ge4\]</div>
+<p>等号は \(a=b\) のとき。</p></div>
+<h2>11. 写真の内容に対応する追加練習問題</h2>
+<div class="example"><p><strong>問題6</strong>　\(a,b\) を実数として \(a^2-ab+b^2\ge0\) を示し、等号成立条件を求めよ。</p>
+<details><summary>解答・解説を表示</summary><div class="formula">\[a^2-ab+b^2=\left(a-\frac b2\right)^2+\frac34b^2\ge0\]</div><p>等号は \(a=b=0\) のとき。</p></details></div>
+<div class="example"><p><strong>問題7</strong>　\(a,b,c\) を実数として \(a^2+b^2+c^2\ge ab+bc+ca\) を証明せよ。</p>
+<details><summary>解答・解説を表示</summary><div class="formula">\[2(a^2+b^2+c^2-ab-bc-ca)=(a-b)^2+(b-c)^2+(c-a)^2\ge0\]</div><p>等号は \(a=b=c\) のとき。</p></details></div>
+<div class="example"><p><strong>問題8</strong>　\(x>0\) のとき \(x+\dfrac9x\ge6\) を示せ。</p>
+<details><summary>解答・解説を表示</summary><div class="formula">\[x+\frac9x\ge2\sqrt{x\cdot\frac9x}=6\]</div><p>等号は \(x=3\) のとき。</p></details></div>
+<p class="note">数式はMathJaxで教科書形式に表示します。表示にはインターネット接続が必要です。</p></article><div class="nav"><a href="math_subject_2.html">数学Ⅱの目次</a><a href="math2_lesson06.html">← 等式の証明</a></div></main><footer>みんなの数学データベース｜高校生のための授業</footer></body></html>
