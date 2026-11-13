@@ -4,17 +4,17 @@
 <header><a href="math_subject_1.html">← 数学Ⅰの授業一覧へ戻る</a><h1>命題と証明</h1><p>数学Ⅰ ／ 第2章 集合と命題 ／ 逆・裏・対偶・背理法</p></header><main class="wrap"><article class="paper">
 <section class="aim"><small>授業のねらい</small><h2>命題の関係を理解し、証明方法を使い分ける</h2><p>命題の逆・裏・対偶の関係を整理し、対偶による証明と背理法の考え方を学びます。具体例と切り替え図を通して、論理的に説明する力を身につけましょう。</p></section>
 <h2>1　命題の逆・裏・対偶</h2><p>命題「\(p\Rightarrow q\)」に対して、逆・裏・対偶を次のように定めます。</p>
-<div class="eq">\[\begin{array}{c|c}\text{名称}&\text{命題}\\\hline \text{もとの命題}&p\Rightarrow q\\ \text{逆}&q\Rightarrow p\\ \text{裏}&\neg p\Rightarrow\neg q\\ \text{対偶}&\neg q\Rightarrow\neg p\end{array}\]</div>
+<div class="eq">\[\begin{array}{c|c}\text{名称}&\text{命題}\\\hline \text{もとの命題}&p\Rightarrow q\\ \text{逆}&q\Rightarrow p\\ \text{裏}&\overline{p}\Rightarrow\overline{q}\\ \text{対偶}&\overline{q}\Rightarrow\overline{p}\end{array}\]</div>
 <p>もとの命題と対偶は、必ず同じ真偽になります。逆と裏も同じ真偽です。</p>
 <div class="ex"><h3>動く教材：逆・裏・対偶を切り替えよう</h3><p>「\(n\) が4の倍数なら \(n\) は偶数である」を使って、各命題の真偽を確かめます。</p>
 <div class="controls"><button class="active" data-kind="original">もとの命題</button><button data-kind="converse">逆</button><button data-kind="inverse">裏</button><button data-kind="contra">対偶</button></div><div id="relation" aria-live="polite"><strong>もとの命題（真）</strong><p>4の倍数なら偶数である。</p><p>4の倍数は \(4k=2(2k)\) と表せるので、必ず偶数です。</p></div><p class="tip">反例が1つでも見つかれば、その命題は偽です。例えば「偶数なら4の倍数」は \(n=2\) が反例です。</p></div>
 <div class="ex"><h3>例題1</h3><p>命題「実数 \(x\) が \(x>2\) なら \(x>0\)」の対偶を求めなさい。</p><p><strong>解答：</strong>「\(x\leqq0\) なら \(x\leqq2\)」です。対偶はもとの命題と同じく真です。</p></div>
-<h2>2　対偶を利用した証明</h2><p>「\(p\Rightarrow q\)」を直接示しにくいとき、対偶「\(\neg q\Rightarrow\neg p\)」を証明します。</p>
+<h2>2　対偶を利用した証明</h2><p>「\(p\Rightarrow q\)」を直接示しにくいとき、対偶「\(\overline{q}\Rightarrow\overline{p}\)」を証明します。</p>
 <div class="ex"><h3>例題2　\(n^2\) が偶数なら \(n\) は偶数</h3><p><strong>証明：</strong>対偶「\(n\) が奇数なら \(n^2\) も奇数」を示します。</p><p>奇数は整数 \(k\) を用いて \(n=2k+1\) と表せます。</p><div class="eq">\[\begin{aligned}n^2&=(2k+1)^2\\&=4k^2+4k+1\\&=2(2k^2+2k)+1\end{aligned}\]</div><p>これは奇数なので対偶が真です。よって、もとの命題も真です。□</p></div>
 <h2>3　背理法</h2><p>証明したいことを否定して仮定し、矛盾を導く方法を<strong>背理法</strong>といいます。</p>
 <div class="ex"><h3>例題3　\(\sqrt2\) は無理数である</h3><p><strong>証明：</strong>\(\sqrt2\) が有理数であると仮定します。互いに素な正整数 \(a,b\) を使って</p><div class="eq">\[\sqrt2=\frac ab\]</div><p>と表せます。両辺を2乗すると \(a^2=2b^2\) です。したがって \(a^2\) は偶数であり、例題2より \(a\) は偶数です。</p><p>\(a=2c\) とおくと、</p><div class="eq">\[4c^2=2b^2\quad\Rightarrow\quad b^2=2c^2\]</div><p>よって \(b\) も偶数です。しかし、\(a,b\) がともに偶数であることは「互いに素」に矛盾します。したがって \(\sqrt2\) は無理数です。□</p></div>
 <h2>4　「すべて」と「ある」の否定</h2><p>「すべての \(x\) について成り立つ」の否定は「成り立たない \(x\) が少なくとも1つある」です。</p>
-<div class="eq">\[\begin{aligned}\neg(\forall x\ P(x))&\iff\exists x\ \neg P(x)\\\neg(\exists x\ P(x))&\iff\forall x\ \neg P(x)\end{aligned}\]</div>
+<div class="eq">\[\begin{aligned}\overline{(\forall x\ P(x))}&\iff\exists x\ \overline{P(x)}\\\overline{(\exists x\ P(x))}&\iff\forall x\ \overline{P(x)}\end{aligned}\]</div>
 <div class="ex"><h3>例題4</h3><p>「すべての実数 \(x\) について \(x^2>0\)」の否定は「\(x^2\leqq0\) を満たす実数 \(x\) がある」です。\(x=0\) が反例となります。</p></div>
 <h2>5　練習問題</h2>
 <div class="ex"><strong>問題1</strong><p>「\(x>3\) なら \(x>1\)」の逆と対偶を述べ、それぞれの真偽を調べなさい。</p><details><summary>解答・詳しい解説を見る</summary><p>逆：「\(x>1\) なら \(x>3\)」は偽。反例 \(x=2\)。対偶：「\(x\leqq1\) なら \(x\leqq3\)」は真です。</p></details></div>
