@@ -19,9 +19,16 @@ label{display:block;font-weight:700}input[type=range]{width:100%;accent-color:#1
 window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};
 </script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-</head><body>
+<style>
+/* 数学Ⅰ 授業のねらい：統一表示（この領域だけに適用） */
+.lesson-goal-unified{background:#fff;border:1px solid #d9e5ef;border-radius:16px;padding:24px;margin:0 0 30px;box-shadow:0 1px 3px rgba(20,55,80,.04);color:#18314c}
+.lesson-goal-unified .goal-pill-unified{display:inline-block;background:#e8f2fc;color:#19567f;border-radius:30px;padding:4px 13px;font-size:14px;font-weight:700;line-height:1.6}
+.lesson-goal-unified .goal-title-unified{font-size:clamp(20px,3.5vw,25px);font-weight:750;border:0;margin:12px 0;padding:0;color:#174f73;line-height:1.5;background:none;box-shadow:none}
+.lesson-goal-unified p{margin:0;line-height:1.95}
+@media(max-width:600px){.lesson-goal-unified{padding:18px}}
+</style></head><body>
 <header><a href="math_subject_1.html">← 数学Ⅰの目次</a><h1>仮説検定の考え方</h1><p>第5章 データの分析｜第6講</p></header>
-<main class="wrap"><article class="paper">
+<main class="wrap"><section class="lesson-goal-unified"><span class="goal-pill-unified">授業のねらい</span><h2 class="goal-title-unified">仮説検定の考え方を理解する</h2><p>帰無仮説・有意水準・確率の意味を理解し、データに基づく判断の考え方を学びましょう。</p></section><article class="paper">
 <h2>1　仮説検定とは</h2>
 <p>ある主張がデータと矛盾していないかを調べる方法の一つが<strong>仮説検定</strong>です。まず「差がない」「偶然の結果である」などの<strong>帰無仮説</strong>を置き、その仮説のもとで観測結果がどのくらい珍しいかを考えます。</p>
 <p>帰無仮説と対立する主張を<strong>対立仮説</strong>といいます。あらかじめ判断の基準となる<strong>有意水準</strong>を決めます（例：5％）。</p>

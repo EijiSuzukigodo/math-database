@@ -38,7 +38,14 @@ summary{cursor:pointer;color:#136aa8;font-weight:700}
 .math-render.display{display:block;text-align:center;overflow-x:auto;margin:.6em 0}.math-render.inline{display:inline}.math-render math{font-size:1.12em} .math-render.display math{max-width:100%}</style>
 
 
-</head>
+<style>
+/* 数学Ⅰ 授業のねらい：統一表示（この領域だけに適用） */
+.lesson-goal-unified{background:#fff;border:1px solid #d9e5ef;border-radius:16px;padding:24px;margin:0 0 30px;box-shadow:0 1px 3px rgba(20,55,80,.04);color:#18314c}
+.lesson-goal-unified .goal-pill-unified{display:inline-block;background:#e8f2fc;color:#19567f;border-radius:30px;padding:4px 13px;font-size:14px;font-weight:700;line-height:1.6}
+.lesson-goal-unified .goal-title-unified{font-size:clamp(20px,3.5vw,25px);font-weight:750;border:0;margin:12px 0;padding:0;color:#174f73;line-height:1.5;background:none;box-shadow:none}
+.lesson-goal-unified p{margin:0;line-height:1.95}
+@media(max-width:600px){.lesson-goal-unified{padding:18px}}
+</style></head>
 <body>
 <header>
   <a href="math_subject_1.html">← 数学Iの一覧へ戻る</a>
@@ -46,9 +53,9 @@ summary{cursor:pointer;color:#136aa8;font-weight:700}
   <p>数学I ／ 第1章 数と式 ／ 乗法公式・因数分解・発展公式</p>
 </header>
 <main>
-  <section class="card">
-    <span class="label">授業のねらい</span>
-    <h2>展開と因数分解を往復できるようにする</h2>
+  <section class="lesson-goal-unified card">
+    <span class="goal-pill-unified label">授業のねらい</span>
+    <h2 class="goal-title-unified">展開と因数分解を往復できるようにする</h2>
     <p>乗法公式は、積の形を和の形へ直すための公式です。因数分解は、その逆に和の形を積の形へ直す操作です。</p>
     <p>このページでは、教科書風に <strong>公式 → 例題 → 練習 → 発展</strong> の流れで整理します。</p>
   </section>
