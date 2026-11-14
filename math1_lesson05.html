@@ -1,435 +1,443 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>一次不等式｜数学Ⅰ｜みんなの数学データベース</title><style>*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f2f6fb;color:#263b50;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;line-height:1.85}header{background:linear-gradient(125deg,#17365c,#24679d);color:white;padding:25px max(18px,calc((100vw - 1040px)/2))}header a{color:#eff7ff}header h1{font-size:clamp(25px,4vw,38px);line-height:1.35;margin:12px 0 5px}header p{color:#e3effa;margin:0}main{max-width:1040px;margin:auto;padding:18px 16px 60px}a{color:#1265a0}.toc{display:flex;flex-wrap:wrap;gap:9px;margin:14px 0}.toc a{background:white;border:1px solid #ccddeb;border-radius:10px;padding:7px 11px;text-decoration:none;font-size:14px;font-weight:700}.card{background:white;border:1px solid #d8e5f1;border-radius:16px;padding:clamp(17px,3.5vw,28px);margin:18px 0;box-shadow:0 6px 20px #163f6210}h2{color:#1a4d7b;margin:0 0 18px;font-size:clamp(22px,3.5vw,29px)}h3{color:#1b5987;font-size:clamp(19px,3vw,23px);border-bottom:2px solid #dce9f4;padding-bottom:7px;margin:28px 0 12px}h4{color:#1d5d8e;font-size:18px;margin:20px 0 8px}p{margin:10px 0}.tag{display:inline-block;border-radius:999px;background:#e5f1fd;color:#175985;font-weight:700;padding:3px 12px;font-size:13px}.formula{background:#edf5ff;border-left:5px solid #2a83bd;border-radius:9px;padding:15px 18px;margin:15px 0;overflow-x:auto;text-align:center}.example{background:#fff8e9;border-left:5px solid #dca342;border-radius:10px;padding:17px 18px;margin:16px 0}.proof{background:#f3f8fc;border:1px solid #bcd3e7;border-radius:10px;padding:15px 18px;margin:15px 0}.exercise{background:#fbfdff;border:1px solid #cbddeb;border-radius:10px;padding:14px 17px;margin:15px 0}.columns{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}.columns>*{min-width:0}.check{background:#eaf6ef;border-left:5px solid #37835e;border-radius:10px;padding:12px 16px;margin:14px 0}details{border-top:1px solid #e0e9f2;margin-top:13px;padding-top:10px}summary{color:#086aa9;font-weight:700;cursor:pointer}ol{padding-left:1.5rem}li{margin-bottom:8px}.bottom{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;margin-top:22px}.bottom a{background:#e4f1fc;padding:9px 13px;border-radius:9px;text-decoration:none;font-weight:700}svg{max-width:100%;height:auto;display:block;margin:10px auto}figure{margin:10px 0;text-align:center}.figure-label{font-size:13px;color:#52687a}footer{background:#173650;color:white;text-align:center;padding:18px;font-size:13px}math{font-size:1.05em}math[display="block"]{font-size:1.1em;max-width:100%;overflow-x:auto;padding:4px 0} @media(max-width:520px){.card{padding:15px}.formula{padding:11px 8px}math[display="block"]{font-size:1em}} .math-render.display{display:block;overflow-x:auto;text-align:center;margin:.4em auto}.math-render.inline{display:inline}.math-render math{font-size:1.12em}</style><style>
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>一次不等式｜数学Ⅰ｜みんなの数学データベース</title><style>*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f2f6fb;color:#263b50;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;line-height:1.85}header{background:linear-gradient(125deg,#17365c,#24679d);color:white;padding:25px max(18px,calc((100vw - 1040px)/2))}header a{color:#eff7ff}header h1{font-size:clamp(25px,4vw,38px);line-height:1.35;margin:12px 0 5px}header p{color:#e3effa;margin:0}main{max-width:1040px;margin:auto;padding:18px 16px 60px}a{color:#1265a0}.toc{display:flex;flex-wrap:wrap;gap:9px;margin:14px 0}.toc a{background:white;border:1px solid #ccddeb;border-radius:10px;padding:7px 11px;text-decoration:none;font-size:14px;font-weight:700}.card{background:white;border:1px solid #d8e5f1;border-radius:16px;padding:clamp(17px,3.5vw,28px);margin:18px 0;box-shadow:0 6px 20px #163f6210}h2{color:#1a4d7b;margin:0 0 18px;font-size:clamp(22px,3.5vw,29px)}h3{color:#1b5987;font-size:clamp(19px,3vw,23px);border-bottom:2px solid #dce9f4;padding-bottom:7px;margin:28px 0 12px}h4{color:#1d5d8e;font-size:18px;margin:20px 0 8px}p{margin:10px 0}.tag{display:inline-block;border-radius:999px;background:#e5f1fd;color:#175985;font-weight:700;padding:3px 12px;font-size:13px}.formula{background:#edf5ff;border-left:5px solid #2a83bd;border-radius:9px;padding:15px 18px;margin:15px 0;overflow-x:auto;text-align:center}.example{background:#fff8e9;border-left:5px solid #dca342;border-radius:10px;padding:17px 18px;margin:16px 0}.proof{background:#f3f8fc;border:1px solid #bcd3e7;border-radius:10px;padding:15px 18px;margin:15px 0}.exercise{background:#fbfdff;border:1px solid #cbddeb;border-radius:10px;padding:14px 17px;margin:15px 0}.columns{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}.columns>*{min-width:0}.check{background:#eaf6ef;border-left:5px solid #37835e;border-radius:10px;padding:12px 16px;margin:14px 0}details{border-top:1px solid #e0e9f2;margin-top:13px;padding-top:10px}summary{color:#086aa9;font-weight:700;cursor:pointer}ol{padding-left:1.5rem}li{margin-bottom:8px}.bottom{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;margin-top:22px}.bottom a{background:#e4f1fc;padding:9px 13px;border-radius:9px;text-decoration:none;font-weight:700}svg{max-width:100%;height:auto;display:block;margin:10px auto}figure{margin:10px 0;text-align:center}.figure-label{font-size:13px;color:#52687a}footer{background:#173650;color:white;text-align:center;padding:18px;font-size:13px}math{font-size:1.05em}math[display="block"]{font-size:1.1em;max-width:100%;overflow-x:auto;padding:4px 0} @media(max-width:520px){.card{padding:15px}.formula{padding:11px 8px}math[display="block"]{font-size:1em}} .math-render.display{display:block;overflow-x:auto;text-align:center;margin:.4em auto}.math-render.inline{display:inline}.math-render math{font-size:1.12em}</style><style>
 /* 数学Ⅰ 授業のねらい：統一表示（この領域だけに適用） */
 .lesson-goal-unified{background:#fff;border:1px solid #d9e5ef;border-radius:16px;padding:24px;margin:0 0 30px;box-shadow:0 1px 3px rgba(20,55,80,.04);color:#18314c}
 .lesson-goal-unified .goal-pill-unified{display:inline-block;background:#e8f2fc;color:#19567f;border-radius:30px;padding:4px 13px;font-size:14px;font-weight:700;line-height:1.6}
 .lesson-goal-unified .goal-title-unified{font-size:clamp(20px,3.5vw,25px);font-weight:750;border:0;margin:12px 0;padding:0;color:#174f73;line-height:1.5;background:none;box-shadow:none}
 .lesson-goal-unified p{margin:0;line-height:1.95}
 @media(max-width:600px){.lesson-goal-unified{padding:18px}}
+</style><style>
+/* 数学Ⅰ教材共通：ページ最下部のナビゲーション */
+.math1-bottom-nav{max-width:1120px;margin:34px auto 22px;padding:0 16px;text-align:center;clear:both}
+.math1-bottom-nav a{display:inline-block;background:#e5f2ff;color:#175b91;border:1px solid #c9e2f4;border-radius:10px;padding:12px 20px;text-decoration:none;font-size:16px;font-weight:700;line-height:1.5}
+.math1-bottom-nav a:hover,.math1-bottom-nav a:focus-visible{background:#d1e9fc;outline-offset:3px}
+.math1-bottom-footer{background:#17365d!important;color:#fff!important;padding:18px 12px!important;text-align:center!important;font-size:13px!important;line-height:1.7!important;margin:0!important;width:100%!important;max-width:none!important;border:0!important;border-radius:0!important}
+.math1-bottom-footer *{color:#fff!important}
 </style></head><body><header><a href="math_subject_1.html">← 数学Ⅰの授業一覧</a><h1>一次不等式</h1><p>数学Ⅰ ／ 第1章 数と式 ／ 不等式の性質・解法・数直線・連立一次不等式</p></header><main><nav class="toc"><a href="#intro">不等式の性質</a><a href="#solve">解き方</a><a href="#numberline">数直線</a><a href="#system">連立不等式</a><a href="#practice">練習問題</a></nav>
 <section class="lesson-goal-unified card"><span class="goal-pill-unified tag">授業のねらい</span><h2 class="goal-title-unified">不等号の向きに注意して、解の範囲を求める</h2><p>不等式は、数の大小関係を表す式です。等式と同じように式変形できますが、<strong>負の数を掛けたり割ったりしたときは不等号の向きが逆</strong>になります。数直線で確かめながら学びましょう。</p></section>
-<section class="card" id="intro"><h2>1 不等式の意味と性質</h2><h3>A 不等式</h3><p>2つの数や式の大小関係を、不等号を使って表した式を<strong>不等式</strong>といいます。</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mi>a</mi>
-  <mo>&lt;</mo>
-  <mi>b</mi>
-  <mo>,</mo>
-  <mstyle scriptlevel="0">
-    <mspace width="1em"></mspace>
-  </mstyle>
-  <mi>a</mi>
-  <mo>&gt;</mo>
-  <mi>b</mi>
-  <mo>,</mo>
-  <mstyle scriptlevel="0">
-    <mspace width="1em"></mspace>
-  </mstyle>
-  <mi>a</mi>
-  <mo>&#x2264;</mo>
-  <mi>b</mi>
-  <mo>,</mo>
-  <mstyle scriptlevel="0">
-    <mspace width="1em"></mspace>
-  </mstyle>
-  <mi>a</mi>
-  <mo>&#x2265;</mo>
-  <mi>b</mi>
-</math></span></div><p>たとえば「ある数の3倍から4を引いた数は5より小さい」は、次のように表せます。</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mn>3</mn>
-  <mi>x</mi>
-  <mo>&#x2212;</mo>
-  <mn>4</mn>
-  <mo>&lt;</mo>
-  <mn>5</mn>
-</math></span></div><h3>B 不等式の性質</h3><p>実数について、次が成り立ちます。</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mi>a</mi>
-  <mo>&lt;</mo>
-  <mi>b</mi>
-  <mtext>&#xA0;</mtext>
-  <mo stretchy="false">&#x27F9;</mo>
-  <mtext>&#xA0;</mtext>
-  <mi>a</mi>
-  <mo>+</mo>
-  <mi>c</mi>
-  <mo>&lt;</mo>
-  <mi>b</mi>
-  <mo>+</mo>
-  <mi>c</mi>
-</math></span></div><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mi>a</mi>
-  <mo>&lt;</mo>
-  <mi>b</mi>
-  <mo>,</mo>
-  <mtext>&#xA0;</mtext>
-  <mi>c</mi>
-  <mo>&gt;</mo>
-  <mn>0</mn>
-  <mtext>&#xA0;</mtext>
-  <mo stretchy="false">&#x27F9;</mo>
-  <mtext>&#xA0;</mtext>
-  <mi>a</mi>
-  <mi>c</mi>
-  <mo>&lt;</mo>
-  <mi>b</mi>
-  <mi>c</mi>
-</math></span></div><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mi>a</mi>
-  <mo>&lt;</mo>
-  <mi>b</mi>
-  <mo>,</mo>
-  <mtext>&#xA0;</mtext>
-  <mi>c</mi>
-  <mo>&lt;</mo>
-  <mn>0</mn>
-  <mtext>&#xA0;</mtext>
-  <mo stretchy="false">&#x27F9;</mo>
-  <mtext>&#xA0;</mtext>
-  <mi>a</mi>
-  <mi>c</mi>
-  <mo>&gt;</mo>
-  <mi>b</mi>
-  <mi>c</mi>
+<section class="card" id="intro"><h2>1 不等式の意味と性質</h2><h3>A 不等式</h3><p>2つの数や式の大小関係を、不等号を使って表した式を<strong>不等式</strong>といいます。</p><div class="formula"><span class="math-render display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>a</mi>
+<mo>&lt;</mo>
+<mi>b</mi>
+<mo>,</mo>
+<mstyle scriptlevel="0">
+<mspace width="1em"></mspace>
+</mstyle>
+<mi>a</mi>
+<mo>&gt;</mo>
+<mi>b</mi>
+<mo>,</mo>
+<mstyle scriptlevel="0">
+<mspace width="1em"></mspace>
+</mstyle>
+<mi>a</mi>
+<mo>≤</mo>
+<mi>b</mi>
+<mo>,</mo>
+<mstyle scriptlevel="0">
+<mspace width="1em"></mspace>
+</mstyle>
+<mi>a</mi>
+<mo>≥</mo>
+<mi>b</mi>
+</math></span></div><p>たとえば「ある数の3倍から4を引いた数は5より小さい」は、次のように表せます。</p><div class="formula"><span class="math-render display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<mn>3</mn>
+<mi>x</mi>
+<mo>−</mo>
+<mn>4</mn>
+<mo>&lt;</mo>
+<mn>5</mn>
+</math></span></div><h3>B 不等式の性質</h3><p>実数について、次が成り立ちます。</p><div class="formula"><span class="math-render display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>a</mi>
+<mo>&lt;</mo>
+<mi>b</mi>
+<mtext> </mtext>
+<mo stretchy="false">⟹</mo>
+<mtext> </mtext>
+<mi>a</mi>
+<mo>+</mo>
+<mi>c</mi>
+<mo>&lt;</mo>
+<mi>b</mi>
+<mo>+</mo>
+<mi>c</mi>
+</math></span></div><div class="formula"><span class="math-render display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>a</mi>
+<mo>&lt;</mo>
+<mi>b</mi>
+<mo>,</mo>
+<mtext> </mtext>
+<mi>c</mi>
+<mo>&gt;</mo>
+<mn>0</mn>
+<mtext> </mtext>
+<mo stretchy="false">⟹</mo>
+<mtext> </mtext>
+<mi>a</mi>
+<mi>c</mi>
+<mo>&lt;</mo>
+<mi>b</mi>
+<mi>c</mi>
+</math></span></div><div class="formula"><span class="math-render display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>a</mi>
+<mo>&lt;</mo>
+<mi>b</mi>
+<mo>,</mo>
+<mtext> </mtext>
+<mi>c</mi>
+<mo>&lt;</mo>
+<mn>0</mn>
+<mtext> </mtext>
+<mo stretchy="false">⟹</mo>
+<mtext> </mtext>
+<mi>a</mi>
+<mi>c</mi>
+<mo>&gt;</mo>
+<mi>b</mi>
+<mi>c</mi>
 </math></span></div><div class="proof"><strong>なぜ負の数を掛けると向きが逆になるのか</strong><p>たとえば <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mn>2</mn>
-  <mo>&lt;</mo>
-  <mn>5</mn>
+<mn>2</mn>
+<mo>&lt;</mo>
+<mn>5</mn>
 </math></span> ですが、両辺に <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo>&#x2212;</mo>
-  <mn>3</mn>
+<mo>−</mo>
+<mn>3</mn>
 </math></span> を掛けると <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo>&#x2212;</mo>
-  <mn>6</mn>
-  <mo>&gt;</mo>
-  <mo>&#x2212;</mo>
-  <mn>15</mn>
+<mo>−</mo>
+<mn>6</mn>
+<mo>&gt;</mo>
+<mo>−</mo>
+<mn>15</mn>
 </math></span> です。数直線では、負の数を掛けると左右の順序が入れ替わるためです。</p><p>なお、両辺を0で割ることはできません。</p></div></section>
 <section class="card" id="solve"><h2>2 一次不等式の解き方</h2><h3>A 移項して解く</h3><p>不等式を成り立たせる文字の値の全体を<strong>不等式の解</strong>といいます。計算の順序は、一次方程式とほぼ同じです。</p><div class="example"><strong>例題 1</strong><p><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mn>3</mn>
-  <mi>x</mi>
-  <mo>+</mo>
-  <mn>5</mn>
-  <mo>&lt;</mo>
-  <mn>14</mn>
-</math></span> を解きましょう。</p><div class="formula"><div class="math-eq-step"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mn>3</mn>
-  <mi>x</mi>
-  <mo>+</mo>
-  <mn>5</mn>
-  <mo>&lt;</mo>
-  <mn>14</mn>
-</math></span></div><div class="math-eq-step"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mn>3</mn>
-  <mi>x</mi>
-  <mo>&lt;</mo>
-  <mn>9</mn>
-</math></span></div><div class="math-eq-step"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mi>x</mi>
-  <mo>&lt;</mo>
-  <mn>3</mn>
+<mn>3</mn>
+<mi>x</mi>
+<mo>+</mo>
+<mn>5</mn>
+<mo>&lt;</mo>
+<mn>14</mn>
+</math></span> を解きましょう。</p><div class="formula"><div class="math-eq-step"><span class="math-render display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<mn>3</mn>
+<mi>x</mi>
+<mo>+</mo>
+<mn>5</mn>
+<mo>&lt;</mo>
+<mn>14</mn>
+</math></span></div><div class="math-eq-step"><span class="math-render display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<mn>3</mn>
+<mi>x</mi>
+<mo>&lt;</mo>
+<mn>9</mn>
+</math></span></div><div class="math-eq-step"><span class="math-render display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>x</mi>
+<mo>&lt;</mo>
+<mn>3</mn>
 </math></span></div></div><p>3は正なので、両辺を3で割っても不等号の向きは変わりません。</p></div><div class="example"><strong>例題 2</strong><p><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo>&#x2212;</mo>
-  <mn>4</mn>
-  <mi>x</mi>
-  <mo>&#x2212;</mo>
-  <mn>2</mn>
-  <mo>&#x2264;</mo>
-  <mn>30</mn>
-</math></span> を解きましょう。</p><div class="formula"><div class="math-eq-step"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mo>&#x2212;</mo>
-  <mn>4</mn>
-  <mi>x</mi>
-  <mo>&#x2212;</mo>
-  <mn>2</mn>
-  <mo>&#x2264;</mo>
-  <mn>30</mn>
-</math></span></div><div class="math-eq-step"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mo>&#x2212;</mo>
-  <mn>4</mn>
-  <mi>x</mi>
-  <mo>&#x2264;</mo>
-  <mn>32</mn>
-</math></span></div><div class="math-eq-step"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mi>x</mi>
-  <mo>&#x2265;</mo>
-  <mo>&#x2212;</mo>
-  <mn>8</mn>
+<mo>−</mo>
+<mn>4</mn>
+<mi>x</mi>
+<mo>−</mo>
+<mn>2</mn>
+<mo>≤</mo>
+<mn>30</mn>
+</math></span> を解きましょう。</p><div class="formula"><div class="math-eq-step"><span class="math-render display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<mo>−</mo>
+<mn>4</mn>
+<mi>x</mi>
+<mo>−</mo>
+<mn>2</mn>
+<mo>≤</mo>
+<mn>30</mn>
+</math></span></div><div class="math-eq-step"><span class="math-render display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<mo>−</mo>
+<mn>4</mn>
+<mi>x</mi>
+<mo>≤</mo>
+<mn>32</mn>
+</math></span></div><div class="math-eq-step"><span class="math-render display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>x</mi>
+<mo>≥</mo>
+<mo>−</mo>
+<mn>8</mn>
 </math></span></div></div><p><strong>−4で割ったので不等号を逆向き</strong>にします。</p></div><h3>B 分母を払う</h3><div class="example"><strong>例題 3</strong><p><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mstyle displaystyle="true" scriptlevel="0">
-    <mfrac>
-      <mrow>
-        <mn>2</mn>
-        <mi>x</mi>
-        <mo>+</mo>
-        <mn>1</mn>
-      </mrow>
-      <mn>3</mn>
-    </mfrac>
-  </mstyle>
-  <mo>&gt;</mo>
-  <mstyle displaystyle="true" scriptlevel="0">
-    <mfrac>
-      <mrow>
-        <mi>x</mi>
-        <mo>&#x2212;</mo>
-        <mn>2</mn>
-      </mrow>
-      <mn>2</mn>
-    </mfrac>
-  </mstyle>
-</math></span> を解きましょう。</p><p>両辺に正の数6を掛けます。</p><div class="formula"><div class="math-eq-step"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mn>2</mn>
-  <mo stretchy="false">(</mo>
-  <mn>2</mn>
-  <mi>x</mi>
-  <mo>+</mo>
-  <mn>1</mn>
-  <mo stretchy="false">)</mo>
-  <mo>&gt;</mo>
-  <mn>3</mn>
-  <mo stretchy="false">(</mo>
-  <mi>x</mi>
-  <mo>&#x2212;</mo>
-  <mn>2</mn>
-  <mo stretchy="false">)</mo>
-</math></span></div><div class="math-eq-step"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mn>4</mn>
-  <mi>x</mi>
-  <mo>+</mo>
-  <mn>2</mn>
-  <mo>&gt;</mo>
-  <mn>3</mn>
-  <mi>x</mi>
-  <mo>&#x2212;</mo>
-  <mn>6</mn>
-</math></span></div><div class="math-eq-step"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mi>x</mi>
-  <mo>&gt;</mo>
-  <mo>&#x2212;</mo>
-  <mn>8</mn>
+<mstyle displaystyle="true" scriptlevel="0">
+<mfrac>
+<mrow>
+<mn>2</mn>
+<mi>x</mi>
+<mo>+</mo>
+<mn>1</mn>
+</mrow>
+<mn>3</mn>
+</mfrac>
+</mstyle>
+<mo>&gt;</mo>
+<mstyle displaystyle="true" scriptlevel="0">
+<mfrac>
+<mrow>
+<mi>x</mi>
+<mo>−</mo>
+<mn>2</mn>
+</mrow>
+<mn>2</mn>
+</mfrac>
+</mstyle>
+</math></span> を解きましょう。</p><p>両辺に正の数6を掛けます。</p><div class="formula"><div class="math-eq-step"><span class="math-render display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<mn>2</mn>
+<mo stretchy="false">(</mo>
+<mn>2</mn>
+<mi>x</mi>
+<mo>+</mo>
+<mn>1</mn>
+<mo stretchy="false">)</mo>
+<mo>&gt;</mo>
+<mn>3</mn>
+<mo stretchy="false">(</mo>
+<mi>x</mi>
+<mo>−</mo>
+<mn>2</mn>
+<mo stretchy="false">)</mo>
+</math></span></div><div class="math-eq-step"><span class="math-render display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<mn>4</mn>
+<mi>x</mi>
+<mo>+</mo>
+<mn>2</mn>
+<mo>&gt;</mo>
+<mn>3</mn>
+<mi>x</mi>
+<mo>−</mo>
+<mn>6</mn>
+</math></span></div><div class="math-eq-step"><span class="math-render display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>x</mi>
+<mo>&gt;</mo>
+<mo>−</mo>
+<mn>8</mn>
 </math></span></div></div></div><div class="check"><strong>計算のポイント</strong>　負の数で割る場合だけでなく、移項するときにも符号を正確に変えましょう。</div></section>
 <section class="card" id="numberline"><h2>3 解を数直線に表す</h2><p>不等式の解は1つの数とは限りません。数直線の範囲で表すと分かりやすくなります。</p><h3>例：<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-  <mo>&lt;</mo>
-  <mn>3</mn>
-</math></span> の場合</h3><figure><svg viewBox="0 0 660 112" role="img" aria-label="数直線上の解の範囲"><line x1="20" y1="62" x2="643" y2="62" stroke="#5b7287" stroke-width="2"/><path d="M643 62 l-10 -6 v12 z" fill="#5b7287"/><line x1="100" x2="100" y1="56" y2="68" stroke="#6b7e91"/><text x="100" y="89" font-size="17" text-anchor="middle" fill="#476174">-6</text><line x1="172" x2="172" y1="56" y2="68" stroke="#6b7e91"/><text x="172" y="89" font-size="17" text-anchor="middle" fill="#476174">-4</text><line x1="244" x2="244" y1="56" y2="68" stroke="#6b7e91"/><text x="244" y="89" font-size="17" text-anchor="middle" fill="#476174">-2</text><line x1="316" x2="316" y1="56" y2="68" stroke="#6b7e91"/><text x="316" y="89" font-size="17" text-anchor="middle" fill="#476174">0</text><line x1="388" x2="388" y1="56" y2="68" stroke="#6b7e91"/><text x="388" y="89" font-size="17" text-anchor="middle" fill="#476174">2</text><line x1="460" x2="460" y1="56" y2="68" stroke="#6b7e91"/><text x="460" y="89" font-size="17" text-anchor="middle" fill="#476174">4</text><line x1="532" x2="532" y1="56" y2="68" stroke="#6b7e91"/><text x="532" y="89" font-size="17" text-anchor="middle" fill="#476174">6</text><line x1="28" y1="62" x2="424" y2="62" stroke="#dc7a3b" stroke-width="9" opacity=".6"/><circle cx="424" cy="62" r="8" fill="white" stroke="#b35b24" stroke-width="2"/><text x="424" y="37" font-size="20" text-anchor="middle" fill="#97420f">3</text></svg><figcaption class="figure-label">オレンジ色が解の範囲。白丸は端を含まず、塗りつぶした丸は端を含みます。</figcaption></figure><h3>例：<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-  <mo>&#x2265;</mo>
-  <mo>&#x2212;</mo>
-  <mn>2</mn>
-</math></span> の場合</h3><figure><svg viewBox="0 0 660 112" role="img" aria-label="数直線上の解の範囲"><line x1="20" y1="62" x2="643" y2="62" stroke="#5b7287" stroke-width="2"/><path d="M643 62 l-10 -6 v12 z" fill="#5b7287"/><line x1="100" x2="100" y1="56" y2="68" stroke="#6b7e91"/><text x="100" y="89" font-size="17" text-anchor="middle" fill="#476174">-6</text><line x1="172" x2="172" y1="56" y2="68" stroke="#6b7e91"/><text x="172" y="89" font-size="17" text-anchor="middle" fill="#476174">-4</text><line x1="244" x2="244" y1="56" y2="68" stroke="#6b7e91"/><text x="244" y="89" font-size="17" text-anchor="middle" fill="#476174">-2</text><line x1="316" x2="316" y1="56" y2="68" stroke="#6b7e91"/><text x="316" y="89" font-size="17" text-anchor="middle" fill="#476174">0</text><line x1="388" x2="388" y1="56" y2="68" stroke="#6b7e91"/><text x="388" y="89" font-size="17" text-anchor="middle" fill="#476174">2</text><line x1="460" x2="460" y1="56" y2="68" stroke="#6b7e91"/><text x="460" y="89" font-size="17" text-anchor="middle" fill="#476174">4</text><line x1="532" x2="532" y1="56" y2="68" stroke="#6b7e91"/><text x="532" y="89" font-size="17" text-anchor="middle" fill="#476174">6</text><line x1="244" y1="62" x2="604" y2="62" stroke="#dc7a3b" stroke-width="9" opacity=".6"/><circle cx="244" cy="62" r="8" fill="#dc7a3b" stroke="#b35b24" stroke-width="2"/><text x="244" y="37" font-size="20" text-anchor="middle" fill="#97420f">-2</text></svg><figcaption class="figure-label">オレンジ色が解の範囲。白丸は端を含まず、塗りつぶした丸は端を含みます。</figcaption></figure><p><strong>「&lt;」「&gt;」は端点を含まない</strong>ので白丸、<strong>「≤」「≥」は端点を含む</strong>ので黒丸で表します。</p></section>
-<section class="card" id="system"><h2>4 連立一次不等式</h2><p>複数の不等式を<strong>同時に満たす範囲（共通部分）</strong>を求めます。</p><div class="example"><strong>例題 4</strong><p>次の連立不等式を解きましょう。</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mrow data-mjx-texclass="INNER">
-    <mo data-mjx-texclass="OPEN">{</mo>
-    <mtable columnalign="left left" columnspacing="1em" rowspacing=".2em">
-      <mtr>
-        <mtd>
-          <mn>2</mn>
-          <mi>x</mi>
-          <mo>+</mo>
-          <mn>1</mn>
-          <mo>&gt;</mo>
-          <mn>5</mn>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mn>3</mn>
-          <mi>x</mi>
-          <mo>&#x2212;</mo>
-          <mn>4</mn>
-          <mo>&#x2264;</mo>
-          <mn>8</mn>
-        </mtd>
-      </mtr>
-    </mtable>
-    <mo data-mjx-texclass="CLOSE" fence="true" stretchy="true" symmetric="true"></mo>
-  </mrow>
+<mi>x</mi>
+<mo>&lt;</mo>
+<mn>3</mn>
+</math></span> の場合</h3><figure><svg aria-label="数直線上の解の範囲" role="img" viewbox="0 0 660 112"><line stroke="#5b7287" stroke-width="2" x1="20" x2="643" y1="62" y2="62"></line><path d="M643 62 l-10 -6 v12 z" fill="#5b7287"></path><line stroke="#6b7e91" x1="100" x2="100" y1="56" y2="68"></line><text fill="#476174" font-size="17" text-anchor="middle" x="100" y="89">-6</text><line stroke="#6b7e91" x1="172" x2="172" y1="56" y2="68"></line><text fill="#476174" font-size="17" text-anchor="middle" x="172" y="89">-4</text><line stroke="#6b7e91" x1="244" x2="244" y1="56" y2="68"></line><text fill="#476174" font-size="17" text-anchor="middle" x="244" y="89">-2</text><line stroke="#6b7e91" x1="316" x2="316" y1="56" y2="68"></line><text fill="#476174" font-size="17" text-anchor="middle" x="316" y="89">0</text><line stroke="#6b7e91" x1="388" x2="388" y1="56" y2="68"></line><text fill="#476174" font-size="17" text-anchor="middle" x="388" y="89">2</text><line stroke="#6b7e91" x1="460" x2="460" y1="56" y2="68"></line><text fill="#476174" font-size="17" text-anchor="middle" x="460" y="89">4</text><line stroke="#6b7e91" x1="532" x2="532" y1="56" y2="68"></line><text fill="#476174" font-size="17" text-anchor="middle" x="532" y="89">6</text><line opacity=".6" stroke="#dc7a3b" stroke-width="9" x1="28" x2="424" y1="62" y2="62"></line><circle cx="424" cy="62" fill="white" r="8" stroke="#b35b24" stroke-width="2"></circle><text fill="#97420f" font-size="20" text-anchor="middle" x="424" y="37">3</text></svg><figcaption class="figure-label">オレンジ色が解の範囲。白丸は端を含まず、塗りつぶした丸は端を含みます。</figcaption></figure><h3>例：<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>x</mi>
+<mo>≥</mo>
+<mo>−</mo>
+<mn>2</mn>
+</math></span> の場合</h3><figure><svg aria-label="数直線上の解の範囲" role="img" viewbox="0 0 660 112"><line stroke="#5b7287" stroke-width="2" x1="20" x2="643" y1="62" y2="62"></line><path d="M643 62 l-10 -6 v12 z" fill="#5b7287"></path><line stroke="#6b7e91" x1="100" x2="100" y1="56" y2="68"></line><text fill="#476174" font-size="17" text-anchor="middle" x="100" y="89">-6</text><line stroke="#6b7e91" x1="172" x2="172" y1="56" y2="68"></line><text fill="#476174" font-size="17" text-anchor="middle" x="172" y="89">-4</text><line stroke="#6b7e91" x1="244" x2="244" y1="56" y2="68"></line><text fill="#476174" font-size="17" text-anchor="middle" x="244" y="89">-2</text><line stroke="#6b7e91" x1="316" x2="316" y1="56" y2="68"></line><text fill="#476174" font-size="17" text-anchor="middle" x="316" y="89">0</text><line stroke="#6b7e91" x1="388" x2="388" y1="56" y2="68"></line><text fill="#476174" font-size="17" text-anchor="middle" x="388" y="89">2</text><line stroke="#6b7e91" x1="460" x2="460" y1="56" y2="68"></line><text fill="#476174" font-size="17" text-anchor="middle" x="460" y="89">4</text><line stroke="#6b7e91" x1="532" x2="532" y1="56" y2="68"></line><text fill="#476174" font-size="17" text-anchor="middle" x="532" y="89">6</text><line opacity=".6" stroke="#dc7a3b" stroke-width="9" x1="244" x2="604" y1="62" y2="62"></line><circle cx="244" cy="62" fill="#dc7a3b" r="8" stroke="#b35b24" stroke-width="2"></circle><text fill="#97420f" font-size="20" text-anchor="middle" x="244" y="37">-2</text></svg><figcaption class="figure-label">オレンジ色が解の範囲。白丸は端を含まず、塗りつぶした丸は端を含みます。</figcaption></figure><p><strong>「&lt;」「&gt;」は端点を含まない</strong>ので白丸、<strong>「≤」「≥」は端点を含む</strong>ので黒丸で表します。</p></section>
+<section class="card" id="system"><h2>4 連立一次不等式</h2><p>複数の不等式を<strong>同時に満たす範囲（共通部分）</strong>を求めます。</p><div class="example"><strong>例題 4</strong><p>次の連立不等式を解きましょう。</p><div class="formula"><span class="math-render display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow data-mjx-texclass="INNER">
+<mo data-mjx-texclass="OPEN">{</mo>
+<mtable columnalign="left left" columnspacing="1em" rowspacing=".2em">
+<mtr>
+<mtd>
+<mn>2</mn>
+<mi>x</mi>
+<mo>+</mo>
+<mn>1</mn>
+<mo>&gt;</mo>
+<mn>5</mn>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mn>3</mn>
+<mi>x</mi>
+<mo>−</mo>
+<mn>4</mn>
+<mo>≤</mo>
+<mn>8</mn>
+</mtd>
+</mtr>
+</mtable>
+<mo data-mjx-texclass="CLOSE" fence="true" stretchy="true" symmetric="true"></mo>
+</mrow>
 </math></span></div><p>上の不等式は <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-  <mo>&gt;</mo>
-  <mn>2</mn>
+<mi>x</mi>
+<mo>&gt;</mo>
+<mn>2</mn>
 </math></span>、下の不等式は <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-  <mo>&#x2264;</mo>
-  <mn>4</mn>
-</math></span> です。両方を満たすのは</p><div class="formula"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mn>2</mn>
-  <mo>&lt;</mo>
-  <mi>x</mi>
-  <mo>&#x2264;</mo>
-  <mn>4</mn>
+<mi>x</mi>
+<mo>≤</mo>
+<mn>4</mn>
+</math></span> です。両方を満たすのは</p><div class="formula"><span class="math-render display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<mn>2</mn>
+<mo>&lt;</mo>
+<mi>x</mi>
+<mo>≤</mo>
+<mn>4</mn>
 </math></span></div></div><div class="example"><strong>例題 5</strong><p><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo>&#x2212;</mo>
-  <mn>1</mn>
-  <mo>&#x2264;</mo>
-  <mn>2</mn>
-  <mi>x</mi>
-  <mo>+</mo>
-  <mn>3</mn>
-  <mo>&lt;</mo>
-  <mn>9</mn>
-</math></span> を解きましょう。</p><div class="formula"><div class="math-eq-step"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mo>&#x2212;</mo>
-  <mn>1</mn>
-  <mo>&#x2264;</mo>
-  <mn>2</mn>
-  <mi>x</mi>
-  <mo>+</mo>
-  <mn>3</mn>
-  <mo>&lt;</mo>
-  <mn>9</mn>
-</math></span></div><div class="math-eq-step"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mo>&#x2212;</mo>
-  <mn>4</mn>
-  <mo>&#x2264;</mo>
-  <mn>2</mn>
-  <mi>x</mi>
-  <mo>&lt;</mo>
-  <mn>6</mn>
-</math></span></div><div class="math-eq-step"><span class="math-render display"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mo>&#x2212;</mo>
-  <mn>2</mn>
-  <mo>&#x2264;</mo>
-  <mi>x</mi>
-  <mo>&lt;</mo>
-  <mn>3</mn>
+<mo>−</mo>
+<mn>1</mn>
+<mo>≤</mo>
+<mn>2</mn>
+<mi>x</mi>
+<mo>+</mo>
+<mn>3</mn>
+<mo>&lt;</mo>
+<mn>9</mn>
+</math></span> を解きましょう。</p><div class="formula"><div class="math-eq-step"><span class="math-render display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<mo>−</mo>
+<mn>1</mn>
+<mo>≤</mo>
+<mn>2</mn>
+<mi>x</mi>
+<mo>+</mo>
+<mn>3</mn>
+<mo>&lt;</mo>
+<mn>9</mn>
+</math></span></div><div class="math-eq-step"><span class="math-render display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<mo>−</mo>
+<mn>4</mn>
+<mo>≤</mo>
+<mn>2</mn>
+<mi>x</mi>
+<mo>&lt;</mo>
+<mn>6</mn>
+</math></span></div><div class="math-eq-step"><span class="math-render display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<mo>−</mo>
+<mn>2</mn>
+<mo>≤</mo>
+<mi>x</mi>
+<mo>&lt;</mo>
+<mn>3</mn>
 </math></span></div></div><p>3つの項をまとめて計算する場合も、すべての項に同じ操作をします。</p></div><div class="note"><strong>注意</strong>：不等式の向きを取り違えると、共通部分がなくなったり、求める範囲が逆になります。</div></section>
 <section class="card" id="practice"><h2>5 練習問題</h2><div class="exercise"><ol><li><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mn>5</mn>
-  <mi>x</mi>
-  <mo>&#x2212;</mo>
-  <mn>8</mn>
-  <mo>&#x2264;</mo>
-  <mn>22</mn>
+<mn>5</mn>
+<mi>x</mi>
+<mo>−</mo>
+<mn>8</mn>
+<mo>≤</mo>
+<mn>22</mn>
 </math></span> を解きなさい。</li><li><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo>&#x2212;</mo>
-  <mn>3</mn>
-  <mi>x</mi>
-  <mo>+</mo>
-  <mn>7</mn>
-  <mo>&gt;</mo>
-  <mn>19</mn>
+<mo>−</mo>
+<mn>3</mn>
+<mi>x</mi>
+<mo>+</mo>
+<mn>7</mn>
+<mo>&gt;</mo>
+<mn>19</mn>
 </math></span> を解きなさい。</li><li><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mstyle displaystyle="true" scriptlevel="0">
-    <mfrac>
-      <mrow>
-        <mi>x</mi>
-        <mo>&#x2212;</mo>
-        <mn>1</mn>
-      </mrow>
-      <mn>2</mn>
-    </mfrac>
-  </mstyle>
-  <mo>&#x2264;</mo>
-  <mstyle displaystyle="true" scriptlevel="0">
-    <mfrac>
-      <mrow>
-        <mn>2</mn>
-        <mi>x</mi>
-        <mo>+</mo>
-        <mn>5</mn>
-      </mrow>
-      <mn>3</mn>
-    </mfrac>
-  </mstyle>
+<mstyle displaystyle="true" scriptlevel="0">
+<mfrac>
+<mrow>
+<mi>x</mi>
+<mo>−</mo>
+<mn>1</mn>
+</mrow>
+<mn>2</mn>
+</mfrac>
+</mstyle>
+<mo>≤</mo>
+<mstyle displaystyle="true" scriptlevel="0">
+<mfrac>
+<mrow>
+<mn>2</mn>
+<mi>x</mi>
+<mo>+</mo>
+<mn>5</mn>
+</mrow>
+<mn>3</mn>
+</mfrac>
+</mstyle>
 </math></span> を解きなさい。</li><li><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow data-mjx-texclass="INNER">
-    <mo data-mjx-texclass="OPEN">{</mo>
-    <mtable columnalign="left left" columnspacing="1em" rowspacing=".2em">
-      <mtr>
-        <mtd>
-          <mi>x</mi>
-          <mo>+</mo>
-          <mn>3</mn>
-          <mo>&gt;</mo>
-          <mn>1</mn>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mn>2</mn>
-          <mi>x</mi>
-          <mo>&#x2212;</mo>
-          <mn>1</mn>
-          <mo>&lt;</mo>
-          <mn>7</mn>
-        </mtd>
-      </mtr>
-    </mtable>
-    <mo data-mjx-texclass="CLOSE" fence="true" stretchy="true" symmetric="true"></mo>
-  </mrow>
+<mrow data-mjx-texclass="INNER">
+<mo data-mjx-texclass="OPEN">{</mo>
+<mtable columnalign="left left" columnspacing="1em" rowspacing=".2em">
+<mtr>
+<mtd>
+<mi>x</mi>
+<mo>+</mo>
+<mn>3</mn>
+<mo>&gt;</mo>
+<mn>1</mn>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mn>2</mn>
+<mi>x</mi>
+<mo>−</mo>
+<mn>1</mn>
+<mo>&lt;</mo>
+<mn>7</mn>
+</mtd>
+</mtr>
+</mtable>
+<mo data-mjx-texclass="CLOSE" fence="true" stretchy="true" symmetric="true"></mo>
+</mrow>
 </math></span> を解きなさい。</li><li><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mn>1</mn>
-  <mo>&lt;</mo>
-  <mn>3</mn>
-  <mi>x</mi>
-  <mo>+</mo>
-  <mn>4</mn>
-  <mo>&#x2264;</mo>
-  <mn>13</mn>
+<mn>1</mn>
+<mo>&lt;</mo>
+<mn>3</mn>
+<mi>x</mi>
+<mo>+</mo>
+<mn>4</mn>
+<mo>≤</mo>
+<mn>13</mn>
 </math></span> を解きなさい。</li></ol><details><summary>解答・途中計算を見る</summary><ol><li><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mn>5</mn>
-  <mi>x</mi>
-  <mo>&#x2264;</mo>
-  <mn>30</mn>
+<mn>5</mn>
+<mi>x</mi>
+<mo>≤</mo>
+<mn>30</mn>
 </math></span> より <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-  <mo>&#x2264;</mo>
-  <mn>6</mn>
+<mi>x</mi>
+<mo>≤</mo>
+<mn>6</mn>
 </math></span>。</li><li><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo>&#x2212;</mo>
-  <mn>3</mn>
-  <mi>x</mi>
-  <mo>&gt;</mo>
-  <mn>12</mn>
+<mo>−</mo>
+<mn>3</mn>
+<mi>x</mi>
+<mo>&gt;</mo>
+<mn>12</mn>
 </math></span> より、負の数で割って <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-  <mo>&lt;</mo>
-  <mo>&#x2212;</mo>
-  <mn>4</mn>
+<mi>x</mi>
+<mo>&lt;</mo>
+<mo>−</mo>
+<mn>4</mn>
 </math></span>。</li><li>両辺に6を掛けて <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mn>3</mn>
-  <mi>x</mi>
-  <mo>&#x2212;</mo>
-  <mn>3</mn>
-  <mo>&#x2264;</mo>
-  <mn>4</mn>
-  <mi>x</mi>
-  <mo>+</mo>
-  <mn>10</mn>
+<mn>3</mn>
+<mi>x</mi>
+<mo>−</mo>
+<mn>3</mn>
+<mo>≤</mo>
+<mn>4</mn>
+<mi>x</mi>
+<mo>+</mo>
+<mn>10</mn>
 </math></span>。したがって <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-  <mo>&#x2265;</mo>
-  <mo>&#x2212;</mo>
-  <mn>13</mn>
+<mi>x</mi>
+<mo>≥</mo>
+<mo>−</mo>
+<mn>13</mn>
 </math></span>。</li><li>それぞれ <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-  <mo>&gt;</mo>
-  <mo>&#x2212;</mo>
-  <mn>2</mn>
+<mi>x</mi>
+<mo>&gt;</mo>
+<mo>−</mo>
+<mn>2</mn>
 </math></span>、<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-  <mo>&lt;</mo>
-  <mn>4</mn>
+<mi>x</mi>
+<mo>&lt;</mo>
+<mn>4</mn>
 </math></span> より <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo>&#x2212;</mo>
-  <mn>2</mn>
-  <mo>&lt;</mo>
-  <mi>x</mi>
-  <mo>&lt;</mo>
-  <mn>4</mn>
+<mo>−</mo>
+<mn>2</mn>
+<mo>&lt;</mo>
+<mi>x</mi>
+<mo>&lt;</mo>
+<mn>4</mn>
 </math></span>。</li><li>各項から4を引き <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo>&#x2212;</mo>
-  <mn>3</mn>
-  <mo>&lt;</mo>
-  <mn>3</mn>
-  <mi>x</mi>
-  <mo>&#x2264;</mo>
-  <mn>9</mn>
+<mo>−</mo>
+<mn>3</mn>
+<mo>&lt;</mo>
+<mn>3</mn>
+<mi>x</mi>
+<mo>≤</mo>
+<mn>9</mn>
 </math></span>。よって <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo>&#x2212;</mo>
-  <mn>1</mn>
-  <mo>&lt;</mo>
-  <mi>x</mi>
-  <mo>&#x2264;</mo>
-  <mn>3</mn>
+<mo>−</mo>
+<mn>1</mn>
+<mo>&lt;</mo>
+<mi>x</mi>
+<mo>≤</mo>
+<mn>3</mn>
 </math></span>。</li></ol></details></div></section>
-<nav class="bottom"><a href="math1_lesson04.html">← 前の教材</a><a href="math_subject_1.html">数学Ⅰの授業一覧</a><a href="math1_lesson06.html">一次不等式の応用 →</a></nav></main><footer>みんなの数学データベース｜数学Ⅰ</footer></body></html>
+<nav class="bottom"><a href="math1_lesson04.html">← 前の教材</a><a href="math1_lesson06.html">一次不等式の応用 →</a></nav></main><div class="math1-bottom-nav"><a href="math_subject_1.html">← 数学Ⅰの目次に戻る</a></div><footer class="math1-bottom-footer">みんなの数学データベース｜数学Ⅰ</footer></body></html>

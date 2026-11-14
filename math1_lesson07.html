@@ -8,7 +8,14 @@
 .goal-pill{display:inline-block;background:#e8f2fc;color:#19567f;border-radius:30px;padding:4px 13px;font-size:14px;font-weight:700}
 .lesson-goal .goal-title{font-size:clamp(20px,3.5vw,25px);font-weight:750;border:0;margin:12px 0 12px;padding:0;color:#174f73}
 .lesson-goal p{margin:0;line-height:1.95}
-</style><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]}};</script><script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script></head><body>
+</style><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]}};</script><script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><style>
+/* 数学Ⅰ教材共通：ページ最下部のナビゲーション */
+.math1-bottom-nav{max-width:1120px;margin:34px auto 22px;padding:0 16px;text-align:center;clear:both}
+.math1-bottom-nav a{display:inline-block;background:#e5f2ff;color:#175b91;border:1px solid #c9e2f4;border-radius:10px;padding:12px 20px;text-decoration:none;font-size:16px;font-weight:700;line-height:1.5}
+.math1-bottom-nav a:hover,.math1-bottom-nav a:focus-visible{background:#d1e9fc;outline-offset:3px}
+.math1-bottom-footer{background:#17365d!important;color:#fff!important;padding:18px 12px!important;text-align:center!important;font-size:13px!important;line-height:1.7!important;margin:0!important;width:100%!important;max-width:none!important;border:0!important;border-radius:0!important}
+.math1-bottom-footer *{color:#fff!important}
+</style></head><body>
 <header><a href="math_subject_1.html">← 数学Ⅰの授業一覧へ戻る</a><h1>集合</h1><div>数学Ⅰ ／ 第2章 集合と命題 ／ 第1講</div></header>
 <main><article class="sheet"><section class="lesson-goal"><span class="goal-pill">授業のねらい</span><h2 class="goal-title">集合の基本をベン図で理解する</h2><p>集合の表し方から、部分集合、集合の演算、ド・モルガンの法則、要素の個数まで学びます。動くベン図で、式と図を結びつけましょう。</p></section>
 <h2>1　集合とその表し方</h2><p>含まれるものが明確に決まる集まりを<strong>集合</strong>、その一つ一つを<strong>要素</strong>といいます。</p><div class="eq">\[A=\{1,2,3,4,5\},\qquad 3\in A,\quad 8\notin A\]</div><p>要素を並べる方法と、条件で表す方法があります。</p><div class="eq">\[B=\{2,4,6,8\}=\{x\mid x\text{ は8以下の正の偶数}\}\]</div><div class="ex"><strong>例題1</strong>　\(C=\{x\mid x\text{ は7未満の正の3の倍数}\}\) を要素を並べて表しなさい。<p><strong>解答</strong>　3と6が条件を満たすので、\(C=\{3,6\}\) です。</p></div>
@@ -25,8 +32,8 @@
 <div class="ex"><strong>問題3</strong>　\(A=\{1,3,5,7\}\)、\(B=\{2,3,6,7\}\) の共通部分と和集合を求めなさい。<details><summary>解答と解説</summary>\(A\cap B=\{3,7\}\)、\(A\cup B=\{1,2,3,5,6,7\}\)。</details></div>
 <div class="ex"><strong>問題4</strong>　30人のクラスで集合Aに20人、Bに18人、両方に10人属するとき、どちらにも属さない人は何人ですか。<details><summary>解答と解説</summary>少なくとも一方に属するのは \(20+18-10=28\) 人。よって \(30-28=2\) 人です。</details></div>
 <div class="ex"><strong>問題5（発展）</strong>　\(n(U)=40\)、\(n(A)=22\)、\(n(B)=19\)、\(n(A\cap B)=8\) のとき、\(n(\overline{A\cup B})\) を求めなさい。<details><summary>解答と解説</summary>\(n(A\cup B)=22+19-8=33\) より、\(40-33=7\) です。</details></div>
-<p class="tip">数式の教科書表示にはインターネット接続が必要です。ベン図の操作はオフラインでも使えます。</p><a class="back" href="math_subject_1.html">← 数学Ⅰの授業一覧へ戻る</a></article></main><div class="footer">みんなの数学データベース</div>
-<script>
+<p class="tip">数式の教科書表示にはインターネット接続が必要です。ベン図の操作はオフラインでも使えます。</p></article></main><div class="footer">みんなの数学データベース</div>
+<div class="math1-bottom-nav"><a href="math_subject_1.html">← 数学Ⅰの目次に戻る</a></div><footer class="math1-bottom-footer">みんなの数学データベース｜数学Ⅰ</footer><script>
 (()=>{const g=document.getElementById('maskRegions'),ex=document.getElementById('vennExplanation');const descriptions={intersection:'AにもBにも属する共通部分です。',union:'AまたはBの少なくとも一方に属する和集合です。',a:'集合Aに属する部分です。',notA:'全体集合Uの中で、Aに属さない部分です。',demorgan1:'AにもBにも属さない部分です。ド・モルガンの法則で、Ā∩B̄ と同じ領域です。',demorgan2:'AとBの両方に同時には属さない部分です。ド・モルガンの法則で、Ā∪B̄ と同じ領域です。'};
 function el(name,attrs){const e=document.createElementNS('http://www.w3.org/2000/svg',name);Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,v));return e;}
 function draw(op){g.replaceChildren();const r=(x)=>el('circle',{cx:x,cy:156,r:102,fill:'white'});const full=()=>el('rect',{x:34,y:20,width:552,height:267,fill:'white'});const a=()=>r(252),b=()=>r(368);

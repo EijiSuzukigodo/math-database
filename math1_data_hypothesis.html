@@ -1,5 +1,6 @@
-<!doctype html>
-<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<!DOCTYPE html>
+
+<html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>仮説検定の考え方｜数学Ⅰ｜みんなの数学データベース</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f1f6fb;color:#21364b;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.85}
@@ -18,7 +19,7 @@ label{display:block;font-weight:700}input[type=range]{width:100%;accent-color:#1
 <script>
 window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};
 </script>
-<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <style>
 /* 数学Ⅰ 授業のねらい：統一表示（この領域だけに適用） */
 .lesson-goal-unified{background:#fff;border:1px solid #d9e5ef;border-radius:16px;padding:24px;margin:0 0 30px;box-shadow:0 1px 3px rgba(20,55,80,.04);color:#18314c}
@@ -26,6 +27,13 @@ window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},opt
 .lesson-goal-unified .goal-title-unified{font-size:clamp(20px,3.5vw,25px);font-weight:750;border:0;margin:12px 0;padding:0;color:#174f73;line-height:1.5;background:none;box-shadow:none}
 .lesson-goal-unified p{margin:0;line-height:1.95}
 @media(max-width:600px){.lesson-goal-unified{padding:18px}}
+</style><style>
+/* 数学Ⅰ教材共通：ページ最下部のナビゲーション */
+.math1-bottom-nav{max-width:1120px;margin:34px auto 22px;padding:0 16px;text-align:center;clear:both}
+.math1-bottom-nav a{display:inline-block;background:#e5f2ff;color:#175b91;border:1px solid #c9e2f4;border-radius:10px;padding:12px 20px;text-decoration:none;font-size:16px;font-weight:700;line-height:1.5}
+.math1-bottom-nav a:hover,.math1-bottom-nav a:focus-visible{background:#d1e9fc;outline-offset:3px}
+.math1-bottom-footer{background:#17365d!important;color:#fff!important;padding:18px 12px!important;text-align:center!important;font-size:13px!important;line-height:1.7!important;margin:0!important;width:100%!important;max-width:none!important;border:0!important;border-radius:0!important}
+.math1-bottom-footer *{color:#fff!important}
 </style></head><body>
 <header><a href="math_subject_1.html">← 数学Ⅰの目次</a><h1>仮説検定の考え方</h1><p>第5章 データの分析｜第6講</p></header>
 <main class="wrap"><section class="lesson-goal-unified"><span class="goal-pill-unified">授業のねらい</span><h2 class="goal-title-unified">仮説検定の考え方を理解する</h2><p>帰無仮説・有意水準・確率の意味を理解し、データに基づく判断の考え方を学びましょう。</p></section><article class="paper">
@@ -52,11 +60,11 @@ P(X\geqq21)=\sum_{k=21}^{30}{}_ {30}C_k
 <p>公平なコインを10回投げたときの表の回数 \(X\) を考えます。スライダーを動かし、「観測した回数以上」の確率を比較してみましょう。</p>
 <div class="example">
 <label for="observed">観測した表の回数：<output id="count">8</output> 回</label>
-<input id="observed" type="range" min="0" max="10" value="8" step="1">
-<svg id="bars" viewBox="0 0 680 290" role="img" aria-label="公平なコイン10回の二項分布と片側確率を示す棒グラフ"></svg>
+<input id="observed" max="10" min="0" step="1" type="range" value="8"/>
+<svg aria-label="公平なコイン10回の二項分布と片側確率を示す棒グラフ" id="bars" role="img" viewbox="0 0 680 290"></svg>
 <p class="legend">青：観測回数未満　／　オレンジ：観測回数以上</p>
 <div class="formula" id="tailFormula">\(P(X\geqq8)=\dfrac{56}{1024}\approx5.47\%\)</div>
-<p id="decision" aria-live="polite"></p>
+<p aria-live="polite" id="decision"></p>
 </div>
 <h2>4　仮説検定の判断の流れ</h2>
 <ol><li>帰無仮説と対立仮説を決める。</li><li>有意水準を<strong>データを見る前に</strong>決める。</li><li>帰無仮説のもとで、観測結果と同じくらい極端な結果が出る確率（p値）を求める。</li><li>p値が有意水準以下なら帰無仮説を棄却する。そうでなければ棄却しない。</li></ol>
@@ -72,9 +80,9 @@ P(X\geqq21)=\sum_{k=21}^{30}{}_ {30}C_k
 <div class="example"><p><strong>問題3</strong>　p値が2％だったとき、「帰無仮説が正しい確率は2％」と言えますか。</p><details><summary>解答・解説</summary><p>言えません。p値は、帰無仮説が正しいと仮定したときに、観測結果と同程度以上に極端な結果が起こる確率です。</p></details></div>
 <div class="example"><p><strong>問題4</strong>　有意水準1％でp値が2％なら、帰無仮説を棄却できますか。</p><details><summary>解答・解説</summary><p>棄却できません。2％は1％より大きいためです。有意水準5％なら結論が異なることにも注意しましょう。</p></details></div>
 <p class="note">数式はインターネット接続時にMathJaxで教科書形式になります。動く確率分布はインターネット接続がなくても動作します。</p>
-</article><nav class="nav"><a href="math_subject_1.html">← 数学Ⅰの目次へ戻る</a></nav></main>
-<footer>みんなの数学データベース｜高校生のための授業</footer>
-<script>
+</article></main>
+
+<div class="math1-bottom-nav"><a href="math_subject_1.html">← 数学Ⅰの目次に戻る</a></div><footer class="math1-bottom-footer">みんなの数学データベース｜数学Ⅰ</footer><script>
 (function(){
 const svg=document.getElementById('bars'),slider=document.getElementById('observed'),count=document.getElementById('count'),tail=document.getElementById('tailFormula'),decision=document.getElementById('decision');
 const coeff=[1,10,45,120,210,252,210,120,45,10,1],ns='http://www.w3.org/2000/svg';
