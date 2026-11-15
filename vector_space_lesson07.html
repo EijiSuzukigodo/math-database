@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>第7講 座標空間における図形｜数学C</title>
+<title>座標空間における図形｜数学C</title>
 <style>
 :root{--navy:#173b5e;--blue:#12639c;--bg:#f3f7fd;--edge:#d7e5f2}*{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:#1d344c;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;font-size:16px;line-height:1.8}
@@ -16,8 +16,28 @@ mjx-container[display="true"]{margin:.45em 0!important}mjx-container{max-width:1
 </style>
 <script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
-</head><body><header><div class="head"><a href="math_subject_c.html">← 数学Cの授業</a><h1>第7講　座標空間における図形</h1><p>空間のベクトル｜球面・平面・直線の位置関係</p></div></header>
-<main class="wrap"><p class="lead">座標空間で点の集まりを方程式として捉えます。球面の中心と半径、平面との交わり、直線との共有点を、図を動かして確かめましょう。</p>
+<style id="six-subjects-unified">
+/* 共通デザイン（数学 I/A/II/B/III/C）: 教材のプログラムや数式には非干渉 */
+:root{--course-navy:#17365d;--course-blue:#24689c;--course-paper:#ffffff;--course-muted:#526a80}
+body{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.75}
+body>header{background:linear-gradient(110deg,var(--course-navy),var(--course-blue))!important;color:#fff!important;padding:24px 0 28px!important}
+body>header a{color:#fff!important}
+body>header h1{font-size:clamp(26px,4.2vw,36px)!important;line-height:1.35!important;margin:10px 0 5px!important;font-weight:750!important}
+body>header p,body>header span{font-size:14px!important;line-height:1.6!important;color:#e3effc!important}
+body>footer{background:#142f4d!important;color:#e9f2fc!important;padding:20px 0!important;font-size:13px!important;text-align:center!important}
+body>footer a{color:#e9f2fc!important}
+.course-unified-goal{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px;color:#18314c}
+.course-unified-goal .course-goal-label{display:block;font-size:13px;font-weight:700;color:#215f91;margin:0 0 5px}
+.course-unified-goal .course-goal-title{font-size:clamp(21px,3.2vw,27px);font-weight:750;line-height:1.4;margin:0 0 5px;color:#17365d}
+.course-unified-goal .course-goal-subtitle{font-size:14px!important;color:#526a80!important;margin:0;line-height:1.65}
+/* 既存の「授業のねらい」も見出しとサブタイトルの強弱を統一 */
+.matha-unified-goal,.lesson-goal,section.goal,section.aim,section.objective{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px}
+.matha-unified-goal .goal-title,.lesson-goal .goal-title,section.goal h2,section.aim h2,section.objective h2{font-size:clamp(21px,3.2vw,27px)!important;line-height:1.4!important;margin:5px 0!important;color:#17365d!important}
+.matha-unified-goal p,.lesson-goal p,section.goal p,section.aim p,section.objective p{font-size:14px!important;color:#526a80!important}
+.goal-pill,section.goal .pill,section.aim small{font-size:13px!important}
+@media(max-width:550px){.course-unified-goal{padding:12px 14px}body>header{padding:18px 0 22px!important}}
+</style></head><body><header><div class="head"><a href="math_subject_c.html">← 数学Cの授業</a><h1>座標空間における図形</h1><p>空間のベクトル｜球面・平面・直線の位置関係</p></div></header>
+<main class="wrap"><section class="course-unified-goal" aria-label="授業のねらい"><span class="course-goal-label">授業のねらい</span><h2 class="course-goal-title">座標空間における図形</h2><p class="course-goal-subtitle">球面の方程式、平面・直線との位置関係、距離や共有点を動く立体図と例題で学びます。</p></section><p class="lead">座標空間で点の集まりを方程式として捉えます。球面の中心と半径、平面との交わり、直線との共有点を、図を動かして確かめましょう。</p>
 <section class="chapter"><h2>1．球面の方程式</h2>
 <p>中心が \(C(a,b,c)\)、半径が \(r>0\) の球面は、中心からの距離が \(r\) である点 \(P(x,y,z)\) の集まりです。</p>
 <div class="formula">\[\boxed{(x-a)^2+(y-b)^2+(z-c)^2=r^2}\]</div>
@@ -53,7 +73,7 @@ mjx-container[display="true"]{margin:.45em 0!important}mjx-container{max-width:1
 <div class="formula">\[\boxed{D=\frac{|ax_0+by_0+cz_0+d|}{\sqrt{a^2+b^2+c^2}}}\]</div>
 <h3>例題5</h3><p>点 \(P(1,2,3)\) から平面 \(2x-y+2z-4=0\) までの距離を求めなさい。</p>
 <details open><summary>解法を読む</summary><div class="formula">\[D=\frac{|2-2+6-4|}{\sqrt{4+1+4}}=\boxed{\frac23}\]</div><p>分母は平面の法線ベクトル \((2,-1,2)\) の大きさです。</p></details>
-<p class="hint">平面の一般形と距離公式の証明は、次の第8講「平面の方程式」で詳しく扱います。</p>
+<p class="hint">平面の一般形と距離公式の証明は、次の「平面の方程式」で詳しく扱います。</p>
 </section>
 <section class="chapter"><h2>6．練習問題</h2><p>数字を入力して答え合わせができます。解説も開けます。</p>
 <div class="question"><strong>問題1：</strong>中心 \(C(0,1,-1)\)、半径3の球面の方程式の右辺は？<div><label for="q1">右辺の数</label><input id="q1" inputmode="decimal"></div><button onclick="check(1,9)">答え合わせ</button><p id="a1" class="result" aria-live="polite"></p><details><summary>解説</summary>\(x^2+(y-1)^2+(z+1)^2=9\) です。</details></div>

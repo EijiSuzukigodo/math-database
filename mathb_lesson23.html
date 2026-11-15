@@ -2,7 +2,27 @@
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f2f6fc;color:#1c3148;font-family:-apple-system,BlinkMacSystemFont,'Hiragino Kaku Gothic ProN',Meiryo,sans-serif;line-height:1.85;font-size:16px}a{color:#186da8}.wrap{max-width:1040px;margin:auto;padding:0 16px}header{background:linear-gradient(110deg,#17365d,#246ca3);color:white;padding:25px 0}header a{color:white}h1{font-size:clamp(24px,4vw,34px);margin:8px 0}h2{font-size:1.4rem;color:#174c7b;border-bottom:2px solid #bcd3e8;padding-bottom:7px;margin:25px 0 14px}h3{font-size:1.12rem;color:#123e65}main{padding:24px 0 55px}.paper,.goal{background:white;border:1px solid #d6e3f0;border-radius:14px;padding:clamp(16px,3vw,30px);margin:18px 0}.goal{background:#eaf4ff}.chip{display:inline-block;background:#dceeff;color:#246a96;padding:2px 10px;border-radius:20px;font-size:12px;font-weight:bold}.formula{background:#f3f8ff;border:1px solid #d6e5fa;border-radius:10px;padding:10px;overflow-x:auto;text-align:center;margin:12px 0}.example,.answer,.exercise{padding:14px 16px;border-radius:9px;margin:14px 0}.example{background:#fffaf0;border-left:5px solid #e6a345}.answer{background:#f0faf5;border-left:5px solid #3ca07b}.exercise{background:#f8faff;border:1px solid #d6e3f0}.nav{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}.nav a{background:#e2effb;padding:8px 12px;border-radius:8px;text-decoration:none}.table-wrap{width:100%;overflow-x:auto}table{border-collapse:collapse;margin:12px auto;text-align:center;min-width:320px}th,td{border:1px solid #a9bfd6;padding:8px 12px}th{background:#e4effb}td{background:white}td.total{background:#eaf7ec;font-weight:700}.controls{background:#eef6ff;padding:14px;border-radius:12px;margin:14px 0}.controls label{display:block;margin-bottom:8px}.controls input{width:100%;accent-color:#246ca3}#jointGraph{display:block;width:100%;max-width:650px;height:auto;margin:12px auto;border:1px solid #d4e2ef;background:white;border-radius:10px}details summary{cursor:pointer;color:#145e95;font-weight:bold}.muted{color:#526c82}footer{background:#142f4d;color:#e6f2ff;padding:20px 0;font-size:13px}mjx-container[display="true"]{font-size:100%!important;max-width:100%;overflow-x:auto;overflow-y:hidden}svg.mathjax{max-width:100%}@media(max-width:450px){body{font-size:15px}h2{font-size:1.23rem}th,td{padding:5px 7px;font-size:14px}}
 </style>
-<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'global'}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script></head>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'global'}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script><style id="six-subjects-unified">
+/* 共通デザイン（数学 I/A/II/B/III/C）: 教材のプログラムや数式には非干渉 */
+:root{--course-navy:#17365d;--course-blue:#24689c;--course-paper:#ffffff;--course-muted:#526a80}
+body{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.75}
+body>header{background:linear-gradient(110deg,var(--course-navy),var(--course-blue))!important;color:#fff!important;padding:24px 0 28px!important}
+body>header a{color:#fff!important}
+body>header h1{font-size:clamp(26px,4.2vw,36px)!important;line-height:1.35!important;margin:10px 0 5px!important;font-weight:750!important}
+body>header p,body>header span{font-size:14px!important;line-height:1.6!important;color:#e3effc!important}
+body>footer{background:#142f4d!important;color:#e9f2fc!important;padding:20px 0!important;font-size:13px!important;text-align:center!important}
+body>footer a{color:#e9f2fc!important}
+.course-unified-goal{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px;color:#18314c}
+.course-unified-goal .course-goal-label{display:block;font-size:13px;font-weight:700;color:#215f91;margin:0 0 5px}
+.course-unified-goal .course-goal-title{font-size:clamp(21px,3.2vw,27px);font-weight:750;line-height:1.4;margin:0 0 5px;color:#17365d}
+.course-unified-goal .course-goal-subtitle{font-size:14px!important;color:#526a80!important;margin:0;line-height:1.65}
+/* 既存の「授業のねらい」も見出しとサブタイトルの強弱を統一 */
+.matha-unified-goal,.lesson-goal,section.goal,section.aim,section.objective{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px}
+.matha-unified-goal .goal-title,.lesson-goal .goal-title,section.goal h2,section.aim h2,section.objective h2{font-size:clamp(21px,3.2vw,27px)!important;line-height:1.4!important;margin:5px 0!important;color:#17365d!important}
+.matha-unified-goal p,.lesson-goal p,section.goal p,section.aim p,section.objective p{font-size:14px!important;color:#526a80!important}
+.goal-pill,section.goal .pill,section.aim small{font-size:13px!important}
+@media(max-width:550px){.course-unified-goal{padding:12px 14px}body>header{padding:18px 0 22px!important}}
+</style></head>
 <body><header><div class="wrap"><a href="math_subject_b.html">← 数学Bの授業一覧に戻る</a><h1>確率変数の和と期待値</h1><p>みんなの数学データベース｜数学B 統計的な推測</p></div></header><main class="wrap">
 <section class="goal"><span class="chip">授業のねらい</span><h2>同時分布から、確率変数の和の期待値まで理解する</h2><p>2つの確率変数が同時にとる値を表に整理し、周辺分布を求め、独立でない場合にも期待値の加法性が成立することを学びます。</p></section>
 <article class="paper">

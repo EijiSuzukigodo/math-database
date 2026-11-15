@@ -6,8 +6,28 @@
 </style>
 <script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"]]},svg:{fontCache:"global"}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
-</head><body><header><div class="wrap"><a href="index.html">← トップページ</a><h1>数列</h1><p>数学B｜数列　— 基本事項から数列の和まで</p></div></header>
-<main class="wrap"><nav class="nav"><a href="high_school_video_lessons.html">科目一覧へ戻る</a><a href="math_subject_b.html">この科目の授業一覧</a></nav>
+<style id="six-subjects-unified">
+/* 共通デザイン（数学 I/A/II/B/III/C）: 教材のプログラムや数式には非干渉 */
+:root{--course-navy:#17365d;--course-blue:#24689c;--course-paper:#ffffff;--course-muted:#526a80}
+body{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.75}
+body>header{background:linear-gradient(110deg,var(--course-navy),var(--course-blue))!important;color:#fff!important;padding:24px 0 28px!important}
+body>header a{color:#fff!important}
+body>header h1{font-size:clamp(26px,4.2vw,36px)!important;line-height:1.35!important;margin:10px 0 5px!important;font-weight:750!important}
+body>header p,body>header span{font-size:14px!important;line-height:1.6!important;color:#e3effc!important}
+body>footer{background:#142f4d!important;color:#e9f2fc!important;padding:20px 0!important;font-size:13px!important;text-align:center!important}
+body>footer a{color:#e9f2fc!important}
+.course-unified-goal{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px;color:#18314c}
+.course-unified-goal .course-goal-label{display:block;font-size:13px;font-weight:700;color:#215f91;margin:0 0 5px}
+.course-unified-goal .course-goal-title{font-size:clamp(21px,3.2vw,27px);font-weight:750;line-height:1.4;margin:0 0 5px;color:#17365d}
+.course-unified-goal .course-goal-subtitle{font-size:14px!important;color:#526a80!important;margin:0;line-height:1.65}
+/* 既存の「授業のねらい」も見出しとサブタイトルの強弱を統一 */
+.matha-unified-goal,.lesson-goal,section.goal,section.aim,section.objective{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px}
+.matha-unified-goal .goal-title,.lesson-goal .goal-title,section.goal h2,section.aim h2,section.objective h2{font-size:clamp(21px,3.2vw,27px)!important;line-height:1.4!important;margin:5px 0!important;color:#17365d!important}
+.matha-unified-goal p,.lesson-goal p,section.goal p,section.aim p,section.objective p{font-size:14px!important;color:#526a80!important}
+.goal-pill,section.goal .pill,section.aim small{font-size:13px!important}
+@media(max-width:550px){.course-unified-goal{padding:12px 14px}body>header{padding:18px 0 22px!important}}
+</style></head><body><header><div class="wrap"><a href="index.html">← トップページ</a><h1>数列</h1><p>数学B｜数列　— 基本事項から数列の和まで</p></div></header>
+<main class="wrap"><section class="course-unified-goal" aria-label="授業のねらい"><span class="course-goal-label">授業のねらい</span><h2 class="course-goal-title">数列</h2><p class="course-goal-subtitle">一定の順に並ぶ数を数列といい、各数を項といいます。</p></section><nav class="nav"><a href="high_school_video_lessons.html">科目一覧へ戻る</a><a href="math_subject_b.html">この科目の授業一覧</a></nav>
 <p class="intro">数が並ぶ規則を見つけ、一般項と和を求める基礎を学びます。下のグラフは<strong>iPadでスライダーを動かして</strong>確認できます。</p>
 <article class="paper">
 <h2>1．基本事項 — 数列とは</h2><p>一定の順に並ぶ数を<strong>数列</strong>といい、各数を<strong>項</strong>といいます。先頭の項を第1項（初項）、次を第2項といいます。</p>

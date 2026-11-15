@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>第5講 位置ベクトル｜数学C</title>
+<title>位置ベクトル｜数学C</title>
 <style>
 :root{--navy:#173b5e;--blue:#12639c;--bg:#f3f7fd;--edge:#d7e5f2}*{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:#1d344c;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;font-size:16px;line-height:1.8}
@@ -22,9 +22,29 @@ mjx-container[jax="SVG"]{max-width:100%}mjx-container[display="true"]{overflow-x
 .proof{margin:14px 0}.proof summary{cursor:pointer;color:#125d97;background:#eef6ff;padding:11px;border-radius:9px;font-weight:700}.proof[open] summary{margin-bottom:8px}.proof .panel{background:#f8fbff}
 </style><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
-</head><body>
-<header><div class="head"><a href="math_subject_c.html">← 数学Cの授業に戻る</a><h1>第5講　位置ベクトル</h1><p>空間のベクトル ｜ 数学C ｜ みんなの数学データベース</p></div></header>
-<main class="wrap"><div class="lead"><strong>この授業で学ぶこと</strong>：空間内の点の位置をベクトルで表します。2点を結ぶベクトルと、中点・内分点・外分点の公式に加え、四面体の重心と点の一致の証明を、図と例題で確認します。</div>
+<style id="six-subjects-unified">
+/* 共通デザイン（数学 I/A/II/B/III/C）: 教材のプログラムや数式には非干渉 */
+:root{--course-navy:#17365d;--course-blue:#24689c;--course-paper:#ffffff;--course-muted:#526a80}
+body{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.75}
+body>header{background:linear-gradient(110deg,var(--course-navy),var(--course-blue))!important;color:#fff!important;padding:24px 0 28px!important}
+body>header a{color:#fff!important}
+body>header h1{font-size:clamp(26px,4.2vw,36px)!important;line-height:1.35!important;margin:10px 0 5px!important;font-weight:750!important}
+body>header p,body>header span{font-size:14px!important;line-height:1.6!important;color:#e3effc!important}
+body>footer{background:#142f4d!important;color:#e9f2fc!important;padding:20px 0!important;font-size:13px!important;text-align:center!important}
+body>footer a{color:#e9f2fc!important}
+.course-unified-goal{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px;color:#18314c}
+.course-unified-goal .course-goal-label{display:block;font-size:13px;font-weight:700;color:#215f91;margin:0 0 5px}
+.course-unified-goal .course-goal-title{font-size:clamp(21px,3.2vw,27px);font-weight:750;line-height:1.4;margin:0 0 5px;color:#17365d}
+.course-unified-goal .course-goal-subtitle{font-size:14px!important;color:#526a80!important;margin:0;line-height:1.65}
+/* 既存の「授業のねらい」も見出しとサブタイトルの強弱を統一 */
+.matha-unified-goal,.lesson-goal,section.goal,section.aim,section.objective{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px}
+.matha-unified-goal .goal-title,.lesson-goal .goal-title,section.goal h2,section.aim h2,section.objective h2{font-size:clamp(21px,3.2vw,27px)!important;line-height:1.4!important;margin:5px 0!important;color:#17365d!important}
+.matha-unified-goal p,.lesson-goal p,section.goal p,section.aim p,section.objective p{font-size:14px!important;color:#526a80!important}
+.goal-pill,section.goal .pill,section.aim small{font-size:13px!important}
+@media(max-width:550px){.course-unified-goal{padding:12px 14px}body>header{padding:18px 0 22px!important}}
+</style></head><body>
+<header><div class="head"><a href="math_subject_c.html">← 数学Cの授業に戻る</a><h1>位置ベクトル</h1><p>空間のベクトル ｜ 数学C ｜ みんなの数学データベース</p></div></header>
+<main class="wrap"><section class="course-unified-goal" aria-label="授業のねらい"><span class="course-goal-label">授業のねらい</span><h2 class="course-goal-title">位置ベクトル</h2><p class="course-goal-subtitle">点の位置をベクトルで表し、中点・内分点・外分点の位置ベクトルを動く立体図で学びます。</p></section><div class="lead"><strong>この授業で学ぶこと</strong>：空間内の点の位置をベクトルで表します。2点を結ぶベクトルと、中点・内分点・外分点の公式に加え、四面体の重心と点の一致の証明を、図と例題で確認します。</div>
 <section class="chapter"><h2>1．位置ベクトルとは</h2><p>原点 \(O\) と空間内の点 \(A\) を考えます。\(\overrightarrow{OA}\) を点 \(A\) の<strong>位置ベクトル</strong>といいます。</p><div class="formula">\[\boxed{\vec a=\overrightarrow{OA}=(x,y,z)}\]</div><p>点 \(A(x,y,z)\) の座標と、位置ベクトル \(\vec a=(x,y,z)\) の成分は一致します。ただし、<strong>点とベクトルは異なる概念</strong>です。</p><h3>例題1</h3><p>点 \(A(2,-1,3)\) の位置ベクトルは \(\vec a=(2,-1,3)\) です。</p></section>
 <section class="chapter"><h2>2．2点を結ぶベクトル</h2><p>\(\overrightarrow{OA}=\vec a,\ \overrightarrow{OB}=\vec b\) とすると、</p><div class="formula">\[\boxed{\overrightarrow{AB}=\vec b-\vec a}\]</div><p>つまり、<strong>終点の位置ベクトル − 始点の位置ベクトル</strong>です。</p><h3>例題2</h3><p>\(A(1,2,-1),\ B(4,0,3)\) のとき、</p><div class="formula">\[\overrightarrow{AB}=(4-1,\ 0-2,\ 3-(-1))=\boxed{(3,-2,4)}\]</div></section>
 <section class="chapter"><h2>3．動く立体図で確認しよう</h2><div class="grid"><div><svg id="vectorView" viewBox="0 0 520 400" role="img" aria-label="空間座標にあるA、B、内分点Pの立体図。スライダーを操作すると各点が移動します"><g id="scene"></g></svg><p class="hint">青：\(\overrightarrow{OA}\)、赤：\(\overrightarrow{OB}\)、緑：\(\overrightarrow{OP}\)。黄色の線は線分ABです。これは立体の斜め投影図で、画面上の長さは実際の長さと一致しません。</p></div><div class="panel"><h3>点A・Bと比を変更する</h3><label for="ax">Aのx成分：<span class="value" id="vax">1</span></label><input type="range" id="ax" min="-3" max="3" step="1" value="1"><label for="ay">Aのy成分：<span class="value" id="vay">1</span></label><input type="range" id="ay" min="-3" max="3" step="1" value="1"><label for="az">Aのz成分：<span class="value" id="vaz">1</span></label><input type="range" id="az" min="-3" max="3" step="1" value="1"><label for="bx">Bのx成分：<span class="value" id="vbx">3</span></label><input type="range" id="bx" min="-3" max="3" step="1" value="3"><label for="by">Bのy成分：<span class="value" id="vby">-1</span></label><input type="range" id="by" min="-3" max="3" step="1" value="-1"><label for="bz">Bのz成分：<span class="value" id="vbz">2</span></label><input type="range" id="bz" min="-3" max="3" step="1" value="2"><label for="ratio">比 AP:PB = <span class="value" id="vratio">1:1</span></label><input type="range" id="ratio" min="1" max="4" step="1" value="1"><div class="readout" id="readout" aria-live="polite"></div><div class="buttons"><button class="secondary" id="reset" type="button">初期値に戻す</button></div></div></div><p>比を \(1:1\) から \(2:1\)、\(3:1\) に変えると、緑の点 \(P\) が点 \(B\) に近づきます。</p></section>

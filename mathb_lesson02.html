@@ -5,9 +5,29 @@
 /* MathJaxの数式SVGをグラフ用スタイルから分離 */
 mjx-container[jax="SVG"]{max-width:100%;font-size:100%!important}mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;padding:2px 0}mjx-container svg{width:auto;height:auto;max-width:none;border:0;border-radius:0;background:transparent;display:inline;vertical-align:middle} .formula mjx-container{font-size:100%!important}
 @media(max-width:650px){mjx-container[jax="SVG"]{font-size:94%!important}.formula{padding:10px 6px}}
-</style><script>window.MathJax={tex:{inlineMath:[["\\(","\\)" ]],displayMath:[["\\[","\\]"]]},svg:{fontCache:"global"}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script></head><body>
+</style><script>window.MathJax={tex:{inlineMath:[["\\(","\\)" ]],displayMath:[["\\[","\\]"]]},svg:{fontCache:"global"}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script><style id="six-subjects-unified">
+/* 共通デザイン（数学 I/A/II/B/III/C）: 教材のプログラムや数式には非干渉 */
+:root{--course-navy:#17365d;--course-blue:#24689c;--course-paper:#ffffff;--course-muted:#526a80}
+body{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.75}
+body>header{background:linear-gradient(110deg,var(--course-navy),var(--course-blue))!important;color:#fff!important;padding:24px 0 28px!important}
+body>header a{color:#fff!important}
+body>header h1{font-size:clamp(26px,4.2vw,36px)!important;line-height:1.35!important;margin:10px 0 5px!important;font-weight:750!important}
+body>header p,body>header span{font-size:14px!important;line-height:1.6!important;color:#e3effc!important}
+body>footer{background:#142f4d!important;color:#e9f2fc!important;padding:20px 0!important;font-size:13px!important;text-align:center!important}
+body>footer a{color:#e9f2fc!important}
+.course-unified-goal{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px;color:#18314c}
+.course-unified-goal .course-goal-label{display:block;font-size:13px;font-weight:700;color:#215f91;margin:0 0 5px}
+.course-unified-goal .course-goal-title{font-size:clamp(21px,3.2vw,27px);font-weight:750;line-height:1.4;margin:0 0 5px;color:#17365d}
+.course-unified-goal .course-goal-subtitle{font-size:14px!important;color:#526a80!important;margin:0;line-height:1.65}
+/* 既存の「授業のねらい」も見出しとサブタイトルの強弱を統一 */
+.matha-unified-goal,.lesson-goal,section.goal,section.aim,section.objective{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px}
+.matha-unified-goal .goal-title,.lesson-goal .goal-title,section.goal h2,section.aim h2,section.objective h2{font-size:clamp(21px,3.2vw,27px)!important;line-height:1.4!important;margin:5px 0!important;color:#17365d!important}
+.matha-unified-goal p,.lesson-goal p,section.goal p,section.aim p,section.objective p{font-size:14px!important;color:#526a80!important}
+.goal-pill,section.goal .pill,section.aim small{font-size:13px!important}
+@media(max-width:550px){.course-unified-goal{padding:12px 14px}body>header{padding:18px 0 22px!important}}
+</style></head><body>
 <header><div class="wrap"><a href="index.html">← トップページ</a><h1>等差数列とその和</h1><p>数学B｜数列　<span class="chip">教科書表示・動く教材</span></p></div></header>
-<main class="wrap"><nav class="nav"><a href="high_school_video_lessons.html">科目一覧へ戻る</a><a href="math_subject_b.html">この科目の授業一覧</a></nav><p class="intro">隣り合う項の差が一定である数列を、公式・具体例・動く図・演習を使って理解しましょう。等差数列の一般項と和の公式を、理由から学べます。</p>
+<main class="wrap"><section class="course-unified-goal" aria-label="授業のねらい"><span class="course-goal-label">授業のねらい</span><h2 class="course-goal-title">等差数列とその和</h2><p class="course-goal-subtitle">隣り合う項の差が一定の数列を等差数列といいます。</p></section><nav class="nav"><a href="high_school_video_lessons.html">科目一覧へ戻る</a><a href="math_subject_b.html">この科目の授業一覧</a></nav><p class="intro">隣り合う項の差が一定である数列を、公式・具体例・動く図・演習を使って理解しましょう。等差数列の一般項と和の公式を、理由から学べます。</p>
 <article class="paper">
 <h2>1．基本事項</h2><p>隣り合う項の差が一定の数列を<strong>等差数列</strong>といいます。その一定の差を<strong>公差</strong>といいます。</p>
 <p>例えば、\(2,5,8,11,14,\ldots\) は初項 \(a_1=2\)、公差 \(d=3\) の等差数列です。</p>

@@ -2,9 +2,29 @@
 <html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>空間のベクトル｜数学C｜みんなの数学データベース</title>
 <style>
 :root{color-scheme:light;--blue:#145f99;--line:#d3e1ed}*{box-sizing:border-box}body{margin:0;background:#f2f7fc;color:#19354c;font:16px/1.85 -apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif}header{background:linear-gradient(120deg,#153957,#286d9d);color:white;padding:20px 0 28px}header a{color:white}.wrap{max-width:1000px;margin:auto;padding:0 17px}h1{font-size:clamp(1.6rem,4vw,2.35rem);margin:6px 0}header p{margin:0;color:#e7f2ff}main{padding:24px 17px 60px}section{background:white;border:1px solid var(--line);border-radius:16px;padding:20px;margin:18px 0;box-shadow:0 3px 12px #1b4b7710}h2{margin:0 0 10px;color:#165382;font-size:1.3rem}h3{margin:19px 0 5px;color:#204e72;font-size:1.06rem}p{margin:9px 0}a{color:#1465a5}.lead{background:#eaf5ff;padding:14px 17px;border-radius:12px}.formula{background:#f2f7fd;padding:12px 8px;border-radius:9px;overflow-x:auto;text-align:center;margin:12px 0}.figure{border:1px solid var(--line);border-radius:12px;padding:9px;background:white;overflow:hidden}canvas{width:100%;height:auto;display:block;touch-action:pan-y}.controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 16px}.ctrl{background:#f3f9ff;padding:9px 12px;border-radius:10px}.ctrl label{display:block;font-weight:650}input[type=range]{width:100%;accent-color:#1778b8;min-height:33px}.stats{background:#eaf5ee;padding:12px;border-radius:10px;font-weight:600;margin-top:12px;white-space:normal}button{background:#165f99;border:0;color:white;font:inherit;font-weight:700;padding:9px 16px;border-radius:9px;cursor:pointer}button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #f5ad3d}.small{font-size:.9rem;color:#536e82}.key{display:flex;flex-wrap:wrap;gap:10px;font-size:.89rem;color:#3a566e}.key span{white-space:nowrap}details{border:1px solid #dce6ef;border-radius:10px;padding:11px 14px;margin:12px 0}summary{cursor:pointer;font-weight:700;color:#145b92}footer{padding:18px;background:#173b5d;color:#eaf3fc}@media(max-width:620px){section{padding:15px}.controls{grid-template-columns:1fr}}
-</style><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'global'}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script></head>
-<body><header><div class="wrap"><a href="math_subject_c.html">← 数学Cの授業一覧へ</a><h1>空間のベクトル</h1><p>数学C｜空間のベクトル・第2講</p></div></header>
-<main class="wrap"><p class="lead">平面で学んだベクトルの考え方は空間でも同じです。始点・終点を動かしたり、和や実数倍を変えたりして、空間ベクトルを視覚的に理解しましょう。</p>
+</style><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'global'}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script><style id="six-subjects-unified">
+/* 共通デザイン（数学 I/A/II/B/III/C）: 教材のプログラムや数式には非干渉 */
+:root{--course-navy:#17365d;--course-blue:#24689c;--course-paper:#ffffff;--course-muted:#526a80}
+body{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.75}
+body>header{background:linear-gradient(110deg,var(--course-navy),var(--course-blue))!important;color:#fff!important;padding:24px 0 28px!important}
+body>header a{color:#fff!important}
+body>header h1{font-size:clamp(26px,4.2vw,36px)!important;line-height:1.35!important;margin:10px 0 5px!important;font-weight:750!important}
+body>header p,body>header span{font-size:14px!important;line-height:1.6!important;color:#e3effc!important}
+body>footer{background:#142f4d!important;color:#e9f2fc!important;padding:20px 0!important;font-size:13px!important;text-align:center!important}
+body>footer a{color:#e9f2fc!important}
+.course-unified-goal{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px;color:#18314c}
+.course-unified-goal .course-goal-label{display:block;font-size:13px;font-weight:700;color:#215f91;margin:0 0 5px}
+.course-unified-goal .course-goal-title{font-size:clamp(21px,3.2vw,27px);font-weight:750;line-height:1.4;margin:0 0 5px;color:#17365d}
+.course-unified-goal .course-goal-subtitle{font-size:14px!important;color:#526a80!important;margin:0;line-height:1.65}
+/* 既存の「授業のねらい」も見出しとサブタイトルの強弱を統一 */
+.matha-unified-goal,.lesson-goal,section.goal,section.aim,section.objective{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px}
+.matha-unified-goal .goal-title,.lesson-goal .goal-title,section.goal h2,section.aim h2,section.objective h2{font-size:clamp(21px,3.2vw,27px)!important;line-height:1.4!important;margin:5px 0!important;color:#17365d!important}
+.matha-unified-goal p,.lesson-goal p,section.goal p,section.aim p,section.objective p{font-size:14px!important;color:#526a80!important}
+.goal-pill,section.goal .pill,section.aim small{font-size:13px!important}
+@media(max-width:550px){.course-unified-goal{padding:12px 14px}body>header{padding:18px 0 22px!important}}
+</style></head>
+<body><header><div class="wrap"><a href="math_subject_c.html">← 数学Cの授業一覧へ</a><h1>空間のベクトル</h1><p>数学C｜空間のベクトル・</p></div></header>
+<main class="wrap"><section class="course-unified-goal" aria-label="授業のねらい"><span class="course-goal-label">授業のねらい</span><h2 class="course-goal-title">空間のベクトル</h2><p class="course-goal-subtitle">空間ベクトルの向きと大きさ、等しいベクトル、和・差・実数倍を立体図で学びます。</p></section><p class="lead">平面で学んだベクトルの考え方は空間でも同じです。始点・終点を動かしたり、和や実数倍を変えたりして、空間ベクトルを視覚的に理解しましょう。</p>
 <section><h2>1．空間のベクトルとは</h2><p>空間内の有向線分 \(\overrightarrow{AB}\) は、点 \(A\) から点 \(B\) へ向かう<b>向き</b>と<b>大きさ（長さ）</b>をもつ量です。向きと大きさが同じなら、始点が異なっていても等しいベクトルです。</p><div class="formula">\[\overrightarrow{AB}=\boldsymbol{a},\qquad |\boldsymbol{a}|=AB\]</div><p>長さが \(0\) のベクトルを零ベクトル \(\boldsymbol{0}\) といい、\(\boldsymbol{a}\) と大きさが等しく向きが反対のベクトルを \(-\boldsymbol{a}\) といいます。</p></section>
 <section><h2>2．動く立体図で確かめよう</h2><p>赤の矢印は \(\boldsymbol{a}\)、青は \(\boldsymbol{b}\)、緑は \(\boldsymbol{a}+\boldsymbol{b}\) を表します。青の矢印を赤の終点へ平行移動すると、和の三角形ができます。破線は補助線です。</p>
 <div class="figure"><canvas id="viz" width="920" height="570" role="img" aria-label="空間座標上の2本のベクトルとその和の図。スライダーで成分と視点を変更できます">ベクトルの図</canvas></div><div class="key"><span>🔴 a</span><span>🔵 b（平行移動した矢印は破線表示）</span><span>🟢 a+b</span><span>🟠 ka</span></div>

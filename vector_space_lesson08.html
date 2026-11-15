@@ -1,10 +1,30 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>第8講 平面の方程式｜数学C</title>
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>平面の方程式｜数学C</title>
 <style>
 :root{--navy:#173b5e;--blue:#12639c;--bg:#f3f7fd;--edge:#d7e5f2}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:#1d344c;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;font-size:16px;line-height:1.8}a{color:#125d97}header{background:linear-gradient(110deg,#16375b,#2573a4);color:white;padding:18px 16px}header .head{max-width:980px;margin:auto}header a{color:white}header h1{font-size:clamp(1.65rem,4vw,2.4rem);margin:12px 0 0}header p{margin:0;color:#e4f2fc}.wrap{max-width:980px;margin:auto;padding:16px 14px 40px}.lead{padding:12px;background:#e9f3ff;border-left:5px solid #3c84bd;border-radius:8px}.chapter{background:#fff;border:1px solid var(--edge);border-radius:15px;padding:16px;margin:16px 0;box-shadow:0 2px 8px #19334d0b}h2{font-size:1.35rem;color:#144e80;border-bottom:1px solid #e4edf6;padding-bottom:8px;margin:0 0 15px}h3{font-size:1.06rem;color:#174c7a}.formula{overflow-x:auto;text-align:center;background:#f5f9ff;border:1px solid #e3ebf5;border-radius:10px;padding:10px;margin:10px 0;font-size:1rem}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.panel{border:1px solid var(--edge);border-radius:12px;padding:14px;background:#fbfdff}.hint{color:#596e82;font-size:.91rem}label{font-weight:700;display:block;margin:8px 0 2px}input[type=range]{width:100%;accent-color:#12639c;min-height:28px}.value{font-variant-numeric:tabular-nums;background:#e8f3fc;padding:2px 8px;border-radius:5px}svg.diagram{display:block;width:100%;height:auto;background:white;border:1px solid #deebf5;border-radius:12px}.readout{background:#eaf4ff;border-radius:8px;padding:10px;margin:10px 0;font-variant-numeric:tabular-nums;white-space:pre-line}button{padding:9px 16px;background:#186397;color:#fff;border:0;border-radius:9px;font-size:.95rem;font-weight:700;min-height:44px;cursor:pointer}details{background:#f7fbff;border:1px solid #dce9f3;padding:12px;border-radius:10px;margin:10px 0}summary{cursor:pointer;color:#165b8a;font-weight:700;min-height:32px}.question{border:1px solid #d5e4f1;background:#fbfdff;border-radius:12px;padding:13px;margin:12px 0}.question input{font-size:16px;max-width:180px;padding:7px;border-radius:6px;border:1px solid #a7bdce}.result{min-height:1.5em;font-weight:700}.ok{color:#167448}.bad{color:#ad4e30}footer{text-align:center;background:#183853;color:#fff;padding:19px}mjx-container[display="true"]{margin:.45em 0!important}mjx-container{max-width:100%}.formula mjx-container{font-size:100%!important}@media(max-width:650px){.grid{grid-template-columns:1fr}.chapter{padding:13px}.wrap{padding:12px 10px 30px}header h1{font-size:1.65rem}}
 </style>
-<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'global'}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script></head>
-<body><header><div class="head"><a href="math_subject_c.html">← 数学Cの授業</a><h1>第8講　平面の方程式</h1><p>空間のベクトル｜法線ベクトルと空間図形</p></div></header>
-<main class="wrap"><p class="lead">平面は、1つの点と平面に垂直な<strong>法線ベクトル</strong>によって決まります。基本公式から、3点を通る平面、直線との交点、距離の求め方まで学習しましょう。</p>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'global'}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script><style id="six-subjects-unified">
+/* 共通デザイン（数学 I/A/II/B/III/C）: 教材のプログラムや数式には非干渉 */
+:root{--course-navy:#17365d;--course-blue:#24689c;--course-paper:#ffffff;--course-muted:#526a80}
+body{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.75}
+body>header{background:linear-gradient(110deg,var(--course-navy),var(--course-blue))!important;color:#fff!important;padding:24px 0 28px!important}
+body>header a{color:#fff!important}
+body>header h1{font-size:clamp(26px,4.2vw,36px)!important;line-height:1.35!important;margin:10px 0 5px!important;font-weight:750!important}
+body>header p,body>header span{font-size:14px!important;line-height:1.6!important;color:#e3effc!important}
+body>footer{background:#142f4d!important;color:#e9f2fc!important;padding:20px 0!important;font-size:13px!important;text-align:center!important}
+body>footer a{color:#e9f2fc!important}
+.course-unified-goal{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px;color:#18314c}
+.course-unified-goal .course-goal-label{display:block;font-size:13px;font-weight:700;color:#215f91;margin:0 0 5px}
+.course-unified-goal .course-goal-title{font-size:clamp(21px,3.2vw,27px);font-weight:750;line-height:1.4;margin:0 0 5px;color:#17365d}
+.course-unified-goal .course-goal-subtitle{font-size:14px!important;color:#526a80!important;margin:0;line-height:1.65}
+/* 既存の「授業のねらい」も見出しとサブタイトルの強弱を統一 */
+.matha-unified-goal,.lesson-goal,section.goal,section.aim,section.objective{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px}
+.matha-unified-goal .goal-title,.lesson-goal .goal-title,section.goal h2,section.aim h2,section.objective h2{font-size:clamp(21px,3.2vw,27px)!important;line-height:1.4!important;margin:5px 0!important;color:#17365d!important}
+.matha-unified-goal p,.lesson-goal p,section.goal p,section.aim p,section.objective p{font-size:14px!important;color:#526a80!important}
+.goal-pill,section.goal .pill,section.aim small{font-size:13px!important}
+@media(max-width:550px){.course-unified-goal{padding:12px 14px}body>header{padding:18px 0 22px!important}}
+</style></head>
+<body><header><div class="head"><a href="math_subject_c.html">← 数学Cの授業</a><h1>平面の方程式</h1><p>空間のベクトル｜法線ベクトルと空間図形</p></div></header>
+<main class="wrap"><section class="course-unified-goal" aria-label="授業のねらい"><span class="course-goal-label">授業のねらい</span><h2 class="course-goal-title">平面の方程式</h2><p class="course-goal-subtitle">法線ベクトル、3点を通る平面、直線と平面の交点、点と平面の距離を動く立体図で学びます。</p></section><p class="lead">平面は、1つの点と平面に垂直な<strong>法線ベクトル</strong>によって決まります。基本公式から、3点を通る平面、直線との交点、距離の求め方まで学習しましょう。</p>
 <section class="chapter"><h2>1．法線ベクトルと平面の方程式</h2>
 <p>平面上の点を \(P(x,y,z)\)、平面上の定点を \(P_0(x_0,y_0,z_0)\)、0でない法線ベクトルを \(\vec n=(a,b,c)\) とします。平面上では \(\overrightarrow{P_0P}\perp\vec n\) です。</p>
 <div class="formula">\[\vec n\cdot\overrightarrow{P_0P}=0\]</div><div class="formula">\[\boxed{a(x-x_0)+b(y-y_0)+c(z-z_0)=0}\]</div><p>展開すると、平面の一般形 \(\boxed{ax+by+cz+d=0}\) が得られます。ただし \((a,b,c)\ne(0,0,0)\) です。</p>

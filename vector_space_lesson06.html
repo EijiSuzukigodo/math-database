@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>第6講 ベクトルと図形｜数学C</title>
+<title>ベクトルと図形｜数学C</title>
 <style>
 :root{--navy:#173b5e;--blue:#12639c;--bg:#f3f7fd;--edge:#d7e5f2}*{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:#1d344c;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;font-size:16px;line-height:1.8}
@@ -16,8 +16,28 @@ details{background:#f7fbff;border:1px solid #dce9f3;padding:12px;border-radius:1
 </style>
 <script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
-</head><body><header><div class="head"><a href="math_subject_c.html">← 数学Cの授業へ戻る</a><h1>第6講　ベクトルと図形</h1><p>空間のベクトル｜みんなの数学データベース</p></div></header>
-<main class="wrap"><div class="lead"><strong>この授業で学ぶこと</strong>：ベクトルを使って、同一直線上・同一平面上にあることを証明し、直線と平面の交点、垂直条件、点と直線の距離を求めます。図を動かして確かめましょう。</div>
+<style id="six-subjects-unified">
+/* 共通デザイン（数学 I/A/II/B/III/C）: 教材のプログラムや数式には非干渉 */
+:root{--course-navy:#17365d;--course-blue:#24689c;--course-paper:#ffffff;--course-muted:#526a80}
+body{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.75}
+body>header{background:linear-gradient(110deg,var(--course-navy),var(--course-blue))!important;color:#fff!important;padding:24px 0 28px!important}
+body>header a{color:#fff!important}
+body>header h1{font-size:clamp(26px,4.2vw,36px)!important;line-height:1.35!important;margin:10px 0 5px!important;font-weight:750!important}
+body>header p,body>header span{font-size:14px!important;line-height:1.6!important;color:#e3effc!important}
+body>footer{background:#142f4d!important;color:#e9f2fc!important;padding:20px 0!important;font-size:13px!important;text-align:center!important}
+body>footer a{color:#e9f2fc!important}
+.course-unified-goal{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px;color:#18314c}
+.course-unified-goal .course-goal-label{display:block;font-size:13px;font-weight:700;color:#215f91;margin:0 0 5px}
+.course-unified-goal .course-goal-title{font-size:clamp(21px,3.2vw,27px);font-weight:750;line-height:1.4;margin:0 0 5px;color:#17365d}
+.course-unified-goal .course-goal-subtitle{font-size:14px!important;color:#526a80!important;margin:0;line-height:1.65}
+/* 既存の「授業のねらい」も見出しとサブタイトルの強弱を統一 */
+.matha-unified-goal,.lesson-goal,section.goal,section.aim,section.objective{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px}
+.matha-unified-goal .goal-title,.lesson-goal .goal-title,section.goal h2,section.aim h2,section.objective h2{font-size:clamp(21px,3.2vw,27px)!important;line-height:1.4!important;margin:5px 0!important;color:#17365d!important}
+.matha-unified-goal p,.lesson-goal p,section.goal p,section.aim p,section.objective p{font-size:14px!important;color:#526a80!important}
+.goal-pill,section.goal .pill,section.aim small{font-size:13px!important}
+@media(max-width:550px){.course-unified-goal{padding:12px 14px}body>header{padding:18px 0 22px!important}}
+</style></head><body><header><div class="head"><a href="math_subject_c.html">← 数学Cの授業へ戻る</a><h1>ベクトルと図形</h1><p>空間のベクトル｜みんなの数学データベース</p></div></header>
+<main class="wrap"><section class="course-unified-goal" aria-label="授業のねらい"><span class="course-goal-label">授業のねらい</span><h2 class="course-goal-title">ベクトルと図形</h2><p class="course-goal-subtitle">同一直線上・同一平面上の証明、直線と平面の交点、内積による証明、点と直線の距離を学びます。</p></section><div class="lead"><strong>この授業で学ぶこと</strong>：ベクトルを使って、同一直線上・同一平面上にあることを証明し、直線と平面の交点、垂直条件、点と直線の距離を求めます。図を動かして確かめましょう。</div>
 <section class="chapter"><h2>1．3点が同一直線上にあることの証明</h2>
 <p>異なる2点 \(A,B\) と点 \(C\) が同一直線上にあることは、\(\overrightarrow{AC}\) が \(\overrightarrow{AB}\) の実数倍になることと同値です。</p>
 <div class="formula">\[\boxed{\overrightarrow{AC}=t\overrightarrow{AB}\quad(t\in\mathbb R)}\]</div>
