@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
+
+<!DOCTYPE html>
 
 <html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>確率変数と確率分布｜みんなの数学データベース</title>
@@ -67,8 +70,8 @@ body>footer.lesson-standard-footer>div{max-width:970px!important;margin:auto!imp
 mjx-container svg{width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;display:inline-block!important}
 @media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
 </style></head>
-<body><header class="lesson-standard-header"><div class="lesson-standard-width"><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>確率変数と確率分布</h1><p class="lesson-standard-bottom">数学B ／ 統計的な推測</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>確率変数と確率分布</h2><p>確率変数が取る値と確率の対応を確率分布といいます。</p></section>
-<div class="lesson-toc"><a href="#basic">基本事項</a><a href="#table">確率分布表</a><a href="#visual">動く分布</a><a href="#examples">例題</a><a href="#exercise">練習問題</a><a href="#summary">まとめ</a></div>
+<body><header class="lesson-standard-header"><div class="lesson-standard-width"><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>確率変数と確率分布</h1><p class="lesson-standard-bottom">数学B ／ 第10講</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>確率変数と確率分布</h2><p>確率変数が取る値と確率の対応を確率分布といいます。</p></section>
+
 <article class="paper">
 <section id="basic"><h2>1．基本事項：確率変数とは</h2><p>偶然の結果に応じて値が決まる変数を<strong>確率変数</strong>といいます。たとえば、公平な硬貨を1回投げて表なら <strong>1</strong>、裏なら <strong>0</strong> と決めたとき、結果に対応する数を $X$ と書きます。</p><p><strong>離散型確率変数</strong>では、取り得る値ごとに確率を割り当てます。確率変数が取る値と確率の対応を<strong>確率分布</strong>といいます。</p><div class="formula">\[P(X=x_i)=p_i,\qquad p_i\ge 0,\qquad \sum_i p_i=1\]</div><div class="tip">$P(X=x_i)$ は「確率変数 $X$ が $x_i$ という値になる確率」という意味です。$P(X=1)$ と $X=1$ は同じものではありません。</div><p>数学Ⅰ「データの分析」で扱う度数分布は、観察したデータの個数を整理するものです。こちらでは、実験を行う<strong>前に考えられる結果の確率</strong>を整理します。</p></section>
 <section id="table"><h2>2．確率分布表の作り方</h2><p>公平な硬貨を1回投げる。表が出たら $X=1$、裏が出たら $X=0$ とします。</p><table><thead><tr><th>$X$ の値</th><th>$0$</th><th>$1$</th><th>計</th></tr></thead><tbody><tr><th>確率</th><td>$\dfrac12$</td><td>$\dfrac12$</td><td>$1$</td></tr></tbody></table><p>もとの教材の例題はこの表に対応します。<strong>表のすべての確率の合計は必ず1</strong> です。</p><h3>公平なサイコロ1個</h3><p>出た目を $X$ とすれば、$X=1,2,3,4,5,6$ がそれぞれ確率 $\frac16$ で起こります。</p><table><thead><tr><th>$x$</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th></tr></thead><tbody><tr><th>$P(X=x)$</th><td>$\frac16$</td><td>$\frac16$</td><td>$\frac16$</td><td>$\frac16$</td><td>$\frac16$</td><td>$\frac16$</td></tr></tbody></table><p class="muted">値が等間隔であっても、確率が等しいとは限りません。試行の条件から確率を求めます。</p></section>
