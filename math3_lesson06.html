@@ -1,22 +1,137 @@
-<!DOCTYPE html>
-<html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>関数の極限｜みんなの数学データベース</title><style>*{box-sizing:border-box}body{margin:0;background:#f2f6fc;color:#1c3148;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.85}a{color:#186da8}.wrap{max-width:1040px;margin:auto;padding:0 17px}header{background:linear-gradient(110deg,#17365d,#246ca3);color:#fff;padding:25px 0}header a{color:#fff}header h1{font-size:clamp(25px,4vw,36px);margin:10px 0 4px}header p{margin:0;color:#e4f0fa}main{padding:24px 0 60px}h2{color:#174c7b;border-bottom:2px solid #bcd3e8;padding-bottom:7px;margin:30px 0 16px}h3{color:#123e65}p{overflow-wrap:anywhere}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.card{border:1px solid #d7e3f0;background:#fff;border-radius:14px;padding:17px;min-width:0}.card h3{margin:0 0 8px}.card p{margin:6px 0;color:#586d82;font-size:14px}.card a{font-weight:700}.nav{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:17px}.nav a{padding:7px 12px;background:#e2effb;border-radius:8px;text-decoration:none;font-weight:700}.intro{background:#e4f1ff;border-left:5px solid #2585bd;padding:16px;border-radius:9px;margin:0 0 20px}.paper{background:#fff;border:1px solid #d6e3f0;border-radius:14px;padding:clamp(17px,3vw,34px);margin:18px 0}.formula{background:#f3f8ff;border:1px solid #d6e5fa;border-radius:10px;padding:12px 8px;margin:14px 0;overflow-x:auto;text-align:center}.example{border-left:5px solid #e6a345;background:#fffaf0;border-radius:9px;padding:14px 16px}.answer{border-left:5px solid #3ca07b;background:#f0faf5;border-radius:9px;padding:14px 16px}.exercise{background:#f8faff;border:1px solid #d6e3f0;border-radius:10px;padding:13px 16px;margin-top:16px}summary{cursor:pointer;color:#145e95;font-weight:700}details{margin-top:9px}footer{background:#142f4d;color:#e6f2ff;padding:20px 0;font-size:13px}.muted{color:#526c82}.chip{display:inline-block;border-radius:25px;background:#e5f3fe;color:#246a96;padding:3px 10px;font-size:12px;font-weight:700}button,a{touch-action:manipulation}a:focus-visible,summary:focus-visible{outline:3px solid orange;outline-offset:3px}.math-scroll{overflow-x:auto}@media(max-width:430px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.card{padding:12px}.card h3{font-size:15px}.card p{font-size:12px}.wrap{padding:0 12px}}</style><script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"]]},svg:{fontCache:"global"}};</script><script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script><style id="six-subjects-unified">
-/* 共通デザイン（数学 I/A/II/B/III/C）: 教材のプログラムや数式には非干渉 */
-:root{--course-navy:#17365d;--course-blue:#24689c;--course-paper:#ffffff;--course-muted:#526a80}
-body{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.75}
-body>header{background:linear-gradient(110deg,var(--course-navy),var(--course-blue))!important;color:#fff!important;padding:24px 0 28px!important}
-body>header a{color:#fff!important}
-body>header h1{font-size:clamp(26px,4.2vw,36px)!important;line-height:1.35!important;margin:10px 0 5px!important;font-weight:750!important}
-body>header p,body>header span{font-size:14px!important;line-height:1.6!important;color:#e3effc!important}
-body>footer{background:#142f4d!important;color:#e9f2fc!important;padding:20px 0!important;font-size:13px!important;text-align:center!important}
-body>footer a{color:#e9f2fc!important}
-.course-unified-goal{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px;color:#18314c}
-.course-unified-goal .course-goal-label{display:block;font-size:13px;font-weight:700;color:#215f91;margin:0 0 5px}
-.course-unified-goal .course-goal-title{font-size:clamp(21px,3.2vw,27px);font-weight:750;line-height:1.4;margin:0 0 5px;color:#17365d}
-.course-unified-goal .course-goal-subtitle{font-size:14px!important;color:#526a80!important;margin:0;line-height:1.65}
-/* 既存の「授業のねらい」も見出しとサブタイトルの強弱を統一 */
-.matha-unified-goal,.lesson-goal,section.goal,section.aim,section.objective{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px}
-.matha-unified-goal .goal-title,.lesson-goal .goal-title,section.goal h2,section.aim h2,section.objective h2{font-size:clamp(21px,3.2vw,27px)!important;line-height:1.4!important;margin:5px 0!important;color:#17365d!important}
-.matha-unified-goal p,.lesson-goal p,section.goal p,section.aim p,section.objective p{font-size:14px!important;color:#526a80!important}
-.goal-pill,section.goal .pill,section.aim small{font-size:13px!important}
-@media(max-width:550px){.course-unified-goal{padding:12px 14px}body>header{padding:18px 0 22px!important}}
-</style><link href="lesson_common_style.css?v=20261115" rel="stylesheet"/></head><body><header class="standard-lesson-header"><a class="lesson-head-back" href="math_subject_3.html">← 数学Ⅲの授業一覧に戻る</a><h1 class="lesson-head-title">関数の極限</h1><p class="lesson-head-meta">数学Ⅲ ／ 関数の極限</p></header><main class="wrap"><section aria-label="授業のねらい" class="standard-lesson-goal"><span class="standard-goal-label">授業のねらい</span><h2 class="standard-goal-title">関数の極限の考え方を理解する</h2><p class="standard-goal-subtitle">左からと右からの極限が等しいとき、その点での極限が存在します。</p></section><p class="intro">極限｜関数の極限。図や式の意味を考えながら順番に学びましょう。</p><article class="paper"><h2>基本事項</h2><p>左からと右からの極限が等しいとき、その点での極限が存在します。</p><div class="formula">\[\lim_{x\to a}f(x)=L\]</div><h2>考え方</h2><p>まず条件と求める量を明確にし、上の関係式を使える形に整理します。等号変形や定義域などの条件も確かめましょう。</p><h2>解説付き例題</h2><div class="example"><strong>例題</strong><p>\(\lim_{x\to2}\frac{x^2-4}{x-2}\)を求める。</p></div><h3>解答と解説</h3><div class="answer"><p>\(x\ne2\)で約分して x+2 となるため、極限は4です。</p></div><h2>練習問題</h2><div class="exercise"><p>\(\lim_{x\to3}\frac{x^2-9}{x-3}\)</p><details><summary>解答を見る</summary><p>6</p></details></div><h2>まとめ</h2><p>左からと右からの極限が等しいとき、その点での極限が存在します。 例題で使った考え方を、練習問題でも確かめましょう。</p></article></main><nav aria-label="授業一覧へ戻る" class="standard-lesson-bottom"><a href="math_subject_3.html">← 数学Ⅲの授業一覧へ戻る</a></nav><footer class="standard-lesson-footer">みんなの数学データベース｜数学Ⅲの授業</footer></body></html>
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>関数の極限｜数学Ⅲ｜みんなの数学データベース</title><style>
+header{background:linear-gradient(110deg,#17365d,#24689c);color:white;padding:24px 0 28px}header header h1{font-size:clamp(26px,4.2vw,36px);margin:10px 0 5px;line-height:1.35}header .goal{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px}.goal-label{display:block;font-size:13px;font-weight:700;color:#215f91}.goal-title{font-size:clamp(21px,3.2vw,27px);line-height:1.4;margin:3px 0 6px;color:#17365d}.goal .paper{border:1px solid #d6e3f0;background:white;border-radius:14px;padding:clamp(16px,3vw,30px);margin:18px 0}.formula{background:#f2f7ff;border:1px solid #d6e5fa;border-radius:10px;text-align:center;overflow-x:auto;padding:11px 8px;margin:12px 0}.example{border-left:5px solid #e6a345;background:#fff9ec;border-radius:9px;padding:14px 16px;margin:15px 0}.answer{border-left:5px solid #3ca07b;background:#effbf5;border-radius:9px;padding:14px 16px;margin:12px 0}.exercise{background:#f7faff;border:1px solid #d7e3f0;border-radius:10px;padding:14px 16px;margin:13px 0}.muted{color:#526a80}.small{font-size:14px}.nav-back{margin:24px 0 12px}footer{background:#142f4d;color:#e9f2fc;text-align:center;padding:20px 0;font-size:13px}.plot{border:1px solid #d6e3ef;border-radius:12px;display:block;width:100%;height:auto;background:#fff}.controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;margin:12px 0}.controls label{display:block;font-weight:700;color:#17365d}.controls input,.controls select{width:100%;font:inherit;padding:9px}.controls input[type=range]{padding:4px}.reading{background:#eaf4ff;padding:12px;border-radius:9px;margin:10px 0;font-size:15px}summary{cursor:pointer;color:#145e95;font-weight:700}button,a,summary{touch-action:manipulation}a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid orange;outline-offset:3px}@media(max-width:560px){.paper{padding:15px}}
+
+/* Unified lesson shell, matching other Math III lessons */
+
+.standard-lesson-header 
+.standard-lesson-header h1{font-size:clamp(26px,4.2vw,36px);margin:6px 0 3px}
+.standard-lesson-header 
+
+
+
+
+nav.standard-lesson-bottom{max-width:1040px;margin:8px auto 28px;padding:0 17px;text-align:center}
+nav.standard-lesson-bottom 
+footer.standard-lesson-footer{background:#142f4d;color:#e9f2fc;padding:20px 15px;font-size:13px;text-align:center}
+.graph-svg{display:block;width:100%;height:auto;aspect-ratio: 900 / 450;border:1px solid #d6e3ef;border-radius:12px;background:#fff}
+.graph-svg text{font-family:-apple-system,BlinkMacSystemFont,Meiryo,sans-serif;font-size:16px;fill:#526a80}
+.graph-svg .grid-line{stroke:#dce6f0;stroke-width:1}
+.graph-svg .axis-line{stroke:#7897b2;stroke-width:2}
+.graph-svg .limit-line{stroke:#cb5261;stroke-width:2;stroke-dasharray:9 6}
+.graph-svg .seq-dot{fill:#206da5}
+
+*{box-sizing:border-box}
+body{margin:0;background:#f2f6fc;color:#1c3148;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.8;font-size:16px}
+a{color:#176cae}
+.wrap{max-width:1040px;margin:auto;padding:0 17px}
+main{padding:38px 0 58px}
+h2{color:#174c7b;border-bottom:2px solid #c5d9eb;padding-bottom:7px;margin:28px 0 14px;font-size:clamp(21px,3vw,26px)}
+h3{color:#17365d;margin:19px 0 8px}
+p{overflow-wrap:anywhere}
+.standard-lesson-header{background:linear-gradient(110deg,#17365d,#24689c);color:white;padding:24px max(17px,calc((100vw - 1006px)/2)) 28px}
+.lesson-head-back{color:#fff;display:inline-block;margin-bottom:8px}
+.lesson-head-title{font-size:clamp(26px,4.2vw,36px);margin:6px 0 3px}
+.lesson-head-meta{font-size:14px;color:#e3effc;margin:0}
+.standard-lesson-goal{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px}
+.standard-goal-label{display:block;font-size:13px;font-weight:700;color:#215f91}
+.standard-goal-title{border:0;padding:0;font-size:clamp(21px,3.2vw,27px);margin:5px 0;color:#17365d}
+.standard-goal-subtitle{font-size:14px;color:#526a80;margin:0}
+.standard-lesson-bottom{max-width:1040px;margin:8px auto 28px;padding:0 17px}
+.standard-lesson-bottom a{display:inline-block;background:#e7f2fc;border-radius:9px;padding:10px 14px;font-weight:700}
+.standard-lesson-footer{background:#142f4d;color:#e9f2fc;padding:20px 15px;font-size:13px;text-align:center}
+/* 数学I・II・III・A・B・C共通：白いカード型「授業のねらい」 */
+main .standard-lesson-goal {
+  display:block !important; box-sizing:border-box !important;
+  background:#ffffff !important; border:1px solid #d8e4f0 !important;
+  border-left:1px solid #d8e4f0 !important;
+  border-radius:18px !important; padding:24px 24px 28px !important;
+  margin:0 0 24px !important; box-shadow:0 2px 6px rgba(19,52,83,.025) !important;
+}
+main .standard-lesson-goal .standard-goal-label {
+  display:inline-block !important; background:#e8f3fc !important;
+  color:#23618e !important; border-radius:24px !important;
+  padding:6px 14px !important; font-size:14px !important;
+  line-height:1.5 !important; font-weight:700 !important;
+}
+main .standard-lesson-goal .standard-goal-title {
+  display:block !important; color:#173f63 !important; border:0 !important;
+  padding:0 !important; margin:14px 0 18px !important;
+  font-size:clamp(22px,3.2vw,27px) !important;
+  font-weight:750 !important; line-height:1.5 !important;
+}
+main .standard-lesson-goal .standard-goal-subtitle {
+  color:#263e56 !important; font-size:16px !important;
+  line-height:1.9 !important; margin:0 !important;
+  font-weight:500 !important;
+}
+@media(max-width:600px){main .standard-lesson-goal{padding:20px 18px 24px !important;}}
+
+/* Header-to-goal gap: dedicated spacer, not margin collapse */
+.header-goal-spacer{display:none!important;}
+body > main.wrap{padding-top:22px!important;}
+body > main.wrap > .standard-lesson-goal:first-child{margin-top:0!important;}
+
+.geom-controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:12px 0 18px}.geom-controls label{font-weight:700;display:block}.geom-controls input{display:block;width:100%;margin-top:8px;accent-color:#24689c}.geom-controls output{color:#14689a}.case-table{width:100%;border-collapse:collapse;margin:15px 0}.case-table th,.case-table td{border:1px solid #d7e4ef;padding:9px;text-align:left}.case-table th{background:#eaf4ff}.note{background:#eff6ff;border-left:4px solid #4388bb;padding:12px 15px;border-radius:8px}.graph-box{background:white;border:1px solid #d6e3ef;border-radius:12px;padding:10px}.graph-box svg{width:100%;height:auto;display:block}.graph-box svg text{font-family:Meiryo,sans-serif;font-size:15px;fill:#536b80}
+
+.pill{font-size:13px;font-weight:700;color:#205e8e;background:#e8f3fc;border-radius:8px;padding:5px 10px;display:inline-block}.paper{border:1px solid #d6e3f0;background:#fff;border-radius:14px;padding:clamp(16px,3vw,30px);margin:18px 0}.graph-box{background:#fff;border:1px solid #d6e3ef;border-radius:12px;padding:10px}.graph-svg{width:100%;height:auto;display:block}.geom-controls select,.geom-controls input{width:100%;font:inherit;padding:7px}.geom-controls input[type=range]{accent-color:#24689c}.example,.answer,.exercise{overflow-wrap:anywhere}</style><script>window.MathJax={tex:{inlineMath:[["\(","\)"]],displayMath:[["\[","\]"]]},svg:{fontCache:"global"},options:{skipHtmlTags:["script","noscript","style","textarea","pre","code"]}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script></head><body><header class="standard-lesson-header"><div class="wrap"><a class="lesson-head-back" href="math_subject_3.html">← 数学Ⅲの授業一覧に戻る</a><h1 class="lesson-head-title">関数の極限</h1><p class="lesson-head-meta">数学Ⅲ ／ 第2章 極限 ／ 第4講　｜　みんなの数学データベース</p></div></header><main class="wrap"><section class="standard-lesson-goal" aria-label="授業のねらい"><span class="standard-goal-label">授業のねらい</span><h2 class="standard-goal-title">関数の極限と左右からの近づき方を理解する</h2><p class="standard-goal-subtitle">関数がある点に近づくときの値の振る舞いをグラフで確認し、左右の極限、極限の基本法則、無限大での極限を使って正しく計算できるようになる。</p></section>
+<section class="paper"><span class="pill">基本事項</span><h2>1．関数の極限とは</h2>
+<p>変数 \(x\) がある値 \(a\) に限りなく近づくとき、関数 \(f(x)\) の値がある数 \(L\) に近づくなら、</p>
+<div class="formula">\[\lim_{x\to a}f(x)=L\]</div>
+<p>と書きます。極限では、<strong>その点での関数の値 \(f(a)\) ではなく、周囲から近づくときの振る舞い</strong>を調べます。</p>
+<div class="note">例：\(f(x)=\dfrac{x^2-1}{x-1}\) は \(x=1\) で定義されませんが、\(x\ne1\) では \(f(x)=x+1\) です。よって \(\displaystyle\lim_{x\to1}f(x)=2\) となります。</div></section>
+<section class="paper"><span class="pill">重要事項</span><h2>2．左側極限と右側極限</h2>
+<p>\(x\) が \(a\) より小さい値から近づくときの<strong>左側極限</strong>、大きい値から近づくときの<strong>右側極限</strong>を次のように表します。</p>
+<div class="formula">\[\lim_{x\to a-0}f(x),\qquad\lim_{x\to a+0}f(x)\]</div>
+<p>有限な極限 \(\lim_{x\to a}f(x)=L\) が存在するための必要十分条件は、左右の極限がともに存在し、同じ \(L\) になることです。</p>
+<div class="formula">\[\lim_{x\to a-0}f(x)=\lim_{x\to a+0}f(x)=L\]</div>
+<p>左右から異なる値に近づく場合は、その点での極限は存在しません。</p></section>
+<section class="paper"><span class="pill">動くグラフ</span><h2>3．左右から近づく様子を観察する</h2>
+<p>グラフの種類を選び、\(x=a\) までの距離 \(h\) を小さくしてください。<strong>赤い点は左側から、緑の点は右側から</strong>近づくときの値です。</p>
+<div class="geom-controls"><div><label for="kind">グラフの種類</label><select id="kind"><option value="hole">穴のある関数（極限が存在）</option><option value="jump">段差のある関数（左右の極限が異なる）</option><option value="pole">1/x（発散）</option><option value="smooth">x²（連続）</option></select></div><div><label for="hval">a からの距離 h：<output id="h-out">0.80</output></label><input id="hval" type="range" min="0.05" max="1.5" step="0.05" value="0.8"/></div></div>
+<div class="graph-box"><svg id="limit-plot" class="graph-svg" viewBox="0 0 900 460" role="img" aria-label="関数の極限のグラフ。初期表示は x=1 に穴のある直線で、両側から近づくと y=2 に近づきます" xmlns="http://www.w3.org/2000/svg"><line x1="72" y1="389.0" x2="785" y2="389.0" stroke="#e2eaf2"/><text x="58" y="394.0" font-size="15" fill="#526a80" text-anchor="end">-3</text><line x1="72" y1="340.0" x2="785" y2="340.0" stroke="#e2eaf2"/><text x="58" y="345.0" font-size="15" fill="#526a80" text-anchor="end">-2</text><line x1="72" y1="291.0" x2="785" y2="291.0" stroke="#e2eaf2"/><text x="58" y="296.0" font-size="15" fill="#526a80" text-anchor="end">-1</text><line x1="72" y1="242.0" x2="785" y2="242.0" stroke="#e2eaf2"/><text x="58" y="247.0" font-size="15" fill="#526a80" text-anchor="end">0</text><line x1="72" y1="193.0" x2="785" y2="193.0" stroke="#e2eaf2"/><text x="58" y="198.0" font-size="15" fill="#526a80" text-anchor="end">1</text><line x1="72" y1="144.0" x2="785" y2="144.0" stroke="#e2eaf2"/><text x="58" y="149.0" font-size="15" fill="#526a80" text-anchor="end">2</text><line x1="72" y1="95.0" x2="785" y2="95.0" stroke="#e2eaf2"/><text x="58" y="100.0" font-size="15" fill="#526a80" text-anchor="end">3</text><line x1="72" y1="46.0" x2="785" y2="46.0" stroke="#e2eaf2"/><text x="58" y="51.0" font-size="15" fill="#526a80" text-anchor="end">4</text><line x1="88.0" y1="44" x2="88.0" y2="393" stroke="#e2eaf2"/><text x="88.0" y="416" font-size="15" fill="#526a80" text-anchor="middle">-3</text><line x1="198.0" y1="44" x2="198.0" y2="393" stroke="#e2eaf2"/><text x="198.0" y="416" font-size="15" fill="#526a80" text-anchor="middle">-2</text><line x1="308.0" y1="44" x2="308.0" y2="393" stroke="#e2eaf2"/><text x="308.0" y="416" font-size="15" fill="#526a80" text-anchor="middle">-1</text><line x1="418.0" y1="44" x2="418.0" y2="393" stroke="#e2eaf2"/><text x="418.0" y="416" font-size="15" fill="#526a80" text-anchor="middle">0</text><line x1="528.0" y1="44" x2="528.0" y2="393" stroke="#e2eaf2"/><text x="528.0" y="416" font-size="15" fill="#526a80" text-anchor="middle">1</text><line x1="638.0" y1="44" x2="638.0" y2="393" stroke="#e2eaf2"/><text x="638.0" y="416" font-size="15" fill="#526a80" text-anchor="middle">2</text><line x1="748.0" y1="44" x2="748.0" y2="393" stroke="#e2eaf2"/><text x="748.0" y="416" font-size="15" fill="#526a80" text-anchor="middle">3</text><line x1="72" y1="242" x2="785" y2="242" stroke="#7897b2" stroke-width="2"/><line x1="418" y1="44" x2="418" y2="393" stroke="#7897b2" stroke-width="2"/><polyline points="88.0,340.0 90.2,339.0 92.4,338.0 94.6,337.1 96.8,336.1 99.0,335.1 101.2,334.1 103.4,333.1 105.6,332.2 107.8,331.2 110.0,330.2 112.2,329.2 114.4,328.2 116.6,327.3 118.8,326.3 121.0,325.3 123.2,324.3 125.4,323.3 127.6,322.4 129.8,321.4 132.0,320.4 134.2,319.4 136.4,318.4 138.6,317.5 140.8,316.5 143.0,315.5 145.2,314.5 147.4,313.5 149.6,312.6 151.8,311.6 154.0,310.6 156.2,309.6 158.4,308.6 160.6,307.7 162.8,306.7 165.0,305.7 167.2,304.7 169.4,303.7 171.6,302.8 173.8,301.8 176.0,300.8 178.2,299.8 180.4,298.8 182.6,297.9 184.8,296.9 187.0,295.9 189.2,294.9 191.4,293.9 193.6,293.0 195.8,292.0 198.0,291.0 200.2,290.0 202.4,289.0 204.6,288.1 206.8,287.1 209.0,286.1 211.2,285.1 213.4,284.1 215.6,283.2 217.8,282.2 220.0,281.2 222.2,280.2 224.4,279.2 226.6,278.3 228.8,277.3 231.0,276.3 233.2,275.3 235.4,274.3 237.6,273.4 239.8,272.4 242.0,271.4 244.2,270.4 246.4,269.4 248.6,268.5 250.8,267.5 253.0,266.5 255.2,265.5 257.4,264.5 259.6,263.6 261.8,262.6 264.0,261.6 266.2,260.6 268.4,259.6 270.6,258.7 272.8,257.7 275.0,256.7 277.2,255.7 279.4,254.7 281.6,253.8 283.8,252.8 286.0,251.8 288.2,250.8 290.4,249.8 292.6,248.9 294.8,247.9 297.0,246.9 299.2,245.9 301.4,244.9 303.6,244.0 305.8,243.0 308.0,242.0 310.2,241.0 312.4,240.0 314.6,239.1 316.8,238.1 319.0,237.1 321.2,236.1 323.4,235.1 325.6,234.2 327.8,233.2 330.0,232.2 332.2,231.2 334.4,230.2 336.6,229.3 338.8,228.3 341.0,227.3 343.2,226.3 345.4,225.3 347.6,224.4 349.8,223.4 352.0,222.4 354.2,221.4 356.4,220.4 358.6,219.5 360.8,218.5 363.0,217.5 365.2,216.5 367.4,215.5 369.6,214.6 371.8,213.6 374.0,212.6 376.2,211.6 378.4,210.6 380.6,209.7 382.8,208.7 385.0,207.7 387.2,206.7 389.4,205.7 391.6,204.8 393.8,203.8 396.0,202.8 398.2,201.8 400.4,200.8 402.6,199.9 404.8,198.9 407.0,197.9 409.2,196.9 411.4,195.9 413.6,195.0 415.8,194.0 418.0,193.0 420.2,192.0 422.4,191.0 424.6,190.1 426.8,189.1 429.0,188.1 431.2,187.1 433.4,186.1 435.6,185.2 437.8,184.2 440.0,183.2 442.2,182.2 444.4,181.2 446.6,180.3 448.8,179.3 451.0,178.3 453.2,177.3 455.4,176.3 457.6,175.4 459.8,174.4 462.0,173.4 464.2,172.4 466.4,171.4 468.6,170.5 470.8,169.5 473.0,168.5 475.2,167.5 477.4,166.5 479.6,165.6 481.8,164.6 484.0,163.6 486.2,162.6 488.4,161.6 490.6,160.7 492.8,159.7 495.0,158.7 497.2,157.7 499.4,156.7 501.6,155.8 503.8,154.8 506.0,153.8 508.2,152.8 510.4,151.8 512.6,150.9 514.8,149.9 517.0,148.9 519.2,147.9 521.4,146.9 523.6,146.0 525.8,145.0 528.0,144.0 530.2,143.0 532.4,142.0 534.6,141.1 536.8,140.1 539.0,139.1 541.2,138.1 543.4,137.1 545.6,136.2 547.8,135.2 550.0,134.2 552.2,133.2 554.4,132.2 556.6,131.3 558.8,130.3 561.0,129.3 563.2,128.3 565.4,127.3 567.6,126.4 569.8,125.4 572.0,124.4 574.2,123.4 576.4,122.4 578.6,121.5 580.8,120.5 583.0,119.5 585.2,118.5 587.4,117.5 589.6,116.6 591.8,115.6 594.0,114.6 596.2,113.6 598.4,112.6 600.6,111.7 602.8,110.7 605.0,109.7 607.2,108.7 609.4,107.7 611.6,106.8 613.8,105.8 616.0,104.8 618.2,103.8 620.4,102.8 622.6,101.9 624.8,100.9 627.0,99.9 629.2,98.9 631.4,97.9 633.6,97.0 635.8,96.0 638.0,95.0 640.2,94.0 642.4,93.0 644.6,92.1 646.8,91.1 649.0,90.1 651.2,89.1 653.4,88.1 655.6,87.2 657.8,86.2 660.0,85.2 662.2,84.2 664.4,83.2 666.6,82.3 668.8,81.3 671.0,80.3 673.2,79.3 675.4,78.3 677.6,77.4 679.8,76.4 682.0,75.4 684.2,74.4 686.4,73.4 688.6,72.5 690.8,71.5 693.0,70.5 695.2,69.5 697.4,68.5 699.6,67.6 701.8,66.6 704.0,65.6 706.2,64.6 708.4,63.6 710.6,62.7 712.8,61.7 715.0,60.7 717.2,59.7 719.4,58.7 721.6,57.8 723.8,56.8 726.0,55.8 728.2,54.8 730.4,53.8 732.6,52.9 734.8,51.9 737.0,50.9 739.2,49.9 741.4,48.9 743.6,48.0 745.8,47.0 748.0,46.0" stroke="#246da2" stroke-width="4" fill="none"/><circle cx="528" cy="144" r="8" fill="white" stroke="#246da2" stroke-width="3"/><line x1="528" y1="44" x2="528" y2="393" stroke="#c65d69" stroke-dasharray="8 7" stroke-width="2"/><text x="540" y="64" fill="#bd4e61" font-size="17">x → 1</text></svg></div><div class="reading" id="limit-status" aria-live="polite">左右から x=1 に近づくと、どちらも 2 に近づきます。x=1 では関数の値は定義されません。</div>
+<p class="small muted">点線は調べる位置 x=a を表します。グラフは最初から表示し、操作すると描き直します。グラフの上下方向は見やすさのため範囲を制限しています。</p></section>
+<section class="paper"><span class="pill">基本法則</span><h2>4．関数の極限の計算法</h2>
+<p>\(\lim_{x\to a}f(x)=A\)、\(\lim_{x\to a}g(x)=B\) が有限に存在するとき、和・差・積・商（\(B\ne0\)）の極限はそれぞれ次のように計算できます。</p>
+<div class="formula">\[\lim_{x\to a}\{f(x)\pm g(x)\}=A\pm B\]</div>
+<div class="formula">\[\lim_{x\to a}\{f(x)g(x)\}=AB,\qquad\lim_{x\to a}\frac{f(x)}{g(x)}=\frac AB\quad(B\ne0)\]</div>
+<p>多項式は直接代入できます。ただし分母が0になるときは<strong>因数分解や有理化</strong>などで式を整理してから考えます。</p></section>
+<section class="paper"><span class="pill">例題</span><h2>5．例題と詳しい解答</h2>
+<div class="example"><strong>例題1</strong>　\(\displaystyle\lim_{x\to2}(x^2-3x+4)\) を求めなさい。</div><div class="answer"><strong>解答</strong>　多項式は連続なので直接代入できます。\[\lim_{x\to2}(x^2-3x+4)=4-6+4=\boxed{2}\]</div>
+<div class="example"><strong>例題2</strong>　\(\displaystyle\lim_{x\to1}\frac{x^2-1}{x-1}\) を求めなさい。</div><div class="answer"><strong>解答</strong>　そのまま代入すると \(\frac00\) の形ですが、\(x\ne1\) で因数分解できます。\[\frac{x^2-1}{x-1}=\frac{(x-1)(x+1)}{x-1}=x+1\]したがって \[\lim_{x\to1}\frac{x^2-1}{x-1}=\boxed{2}\]</div>
+<div class="example"><strong>例題3</strong>　\(\displaystyle\lim_{x\to0}\frac{\sqrt{x+4}-2}{x}\) を求めなさい。</div><div class="answer"><strong>解答</strong>　分子を有理化して、\(x\ne0\) で\[\frac{\sqrt{x+4}-2}{x}=\frac{(x+4)-4}{x(\sqrt{x+4}+2)}=\frac1{\sqrt{x+4}+2}\]よって \[\boxed{\lim_{x\to0}\frac{\sqrt{x+4}-2}{x}=\frac14}\]</div>
+<div class="example"><strong>例題4</strong>　\(f(x)=\begin{cases}x+1&(x<0)\\3-x&(x\ge0)\end{cases}\) の \(x\to0\) の極限を調べなさい。</div><div class="answer"><strong>解答</strong>　左側からは \(x+1\to1\)、右側からは \(3-x\to3\) です。\[\lim_{x\to-0}f(x)=1,\quad\lim_{x\to+0}f(x)=3\]左右の極限が異なるため、<strong>\(\displaystyle\lim_{x\to0}f(x)\) は存在しません</strong>。</div></section>
+<section class="paper"><span class="pill">無限大</span><h2>6．無限大での極限と無限大への発散</h2>
+<p>\(x\) が大きくなる場合は \(x\to\infty\)、小さくなる場合は \(x\to-\infty\) と表します。</p><div class="formula">\[\lim_{x\to\infty}\frac{2x^2+1}{x^2-3}=2\]</div>
+<p>分子・分母を最高次数の \(x^2\) で割ると、\(\dfrac{2+1/x^2}{1-3/x^2}\to2\) です。</p><p>一方、\(f(x)=1/x\) に対して、\(x\to0+\) で \(+\infty\)、\(x\to0-\) で \(-\infty\) に発散します。これは有限の極限が存在することとは異なります。</p></section>
+<section class="paper"><span class="pill">練習問題</span><h2>7．練習問題（解説付き）</h2>
+<div class="exercise"><strong>問1</strong>　\(\displaystyle\lim_{x\to3}(2x^2-x)\)<details><summary>解答と解説</summary><p>直接代入して \(2\cdot9-3=\boxed{15}\)。</p></details></div>
+<div class="exercise"><strong>問2</strong>　\(\displaystyle\lim_{x\to-2}\frac{x^2+3x+2}{x+2}\)<details><summary>解答と解説</summary><p>\(x^2+3x+2=(x+1)(x+2)\)。\(x\ne-2\) で約分し、\(x+1\to\boxed{-1}\)。</p></details></div>
+<div class="exercise"><strong>問3</strong>　\(\displaystyle\lim_{x\to\infty}\frac{3x^2-x}{2x^2+1}\)<details><summary>解答と解説</summary><p>分子・分母を \(x^2\) で割ると \(\dfrac{3-1/x}{2+1/x^2}\to\boxed{\frac32}\)。</p></details></div>
+<div class="exercise"><strong>問4</strong>　\(\displaystyle\lim_{x\to0-}\frac1x\)、\(\displaystyle\lim_{x\to0+}\frac1x\) を調べなさい。<details><summary>解答と解説</summary><p>左側からは \(-\infty\)、右側からは \(+\infty\)。したがって、有限な両側極限は存在しません。</p></details></div></section>
+<section class="paper"><span class="pill">発展</span><h2>8．発展問題</h2>
+<p>\(\displaystyle\lim_{x\to2}\frac{x^2-4}{x^2-3x+2}\) を求めなさい。</p><details><summary>解答と解説</summary><p>分子は \((x-2)(x+2)\)、分母は \((x-2)(x-1)\) なので、\(x\ne2\) で約分して \[\lim_{x\to2}\frac{x+2}{x-1}=\boxed{4}\]となります。</p></details></section>
+<section class="paper"><h2>9．まとめ</h2><p>関数の極限を求めるときは、<strong>左右から同じ値に近づくか</strong>を確認し、計算できる場合は式を整理します。次の「三角関数と極限」では、\(\displaystyle\lim_{x\to0}\frac{\sin x}{x}=1\) などの重要な極限を学びます。</p></section>
+<nav class="standard-lesson-bottom"><a href="math_subject_3.html">← 数学Ⅲの授業一覧に戻る</a></nav></main><footer class="standard-lesson-footer">みんなの数学データベース｜高校生のための授業</footer><script>(function(){'use strict';
+var svg=document.getElementById('limit-plot'), sel=document.getElementById('kind'), sli=document.getElementById('hval'), out=document.getElementById('h-out'), status=document.getElementById('limit-status');
+if(!svg||!sel||!sli)return;
+var NS='http://www.w3.org/2000/svg';
+function add(tag,at,txt){var e=document.createElementNS(NS,tag);Object.keys(at).forEach(function(k){e.setAttribute(k,at[k]);});if(txt!==undefined)e.textContent=txt;svg.appendChild(e);return e;}
+var defs={hole:{a:1,lo:-3,hi:3,ylo:-3,yhi:5,fn:function(x){return x+1;},hole:true},jump:{a:0,lo:-3,hi:3,ylo:-2,yhi:5,fn:function(x){return x<0?x+1:3-x;},jump:true},pole:{a:0,lo:-3,hi:3,ylo:-8,yhi:8,fn:function(x){return 1/x;},pole:true},smooth:{a:1,lo:-3,hi:3,ylo:-1,yhi:8,fn:function(x){return x*x;}}};
+function draw(){var d=defs[sel.value],h=+sli.value, left=d.a-h,right=d.a+h;
+out.textContent=h.toFixed(2);var px=function(x){return 78+(x-d.lo)/(d.hi-d.lo)*745;},py=function(y){return 394-(y-d.ylo)/(d.yhi-d.ylo)*350;};
+while(svg.firstChild)svg.removeChild(svg.firstChild);
+for(var x=-3;x<=3;x++){add('line',{x1:px(x),y1:44,x2:px(x),y2:394,stroke:'#dce7f0'});add('text',{x:px(x),y:420,'text-anchor':'middle',fill:'#526a80'},String(x));}
+for(var y=Math.ceil(d.ylo);y<=Math.floor(d.yhi);y++){if(d.yhi-d.ylo>12&&y%2!==0)continue;add('line',{x1:78,y1:py(y),x2:823,y2:py(y),stroke:'#dce7f0'});add('text',{x:65,y:py(y)+5,'text-anchor':'end',fill:'#526a80'},String(y));}
+if(d.ylo<=0&&d.yhi>=0)add('line',{x1:78,y1:py(0),x2:823,y2:py(0),stroke:'#7897b2','stroke-width':2});
+add('line',{x1:px(0),y1:44,x2:px(0),y2:394,stroke:'#7897b2','stroke-width':2});
+function path(start,end){var steps=220,part=[],pen=false;for(var i=0;i<=steps;i++){var t=start+(end-start)*i/steps, v=d.fn(t);if(!Number.isFinite(v)||v<d.ylo||v>d.yhi){pen=false;continue;}part.push((pen?'L':'M')+px(t).toFixed(2)+','+py(v).toFixed(2));pen=true;}if(part.length)add('path',{d:part.join(' '),stroke:'#246da2','stroke-width':4,fill:'none'});}
+if(d.pole){path(-3,-.001);path(.001,3);}else if(d.jump){path(-3,-.00001);path(0,3);}else{path(-3,3);}
+add('line',{x1:px(d.a),y1:44,x2:px(d.a),y2:394,stroke:'#c65d69','stroke-width':2,'stroke-dasharray':'8 7'});
+if(d.hole){add('circle',{cx:px(1),cy:py(2),r:8,fill:'white',stroke:'#246da2','stroke-width':3});}
+if(d.jump){add('circle',{cx:px(0),cy:py(1),r:8,fill:'white',stroke:'#246da2','stroke-width':3});add('circle',{cx:px(0),cy:py(3),r:7,fill:'#246da2'});}
+function dot(xx,color){var yy=d.fn(xx);if(Number.isFinite(yy)&&yy>=d.ylo&&yy<=d.yhi){add('circle',{cx:px(xx),cy:py(yy),r:9,fill:color,stroke:'white','stroke-width':2});}return yy;}
+var l=dot(left,'#cf5566'),r=dot(right,'#22976d');
+var intro={hole:'左右とも 2 に近づきます。x=1 で関数は定義されません。',jump:'左側極限は 1、右側極限は 3。極限は存在しません。',pole:'左側は −∞、右側は +∞ に発散します。',smooth:'左右とも 1 に近づきます。x=1 の関数値も 1 です。'};
+status.textContent='a='+d.a+'、h='+h.toFixed(2)+'。左の値 '+l.toFixed(2)+'、右の値 '+r.toFixed(2)+'。'+intro[sel.value];}
+sel.addEventListener('change',draw);sli.addEventListener('input',draw);try{draw();}catch(e){status.textContent='初期グラフを表示しています。';}
+})();</script></body></html>
