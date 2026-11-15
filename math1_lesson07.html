@@ -57,9 +57,29 @@ body{margin:0!important;background:#f2f7fc!important;color:#19334e!important;fon
 mjx-container svg{max-width:none!important;width:auto!important;height:auto!important}
 mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden}
 @media(max-width:640px){#md-standard-goal{padding:17px 15px!important}#md-standard-goal .md-goal-title{font-size:20px!important}}
+</style><style>
+/* 2026年11月 共通ページ構造：数学I/II/A/B/C */
+html{scroll-padding-top:10px}
+body .lesson-standard-header{background:linear-gradient(110deg,#17365d,#215f99)!important;color:#fff!important;padding:24px 0 29px!important;margin:0!important;border:0!important;border-radius:0!important;text-align:left!important}
+body .lesson-standard-header .lesson-standard-width{max-width:970px!important;margin:0 auto!important;padding:0 17px!important}
+body .lesson-standard-header .lesson-standard-top,body .lesson-standard-header .lesson-standard-bottom{font-family:inherit!important;font-size:14px!important;line-height:1.65!important;color:#e4effc!important;font-weight:400!important;margin:0!important;padding:0!important;letter-spacing:normal!important}
+body .lesson-standard-header h1{font-family:inherit!important;color:#fff!important;font-size:clamp(25px,4.5vw,35px)!important;line-height:1.4!important;margin:8px 0 5px!important;padding:0!important;max-width:none!important;font-weight:700!important;border:0!important;text-align:left!important}
+/* Main and goal gap: exactly 22px measured from the header's lower edge */
+body>main.lesson-standard-main{display:block!important;box-sizing:border-box!important;max-width:970px!important;width:100%!important;margin:0 auto!important;padding:22px 17px 40px!important;position:relative!important;top:auto!important;transform:none!important}
+body>main.lesson-standard-main>.lesson-standard-goal{display:block!important;background:#fff!important;border:1px solid #dbe6f1!important;border-radius:14px!important;padding:22px 25px!important;margin:0 0 22px!important;box-shadow:0 3px 13px #193a5b0a!important;position:static!important;transform:none!important}
+body>main.lesson-standard-main>.lesson-standard-goal>.lesson-standard-goal-label{display:inline-block!important;font-size:13px!important;color:#145888!important;background:#e6f3ff!important;border-radius:20px!important;font-weight:700!important;padding:2px 12px!important;margin:0!important;line-height:1.6!important}
+body>main.lesson-standard-main>.lesson-standard-goal>h2{color:#174b78!important;font-size:23px!important;line-height:1.5!important;margin:10px 0 7px!important;padding:0!important;border:0!important;text-align:left!important}
+body>main.lesson-standard-main>.lesson-standard-goal>p{margin:0!important;color:#445d72!important;font-size:16px!important;line-height:1.8!important}
+body>main.lesson-standard-main>.lesson-standard-return{display:block!important;clear:both!important;margin:28px 0 0!important;padding:0!important;text-align:left!important;background:transparent!important;border:0!important;position:static!important;transform:none!important}
+body>main.lesson-standard-main>.lesson-standard-return a{display:inline-block!important;background:#e5f1fd!important;color:#175988!important;text-decoration:none!important;border:0!important;border-radius:9px!important;padding:10px 15px!important;font-weight:700!important;font-size:15px!important;line-height:1.5!important}
+body>footer.lesson-standard-footer{display:block!important;background:#112e4c!important;color:#ecf5fc!important;padding:20px 0!important;font-size:13px!important;line-height:1.7!important;text-align:left!important;margin:0!important;border:0!important;border-radius:0!important;clear:both!important}
+body>footer.lesson-standard-footer>div{max-width:970px!important;margin:auto!important;padding:0 17px!important}
+/* MathJax SVG may not inherit broad responsive SVG sizing */
+mjx-container svg{width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;display:inline-block!important}
+@media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
 </style></head><body>
-<header id="md-standard-header"><div class="md-inner"><div class="md-kicker">みんなの数学データベース ／ 高校数学 ／ 数学Ⅰ</div><h1>集合</h1><p class="md-subtitle">数学Ⅰ ／ 教科書表示・例題・練習問題</p></div></header>
-<main id="md-standard-main"><section id="md-standard-goal"><span class="md-goal-tag">授業のねらい</span><h2 class="md-goal-title">集合の基本をベン図で理解する</h2><p>集合の表し方から、部分集合、集合の演算、ド・モルガンの法則、要素の個数まで学びます。動くベン図で、式と図を結びつけましょう。</p></section><article class="sheet">
+
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学Ⅰ</div><h1>集合</h1><p class="lesson-standard-bottom">数学Ⅰ ／ 数学Ⅰ</p></div></header><main class="lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>集合の基本をベン図で理解する</h2><p>集合の表し方から、部分集合、集合の演算、ド・モルガンの法則、要素の個数まで学びます。動くベン図で、式と図を結びつけましょう。</p></section><article class="sheet">
 <h2>1　集合とその表し方</h2><p>含まれるものが明確に決まる集まりを<strong>集合</strong>、その一つ一つを<strong>要素</strong>といいます。</p><div class="eq">\[A=\{1,2,3,4,5\},\qquad 3\in A,\quad 8\notin A\]</div><p>要素を並べる方法と、条件で表す方法があります。</p><div class="eq">\[B=\{2,4,6,8\}=\{x\mid x\text{ は8以下の正の偶数}\}\]</div><div class="ex"><strong>例題1</strong>　\(C=\{x\mid x\text{ は7未満の正の3の倍数}\}\) を要素を並べて表しなさい。<p><strong>解答</strong>　3と6が条件を満たすので、\(C=\{3,6\}\) です。</p></div>
 <h2>2　部分集合・空集合・集合の相等</h2><p>集合 \(A\) の要素がすべて \(B\) に含まれるとき、\(A\) は \(B\) の部分集合です。</p><div class="eq">\[A\subseteq B\quad\Longleftrightarrow\quad (x\in A\Rightarrow x\in B)\]</div><p>空集合は \(\varnothing\) と表し、どの集合の部分集合でもあります。</p><div class="eq">\[A=B\quad\Longleftrightarrow\quad A\subseteq B\text{ かつ }B\subseteq A\]</div><div class="ex"><strong>例題2</strong>　\(A=\{1,2\}\) の部分集合をすべて求めなさい。<p><strong>解答</strong>　\(\varnothing,\{1\},\{2\},\{1,2\}\) の4個。一般に要素が \(n\) 個の集合の部分集合は \(2^n\) 個あります。</p></div>
 <h2>3　共通部分・和集合・補集合</h2><div class="eq">\[A\cap B=\{x\mid x\in A\text{ かつ }x\in B\}\]<br/>\[A\cup B=\{x\mid x\in A\text{ または }x\in B\}\]</div><p>全体集合 \(U\) の中で \(A\) に属さない要素の集合を補集合 \(\overline A\) といいます。</p><div class="eq">\[\overline A=\{x\in U\mid x\notin A\}\]</div>
@@ -74,11 +94,11 @@ mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden}
 <div class="ex"><strong>問題3</strong>　\(A=\{1,3,5,7\}\)、\(B=\{2,3,6,7\}\) の共通部分と和集合を求めなさい。<details><summary>解答と解説</summary>\(A\cap B=\{3,7\}\)、\(A\cup B=\{1,2,3,5,6,7\}\)。</details></div>
 <div class="ex"><strong>問題4</strong>　30人のクラスで集合Aに20人、Bに18人、両方に10人属するとき、どちらにも属さない人は何人ですか。<details><summary>解答と解説</summary>少なくとも一方に属するのは \(20+18-10=28\) 人。よって \(30-28=2\) 人です。</details></div>
 <div class="ex"><strong>問題5（発展）</strong>　\(n(U)=40\)、\(n(A)=22\)、\(n(B)=19\)、\(n(A\cap B)=8\) のとき、\(n(\overline{A\cup B})\) を求めなさい。<details><summary>解答と解説</summary>\(n(A\cup B)=22+19-8=33\) より、\(40-33=7\) です。</details></div>
-<p class="tip">数式の教科書表示にはインターネット接続が必要です。ベン図の操作はオフラインでも使えます。</p></article><nav id="md-standard-footer-nav"><a href="math1_numbers_expressions_comprehensive.html">← 前の授業</a><a href="math_subject_1.html">↑ 数学Ⅰの授業一覧に戻る</a><a href="math1_lesson08.html">次の授業 →</a></nav></main><div class="footer">みんなの数学データベース</div>
-<div class="math1-bottom-nav"><a href="math_subject_1.html">← 数学Ⅰの目次に戻る</a></div><footer id="md-standard-footer"><div class="md-inner">みんなの数学データベース｜高校生のための授業</div></footer><script>
+<p class="tip">数式の教科書表示にはインターネット接続が必要です。ベン図の操作はオフラインでも使えます。</p></article><nav aria-label="授業一覧に戻る" class="lesson-standard-return"><a href="math_subject_1.html">← 数学Ⅰに戻る</a></nav></main><div class="footer">みんなの数学データベース</div>
+<script>
 (()=>{const g=document.getElementById('maskRegions'),ex=document.getElementById('vennExplanation');const descriptions={intersection:'AにもBにも属する共通部分です。',union:'AまたはBの少なくとも一方に属する和集合です。',a:'集合Aに属する部分です。',notA:'全体集合Uの中で、Aに属さない部分です。',demorgan1:'AにもBにも属さない部分です。ド・モルガンの法則で、Ā∩B̄ と同じ領域です。',demorgan2:'AとBの両方に同時には属さない部分です。ド・モルガンの法則で、Ā∪B̄ と同じ領域です。'};
 function el(name,attrs){const e=document.createElementNS('http://www.w3.org/2000/svg',name);Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,v));return e;}
 function draw(op){g.replaceChildren();const r=(x)=>el('circle',{cx:x,cy:156,r:102,fill:'white'});const full=()=>el('rect',{x:34,y:20,width:552,height:267,fill:'white'});const a=()=>r(252),b=()=>r(368);
 if(op==='intersection'){const c=a();c.setAttribute('clip-path','url(#regionB)');g.append(c);}if(op==='union'){g.append(a(),b());}if(op==='a'){g.append(a());}if(op==='notA'){g.append(full());const c=a();c.setAttribute('fill','black');g.append(c);}if(op==='demorgan1'){g.append(full());const c=a(),d=b();c.setAttribute('fill','black');d.setAttribute('fill','black');g.append(c,d);}if(op==='demorgan2'){g.append(full());const c=a();c.setAttribute('fill','black');c.setAttribute('clip-path','url(#regionB)');g.append(c);}ex.textContent=descriptions[op];document.querySelectorAll('[data-op]').forEach(x=>{const active=x.dataset.op===op;x.classList.toggle('active',active);x.setAttribute('aria-pressed',String(active));});}
 document.querySelectorAll('[data-op]').forEach(x=>x.addEventListener('click',()=>draw(x.dataset.op)));draw('intersection');})();
-</script></body></html>
+</script><footer class="lesson-standard-footer"><div>みんなの数学データベース｜高校生のための授業</div></footer></body></html>

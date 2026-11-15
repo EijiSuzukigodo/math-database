@@ -76,9 +76,29 @@ body{margin:0!important;background:#f2f7fc!important;color:#19334e!important;fon
 mjx-container svg{max-width:none!important;width:auto!important;height:auto!important}
 mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden}
 @media(max-width:640px){#md-standard-goal{padding:17px 15px!important}#md-standard-goal .md-goal-title{font-size:20px!important}}
+</style><style>
+/* 2026年11月 共通ページ構造：数学I/II/A/B/C */
+html{scroll-padding-top:10px}
+body .lesson-standard-header{background:linear-gradient(110deg,#17365d,#215f99)!important;color:#fff!important;padding:24px 0 29px!important;margin:0!important;border:0!important;border-radius:0!important;text-align:left!important}
+body .lesson-standard-header .lesson-standard-width{max-width:970px!important;margin:0 auto!important;padding:0 17px!important}
+body .lesson-standard-header .lesson-standard-top,body .lesson-standard-header .lesson-standard-bottom{font-family:inherit!important;font-size:14px!important;line-height:1.65!important;color:#e4effc!important;font-weight:400!important;margin:0!important;padding:0!important;letter-spacing:normal!important}
+body .lesson-standard-header h1{font-family:inherit!important;color:#fff!important;font-size:clamp(25px,4.5vw,35px)!important;line-height:1.4!important;margin:8px 0 5px!important;padding:0!important;max-width:none!important;font-weight:700!important;border:0!important;text-align:left!important}
+/* Main and goal gap: exactly 22px measured from the header's lower edge */
+body>main.lesson-standard-main{display:block!important;box-sizing:border-box!important;max-width:970px!important;width:100%!important;margin:0 auto!important;padding:22px 17px 40px!important;position:relative!important;top:auto!important;transform:none!important}
+body>main.lesson-standard-main>.lesson-standard-goal{display:block!important;background:#fff!important;border:1px solid #dbe6f1!important;border-radius:14px!important;padding:22px 25px!important;margin:0 0 22px!important;box-shadow:0 3px 13px #193a5b0a!important;position:static!important;transform:none!important}
+body>main.lesson-standard-main>.lesson-standard-goal>.lesson-standard-goal-label{display:inline-block!important;font-size:13px!important;color:#145888!important;background:#e6f3ff!important;border-radius:20px!important;font-weight:700!important;padding:2px 12px!important;margin:0!important;line-height:1.6!important}
+body>main.lesson-standard-main>.lesson-standard-goal>h2{color:#174b78!important;font-size:23px!important;line-height:1.5!important;margin:10px 0 7px!important;padding:0!important;border:0!important;text-align:left!important}
+body>main.lesson-standard-main>.lesson-standard-goal>p{margin:0!important;color:#445d72!important;font-size:16px!important;line-height:1.8!important}
+body>main.lesson-standard-main>.lesson-standard-return{display:block!important;clear:both!important;margin:28px 0 0!important;padding:0!important;text-align:left!important;background:transparent!important;border:0!important;position:static!important;transform:none!important}
+body>main.lesson-standard-main>.lesson-standard-return a{display:inline-block!important;background:#e5f1fd!important;color:#175988!important;text-decoration:none!important;border:0!important;border-radius:9px!important;padding:10px 15px!important;font-weight:700!important;font-size:15px!important;line-height:1.5!important}
+body>footer.lesson-standard-footer{display:block!important;background:#112e4c!important;color:#ecf5fc!important;padding:20px 0!important;font-size:13px!important;line-height:1.7!important;text-align:left!important;margin:0!important;border:0!important;border-radius:0!important;clear:both!important}
+body>footer.lesson-standard-footer>div{max-width:970px!important;margin:auto!important;padding:0 17px!important}
+/* MathJax SVG may not inherit broad responsive SVG sizing */
+mjx-container svg{width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;display:inline-block!important}
+@media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
 </style></head><body>
-<header id="md-standard-header"><div class="md-inner"><div class="md-kicker">みんなの数学データベース ／ 高校数学 ／ 数学Ⅰ</div><h1>仮説検定の考え方</h1><p class="md-subtitle">第5章 データの分析｜</p></div></header>
-<main class="wrap" id="md-standard-main"><section id="md-standard-goal"><span class="md-goal-tag">授業のねらい</span><h2 class="md-goal-title">仮説検定の考え方を理解する</h2><p>帰無仮説・有意水準・確率の意味を理解し、データに基づく判断の考え方を学びましょう。</p></section><article class="paper">
+
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学Ⅰ</div><h1>仮説検定の考え方</h1><p class="lesson-standard-bottom">数学Ⅰ ／ 数学Ⅰ</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>仮説検定の考え方を理解する</h2><p>帰無仮説・有意水準・確率の意味を理解し、データに基づく判断の考え方を学びましょう。</p></section><article class="paper">
 <h2>1　仮説検定とは</h2>
 <p>ある主張がデータと矛盾していないかを調べる方法の一つが<strong>仮説検定</strong>です。まず「差がない」「偶然の結果である」などの<strong>帰無仮説</strong>を置き、その仮説のもとで観測結果がどのくらい珍しいかを考えます。</p>
 <p>帰無仮説と対立する主張を<strong>対立仮説</strong>といいます。あらかじめ判断の基準となる<strong>有意水準</strong>を決めます（例：5％）。</p>
@@ -122,8 +142,8 @@ P(X\geqq21)=\sum_{k=21}^{30}{}_ {30}C_k
 <div class="example"><p><strong>問題3</strong>　p値が2％だったとき、「帰無仮説が正しい確率は2％」と言えますか。</p><details><summary>解答・解説</summary><p>言えません。p値は、帰無仮説が正しいと仮定したときに、観測結果と同程度以上に極端な結果が起こる確率です。</p></details></div>
 <div class="example"><p><strong>問題4</strong>　有意水準1％でp値が2％なら、帰無仮説を棄却できますか。</p><details><summary>解答・解説</summary><p>棄却できません。2％は1％より大きいためです。有意水準5％なら結論が異なることにも注意しましょう。</p></details></div>
 <p class="note">数式はインターネット接続時にMathJaxで教科書形式になります。動く確率分布はインターネット接続がなくても動作します。</p>
-</article><nav id="md-standard-footer-nav"><a href="math1_data_relationship.html">← 前の授業</a><a href="math_subject_1.html">↑ 数学Ⅰの授業一覧に戻る</a><a href="math1_data_comprehensive.html">次の授業 →</a></nav></main>
-<div class="math1-bottom-nav"><a href="math_subject_1.html">← 数学Ⅰの目次に戻る</a></div><footer id="md-standard-footer"><div class="md-inner">みんなの数学データベース｜高校生のための授業</div></footer><script>
+</article><nav aria-label="授業一覧に戻る" class="lesson-standard-return"><a href="math_subject_1.html">← 数学Ⅰに戻る</a></nav></main>
+<script>
 (function(){
 const svg=document.getElementById('bars'),slider=document.getElementById('observed'),count=document.getElementById('count'),tail=document.getElementById('tailFormula'),decision=document.getElementById('decision');
 const coeff=[1,10,45,120,210,252,210,120,45,10,1],ns='http://www.w3.org/2000/svg';
@@ -138,4 +158,4 @@ decision.textContent='片側検定・有意水準5％：'+(pct<=5?'帰無仮説�
 }
 slider.addEventListener('input',draw);draw();
 })();
-</script></body></html>
+</script><footer class="lesson-standard-footer"><div>みんなの数学データベース｜高校生のための授業</div></footer></body></html>
