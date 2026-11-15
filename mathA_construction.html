@@ -9,6 +9,26 @@
 .matha-unified-bottom a{display:inline-block;background:#e5f2ff;color:#175b91!important;text-decoration:none;border-radius:10px;padding:12px 18px;font-weight:700}
 .matha-unified-footer{background:#17365d!important;color:#fff!important;padding:18px 12px!important;text-align:center!important;font-size:13px!important;margin-top:24px!important;line-height:1.7}
 .matha-unified-footer *{color:#fff!important}
+</style><style id="six-subjects-unified">
+/* 共通デザイン（数学 I/A/II/B/III/C）: 教材のプログラムや数式には非干渉 */
+:root{--course-navy:#17365d;--course-blue:#24689c;--course-paper:#ffffff;--course-muted:#526a80}
+body{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.75}
+body>header{background:linear-gradient(110deg,var(--course-navy),var(--course-blue))!important;color:#fff!important;padding:24px 0 28px!important}
+body>header a{color:#fff!important}
+body>header h1{font-size:clamp(26px,4.2vw,36px)!important;line-height:1.35!important;margin:10px 0 5px!important;font-weight:750!important}
+body>header p,body>header span{font-size:14px!important;line-height:1.6!important;color:#e3effc!important}
+body>footer{background:#142f4d!important;color:#e9f2fc!important;padding:20px 0!important;font-size:13px!important;text-align:center!important}
+body>footer a{color:#e9f2fc!important}
+.course-unified-goal{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px;color:#18314c}
+.course-unified-goal .course-goal-label{display:block;font-size:13px;font-weight:700;color:#215f91;margin:0 0 5px}
+.course-unified-goal .course-goal-title{font-size:clamp(21px,3.2vw,27px);font-weight:750;line-height:1.4;margin:0 0 5px;color:#17365d}
+.course-unified-goal .course-goal-subtitle{font-size:14px!important;color:#526a80!important;margin:0;line-height:1.65}
+/* 既存の「授業のねらい」も見出しとサブタイトルの強弱を統一 */
+.matha-unified-goal,.lesson-goal,section.goal,section.aim,section.objective{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px}
+.matha-unified-goal .goal-title,.lesson-goal .goal-title,section.goal h2,section.aim h2,section.objective h2{font-size:clamp(21px,3.2vw,27px)!important;line-height:1.4!important;margin:5px 0!important;color:#17365d!important}
+.matha-unified-goal p,.lesson-goal p,section.goal p,section.aim p,section.objective p{font-size:14px!important;color:#526a80!important}
+.goal-pill,section.goal .pill,section.aim small{font-size:13px!important}
+@media(max-width:550px){.course-unified-goal{padding:12px 14px}body>header{padding:18px 0 22px!important}}
 </style></head><body><header><small>数学A｜図形の性質</small><h1>作図</h1><p>1工程ずつ進む、定規とコンパスの作図</p></header><main><section class="matha-unified-goal"><span class="goal-pill">授業のねらい</span><h2 class="goal-title">作図を理解する</h2><p>作図を選び、「次の工程」を押してください。オレンジ色の破線はコンパスの円弧、緑色の線は完成した線です。</p></section><p></p><section class="panel"><h2>ボタンを押して1工程ずつ作図</h2><p>作図を選び、「次の工程」を押してください。オレンジ色の破線はコンパスの円弧、緑色の線は完成した線です。</p><div class="controls"><label for="kind">作図の種類：</label><select id="kind"></select><button id="prev">前の工程</button><button class="primary" id="next">次の工程</button><button id="reset">最初から</button></div><p aria-live="polite" class="note" id="progress"></p><svg aria-label="作図の途中経過" id="diagram" role="img" viewbox="0 0 640 600"></svg><p id="desc"></p></section><section class="panel"><h2>作図の考え方</h2><p>定規は直線を引くため、コンパスは同じ長さを移すために使います。円弧の交点は、2つの中心から等距離にある点です。</p><details><summary>垂直二等分線の証明</summary><p>2つの円弧の交点をP、Qとすると、PA＝PB、QA＝QBです。したがってP、Qは線分ABの垂直二等分線上にあり、直線PQが求める線です。</p></details><details><summary>角の二等分線の証明</summary><p>2辺上の点A、BをOA＝OBとなるように選び、A、Bから同じ半径で円弧を描いて交点をCとします。OA＝OB、AC＝BC、OCは共通なので、三角形OACとOBCは合同です。よって∠AOC＝∠COBです。</p></details><details><summary>練習問題</summary><p>線分ABの中点を定規とコンパスだけで作図してみましょう。ヒント：垂直二等分線とABの交点です。</p></details></section><script>
 const svg=(tag,attrs)=>`<${tag} ${Object.entries(attrs).map(([k,v])=>`${k}="${v}"`).join(' ')}/>`;
 const line=(x1,y1,x2,y2,color='#174c76',w=3,dash='')=>svg('line',{x1,y1,x2,y2,stroke:color,'stroke-width':w,...(dash?{'stroke-dasharray':dash}:{})});

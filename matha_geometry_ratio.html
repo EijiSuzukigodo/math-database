@@ -10,6 +10,26 @@
 .matha-unified-bottom a{display:inline-block;background:#e5f2ff;color:#175b91!important;text-decoration:none;border-radius:10px;padding:12px 18px;font-weight:700}
 .matha-unified-footer{background:#17365d!important;color:#fff!important;padding:18px 12px!important;text-align:center!important;font-size:13px!important;margin-top:24px!important;line-height:1.7}
 .matha-unified-footer *{color:#fff!important}
+</style><style id="six-subjects-unified">
+/* 共通デザイン（数学 I/A/II/B/III/C）: 教材のプログラムや数式には非干渉 */
+:root{--course-navy:#17365d;--course-blue:#24689c;--course-paper:#ffffff;--course-muted:#526a80}
+body{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.75}
+body>header{background:linear-gradient(110deg,var(--course-navy),var(--course-blue))!important;color:#fff!important;padding:24px 0 28px!important}
+body>header a{color:#fff!important}
+body>header h1{font-size:clamp(26px,4.2vw,36px)!important;line-height:1.35!important;margin:10px 0 5px!important;font-weight:750!important}
+body>header p,body>header span{font-size:14px!important;line-height:1.6!important;color:#e3effc!important}
+body>footer{background:#142f4d!important;color:#e9f2fc!important;padding:20px 0!important;font-size:13px!important;text-align:center!important}
+body>footer a{color:#e9f2fc!important}
+.course-unified-goal{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px;color:#18314c}
+.course-unified-goal .course-goal-label{display:block;font-size:13px;font-weight:700;color:#215f91;margin:0 0 5px}
+.course-unified-goal .course-goal-title{font-size:clamp(21px,3.2vw,27px);font-weight:750;line-height:1.4;margin:0 0 5px;color:#17365d}
+.course-unified-goal .course-goal-subtitle{font-size:14px!important;color:#526a80!important;margin:0;line-height:1.65}
+/* 既存の「授業のねらい」も見出しとサブタイトルの強弱を統一 */
+.matha-unified-goal,.lesson-goal,section.goal,section.aim,section.objective{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px}
+.matha-unified-goal .goal-title,.lesson-goal .goal-title,section.goal h2,section.aim h2,section.objective h2{font-size:clamp(21px,3.2vw,27px)!important;line-height:1.4!important;margin:5px 0!important;color:#17365d!important}
+.matha-unified-goal p,.lesson-goal p,section.goal p,section.aim p,section.objective p{font-size:14px!important;color:#526a80!important}
+.goal-pill,section.goal .pill,section.aim small{font-size:13px!important}
+@media(max-width:550px){.course-unified-goal{padding:12px 14px}body>header{padding:18px 0 22px!important}}
 </style></head><body><header><h1>三角形の辺の比</h1><div>みんなの数学データベース｜図形の性質</div></header><main><section class="matha-unified-goal"><span class="goal-pill">授業のねらい</span><h2 class="goal-title">三角形の辺の比を理解する</h2><p>内分・外分と角の二等分線を図で学びます。</p></section><section><h2>動く図形で確認</h2><p>頂点Aと点Dを動かして、三角形の形や辺の比を観察しましょう。</p><svg aria-label="三角形ABCの図。スライダーで頂点Aと辺BC上の点Dを動かせます" class="diagram" id="tri" role="img" viewbox="0 0 560 330">
 <polygon fill="#e9f4ff" id="polygon" points="275,38 75,280 485,280" stroke="#23618b" stroke-width="3"></polygon>
 <line id="median" stroke="#d65b39" stroke-dasharray="8 5" stroke-width="3" x1="275" x2="280" y1="38" y2="280"></line>
