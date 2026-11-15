@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>双曲線｜数学C</title>
 <style>*{box-sizing:border-box}body{margin:0;color:#19334d;background:#f2f7fc;font:16px/1.8 -apple-system,BlinkMacSystemFont,'Hiragino Kaku Gothic ProN',Meiryo,sans-serif}header{background:linear-gradient(115deg,#163759,#24689c);color:white;padding:16px max(16px,calc((100vw - 1000px)/2))}header a{color:white}header h1{font-size:1.5rem;margin:4px 0}.wrap{max-width:1000px;margin:auto;padding:14px}iframe{display:block;width:100%;height:900px;border:0;background:white;border-radius:12px}p{margin:5px 0}</style><style id="six-subjects-unified">
 /* 共通デザイン（数学 I/A/II/B/III/C）: 教材のプログラムや数式には非干渉 */
@@ -42,7 +43,27 @@ body{margin:0!important;background:#f2f7fc!important;color:#19334e!important;fon
 mjx-container svg{max-width:none!important;width:auto!important;height:auto!important}
 mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden}
 @media(max-width:640px){#md-standard-goal{padding:17px 15px!important}#md-standard-goal .md-goal-title{font-size:20px!important}}
-</style></head><body><header id="md-standard-header"><div class="md-inner"><div class="md-kicker">みんなの数学データベース ／ 高校数学 ／ 数学C</div><h1>双曲線</h1><p class="md-subtitle">数学C ／ 教科書表示・例題・練習問題</p></div></header><script>
+</style><style>
+/* 2026年11月 共通ページ構造：数学I/II/A/B/C */
+html{scroll-padding-top:10px}
+body .lesson-standard-header{background:linear-gradient(110deg,#17365d,#215f99)!important;color:#fff!important;padding:24px 0 29px!important;margin:0!important;border:0!important;border-radius:0!important;text-align:left!important}
+body .lesson-standard-header .lesson-standard-width{max-width:970px!important;margin:0 auto!important;padding:0 17px!important}
+body .lesson-standard-header .lesson-standard-top,body .lesson-standard-header .lesson-standard-bottom{font-family:inherit!important;font-size:14px!important;line-height:1.65!important;color:#e4effc!important;font-weight:400!important;margin:0!important;padding:0!important;letter-spacing:normal!important}
+body .lesson-standard-header h1{font-family:inherit!important;color:#fff!important;font-size:clamp(25px,4.5vw,35px)!important;line-height:1.4!important;margin:8px 0 5px!important;padding:0!important;max-width:none!important;font-weight:700!important;border:0!important;text-align:left!important}
+/* Main and goal gap: exactly 22px measured from the header's lower edge */
+body>main.lesson-standard-main{display:block!important;box-sizing:border-box!important;max-width:970px!important;width:100%!important;margin:0 auto!important;padding:22px 17px 40px!important;position:relative!important;top:auto!important;transform:none!important}
+body>main.lesson-standard-main>.lesson-standard-goal{display:block!important;background:#fff!important;border:1px solid #dbe6f1!important;border-radius:14px!important;padding:22px 25px!important;margin:0 0 22px!important;box-shadow:0 3px 13px #193a5b0a!important;position:static!important;transform:none!important}
+body>main.lesson-standard-main>.lesson-standard-goal>.lesson-standard-goal-label{display:inline-block!important;font-size:13px!important;color:#145888!important;background:#e6f3ff!important;border-radius:20px!important;font-weight:700!important;padding:2px 12px!important;margin:0!important;line-height:1.6!important}
+body>main.lesson-standard-main>.lesson-standard-goal>h2{color:#174b78!important;font-size:23px!important;line-height:1.5!important;margin:10px 0 7px!important;padding:0!important;border:0!important;text-align:left!important}
+body>main.lesson-standard-main>.lesson-standard-goal>p{margin:0!important;color:#445d72!important;font-size:16px!important;line-height:1.8!important}
+body>main.lesson-standard-main>.lesson-standard-return{display:block!important;clear:both!important;margin:28px 0 0!important;padding:0!important;text-align:left!important;background:transparent!important;border:0!important;position:static!important;transform:none!important}
+body>main.lesson-standard-main>.lesson-standard-return a{display:inline-block!important;background:#e5f1fd!important;color:#175988!important;text-decoration:none!important;border:0!important;border-radius:9px!important;padding:10px 15px!important;font-weight:700!important;font-size:15px!important;line-height:1.5!important}
+body>footer.lesson-standard-footer{display:block!important;background:#112e4c!important;color:#ecf5fc!important;padding:20px 0!important;font-size:13px!important;line-height:1.7!important;text-align:left!important;margin:0!important;border:0!important;border-radius:0!important;clear:both!important}
+body>footer.lesson-standard-footer>div{max-width:970px!important;margin:auto!important;padding:0 17px!important}
+/* MathJax SVG may not inherit broad responsive SVG sizing */
+mjx-container svg{width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;display:inline-block!important}
+@media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
+</style></head><body><script>
 const frame=document.getElementById('content');
 function clean(){try{const d=frame.contentDocument;if(!d)return; const hide=()=>{
  d.querySelectorAll('button[data-speak],button.stop,#speakState,button[onclick*="speak"],button[onclick*="Speak"],audio,video').forEach(e=>e.remove());
@@ -58,5 +79,5 @@ function clean(){try{const d=frame.contentDocument;if(!d)return; const hide=()=>
  resize();new ResizeObserver(resize).observe(d.body);setTimeout(resize,500);setTimeout(resize,1800);
  }catch(e){console.warn('教材の表示を確認してください',e)}}
 frame.addEventListener('load',clean);
-</script><main id="md-standard-main"><section id="md-standard-goal"><span class="md-goal-tag">授業のねらい</span><h2 class="md-goal-title">双曲線の基本を理解し、問題に活用できるようになる</h2><p>2焦点からの距離の差、標準形と漸近線を学びます。</p></section><div class="wrap"><p>2焦点からの距離の差、標準形と漸近線を学びます。</p><iframe id="content" loading="eager" src="math_c_curves_lesson3_hyperbola.html" title="双曲線 の授業教材"></iframe></div>
-<nav id="md-standard-footer-nav"><a href="math_c_curves_clean_02.html">← 前の授業</a><a href="math_subject_c.html">↑ 数学Cの授業一覧に戻る</a><a href="math_c_curves_clean_04.html">次の授業 →</a></nav></main><footer id="md-standard-footer"><div class="md-inner">みんなの数学データベース｜高校生のための授業</div></footer></body></html>
+</script><header class="lesson-standard-header"><div class="lesson-standard-width"><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学C</div><h1>双曲線</h1><p class="lesson-standard-bottom">数学C ／ 式と曲線</p></div></header><main class="lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>双曲線の基本を理解し、問題に活用できるようになる</h2><p>2焦点からの距離の差、標準形と漸近線を学びます。</p></section>
+<nav aria-label="授業一覧に戻る" class="lesson-standard-return"><a href="math_subject_c.html">← 数学Cに戻る</a></nav></main><footer class="lesson-standard-footer"><div>みんなの数学データベース｜高校生のための授業</div></footer></body></html>

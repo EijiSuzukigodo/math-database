@@ -48,9 +48,29 @@ body{margin:0!important;background:#f2f7fc!important;color:#19334e!important;fon
 mjx-container svg{max-width:none!important;width:auto!important;height:auto!important}
 mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden}
 @media(max-width:640px){#md-standard-goal{padding:17px 15px!important}#md-standard-goal .md-goal-title{font-size:20px!important}}
+</style><style>
+/* 2026年11月 共通ページ構造：数学I/II/A/B/C */
+html{scroll-padding-top:10px}
+body .lesson-standard-header{background:linear-gradient(110deg,#17365d,#215f99)!important;color:#fff!important;padding:24px 0 29px!important;margin:0!important;border:0!important;border-radius:0!important;text-align:left!important}
+body .lesson-standard-header .lesson-standard-width{max-width:970px!important;margin:0 auto!important;padding:0 17px!important}
+body .lesson-standard-header .lesson-standard-top,body .lesson-standard-header .lesson-standard-bottom{font-family:inherit!important;font-size:14px!important;line-height:1.65!important;color:#e4effc!important;font-weight:400!important;margin:0!important;padding:0!important;letter-spacing:normal!important}
+body .lesson-standard-header h1{font-family:inherit!important;color:#fff!important;font-size:clamp(25px,4.5vw,35px)!important;line-height:1.4!important;margin:8px 0 5px!important;padding:0!important;max-width:none!important;font-weight:700!important;border:0!important;text-align:left!important}
+/* Main and goal gap: exactly 22px measured from the header's lower edge */
+body>main.lesson-standard-main{display:block!important;box-sizing:border-box!important;max-width:970px!important;width:100%!important;margin:0 auto!important;padding:22px 17px 40px!important;position:relative!important;top:auto!important;transform:none!important}
+body>main.lesson-standard-main>.lesson-standard-goal{display:block!important;background:#fff!important;border:1px solid #dbe6f1!important;border-radius:14px!important;padding:22px 25px!important;margin:0 0 22px!important;box-shadow:0 3px 13px #193a5b0a!important;position:static!important;transform:none!important}
+body>main.lesson-standard-main>.lesson-standard-goal>.lesson-standard-goal-label{display:inline-block!important;font-size:13px!important;color:#145888!important;background:#e6f3ff!important;border-radius:20px!important;font-weight:700!important;padding:2px 12px!important;margin:0!important;line-height:1.6!important}
+body>main.lesson-standard-main>.lesson-standard-goal>h2{color:#174b78!important;font-size:23px!important;line-height:1.5!important;margin:10px 0 7px!important;padding:0!important;border:0!important;text-align:left!important}
+body>main.lesson-standard-main>.lesson-standard-goal>p{margin:0!important;color:#445d72!important;font-size:16px!important;line-height:1.8!important}
+body>main.lesson-standard-main>.lesson-standard-return{display:block!important;clear:both!important;margin:28px 0 0!important;padding:0!important;text-align:left!important;background:transparent!important;border:0!important;position:static!important;transform:none!important}
+body>main.lesson-standard-main>.lesson-standard-return a{display:inline-block!important;background:#e5f1fd!important;color:#175988!important;text-decoration:none!important;border:0!important;border-radius:9px!important;padding:10px 15px!important;font-weight:700!important;font-size:15px!important;line-height:1.5!important}
+body>footer.lesson-standard-footer{display:block!important;background:#112e4c!important;color:#ecf5fc!important;padding:20px 0!important;font-size:13px!important;line-height:1.7!important;text-align:left!important;margin:0!important;border:0!important;border-radius:0!important;clear:both!important}
+body>footer.lesson-standard-footer>div{max-width:970px!important;margin:auto!important;padding:0 17px!important}
+/* MathJax SVG may not inherit broad responsive SVG sizing */
+mjx-container svg{width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;display:inline-block!important}
+@media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
 </style></head><body>
-<header id="md-standard-header"><div class="md-inner"><div class="md-kicker">みんなの数学データベース ／ 高校数学 ／ 数学C</div><h1>コンピュータといろいろな曲線</h1><p class="md-subtitle">動く図で学ぶ数学C・媒介変数と曲線の世界</p></div></header>
-<main class="wrap" id="md-standard-main"><section id="md-standard-goal"><span class="md-goal-tag">授業のねらい</span><h2 class="md-goal-title">コンピュータといろいろな曲線</h2><p>サイクロイド、アステロイド、リサージュ曲線、カージオイドを動くグラフと媒介変数表示で学びます。</p></section>
+
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学C</div><h1>コンピュータといろいろな曲線</h1><p class="lesson-standard-bottom">数学C ／ 式と曲線</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>コンピュータといろいろな曲線</h2><p>サイクロイド、アステロイド、リサージュ曲線、カージオイドを動くグラフと媒介変数表示で学びます。</p></section>
 <p class="lead">点の位置を媒介変数 \(t\) で表すと、複雑な曲線も描けます。曲線を選び、スライダーを動かして、点の軌跡と式の対応を確かめましょう。</p>
 <section><h2>1．曲線を動かして確かめよう</h2>
 <div aria-label="曲線を選択" class="tabs" role="group">
@@ -80,7 +100,7 @@ mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden}
 <li>カージオイド \(r=a(1+\cos\theta)\) で、曲線が原点を通る \(\theta\) を \(0\leq\theta&lt;2\pi\) の範囲で求めなさい。</li></ol>
 <details><summary>練習問題の答えと解説</summary><ol><li>\(t=0\) では \((0,0)\)、\(t=2\pi\) では \((2\pi a,0)\)。\(\sin 0=\sin2\pi=0\)、\(\cos0=\cos2\pi=1\) を代入します。</li><li>\((0,a)\)。\(\cos\frac\pi2=0\)、\(\sin\frac\pi2=1\) です。</li><li>\((a,0)\)。\(\sin\frac\pi2=1\)、\(\sin0=0\) です。</li><li>\(\theta=\pi\)。\(r=0\) となるのは \(1+\cos\theta=0\) のときです。</li></ol></details>
 </section>
-<nav id="md-standard-footer-nav"><a href="math_c_curves_clean_08.html">← 前の授業</a><a href="math_subject_c.html">↑ 数学Cの授業一覧に戻る</a></nav></main><script>
+<nav aria-label="授業一覧に戻る" class="lesson-standard-return"><a href="math_subject_c.html">← 数学Cに戻る</a></nav></main><script>
 (function(){'use strict';
 const cv=document.getElementById('plot'),ctx=cv.getContext('2d');
 const time=document.getElementById('time'),scale=document.getElementById('size'),play=document.getElementById('play');
@@ -116,4 +136,4 @@ document.getElementById('reset').addEventListener('click',()=>{stop();time.value
 for(const b of document.querySelectorAll('[data-curve]'))b.addEventListener('click',()=>{stop();time.value=280;select(b.dataset.curve)});
 time.addEventListener('input',()=>{stop();paint()});scale.addEventListener('input',paint);document.addEventListener('visibilitychange',()=>{if(document.hidden)stop()});paint();
 })();
-</script><footer id="md-standard-footer"><div class="md-inner">みんなの数学データベース｜高校生のための授業</div></footer></body></html>
+</script><footer class="lesson-standard-footer"><div>みんなの数学データベース｜高校生のための授業</div></footer></body></html>

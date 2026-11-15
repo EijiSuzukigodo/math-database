@@ -59,8 +59,28 @@ body{margin:0!important;background:#f2f7fc!important;color:#19334e!important;fon
 mjx-container svg{max-width:none!important;width:auto!important;height:auto!important}
 mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden}
 @media(max-width:640px){#md-standard-goal{padding:17px 15px!important}#md-standard-goal .md-goal-title{font-size:20px!important}}
-</style></head><body><header id="md-standard-header"><div class="md-inner"><div class="md-kicker">みんなの数学データベース ／ 高校数学 ／ 数学C</div><h1>ベクトルと図形</h1><p class="md-subtitle">空間のベクトル｜みんなの数学データベース</p></div></header>
-<main class="wrap" id="md-standard-main"><section id="md-standard-goal"><span class="md-goal-tag">授業のねらい</span><h2 class="md-goal-title">ベクトルと図形</h2><p>同一直線上・同一平面上の証明、直線と平面の交点、内積による証明、点と直線の距離を学びます。</p></section><div class="lead"><strong>この授業で学ぶこと</strong>：ベクトルを使って、同一直線上・同一平面上にあることを証明し、直線と平面の交点、垂直条件、点と直線の距離を求めます。図を動かして確かめましょう。</div>
+</style><style>
+/* 2026年11月 共通ページ構造：数学I/II/A/B/C */
+html{scroll-padding-top:10px}
+body .lesson-standard-header{background:linear-gradient(110deg,#17365d,#215f99)!important;color:#fff!important;padding:24px 0 29px!important;margin:0!important;border:0!important;border-radius:0!important;text-align:left!important}
+body .lesson-standard-header .lesson-standard-width{max-width:970px!important;margin:0 auto!important;padding:0 17px!important}
+body .lesson-standard-header .lesson-standard-top,body .lesson-standard-header .lesson-standard-bottom{font-family:inherit!important;font-size:14px!important;line-height:1.65!important;color:#e4effc!important;font-weight:400!important;margin:0!important;padding:0!important;letter-spacing:normal!important}
+body .lesson-standard-header h1{font-family:inherit!important;color:#fff!important;font-size:clamp(25px,4.5vw,35px)!important;line-height:1.4!important;margin:8px 0 5px!important;padding:0!important;max-width:none!important;font-weight:700!important;border:0!important;text-align:left!important}
+/* Main and goal gap: exactly 22px measured from the header's lower edge */
+body>main.lesson-standard-main{display:block!important;box-sizing:border-box!important;max-width:970px!important;width:100%!important;margin:0 auto!important;padding:22px 17px 40px!important;position:relative!important;top:auto!important;transform:none!important}
+body>main.lesson-standard-main>.lesson-standard-goal{display:block!important;background:#fff!important;border:1px solid #dbe6f1!important;border-radius:14px!important;padding:22px 25px!important;margin:0 0 22px!important;box-shadow:0 3px 13px #193a5b0a!important;position:static!important;transform:none!important}
+body>main.lesson-standard-main>.lesson-standard-goal>.lesson-standard-goal-label{display:inline-block!important;font-size:13px!important;color:#145888!important;background:#e6f3ff!important;border-radius:20px!important;font-weight:700!important;padding:2px 12px!important;margin:0!important;line-height:1.6!important}
+body>main.lesson-standard-main>.lesson-standard-goal>h2{color:#174b78!important;font-size:23px!important;line-height:1.5!important;margin:10px 0 7px!important;padding:0!important;border:0!important;text-align:left!important}
+body>main.lesson-standard-main>.lesson-standard-goal>p{margin:0!important;color:#445d72!important;font-size:16px!important;line-height:1.8!important}
+body>main.lesson-standard-main>.lesson-standard-return{display:block!important;clear:both!important;margin:28px 0 0!important;padding:0!important;text-align:left!important;background:transparent!important;border:0!important;position:static!important;transform:none!important}
+body>main.lesson-standard-main>.lesson-standard-return a{display:inline-block!important;background:#e5f1fd!important;color:#175988!important;text-decoration:none!important;border:0!important;border-radius:9px!important;padding:10px 15px!important;font-weight:700!important;font-size:15px!important;line-height:1.5!important}
+body>footer.lesson-standard-footer{display:block!important;background:#112e4c!important;color:#ecf5fc!important;padding:20px 0!important;font-size:13px!important;line-height:1.7!important;text-align:left!important;margin:0!important;border:0!important;border-radius:0!important;clear:both!important}
+body>footer.lesson-standard-footer>div{max-width:970px!important;margin:auto!important;padding:0 17px!important}
+/* MathJax SVG may not inherit broad responsive SVG sizing */
+mjx-container svg{width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;display:inline-block!important}
+@media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
+</style></head><body>
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学C</div><h1>ベクトルと図形</h1><p class="lesson-standard-bottom">数学C ／ 空間のベクトル</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>ベクトルと図形</h2><p>同一直線上・同一平面上の証明、直線と平面の交点、内積による証明、点と直線の距離を学びます。</p></section><div class="lead"><strong>この授業で学ぶこと</strong>：ベクトルを使って、同一直線上・同一平面上にあることを証明し、直線と平面の交点、垂直条件、点と直線の距離を求めます。図を動かして確かめましょう。</div>
 <section class="chapter"><h2>1．3点が同一直線上にあることの証明</h2>
 <p>異なる2点 \(A,B\) と点 \(C\) が同一直線上にあることは、\(\overrightarrow{AC}\) が \(\overrightarrow{AB}\) の実数倍になることと同値です。</p>
 <div class="formula">\[\boxed{\overrightarrow{AC}=t\overrightarrow{AB}\quad(t\in\mathbb R)}\]</div>
@@ -104,8 +124,8 @@ mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden}
 <div class="question"><strong>問題4：</strong> \(\vec a=(1,2,0)\)、\(\vec b=(2,-1,4)\) の内積を求めなさい。<div><label for="q4">内積 = </label><input id="q4" inputmode="decimal"/></div><div class="buttons"><button onclick="check(4,0)" type="button">答え合わせ</button></div><p aria-live="polite" class="result" id="r4"></p><details><summary>解説を見る</summary>\(1\times2+2\times(-1)+0\times4=0\)。2つのベクトルは垂直です。</details></div>
 <div class="question"><strong>問題5：</strong> 例題5の点と直線の距離を求めなさい。<div><label for="q5">距離 = </label><input id="q5" inputmode="decimal"/></div><div class="buttons"><button onclick="check(5,3)" type="button">答え合わせ</button></div><p aria-live="polite" class="result" id="r5"></p><details><summary>解説を見る</summary>\(PH=\sqrt{14-25/5}=3\) です。</details></div>
 </section>
-<section class="chapter"><h2>まとめ</h2><p><strong>一直線：</strong>ベクトルの実数倍。<strong>同一平面：</strong>独立な2ベクトルの一次結合。<strong>交点：</strong>直線のパラメータを平面の式へ代入。<strong>垂直・距離：</strong>内積を利用。</p><p><a href="math_subject_c.html">← 数学Cの授業一覧へ戻る</a></p></section><nav id="md-standard-footer-nav"><a href="vector_space_lesson05.html">← 前の授業</a><a href="math_subject_c.html">↑ 数学Cの授業一覧に戻る</a><a href="vector_space_lesson07.html">次の授業 →</a></nav></main>
-<footer id="md-standard-footer"><div class="md-inner">みんなの数学データベース｜高校生のための授業</div></footer>
+<section class="chapter"><h2>まとめ</h2><p><strong>一直線：</strong>ベクトルの実数倍。<strong>同一平面：</strong>独立な2ベクトルの一次結合。<strong>交点：</strong>直線のパラメータを平面の式へ代入。<strong>垂直・距離：</strong>内積を利用。</p></section><nav aria-label="授業一覧に戻る" class="lesson-standard-return"><a href="math_subject_c.html">← 数学Cに戻る</a></nav></main>
+
 <script>
 'use strict';const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
 function E(tag,attrs={},str){const n=document.createElementNS(NS,tag);Object.entries(attrs).forEach(([k,v])=>n.setAttribute(k,String(v)));if(str!==undefined)n.textContent=str;return n}
@@ -123,4 +143,4 @@ function renderInter(){const t=+$('interT').value,A=[1,0,2],B=[3,2,0],Q=[2,1,1],
 function renderDist(){const t=+$('distT').value,A=[1,1,1],v=[2,0,1],P=[2,3,4],H=[3,1,2],X=add(A,scale(v,t));$('distTv').textContent=fmt(t);$('distText').textContent='X = '+tup(X)+'\nPX = '+fmt(Math.hypot(...sub(P,X)))+'　（最小値 3）';let g=scene('distLayer');const pr=v=>pro(v,150,267,39);line(g,pr(add(A,scale(v,-1.1))),pr(add(A,scale(v,3.4))),'#285e95',3.5);line(g,pr(P),pr(H),'#178258',3.3,'7 4');line(g,pr(P),pr(X),'#c89036',2,'4 5');point(g,pr(A),'A','#285e95');point(g,pr(H),'H','#178258');point(g,pr(P),'P','#b94e42');point(g,pr(X),'X','#d18a20')}
 function check(n,correct){const val=$('q'+n).value.trim(),out=$('r'+n);if(!val){out.className='result bad';out.textContent='答えを入力してください。';return}const num=val.includes('/')&&val.split('/').length===2?(Number(val.split('/')[0])/Number(val.split('/')[1])):Number(val);const good=Number.isFinite(num)&&Math.abs(num-correct)<1e-8;out.className='result '+(good?'ok':'bad');out.textContent=good?'正解です！':'もう一度考えてみましょう。'}
 for(const [id,fn] of [['lineT',renderLine],['planeS',renderPlane],['planeT',renderPlane],['interT',renderInter],['distT',renderDist]])$(id).addEventListener('input',fn);renderLine();renderPlane();renderInter();renderDist();
-</script></body></html>
+</script><footer class="lesson-standard-footer"><div>みんなの数学データベース｜高校生のための授業</div></footer></body></html>
