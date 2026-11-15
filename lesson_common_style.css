@@ -1,0 +1,16 @@
+
+/* 2026-11-15 共通授業ページ書式（教材の内容と動く図には影響しない） */
+html body{margin:0}
+body > header.standard-lesson-header{background:linear-gradient(125deg,#17375f,#276b9e)!important;color:#fff!important;padding:22px max(16px,calc((100vw - 980px)/2))!important;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif!important;line-height:1.6!important}
+.standard-lesson-header .lesson-head-back{display:inline-block;color:#eaf4ff!important;font-size:15px!important;text-decoration:underline;margin:0 0 6px}
+.standard-lesson-header .lesson-head-title{font-size:clamp(24px,4vw,34px)!important;font-weight:750!important;margin:8px 0 8px!important;color:white!important;border:0!important;line-height:1.35!important;padding:0!important}
+.standard-lesson-header .lesson-head-meta{font-size:14px!important;color:#e4eef8!important;margin:0!important;font-weight:400!important}
+.standard-lesson-goal{display:block!important;background:#fff!important;border:1px solid #d9e6f2!important;border-radius:16px!important;padding:clamp(16px,3vw,28px)!important;margin:18px 0!important;box-shadow:0 6px 20px rgba(20,50,80,.08)!important;border-left:0!important;color:#1f3348!important;line-height:1.85!important}
+.standard-lesson-goal .standard-goal-label{display:inline-block!important;background:#e4f1fc!important;color:#1d5d8a!important;border-radius:999px!important;padding:4px 12px!important;font-weight:700!important;font-size:13px!important;margin-bottom:10px!important}
+.standard-lesson-goal .standard-goal-title{font-size:clamp(22px,3.2vw,28px)!important;font-weight:750!important;margin:0 0 10px!important;color:#174a77!important;line-height:1.45!important;border:0!important;padding:0!important}
+.standard-lesson-goal .standard-goal-subtitle{font-size:16px!important;line-height:1.9!important;margin:4px 0!important;color:#283f52!important;font-weight:400!important}
+.standard-lesson-bottom{max-width:980px;margin:24px auto 0;padding:0 16px 24px;display:flex;justify-content:flex-start}
+.standard-lesson-bottom a{display:inline-block;background:#e3f0fb;color:#174a77!important;padding:11px 16px;border-radius:10px;text-decoration:none;font-size:15px;font-weight:700}
+body > footer.standard-lesson-footer{background:#12304f!important;color:#e6eef7!important;text-align:center!important;padding:18px 16px!important;font-size:14px!important;font-weight:400!important;line-height:1.7!important;margin:0!important}
+body > footer.standard-lesson-footer *{color:#e6eef7!important}
+@media(max-width:600px){body > header.standard-lesson-header{padding:20px 16px!important}.standard-lesson-goal .standard-goal-subtitle{font-size:15px!important}}
