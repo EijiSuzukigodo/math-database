@@ -1,22 +1,98 @@
-<!DOCTYPE html>
-<html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>部分積分法｜みんなの数学データベース</title><style>*{box-sizing:border-box}body{margin:0;background:#f2f6fc;color:#1c3148;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.85}a{color:#186da8}.wrap{max-width:1040px;margin:auto;padding:0 17px}header{background:linear-gradient(110deg,#17365d,#246ca3);color:#fff;padding:25px 0}header a{color:#fff}header h1{font-size:clamp(25px,4vw,36px);margin:10px 0 4px}header p{margin:0;color:#e4f0fa}main{padding:24px 0 60px}h2{color:#174c7b;border-bottom:2px solid #bcd3e8;padding-bottom:7px;margin:30px 0 16px}h3{color:#123e65}p{overflow-wrap:anywhere}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.card{border:1px solid #d7e3f0;background:#fff;border-radius:14px;padding:17px;min-width:0}.card h3{margin:0 0 8px}.card p{margin:6px 0;color:#586d82;font-size:14px}.card a{font-weight:700}.nav{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:17px}.nav a{padding:7px 12px;background:#e2effb;border-radius:8px;text-decoration:none;font-weight:700}.intro{background:#e4f1ff;border-left:5px solid #2585bd;padding:16px;border-radius:9px;margin:0 0 20px}.paper{background:#fff;border:1px solid #d6e3f0;border-radius:14px;padding:clamp(17px,3vw,34px);margin:18px 0}.formula{background:#f3f8ff;border:1px solid #d6e5fa;border-radius:10px;padding:12px 8px;margin:14px 0;overflow-x:auto;text-align:center}.example{border-left:5px solid #e6a345;background:#fffaf0;border-radius:9px;padding:14px 16px}.answer{border-left:5px solid #3ca07b;background:#f0faf5;border-radius:9px;padding:14px 16px}.exercise{background:#f8faff;border:1px solid #d6e3f0;border-radius:10px;padding:13px 16px;margin-top:16px}summary{cursor:pointer;color:#145e95;font-weight:700}details{margin-top:9px}footer{background:#142f4d;color:#e6f2ff;padding:20px 0;font-size:13px}.muted{color:#526c82}.chip{display:inline-block;border-radius:25px;background:#e5f3fe;color:#246a96;padding:3px 10px;font-size:12px;font-weight:700}button,a{touch-action:manipulation}a:focus-visible,summary:focus-visible{outline:3px solid orange;outline-offset:3px}.math-scroll{overflow-x:auto}@media(max-width:430px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.card{padding:12px}.card h3{font-size:15px}.card p{font-size:12px}.wrap{padding:0 12px}}</style><script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"]]},svg:{fontCache:"global"}};</script><script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script><style id="six-subjects-unified">
-/* 共通デザイン（数学 I/A/II/B/III/C）: 教材のプログラムや数式には非干渉 */
-:root{--course-navy:#17365d;--course-blue:#24689c;--course-paper:#ffffff;--course-muted:#526a80}
-body{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.75}
-body>header{background:linear-gradient(110deg,var(--course-navy),var(--course-blue))!important;color:#fff!important;padding:24px 0 28px!important}
-body>header a{color:#fff!important}
-body>header h1{font-size:clamp(26px,4.2vw,36px)!important;line-height:1.35!important;margin:10px 0 5px!important;font-weight:750!important}
-body>header p,body>header span{font-size:14px!important;line-height:1.6!important;color:#e3effc!important}
-body>footer{background:#142f4d!important;color:#e9f2fc!important;padding:20px 0!important;font-size:13px!important;text-align:center!important}
-body>footer a{color:#e9f2fc!important}
-.course-unified-goal{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px;color:#18314c}
-.course-unified-goal .course-goal-label{display:block;font-size:13px;font-weight:700;color:#215f91;margin:0 0 5px}
-.course-unified-goal .course-goal-title{font-size:clamp(21px,3.2vw,27px);font-weight:750;line-height:1.4;margin:0 0 5px;color:#17365d}
-.course-unified-goal .course-goal-subtitle{font-size:14px!important;color:#526a80!important;margin:0;line-height:1.65}
-/* 既存の「授業のねらい」も見出しとサブタイトルの強弱を統一 */
-.matha-unified-goal,.lesson-goal,section.goal,section.aim,section.objective{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px}
-.matha-unified-goal .goal-title,.lesson-goal .goal-title,section.goal h2,section.aim h2,section.objective h2{font-size:clamp(21px,3.2vw,27px)!important;line-height:1.4!important;margin:5px 0!important;color:#17365d!important}
-.matha-unified-goal p,.lesson-goal p,section.goal p,section.aim p,section.objective p{font-size:14px!important;color:#526a80!important}
-.goal-pill,section.goal .pill,section.aim small{font-size:13px!important}
-@media(max-width:550px){.course-unified-goal{padding:12px 14px}body>header{padding:18px 0 22px!important}}
-</style><link href="lesson_common_style.css?v=20261115" rel="stylesheet"/></head><body><header class="standard-lesson-header"><a class="lesson-head-back" href="math_subject_3.html">← 数学Ⅲの授業一覧に戻る</a><h1 class="lesson-head-title">部分積分法</h1><p class="lesson-head-meta">数学Ⅲ ／ 部分積分法</p></header><main class="wrap"><section aria-label="授業のねらい" class="standard-lesson-goal"><span class="standard-goal-label">授業のねらい</span><h2 class="standard-goal-title">部分積分法の考え方を理解する</h2><p class="standard-goal-subtitle">積の微分公式を積分に応用します。</p></section><p class="intro">積分法｜部分積分法。図や式の意味を考えながら順番に学びましょう。</p><article class="paper"><h2>基本事項</h2><p>積の微分公式を積分に応用します。</p><div class="formula">\[\int u\,dv=uv-\int v\,du\]</div><h2>考え方</h2><p>まず条件と求める量を明確にし、上の関係式を使える形に整理します。等号変形や定義域などの条件も確かめましょう。</p><h2>解説付き例題</h2><div class="example"><strong>例題</strong><p>\(\int xe^x dx\)を求める。</p></div><h3>解答と解説</h3><div class="answer"><p>\(u=x, dv=e^x dx\)として\(xe^x-e^x+C=(x-1)e^x+C\)です。</p></div><h2>練習問題</h2><div class="exercise"><p>\(\int x\cos x dx\)</p><details><summary>解答を見る</summary><p>\(x\sin x+\cos x+C\)</p></details></div><h2>まとめ</h2><p>積の微分公式を積分に応用します。 例題で使った考え方を、練習問題でも確かめましょう。</p></article></main><nav aria-label="授業一覧へ戻る" class="standard-lesson-bottom"><a href="math_subject_3.html">← 数学Ⅲの授業一覧へ戻る</a></nav><footer class="standard-lesson-footer">みんなの数学データベース｜数学Ⅲの授業</footer></body></html>
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>部分積分法｜数学Ⅲ｜みんなの数学データベース</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f2f7fc;color:#19334e;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.8;font-size:16px}
+.wrap{max-width:970px;margin:auto;padding:0 17px}header{background:linear-gradient(110deg,#17365d,#215f99);color:#fff;padding:24px 0 29px}header .sub{color:#e4effc;font-size:14px}header h1{font-size:clamp(25px,4.5vw,35px);line-height:1.4;margin:8px 0 5px}
+main{padding-top:22px;padding-bottom:46px}.goal,.panel{background:white;border:1px solid #dbe6f1;border-radius:14px;padding:22px 25px;margin-bottom:22px;box-shadow:0 3px 13px #193a5b0a}
+.goal .tag{display:inline-block;color:#145888;background:#e6f3ff;border-radius:20px;font-size:13px;font-weight:700;padding:2px 12px}.goal h2{color:#174b78;font-size:23px;margin:10px 0 7px}.goal p{margin:0;color:#445d72}
+.panel h2{font-size:22px;color:#185482;margin:0 0 14px;border-bottom:2px solid #e4eff8;padding-bottom:8px}.panel h3{font-size:18px;color:#205b87;margin:17px 0 7px}.panel p{margin:8px 0}
+.formula{background:#f5faff;border:1px solid #e1ecf5;padding:10px 9px;margin:14px 0;border-radius:9px;overflow-x:auto;text-align:center}
+.tip{background:#edf6fd;border-left:4px solid #3685c1;padding:11px 15px;border-radius:8px;margin:15px 0}.example{border:1px solid #d9e6f2;border-radius:11px;padding:16px;margin:16px 0}.example h3{margin-top:0}.solution{background:#f7fbff;padding:12px;border-radius:9px}
+.quiz{margin:14px 0;padding:13px 15px;border:1px solid #e1eaf3;border-radius:10px}details{margin-top:8px}summary{color:#13639b;font-weight:700;cursor:pointer}
+.graph-wrap{background:#fbfdff;border:1px solid #dce8f3;border-radius:12px;padding:12px}
+#partsGraph{display:block;width:100%;height:auto;max-height:340px}input[type=range]{width:100%;accent-color:#196ca5}label{font-weight:700;color:#20527b}.readout{padding:9px;background:#eaf3fa;border-radius:8px;font-size:15px}
+footer{background:#112e4c;color:#ecf5fc;padding:20px 0;font-size:13px}.back{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0}.back a{display:inline-block;padding:10px 15px;border-radius:9px;background:#e5f1fd;color:#175988;text-decoration:none;font-weight:700}
+mjx-container{max-width:100%}mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;padding:3px 0;margin:.6em 0!important}
+a:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid orange;outline-offset:3px}
+@media(max-width:640px){.goal,.panel{padding:17px 15px}.panel h2{font-size:20px}}
+</style>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']],processEscapes:true},svg:{fontCache:'global'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script></head>
+<body><header><div class="wrap"><div class="sub">みんなの数学データベース ／ 高校数学 ／ 数学Ⅲ ／ 第5章 積分法</div><h1>部分積分法</h1><div class="sub">第3講　積の微分法から積分公式を導く</div></div></header>
+<main class="wrap">
+<section class="goal"><span class="tag">授業のねらい</span><h2>積の微分法を逆に利用して積分を計算できるようになる</h2><p>部分積分法の公式とその成り立ちを理解し、微分する部分と積分する部分を適切に選んで、途中式を丁寧に書きながら計算できるようになります。</p></section>
+<section class="panel"><h2>1．部分積分法の考え方</h2>
+<p>積の形の関数を微分すると2つの項が現れます。この関係を逆に利用するのが部分積分法です。</p>
+<div class="formula">\[\frac{d}{dx}\{f(x)g(x)\}=f'(x)g(x)+f(x)g'(x)\]</div>
+<p>両辺を積分して整理すると、次の公式を得ます。</p>
+<div class="formula">\[\boxed{\int f(x)g'(x)\,dx=f(x)g(x)-\int f'(x)g(x)\,dx}\]</div>
+<p>\(u=f(x),\;dv=g'(x)\,dx\) と書けば、覚えやすい形になります。</p>
+<div class="formula">\[\boxed{\int u\,dv=uv-\int v\,du}\]</div>
+<div class="tip"><strong>使い方の目安：</strong>微分すると簡単になるものを \(u\)、積分しやすいものを \(dv\) に選びます。結果の積分が元より難しくならないか確かめましょう。</div></section>
+<section class="panel"><h2>2．動く図で公式の仕組みを理解する</h2>
+<p>\(u=x,\;v=x\) とします。このとき積 \(uv=x^2\) は面積で表せます。\(x\) が少し増えると、増えた面積は横と縦の細い長方形、そして小さい角の正方形に分かれます。</p>
+<div class="graph-wrap">
+<svg id="partsGraph" viewBox="0 0 680 330" role="img" aria-label="正方形の辺の長さを動かして積の微分を理解する図">
+<rect width="680" height="330" rx="9" fill="#fff"/><g id="partsDrawing"></g>
+</svg>
+<label for="dxSlider">辺の増分 Δx：<output id="dxValue">0.5</output></label>
+<input id="dxSlider" type="range" min="0.1" max="1.5" step="0.1" value="0.5">
+<div class="readout" id="partsInfo" aria-live="polite"></div></div>
+<p>この図では \(u=v=x\) の具体例で積の微分の構造を観察できます。一般の部分積分法は、上の積の微分公式を積分して導きます。</p></section>
+<section class="panel"><h2>3．計算手順</h2>
+<div class="tip">① \(u\) と \(dv\) を決める　→　② \(du\) と \(v\) を求める　→　③ \(\int u\,dv=uv-\int v\,du\) に代入する　→　④ 残った積分を計算して \(C\) を付ける。</div>
+<h3>公式を使う基本例</h3>
+<div class="formula">\[\begin{aligned}
+\int xe^x\,dx
+&=xe^x-\int e^x\,dx\\
+&=xe^x-e^x+C\\
+&=\boxed{(x-1)e^x+C}
+\end{aligned}\]</div>
+<p>ここでは \(u=x\)、\(dv=e^x\,dx\) とすると、\(du=dx\)、\(v=e^x\) となります。</p></section>
+<section class="panel"><h2>4．例題と詳しい解説</h2>
+<div class="example"><h3>例題1　多項式と指数関数</h3><p>\(\int x^2e^x\,dx\) を求めなさい。</p>
+<div class="solution"><p>\(u=x^2,\;dv=e^x\,dx\) として1回目の部分積分を行います。</p>
+<div class="formula">\[\int x^2e^x\,dx=x^2e^x-2\int xe^x\,dx\]</div>
+<p>残った積分にもう一度部分積分法を使います。</p>
+<div class="formula">\[\boxed{\int x^2e^x\,dx=e^x(x^2-2x+2)+C}\]</div></div></div>
+<div class="example"><h3>例題2　多項式と三角関数</h3><p>\(\int x\cos x\,dx\) を求めなさい。</p><div class="solution"><p>\(u=x,\;dv=\cos x\,dx\) とすれば、\(du=dx,\;v=\sin x\)。</p>
+<div class="formula">\[\boxed{\int x\cos x\,dx=x\sin x+\cos x+C}\]</div></div></div>
+<div class="example"><h3>例題3　対数関数</h3><p>\(\int\log x\,dx\; (x>0)\) を求めなさい。</p><div class="solution"><p>\(\log x=\log x\cdot1\) と考え、\(u=\log x,\;dv=dx\) とします。</p>
+<div class="formula">\[\begin{aligned}\int\log x\,dx&=x\log x-\int x\frac1x\,dx\\&=\boxed{x\log x-x+C}\end{aligned}\]</div></div></div>
+<div class="example"><h3>例題4　逆三角関数を使わない形</h3><p>\(\int x\sin x\,dx\) を求めなさい。</p><div class="solution"><p>\(u=x,\;dv=\sin x\,dx\) とすると \(v=-\cos x\) です。符号に注意します。</p><div class="formula">\[\boxed{\int x\sin x\,dx=-x\cos x+\sin x+C}\]</div></div></div>
+<div class="example"><h3>例題5　2回の部分積分</h3><p>\(\int e^x\sin x\,dx\) を求めなさい。</p><div class="solution"><p>\(I=\int e^x\sin x\,dx\) とおいて、部分積分を2回行うと、</p>
+<div class="formula">\[\begin{aligned}I&=e^x\sin x-\int e^x\cos x\,dx\\
+&=e^x\sin x-e^x\cos x-I\end{aligned}\]</div>
+<p>よって \(2I=e^x(\sin x-\cos x)\)。</p>
+<div class="formula">\[\boxed{\int e^x\sin x\,dx=\frac{e^x}{2}(\sin x-\cos x)+C}\]</div></div></div></section>
+<section class="panel"><h2>5．練習問題</h2><p>まず自分で解いてから「解答・解説」を開きましょう。</p>
+<div class="quiz"><strong>問1</strong>　\(\int xe^{2x}\,dx\)<details><summary>解答・解説</summary><div class="formula">\[\boxed{\frac{xe^{2x}}2-\frac{e^{2x}}4+C}\]</div><p>\(u=x,\;dv=e^{2x}dx\) と置きます。\(v=e^{2x}/2\) です。</p></details></div>
+<div class="quiz"><strong>問2</strong>　\(\int x\sin 2x\,dx\)<details><summary>解答・解説</summary><div class="formula">\[\boxed{-\frac{x\cos2x}{2}+\frac{\sin2x}{4}+C}\]</div><p>\(v=-\cos2x/2\) とする部分積分です。</p></details></div>
+<div class="quiz"><strong>問3</strong>　\(\int x\log x\,dx\quad(x>0)\)<details><summary>解答・解説</summary><div class="formula">\[\boxed{\frac{x^2}{2}\log x-\frac{x^2}{4}+C}\]</div><p>\(u=\log x,\;dv=x\,dx\) と置きます。</p></details></div>
+<div class="quiz"><strong>問4</strong>　\(\int x^2\cos x\,dx\)<details><summary>解答・解説</summary><div class="formula">\[\boxed{x^2\sin x+2x\cos x-2\sin x+C}\]</div><p>1回目の部分積分後、\(\int x\sin x\,dx\) に再度部分積分を使います。</p></details></div>
+<div class="quiz"><strong>問5</strong>　\(\int e^x\cos x\,dx\)<details><summary>解答・解説</summary><div class="formula">\[\boxed{\frac{e^x}{2}(\sin x+\cos x)+C}\]</div><p>2回部分積分し、もとの積分を含む方程式を解きます。</p></details></div>
+<div class="quiz"><strong>問6</strong>　\(\int x^3e^x\,dx\)<details><summary>解答・解説</summary><div class="formula">\[\boxed{e^x(x^3-3x^2+6x-6)+C}\]</div><p>多項式の次数が0になるまで部分積分を繰り返します。</p></details></div></section>
+<section class="panel"><h2>6．発展問題とまとめ</h2><h3>発展：漸化式を作る</h3>
+<p>\(I_n=\int x^ne^x\,dx\) とすると、部分積分によって次の関係を得ます。</p>
+<div class="formula">\[\boxed{I_n=x^ne^x-nI_{n-1}}\]</div>
+<p>これは繰り返し部分積分を行う際の基本となる関係です。積分定数は最終的にまとめて \(C\) と書きます。</p>
+<div class="tip"><strong>まとめ：</strong>部分積分法は積の微分法の逆です。微分して簡単になる部分を選ぶこと、積分後の符号を確認すること、最後に積分定数を付けることを習慣にしましょう。</div></section>
+<nav class="back" aria-label="ページ移動"><a href="math_subject_3.html">← 数学Ⅲの授業一覧へ戻る</a><a href="math3_lesson21.html">← 前の授業「置換積分法」</a><a href="math3_various_indefinite_integrals.html">次の授業「いろいろな関数の不定積分」 →</a></nav>
+</main><footer><div class="wrap">みんなの数学データベース｜高校生のための授業</div></footer>
+<script>
+(function(){
+const s=document.getElementById('dxSlider'), v=document.getElementById('dxValue'), group=document.getElementById('partsDrawing'), info=document.getElementById('partsInfo');
+function draw(){
+ const d=Number(s.value), side=160, k=52*d, x=190,y=65;
+ v.textContent=d.toFixed(1);
+ const r=(X,Y,W,H,fill)=>'<rect x="'+X+'" y="'+Y+'" width="'+W+'" height="'+H+'" fill="'+fill+'" stroke="#fff" stroke-width="1.5"/>';
+ group.innerHTML=r(x,y,side,side,'#5e9bd1')+r(x+side,y,k,side,'#e5a34e')+r(x,y+side,side,k,'#66b99f')+r(x+side,y+side,k,k,'#c1a6e6')
+ +'<text x="195" y="151" fill="white" font-size="20">x × x</text>'
+ +'<text x="190" y="40" fill="#19334e" font-size="17">x = 2， Δx = '+d.toFixed(1)+'</text>'
+ +'<text x="190" y="293" fill="#19334e" font-size="15">青: x²　橙・緑: 2xΔx　紫: (Δx)²</text>';
+ info.textContent='面積の増加 = 2 × 2 × '+d.toFixed(1)+' + '+d.toFixed(1)+'² = '+(4*d+d*d).toFixed(2)+'。Δxで割って0に近づけると傾きは4になります。';
+}
+s.addEventListener('input',draw);draw();
+})();
+</script></body></html>
