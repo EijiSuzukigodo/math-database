@@ -15,8 +15,28 @@
 .math1-bottom-nav a:hover,.math1-bottom-nav a:focus-visible{background:#d1e9fc;outline-offset:3px}
 .math1-bottom-footer{background:#17365d!important;color:#fff!important;padding:18px 12px!important;text-align:center!important;font-size:13px!important;line-height:1.7!important;margin:0!important;width:100%!important;max-width:none!important;border:0!important;border-radius:0!important}
 .math1-bottom-footer *{color:#fff!important}
+</style><style id="six-subjects-unified">
+/* 共通デザイン（数学 I/A/II/B/III/C）: 教材のプログラムや数式には非干渉 */
+:root{--course-navy:#17365d;--course-blue:#24689c;--course-paper:#ffffff;--course-muted:#526a80}
+body{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.75}
+body>header{background:linear-gradient(110deg,var(--course-navy),var(--course-blue))!important;color:#fff!important;padding:24px 0 28px!important}
+body>header a{color:#fff!important}
+body>header h1{font-size:clamp(26px,4.2vw,36px)!important;line-height:1.35!important;margin:10px 0 5px!important;font-weight:750!important}
+body>header p,body>header span{font-size:14px!important;line-height:1.6!important;color:#e3effc!important}
+body>footer{background:#142f4d!important;color:#e9f2fc!important;padding:20px 0!important;font-size:13px!important;text-align:center!important}
+body>footer a{color:#e9f2fc!important}
+.course-unified-goal{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px;color:#18314c}
+.course-unified-goal .course-goal-label{display:block;font-size:13px;font-weight:700;color:#215f91;margin:0 0 5px}
+.course-unified-goal .course-goal-title{font-size:clamp(21px,3.2vw,27px);font-weight:750;line-height:1.4;margin:0 0 5px;color:#17365d}
+.course-unified-goal .course-goal-subtitle{font-size:14px!important;color:#526a80!important;margin:0;line-height:1.65}
+/* 既存の「授業のねらい」も見出しとサブタイトルの強弱を統一 */
+.matha-unified-goal,.lesson-goal,section.goal,section.aim,section.objective{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px}
+.matha-unified-goal .goal-title,.lesson-goal .goal-title,section.goal h2,section.aim h2,section.objective h2{font-size:clamp(21px,3.2vw,27px)!important;line-height:1.4!important;margin:5px 0!important;color:#17365d!important}
+.matha-unified-goal p,.lesson-goal p,section.goal p,section.aim p,section.objective p{font-size:14px!important;color:#526a80!important}
+.goal-pill,section.goal .pill,section.aim small{font-size:13px!important}
+@media(max-width:550px){.course-unified-goal{padding:12px 14px}body>header{padding:18px 0 22px!important}}
 </style></head><body>
-<header><a href="math_subject_1.html">← 数学Ⅰの授業一覧へ戻る</a><h1>集合</h1><div>数学Ⅰ ／ 第2章 集合と命題 ／ 第1講</div></header>
+<header><a href="math_subject_1.html">← 数学Ⅰの授業一覧へ戻る</a><h1>集合</h1><div>数学Ⅰ ／ 第2章 集合と命題 ／ </div></header>
 <main><article class="sheet"><section class="lesson-goal"><span class="goal-pill">授業のねらい</span><h2 class="goal-title">集合の基本をベン図で理解する</h2><p>集合の表し方から、部分集合、集合の演算、ド・モルガンの法則、要素の個数まで学びます。動くベン図で、式と図を結びつけましょう。</p></section>
 <h2>1　集合とその表し方</h2><p>含まれるものが明確に決まる集まりを<strong>集合</strong>、その一つ一つを<strong>要素</strong>といいます。</p><div class="eq">\[A=\{1,2,3,4,5\},\qquad 3\in A,\quad 8\notin A\]</div><p>要素を並べる方法と、条件で表す方法があります。</p><div class="eq">\[B=\{2,4,6,8\}=\{x\mid x\text{ は8以下の正の偶数}\}\]</div><div class="ex"><strong>例題1</strong>　\(C=\{x\mid x\text{ は7未満の正の3の倍数}\}\) を要素を並べて表しなさい。<p><strong>解答</strong>　3と6が条件を満たすので、\(C=\{3,6\}\) です。</p></div>
 <h2>2　部分集合・空集合・集合の相等</h2><p>集合 \(A\) の要素がすべて \(B\) に含まれるとき、\(A\) は \(B\) の部分集合です。</p><div class="eq">\[A\subseteq B\quad\Longleftrightarrow\quad (x\in A\Rightarrow x\in B)\]</div><p>空集合は \(\varnothing\) と表し、どの集合の部分集合でもあります。</p><div class="eq">\[A=B\quad\Longleftrightarrow\quad A\subseteq B\text{ かつ }B\subseteq A\]</div><div class="ex"><strong>例題2</strong>　\(A=\{1,2\}\) の部分集合をすべて求めなさい。<p><strong>解答</strong>　\(\varnothing,\{1\},\{2\},\{1,2\}\) の4個。一般に要素が \(n\) 個の集合の部分集合は \(2^n\) 個あります。</p></div>

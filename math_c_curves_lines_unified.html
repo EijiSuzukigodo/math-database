@@ -2,7 +2,27 @@
 <title>2次曲線と直線｜数学C｜みんなの数学データベース</title>
 <script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'global'}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 <style>*{box-sizing:border-box}body{margin:0;background:#f2f7fc;color:#19334d;font:16px/1.8 -apple-system,BlinkMacSystemFont,'Hiragino Kaku Gothic ProN',Meiryo,sans-serif}header{background:linear-gradient(110deg,#17365d,#24689c);color:white;padding:21px 16px}header .wrap{padding:0}header a{color:white}.wrap{max-width:990px;margin:auto;padding:20px 16px 54px}h1{font-size:clamp(1.5rem,3vw,2rem);margin:10px 0 0}h2{font-size:1.35rem;margin:0 0 10px;color:#17365d}h3{font-size:1.08rem;color:#18517d}section{background:white;border:1px solid #d7e3ef;border-radius:15px;padding:18px;margin:15px 0}.eq{padding:12px;background:#f1f7ff;border-radius:8px;overflow-x:auto;text-align:center}mjx-container{max-width:100%;overflow-x:auto;overflow-y:hidden}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}button{font:inherit;padding:8px 12px;border:1px solid #bdd4e8;color:#174e75;background:white;border-radius:8px;cursor:pointer}button.active{background:#176cae;color:white}input[type=range]{width:100%;accent-color:#176cae}label{display:block;max-width:550px;margin:10px 0}canvas{width:100%;height:auto;display:block;background:#fff;border:1px solid #e1e8f1;border-radius:8px}details{margin:12px 0;padding:12px;border:1px solid #d6e3ef;border-radius:10px}summary{cursor:pointer;font-weight:bold;color:#175581}nav{display:flex;gap:10px;flex-wrap:wrap}nav a{background:#e6f1fa;padding:5px 10px;border-radius:8px;color:#175581;text-decoration:none}.result{background:#eaf5fc;padding:12px;border-radius:8px;margin:10px 0;font-size:.95rem}footer{text-align:center;padding:18px;color:#536b82}@media(max-width:520px){section{padding:14px}.eq{font-size:.98em}}</style>
-</head><body><header><div class="wrap"><a href="math_subject_c.html">← 数学Cの授業へ戻る</a><h1>2次曲線と直線</h1><p>共有点と接線を一つの教材で学ぶ</p></div></header><main class="wrap">
+<style id="six-subjects-unified">
+/* 共通デザイン（数学 I/A/II/B/III/C）: 教材のプログラムや数式には非干渉 */
+:root{--course-navy:#17365d;--course-blue:#24689c;--course-paper:#ffffff;--course-muted:#526a80}
+body{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.75}
+body>header{background:linear-gradient(110deg,var(--course-navy),var(--course-blue))!important;color:#fff!important;padding:24px 0 28px!important}
+body>header a{color:#fff!important}
+body>header h1{font-size:clamp(26px,4.2vw,36px)!important;line-height:1.35!important;margin:10px 0 5px!important;font-weight:750!important}
+body>header p,body>header span{font-size:14px!important;line-height:1.6!important;color:#e3effc!important}
+body>footer{background:#142f4d!important;color:#e9f2fc!important;padding:20px 0!important;font-size:13px!important;text-align:center!important}
+body>footer a{color:#e9f2fc!important}
+.course-unified-goal{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px;color:#18314c}
+.course-unified-goal .course-goal-label{display:block;font-size:13px;font-weight:700;color:#215f91;margin:0 0 5px}
+.course-unified-goal .course-goal-title{font-size:clamp(21px,3.2vw,27px);font-weight:750;line-height:1.4;margin:0 0 5px;color:#17365d}
+.course-unified-goal .course-goal-subtitle{font-size:14px!important;color:#526a80!important;margin:0;line-height:1.65}
+/* 既存の「授業のねらい」も見出しとサブタイトルの強弱を統一 */
+.matha-unified-goal,.lesson-goal,section.goal,section.aim,section.objective{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px}
+.matha-unified-goal .goal-title,.lesson-goal .goal-title,section.goal h2,section.aim h2,section.objective h2{font-size:clamp(21px,3.2vw,27px)!important;line-height:1.4!important;margin:5px 0!important;color:#17365d!important}
+.matha-unified-goal p,.lesson-goal p,section.goal p,section.aim p,section.objective p{font-size:14px!important;color:#526a80!important}
+.goal-pill,section.goal .pill,section.aim small{font-size:13px!important}
+@media(max-width:550px){.course-unified-goal{padding:12px 14px}body>header{padding:18px 0 22px!important}}
+</style></head><body><header><div class="wrap"><a href="math_subject_c.html">← 数学Cの授業へ戻る</a><h1>2次曲線と直線</h1><p>共有点と接線を一つの教材で学ぶ</p></div></header><main class="wrap"><section class="course-unified-goal" aria-label="授業のねらい"><span class="course-goal-label">授業のねらい</span><h2 class="course-goal-title">2次曲線と直線</h2><p class="course-goal-subtitle">直線との共有点、判別式、放物線・楕円・双曲線の接線を1ページで学びます。</p></section>
 <nav><a href="#cross">共有点</a><a href="#tangent">接線</a><a href="#exercise">練習問題</a></nav>
 <section><h2>この授業で学ぶこと</h2><p>放物線・楕円・双曲線と直線の共有点の個数を調べ、接線の方程式を求めます。直線を動かして、共有点が2個・1個・0個となる様子を確かめましょう。</p></section>
 <section id="cross"><h2>1．2次曲線と直線の共有点</h2><p>二次曲線と直線の式を連立し、一方の文字を消去します。二次方程式になる場合、その判別式から共有点の個数を判断できます。</p><div class="eq">\[Ax^2+Bx+C=0\quad (A\ne 0),\qquad D=B^2-4AC\]</div><p>判別式が正なら2個、0なら1個（接する）、負なら0個です。ただし二次の係数が0になる場合は一次方程式として別に調べます。</p>

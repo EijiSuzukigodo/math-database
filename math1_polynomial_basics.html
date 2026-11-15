@@ -15,6 +15,26 @@
 .math1-bottom-nav a:hover,.math1-bottom-nav a:focus-visible{background:#d1e9fc;outline-offset:3px}
 .math1-bottom-footer{background:#17365d!important;color:#fff!important;padding:18px 12px!important;text-align:center!important;font-size:13px!important;line-height:1.7!important;margin:0!important;width:100%!important;max-width:none!important;border:0!important;border-radius:0!important}
 .math1-bottom-footer *{color:#fff!important}
+</style><style id="six-subjects-unified">
+/* 共通デザイン（数学 I/A/II/B/III/C）: 教材のプログラムや数式には非干渉 */
+:root{--course-navy:#17365d;--course-blue:#24689c;--course-paper:#ffffff;--course-muted:#526a80}
+body{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.75}
+body>header{background:linear-gradient(110deg,var(--course-navy),var(--course-blue))!important;color:#fff!important;padding:24px 0 28px!important}
+body>header a{color:#fff!important}
+body>header h1{font-size:clamp(26px,4.2vw,36px)!important;line-height:1.35!important;margin:10px 0 5px!important;font-weight:750!important}
+body>header p,body>header span{font-size:14px!important;line-height:1.6!important;color:#e3effc!important}
+body>footer{background:#142f4d!important;color:#e9f2fc!important;padding:20px 0!important;font-size:13px!important;text-align:center!important}
+body>footer a{color:#e9f2fc!important}
+.course-unified-goal{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px;color:#18314c}
+.course-unified-goal .course-goal-label{display:block;font-size:13px;font-weight:700;color:#215f91;margin:0 0 5px}
+.course-unified-goal .course-goal-title{font-size:clamp(21px,3.2vw,27px);font-weight:750;line-height:1.4;margin:0 0 5px;color:#17365d}
+.course-unified-goal .course-goal-subtitle{font-size:14px!important;color:#526a80!important;margin:0;line-height:1.65}
+/* 既存の「授業のねらい」も見出しとサブタイトルの強弱を統一 */
+.matha-unified-goal,.lesson-goal,section.goal,section.aim,section.objective{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px}
+.matha-unified-goal .goal-title,.lesson-goal .goal-title,section.goal h2,section.aim h2,section.objective h2{font-size:clamp(21px,3.2vw,27px)!important;line-height:1.4!important;margin:5px 0!important;color:#17365d!important}
+.matha-unified-goal p,.lesson-goal p,section.goal p,section.aim p,section.objective p{font-size:14px!important;color:#526a80!important}
+.goal-pill,section.goal .pill,section.aim small{font-size:13px!important}
+@media(max-width:550px){.course-unified-goal{padding:12px 14px}body>header{padding:18px 0 22px!important}}
 </style></head><body><header><div class="wrap"><a href="math_subject_1.html">← 数学Ⅰの授業一覧</a><h1>多項式の基礎</h1><p>数学Ⅰ ／ 第1章 数と式 ／ 単項式・係数・次数・同類項</p></div></header><main class="wrap"><nav aria-label="ページ内目次" class="toc"><a href="#goal">授業のねらい</a><a href="#definition">定義・公式</a><a href="#examples">例題と解説</a><a href="#practice">練習問題</a><a href="#summary">まとめ</a></nav>
 <section class="lesson-goal-unified sheet" id="goal"><span class="goal-pill-unified pill">授業のねらい</span><h2 class="goal-title-unified">多項式を正しく読む</h2><p>文字式は、いくつかの<strong>項</strong>が和や差で結ばれてできています。式を計算する前に、「どこが1つの項か」「どの文字に着目するか」を理解しましょう。</p><div class="formula">\[ 4x^2-3xy+7y-5 \]</div><p>この式には <strong>4つの項</strong>があり、減号は次の項の符号と考えます。</p></section>
 <section class="sheet" id="definition"><h2>1　単項式・多項式・次数</h2><h3>単項式と多項式</h3><div class="mini-grid"><div><strong>単項式</strong><p>数と文字の積として表される式。</p><div class="math">\( -6x^2y,\quad 5,\quad a \)</div></div><div><strong>多項式</strong><p>単項式を加法・減法で結んだ式。</p><div class="math">\( 2x^2+3x-4 \)</div></div></div><p>多項式を構成する単項式を<strong>項</strong>と呼びます。数だけの項は<strong>定数項</strong>です。</p><h3>係数と次数</h3><div class="formula">\[ -6x^2y \qquad\Rightarrow\qquad \text{係数 } -6,\quad \text{次数 } 2+1=3 \]</div><p>単項式の次数は、文字の指数の和です。<strong>特定の文字に着目</strong>する場合は、その文字だけの指数で次数を数え、ほかの文字は係数の一部として扱います。</p><div class="example"><strong>着目する文字が変わると？</strong><div class="math">\[ 3x^2y-5xy^3+2y \]</div><p>全体としての次数は4です。<strong>xに着目</strong>すると2次式、<strong>yに着目</strong>すると3次式になります。</p></div><h3>同類項</h3><p>文字の種類と、それぞれの指数が同じ項が同類項です。</p><div class="formula">\[ 5x^2+3x-2x^2+7x=(5-2)x^2+(3+7)x=3x^2+10x \]</div><p>\(x^2\) と \(x\) は同類項ではありません。</p></section>

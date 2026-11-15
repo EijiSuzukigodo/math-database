@@ -15,6 +15,26 @@
 .math1-bottom-nav a:hover,.math1-bottom-nav a:focus-visible{background:#d1e9fc;outline-offset:3px}
 .math1-bottom-footer{background:#17365d!important;color:#fff!important;padding:18px 12px!important;text-align:center!important;font-size:13px!important;line-height:1.7!important;margin:0!important;width:100%!important;max-width:none!important;border:0!important;border-radius:0!important}
 .math1-bottom-footer *{color:#fff!important}
+</style><style id="six-subjects-unified">
+/* 共通デザイン（数学 I/A/II/B/III/C）: 教材のプログラムや数式には非干渉 */
+:root{--course-navy:#17365d;--course-blue:#24689c;--course-paper:#ffffff;--course-muted:#526a80}
+body{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.75}
+body>header{background:linear-gradient(110deg,var(--course-navy),var(--course-blue))!important;color:#fff!important;padding:24px 0 28px!important}
+body>header a{color:#fff!important}
+body>header h1{font-size:clamp(26px,4.2vw,36px)!important;line-height:1.35!important;margin:10px 0 5px!important;font-weight:750!important}
+body>header p,body>header span{font-size:14px!important;line-height:1.6!important;color:#e3effc!important}
+body>footer{background:#142f4d!important;color:#e9f2fc!important;padding:20px 0!important;font-size:13px!important;text-align:center!important}
+body>footer a{color:#e9f2fc!important}
+.course-unified-goal{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px;color:#18314c}
+.course-unified-goal .course-goal-label{display:block;font-size:13px;font-weight:700;color:#215f91;margin:0 0 5px}
+.course-unified-goal .course-goal-title{font-size:clamp(21px,3.2vw,27px);font-weight:750;line-height:1.4;margin:0 0 5px;color:#17365d}
+.course-unified-goal .course-goal-subtitle{font-size:14px!important;color:#526a80!important;margin:0;line-height:1.65}
+/* 既存の「授業のねらい」も見出しとサブタイトルの強弱を統一 */
+.matha-unified-goal,.lesson-goal,section.goal,section.aim,section.objective{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px}
+.matha-unified-goal .goal-title,.lesson-goal .goal-title,section.goal h2,section.aim h2,section.objective h2{font-size:clamp(21px,3.2vw,27px)!important;line-height:1.4!important;margin:5px 0!important;color:#17365d!important}
+.matha-unified-goal p,.lesson-goal p,section.goal p,section.aim p,section.objective p{font-size:14px!important;color:#526a80!important}
+.goal-pill,section.goal .pill,section.aim small{font-size:13px!important}
+@media(max-width:550px){.course-unified-goal{padding:12px 14px}body>header{padding:18px 0 22px!important}}
 </style></head><body><header><div class="wrap"><a href="math_subject_1.html">← 数学Ⅰの授業一覧</a><h1>多項式の加法・減法・乗法</h1><p>数学Ⅰ ／ 第1章 数と式 ／ 指数法則・分配法則・展開公式</p></div></header><main class="wrap"><nav aria-label="ページ内目次" class="toc"><a href="#goal">授業のねらい</a><a href="#definition">定義・公式</a><a href="#examples">例題と解説</a><a href="#practice">練習問題</a><a href="#summary">まとめ</a></nav>
 <section class="lesson-goal-unified sheet" id="goal"><span class="goal-pill-unified pill">授業のねらい</span><h2 class="goal-title-unified">文字式の四則計算を理解する</h2><p>多項式の加法・減法では<strong>同類項</strong>をまとめ、乗法では<strong>分配法則</strong>を使います。符号の処理と指数法則がポイントです。</p></section>
 <section class="sheet" id="definition"><h2>1　加法・減法</h2><div class="example"><strong>例　多項式を足す</strong><div class="math">\[ (3x^2-2x+4)+(2x^2+5x-7)\]</div><div class="math">\[=(3+2)x^2+(-2+5)x+(4-7)=5x^2+3x-3\]</div></div><div class="example"><strong>例　多項式を引く</strong><div class="math">\[(3x^2-2x+4)-(2x^2+5x-7)\]</div><div class="math">\[=3x^2-2x+4-2x^2-5x+7=x^2-7x+11\]</div><p>かっこの前が「−」なら、<strong>かっこの中の各項の符号が変わります</strong>。</p></div><h2>2　単項式の乗法と指数法則</h2><p>指数は「同じ文字を何個掛けるか」を表します。</p><div class="formula">\[ a^m a^n=a^{m+n},\qquad (a^m)^n=a^{mn},\qquad (ab)^n=a^n b^n \]</div><p class="small">ここでは \(m,n\) は正の整数とします。</p><div class="example"><strong>例　単項式の積</strong><div class="math">\[ (2x^2y)(-3xy^3)=2(-3)x^{2+1}y^{1+3}=-6x^3y^4\]</div></div><h2>3　分配法則と展開</h2><div class="formula">\[ a(b+c)=ab+ac \]</div><div class="proof"><strong>なぜ4つの項になるのか</strong><p>2つの和の積では、左のかっこの各項に、右のかっこの各項を掛けます。</p>\[(a+b)(c+d)=a(c+d)+b(c+d)=ac+ad+bc+bd\]</div><div class="formula">\[ (a+b)(c+d)=ac+ad+bc+bd \]</div><h3>よく使う展開公式</h3><div class="formula">\[(a+b)^2=a^2+2ab+b^2\]\[(a-b)^2=a^2-2ab+b^2\]\[(a+b)(a-b)=a^2-b^2\]\[(x+a)(x+b)=x^2+(a+b)x+ab\]</div><p>平方の式は \((a+b)^2=(a+b)(a+b)\) を分配法則で展開すると証明できます。真ん中の \(ab\) が2回出てくることが大切です。</p></section>

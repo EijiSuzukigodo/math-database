@@ -47,6 +47,26 @@ article.unified-goal .unified-pill{display:inline-block!important;background:#e5
 article.unified-goal h2.unified-theme{display:block!important;font-size:clamp(20px,2.6vw,25px)!important;font-weight:750!important;color:#174f78!important;line-height:1.45!important;border:0!important;border-bottom:0!important;padding:0!important;margin:0 0 12px!important;letter-spacing:0!important}
 article.unified-goal p.unified-subtheme{display:block!important;font-size:16px!important;font-weight:500!important;color:#20374b!important;line-height:1.85!important;margin:0!important;padding:0!important}
 @media(max-width:600px){article.unified-goal{padding:19px 17px!important}article.unified-goal p.unified-subtheme{font-size:15px!important}}
+</style><style id="six-subjects-unified">
+/* 共通デザイン（数学 I/A/II/B/III/C）: 教材のプログラムや数式には非干渉 */
+:root{--course-navy:#17365d;--course-blue:#24689c;--course-paper:#ffffff;--course-muted:#526a80}
+body{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.75}
+body>header{background:linear-gradient(110deg,var(--course-navy),var(--course-blue))!important;color:#fff!important;padding:24px 0 28px!important}
+body>header a{color:#fff!important}
+body>header h1{font-size:clamp(26px,4.2vw,36px)!important;line-height:1.35!important;margin:10px 0 5px!important;font-weight:750!important}
+body>header p,body>header span{font-size:14px!important;line-height:1.6!important;color:#e3effc!important}
+body>footer{background:#142f4d!important;color:#e9f2fc!important;padding:20px 0!important;font-size:13px!important;text-align:center!important}
+body>footer a{color:#e9f2fc!important}
+.course-unified-goal{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px;color:#18314c}
+.course-unified-goal .course-goal-label{display:block;font-size:13px;font-weight:700;color:#215f91;margin:0 0 5px}
+.course-unified-goal .course-goal-title{font-size:clamp(21px,3.2vw,27px);font-weight:750;line-height:1.4;margin:0 0 5px;color:#17365d}
+.course-unified-goal .course-goal-subtitle{font-size:14px!important;color:#526a80!important;margin:0;line-height:1.65}
+/* 既存の「授業のねらい」も見出しとサブタイトルの強弱を統一 */
+.matha-unified-goal,.lesson-goal,section.goal,section.aim,section.objective{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px}
+.matha-unified-goal .goal-title,.lesson-goal .goal-title,section.goal h2,section.aim h2,section.objective h2{font-size:clamp(21px,3.2vw,27px)!important;line-height:1.4!important;margin:5px 0!important;color:#17365d!important}
+.matha-unified-goal p,.lesson-goal p,section.goal p,section.aim p,section.objective p{font-size:14px!important;color:#526a80!important}
+.goal-pill,section.goal .pill,section.aim small{font-size:13px!important}
+@media(max-width:550px){.course-unified-goal{padding:12px 14px}body>header{padding:18px 0 22px!important}}
 </style></head><body><header><div class="unified-inner"><a href="math_subject_2.html">← 数学Ⅱの目次に戻る</a><h1>軌跡と方程式</h1><p>みんなの数学データベース｜数学Ⅱ 第3章 図形と方程式</p></div></header><main>
 <article class="card unified-goal"><span class="unified-pill">授業のねらい</span><h2 class="unified-theme">点の軌跡を方程式で表す</h2><p class="unified-subtheme">点が動くときの位置を座標で表し、条件を満たす点の集合（軌跡）を方程式で表せるようになる。方程式を導いた後の「逆の確認」も理解する。</p></article>
 <section class="card"><h2>1　軌跡と方程式</h2><p>点 \(P(x,y)\) がある条件を満たして動くとき、点 \(P\) の描く図形を<strong>軌跡</strong>という。</p><h3>軌跡を求める3つの手順</h3><ol><li>動点 \(P\) の座標を \((x,y)\) とおく。</li><li>与えられた条件を \(x,y\) の方程式に直す。</li><li>得られた図形上のすべての点が、もとの条件を満たすか確かめる。</li></ol><p class="note">最後の確認が必要なのは、計算途中で条件に合わない点が混じることがあるためです。</p></section>

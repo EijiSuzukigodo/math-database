@@ -14,6 +14,26 @@
 .math1-bottom-nav a:hover,.math1-bottom-nav a:focus-visible{background:#d1e9fc;outline-offset:3px}
 .math1-bottom-footer{background:#17365d!important;color:#fff!important;padding:18px 12px!important;text-align:center!important;font-size:13px!important;line-height:1.7!important;margin:0!important;width:100%!important;max-width:none!important;border:0!important;border-radius:0!important}
 .math1-bottom-footer *{color:#fff!important}
+</style><style id="six-subjects-unified">
+/* 共通デザイン（数学 I/A/II/B/III/C）: 教材のプログラムや数式には非干渉 */
+:root{--course-navy:#17365d;--course-blue:#24689c;--course-paper:#ffffff;--course-muted:#526a80}
+body{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.75}
+body>header{background:linear-gradient(110deg,var(--course-navy),var(--course-blue))!important;color:#fff!important;padding:24px 0 28px!important}
+body>header a{color:#fff!important}
+body>header h1{font-size:clamp(26px,4.2vw,36px)!important;line-height:1.35!important;margin:10px 0 5px!important;font-weight:750!important}
+body>header p,body>header span{font-size:14px!important;line-height:1.6!important;color:#e3effc!important}
+body>footer{background:#142f4d!important;color:#e9f2fc!important;padding:20px 0!important;font-size:13px!important;text-align:center!important}
+body>footer a{color:#e9f2fc!important}
+.course-unified-goal{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px;color:#18314c}
+.course-unified-goal .course-goal-label{display:block;font-size:13px;font-weight:700;color:#215f91;margin:0 0 5px}
+.course-unified-goal .course-goal-title{font-size:clamp(21px,3.2vw,27px);font-weight:750;line-height:1.4;margin:0 0 5px;color:#17365d}
+.course-unified-goal .course-goal-subtitle{font-size:14px!important;color:#526a80!important;margin:0;line-height:1.65}
+/* 既存の「授業のねらい」も見出しとサブタイトルの強弱を統一 */
+.matha-unified-goal,.lesson-goal,section.goal,section.aim,section.objective{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px}
+.matha-unified-goal .goal-title,.lesson-goal .goal-title,section.goal h2,section.aim h2,section.objective h2{font-size:clamp(21px,3.2vw,27px)!important;line-height:1.4!important;margin:5px 0!important;color:#17365d!important}
+.matha-unified-goal p,.lesson-goal p,section.goal p,section.aim p,section.objective p{font-size:14px!important;color:#526a80!important}
+.goal-pill,section.goal .pill,section.aim small{font-size:13px!important}
+@media(max-width:550px){.course-unified-goal{padding:12px 14px}body>header{padding:18px 0 22px!important}}
 </style></head><body data-type="quartile"><header><a href="math_subject_1.html">← 数学Ⅰの目次</a><h1>データの散らばりと四分位範囲</h1><div>第5章 データの分析｜3 / 4</div></header><main><section class="lesson-goal-unified"><span class="goal-pill-unified">授業のねらい</span><h2 class="goal-title-unified">四分位数と箱ひげ図で散らばりを捉える</h2><p>範囲・四分位数・四分位範囲を求め、箱ひげ図からデータの散らばり方を比較しましょう。</p></section><article class="card"><p>代表値が同じでも、データの散らばり方は異なることがあります。</p><h2>範囲と四分位数</h2><div class="formula">範囲 ＝ 最大値 − 最小値</div><p>データを小さい順に並べ、中央値を<strong>第2四分位数 Q₂</strong>とします。中央値より下の半分の中央値を<strong>第1四分位数 Q₁</strong>、上の半分の中央値を<strong>第3四分位数 Q₃</strong>とします。個数が奇数のときは全体の中央値を上下の半分から除きます。</p><div class="formula">四分位範囲 ＝ Q₃ − Q₁</div><h2>箱ひげ図</h2><p>最小値、Q₁、中央値、Q₃、最大値の5つを使って分布を表します。箱の幅が四分位範囲です。ここでは教科書で一般的な、最小値から最大値までひげを伸ばす形式を使います。</p></article><section class="card"><h2>例題と解説</h2><div class="example"><p>2, 3, 5, 7, 9, 11, 13 の中央値は7。下半分 2, 3, 5 の中央値は3、上半分 9, 11, 13 の中央値は11。四分位範囲は 11−3＝8。</p></div></section><section class="card"><h2>動かして確かめよう</h2><p>データの組を切り替えると、表・図・計算結果が同時に変わります。</p><div class="controls"><button onclick="setData(0)">データA</button> <button onclick="setData(1)">データB</button> <button onclick="setData(2)">外れた値を含むC</button><p><strong>並べたデータ：</strong><span id="values"></span></p><p id="summary"></p></div><svg aria-label="データに応じて変わる図" id="chart" viewbox="0 0 580 280"></svg><table id="detailsTable"></table></section><section class="card"><h2>練習問題</h2><p>1, 2, 4, 6, 8, 10, 12 の四分位範囲を求めなさい。</p><details><summary>解答を見る</summary><p>Q₁＝2、Q₃＝10、四分位範囲＝8。</p></details></section><p><small>写真を参考に独自の例題と図を作成しています。数式表示にはインターネット接続が必要です。</small></p></main><div class="math1-bottom-nav"><a href="math_subject_1.html">← 数学Ⅰの目次に戻る</a></div><footer class="math1-bottom-footer">みんなの数学データベース｜数学Ⅰ</footer><script>
 const datasets=[[3,4,4,5,5,5,6,7,7,8],[2,3,3,4,4,5,6,7,8,9],[1,2,3,4,5,6,7,8,9,20]];
 let data=datasets[0].slice();const $=id=>document.getElementById(id);
