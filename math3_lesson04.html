@@ -70,12 +70,12 @@ main .standard-lesson-goal .standard-goal-subtitle {
 @media(max-width:600px){main .standard-lesson-goal{padding:20px 18px 24px !important;}}
 
 /* Header-to-goal gap: dedicated spacer, not margin collapse */
-.header-goal-spacer{display:block!important;height:32px!important;min-height:32px!important;background:#f2f6fc!important;}
+.header-goal-spacer{display:none!important;}
 body > main.wrap{padding-top:22px!important;}
 body > main.wrap > .standard-lesson-goal:first-child{margin-top:0!important;}
 </style>
 <script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'global'}};</script><script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script></head><body>
-<header class="standard-lesson-header"><div class="wrap"><a class="lesson-head-back" href="math_subject_3.html">← 数学Ⅲの授業一覧に戻る</a><h1 class="lesson-head-title">数列の極限</h1><p class="lesson-head-meta">数学Ⅲ ／ 第2章 極限 ／ 第1講　｜　みんなの数学データベース</p></div></header><div aria-hidden="true" class="header-goal-spacer"></div>
+<header class="standard-lesson-header"><div class="wrap"><a class="lesson-head-back" href="math_subject_3.html">← 数学Ⅲの授業一覧に戻る</a><h1 class="lesson-head-title">数列の極限</h1><p class="lesson-head-meta">数学Ⅲ ／ 第2章 極限 ／ 第1講　｜　みんなの数学データベース</p></div></header>
 <main class="wrap">
 <section aria-label="授業のねらい" class="standard-lesson-goal"><span class="standard-goal-label">授業のねらい</span><h2 class="standard-goal-title">数列の収束と発散を理解する</h2><p class="standard-goal-subtitle">数列の項がどのような値に近づくかをグラフで確かめ、極限の基本法則とはさみうちの原理を使って計算できるようになる。</p></section>
 <section class="paper"><h2>1．数列の極限とは</h2><p>数列 \(\{a_n\}\) について、項番号 \(n\) を限りなく大きくしたときの \(a_n\) の振る舞いを調べます。</p><h3>収束</h3><p>\(n\) を大きくすると \(a_n\) がある一定の実数 \(\alpha\) に限りなく近づくとき、数列 \(\{a_n\}\) は \(\alpha\) に<strong>収束する</strong>といいます。</p><div class="formula">\[\lim_{n\to\infty}a_n=\alpha\]</div><div class="example"><strong>例</strong>　\(a_n=\dfrac1n\) のとき<br/>\(1,\dfrac12,\dfrac13,\dfrac14,\ldots\) となり、\(\displaystyle\lim_{n\to\infty}\frac1n=0\) です。</div><h3>発散</h3><p>一定の実数に収束しない数列を<strong>発散する</strong>といいます。発散には、\(+\infty\) に発散、\(-\infty\) に発散、振動する場合があります。</p><div class="formula">\[\lim_{n\to\infty}n=+\infty,\qquad \lim_{n\to\infty}(-n)=-\infty\]</div><p>例えば \((-1)^n\) は \(-1,1,-1,1,\ldots\) と振動し、極限は存在しません。<strong>無限大は実数の極限値ではない</strong>ことに注意しましょう。</p></section>
