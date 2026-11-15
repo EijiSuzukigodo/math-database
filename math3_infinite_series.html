@@ -1,1 +1,168 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>無限級数｜みんなの数学データベース</title><style>*{box-sizing:border-box}body{margin:0;background:#f2f7fc;color:#18314c;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.75}a{color:#176cae}.wrap{max-width:1080px;margin:auto;padding:0 17px}header{background:linear-gradient(110deg,#17365d,#24689c);color:white;padding:24px 0 28px}header a{color:white}header h1{font-size:clamp(26px,4.2vw,36px);margin:10px 0 5px}header p{font-size:14px;color:#e3effc;margin:0}main{padding:22px 0 52px}.course-unified-goal{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px}.course-goal-label{display:block;font-size:13px;color:#215f91;font-weight:700}.course-goal-title{font-size:clamp(21px,3.2vw,27px);margin:0 0 4px;color:#17365d}.course-goal-subtitle{font-size:14px;color:#526a80;margin:0}.subject-unit,.paper{background:white;border:1px solid #d6e3ef;border-radius:15px;padding:20px;margin:20px 0}.subject-unit>h2{color:#174c79;font-size:23px;margin:0 0 5px}.subject-unit-sub{font-size:14px;color:#63788c;margin:0 0 16px}.subject-list{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.subject-item{background:#fbfdff;border:1px solid #d6e3ef;border-radius:12px;padding:16px;min-width:0}.subject-name{font-size:18px;line-height:1.5;margin:0 0 6px}.subject-name a{text-decoration:none}.subject-desc{font-size:14px;color:#526a80;margin:0}.paper h2{color:#174c79;border-bottom:2px solid #bcd3e8;padding-bottom:7px}.formula{background:#f3f8ff;border:1px solid #d6e5fa;border-radius:9px;padding:12px;overflow-x:auto}.example{background:#fffaf0;border-left:5px solid #e6a345;border-radius:9px;padding:12px 16px}.exercise{background:#f8faff;border:1px solid #d6e3f0;border-radius:10px;padding:12px 16px}.backnav{display:flex;gap:12px;flex-wrap:wrap;margin:25px 0 15px}.backnav a{padding:8px 13px;background:#e5f1fc;border-radius:9px;text-decoration:none;font-weight:700}footer{background:#142f4d;color:#e9f2fc;padding:20px 0;font-size:13px;text-align:center}details summary{cursor:pointer;color:#176cae;font-weight:700}.controls{display:flex;gap:20px;flex-wrap:wrap}.controls label{display:flex;align-items:center;gap:10px}.controls input{width:150px}canvas{width:100%;height:auto;border:1px solid #d6e3ef;border-radius:10px;background:#fff}button,a,input{touch-action:manipulation}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #edaa45;outline-offset:2px}@media(max-width:640px){.subject-list{grid-template-columns:1fr}.subject-unit,.paper{padding:15px}}</style><script>window.MathJax={tex:{inlineMath:[["\(","\)" ]],displayMath:[["\[","\]"]]}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script></head><body><header><div class="wrap"><a href="math_subject_3.html">← 数学Ⅲの授業へ戻る</a><h1>無限級数</h1><p>数学Ⅲ／第2章 極限｜みんなの数学データベース</p></div></header><main class="wrap"><section class="course-unified-goal"><span class="course-goal-label">授業のねらい</span><h2 class="course-goal-title">無限級数を理解する</h2><p class="course-goal-subtitle">部分和の極限を使って無限級数の収束と和を求められるようにします。</p></section><section class="paper"><h2>1．無限級数と部分和</h2><p>数列 \(a_1,a_2,\ldots\) に対して、\(a_1+a_2+\cdots\) を無限級数といいます。</p><div class="formula">\[S_n=\sum_{k=1}^n a_k,\qquad \sum_{k=1}^{\infty}a_k=\lim_{n\to\infty}S_n\]</div><p>右辺の極限が有限に存在するとき、その無限級数は収束し、値を無限級数の和といいます。極限が存在しない場合は発散します。</p><h2>2．無限等比級数</h2><div class="formula">\[a+ar+ar^2+\cdots=\frac{a}{1-r}\qquad (|r|<1)\]</div><p>\(r\ne1\) のとき、\(S_n=\frac{a(1-r^n)}{1-r}\)。\(|r|<1\) なら \(r^n\to0\) であることから公式が得られます。\(a\ne0\) かつ \(|r|\ge1\) の場合は収束しません。</p></section><section class="paper"><h2>3．動く部分和</h2><p>公比 \(0\le r<1\) を動かし、部分和が \(\frac1{1-r}\) に近づく様子を観察します（初項は1）。</p><div class="controls"><label>公比 r <input type="range" id="r" min="0" max="0.95" step="0.05" value="0.5"><output id="rv">0.50</output></label></div><canvas id="graph" width="760" height="300" aria-label="部分和の収束を表すグラフ"></canvas><script>(()=>{let r=document.getElementById('r'),o=document.getElementById('rv'),c=document.getElementById('graph'),ctx=c.getContext('2d');function draw(){let v=+r.value;o.textContent=v.toFixed(2);let lim=1/(1-v);ctx.clearRect(0,0,760,300);ctx.strokeStyle='#b3c3d3';ctx.beginPath();ctx.moveTo(35,265);ctx.lineTo(735,265);ctx.stroke();ctx.strokeStyle='#ca8530';ctx.setLineDash([7,5]);ctx.beginPath();ctx.moveTo(35,255-lim*220/(lim+1));ctx.lineTo(735,255-lim*220/(lim+1));ctx.stroke();ctx.setLineDash([]);ctx.strokeStyle='#176cae';ctx.lineWidth=3;ctx.beginPath();for(let i=1;i<=15;i++){let s=(1-Math.pow(v,i))/(1-v),x=35+i*44,y=255-s*220/(lim+1);i===1?ctx.moveTo(x,y):ctx.lineTo(x,y)}ctx.stroke();ctx.lineWidth=1;ctx.fillStyle='#17365d';ctx.font='14px sans-serif';ctx.fillText('部分和 Sₙ（青）と極限（点線）',12,23)}r.addEventListener('input',draw);draw()})()</script></section><section class="paper"><h2>4．例題</h2><div class="example"><strong>例題1</strong>　\(1+\frac13+\frac19+\cdots\) の和を求めなさい。<p><strong>解答</strong>　初項1、公比 \(\frac13\) より \(S=\frac1{1-1/3}=\frac32\)。</p></div><div class="example"><strong>例題2</strong>　\(\sum_{n=1}^{\infty}\frac1{n(n+1)}\) の和を求めなさい。<p><strong>解答</strong>　\(\frac1{n(n+1)}=\frac1n-\frac1{n+1}\) より \(S_N=1-\frac1{N+1}\to1\)。</p></div><h2>5．練習問題</h2><div class="exercise">① \(2+1+\frac12+\cdots\)　② \(1-1+1-1+\cdots\) は収束するか。<details><summary>解答を表示</summary><p>① 4　② 部分和が1と0を繰り返すため発散</p></details></div><h2>6．発展</h2><p>一般に \(\sum a_n\) が収束するならば \(a_n\to0\) です。ただし逆は成立しません。例えば \(\sum_{n=1}^\infty\frac1n\) は発散します。</p></section><nav class="backnav"><a href="math_subject_3.html">← 数学Ⅲの授業一覧へ戻る</a></nav></main><footer><div class="wrap">みんなの数学データベース｜高校生のための授業</div></footer></body></html>
+<!DOCTYPE html>
+
+<html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>無限級数｜数学Ⅲ｜みんなの数学データベース</title>
+<style>
+header{background:linear-gradient(110deg,#17365d,#24689c);color:white;padding:24px 0 28px}header header h1{font-size:clamp(26px,4.2vw,36px);margin:10px 0 5px;line-height:1.35}header .goal{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px}.goal-label{display:block;font-size:13px;font-weight:700;color:#215f91}.goal-title{font-size:clamp(21px,3.2vw,27px);line-height:1.4;margin:3px 0 6px;color:#17365d}.goal .paper{border:1px solid #d6e3f0;background:white;border-radius:14px;padding:clamp(16px,3vw,30px);margin:18px 0}.formula{background:#f2f7ff;border:1px solid #d6e5fa;border-radius:10px;text-align:center;overflow-x:auto;padding:11px 8px;margin:12px 0}.example{border-left:5px solid #e6a345;background:#fff9ec;border-radius:9px;padding:14px 16px;margin:15px 0}.answer{border-left:5px solid #3ca07b;background:#effbf5;border-radius:9px;padding:14px 16px;margin:12px 0}.exercise{background:#f7faff;border:1px solid #d7e3f0;border-radius:10px;padding:14px 16px;margin:13px 0}.muted{color:#526a80}.small{font-size:14px}.nav-back{margin:24px 0 12px}footer{background:#142f4d;color:#e9f2fc;text-align:center;padding:20px 0;font-size:13px}.plot{border:1px solid #d6e3ef;border-radius:12px;display:block;width:100%;height:auto;background:#fff}.controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;margin:12px 0}.controls label{display:block;font-weight:700;color:#17365d}.controls input,.controls select{width:100%;font:inherit;padding:9px}.controls input[type=range]{padding:4px}.reading{background:#eaf4ff;padding:12px;border-radius:9px;margin:10px 0;font-size:15px}summary{cursor:pointer;color:#145e95;font-weight:700}button,a,summary{touch-action:manipulation}a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid orange;outline-offset:3px}@media(max-width:560px){.paper{padding:15px}}
+
+/* Unified lesson shell, matching other Math III lessons */
+
+.standard-lesson-header 
+.standard-lesson-header h1{font-size:clamp(26px,4.2vw,36px);margin:6px 0 3px}
+.standard-lesson-header 
+
+
+
+
+nav.standard-lesson-bottom{max-width:1040px;margin:8px auto 28px;padding:0 17px;text-align:center}
+nav.standard-lesson-bottom 
+footer.standard-lesson-footer{background:#142f4d;color:#e9f2fc;padding:20px 15px;font-size:13px;text-align:center}
+.graph-svg{display:block;width:100%;height:auto;aspect-ratio: 900 / 450;border:1px solid #d6e3ef;border-radius:12px;background:#fff}
+.graph-svg text{font-family:-apple-system,BlinkMacSystemFont,Meiryo,sans-serif;font-size:16px;fill:#526a80}
+.graph-svg .grid-line{stroke:#dce6f0;stroke-width:1}
+.graph-svg .axis-line{stroke:#7897b2;stroke-width:2}
+.graph-svg .limit-line{stroke:#cb5261;stroke-width:2;stroke-dasharray:9 6}
+.graph-svg .seq-dot{fill:#206da5}
+
+*{box-sizing:border-box}
+body{margin:0;background:#f2f6fc;color:#1c3148;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.8;font-size:16px}
+a{color:#176cae}
+.wrap{max-width:1040px;margin:auto;padding:0 17px}
+main{padding:38px 0 58px}
+h2{color:#174c7b;border-bottom:2px solid #c5d9eb;padding-bottom:7px;margin:28px 0 14px;font-size:clamp(21px,3vw,26px)}
+h3{color:#17365d;margin:19px 0 8px}
+p{overflow-wrap:anywhere}
+.standard-lesson-header{background:linear-gradient(110deg,#17365d,#24689c);color:white;padding:24px max(17px,calc((100vw - 1006px)/2)) 28px}
+.lesson-head-back{color:#fff;display:inline-block;margin-bottom:8px}
+.lesson-head-title{font-size:clamp(26px,4.2vw,36px);margin:6px 0 3px}
+.lesson-head-meta{font-size:14px;color:#e3effc;margin:0}
+.standard-lesson-goal{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px}
+.standard-goal-label{display:block;font-size:13px;font-weight:700;color:#215f91}
+.standard-goal-title{border:0;padding:0;font-size:clamp(21px,3.2vw,27px);margin:5px 0;color:#17365d}
+.standard-goal-subtitle{font-size:14px;color:#526a80;margin:0}
+.standard-lesson-bottom{max-width:1040px;margin:8px auto 28px;padding:0 17px}
+.standard-lesson-bottom a{display:inline-block;background:#e7f2fc;border-radius:9px;padding:10px 14px;font-weight:700}
+.standard-lesson-footer{background:#142f4d;color:#e9f2fc;padding:20px 15px;font-size:13px;text-align:center}
+/* 数学I・II・III・A・B・C共通：白いカード型「授業のねらい」 */
+main .standard-lesson-goal {
+  display:block !important; box-sizing:border-box !important;
+  background:#ffffff !important; border:1px solid #d8e4f0 !important;
+  border-left:1px solid #d8e4f0 !important;
+  border-radius:18px !important; padding:24px 24px 28px !important;
+  margin:0 0 24px !important; box-shadow:0 2px 6px rgba(19,52,83,.025) !important;
+}
+main .standard-lesson-goal .standard-goal-label {
+  display:inline-block !important; background:#e8f3fc !important;
+  color:#23618e !important; border-radius:24px !important;
+  padding:6px 14px !important; font-size:14px !important;
+  line-height:1.5 !important; font-weight:700 !important;
+}
+main .standard-lesson-goal .standard-goal-title {
+  display:block !important; color:#173f63 !important; border:0 !important;
+  padding:0 !important; margin:14px 0 18px !important;
+  font-size:clamp(22px,3.2vw,27px) !important;
+  font-weight:750 !important; line-height:1.5 !important;
+}
+main .standard-lesson-goal .standard-goal-subtitle {
+  color:#263e56 !important; font-size:16px !important;
+  line-height:1.9 !important; margin:0 !important;
+  font-weight:500 !important;
+}
+@media(max-width:600px){main .standard-lesson-goal{padding:20px 18px 24px !important;}}
+
+/* Header-to-goal gap: dedicated spacer, not margin collapse */
+.header-goal-spacer{display:none!important;}
+body > main.wrap{padding-top:22px!important;}
+body > main.wrap > .standard-lesson-goal:first-child{margin-top:0!important;}
+</style>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'global'}};</script><script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script></head><body>
+<header class="standard-lesson-header"><div class="wrap"><a class="lesson-head-back" href="math_subject_3.html">← 数学Ⅲの授業一覧に戻る</a><h1 class="lesson-head-title">無限級数</h1><p class="lesson-head-meta">数学Ⅲ ／ 第2章 極限 ／ 第3講　｜　みんなの数学データベース</p></div></header>
+<main class="wrap">
+<section aria-label="授業のねらい" class="standard-lesson-goal">
+<span class="standard-goal-label">授業のねらい</span>
+<h2 class="standard-goal-title">無限級数の収束と和を理解する</h2>
+<p class="standard-goal-subtitle">部分和の極限から無限級数の収束・発散を判断し、無限等比級数などの和を正しく求められるようになる。</p>
+</section>
+<section class="paper">
+<h2>1．無限級数と部分和</h2>
+<p>数列 \(a_1,a_2,a_3,\ldots\) の項を順に加えてできる式</p>
+<div class="formula">\[a_1+a_2+a_3+\cdots=\sum_{k=1}^{\infty}a_k\]</div>
+<p>を<strong>無限級数</strong>といいます。最初の \(n\) 項までの和を<strong>第 \(n\) 部分和</strong>といい、\(S_n\) と表します。</p>
+<div class="formula">\[S_n=a_1+a_2+\cdots+a_n=\sum_{k=1}^{n}a_k\]</div>
+<p>無限級数の収束・発散は、項 \(a_n\) そのものではなく、<strong>部分和 \(S_n\) の極限</strong>で決まります。</p>
+<div class="formula">\[\lim_{n\to\infty}S_n=S\quad(\text{実数})\]</div>
+<p>なら無限級数は<strong>収束</strong>し、その<strong>和は \(S\)</strong> です。\(S_n\) が収束しなければ、無限級数は<strong>発散</strong>します。</p>
+<div class="example"><strong>重要な区別</strong>　\(\displaystyle\lim_{n\to\infty}a_n=0\) は級数が収束するための<strong>必要条件</strong>ですが、十分条件ではありません。たとえば調和級数 \(\displaystyle\sum_{n=1}^{\infty}\frac1n\) は発散します。</div>
+</section>
+<section class="paper">
+<h2>2．無限等比級数の和</h2>
+<p>初項 \(a\)、公比 \(r\) の無限等比級数を考えます。</p>
+<div class="formula">\[a+ar+ar^2+\cdots=\sum_{k=1}^{\infty}ar^{k-1}\]</div>
+<p>\(r\ne1\) のとき、第 \(n\) 部分和は</p>
+<div class="formula">\[S_n=\frac{a(1-r^n)}{1-r}\]</div>
+<p>です。\(|r|&lt;1\) なら \(r^n\to0\) なので、</p>
+<div class="formula">\[\boxed{\sum_{k=1}^{\infty}ar^{k-1}=\frac{a}{1-r}\quad(|r|&lt;1)}\]</div>
+<p>となります。<strong>ただし \(a\ne0\) で \(|r|\ge1\) のときは発散</strong>します。\(a=0\) の場合は各項が0なので、すべての \(r\) で和は0です。</p>
+<div class="example"><strong>例題1</strong>　\(\displaystyle 3+\frac32+\frac34+\cdots\) の和を求めなさい。<div class="answer"><strong>解答</strong>　初項 \(a=3\)、公比 \(r=\frac12\) より \(|r|&lt;1\)。<div class="formula">\[S=\frac{3}{1-\frac12}=6\]</div></div></div>
+<div class="example"><strong>例題2</strong>　\(\displaystyle 2-1+\frac12-\frac14+\cdots\) の和を求めなさい。<div class="answer"><strong>解答</strong>　初項 \(a=2\)、公比 \(r=-\frac12\)。<div class="formula">\[S=\frac{2}{1-(-\frac12)}=\frac43\]</div></div></div>
+</section>
+<section class="paper">
+<h2>3．動く図で部分和を観察する</h2>
+<p>公比 \(r\) と項数 \(n\) を変えると、部分和 \(S_n=1+r+\cdots+r^{n-1}\) がどのように変化するかを見られます。青い点が部分和、赤い破線が \(|r|&lt;1\) のときの極限値です。</p>
+<div class="controls">
+<label for="ratio">公比 \(r\)：<strong id="ratio-value">0.50</strong><input id="ratio" max="1.2" min="-1.2" step="0.05" type="range" value="0.5"/></label>
+<label for="terms">表示する項数 \(n\)：<strong id="terms-value">12</strong><input id="terms" max="30" min="2" step="1" type="range" value="12"/></label>
+</div>
+<svg aria-label="無限等比級数の部分和グラフ" class="graph-svg" id="series-plot" role="img" viewbox="0 0 900 450"></svg>
+<p aria-live="polite" class="reading" id="series-reading">公比0.5の部分和は2に近づきます。</p>
+<p class="small muted">※ グラフはSVGで描画します。初期状態では点を表示し、スライダーを動かすと再描画します。縦軸は部分和、横軸は項数です。</p>
+</section>
+<section class="paper">
+<h2>4．部分和を使って和を求める</h2>
+<div class="example"><strong>例題3</strong>　\(\displaystyle\sum_{n=1}^{\infty}\frac{1}{n(n+1)}\) の和を求めなさい。<div class="answer"><strong>解答</strong>　部分分数分解をすると、<div class="formula">\[\frac1{n(n+1)}=\frac1n-\frac1{n+1}\]</div>よって第 \(N\) 部分和は<div class="formula">\[S_N=\left(1-\frac12\right)+\cdots+\left(\frac1N-\frac1{N+1}\right)=1-\frac1{N+1}\]</div>したがって<div class="formula">\[\boxed{\lim_{N\to\infty}S_N=1}\]</div></div></div>
+<div class="example"><strong>例題4</strong>　\(\displaystyle\sum_{n=1}^{\infty}\frac{n}{n+1}\) は収束するか。<div class="answer"><strong>解答</strong>　一般項 \(\displaystyle a_n=\frac{n}{n+1}\to1\ne0\) です。収束する級数は一般項が0に近づく必要があるため、この級数は<strong>発散</strong>します。</div></div>
+</section>
+<section class="paper">
+<h2>5．練習問題</h2>
+<div class="exercise"><strong>問題1</strong>　\(\displaystyle 1+\frac13+\frac19+\cdots\) の和を求めなさい。<details><summary>解答・解説を見る</summary><div class="answer">初項1、公比 \(\frac13\) より \(\displaystyle S=\frac{1}{1-\frac13}=\boxed{\frac32}\)。</div></details></div>
+<div class="exercise"><strong>問題2</strong>　\(\displaystyle 4-2+1-\frac12+\cdots\) の和を求めなさい。<details><summary>解答・解説を見る</summary><div class="answer">初項4、公比 \(-\frac12\) より \(\displaystyle S=\frac4{1+\frac12}=\boxed{\frac83}\)。</div></details></div>
+<div class="exercise"><strong>問題3</strong>　\(\displaystyle\sum_{n=1}^{\infty}\frac{2}{n(n+2)}\) の和を求めなさい。<details><summary>解答・解説を見る</summary><div class="answer">\(\displaystyle\frac2{n(n+2)}=\frac1n-\frac1{n+2}\)。ゆえに<div class="formula">\[S_N=1+\frac12-\frac1{N+1}-\frac1{N+2}\to\boxed{\frac32}\]</div></div></details></div>
+<div class="exercise"><strong>問題4</strong>　\(\displaystyle\sum_{n=1}^{\infty}(-1)^{n-1}\) は収束するか。<details><summary>解答・解説を見る</summary><div class="answer">部分和は \(1,0,1,0,\ldots\) と振動し、収束しません。したがって<strong>発散</strong>します。</div></details></div>
+</section>
+<section class="paper">
+<h2>6．発展問題</h2>
+<p>無限等比級数 \(\displaystyle\sum_{n=1}^{\infty}2x^{n-1}\) が収束する \(x\) の範囲と、その和を求めなさい。</p>
+<details><summary>解答・解説を見る</summary><div class="answer">初項2、公比 \(x\)。収束する条件は \(\boxed{-1<x<1}\) class="formula" で、そのときの和は<div="">\[\boxed{S=\frac2{1-x}}\]</x<1}\)></div></details>
+<h3>この授業のまとめ</h3>
+<p>無限級数を扱うときは、最初に<strong>部分和 \(S_n\)</strong> を考え、その極限を求めます。無限等比級数の公式は \(|r|&lt;1\) という条件を必ず確認しましょう。</p>
+</section>
+<nav aria-label="前のページに戻る" class="standard-lesson-bottom"><a href="math_subject_3.html">← 数学Ⅲの授業一覧に戻る</a></nav>
+</main><footer class="standard-lesson-footer"><div class="wrap">みんなの数学データベース｜高校生のための授業</div></footer>
+<script>(function(){'use strict';
+var svg=document.getElementById('series-plot'),slider=document.getElementById('ratio'),terms=document.getElementById('terms');
+var rv=document.getElementById('ratio-value'),tv=document.getElementById('terms-value'),read=document.getElementById('series-reading');
+if(!svg||!slider||!terms)return;
+var NS='http://www.w3.org/2000/svg';
+function put(tag,attr,str){var e=document.createElementNS(NS,tag);Object.keys(attr||{}).forEach(function(k){e.setAttribute(k,attr[k]);});if(str!==undefined)e.textContent=str;svg.appendChild(e);return e;}
+function S(r,n){if(Math.abs(r-1)<1e-9)return n;return (1-Math.pow(r,n))/(1-r);}
+function paint(){
+ var r=Number(slider.value),N=Number(terms.value);rv.textContent=r.toFixed(2);tv.textContent=N;
+ while(svg.firstChild)svg.removeChild(svg.firstChild);
+ var vals=[];for(var i=1;i<=N;i++)vals.push(S(r,i));
+ var lim=Math.abs(r)<1?1/(1-r):null;
+ var mn=Math.min(0,...vals,lim===null?0:lim),mx=Math.max(0,...vals,lim===null?0:lim);
+ var pad=Math.max(.2,(mx-mn)*.13);mn-=pad;mx+=pad;
+ var left=75,right=862,top=30,bottom=397;
+ function X(n){return left+(n-1)*(right-left)/Math.max(1,N-1)}
+ function Y(v){return bottom-(v-mn)/(mx-mn)*(bottom-top)}
+ put('rect',{x:0,y:0,width:900,height:450,fill:'#fff'});
+ for(var j=0;j<=5;j++){var v=mn+(mx-mn)*j/5,y=Y(v);put('line',{x1:left,x2:right,y1:y,y2:y,class:'grid-line'});put('text',{x:12,y:y+5},v.toFixed(2));}
+ put('line',{x1:left,x2:right,y1:bottom,y2:bottom,class:'axis-line'});
+ for(var t=1;t<=N;t+=Math.max(1,Math.ceil(N/10))){var x=X(t);put('text',{x:x-8,y:424},String(t));}
+ put('text',{x:832,y:441},'項数 n');
+ put('text',{x:14,y:18},'部分和 Sₙ');
+ if(lim!==null){var ly=Y(lim);put('line',{x1:left,x2:right,y1:ly,y2:ly,class:'limit-line'});put('text',{x:690,y:Math.max(19,ly-9),fill:'#cb5261'},'極限 '+lim.toFixed(3));}
+ for(var k=0;k<vals.length;k++){put('circle',{cx:X(k+1),cy:Y(vals[k]),r:5.5,class:'seq-dot'});}
+ var last=vals[vals.length-1];read.textContent='公比 r = '+r.toFixed(2)+'、第'+N+'部分和 Sₙ ≒ '+last.toFixed(4)+'。'+(lim!==null?' 無限級数の和は '+lim.toFixed(4)+' に収束します。':' |r| ≥ 1 なので、この無限等比級数は発散します。');
+}
+slider.addEventListener('input',paint);terms.addEventListener('input',paint);paint();
+})();</script></body></html>
