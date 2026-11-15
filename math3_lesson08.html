@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>微分係数と導関数｜数学Ⅲ｜みんなの数学データベース</title>
 <style>
@@ -24,11 +25,31 @@ body>main>section:first-child:is(.goal,.standard-lesson-goal)>p{color:#445d72!im
 mjx-container{max-width:100%!important}mjx-container[display="true"]{overflow-x:auto!important;overflow-y:hidden!important}
 @media(max-width:640px){body>main>section:first-child:is(.goal,.standard-lesson-goal){padding:17px 15px!important}}
 mjx-container svg{width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;display:inline-block!important}
+</style><style id="md3-final-unified-css">
+/* 数学Ⅲ全授業の構造を統一（グラフのsvgには干渉しない） */
+html,body{margin:0}body{background:#f2f7fc;color:#19334e;line-height:1.8;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif}
+#md3-header{background:linear-gradient(110deg,#17365d,#215f99)!important;color:white!important;padding:24px 0 29px!important;min-height:0!important}
+#md3-header .md3-common-width{max-width:970px;margin:auto;padding:0 17px}
+#md3-header .md3-common-top{font-size:14px!important;font-weight:400!important;color:#e4effc!important;line-height:1.6!important;margin:0!important}
+#md3-header h1{color:#fff!important;font-size:clamp(25px,4.5vw,35px)!important;line-height:1.4!important;margin:8px 0 5px!important;padding:0!important;border:0!important;text-align:left!important}
+#md3-header .md3-common-bottom{color:#e4effc!important;font-size:14px!important;line-height:1.6!important;margin:0!important}
+#md3-main{padding-top:22px!important;padding-bottom:40px!important;box-sizing:border-box!important;max-width:970px!important;margin:0 auto!important;width:calc(100% - 34px)!important}
+#md3-goal{box-sizing:border-box!important;background:white!important;border:1px solid #dbe6f1!important;border-radius:14px!important;margin:0 0 22px!important;padding:22px 25px!important;box-shadow:0 3px 13px #193a5b0a!important;color:#19334e!important;width:100%!important;max-width:none!important;display:block!important}
+#md3-goal .md3-goal-tag{display:inline-block!important;background:#e6f3ff!important;color:#145888!important;border-radius:20px!important;font-weight:700!important;padding:2px 12px!important;font-size:13px!important;line-height:1.7!important}
+#md3-goal .md3-goal-title{border:0!important;padding:0!important;font-size:23px!important;color:#174b78!important;margin:10px 0 7px!important;line-height:1.5!important;text-align:left!important}
+#md3-goal p{margin:0!important;color:#445d72!important;font-size:16px!important;line-height:1.8!important}
+#md3-bottom-return{max-width:970px!important;margin:25px auto 0!important;padding:0!important;display:block!important;text-align:left!important;border:0!important;background:none!important;box-shadow:none!important}
+#md3-bottom-return a{color:#175988!important;background:#e5f1fd!important;border-radius:9px!important;padding:10px 15px!important;font-size:15px!important;font-weight:700!important;display:inline-block!important;text-decoration:none!important;line-height:1.7!important;border:0!important}
+#md3-footer{background:#112e4c!important;color:#ecf5fc!important;font-size:13px!important;line-height:1.7!important;padding:20px 0!important;margin:0!important;text-align:left!important;border:0!important}
+#md3-footer .md3-common-width{max-width:970px;margin:auto;padding:0 17px}
+#md3-main mjx-container svg{max-width:none!important;width:auto!important;height:auto!important}
+mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;max-width:100%}
+@media(max-width:640px){#md3-goal{padding:17px 15px!important}#md3-goal .md3-goal-title{font-size:20px!important}}
 </style></head>
-<body>
-<header class="md3-unified-header"><div class="md3-width"><div class="md3-breadcrumb">みんなの数学データベース ／ 高校数学 ／ 数学Ⅲ ／ 第3章 微分法</div><h1>微分係数と導関数</h1><p class="md3-subtitle">第1講　第3章 微分法</p></div></header>
-<main>
-<section class="goal"><span class="pill">授業のねらい</span><h2>微分係数と導関数の意味を理解する</h2><p>平均変化率から微分係数を導き、曲線の接線の傾きとの関係を理解する。さらに、導関数の定義を用いて基本的な関数を微分できるようになる。</p></section>
+<body><header id="md3-header"><div class="md3-common-width"><div class="md3-common-top">みんなの数学データベース ／ 高校数学 ／ 数学Ⅲ</div><h1>微分係数と導関数</h1><p class="md3-common-bottom">数学Ⅲ ／ 第3章 微分法 ／ 第1講</p></div></header>
+
+<main id="md3-main"><section class="md3-standard-goal" id="md3-goal"><span class="md3-goal-tag">授業のねらい</span><h2 class="md3-goal-title">微分係数と導関数の意味を理解する</h2><p>平均変化率から微分係数を導き、曲線の接線の傾きとの関係を理解する。さらに、導関数の定義を用いて基本的な関数を微分できるようになる。</p></section>
+
 <section><span class="pill">基本事項</span><h2>1. 平均変化率</h2>
 <p>関数 \(y=f(x)\) について、\(x\) が \(a\) から \(a+h\) に変わるとき、関数の値の変化を \(x\) の変化量で割ったものを<strong>平均変化率</strong>といいます（\(h\ne0\)）。</p>
 <div class="formula">\[\frac{f(a+h)-f(a)}{h}\]</div>
@@ -64,8 +85,7 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 </section>
 <section><span class="pill">発展問題</span><h2>7. 発展：係数を含む関数の微分可能性</h2><p>関数 \(f(x)\) を次で定めます。</p><div class="formula">\[f(x)=\begin{cases}x^2 &amp;(x\geq 1)\\ax+b &amp;(x&lt;1)\end{cases}\]</div><p>\(x=1\) で微分可能となるように \(a,b\) を求めなさい。</p><details><summary>解答・解説を表示</summary><p>微分可能なら連続なので、\(a+b=1\) です。右側の微分係数は2、左側の微分係数は \(a\) なので \(a=2\) となります。</p><div class="formula">\[\boxed{a=2,\qquad b=-1}\]</div><p>これらの値では連続であり、左右の微分係数も一致するため、確かに微分可能です。</p></details>
 <h3>学習のまとめ</h3><div class="note">平均変化率は割線の傾き、微分係数はその極限、導関数は各点の微分係数を表す関数です。微分できるかを判断するときは、左右からの差商の極限を確認しましょう。</div></section>
-
-<nav aria-label="授業ページの移動" class="md3-unified-navigation"><a href="math3_lesson07.html">← 前の授業「関数の連続性」</a><a href="math_subject_3.html">数学Ⅲの授業一覧へ戻る</a><a href="math3_lesson09.html">次の授業「導関数の計算」 →</a></nav></main><footer class="md3-unified-footer"><div class="md3-width">みんなの数学データベース｜高校生のための授業</div></footer>
+<nav id="md3-bottom-return"><a href="math_subject_3.html">← 数学Ⅲに戻る</a></nav></main>
 <script>
 (function(){'use strict';const $=id=>document.getElementById(id),ns='http://www.w3.org/2000/svg',svg=$('plot');const X=x=>80+(x+2.5)*130,Y=y=>390-y*55;const base=$('base');function el(tag,attrs){let p=document.createElementNS(ns,tag);for(const k in attrs)p.setAttribute(k,attrs[k]);return p}function add(tag,attrs){const p=el(tag,attrs);base.appendChild(p);return p}for(let x=-2;x<=3;x++){add('line',{x1:X(x),y1:20,x2:X(x),y2:435,stroke:'#edf2f7'});add('text',{x:X(x)+3,y:Y(0)+19,'font-size':15,fill:'#657e91'}).textContent=x}for(let y=-0;y<=6;y+=2){add('line',{x1:30,y1:Y(y),x2:880,y2:Y(y),stroke:'#edf2f7'});if(y) add('text',{x:X(0)+8,y:Y(y)-6,'font-size':14,fill:'#657e91'}).textContent=y}add('line',{x1:30,y1:Y(0),x2:880,y2:Y(0),stroke:'#708da5','stroke-width':2});add('line',{x1:X(0),y1:20,x2:X(0),y2:435,stroke:'#708da5','stroke-width':2});function draw(){const a=+$('a').value,h=+$('h').value, cubic=$('fn').value==='cubic',f=x=>cubic?x*x*x:x*x,fp=x=>cubic?3*x*x:2*x;$('aOutput').textContent=a.toFixed(1);$('hOutput').textContent=h.toFixed(2);let d='';for(let x=-2.5;x<=3.5;x+=.025){d+=(d?'L':'M')+X(x).toFixed(2)+' '+Y(f(x)).toFixed(2)+' '} $('curve').setAttribute('d',d);const p=f(a),q=f(a+h),m=(Math.abs(h)<0.00001?null:(q-p)/h),t=fp(a);function setline(id,slope){let L=$(id);if(slope===null){L.setAttribute('visibility','hidden');return}L.setAttribute('visibility','visible');const x1=-2.5,x2=3.5;L.setAttribute('x1',X(x1));L.setAttribute('x2',X(x2));L.setAttribute('y1',Y(p+slope*(x1-a)));L.setAttribute('y2',Y(p+slope*(x2-a)))}setline('secant',m);setline('tangent',t);for(const [id,x,y] of [['P',a,p],['Q',a+h,q]]){$(id).setAttribute('cx',X(x));$(id).setAttribute('cy',Y(y))} $('Q').setAttribute('visibility',m===null?'hidden':'visible');$('Ptext').setAttribute('x',X(a)+10);$('Ptext').setAttribute('y',Y(p)-12);$('Qtext').setAttribute('x',X(a+h)+9);$('Qtext').setAttribute('y',Y(q)+20);$('Qtext').setAttribute('visibility',m===null?'hidden':'visible');$('measure').textContent='割線の傾き：'+(m===null?'h=0 では定義されません':m.toFixed(3))+' ／ 接線の傾き：'+t.toFixed(3)}for(const id of ['fn','a','h'])$(id).addEventListener('input',draw);draw()})();
-</script></body></html>
+</script><footer id="md3-footer"><div class="md3-common-width">みんなの数学データベース｜高校生のための授業</div></footer></body></html>
