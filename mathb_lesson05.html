@@ -1,9 +1,10 @@
-<!doctype html>
-<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>階差数列｜みんなの数学データベース</title>
+<!DOCTYPE html>
+
+<html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><title>階差数列｜みんなの数学データベース</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f2f6fc;color:#1c3148;font-family:-apple-system,BlinkMacSystemFont,'Hiragino Kaku Gothic ProN',Meiryo,sans-serif;line-height:1.85;font-size:16px}a{color:#186da8}.wrap{max-width:1040px;margin:auto;padding:0 17px}header{background:linear-gradient(110deg,#17365d,#246ca3);color:#fff;padding:25px 0}header a{color:white}header h1{font-size:clamp(25px,4vw,36px);margin:10px 0 4px}header p{margin:0;color:#e4f0fa}main{padding:24px 0 60px}h2{color:#174c7b;border-bottom:2px solid #bcd3e8;padding-bottom:7px;margin:30px 0 16px}h3{color:#123e65;margin:23px 0 8px}p{overflow-wrap:anywhere}.nav{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:17px}.nav a{padding:7px 12px;background:#e2effb;border-radius:8px;text-decoration:none;font-weight:700}.intro{background:#e4f1ff;border-left:5px solid #2585bd;padding:16px;border-radius:9px;margin:0 0 20px}.paper{background:white;border:1px solid #d6e3f0;border-radius:14px;padding:clamp(17px,3vw,34px);margin:18px 0}.formula{background:#f3f8ff;border:1px solid #d6e5fa;border-radius:10px;padding:12px 8px;margin:14px 0;overflow-x:auto;text-align:center;font-size:.97em}.example{border-left:5px solid #e6a345;background:#fffaf0;border-radius:9px;padding:14px 16px;margin:14px 0}.answer{border-left:5px solid #3ca07b;background:#f0faf5;border-radius:9px;padding:14px 16px;margin:10px 0}.exercise{background:#f8faff;border:1px solid #d6e3f0;border-radius:10px;padding:13px 16px;margin-top:16px}summary{cursor:pointer;color:#145e95;font-weight:700}details{margin-top:9px}footer{background:#142f4d;color:#e6f2ff;padding:20px 0;font-size:13px}.muted{color:#526c82}.chip{display:inline-block;border-radius:25px;background:#e5f3fe;color:#246a96;padding:3px 10px;font-size:12px;font-weight:700}button,a,input,summary{touch-action:manipulation}a:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid orange;outline-offset:3px}.math-scroll{overflow-x:auto}.mjx-container[display="true"]{margin:.4em 0!important}.viz{border:1px solid #b8d6eb;border-radius:14px;background:#f8fbff;padding:16px;margin:18px 0}.controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.control{background:white;border:1px solid #dce9f4;border-radius:9px;padding:11px}.control label{display:flex;justify-content:space-between;font-weight:700;gap:8px}.control input{width:100%;accent-color:#2476b2;margin-top:9px}.chips{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0}.num{background:#dfeeff;color:#134d7f;padding:6px 10px;border-radius:8px;min-width:40px;text-align:center;font-weight:700}.diff{background:#e4f7e8;color:#12663b}.selected{outline:3px solid #f1a83f;outline-offset:1px}.result{background:#e8f5ff;border-radius:10px;padding:12px;margin-top:12px}.labelrow{font-size:14px;font-weight:700;color:#335a78;margin:7px 0}svg{max-width:100%;height:auto;display:block;background:white;border:1px solid #dae6f1;border-radius:9px}.legend{font-size:14px;color:#526c82}.note{border-left:4px solid #2184a6;padding:8px 12px;background:#eaf8fc;margin:12px 0}.warning{border-left:4px solid #cb8830;background:#fff5e3;padding:10px 12px;margin:12px 0}@media(max-width:600px){.controls{grid-template-columns:1fr}.wrap{padding:0 12px}.paper{padding:15px}.formula{font-size:.88em}.num{min-width:34px;padding:5px 7px}.chips{gap:5px}} 
 </style>
-<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'global'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'global'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script><script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 <style id="six-subjects-unified">
 /* 共通デザイン（数学 I/A/II/B/III/C）: 教材のプログラムや数式には非干渉 */
 :root{--course-navy:#17365d;--course-blue:#24689c;--course-paper:#ffffff;--course-muted:#526a80}
@@ -24,9 +25,9 @@ body>footer a{color:#e9f2fc!important}
 .matha-unified-goal p,.lesson-goal p,section.goal p,section.aim p,section.objective p{font-size:14px!important;color:#526a80!important}
 .goal-pill,section.goal .pill,section.aim small{font-size:13px!important}
 @media(max-width:550px){.course-unified-goal{padding:12px 14px}body>header{padding:18px 0 22px!important}}
-</style></head><body>
-<header><div class="wrap"><a href="index.html">← トップページ</a><h1>階差数列</h1><p>数学B｜数列</p></div></header>
-<main class="wrap"><section class="course-unified-goal" aria-label="授業のねらい"><span class="course-goal-label">授業のねらい</span><h2 class="course-goal-title">階差数列</h2><p class="course-goal-subtitle">隣り合う項の差を取ると規則が見えることがあります。</p></section><nav class="nav"><a href="high_school_video_lessons.html">科目一覧へ戻る</a><a href="math_subject_b.html">この科目の授業一覧</a></nav>
+</style><link href="lesson_common_style.css?v=20261115" rel="stylesheet"/></head><body>
+<header class="standard-lesson-header"><a class="lesson-head-back" href="math_subject_b.html">← 数学Bの授業一覧に戻る</a><h1 class="lesson-head-title">階差数列</h1><p class="lesson-head-meta">数学B ／ 階差数列</p></header>
+<main class="wrap"><section aria-label="授業のねらい" class="standard-lesson-goal"><span class="standard-goal-label">授業のねらい</span><h2 class="standard-goal-title">階差数列の考え方を理解する</h2><p class="standard-goal-subtitle">隣り合う項の差を取ると規則が見えることがあります。</p></section>
 <p class="intro">数列｜階差数列。図や式の意味を考えながら順番に学びましょう。隣り合う項の差を見て法則を発見し、逆にその差から元の数列の一般項を求めます。</p>
 <article class="paper">
 <h2>基本事項</h2>
@@ -37,7 +38,7 @@ body>footer a{color:#e9f2fc!important}
 <h2>考え方</h2>
 <p>まず条件と求める量を明確にし、上の関係式を使える形に整理します。等号変形や定義域などの条件も確かめましょう。</p>
 <h3>差を足すと途中の項が消える（望遠鏡和）</h3>
-<div class="formula">\[\begin{aligned}b_1&=a_2-a_1\\b_2&=a_3-a_2\\&\ \vdots\\b_{n-1}&=a_n-a_{n-1}\end{aligned}\]</div>
+<div class="formula">\[\begin{aligned}b_1&amp;=a_2-a_1\\b_2&amp;=a_3-a_2\\&amp;\ \vdots\\b_{n-1}&amp;=a_n-a_{n-1}\end{aligned}\]</div>
 <p>これらをすべて足すと途中の項が打ち消し合います。</p>
 <div class="formula">\[b_1+b_2+\cdots+b_{n-1}=a_n-a_1\]</div>
 <div class="formula">\[\boxed{a_n=a_1+\sum_{k=1}^{n-1}b_k}\quad(n\ge 2)\]</div>
@@ -46,48 +47,48 @@ body>footer a{color:#e9f2fc!important}
 <h2>動く教材：階差数列を作ってみよう</h2>
 <p>初項 \(a_1\) と階差の形 \(b_n=pn+q\)、表示する項数を変えてください。青が元の数列、緑が隣り合う差です。</p>
 <div class="viz" id="viz">
- <div class="controls">
- <div class="control"><label for="a1">初項 \(a_1\) <output id="a1v">2</output></label><input id="a1" type="range" min="-8" max="12" step="1" value="2"></div>
- <div class="control"><label for="p">階差の係数 \(p\) <output id="pv">2</output></label><input id="p" type="range" min="-4" max="5" step="1" value="2"></div>
- <div class="control"><label for="q">階差の定数 \(q\) <output id="qv">1</output></label><input id="q" type="range" min="-6" max="8" step="1" value="1"></div>
- <div class="control"><label for="count">表示する項数 <output id="countv">6</output></label><input id="count" type="range" min="3" max="9" step="1" value="6"></div>
- </div>
- <div class="labelrow">元の数列（青）</div><div class="chips" id="original"></div>
- <div class="labelrow">階差数列（緑）</div><div class="chips" id="differences"></div>
- <svg id="plot" viewBox="0 0 700 270" role="img" aria-label="元の数列と階差を表すグラフ"><text x="20" y="35">グラフを準備しています</text></svg>
- <div class="result" id="calc" aria-live="polite"></div>
- <p class="legend">青い丸は \((n,a_n)\) です。数列の値が負になっても表示できます。</p>
+<div class="controls">
+<div class="control"><label for="a1">初項 \(a_1\) <output id="a1v">2</output></label><input id="a1" max="12" min="-8" step="1" type="range" value="2"/></div>
+<div class="control"><label for="p">階差の係数 \(p\) <output id="pv">2</output></label><input id="p" max="5" min="-4" step="1" type="range" value="2"/></div>
+<div class="control"><label for="q">階差の定数 \(q\) <output id="qv">1</output></label><input id="q" max="8" min="-6" step="1" type="range" value="1"/></div>
+<div class="control"><label for="count">表示する項数 <output id="countv">6</output></label><input id="count" max="9" min="3" step="1" type="range" value="6"/></div>
+</div>
+<div class="labelrow">元の数列（青）</div><div class="chips" id="original"></div>
+<div class="labelrow">階差数列（緑）</div><div class="chips" id="differences"></div>
+<svg aria-label="元の数列と階差を表すグラフ" id="plot" role="img" viewbox="0 0 700 270"><text x="20" y="35">グラフを準備しています</text></svg>
+<div aria-live="polite" class="result" id="calc"></div>
+<p class="legend">青い丸は \((n,a_n)\) です。数列の値が負になっても表示できます。</p>
 </div>
 <h3>階差が1次式の場合の一般項</h3>
 <p>\(b_n=pn+q\) なら、\(n\ge2\) において</p>
-<div class="formula">\[\begin{aligned}a_n&=a_1+\sum_{k=1}^{n-1}(pk+q)\\&=a_1+\frac{p(n-1)n}{2}+q(n-1).\end{aligned}\]</div>
+<div class="formula">\[\begin{aligned}a_n&amp;=a_1+\sum_{k=1}^{n-1}(pk+q)\\&amp;=a_1+\frac{p(n-1)n}{2}+q(n-1).\end{aligned}\]</div>
 <p>この式は \(n=1\) を代入しても \(a_1\) となるので、\(n=1\) にも成り立ちます。</p>
 <h2>解説付き例題</h2>
 <div class="example"><strong>例題1（元の教材の例題）</strong><p>\(a_n=n^2\) の階差数列を求める。</p></div>
 <h3>解答と解説</h3><div class="answer"><p>定義式に \(a_{n+1}\) と \(a_n\) を代入します。</p><div class="formula">\[b_n=(n+1)^2-n^2=2n+1\]</div><p>よって階差数列は \(3,5,7,\ldots\) です。</p></div>
 <div class="example"><strong>例題2（階差から一般項へ）</strong><p>\(a_1=2\)、階差数列が \(b_n=2n+1\) のとき、\(a_n\) を求める。</p></div>
-<div class="answer"><div class="formula">\[\begin{aligned}a_n&=2+\sum_{k=1}^{n-1}(2k+1)\\&=2+n(n-1)+(n-1)\\&=n^2+1.\end{aligned}\]</div><p>\(n=1\) でも \(1^2+1=2=a_1\) なので、すべての自然数 \(n\) で成り立ちます。</p></div>
+<div class="answer"><div class="formula">\[\begin{aligned}a_n&amp;=2+\sum_{k=1}^{n-1}(2k+1)\\&amp;=2+n(n-1)+(n-1)\\&amp;=n^2+1.\end{aligned}\]</div><p>\(n=1\) でも \(1^2+1=2=a_1\) なので、すべての自然数 \(n\) で成り立ちます。</p></div>
 <div class="example"><strong>例題3（階差が等比数列）</strong><p>\(a_1=3\)、\(b_n=2^n\) のとき \(a_n\) を求める。</p></div>
-<div class="answer"><div class="formula">\[\begin{aligned}a_n&=3+\sum_{k=1}^{n-1}2^k\\&=3+(2^n-2)\\&=2^n+1.\end{aligned}\]</div><p>\(n=1\) を代入すると \(3\) で、初項とも一致します。</p></div>
+<div class="answer"><div class="formula">\[\begin{aligned}a_n&amp;=3+\sum_{k=1}^{n-1}2^k\\&amp;=3+(2^n-2)\\&amp;=2^n+1.\end{aligned}\]</div><p>\(n=1\) を代入すると \(3\) で、初項とも一致します。</p></div>
 <div class="example"><strong>例題4（階差が2次式）</strong><p>\(a_1=1\)、\(b_n=3n^2+3n+1\) のとき \(a_n\) を求める。</p></div>
-<div class="answer"><p>\(3k^2+3k+1=(k+1)^3-k^3\) に注目すると、</p><div class="formula">\[\begin{aligned}a_n&=1+\sum_{k=1}^{n-1}\big((k+1)^3-k^3\big)\\&=1+(n^3-1)=n^3.\end{aligned}\]</div><p>これは3乗の差を利用した望遠鏡和です。</p></div>
+<div class="answer"><p>\(3k^2+3k+1=(k+1)^3-k^3\) に注目すると、</p><div class="formula">\[\begin{aligned}a_n&amp;=1+\sum_{k=1}^{n-1}\big((k+1)^3-k^3\big)\\&amp;=1+(n^3-1)=n^3.\end{aligned}\]</div><p>これは3乗の差を利用した望遠鏡和です。</p></div>
 <div class="example"><strong>例題5（奇数列を階差にもつ数列）</strong><p>\(a_1=4\)、\(b_n=2n-1\) のとき \(a_n\) を求める。</p></div>
-<div class="answer"><div class="formula">\[\begin{aligned}a_n&=4+\sum_{k=1}^{n-1}(2k-1)\\&=4+(n-1)^2.\end{aligned}\]</div><p>最初の数項は \(4,5,8,13,\ldots\) です。</p></div>
+<div class="answer"><div class="formula">\[\begin{aligned}a_n&amp;=4+\sum_{k=1}^{n-1}(2k-1)\\&amp;=4+(n-1)^2.\end{aligned}\]</div><p>最初の数項は \(4,5,8,13,\ldots\) です。</p></div>
 <h2>練習問題</h2>
 <div class="exercise"><strong>問題1（元の教材の練習問題）</strong><p>\(a_n=n^2+n\) の階差数列を求めよ。</p><details><summary>解答を見る</summary><p>\(b_n=((n+1)^2+(n+1))-(n^2+n)=2n+2\) です。</p></details></div>
 <div class="exercise"><strong>問題2</strong><p>数列 \(1,4,9,16,25,\ldots\) の階差数列の最初の4項を求めよ。</p><details><summary>解答を見る</summary><p>\(3,5,7,9\) です。</p></details></div>
 <div class="exercise"><strong>問題3</strong><p>\(a_1=5\)、\(b_n=3n+1\) のとき、\(a_n\) を求めよ。</p><details><summary>解答を見る</summary><div class="formula">\[a_n=5+\frac{3n(n-1)}2+(n-1)=\frac{3n^2-n+8}{2}.\]</div></details></div>
 <div class="exercise"><strong>問題4</strong><p>\(a_1=2\)、\(b_n=3^n\) のとき、\(a_n\) を求めよ。</p><details><summary>解答を見る</summary><div class="formula">\[a_n=2+\frac{3^n-3}{2}=\frac{3^n+1}{2}.\]</div></details></div>
 <div class="exercise"><strong>問題5</strong><p>\(a_n=n^3\) の階差数列 \(b_n\) を求めよ。</p><details><summary>解答を見る</summary><div class="formula">\[b_n=(n+1)^3-n^3=3n^2+3n+1.\]</div></details></div>
-<div class="exercise"><strong>問題6</strong><p>\(a_1=1\)、\(b_n=n(n+1)\) のとき、\(a_n\) を求めよ。</p><details><summary>解答を見る</summary><div class="formula">\[\begin{aligned}a_n&=1+\sum_{k=1}^{n-1}(k^2+k)\\&=1+\frac{(n-1)n(2n-1)}6+\frac{(n-1)n}2\\&=1+\frac{(n-1)n(n+1)}3.\end{aligned}\]</div></details></div>
-<div class="exercise"><strong>問題7（発展）</strong><p>\(a_1=2\)、\(b_n=\frac{1}{n(n+1)}\) のとき、\(a_n\) を求めよ。</p><details><summary>解答を見る</summary><p>\(\frac{1}{k(k+1)}=\frac1k-\frac1{k+1}\) と分解します。</p><div class="formula">\[\begin{aligned}a_n&=2+\sum_{k=1}^{n-1}\left(\frac1k-\frac1{k+1}\right)\\&=2+1-\frac1n=3-\frac1n.\end{aligned}\]</div></details></div>
+<div class="exercise"><strong>問題6</strong><p>\(a_1=1\)、\(b_n=n(n+1)\) のとき、\(a_n\) を求めよ。</p><details><summary>解答を見る</summary><div class="formula">\[\begin{aligned}a_n&amp;=1+\sum_{k=1}^{n-1}(k^2+k)\\&amp;=1+\frac{(n-1)n(2n-1)}6+\frac{(n-1)n}2\\&amp;=1+\frac{(n-1)n(n+1)}3.\end{aligned}\]</div></details></div>
+<div class="exercise"><strong>問題7（発展）</strong><p>\(a_1=2\)、\(b_n=\frac{1}{n(n+1)}\) のとき、\(a_n\) を求めよ。</p><details><summary>解答を見る</summary><p>\(\frac{1}{k(k+1)}=\frac1k-\frac1{k+1}\) と分解します。</p><div class="formula">\[\begin{aligned}a_n&amp;=2+\sum_{k=1}^{n-1}\left(\frac1k-\frac1{k+1}\right)\\&amp;=2+1-\frac1n=3-\frac1n.\end{aligned}\]</div></details></div>
 <h2>間違えやすいポイント</h2>
 <p>① 差は必ず「後ろの項 − 前の項」です。② 元の数列の初項が必要です。③ 一般項を復元するときの和は \(n-1\) までです。④ 求めた一般項が \(n=1\) で正しいか検算します。</p>
 <h2>まとめ</h2>
 <p>隣り合う項の差を取ると規則が見えることがあります。例題で使った考え方を練習問題でも確かめましょう。</p>
 <div class="formula">\[\boxed{b_n=a_{n+1}-a_n}\qquad\boxed{a_n=a_1+\sum_{k=1}^{n-1}b_k\ (n\ge 2)}\]</div>
 <p>「差をとる → 差の規則を調べる → 和をとって元の数列へ戻す」という流れを身につけましょう。</p>
-</article><div class="nav"><a href="math_subject_b.html">← 数学Bの授業一覧に戻る</a></div></main><footer><div class="wrap">みんなの数学データベース｜高校生のための授業</div></footer>
+</article></main><nav aria-label="授業一覧へ戻る" class="standard-lesson-bottom"><a href="math_subject_b.html">← 数学Bの授業一覧へ戻る</a></nav><footer class="standard-lesson-footer">みんなの数学データベース｜数学Bの授業</footer>
 <script>
 (function(){
  const ids=['a1','p','q','count']; const $=id=>document.getElementById(id); const ns='http://www.w3.org/2000/svg';

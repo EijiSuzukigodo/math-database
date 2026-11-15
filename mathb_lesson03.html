@@ -1,10 +1,11 @@
-<!doctype html>
-<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>等比数列とその和｜みんなの数学データベース</title>
+<!DOCTYPE html>
+
+<html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>等比数列とその和｜みんなの数学データベース</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f2f6fc;color:#1c3148;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.85;font-size:16px}a{color:#186da8}.wrap{max-width:1040px;margin:auto;padding:0 17px}header{background:linear-gradient(110deg,#17365d,#246ca3);color:#fff;padding:25px 0}header a{color:#fff}header h1{font-size:clamp(25px,4vw,36px);margin:10px 0 4px}header p{margin:0;color:#e4f0fa}main{padding:24px 0 60px}h2{font-size:1.35rem;color:#174c7b;border-bottom:2px solid #bcd3e8;padding-bottom:7px;margin:30px 0 16px}h3{font-size:1.09rem;color:#123e65}p{overflow-wrap:anywhere}.nav{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:17px}.nav a{padding:7px 12px;background:#e2effb;border-radius:8px;text-decoration:none;font-weight:700}.intro{background:#e4f1ff;border-left:5px solid #2585bd;padding:16px;border-radius:9px;margin:0 0 20px}.paper{background:#fff;border:1px solid #d6e3f0;border-radius:14px;padding:clamp(17px,3vw,34px);margin:18px 0}.formula{background:#f3f8ff;border:1px solid #d6e5fa;border-radius:10px;padding:12px 8px;margin:14px 0;overflow-x:auto;text-align:center;font-size:0.94rem}.example{border-left:5px solid #e6a345;background:#fffaf0;border-radius:9px;padding:14px 16px;margin-top:17px}.answer{border-left:5px solid #3ca07b;background:#f0faf5;border-radius:9px;padding:14px 16px}.exercise{background:#f8faff;border:1px solid #d6e3f0;border-radius:10px;padding:13px 16px;margin-top:14px}summary{cursor:pointer;color:#145e95;font-weight:700;min-height:42px;display:flex;align-items:center}details{margin-top:9px}footer{background:#142f4d;color:#e6f2ff;padding:20px 0;font-size:13px}.muted{color:#526c82}.chip{display:inline-block;border-radius:25px;background:#e5f3fe;color:#246a96;padding:3px 10px;font-size:12px;font-weight:700}button,a,input{touch-action:manipulation}a:focus-visible,summary:focus-visible,input:focus-visible,button:focus-visible{outline:3px solid orange;outline-offset:3px}.math-scroll{overflow-x:auto}.panel{background:#f7fbff;border:1px solid #c4d8ed;border-radius:12px;padding:16px;margin:20px 0}.controls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.control label{display:block;font-weight:700;font-size:14px}.control input{width:100%;min-height:32px;accent-color:#196caa}.value{font-variant-numeric:tabular-nums;color:#125c91;font-weight:700}.result{margin:12px 0;padding:12px;background:#fff;border-radius:8px;border:1px solid #d6e3f0;font-weight:700}.plot{display:block;width:100%;height:auto;background:white;border:1px solid #dfebf6;border-radius:10px}.note{border-left:4px solid #2982b5;padding:10px 14px;background:#f2f8ff}.warning{border-left:4px solid #c2832a;padding:10px 14px;background:#fff8e9}.scroll{max-width:100%;overflow-x:auto}mjx-container[display="true"]{margin:.45em 0!important;max-width:100%;overflow-x:auto;overflow-y:hidden}mjx-container{font-size:100%!important}table{border-collapse:collapse;width:100%;font-size:14px}th,td{border:1px solid #d7e3f0;padding:8px;text-align:center}th{background:#edf5fc}.small{font-size:13px;color:#506982}button{background:#e2effb;border:1px solid #bed7ee;border-radius:8px;padding:9px 14px;font-weight:700;color:#145e95;cursor:pointer}@media(max-width:650px){.controls{grid-template-columns:1fr}.wrap{padding:0 12px}.paper{padding:16px}.formula{font-size:.88rem}body{font-size:15px}}
 </style>
 <script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"]]},svg:{fontCache:"global"}};</script>
-<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 <style id="six-subjects-unified">
 /* 共通デザイン（数学 I/A/II/B/III/C）: 教材のプログラムや数式には非干渉 */
 :root{--course-navy:#17365d;--course-blue:#24689c;--course-paper:#ffffff;--course-muted:#526a80}
@@ -25,7 +26,7 @@ body>footer a{color:#e9f2fc!important}
 .matha-unified-goal p,.lesson-goal p,section.goal p,section.aim p,section.objective p{font-size:14px!important;color:#526a80!important}
 .goal-pill,section.goal .pill,section.aim small{font-size:13px!important}
 @media(max-width:550px){.course-unified-goal{padding:12px 14px}body>header{padding:18px 0 22px!important}}
-</style></head><body><header><div class="wrap"><a href="index.html">← トップページ</a><h1>等比数列とその和</h1><p>数学B｜数列</p></div></header><main class="wrap"><section class="course-unified-goal" aria-label="授業のねらい"><span class="course-goal-label">授業のねらい</span><h2 class="course-goal-title">等比数列とその和</h2><p class="course-goal-subtitle">隣り合う項の比が一定の数列を等比数列といいます。</p></section><nav class="nav"><a href="high_school_video_lessons.html">科目一覧へ戻る</a><a href="math_subject_b.html">この科目の授業一覧</a></nav>
+</style><link href="lesson_common_style.css?v=20261115" rel="stylesheet"/></head><body><header class="standard-lesson-header"><a class="lesson-head-back" href="math_subject_b.html">← 数学Bの授業一覧に戻る</a><h1 class="lesson-head-title">等比数列とその和</h1><p class="lesson-head-meta">数学B ／ 等比数列とその和</p></header><main class="wrap"><section aria-label="授業のねらい" class="standard-lesson-goal"><span class="standard-goal-label">授業のねらい</span><h2 class="standard-goal-title">等比数列とその和の考え方を理解する</h2><p class="standard-goal-subtitle">隣り合う項の比が一定の数列を等比数列といいます。</p></section>
 <p class="intro">数列｜等比数列とその和。図や式の意味を考えながら順番に学びましょう。初項・公比・項数を変えて、公式を自分の目で確かめられます。</p>
 <article class="paper"><span class="chip">｜既存教材を充実</span>
 <h2>基本事項</h2><p>隣り合う項の比が一定の数列を<strong>等比数列</strong>といいます。初項を \(a_1=a\)、公比を \(r\) とすると、</p>
@@ -37,17 +38,17 @@ body>footer a{color:#e9f2fc!important}
 <p>同じ式を \(\displaystyle S_n=\frac{a_1(r^n-1)}{r-1}\) と表すこともできます。</p>
 <p><strong>公比が \(r=1\)</strong> のときは、すべての項が \(a_1\) になるので、</p><div class="formula">\[\boxed{S_n=na_1}\quad (r=1)\]</div>
 <h2>考え方：和の公式を導く</h2><p>等比数列の和を一つずつ足す代わりに、公比 \(r\) を掛けてずらして引き算します。</p>
-<div class="formula">\[\begin{aligned}S_n&=a+ar+ar^2+\cdots+ar^{n-1}\\rS_n&=ar+ar^2+\cdots+ar^n\\(1-r)S_n&=a-ar^n=a(1-r^n)\end{aligned}\]</div>
+<div class="formula">\[\begin{aligned}S_n&amp;=a+ar+ar^2+\cdots+ar^{n-1}\\rS_n&amp;=ar+ar^2+\cdots+ar^n\\(1-r)S_n&amp;=a-ar^n=a(1-r^n)\end{aligned}\]</div>
 <p>したがって、\(r\neq1\) なら両辺を \(1-r\) で割って公式が得られます。<strong>\(r=1\) で割ってはいけません。</strong></p>
 <div class="note">覚え方：①初項 \(a_1\) を調べる → ②公比 \(r\) を調べる → ③項数 \(n\) を確かめる → ④\(r=1\) かどうかで公式を選ぶ。</div>
 <h2>動く教材：等比数列の各項と和</h2>
 <p>スライダーを動かすと棒グラフと部分和が同時に変わります。負の公比も試してみましょう。</p>
 <section class="panel"><div class="controls">
-<div class="control"><label for="first">初項 \(a_1\)：<span class="value" id="firstVal">2</span></label><input id="first" type="range" min="-5" max="5" value="2" step="1"></div>
-<div class="control"><label for="ratio">公比 \(r\)：<span class="value" id="ratioVal">0.5</span></label><input id="ratio" type="range" min="-2" max="2" value="0.5" step="0.25"></div>
-<div class="control"><label for="count">項数 \(n\)：<span class="value" id="countVal">6</span></label><input id="count" type="range" min="1" max="10" value="6" step="1"></div>
-</div><div class="result" id="sumResult" aria-live="polite">計算中...</div><svg class="plot" id="bars" viewBox="0 0 760 310" role="img" aria-label="等比数列の各項の棒グラフ"><text x="20" y="35">グラフを準備しています</text></svg><p class="small">棒の上が正、下が負です。極端に大きい項がある場合は、縦軸を自動的に調整します。</p><div class="scroll"><table><thead><tr><th>第 \(k\) 項</th><th>値 \(a_k\)</th><th>部分和 \(S_k\)</th></tr></thead><tbody id="terms"><tr><td>1</td><td>2</td><td>2</td></tr></tbody></table></div>
-<p><button type="button" id="reset">初期値に戻す</button></p></section>
+<div class="control"><label for="first">初項 \(a_1\)：<span class="value" id="firstVal">2</span></label><input id="first" max="5" min="-5" step="1" type="range" value="2"/></div>
+<div class="control"><label for="ratio">公比 \(r\)：<span class="value" id="ratioVal">0.5</span></label><input id="ratio" max="2" min="-2" step="0.25" type="range" value="0.5"/></div>
+<div class="control"><label for="count">項数 \(n\)：<span class="value" id="countVal">6</span></label><input id="count" max="10" min="1" step="1" type="range" value="6"/></div>
+</div><div aria-live="polite" class="result" id="sumResult">計算中...</div><svg aria-label="等比数列の各項の棒グラフ" class="plot" id="bars" role="img" viewbox="0 0 760 310"><text x="20" y="35">グラフを準備しています</text></svg><p class="small">棒の上が正、下が負です。極端に大きい項がある場合は、縦軸を自動的に調整します。</p><div class="scroll"><table><thead><tr><th>第 \(k\) 項</th><th>値 \(a_k\)</th><th>部分和 \(S_k\)</th></tr></thead><tbody id="terms"><tr><td>1</td><td>2</td><td>2</td></tr></tbody></table></div>
+<p><button id="reset" type="button">初期値に戻す</button></p></section>
 <h3>図から読み取るポイント</h3><p>\(0&lt;r&lt;1\) では各項が小さくなり、\(r&gt;1\) では大きくなります。\(r&lt;0\) では正負が交互になり、棒グラフは上下に現れます。</p>
 <h2>解説付き例題</h2>
 <div class="example"><strong>例題1（元の教材の例題）</strong><p>初項3、公比2の第5項を求めなさい。</p></div>
@@ -73,7 +74,7 @@ body>footer a{color:#e9f2fc!important}
 <div class="exercise"><strong>問題6（発展）</strong><p>\(3,x,12\) が等比数列をなすとき、実数 \(x\) の値をすべて求めなさい。</p><details><summary>解答・解説を見る</summary><p>\(x^2=36\) なので \(\boxed{x=6,-6}\)。公比はそれぞれ \(2,-2\) です。</p></details></div>
 <div class="exercise"><strong>問題7（発展）</strong><p>初項4、公比 \(\frac12\) の無限等比級数の和を求めなさい。</p><details><summary>解答・解説を見る</summary><p>\(|r|&lt;1\) なので \(4/(1-1/2)=\boxed{8}\)。</p></details></div>
 <h2>まとめ</h2><p>隣り合う項の比が一定の数列を等比数列といいます。一般項 \(a_n=a_1r^{n-1}\)、和は \(r\neq1\) のとき \(S_n=a_1(1-r^n)/(1-r)\)、\(r=1\) のとき \(S_n=na_1\) です。例題で使った考え方を、練習問題でも確かめましょう。</p>
-</article><div class="nav"><a href="math_subject_b.html">← 数学Bの授業一覧に戻る</a></div></main><footer><div class="wrap">みんなの数学データベース｜高校生のための授業</div></footer>
+</article></main><nav aria-label="授業一覧へ戻る" class="standard-lesson-bottom"><a href="math_subject_b.html">← 数学Bの授業一覧へ戻る</a></nav><footer class="standard-lesson-footer">みんなの数学データベース｜数学Bの授業</footer>
 <script>
 (()=>{'use strict';
 const ids=['first','ratio','count'];const inputs=ids.map(id=>document.getElementById(id));const ns='http://www.w3.org/2000/svg';
