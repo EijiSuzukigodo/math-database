@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><title>空間の座標｜数学C｜みんなの数学データベース</title>
 <style>
@@ -68,7 +69,7 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 @media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
 </style></head>
 <body>
-<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学C</div><h1>空間の座標</h1><p class="lesson-standard-bottom">数学C ／ 空間のベクトル</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>空間の座標</h2><p>空間座標の読み方、座標平面への射影、2点間の距離と中点を動く立体図で学びます。</p></section><p class="lead">空間の点は、3つの数 \(x,y,z\) で表します。点を動かしながら、座標平面・2点間の距離・中点の公式を理解しましょう。</p>
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学C</div><h1>空間の座標</h1><p class="lesson-standard-bottom">数学C ／ 第8講</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>空間の座標</h2><p>空間座標の読み方、座標平面への射影、2点間の距離と中点を動く立体図で学びます。</p></section><p class="lead">空間の点は、3つの数 \(x,y,z\) で表します。点を動かしながら、座標平面・2点間の距離・中点の公式を理解しましょう。</p>
 <section><h2>1．空間座標と座標平面</h2><p>互いに垂直な3本の座標軸を \(x\) 軸、\(y\) 軸、\(z\) 軸といいます。点 \(P\) の座標を \(P(x,y,z)\) と表します。</p><p>\(xy\) 平面は \(z=0\)、\(yz\) 平面は \(x=0\)、\(zx\) 平面は \(y=0\) です。</p>
 <div class="figure"><canvas aria-label="空間の座標軸、点P、座標平面への射影を表す操作可能な図" height="540" id="space" role="img" width="900">3次元座標の図</canvas><p class="small" style="text-align:center;margin:0">青：x軸　緑：y軸　橙：z軸 ／ 赤：点P　破線：座標方向の補助線</p></div>
 <div class="control-grid"><div class="control"><label for="px">x 座標：<output id="vx">2</output></label><input id="px" max="4" min="-4" step="0.5" type="range" value="2"/></div><div class="control"><label for="py">y 座標：<output id="vy">2</output></label><input id="py" max="4" min="-4" step="0.5" type="range" value="2"/></div><div class="control"><label for="pz">z 座標：<output id="vz">3</output></label><input id="pz" max="4" min="-4" step="0.5" type="range" value="3"/></div><div class="control"><label for="angle">視点の回転：<output id="va">25</output>°</label><input id="angle" max="150" min="-150" step="5" type="range" value="25"/></div></div><p><button id="reset" type="button">座標と視点を初期値に戻す</button></p>

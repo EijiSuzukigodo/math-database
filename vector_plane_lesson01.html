@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>平面上のベクトル｜みんなの数学データベース</title>
 <style>
@@ -67,7 +68,7 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 @media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
 </style></head>
 <body>
-<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学C</div><h1>平面上のベクトル</h1><p class="lesson-standard-bottom">数学C ／ 平面上のベクトル</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>平面上のベクトル</h2><p>ベクトルの意味・向き・大きさと、等しいベクトルを学びます。</p></section><article class="sheet">
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学C</div><h1>平面上のベクトル</h1><p class="lesson-standard-bottom">数学C ／ 第1講</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>平面上のベクトル</h2><p>ベクトルの意味・向き・大きさと、等しいベクトルを学びます。</p></section><article class="sheet">
 <p class="lead">ベクトルは、向きと大きさをもつ量です。矢印を動かして、始点の位置とベクトルそのものの違いを理解しましょう。</p>
 <h2>1．ベクトルの意味と表し方</h2>
 <p>距離、時間、温度などのように「大きさ」だけで表せる量を<strong>スカラー</strong>といいます。一方、風や力、移動のように「向き」と「大きさ」の両方を考える量を<strong>ベクトル</strong>といいます。</p>
@@ -95,7 +96,6 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <section class="exercise"><span class="label">問題6（発展）</span><p>四角形 \(ABCD\) で \(\overrightarrow{AB}=\overrightarrow{DC}\) が成り立つとき、どのような四角形になるか（4点が異なり、一直線上にないものとする）。</p><details><summary>解答と解説を表示</summary><p>向かい合う辺 \(AB\) と \(DC\) が同じ向き・大きさなので、<strong>平行四辺形</strong>になる。座標で考えると \(B-A=C-D\)、すなわち \(A+C=B+D\) となり、対角線の中点が一致する。</p></details></section>
 <h2>7．この授業のまとめ</h2><div class="note"><ul><li>ベクトルは<strong>向きと大きさ</strong>をもつ。</li><li>位置が違っても、向きと大きさが同じなら等しい。</li><li>逆ベクトルは向きだけが反対。零ベクトルの大きさは0で向きは定まらない。</li><li>座標では「終点−始点」を使って移動量を表す。</li></ul></div>
 </article><nav aria-label="授業一覧に戻る" class="lesson-standard-return"><a href="math_subject_c.html">← 数学Cに戻る</a></nav></main>
-
 <script>
 (()=>{'use strict';const NS='http://www.w3.org/2000/svg';function el(name,props={},text){const e=document.createElementNS(NS,name);for(const [k,v] of Object.entries(props))e.setAttribute(k,v);if(text!==undefined)e.textContent=text;return e}function drawBase(svg){svg.replaceChildren();svg.append(el('rect',{width:640,height:390,fill:'#fff'}));const step=34,cx=320,cy=195;for(let i=-8;i<=8;i++){svg.append(el('line',{x1:cx+i*step,y1:12,x2:cx+i*step,y2:378,stroke:'#e8eef4','stroke-width':1}),el('line',{x1:12,y1:cy+i*step,x2:628,y2:cy+i*step,stroke:'#e8eef4','stroke-width':1}));}svg.append(el('line',{x1:12,y1:cy,x2:628,y2:cy,stroke:'#7c91a2','stroke-width':1.5}),el('line',{x1:cx,y1:12,x2:cx,y2:378,stroke:'#7c91a2','stroke-width':1.5}));svg.append(el('text',{x:617,y:cy-8,fill:'#536f82','font-size':15},'x'),el('text',{x:cx+7,y:20,fill:'#536f82','font-size':15},'y'));return (x,y)=>[cx+x*step,cy-y*step]}
 function arrow(svg,p,q,col,label){let [x1,y1]=p,[x2,y2]=q;const len=Math.hypot(x2-x1,y2-y1);if(len<.01){svg.append(el('circle',{cx:x1,cy:y1,r:6,fill:col}));return}const ang=Math.atan2(y2-y1,x2-x1),r=13;svg.append(el('line',{x1,y1,x2,y2,stroke:col,'stroke-width':4,'stroke-linecap':'round'}));svg.append(el('polygon',{points:`${x2},${y2} ${x2-r*Math.cos(ang-.48)},${y2-r*Math.sin(ang-.48)} ${x2-r*Math.cos(ang+.48)},${y2-r*Math.sin(ang+.48)}`,fill:col}));svg.append(el('text',{x:(x1+x2)/2+7,y:(y1+y2)/2-12,fill:col,'font-size':20,'font-weight':700},label))}

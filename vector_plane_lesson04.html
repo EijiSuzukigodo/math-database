@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>ベクトルの内積｜数学C｜みんなの数学データベース</title>
 <style>
@@ -66,7 +67,7 @@ body>footer.lesson-standard-footer>div{max-width:970px!important;margin:auto!imp
 mjx-container svg{width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;display:inline-block!important}
 @media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
 </style></head>
-<body><header class="lesson-standard-header"><div class="lesson-standard-width"><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学C</div><h1>ベクトルの内積</h1><p class="lesson-standard-bottom">数学C ／ 平面上のベクトル</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>ベクトルの内積</h2><p>内積の定義・成分計算・垂直条件を学びます。</p></section><p>ベクトルの内積は、2本のベクトルの向きの関係を数で表す計算です。図と式を行き来しながら理解しましょう。</p>
+<body><header class="lesson-standard-header"><div class="lesson-standard-width"><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学C</div><h1>ベクトルの内積</h1><p class="lesson-standard-bottom">数学C ／ 第4講</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>ベクトルの内積</h2><p>内積の定義・成分計算・垂直条件を学びます。 ベクトルの内積は、2本のベクトルの向きの関係を数で表す計算です。図と式を行き来しながら理解しましょう。</p></section>
 <h2>1．内積の定義</h2><p>零ベクトルでない2本のベクトル \(\vec a,\vec b\) のなす角を \(\theta\ (0\le\theta\le180^\circ)\) とします。</p><div class="theorem"><b>内積の定義</b><div class="math">\[\boxed{\vec a\cdot\vec b=|\vec a||\vec b|\cos\theta}\]</div><p>一方が零ベクトルなら内積は0と定めます。</p></div><p>なす角が鋭角なら正、直角なら0、鈍角なら負です。内積はベクトルではなく <b>1つの実数</b> です。</p>
 <h2>2．動く図①：なす角と内積の符号</h2><section class="interactive"><div class="controls"><label>なす角 θ：<output id="angv">60°</output><input id="angle" max="180" min="0" step="5" type="range" value="60"/></label><label>ベクトル b の大きさ：<output id="lenv">3</output><input id="blen" max="5" min="1" step="0.5" type="range" value="3"/></label></div><svg aria-label="なす角を変更できる内積の図" class="diagram" id="angleSVG" role="img" viewbox="0 0 560 330"></svg><p class="readout" id="angleRead"></p><small>青色の a は長さ4で固定。赤色の b を回転させ、内積の符号を確かめてください。</small></section>
 <h2>3．成分による内積と公式の導出</h2><div class="theorem"><div class="math">\[\vec a=(a_1,a_2),\quad\vec b=(b_1,b_2)\]\[\boxed{\vec a\cdot\vec b=a_1b_1+a_2b_2}\]</div></div><div class="explain"><b>成分公式の理由（余弦定理）</b><p>三角形の一辺を \(\vec a-\vec b\) と考えると、余弦定理より</p><div class="math">\[|\vec a-\vec b|^2=|\vec a|^2+|\vec b|^2-2|\vec a||\vec b|\cos\theta.\]</div><p>他方、成分で計算すると</p><div class="math">\[|\vec a-\vec b|^2=(a_1-b_1)^2+(a_2-b_2)^2.\]</div><p>2つの式を比較して展開・整理すると \(\vec a\cdot\vec b=a_1b_1+a_2b_2\) が得られます。</p></div>

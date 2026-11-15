@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
+
+<!DOCTYPE html>
 
 <html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>数学C｜複素数の極形式と乗法・除法｜みんなの数学データベース</title>
 <script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'global'}};</script>
@@ -68,7 +71,7 @@ body>footer.lesson-standard-footer>div{max-width:970px!important;margin:auto!imp
 mjx-container svg{width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;display:inline-block!important}
 @media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
 </style></head><body>
-<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学C</div><h1>複素数の極形式と乗法・除法</h1><p class="lesson-standard-bottom">数学C ／ 複素数平面</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>複素数の極形式と乗法・除法</h2><p>偏角と極形式、積と商の性質、回転と拡大縮小を動く図と例題で学びます。</p></section><nav><a href="#polar">極形式</a><a href="#product">乗法</a><a href="#quotient">除法</a><a href="#examples">例題と演習</a></nav>
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学C</div><h1>複素数の極形式と乗法・除法</h1><p class="lesson-standard-bottom">数学C ／ 第18講</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>複素数の極形式と乗法・除法</h2><p>偏角と極形式、積と商の性質、回転と拡大縮小を動く図と例題で学びます。</p></section>
 <section id="polar"><h2>1．複素数の極形式</h2><p>複素数 \(z=a+bi\) は複素数平面上の点 \((a,b)\) で表されます。原点からの距離を \(r\)、正の実軸から反時計回りに測る角を \(\theta\)（偏角）といいます。</p>
 <div class="eq">\[r=|z|=\sqrt{a^2+b^2}\]\[a=r\cos\theta,\qquad b=r\sin\theta\]\[\boxed{z=r(\cos\theta+i\sin\theta)}\]</div><p>ただし \(z\neq0\) とします。偏角は \(2\pi\) の整数倍だけ異なっていても同じ複素数を表します。</p>
 <div class="grid"><canvas aria-label="複素数の偏角と絶対値を操作できる図" class="plot" id="polarPlot" role="img"></canvas><div class="controls"><label for="r">絶対値 r：<output id="rv">2.5</output></label><input id="r" max="4" min="0.5" step="0.1" type="range" value="2.5"/><label for="theta">偏角 θ（度）：<output id="tv">40°</output></label><input id="theta" max="180" min="-180" step="5" type="range" value="40"/><div aria-live="polite" class="read" id="polarRead"></div></div></div><p class="small">スライダーで絶対値と偏角を変えると、複素数を表す点が移動します。</p>
