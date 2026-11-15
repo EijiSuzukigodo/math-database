@@ -54,9 +54,31 @@ body>footer a{color:#e9f2fc!important}
 .matha-unified-goal p,.lesson-goal p,section.goal p,section.aim p,section.objective p{font-size:14px!important;color:#526a80!important}
 .goal-pill,section.goal .pill,section.aim small{font-size:13px!important}
 @media(max-width:550px){.course-unified-goal{padding:12px 14px}body>header{padding:18px 0 22px!important}}
-</style><link href="lesson_common_style.css?v=20261115" rel="stylesheet"/></head><body>
-<header class="standard-lesson-header"><a class="lesson-head-back" href="math_subject_1.html">← 数学Ⅰの授業一覧に戻る</a><h1 class="lesson-head-title">仮説検定の考え方</h1><p class="lesson-head-meta">数学Ⅰ ／ 第5章 データの分析 ／ 仮説検定の考え方</p></header>
-<main class="wrap"><section aria-label="授業のねらい" class="standard-lesson-goal"><span class="standard-goal-label">授業のねらい</span><h2 class="standard-goal-title">仮説検定の考え方を理解する</h2><p class="standard-goal-subtitle">帰無仮説・有意水準・確率の意味を理解し、データに基づく判断の考え方を学びましょう。</p></section><article class="paper">
+</style><style id="md-unification-css">
+/* 数学Ⅲと共通の授業レイアウト：他の図・数式へのCSS干渉を避ける */
+html{scroll-behavior:smooth}
+body{margin:0!important;background:#f2f7fc!important;color:#19334e!important;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif!important;line-height:1.8!important}
+#md-standard-header{background:linear-gradient(110deg,#17365d,#215f99)!important;color:#fff!important;padding:24px 0 29px!important;box-sizing:border-box!important;min-height:0!important}
+#md-standard-header .md-inner{max-width:970px;margin:auto;padding:0 17px;box-sizing:border-box}
+#md-standard-header .md-kicker{color:#e4effc;font-size:14px!important;font-weight:400!important;letter-spacing:0!important}
+#md-standard-header h1{color:#fff!important;font-size:clamp(25px,4.5vw,35px)!important;line-height:1.4!important;margin:8px 0 5px!important;padding:0!important;border:0!important;text-align:left!important}
+#md-standard-header .md-subtitle{color:#e4effc!important;font-size:14px!important;line-height:1.6!important;margin:0!important}
+#md-standard-main{max-width:970px!important;width:auto!important;box-sizing:border-box!important;margin:0 auto!important;padding:22px 17px 46px!important;background:transparent!important;min-height:0!important}
+#md-standard-goal{display:block!important;box-sizing:border-box!important;background:#fff!important;border:1px solid #dbe6f1!important;border-radius:14px!important;margin:0 0 22px!important;padding:22px 25px!important;box-shadow:0 3px 13px #193a5b0a!important;color:#19334e!important;max-width:100%!important}
+#md-standard-goal .md-goal-tag{display:inline-block!important;color:#145888!important;background:#e6f3ff!important;border-radius:20px!important;font-size:13px!important;font-weight:700!important;padding:2px 12px!important;line-height:1.7!important}
+#md-standard-goal .md-goal-title{color:#174b78!important;font-size:23px!important;line-height:1.5!important;font-weight:700!important;border:none!important;margin:10px 0 7px!important;padding:0!important}
+#md-standard-goal p{color:#445d72!important;margin:0!important;font-size:16px!important;line-height:1.8!important}
+#md-standard-footer-nav{display:flex!important;flex-wrap:wrap!important;gap:10px!important;justify-content:flex-start!important;align-items:center!important;margin:25px 0 0!important;padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important}
+#md-standard-footer-nav a{display:inline-block!important;padding:10px 15px!important;border-radius:9px!important;background:#e5f1fd!important;color:#175988!important;text-decoration:none!important;font-weight:700!important;font-size:15px!important;line-height:1.7!important;border:0!important}
+#md-standard-footer{background:#112e4c!important;color:#ecf5fc!important;padding:20px 0!important;margin:0!important;font-size:13px!important;text-align:left!important;border:0!important}
+#md-standard-footer .md-inner{max-width:970px;margin:auto;padding:0 17px}
+/* SVGの幅を全指定する規則を数学用の数式に適用させない */
+mjx-container svg{max-width:none!important;width:auto!important;height:auto!important}
+mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden}
+@media(max-width:640px){#md-standard-goal{padding:17px 15px!important}#md-standard-goal .md-goal-title{font-size:20px!important}}
+</style></head><body>
+<header id="md-standard-header"><div class="md-inner"><div class="md-kicker">みんなの数学データベース ／ 高校数学 ／ 数学Ⅰ</div><h1>仮説検定の考え方</h1><p class="md-subtitle">第5章 データの分析｜</p></div></header>
+<main class="wrap" id="md-standard-main"><section id="md-standard-goal"><span class="md-goal-tag">授業のねらい</span><h2 class="md-goal-title">仮説検定の考え方を理解する</h2><p>帰無仮説・有意水準・確率の意味を理解し、データに基づく判断の考え方を学びましょう。</p></section><article class="paper">
 <h2>1　仮説検定とは</h2>
 <p>ある主張がデータと矛盾していないかを調べる方法の一つが<strong>仮説検定</strong>です。まず「差がない」「偶然の結果である」などの<strong>帰無仮説</strong>を置き、その仮説のもとで観測結果がどのくらい珍しいかを考えます。</p>
 <p>帰無仮説と対立する主張を<strong>対立仮説</strong>といいます。あらかじめ判断の基準となる<strong>有意水準</strong>を決めます（例：5％）。</p>
@@ -100,8 +122,8 @@ P(X\geqq21)=\sum_{k=21}^{30}{}_ {30}C_k
 <div class="example"><p><strong>問題3</strong>　p値が2％だったとき、「帰無仮説が正しい確率は2％」と言えますか。</p><details><summary>解答・解説</summary><p>言えません。p値は、帰無仮説が正しいと仮定したときに、観測結果と同程度以上に極端な結果が起こる確率です。</p></details></div>
 <div class="example"><p><strong>問題4</strong>　有意水準1％でp値が2％なら、帰無仮説を棄却できますか。</p><details><summary>解答・解説</summary><p>棄却できません。2％は1％より大きいためです。有意水準5％なら結論が異なることにも注意しましょう。</p></details></div>
 <p class="note">数式はインターネット接続時にMathJaxで教科書形式になります。動く確率分布はインターネット接続がなくても動作します。</p>
-</article></main>
-<div class="math1-bottom-nav"><a href="math_subject_1.html">← 数学Ⅰの目次に戻る</a></div><nav aria-label="授業一覧へ戻る" class="standard-lesson-bottom"><a href="math_subject_1.html">← 数学Ⅰの授業一覧へ戻る</a></nav><footer class="standard-lesson-footer">みんなの数学データベース｜数学Ⅰの授業</footer><script>
+</article><nav id="md-standard-footer-nav"><a href="math1_data_relationship.html">← 前の授業</a><a href="math_subject_1.html">↑ 数学Ⅰの授業一覧に戻る</a><a href="math1_data_comprehensive.html">次の授業 →</a></nav></main>
+<div class="math1-bottom-nav"><a href="math_subject_1.html">← 数学Ⅰの目次に戻る</a></div><footer id="md-standard-footer"><div class="md-inner">みんなの数学データベース｜高校生のための授業</div></footer><script>
 (function(){
 const svg=document.getElementById('bars'),slider=document.getElementById('observed'),count=document.getElementById('count'),tail=document.getElementById('tailFormula'),decision=document.getElementById('decision');
 const coeff=[1,10,45,120,210,252,210,120,45,10,1],ns='http://www.w3.org/2000/svg';
