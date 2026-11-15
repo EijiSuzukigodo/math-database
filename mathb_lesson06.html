@@ -49,10 +49,30 @@ body{margin:0!important;background:#f2f7fc!important;color:#19334e!important;fon
 mjx-container svg{max-width:none!important;width:auto!important;height:auto!important}
 mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden}
 @media(max-width:640px){#md-standard-goal{padding:17px 15px!important}#md-standard-goal .md-goal-title{font-size:20px!important}}
+</style><style>
+/* 2026年11月 共通ページ構造：数学I/II/A/B/C */
+html{scroll-padding-top:10px}
+body .lesson-standard-header{background:linear-gradient(110deg,#17365d,#215f99)!important;color:#fff!important;padding:24px 0 29px!important;margin:0!important;border:0!important;border-radius:0!important;text-align:left!important}
+body .lesson-standard-header .lesson-standard-width{max-width:970px!important;margin:0 auto!important;padding:0 17px!important}
+body .lesson-standard-header .lesson-standard-top,body .lesson-standard-header .lesson-standard-bottom{font-family:inherit!important;font-size:14px!important;line-height:1.65!important;color:#e4effc!important;font-weight:400!important;margin:0!important;padding:0!important;letter-spacing:normal!important}
+body .lesson-standard-header h1{font-family:inherit!important;color:#fff!important;font-size:clamp(25px,4.5vw,35px)!important;line-height:1.4!important;margin:8px 0 5px!important;padding:0!important;max-width:none!important;font-weight:700!important;border:0!important;text-align:left!important}
+/* Main and goal gap: exactly 22px measured from the header's lower edge */
+body>main.lesson-standard-main{display:block!important;box-sizing:border-box!important;max-width:970px!important;width:100%!important;margin:0 auto!important;padding:22px 17px 40px!important;position:relative!important;top:auto!important;transform:none!important}
+body>main.lesson-standard-main>.lesson-standard-goal{display:block!important;background:#fff!important;border:1px solid #dbe6f1!important;border-radius:14px!important;padding:22px 25px!important;margin:0 0 22px!important;box-shadow:0 3px 13px #193a5b0a!important;position:static!important;transform:none!important}
+body>main.lesson-standard-main>.lesson-standard-goal>.lesson-standard-goal-label{display:inline-block!important;font-size:13px!important;color:#145888!important;background:#e6f3ff!important;border-radius:20px!important;font-weight:700!important;padding:2px 12px!important;margin:0!important;line-height:1.6!important}
+body>main.lesson-standard-main>.lesson-standard-goal>h2{color:#174b78!important;font-size:23px!important;line-height:1.5!important;margin:10px 0 7px!important;padding:0!important;border:0!important;text-align:left!important}
+body>main.lesson-standard-main>.lesson-standard-goal>p{margin:0!important;color:#445d72!important;font-size:16px!important;line-height:1.8!important}
+body>main.lesson-standard-main>.lesson-standard-return{display:block!important;clear:both!important;margin:28px 0 0!important;padding:0!important;text-align:left!important;background:transparent!important;border:0!important;position:static!important;transform:none!important}
+body>main.lesson-standard-main>.lesson-standard-return a{display:inline-block!important;background:#e5f1fd!important;color:#175988!important;text-decoration:none!important;border:0!important;border-radius:9px!important;padding:10px 15px!important;font-weight:700!important;font-size:15px!important;line-height:1.5!important}
+body>footer.lesson-standard-footer{display:block!important;background:#112e4c!important;color:#ecf5fc!important;padding:20px 0!important;font-size:13px!important;line-height:1.7!important;text-align:left!important;margin:0!important;border:0!important;border-radius:0!important;clear:both!important}
+body>footer.lesson-standard-footer>div{max-width:970px!important;margin:auto!important;padding:0 17px!important}
+/* MathJax SVG may not inherit broad responsive SVG sizing */
+mjx-container svg{width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;display:inline-block!important}
+@media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
 </style></head><body>
-<header id="md-standard-header"><div class="md-inner"><div class="md-kicker">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>いろいろな数列の和</h1><p class="md-subtitle">数学B｜数列</p></div></header>
-<main class="wrap" id="md-standard-main"><section id="md-standard-goal"><span class="md-goal-tag">授業のねらい</span><h2 class="md-goal-title">いろいろな数列の和</h2><p>和の公式と式の変形を組み合わせて求めます。</p></section>
-<p class="intro">数列｜いろいろな数列の和。部分分数分解・ルートを含む和・群数列を中心に、式の変形や群の構造を図で理解しましょう。</p>
+
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>いろいろな数列の和</h1><p class="lesson-standard-bottom">数学B ／ 数列</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>いろいろな数列の和</h2><p>和の公式と式の変形を組み合わせて求めます。</p></section>
+
 <div class="paper"><strong>このページの内容</strong><div class="contents"><a href="#basic">基本事項</a><a href="#fraction">部分分数分解</a><a href="#root">ルートを含む和</a><a href="#groups">群数列</a><a href="#other">その他の工夫</a><a href="#practice">練習問題</a><a href="#summary">まとめ</a></div></div>
 <article class="paper"><section id="basic"><h2>基本事項</h2><p>このページでは、公式を直接使う方法ではなく、<strong>項を変形する・消し合わせる・群に分ける</strong>方法を学びます。</p><p>自然数・平方数・立方数の和の公式や例題は、<a href="mathb_lesson04.html">「和の記号 Σ」</a> のページにまとめました。</p><h2>考え方</h2><p>まず条件と求める量を明確にし、上の関係式を使える形に整理します。等号変形や定義域などの条件も確かめましょう。</p><p>解法の見分け方： (1) 分母が積なら部分分数分解、(2) 平方根を含む分母なら有理化、(3) 規則的に区切られた数列なら群数列、(4) k・r^k 型は和をずらして引く工夫が有効です。</p></section>
 <section id="fraction"><h2>1. 部分分数分解を利用する和</h2><p class="good">「和の記号 Σ」にあった部分分数分解の発展例題も、この項目に統合しました。基本例題から発展例題へ進めます。</p><p>分母に2つの因数があるとき、<strong>差の形</strong>にすると途中の項が相殺されることがあります。これを「望遠鏡型の和（テレスコーピング）」と呼びます。</p><h3>基本公式の導出</h3><div class="formula">\[\frac{1}{k(k+1)}=\frac1k-\frac1{k+1}\]</div><p>右辺を通分すると \(\frac{(k+1)-k}{k(k+1)}\) となり、左辺と一致します。</p>
@@ -98,7 +118,7 @@ mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden}
 <div class="exercise"><strong>問題9（奇数の群数列）</strong><p>\(1\mid3,5\mid7,9,11\mid\cdots\) の第6群の和を求めよ。</p><details><summary>解答と解説を見る</summary><p>第 \(n\) 群の和は \(n^3\)。したがって \(6^3=216\)。</p></details></div>
 </section>
 <section id="summary"><h2>まとめ</h2><p>和の基本公式は「和の記号 Σ」へ移し、ここでは式変形と群数列の工夫に重点を置きました。</p><p>和の公式と式の変形を組み合わせて求めます。例題で使った考え方を、練習問題でも確かめましょう。</p><div class="good"><strong>解法の選び方</strong><ol><li>群に区切られている → 各群の項数・初項・末項を求める</li><li>\(\frac1{k(k+1)}\) のような積が分母 → 部分分数分解</li><li>\(\sqrt{k+1}+\sqrt{k}\) が分母 → 有理化</li><li>\(k\cdot r^k\) → 和を \(r\) 倍して引く</li><li>符号が交互 → 2項ずつ組にする</li></ol></div><p class="muted">計算後は \(n=1\) や \(n=2\) を代入して、元の和と一致するか確認しましょう。</p></section>
-</article><nav id="md-standard-footer-nav"><a href="mathb_lesson05.html">← 前の授業</a><a href="math_subject_b.html">↑ 数学Bの授業一覧に戻る</a><a href="mathb_lesson07.html">次の授業 →</a></nav></main><footer id="md-standard-footer"><div class="md-inner">みんなの数学データベース｜高校生のための授業</div></footer>
+</article><nav aria-label="授業一覧に戻る" class="lesson-standard-return"><a href="math_subject_b.html">← 数学Bに戻る</a></nav></main>
 <script>
 (function(){
  const f=document.getElementById('fracN'),r=document.getElementById('rootN');
@@ -109,4 +129,4 @@ mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden}
  f.addEventListener('input',updateF);r.addEventListener('input',updateR);updateF();updateR();
 })();
 </script><script>(function(){const s=document.getElementById('groupN'),diagram=document.getElementById('groupDiagram'),result=document.getElementById('groupResult'),out=document.getElementById('groupOut');if(!s)return;function show(){const n=Number(s.value);out.textContent=n;diagram.replaceChildren();let start=1;for(let k=1;k<=n;k++){const box=document.createElement('div');box.className='group-box'+(k===n?' active':'');const title=document.createElement('div');title.className='group-title';title.textContent='第'+k+'群';box.appendChild(title);const items=document.createElement('div');items.className='group-items';for(let j=0;j<k;j++){const item=document.createElement('span');item.className='group-item';item.textContent=start+j;items.appendChild(item)}box.appendChild(items);diagram.appendChild(box);start+=k}const first=1+n*(n-1)/2,last=n*(n+1)/2;result.textContent='第'+n+'群：初項 '+first+'、末項 '+last+'、項数 '+n+'、和 '+(n*(n*n+1)/2)}s.addEventListener('input',show);show()})();</script>
-</body></html>
+<footer class="lesson-standard-footer"><div>みんなの数学データベース｜高校生のための授業</div></footer></body></html>

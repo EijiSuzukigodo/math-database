@@ -48,10 +48,30 @@ body{margin:0!important;background:#f2f7fc!important;color:#19334e!important;fon
 mjx-container svg{max-width:none!important;width:auto!important;height:auto!important}
 mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden}
 @media(max-width:640px){#md-standard-goal{padding:17px 15px!important}#md-standard-goal .md-goal-title{font-size:20px!important}}
-</style></head><body><header id="md-standard-header"><div class="md-inner"><div class="md-kicker">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>等比数列とその和</h1><p class="md-subtitle">数学B｜数列</p></div></header><main class="wrap" id="md-standard-main"><section id="md-standard-goal"><span class="md-goal-tag">授業のねらい</span><h2 class="md-goal-title">等比数列とその和</h2><p>隣り合う項の比が一定の数列を等比数列といいます。</p></section>
-<p class="intro">数列｜等比数列とその和。図や式の意味を考えながら順番に学びましょう。初項・公比・項数を変えて、公式を自分の目で確かめられます。</p>
+</style><style>
+/* 2026年11月 共通ページ構造：数学I/II/A/B/C */
+html{scroll-padding-top:10px}
+body .lesson-standard-header{background:linear-gradient(110deg,#17365d,#215f99)!important;color:#fff!important;padding:24px 0 29px!important;margin:0!important;border:0!important;border-radius:0!important;text-align:left!important}
+body .lesson-standard-header .lesson-standard-width{max-width:970px!important;margin:0 auto!important;padding:0 17px!important}
+body .lesson-standard-header .lesson-standard-top,body .lesson-standard-header .lesson-standard-bottom{font-family:inherit!important;font-size:14px!important;line-height:1.65!important;color:#e4effc!important;font-weight:400!important;margin:0!important;padding:0!important;letter-spacing:normal!important}
+body .lesson-standard-header h1{font-family:inherit!important;color:#fff!important;font-size:clamp(25px,4.5vw,35px)!important;line-height:1.4!important;margin:8px 0 5px!important;padding:0!important;max-width:none!important;font-weight:700!important;border:0!important;text-align:left!important}
+/* Main and goal gap: exactly 22px measured from the header's lower edge */
+body>main.lesson-standard-main{display:block!important;box-sizing:border-box!important;max-width:970px!important;width:100%!important;margin:0 auto!important;padding:22px 17px 40px!important;position:relative!important;top:auto!important;transform:none!important}
+body>main.lesson-standard-main>.lesson-standard-goal{display:block!important;background:#fff!important;border:1px solid #dbe6f1!important;border-radius:14px!important;padding:22px 25px!important;margin:0 0 22px!important;box-shadow:0 3px 13px #193a5b0a!important;position:static!important;transform:none!important}
+body>main.lesson-standard-main>.lesson-standard-goal>.lesson-standard-goal-label{display:inline-block!important;font-size:13px!important;color:#145888!important;background:#e6f3ff!important;border-radius:20px!important;font-weight:700!important;padding:2px 12px!important;margin:0!important;line-height:1.6!important}
+body>main.lesson-standard-main>.lesson-standard-goal>h2{color:#174b78!important;font-size:23px!important;line-height:1.5!important;margin:10px 0 7px!important;padding:0!important;border:0!important;text-align:left!important}
+body>main.lesson-standard-main>.lesson-standard-goal>p{margin:0!important;color:#445d72!important;font-size:16px!important;line-height:1.8!important}
+body>main.lesson-standard-main>.lesson-standard-return{display:block!important;clear:both!important;margin:28px 0 0!important;padding:0!important;text-align:left!important;background:transparent!important;border:0!important;position:static!important;transform:none!important}
+body>main.lesson-standard-main>.lesson-standard-return a{display:inline-block!important;background:#e5f1fd!important;color:#175988!important;text-decoration:none!important;border:0!important;border-radius:9px!important;padding:10px 15px!important;font-weight:700!important;font-size:15px!important;line-height:1.5!important}
+body>footer.lesson-standard-footer{display:block!important;background:#112e4c!important;color:#ecf5fc!important;padding:20px 0!important;font-size:13px!important;line-height:1.7!important;text-align:left!important;margin:0!important;border:0!important;border-radius:0!important;clear:both!important}
+body>footer.lesson-standard-footer>div{max-width:970px!important;margin:auto!important;padding:0 17px!important}
+/* MathJax SVG may not inherit broad responsive SVG sizing */
+mjx-container svg{width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;display:inline-block!important}
+@media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
+</style></head><body><header class="lesson-standard-header"><div class="lesson-standard-width"><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>等比数列とその和</h1><p class="lesson-standard-bottom">数学B ／ 数列</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>等比数列とその和</h2><p>隣り合う項の比が一定の数列を等比数列といいます。</p></section>
+
 <article class="paper"><span class="chip">｜既存教材を充実</span>
-<h2>基本事項</h2><p>隣り合う項の比が一定の数列を<strong>等比数列</strong>といいます。初項を \(a_1=a\)、公比を \(r\) とすると、</p>
+<h2>1．基本事項</h2><p>隣り合う項の比が一定の数列を<strong>等比数列</strong>といいます。初項を \(a_1=a\)、公比を \(r\) とすると、</p>
 <div class="formula">\[a,\ ar,\ ar^2,\ ar^3,\ \ldots\]</div>
 <div class="formula">\[\boxed{a_n=a_1r^{n-1}}\]</div>
 <p>例えば \(2,6,18,54,\ldots\) は初項 \(2\)、公比 \(3\) の等比数列です。なお、公比が \(0\) の場合にも上の一般項を使えます（\(n=1\) では \(r^0=1\) とします）。</p>
@@ -96,7 +116,7 @@ mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden}
 <div class="exercise"><strong>問題6（発展）</strong><p>\(3,x,12\) が等比数列をなすとき、実数 \(x\) の値をすべて求めなさい。</p><details><summary>解答・解説を見る</summary><p>\(x^2=36\) なので \(\boxed{x=6,-6}\)。公比はそれぞれ \(2,-2\) です。</p></details></div>
 <div class="exercise"><strong>問題7（発展）</strong><p>初項4、公比 \(\frac12\) の無限等比級数の和を求めなさい。</p><details><summary>解答・解説を見る</summary><p>\(|r|&lt;1\) なので \(4/(1-1/2)=\boxed{8}\)。</p></details></div>
 <h2>まとめ</h2><p>隣り合う項の比が一定の数列を等比数列といいます。一般項 \(a_n=a_1r^{n-1}\)、和は \(r\neq1\) のとき \(S_n=a_1(1-r^n)/(1-r)\)、\(r=1\) のとき \(S_n=na_1\) です。例題で使った考え方を、練習問題でも確かめましょう。</p>
-</article><nav id="md-standard-footer-nav"><a href="mathb_lesson02.html">← 前の授業</a><a href="math_subject_b.html">↑ 数学Bの授業一覧に戻る</a><a href="mathb_lesson04.html">次の授業 →</a></nav></main><footer id="md-standard-footer"><div class="md-inner">みんなの数学データベース｜高校生のための授業</div></footer>
+</article><nav aria-label="授業一覧に戻る" class="lesson-standard-return"><a href="math_subject_b.html">← 数学Bに戻る</a></nav></main>
 <script>
 (()=>{'use strict';
 const ids=['first','ratio','count'];const inputs=ids.map(id=>document.getElementById(id));const ns='http://www.w3.org/2000/svg';
@@ -112,4 +132,4 @@ const tbody=document.getElementById('terms');tbody.replaceChildren();terms.forEa
 }
 inputs.forEach(e=>e.addEventListener('input',render));document.getElementById('reset').addEventListener('click',()=>{inputs[0].value=2;inputs[1].value=.5;inputs[2].value=6;render();});render();
 })();
-</script></body></html>
+</script><footer class="lesson-standard-footer"><div>みんなの数学データベース｜高校生のための授業</div></footer></body></html>

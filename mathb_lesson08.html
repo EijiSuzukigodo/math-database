@@ -49,12 +49,32 @@ body{margin:0!important;background:#f2f7fc!important;color:#19334e!important;fon
 mjx-container svg{max-width:none!important;width:auto!important;height:auto!important}
 mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden}
 @media(max-width:640px){#md-standard-goal{padding:17px 15px!important}#md-standard-goal .md-goal-title{font-size:20px!important}}
+</style><style>
+/* 2026年11月 共通ページ構造：数学I/II/A/B/C */
+html{scroll-padding-top:10px}
+body .lesson-standard-header{background:linear-gradient(110deg,#17365d,#215f99)!important;color:#fff!important;padding:24px 0 29px!important;margin:0!important;border:0!important;border-radius:0!important;text-align:left!important}
+body .lesson-standard-header .lesson-standard-width{max-width:970px!important;margin:0 auto!important;padding:0 17px!important}
+body .lesson-standard-header .lesson-standard-top,body .lesson-standard-header .lesson-standard-bottom{font-family:inherit!important;font-size:14px!important;line-height:1.65!important;color:#e4effc!important;font-weight:400!important;margin:0!important;padding:0!important;letter-spacing:normal!important}
+body .lesson-standard-header h1{font-family:inherit!important;color:#fff!important;font-size:clamp(25px,4.5vw,35px)!important;line-height:1.4!important;margin:8px 0 5px!important;padding:0!important;max-width:none!important;font-weight:700!important;border:0!important;text-align:left!important}
+/* Main and goal gap: exactly 22px measured from the header's lower edge */
+body>main.lesson-standard-main{display:block!important;box-sizing:border-box!important;max-width:970px!important;width:100%!important;margin:0 auto!important;padding:22px 17px 40px!important;position:relative!important;top:auto!important;transform:none!important}
+body>main.lesson-standard-main>.lesson-standard-goal{display:block!important;background:#fff!important;border:1px solid #dbe6f1!important;border-radius:14px!important;padding:22px 25px!important;margin:0 0 22px!important;box-shadow:0 3px 13px #193a5b0a!important;position:static!important;transform:none!important}
+body>main.lesson-standard-main>.lesson-standard-goal>.lesson-standard-goal-label{display:inline-block!important;font-size:13px!important;color:#145888!important;background:#e6f3ff!important;border-radius:20px!important;font-weight:700!important;padding:2px 12px!important;margin:0!important;line-height:1.6!important}
+body>main.lesson-standard-main>.lesson-standard-goal>h2{color:#174b78!important;font-size:23px!important;line-height:1.5!important;margin:10px 0 7px!important;padding:0!important;border:0!important;text-align:left!important}
+body>main.lesson-standard-main>.lesson-standard-goal>p{margin:0!important;color:#445d72!important;font-size:16px!important;line-height:1.8!important}
+body>main.lesson-standard-main>.lesson-standard-return{display:block!important;clear:both!important;margin:28px 0 0!important;padding:0!important;text-align:left!important;background:transparent!important;border:0!important;position:static!important;transform:none!important}
+body>main.lesson-standard-main>.lesson-standard-return a{display:inline-block!important;background:#e5f1fd!important;color:#175988!important;text-decoration:none!important;border:0!important;border-radius:9px!important;padding:10px 15px!important;font-weight:700!important;font-size:15px!important;line-height:1.5!important}
+body>footer.lesson-standard-footer{display:block!important;background:#112e4c!important;color:#ecf5fc!important;padding:20px 0!important;font-size:13px!important;line-height:1.7!important;text-align:left!important;margin:0!important;border:0!important;border-radius:0!important;clear:both!important}
+body>footer.lesson-standard-footer>div{max-width:970px!important;margin:auto!important;padding:0 17px!important}
+/* MathJax SVG may not inherit broad responsive SVG sizing */
+mjx-container svg{width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;display:inline-block!important}
+@media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
 </style></head><body>
-<header id="md-standard-header"><div class="md-inner"><div class="md-kicker">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>数学的帰納法</h1><p class="md-subtitle">数学B｜数列｜基本から応用まで</p></div></header>
-<main class="wrap" id="md-standard-main"><section id="md-standard-goal"><span class="md-goal-tag">授業のねらい</span><h2 class="md-goal-title">数学的帰納法</h2><p>初期値の成立とnからn+1への移行を示します。</p></section>
-<p class="intro">数学的帰納法は、<strong>最初の一歩</strong>と<strong>次の一歩へ進めること</strong>を証明して、すべての自然数について結論を導く方法です。証明の文章を省略せず、5種類の応用を学びましょう。</p>
+
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>数学的帰納法</h1><p class="lesson-standard-bottom">数学B ／ 数列</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>数学的帰納法</h2><p>初期値の成立とnからn+1への移行を示します。</p></section>
+
 <article class="paper">
-<h2 id="basic">基本事項：数学的帰納法のしくみ</h2>
+<h2 id="basic">1．基本事項：数学的帰納法のしくみ</h2>
 <p>自然数 \(n\) についての命題 \(P(n)\) を示すには、次の2段階を証明します。</p>
 <div class="step"><span class="tag">① 最初の確認</span>　\(n=1\) のとき \(P(1)\) が成立する。</div>
 <div class="step"><span class="tag">② 次の段階への橋渡し</span>　任意の自然数 \(k\) について \(P(k)\) が成立すると仮定し、その仮定から \(P(k+1)\) の成立を示す。</div>
@@ -89,8 +109,8 @@ mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden}
 <div class="exercise"><strong>問題4：漸化式</strong><p>\(a_1=3,\ a_{n+1}=2a_n+1\) の一般項を予想し、帰納法で証明せよ。</p><details><summary>解答・証明を見る</summary><p>\(a_1=3, a_2=7, a_3=15\) から \(a_n=2^{n+1}-1\) と予想。\(n=1\) では一致。\(a_k=2^{k+1}-1\) と仮定すると、\(a_{k+1}=2(2^{k+1}-1)+1=2^{k+2}-1\) となり成立。</p></details></div>
 <div class="exercise"><strong>問題5：連続する3整数</strong><p>\(n=4\) と \(n=5\) の場合に積を計算し、6の倍数であることを確認せよ。また証明で帰納法の仮定が使われた部分を指摘せよ。</p><details><summary>解答を見る</summary><p>\(4\cdot5\cdot6=120\)、\(5\cdot6\cdot7=210\) はいずれも6の倍数。証明では \(k(k+1)(k+2)\) が6の倍数とする部分が帰納法の仮定である。</p></details></div>
 <h2 id="end">まとめ</h2><p>帰納法は「初期段階→仮定→次の段階→結論」の順に書きます。数列の和、倍数、不等式、漸化式、連続整数の積のいずれでも、<strong>どこで帰納法の仮定を使うか</strong>を明確にしましょう。</p>
-</article><nav id="md-standard-footer-nav"><a href="mathb_recurrence_applications.html">← 前の授業</a><a href="math_subject_b.html">↑ 数学Bの授業一覧に戻る</a><a href="mathb_lesson09.html">次の授業 →</a></nav></main>
-<footer id="md-standard-footer"><div class="md-inner">みんなの数学データベース｜高校生のための授業</div></footer>
+</article><nav aria-label="授業一覧に戻る" class="lesson-standard-return"><a href="math_subject_b.html">← 数学Bに戻る</a></nav></main>
+
 <script>
 (function(){
 const slider=document.getElementById('steps'),out=document.getElementById('stepsOut'),ladder=document.getElementById('ladder'),txt=document.getElementById('stepText');
@@ -98,4 +118,4 @@ function draw(){const n=Number(slider.value);out.textContent=n;ladder.replaceChi
 slider.addEventListener('input',draw);draw();
 const rec=document.getElementById('recN'),recOut=document.getElementById('recNOut'),recText=document.getElementById('recText');function update(){const n=Number(rec.value);recOut.textContent=n;const arr=[];let a=2;for(let i=1;i<=n;i++){arr.push(a);a=3*a+2}recText.textContent='a₁ から a'+n+'： '+arr.join('， ')+'　｜　一般項の予想：a'+n+' = 3^'+n+' − 1 = '+(3**n-1)}rec.addEventListener('input',update);update();
 })();
-</script></body></html>
+</script><footer class="lesson-standard-footer"><div>みんなの数学データベース｜高校生のための授業</div></footer></body></html>

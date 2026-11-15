@@ -46,10 +46,30 @@ body{margin:0!important;background:#f2f7fc!important;color:#19334e!important;fon
 mjx-container svg{max-width:none!important;width:auto!important;height:auto!important}
 mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden}
 @media(max-width:640px){#md-standard-goal{padding:17px 15px!important}#md-standard-goal .md-goal-title{font-size:20px!important}}
+</style><style>
+/* 2026年11月 共通ページ構造：数学I/II/A/B/C */
+html{scroll-padding-top:10px}
+body .lesson-standard-header{background:linear-gradient(110deg,#17365d,#215f99)!important;color:#fff!important;padding:24px 0 29px!important;margin:0!important;border:0!important;border-radius:0!important;text-align:left!important}
+body .lesson-standard-header .lesson-standard-width{max-width:970px!important;margin:0 auto!important;padding:0 17px!important}
+body .lesson-standard-header .lesson-standard-top,body .lesson-standard-header .lesson-standard-bottom{font-family:inherit!important;font-size:14px!important;line-height:1.65!important;color:#e4effc!important;font-weight:400!important;margin:0!important;padding:0!important;letter-spacing:normal!important}
+body .lesson-standard-header h1{font-family:inherit!important;color:#fff!important;font-size:clamp(25px,4.5vw,35px)!important;line-height:1.4!important;margin:8px 0 5px!important;padding:0!important;max-width:none!important;font-weight:700!important;border:0!important;text-align:left!important}
+/* Main and goal gap: exactly 22px measured from the header's lower edge */
+body>main.lesson-standard-main{display:block!important;box-sizing:border-box!important;max-width:970px!important;width:100%!important;margin:0 auto!important;padding:22px 17px 40px!important;position:relative!important;top:auto!important;transform:none!important}
+body>main.lesson-standard-main>.lesson-standard-goal{display:block!important;background:#fff!important;border:1px solid #dbe6f1!important;border-radius:14px!important;padding:22px 25px!important;margin:0 0 22px!important;box-shadow:0 3px 13px #193a5b0a!important;position:static!important;transform:none!important}
+body>main.lesson-standard-main>.lesson-standard-goal>.lesson-standard-goal-label{display:inline-block!important;font-size:13px!important;color:#145888!important;background:#e6f3ff!important;border-radius:20px!important;font-weight:700!important;padding:2px 12px!important;margin:0!important;line-height:1.6!important}
+body>main.lesson-standard-main>.lesson-standard-goal>h2{color:#174b78!important;font-size:23px!important;line-height:1.5!important;margin:10px 0 7px!important;padding:0!important;border:0!important;text-align:left!important}
+body>main.lesson-standard-main>.lesson-standard-goal>p{margin:0!important;color:#445d72!important;font-size:16px!important;line-height:1.8!important}
+body>main.lesson-standard-main>.lesson-standard-return{display:block!important;clear:both!important;margin:28px 0 0!important;padding:0!important;text-align:left!important;background:transparent!important;border:0!important;position:static!important;transform:none!important}
+body>main.lesson-standard-main>.lesson-standard-return a{display:inline-block!important;background:#e5f1fd!important;color:#175988!important;text-decoration:none!important;border:0!important;border-radius:9px!important;padding:10px 15px!important;font-weight:700!important;font-size:15px!important;line-height:1.5!important}
+body>footer.lesson-standard-footer{display:block!important;background:#112e4c!important;color:#ecf5fc!important;padding:20px 0!important;font-size:13px!important;line-height:1.7!important;text-align:left!important;margin:0!important;border:0!important;border-radius:0!important;clear:both!important}
+body>footer.lesson-standard-footer>div{max-width:970px!important;margin:auto!important;padding:0 17px!important}
+/* MathJax SVG may not inherit broad responsive SVG sizing */
+mjx-container svg{width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;display:inline-block!important}
+@media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
 </style></head>
-<body><header id="md-standard-header"><div class="md-inner"><div class="md-kicker">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>独立な確率変数と期待値・分散</h1><p class="md-subtitle">数学B｜統計的な推測</p></div></header>
-<main class="wrap" id="md-standard-main"><section id="md-standard-goal"><span class="md-goal-tag">授業のねらい</span><h2 class="md-goal-title">独立な確率変数と期待値・分散</h2><p>独立である2変数の和の分散は各分散の和になります。</p></section>
-<p class="intro">前の教材で学んだ「同時分布」を使い、2つの確率変数が<strong>独立</strong>とはどういうことかを理解しましょう。期待値・分散の公式がいつ使えるのか、具体例で確かめます。</p>
+<body>
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>独立な確率変数と期待値・分散</h1><p class="lesson-standard-bottom">数学B ／ 統計的な推測</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>独立な確率変数と期待値・分散</h2><p>独立である2変数の和の分散は各分散の和になります。</p></section>
+
 <article class="paper">
 <h2>1．独立な確率変数とは</h2>
 <p>確率変数 \(X\), \(Y\) について、すべての値 \(x,y\) で</p>
@@ -157,7 +177,7 @@ V(X+Y+Z)=2+3+5=\boxed{10}.
 <div class="exercise"><strong>問題6（発展）</strong><p>独立な \(X,Y\) で、\(V(X)=2\), \(V(Y)=3\) とする。\(V(2X-3Y)\) を求めよ。</p><details><summary>解答と解説を表示</summary><p>定数倍すると分散には係数の2乗がかかるので、\(4\cdot2+9\cdot3=\boxed{35}\)。</p></details></div>
 <h2>まとめ</h2><p>また、係数付きの和では、期待値は係数をそのまま掛けて加え、独立な確率変数の分散は係数の2乗を掛けて加えます。</p>
 <p>期待値の和は、独立かどうかに関係なく加えることができます。一方、分散の加法公式 \(V(X\pm Y)=V(X)+V(Y)\) を使う際は、<strong>独立であること</strong>を確認します。独立なら積の期待値についても \(E(XY)=E(X)E(Y)\) が使えます。</p>
-</article><nav id="md-standard-footer-nav"><a href="mathb_lesson23.html">← 前の授業</a><a href="math_subject_b.html">↑ 数学Bの授業一覧に戻る</a><a href="mathb_lesson13.html">次の授業 →</a></nav></main><footer id="md-standard-footer"><div class="md-inner">みんなの数学データベース｜高校生のための授業</div></footer>
+</article><nav aria-label="授業一覧に戻る" class="lesson-standard-return"><a href="math_subject_b.html">← 数学Bに戻る</a></nav></main>
 <script>
 (function(){'use strict';const $=id=>document.getElementById(id),px=$('probX'),py=$('probY'),svg=$('sumPlot');const ns='http://www.w3.org/2000/svg';function add(tag,attrs,txt){const el=document.createElementNS(ns,tag);Object.entries(attrs).forEach(([k,v])=>el.setAttribute(k,String(v)));if(txt!==undefined)el.textContent=txt;svg.appendChild(el);return el;}function fmt(v){return v.toFixed(3);}function render(){const p=Number(px.value)/100,q=Number(py.value)/100;const c00=(1-p)*(1-q),c01=(1-p)*q,c10=p*(1-q),c11=p*q;for(const [id,v] of Object.entries({pv:p,qv:q,c00,c01,c10,c11,r0:1-p,r1:p,s0:1-q,s1:q,eSum:p+q,vSum:p*(1-p)+q*(1-q),eProd:p*q}))$(id).textContent=fmt(v);const vals=[c00,c01+c10,c11];svg.replaceChildren();add('line',{x1:55,y1:215,x2:565,y2:215,stroke:'#819bb3','stroke-width':2});for(let j=0;j<=4;j++){const val=j/4,y=215-val*170;add('line',{x1:55,y1:y,x2:565,y2:y,stroke:'#e1edf6'});add('text',{x:47,y:y+5,'text-anchor':'end',fill:'#586d82','font-size':14},val.toFixed(2));}vals.forEach((v,i)=>{const x=103+i*165,h=v*170;add('rect',{x,y:215-h,width:96,height:Math.max(0,h),rx:4,fill:['#367fa9','#4e9c86','#ce9455'][i]});add('text',{x:x+48,y:207-h,'text-anchor':'middle',fill:'#1f4660','font-size':17,'font-weight':'bold'},v.toFixed(3));add('text',{x:x+48,y:242,'text-anchor':'middle',fill:'#233f57','font-size':16},'X+Y='+i);});$('plotDesc').textContent='P(X+Y=0)='+fmt(vals[0])+'、P(X+Y=1)='+fmt(vals[1])+'、P(X+Y=2)='+fmt(vals[2]);}px.addEventListener('input',render);py.addEventListener('input',render);render();})();
-</script></body></html>
+</script><footer class="lesson-standard-footer"><div>みんなの数学データベース｜高校生のための授業</div></footer></body></html>
