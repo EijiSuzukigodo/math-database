@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第6講 ベクトルと図形｜数学C</title>
+<style>
+:root{--navy:#173b5e;--blue:#12639c;--bg:#f3f7fd;--edge:#d7e5f2}*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:#1d344c;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;font-size:16px;line-height:1.8}
+a{color:#125d97}header{background:linear-gradient(110deg,#16375b,#2573a4);color:#fff;padding:18px 16px}header .head{max-width:980px;margin:auto}header a{color:#fff}header h1{font-size:clamp(1.65rem,4vw,2.4rem);margin:12px 0 0}header p{margin:0;color:#e4f2fc}
+.wrap{max-width:980px;margin:auto;padding:16px 14px 40px}.lead{padding:12px;background:#e9f3ff;border-left:5px solid #3c84bd;border-radius:8px}.chapter{background:#fff;border:1px solid var(--edge);border-radius:15px;padding:16px;margin:16px 0;box-shadow:0 2px 8px #19334d0b}
+h2{font-size:1.35rem;color:#144e80;border-bottom:1px solid #e4edf6;padding-bottom:8px;margin:0 0 15px}h3{font-size:1.06rem;color:#174c7a}.formula{overflow-x:auto;text-align:center;background:#f5f9ff;border:1px solid #e3ebf5;border-radius:10px;padding:10px;margin:10px 0;font-size:1rem}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.panel{border:1px solid var(--edge);border-radius:12px;padding:14px;background:#fbfdff}.hint{color:#596e82;font-size:.91rem}
+label{font-weight:700;display:block;margin:8px 0 2px}input[type=range]{width:100%;accent-color:#12639c;min-height:28px}.value{font-variant-numeric:tabular-nums;background:#e8f3fc;padding:2px 8px;border-radius:5px}
+svg.diagram{display:block;width:100%;height:auto;background:white;border:1px solid #deebf5;border-radius:12px}.readout{background:#eaf4ff;border-radius:8px;padding:10px;margin:10px 0;font-variant-numeric:tabular-nums;white-space:pre-line}
+button{padding:9px 16px;background:#186397;color:#fff;border:0;border-radius:9px;font-size:.95rem;font-weight:700;min-height:44px;cursor:pointer}button.secondary{background:#e3eef7;color:#174967}.buttons{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+details{background:#f7fbff;border:1px solid #dce9f3;padding:12px;border-radius:10px;margin:10px 0}summary{cursor:pointer;color:#165b8a;font-weight:700;min-height:32px}.question{border:1px solid #dce9f3;border-radius:10px;padding:13px;margin:12px 0}.question input{font-size:1rem;padding:7px;width:85px;max-width:100%;border:1px solid #aac1d7;border-radius:7px}.result{font-weight:700;min-height:1.5em}.ok{color:#176843}.bad{color:#a34221}mjx-container[jax="SVG"]{max-width:100%}mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden}footer{padding:20px;background:#173b5e;color:white;text-align:center}
+@media(max-width:700px){.grid{grid-template-columns:1fr}.chapter{padding:14px}.wrap{padding:14px 12px 40px}}
+</style>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head><body><header><div class="head"><a href="math_subject_c.html">← 数学Cの授業へ戻る</a><h1>第6講　ベクトルと図形</h1><p>空間のベクトル｜みんなの数学データベース</p></div></header>
+<main class="wrap"><div class="lead"><strong>この授業で学ぶこと</strong>：ベクトルを使って、同一直線上・同一平面上にあることを証明し、直線と平面の交点、垂直条件、点と直線の距離を求めます。図を動かして確かめましょう。</div>
+<section class="chapter"><h2>1．3点が同一直線上にあることの証明</h2>
+<p>異なる2点 \(A,B\) と点 \(C\) が同一直線上にあることは、\(\overrightarrow{AC}\) が \(\overrightarrow{AB}\) の実数倍になることと同値です。</p>
+<div class="formula">\[\boxed{\overrightarrow{AC}=t\overrightarrow{AB}\quad(t\in\mathbb R)}\]</div>
+<h3>例題1</h3><p>3点 \(A(1,0,2),\ B(3,2,4),\ C(5,4,6)\) が同一直線上にあることを証明しなさい。</p>
+<details open><summary>証明を読む</summary><p>\(\overrightarrow{AB}=(2,2,2)\)、\(\overrightarrow{AC}=(4,4,4)\) だから、</p><div class="formula">\[\overrightarrow{AC}=2\overrightarrow{AB}\]</div><p>よって、3点 \(A,B,C\) は同一直線上にある。（証明終）</p></details>
+<div class="grid"><div><svg class="diagram" id="lineScene" viewBox="0 0 480 270" role="img" aria-label="点A、B、Cが一直線上に並ぶ図"><g id="lineLayer"></g></svg></div><div class="panel"><h3>点Cを動かしてみよう</h3><label for="lineT">実数 \(t\)：<span class="value" id="lineTv">2</span></label><input type="range" id="lineT" min="-1" max="3" step="0.25" value="2"><div class="readout" id="lineText" aria-live="polite"></div><p class="hint">\(C=A+t(B-A)\)。\(t\) を変えても C は直線 AB 上にあります。</p></div></div>
+</section>
+<section class="chapter"><h2>2．同一平面上の意味と証明</h2>
+<p><strong>同一平面上</strong>とは、複数の点が1つの平面に含まれていることです。\(A,B,C\) が一直線上にないとき、点 \(P\) が平面 \(ABC\) 上にある条件は</p>
+<div class="formula">\[\boxed{\overrightarrow{AP}=s\overrightarrow{AB}+t\overrightarrow{AC}\quad(s,t\in\mathbb R)}\]</div>
+<p>です。\(\overrightarrow{AB}\) と \(\overrightarrow{AC}\) が平行でないことが重要です。</p>
+<h3>例題2</h3><p>\(A(0,0,0),\ B(2,0,1),\ C(0,2,1),\ P(2,2,2)\) が同一平面上にあることを証明しなさい。</p>
+<details open><summary>証明を読む</summary><p>\(\overrightarrow{AB}=(2,0,1)\)、\(\overrightarrow{AC}=(0,2,1)\)、\(\overrightarrow{AP}=(2,2,2)\) なので、</p><div class="formula">\[\overrightarrow{AP}=\overrightarrow{AB}+\overrightarrow{AC}\]</div><p>\(\overrightarrow{AB}\) と \(\overrightarrow{AC}\) は平行でないため、点 \(P\) は平面 \(ABC\) 上にある。（証明終）</p></details>
+<div class="grid"><div><svg class="diagram" id="planeScene" viewBox="0 0 480 320" role="img" aria-label="平面ABC上を点Pが動く立体図"><g id="planeLayer"></g></svg></div><div class="panel"><h3>平面上の点Pを動かす</h3><label for="planeS">\(s\)：<span class="value" id="planeSv">1</span></label><input id="planeS" type="range" min="-0.5" max="1.5" step="0.25" value="1"><label for="planeT">\(t\)：<span class="value" id="planeTv">1</span></label><input id="planeT" type="range" min="-0.5" max="1.5" step="0.25" value="1"><div class="readout" id="planeText" aria-live="polite"></div><p class="hint">平行四辺形の考え方で、同じ平面内の点を表せます。図は斜めから見た模式図です。</p></div></div>
+</section>
+<section class="chapter"><h2>3．直線と平面の交点の位置ベクトル</h2>
+<p>直線 \(AB\) 上の点 \(X\) の位置ベクトルは、実数 \(t\) を使って</p><div class="formula">\[\overrightarrow{OX}=(1-t)\vec a+t\vec b\]</div>
+<p>と表せます。これを平面の方程式に代入して \(t\) を決めます。</p>
+<h3>例題3</h3><p>点 \(A(1,0,2)\) と \(B(3,2,0)\) を通る直線と、平面 \(x+y+z=4\) との交点 \(Q\) を求めなさい。</p>
+<details open><summary>解法を読む</summary><p>直線上の点を \(Q=(1-t)A+tB\) とおくと、</p><div class="formula">\[Q=(1+2t,\ 2t,\ 2-2t)\]</div><p>平面の方程式に代入して</p><div class="formula">\[(1+2t)+2t+(2-2t)=4\]</div><div class="formula">\[3+2t=4\quad\Longrightarrow\quad t=\frac12\]</div><div class="formula">\[\boxed{\overrightarrow{OQ}=(2,1,1)}\]</div><p>交点は \(Q(2,1,1)\) です。</p></details>
+<div class="grid"><div><svg class="diagram" id="interScene" viewBox="0 0 480 340" role="img" aria-label="直線ABと平面x+y+z=4との交点"><g id="interLayer"></g></svg></div><div class="panel"><h3>直線上の点Xを動かす</h3><label for="interT">\(t\)：<span class="value" id="interTv">0.5</span></label><input id="interT" type="range" min="-0.5" max="1.5" step="0.05" value="0.5"><div class="readout" id="interText" aria-live="polite"></div><p class="hint">赤い点が平面上に来るのは \(t=0.5\) のときです。緑の点が交点Qです。</p></div></div>
+</section>
+<section class="chapter"><h2>4．内積を利用した証明問題</h2>
+<p>空間ベクトルでも、零ベクトルでない2つのベクトルの内積が0なら垂直です。</p>
+<div class="formula">\[\boxed{\vec u\cdot\vec v=0\iff\vec u\perp\vec v}\]</div>
+<h3>例題4：三角形が直角三角形であることの証明</h3><p>\(A(1,2,0),\ B(3,1,1),\ C(2,4,0)\) とする。\(\angle BAC=90^\circ\) を証明しなさい。</p>
+<details open><summary>証明を読む</summary><p>\(\overrightarrow{AB}=(2,-1,1)\)、\(\overrightarrow{AC}=(1,2,0)\) だから、</p><div class="formula">\[\overrightarrow{AB}\cdot\overrightarrow{AC}=2\times1+(-1)\times2+1\times0=0\]</div><p>どちらのベクトルも零ベクトルではないので、\(AB\perp AC\)。したがって \(\angle BAC=90^\circ\) である。（証明終）</p></details>
+<p><strong>発展：</strong>直線の方向ベクトル \(\vec v\) と平面上の独立な2方向のベクトル \(\vec u,\vec w\) に対して、\(\vec v\cdot\vec u=\vec v\cdot\vec w=0\) なら、直線は平面に垂直です。</p>
+</section>
+<section class="chapter"><h2>5．点と直線の距離</h2>
+<p>点 \(P\) と直線 \(\ell\) の距離は、\(P\) から直線に下ろした垂線の長さ \(PH\) です。直線が点 \(A\) を通り、方向ベクトルが \(\vec v\ne\vec0\) のとき、\(\vec w=\overrightarrow{AP}\) とおけば</p>
+<div class="formula">\[\boxed{PH=\sqrt{|\vec w|^2-\frac{(\vec w\cdot\vec v)^2}{|\vec v|^2}}}\]</div>
+<h3>例題5</h3><p>点 \(P(2,3,4)\) から、点 \(A(1,1,1)\) を通り方向ベクトル \(\vec v=(2,0,1)\) をもつ直線までの距離を求めなさい。</p>
+<details open><summary>解法を読む</summary><p>\(\vec w=\overrightarrow{AP}=(1,2,3)\) だから、</p><div class="formula">\[|\vec w|^2=14,\quad\vec w\cdot\vec v=5,\quad |\vec v|^2=5\]</div><div class="formula">\[PH=\sqrt{14-\frac{25}{5}}=\boxed{3}\]</div><p><strong>垂線の足でも確かめる：</strong>\(H=A+t\vec v\) として、\(\overrightarrow{PH}\cdot\vec v=0\) から \(t=1\) です。したがって \(H(3,1,2)\)、\(PH=\sqrt{(-1)^2+2^2+2^2}=3\)。</p></details>
+<div class="grid"><div><svg class="diagram" id="distScene" viewBox="0 0 480 320" role="img" aria-label="点Pから直線への垂線PHを示す立体図"><g id="distLayer"></g></svg></div><div class="panel"><h3>直線上の点Xを動かす</h3><label for="distT">直線上のパラメータ \(t\)：<span class="value" id="distTv">1</span></label><input id="distT" type="range" min="-1" max="3" step="0.1" value="1"><div class="readout" id="distText" aria-live="polite"></div><p class="hint">\(PX\) が最小になるのは \(X=H\)、つまり \(t=1\) のときです。</p></div></div>
+</section>
+<section class="chapter"><h2>6．練習問題</h2><p>まず自分で考え、答え合わせや解説を開いてください。</p>
+<div class="question"><strong>問題1：</strong> \(A(0,1,2),B(2,3,4),C(6,7,8)\) に対し、\(\overrightarrow{AC}=t\overrightarrow{AB}\) の \(t\) を求めなさい。<div><label for="q1">t = </label><input id="q1" inputmode="decimal"></div><div class="buttons"><button type="button" onclick="check(1,3)">答え合わせ</button></div><p class="result" id="r1" aria-live="polite"></p><details><summary>解説を見る</summary>\(\overrightarrow{AB}=(2,2,2)\)、\(\overrightarrow{AC}=(6,6,6)\) なので \(t=3\) です。</details></div>
+<div class="question"><strong>問題2：</strong> \(A(0,0,0),B(2,0,0),C(0,3,0)\) について、\(P=(2s,3t,0)\) とする。\(P(1,3,0)\) となる \(s\) を求めなさい。<div><label for="q2">s = </label><input id="q2" inputmode="decimal"></div><div class="buttons"><button type="button" onclick="check(2,0.5)">答え合わせ</button></div><p class="result" id="r2" aria-live="polite"></p><details><summary>解説を見る</summary>\(2s=1\) より \(s=\frac12\) です。\(t=1\) なので点Pは平面ABC上にあります。</details></div>
+<div class="question"><strong>問題3：</strong> 例題3の直線と平面の交点 \(Q\) の \(z\) 座標を求めなさい。<div><label for="q3">z = </label><input id="q3" inputmode="decimal"></div><div class="buttons"><button type="button" onclick="check(3,1)">答え合わせ</button></div><p class="result" id="r3" aria-live="polite"></p><details><summary>解説を見る</summary>\(t=\frac12\) を \(z=2-2t\) に代入すると \(z=1\) です。</details></div>
+<div class="question"><strong>問題4：</strong> \(\vec a=(1,2,0)\)、\(\vec b=(2,-1,4)\) の内積を求めなさい。<div><label for="q4">内積 = </label><input id="q4" inputmode="decimal"></div><div class="buttons"><button type="button" onclick="check(4,0)">答え合わせ</button></div><p class="result" id="r4" aria-live="polite"></p><details><summary>解説を見る</summary>\(1\times2+2\times(-1)+0\times4=0\)。2つのベクトルは垂直です。</details></div>
+<div class="question"><strong>問題5：</strong> 例題5の点と直線の距離を求めなさい。<div><label for="q5">距離 = </label><input id="q5" inputmode="decimal"></div><div class="buttons"><button type="button" onclick="check(5,3)">答え合わせ</button></div><p class="result" id="r5" aria-live="polite"></p><details><summary>解説を見る</summary>\(PH=\sqrt{14-25/5}=3\) です。</details></div>
+</section>
+<section class="chapter"><h2>まとめ</h2><p><strong>一直線：</strong>ベクトルの実数倍。<strong>同一平面：</strong>独立な2ベクトルの一次結合。<strong>交点：</strong>直線のパラメータを平面の式へ代入。<strong>垂直・距離：</strong>内積を利用。</p><p><a href="math_subject_c.html">← 数学Cの授業一覧へ戻る</a></p></section></main>
+<footer>みんなの数学データベース ｜ 数学C</footer>
+<script>
+'use strict';const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
+function E(tag,attrs={},str){const n=document.createElementNS(NS,tag);Object.entries(attrs).forEach(([k,v])=>n.setAttribute(k,String(v)));if(str!==undefined)n.textContent=str;return n}
+const add=(a,b)=>a.map((x,i)=>x+b[i]),scale=(a,t)=>a.map(x=>x*t),sub=(a,b)=>a.map((x,i)=>x-b[i]),dot=(a,b)=>a.reduce((v,x,i)=>v+x*b[i],0);
+const pro=([x,y,z],cx=240,cy=232,k=44)=>({x:cx+k*(.84*x-.65*y),y:cy+k*(.28*x+.4*y-.87*z)});
+const fmt=x=>Number(x.toFixed(2)).toString(), tup=a=>'('+a.map(fmt).join(', ')+')';
+function line(g,a,b,color='#365b7a',w=2,d=''){g.appendChild(E('line',{x1:a.x,y1:a.y,x2:b.x,y2:b.y,stroke:color,'stroke-width':w,'stroke-dasharray':d,'stroke-linecap':'round'}))}
+function point(g,p,name,color='#175b92',dx=7,dy=-8){g.appendChild(E('circle',{cx:p.x,cy:p.y,r:5,fill:color,stroke:'#fff','stroke-width':1.6}));g.appendChild(E('text',{x:p.x+dx,y:p.y+dy,fill:color,'font-size':15,'font-weight':700},name))}
+function polygon(g,arr,fill='#d9edf8',stroke='#5296b7'){g.appendChild(E('polygon',{points:arr.map(p=>p.x+','+p.y).join(' '),fill,stroke,'stroke-width':1.4,'fill-opacity':.68}))}
+function scene(id){const n=$(id);n.replaceChildren();return n}
+function axes(g,cx,cy,k=42){const o=pro([0,0,0],cx,cy,k);for(const [v,t] of [[[4,0,0],'x'],[[0,4,0],'y'],[[0,0,4],'z']]){const p=pro(v,cx,cy,k);line(g,o,p,'#bbcddd',1.6);g.appendChild(E('text',{x:p.x+4,y:p.y-4,fill:'#647e95','font-size':14},t))}point(g,o,'O','#627b8d')}
+function renderLine(){const t=+$('lineT').value,A=[1,0,2],B=[3,2,4],C=add(A,scale(sub(B,A),t));$('lineTv').textContent=fmt(t);$('lineText').textContent='C = '+tup(C)+'\nAC = '+fmt(t)+' AB';let g=scene('lineLayer');const p=v=>pro(v,185,205,36);line(g,p(add(A,scale(sub(B,A),-1.1))),p(add(A,scale(sub(B,A),3.1))),'#a5bcd0',2.5);point(g,p(A),'A','#2366a3');point(g,p(B),'B','#cf7c20');point(g,p(C),'C','#17875d',7,17)}
+function renderPlane(){const s=+$('planeS').value,t=+$('planeT').value,A=[0,0,0],B=[2,0,1],C=[0,2,1],P=add(scale(B,s),scale(C,t));$('planeSv').textContent=fmt(s);$('planeTv').textContent=fmt(t);$('planeText').textContent='P = '+tup(P)+'\nAP = '+fmt(s)+' AB + '+fmt(t)+' AC';let g=scene('planeLayer');const pr=v=>pro(v,235,245,56);const corner=(u,v)=>add(scale(B,u),scale(C,v));polygon(g,[pr(corner(-.7,-.7)),pr(corner(1.8,-.7)),pr(corner(1.8,1.8)),pr(corner(-.7,1.8))]);axes(g,235,245,35);line(g,pr(A),pr(B),'#2a6eaa',3);line(g,pr(A),pr(C),'#2a6eaa',3);point(g,pr(B),'B','#2b679f');point(g,pr(C),'C','#2b679f');point(g,pr(P),'P','#d05b3a')}
+function renderInter(){const t=+$('interT').value,A=[1,0,2],B=[3,2,0],Q=[2,1,1],X=add(A,scale(sub(B,A),t));$('interTv').textContent=fmt(t);$('interText').textContent='X = '+tup(X)+'\nx+y+z = '+fmt(X.reduce((s,x)=>s+x,0))+'（平面は4）';let g=scene('interLayer');const pr=v=>pro(v,215,278,52);polygon(g,[[4,0,0],[0,4,0],[0,0,4]].map(pr),'#d4e9fd','#5484a3');axes(g,215,278,36);line(g,pr(add(A,scale(sub(B,A),-.4))),pr(add(A,scale(sub(B,A),1.5))),'#245f97',3.5);point(g,pr(A),'A','#245f97');point(g,pr(B),'B','#245f97');point(g,pr(Q),'Q','#178656');point(g,pr(X),'X','#d04d40',10,15)}
+function renderDist(){const t=+$('distT').value,A=[1,1,1],v=[2,0,1],P=[2,3,4],H=[3,1,2],X=add(A,scale(v,t));$('distTv').textContent=fmt(t);$('distText').textContent='X = '+tup(X)+'\nPX = '+fmt(Math.hypot(...sub(P,X)))+'　（最小値 3）';let g=scene('distLayer');const pr=v=>pro(v,150,267,39);line(g,pr(add(A,scale(v,-1.1))),pr(add(A,scale(v,3.4))),'#285e95',3.5);line(g,pr(P),pr(H),'#178258',3.3,'7 4');line(g,pr(P),pr(X),'#c89036',2,'4 5');point(g,pr(A),'A','#285e95');point(g,pr(H),'H','#178258');point(g,pr(P),'P','#b94e42');point(g,pr(X),'X','#d18a20')}
+function check(n,correct){const val=$('q'+n).value.trim(),out=$('r'+n);if(!val){out.className='result bad';out.textContent='答えを入力してください。';return}const num=val.includes('/')&&val.split('/').length===2?(Number(val.split('/')[0])/Number(val.split('/')[1])):Number(val);const good=Number.isFinite(num)&&Math.abs(num-correct)<1e-8;out.className='result '+(good?'ok':'bad');out.textContent=good?'正解です！':'もう一度考えてみましょう。'}
+for(const [id,fn] of [['lineT',renderLine],['planeS',renderPlane],['planeT',renderPlane],['interT',renderInter],['distT',renderDist]])$(id).addEventListener('input',fn);renderLine();renderPlane();renderInter();renderDist();
+</script></body></html>
