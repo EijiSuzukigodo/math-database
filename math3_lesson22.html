@@ -1,5 +1,6 @@
-<!doctype html>
-<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<!DOCTYPE html>
+
+<html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>部分積分法｜数学Ⅲ｜みんなの数学データベース</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f2f7fc;color:#19334e;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.8;font-size:16px}
@@ -18,8 +19,27 @@ a:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid oran
 @media(max-width:640px){.goal,.panel{padding:17px 15px}.panel h2{font-size:20px}}
 </style>
 <script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']],processEscapes:true},svg:{fontCache:'global'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
-<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script></head>
-<body><header><div class="wrap"><div class="sub">みんなの数学データベース ／ 高校数学 ／ 数学Ⅲ ／ 第5章 積分法</div><h1>部分積分法</h1><div class="sub">第3講　積の微分法から積分公式を導く</div></div></header>
+<script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script><style>
+/* 数学Ⅲ 共通デザイン（全教材統一） */
+.md3-unified-header{background:linear-gradient(110deg,#17365d,#215f99)!important;color:#fff!important;padding:24px 0 29px!important;margin:0!important;border-radius:0!important}
+.md3-unified-header .md3-width,.md3-unified-footer .md3-width{max-width:970px;margin:0 auto;padding:0 17px}
+.md3-unified-header .md3-breadcrumb,.md3-unified-header .md3-subtitle{font-size:14px!important;color:#e4effc!important;line-height:1.65!important;margin:0!important}
+.md3-unified-header h1{font-family:inherit!important;color:#fff!important;font-size:clamp(25px,4.5vw,35px)!important;line-height:1.4!important;margin:8px 0 5px!important;padding:0!important;border:none!important}
+body>main,body>main.wrap{padding-top:22px!important;margin-top:0!important}
+body>main>section:first-child{margin-top:0!important}
+body>main>section:first-child:is(.goal,.standard-lesson-goal){background:#fff!important;border:1px solid #dbe6f1!important;border-radius:14px!important;padding:22px 25px!important;margin-bottom:22px!important;box-shadow:0 3px 13px #193a5b0a!important}
+body>main>section:first-child:is(.goal,.standard-lesson-goal)>h2{color:#174b78!important;font-size:23px!important;line-height:1.5!important;margin:10px 0 7px!important;border:0!important;padding:0!important}
+body>main>section:first-child:is(.goal,.standard-lesson-goal)>span:first-child{display:inline-block!important;color:#145888!important;background:#e6f3ff!important;border-radius:20px!important;font-size:13px!important;font-weight:700!important;padding:2px 12px!important}
+body>main>section:first-child:is(.goal,.standard-lesson-goal)>p{color:#445d72!important;margin:0!important}
+.md3-unified-navigation{display:flex!important;flex-wrap:wrap!important;gap:10px!important;max-width:970px!important;margin:26px auto 19px!important;padding:0 2px!important;align-items:center!important;position:static!important}
+.md3-unified-navigation a{display:inline-block!important;background:#e5f1fd!important;color:#175988!important;padding:10px 15px!important;border-radius:9px!important;font-size:15px!important;text-decoration:none!important;font-weight:700!important;line-height:1.5!important}
+.md3-unified-navigation a:hover{background:#d2e7fa!important}
+.md3-unified-footer{display:block!important;background:#112e4c!important;color:#ecf5fc!important;padding:20px 0!important;font-size:13px!important;text-align:left!important;margin:0!important;border:0!important}
+mjx-container{max-width:100%!important}mjx-container[display="true"]{overflow-x:auto!important;overflow-y:hidden!important}
+@media(max-width:640px){body>main>section:first-child:is(.goal,.standard-lesson-goal){padding:17px 15px!important}}
+mjx-container svg{width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;display:inline-block!important}
+</style></head>
+<body><header class="md3-unified-header"><div class="md3-width"><div class="md3-breadcrumb">みんなの数学データベース ／ 高校数学 ／ 数学Ⅲ ／ 第5章 積分法</div><h1>部分積分法</h1><p class="md3-subtitle">第3講　第5章 積分法</p></div></header>
 <main class="wrap">
 <section class="goal"><span class="tag">授業のねらい</span><h2>積の微分法を逆に利用して積分を計算できるようになる</h2><p>部分積分法の公式とその成り立ちを理解し、微分する部分と積分する部分を適切に選んで、途中式を丁寧に書きながら計算できるようになります。</p></section>
 <section class="panel"><h2>1．部分積分法の考え方</h2>
@@ -33,21 +53,21 @@ a:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid oran
 <section class="panel"><h2>2．動く図で公式の仕組みを理解する</h2>
 <p>\(u=x,\;v=x\) とします。このとき積 \(uv=x^2\) は面積で表せます。\(x\) が少し増えると、増えた面積は横と縦の細い長方形、そして小さい角の正方形に分かれます。</p>
 <div class="graph-wrap">
-<svg id="partsGraph" viewBox="0 0 680 330" role="img" aria-label="正方形の辺の長さを動かして積の微分を理解する図">
-<rect width="680" height="330" rx="9" fill="#fff"/><g id="partsDrawing"></g>
+<svg aria-label="正方形の辺の長さを動かして積の微分を理解する図" id="partsGraph" role="img" viewbox="0 0 680 330">
+<rect fill="#fff" height="330" rx="9" width="680"></rect><g id="partsDrawing"></g>
 </svg>
 <label for="dxSlider">辺の増分 Δx：<output id="dxValue">0.5</output></label>
-<input id="dxSlider" type="range" min="0.1" max="1.5" step="0.1" value="0.5">
-<div class="readout" id="partsInfo" aria-live="polite"></div></div>
+<input id="dxSlider" max="1.5" min="0.1" step="0.1" type="range" value="0.5"/>
+<div aria-live="polite" class="readout" id="partsInfo"></div></div>
 <p>この図では \(u=v=x\) の具体例で積の微分の構造を観察できます。一般の部分積分法は、上の積の微分公式を積分して導きます。</p></section>
 <section class="panel"><h2>3．計算手順</h2>
 <div class="tip">① \(u\) と \(dv\) を決める　→　② \(du\) と \(v\) を求める　→　③ \(\int u\,dv=uv-\int v\,du\) に代入する　→　④ 残った積分を計算して \(C\) を付ける。</div>
 <h3>公式を使う基本例</h3>
 <div class="formula">\[\begin{aligned}
 \int xe^x\,dx
-&=xe^x-\int e^x\,dx\\
-&=xe^x-e^x+C\\
-&=\boxed{(x-1)e^x+C}
+&amp;=xe^x-\int e^x\,dx\\
+&amp;=xe^x-e^x+C\\
+&amp;=\boxed{(x-1)e^x+C}
 \end{aligned}\]</div>
 <p>ここでは \(u=x\)、\(dv=e^x\,dx\) とすると、\(du=dx\)、\(v=e^x\) となります。</p></section>
 <section class="panel"><h2>4．例題と詳しい解説</h2>
@@ -58,18 +78,18 @@ a:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid oran
 <div class="formula">\[\boxed{\int x^2e^x\,dx=e^x(x^2-2x+2)+C}\]</div></div></div>
 <div class="example"><h3>例題2　多項式と三角関数</h3><p>\(\int x\cos x\,dx\) を求めなさい。</p><div class="solution"><p>\(u=x,\;dv=\cos x\,dx\) とすれば、\(du=dx,\;v=\sin x\)。</p>
 <div class="formula">\[\boxed{\int x\cos x\,dx=x\sin x+\cos x+C}\]</div></div></div>
-<div class="example"><h3>例題3　対数関数</h3><p>\(\int\log x\,dx\; (x>0)\) を求めなさい。</p><div class="solution"><p>\(\log x=\log x\cdot1\) と考え、\(u=\log x,\;dv=dx\) とします。</p>
-<div class="formula">\[\begin{aligned}\int\log x\,dx&=x\log x-\int x\frac1x\,dx\\&=\boxed{x\log x-x+C}\end{aligned}\]</div></div></div>
+<div class="example"><h3>例題3　対数関数</h3><p>\(\int\log x\,dx\; (x&gt;0)\) を求めなさい。</p><div class="solution"><p>\(\log x=\log x\cdot1\) と考え、\(u=\log x,\;dv=dx\) とします。</p>
+<div class="formula">\[\begin{aligned}\int\log x\,dx&amp;=x\log x-\int x\frac1x\,dx\\&amp;=\boxed{x\log x-x+C}\end{aligned}\]</div></div></div>
 <div class="example"><h3>例題4　逆三角関数を使わない形</h3><p>\(\int x\sin x\,dx\) を求めなさい。</p><div class="solution"><p>\(u=x,\;dv=\sin x\,dx\) とすると \(v=-\cos x\) です。符号に注意します。</p><div class="formula">\[\boxed{\int x\sin x\,dx=-x\cos x+\sin x+C}\]</div></div></div>
 <div class="example"><h3>例題5　2回の部分積分</h3><p>\(\int e^x\sin x\,dx\) を求めなさい。</p><div class="solution"><p>\(I=\int e^x\sin x\,dx\) とおいて、部分積分を2回行うと、</p>
-<div class="formula">\[\begin{aligned}I&=e^x\sin x-\int e^x\cos x\,dx\\
-&=e^x\sin x-e^x\cos x-I\end{aligned}\]</div>
+<div class="formula">\[\begin{aligned}I&amp;=e^x\sin x-\int e^x\cos x\,dx\\
+&amp;=e^x\sin x-e^x\cos x-I\end{aligned}\]</div>
 <p>よって \(2I=e^x(\sin x-\cos x)\)。</p>
 <div class="formula">\[\boxed{\int e^x\sin x\,dx=\frac{e^x}{2}(\sin x-\cos x)+C}\]</div></div></div></section>
 <section class="panel"><h2>5．練習問題</h2><p>まず自分で解いてから「解答・解説」を開きましょう。</p>
 <div class="quiz"><strong>問1</strong>　\(\int xe^{2x}\,dx\)<details><summary>解答・解説</summary><div class="formula">\[\boxed{\frac{xe^{2x}}2-\frac{e^{2x}}4+C}\]</div><p>\(u=x,\;dv=e^{2x}dx\) と置きます。\(v=e^{2x}/2\) です。</p></details></div>
 <div class="quiz"><strong>問2</strong>　\(\int x\sin 2x\,dx\)<details><summary>解答・解説</summary><div class="formula">\[\boxed{-\frac{x\cos2x}{2}+\frac{\sin2x}{4}+C}\]</div><p>\(v=-\cos2x/2\) とする部分積分です。</p></details></div>
-<div class="quiz"><strong>問3</strong>　\(\int x\log x\,dx\quad(x>0)\)<details><summary>解答・解説</summary><div class="formula">\[\boxed{\frac{x^2}{2}\log x-\frac{x^2}{4}+C}\]</div><p>\(u=\log x,\;dv=x\,dx\) と置きます。</p></details></div>
+<div class="quiz"><strong>問3</strong>　\(\int x\log x\,dx\quad(x&gt;0)\)<details><summary>解答・解説</summary><div class="formula">\[\boxed{\frac{x^2}{2}\log x-\frac{x^2}{4}+C}\]</div><p>\(u=\log x,\;dv=x\,dx\) と置きます。</p></details></div>
 <div class="quiz"><strong>問4</strong>　\(\int x^2\cos x\,dx\)<details><summary>解答・解説</summary><div class="formula">\[\boxed{x^2\sin x+2x\cos x-2\sin x+C}\]</div><p>1回目の部分積分後、\(\int x\sin x\,dx\) に再度部分積分を使います。</p></details></div>
 <div class="quiz"><strong>問5</strong>　\(\int e^x\cos x\,dx\)<details><summary>解答・解説</summary><div class="formula">\[\boxed{\frac{e^x}{2}(\sin x+\cos x)+C}\]</div><p>2回部分積分し、もとの積分を含む方程式を解きます。</p></details></div>
 <div class="quiz"><strong>問6</strong>　\(\int x^3e^x\,dx\)<details><summary>解答・解説</summary><div class="formula">\[\boxed{e^x(x^3-3x^2+6x-6)+C}\]</div><p>多項式の次数が0になるまで部分積分を繰り返します。</p></details></div></section>
@@ -78,8 +98,8 @@ a:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid oran
 <div class="formula">\[\boxed{I_n=x^ne^x-nI_{n-1}}\]</div>
 <p>これは繰り返し部分積分を行う際の基本となる関係です。積分定数は最終的にまとめて \(C\) と書きます。</p>
 <div class="tip"><strong>まとめ：</strong>部分積分法は積の微分法の逆です。微分して簡単になる部分を選ぶこと、積分後の符号を確認すること、最後に積分定数を付けることを習慣にしましょう。</div></section>
-<nav class="back" aria-label="ページ移動"><a href="math_subject_3.html">← 数学Ⅲの授業一覧へ戻る</a><a href="math3_lesson21.html">← 前の授業「置換積分法」</a><a href="math3_various_indefinite_integrals.html">次の授業「いろいろな関数の不定積分」 →</a></nav>
-</main><footer><div class="wrap">みんなの数学データベース｜高校生のための授業</div></footer>
+
+<nav aria-label="授業ページの移動" class="md3-unified-navigation"><a href="math3_lesson21.html">← 前の授業「置換積分法」</a><a href="math_subject_3.html">数学Ⅲの授業一覧へ戻る</a><a href="math3_various_indefinite_integrals.html">次の授業「いろいろな関数の不定積分」 →</a></nav></main><footer class="md3-unified-footer"><div class="md3-width">みんなの数学データベース｜高校生のための授業</div></footer>
 <script>
 (function(){
 const s=document.getElementById('dxSlider'), v=document.getElementById('dxValue'), group=document.getElementById('partsDrawing'), info=document.getElementById('partsInfo');

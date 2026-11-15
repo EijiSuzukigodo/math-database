@@ -70,12 +70,31 @@ main .standard-lesson-goal .standard-goal-subtitle {
 @media(max-width:600px){main .standard-lesson-goal{padding:20px 18px 24px !important;}}
 
 /* Header-to-goal gap: dedicated spacer, not margin collapse */
-.header-goal-spacer{display:none!important;}
+.header-goal-spacer{display:block!important;height:32px!important;min-height:32px!important;background:#f2f6fc!important;}
 body > main.wrap{padding-top:22px!important;}
 body > main.wrap > .standard-lesson-goal:first-child{margin-top:0!important;}
 </style>
-<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'global'}};</script><script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script></head><body>
-<header class="standard-lesson-header"><div class="wrap"><a class="lesson-head-back" href="math_subject_3.html">← 数学Ⅲの授業一覧に戻る</a><h1 class="lesson-head-title">数列の極限</h1><p class="lesson-head-meta">数学Ⅲ ／ 第2章 極限 ／ 第1講　｜　みんなの数学データベース</p></div></header>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'global'}};</script><script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script><style>
+/* 数学Ⅲ 共通デザイン（全教材統一） */
+.md3-unified-header{background:linear-gradient(110deg,#17365d,#215f99)!important;color:#fff!important;padding:24px 0 29px!important;margin:0!important;border-radius:0!important}
+.md3-unified-header .md3-width,.md3-unified-footer .md3-width{max-width:970px;margin:0 auto;padding:0 17px}
+.md3-unified-header .md3-breadcrumb,.md3-unified-header .md3-subtitle{font-size:14px!important;color:#e4effc!important;line-height:1.65!important;margin:0!important}
+.md3-unified-header h1{font-family:inherit!important;color:#fff!important;font-size:clamp(25px,4.5vw,35px)!important;line-height:1.4!important;margin:8px 0 5px!important;padding:0!important;border:none!important}
+body>main,body>main.wrap{padding-top:22px!important;margin-top:0!important}
+body>main>section:first-child{margin-top:0!important}
+body>main>section:first-child:is(.goal,.standard-lesson-goal){background:#fff!important;border:1px solid #dbe6f1!important;border-radius:14px!important;padding:22px 25px!important;margin-bottom:22px!important;box-shadow:0 3px 13px #193a5b0a!important}
+body>main>section:first-child:is(.goal,.standard-lesson-goal)>h2{color:#174b78!important;font-size:23px!important;line-height:1.5!important;margin:10px 0 7px!important;border:0!important;padding:0!important}
+body>main>section:first-child:is(.goal,.standard-lesson-goal)>span:first-child{display:inline-block!important;color:#145888!important;background:#e6f3ff!important;border-radius:20px!important;font-size:13px!important;font-weight:700!important;padding:2px 12px!important}
+body>main>section:first-child:is(.goal,.standard-lesson-goal)>p{color:#445d72!important;margin:0!important}
+.md3-unified-navigation{display:flex!important;flex-wrap:wrap!important;gap:10px!important;max-width:970px!important;margin:26px auto 19px!important;padding:0 2px!important;align-items:center!important;position:static!important}
+.md3-unified-navigation a{display:inline-block!important;background:#e5f1fd!important;color:#175988!important;padding:10px 15px!important;border-radius:9px!important;font-size:15px!important;text-decoration:none!important;font-weight:700!important;line-height:1.5!important}
+.md3-unified-navigation a:hover{background:#d2e7fa!important}
+.md3-unified-footer{display:block!important;background:#112e4c!important;color:#ecf5fc!important;padding:20px 0!important;font-size:13px!important;text-align:left!important;margin:0!important;border:0!important}
+mjx-container{max-width:100%!important}mjx-container[display="true"]{overflow-x:auto!important;overflow-y:hidden!important}
+@media(max-width:640px){body>main>section:first-child:is(.goal,.standard-lesson-goal){padding:17px 15px!important}}
+mjx-container svg{width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;display:inline-block!important}
+</style></head><body>
+<header class="md3-unified-header"><div class="md3-width"><div class="md3-breadcrumb">みんなの数学データベース ／ 高校数学 ／ 数学Ⅲ ／ 第2章 極限</div><h1>数列の極限</h1><p class="md3-subtitle">第1講　第2章 極限</p></div></header><div aria-hidden="true" class="header-goal-spacer"></div>
 <main class="wrap">
 <section aria-label="授業のねらい" class="standard-lesson-goal"><span class="standard-goal-label">授業のねらい</span><h2 class="standard-goal-title">数列の収束と発散を理解する</h2><p class="standard-goal-subtitle">数列の項がどのような値に近づくかをグラフで確かめ、極限の基本法則とはさみうちの原理を使って計算できるようになる。</p></section>
 <section class="paper"><h2>1．数列の極限とは</h2><p>数列 \(\{a_n\}\) について、項番号 \(n\) を限りなく大きくしたときの \(a_n\) の振る舞いを調べます。</p><h3>収束</h3><p>\(n\) を大きくすると \(a_n\) がある一定の実数 \(\alpha\) に限りなく近づくとき、数列 \(\{a_n\}\) は \(\alpha\) に<strong>収束する</strong>といいます。</p><div class="formula">\[\lim_{n\to\infty}a_n=\alpha\]</div><div class="example"><strong>例</strong>　\(a_n=\dfrac1n\) のとき<br/>\(1,\dfrac12,\dfrac13,\dfrac14,\ldots\) となり、\(\displaystyle\lim_{n\to\infty}\frac1n=0\) です。</div><h3>発散</h3><p>一定の実数に収束しない数列を<strong>発散する</strong>といいます。発散には、\(+\infty\) に発散、\(-\infty\) に発散、振動する場合があります。</p><div class="formula">\[\lim_{n\to\infty}n=+\infty,\qquad \lim_{n\to\infty}(-n)=-\infty\]</div><p>例えば \((-1)^n\) は \(-1,1,-1,1,\ldots\) と振動し、極限は存在しません。<strong>無限大は実数の極限値ではない</strong>ことに注意しましょう。</p></section>
@@ -89,7 +108,7 @@ body > main.wrap > .standard-lesson-goal:first-child{margin-top:0!important;}
 <div class="exercise"><strong>問題3</strong>　数列 \(a_n=(-1)^n\) が収束しない理由を説明しなさい。<details><summary>解答・解説を表示</summary><div class="answer">偶数番目の項は1、奇数番目の項は−1となります。1つの実数に近づかないので発散します。</div></details></div>
 <div class="exercise"><strong>問題4（発展）</strong>　\(\displaystyle\lim_{n\to\infty}\frac{\sin n}{n}\) を求めなさい（角度はラジアン）。<details><summary>解答・解説を表示</summary><div class="answer">\(-1\le\sin n\le1\) なので \(-1/n\le\sin n/n\le1/n\)。はさみうちの原理より \(\boxed{0}\) です。</div></details></div>
 </section><section class="paper"><h2>7．まとめ</h2><p>数列の極限では、まず収束・発散を判別します。分数式では最高次数で割る方法、振動する項を小さな数で抑える場合にはさみうちの原理が有効です。次の講義では、公比によって振る舞いが変わる<strong>無限等比数列</strong>を学びます。</p></section>
-<nav class="standard-lesson-bottom"><a href="math_subject_3.html">← 数学Ⅲの授業一覧に戻る</a></nav></main><footer class="standard-lesson-footer"><div class="wrap">みんなの数学データベース｜高校生のための授業</div></footer>
+<nav aria-label="授業ページの移動" class="md3-unified-navigation"><a href="math3_lesson03.html">← 前の授業「逆関数と合成関数」</a><a href="math_subject_3.html">数学Ⅲの授業一覧へ戻る</a><a href="math3_lesson05.html">次の授業「無限等比数列」 →</a></nav></main><footer class="md3-unified-footer"><div class="md3-width">みんなの数学データベース｜高校生のための授業</div></footer>
 <script>(function(){
 'use strict';
 var select=document.getElementById('seq');

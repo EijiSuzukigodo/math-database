@@ -1,11 +1,31 @@
-<!doctype html>
-<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>定積分の部分積分法｜数学Ⅲ｜みんなの数学データベース</title>
+<!DOCTYPE html>
+
+<html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>定積分の部分積分法｜数学Ⅲ｜みんなの数学データベース</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f2f7fc;color:#19334e;font:16px/1.8 -apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif}.wrap{max-width:970px;margin:auto;padding:0 17px}header{background:linear-gradient(110deg,#17365d,#215f99);color:white;padding:24px 0 29px}header .sub{color:#e4effc;font-size:14px}header h1{font-size:clamp(25px,4.5vw,35px);line-height:1.4;margin:8px 0 5px}main{padding-top:22px;padding-bottom:48px}.goal,.panel{background:#fff;border:1px solid #dbe6f1;border-radius:14px;padding:22px 25px;margin-bottom:22px;box-shadow:0 3px 13px #193a5b0a}.goal .tag{display:inline-block;color:#145888;background:#e6f3ff;border-radius:20px;font-size:13px;font-weight:700;padding:2px 12px}.goal h2{color:#174b78;font-size:23px;margin:10px 0 7px}.goal p{margin:0;color:#445d72}.panel h2{font-size:22px;color:#185482;margin:0 0 14px;border-bottom:2px solid #e4eff8;padding-bottom:8px}.panel h3{font-size:18px;color:#205b87;margin:17px 0 7px}.panel p{margin:8px 0}.formula{background:#f5faff;border:1px solid #e1ecf5;padding:10px 9px;margin:14px 0;border-radius:9px;overflow-x:auto;text-align:center}.tip{background:#edf6fd;border-left:4px solid #3685c1;padding:11px 15px;border-radius:8px;margin:15px 0}.example{border:1px solid #d9e6f2;border-radius:11px;padding:16px;margin:16px 0}.example h3{margin-top:0}.solution{background:#f7fbff;padding:12px;border-radius:9px}.quiz{margin:14px 0;padding:13px 15px;border:1px solid #e1eaf3;border-radius:10px}details{margin-top:8px}summary{color:#13639b;font-weight:700;cursor:pointer}.graph-wrap{background:#fbfdff;border:1px solid #dce8f3;border-radius:12px;padding:12px}#areaGraph{display:block;width:100%;height:auto;max-height:350px}input[type=range]{width:100%;accent-color:#196ca5}label{font-weight:700;color:#20527b}.readout{padding:9px;background:#eaf3fa;border-radius:8px;font-size:15px}footer{background:#112e4c;color:#ecf5fc;padding:20px 0;font-size:13px}.back{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0}.back a{display:inline-block;padding:10px 15px;border-radius:9px;background:#e5f1fd;color:#175988;text-decoration:none;font-weight:700}mjx-container{max-width:100%}mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;padding:3px 0;margin:.6em 0!important}a:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid orange;outline-offset:3px}@media(max-width:640px){.goal,.panel{padding:17px 15px}.panel h2{font-size:20px}}
 </style>
 <script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']],processEscapes:true},svg:{fontCache:'global'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
-<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script></head>
-<body><header><div class="wrap"><div class="sub">みんなの数学データベース ／ 高校数学 ／ 数学Ⅲ ／ 第5章 積分法</div><h1>定積分の部分積分法</h1><div class="sub">第7講　積の微分法から定積分を計算する</div></div></header>
+<script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script><style>
+/* 数学Ⅲ 共通デザイン（全教材統一） */
+.md3-unified-header{background:linear-gradient(110deg,#17365d,#215f99)!important;color:#fff!important;padding:24px 0 29px!important;margin:0!important;border-radius:0!important}
+.md3-unified-header .md3-width,.md3-unified-footer .md3-width{max-width:970px;margin:0 auto;padding:0 17px}
+.md3-unified-header .md3-breadcrumb,.md3-unified-header .md3-subtitle{font-size:14px!important;color:#e4effc!important;line-height:1.65!important;margin:0!important}
+.md3-unified-header h1{font-family:inherit!important;color:#fff!important;font-size:clamp(25px,4.5vw,35px)!important;line-height:1.4!important;margin:8px 0 5px!important;padding:0!important;border:none!important}
+body>main,body>main.wrap{padding-top:22px!important;margin-top:0!important}
+body>main>section:first-child{margin-top:0!important}
+body>main>section:first-child:is(.goal,.standard-lesson-goal){background:#fff!important;border:1px solid #dbe6f1!important;border-radius:14px!important;padding:22px 25px!important;margin-bottom:22px!important;box-shadow:0 3px 13px #193a5b0a!important}
+body>main>section:first-child:is(.goal,.standard-lesson-goal)>h2{color:#174b78!important;font-size:23px!important;line-height:1.5!important;margin:10px 0 7px!important;border:0!important;padding:0!important}
+body>main>section:first-child:is(.goal,.standard-lesson-goal)>span:first-child{display:inline-block!important;color:#145888!important;background:#e6f3ff!important;border-radius:20px!important;font-size:13px!important;font-weight:700!important;padding:2px 12px!important}
+body>main>section:first-child:is(.goal,.standard-lesson-goal)>p{color:#445d72!important;margin:0!important}
+.md3-unified-navigation{display:flex!important;flex-wrap:wrap!important;gap:10px!important;max-width:970px!important;margin:26px auto 19px!important;padding:0 2px!important;align-items:center!important;position:static!important}
+.md3-unified-navigation a{display:inline-block!important;background:#e5f1fd!important;color:#175988!important;padding:10px 15px!important;border-radius:9px!important;font-size:15px!important;text-decoration:none!important;font-weight:700!important;line-height:1.5!important}
+.md3-unified-navigation a:hover{background:#d2e7fa!important}
+.md3-unified-footer{display:block!important;background:#112e4c!important;color:#ecf5fc!important;padding:20px 0!important;font-size:13px!important;text-align:left!important;margin:0!important;border:0!important}
+mjx-container{max-width:100%!important}mjx-container[display="true"]{overflow-x:auto!important;overflow-y:hidden!important}
+@media(max-width:640px){body>main>section:first-child:is(.goal,.standard-lesson-goal){padding:17px 15px!important}}
+mjx-container svg{width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;display:inline-block!important}
+</style></head>
+<body><header class="md3-unified-header"><div class="md3-width"><div class="md3-breadcrumb">みんなの数学データベース ／ 高校数学 ／ 数学Ⅲ ／ 第5章 積分法</div><h1>定積分の部分積分法</h1><p class="md3-subtitle">第7講　第5章 積分法</p></div></header>
 <main class="wrap"><section class="goal"><span class="tag">授業のねらい</span><h2>定積分の部分積分法を理解し、積分区間を正しく処理できるようになる</h2><p>積の微分法から公式を導き、積分区間の端点を代入する手順を身につけます。多項式と指数・対数・三角関数などの積の定積分を、途中式を省かずに計算しましょう。</p></section>
 <section class="panel"><h2>1．定積分の部分積分法の公式</h2>
 <p>積の微分法を積分区間 \([a,b]\) で積分すると、次の関係になります。</p>
@@ -18,19 +38,19 @@
 <section class="panel"><h2>2．計算の進め方</h2>
 <p>① \(u\) と \(dv\) を選ぶ → ② \(du\) と \(v\) を求める → ③ 公式に代入する → ④ 端点の値と残りの定積分を計算する、の順です。</p>
 <h3>基本例</h3><p>\(\displaystyle\int_0^1 xe^x\,dx\) を求めます。\(u=x,\;dv=e^x\,dx\) とすると、\(du=dx,\;v=e^x\) です。</p>
-<div class="formula">\[\begin{aligned}\int_0^1 xe^x\,dx&=[xe^x]_0^1-\int_0^1e^x\,dx\\&=e-(e-1)\\&=\boxed{1}\end{aligned}\]</div></section>
+<div class="formula">\[\begin{aligned}\int_0^1 xe^x\,dx&amp;=[xe^x]_0^1-\int_0^1e^x\,dx\\&amp;=e-(e-1)\\&amp;=\boxed{1}\end{aligned}\]</div></section>
 <section class="panel"><h2>3．動くグラフで面積と定積分を確かめる</h2>
 <p>曲線 \(y=xe^x\) と \(x\) 軸で囲まれる \(0\le x\le b\) の部分を色で表示します。スライダーで \(b\) を変えると、面積と部分積分で計算した値が同時に変わります。</p>
-<div class="graph-wrap"><svg id="areaGraph" viewBox="0 0 700 360" role="img" aria-label="y=x eのx乗のグラフと0からbまでの面積"><rect width="700" height="360" fill="#fff" rx="8"/><g id="graphDrawing"></g></svg>
-<label for="bSlider">積分区間の上端 b：<output id="bValue">1.0</output></label><input type="range" id="bSlider" min="0" max="2" value="1" step="0.05"><div class="readout" id="areaInfo" aria-live="polite"></div></div>
+<div class="graph-wrap"><svg aria-label="y=x eのx乗のグラフと0からbまでの面積" id="areaGraph" role="img" viewbox="0 0 700 360"><rect fill="#fff" height="360" rx="8" width="700"></rect><g id="graphDrawing"></g></svg>
+<label for="bSlider">積分区間の上端 b：<output id="bValue">1.0</output></label><input id="bSlider" max="2" min="0" step="0.05" type="range" value="1"/><div aria-live="polite" class="readout" id="areaInfo"></div></div>
 <div class="formula">\[\int_0^b xe^x\,dx=[xe^x]_0^b-\int_0^b e^x\,dx=(b-1)e^b+1\]</div>
 <p>この例では \(x\ge0\) で \(xe^x\ge0\) なので、定積分の値は色を塗った部分の面積に一致します。</p></section>
 <section class="panel"><h2>4．例題と詳しい解説</h2>
-<div class="example"><h3>例題1　多項式と三角関数</h3><p>\(\displaystyle\int_0^{\pi/2}x\cos x\,dx\)</p><div class="solution"><p>\(u=x,\;dv=\cos x\,dx\) から \(du=dx,\;v=\sin x\) です。</p><div class="formula">\[\begin{aligned}\int_0^{\pi/2}x\cos x\,dx&=[x\sin x]_0^{\pi/2}-\int_0^{\pi/2}\sin x\,dx\\&=\frac\pi2-1\end{aligned}\]</div></div></div>
-<div class="example"><h3>例題2　対数関数</h3><p>\(\displaystyle\int_1^e\log x\,dx\)</p><div class="solution"><p>\(u=\log x,\;dv=dx\) として \(du=dx/x,\;v=x\) を使います。</p><div class="formula">\[\begin{aligned}\int_1^e\log x\,dx&=[x\log x]_1^e-\int_1^e1\,dx\\&=e-(e-1)=\boxed{1}\end{aligned}\]</div></div></div>
-<div class="example"><h3>例題3　2回の部分積分</h3><p>\(\displaystyle\int_0^1 x^2e^x\,dx\)</p><div class="solution"><p>最初に \(u=x^2\)、次に残る積分で \(u=x\) とします。</p><div class="formula">\[\begin{aligned}\int_0^1 x^2e^x\,dx&=[x^2e^x]_0^1-2\int_0^1xe^x\,dx\\&=e-2\cdot1=\boxed{e-2}\end{aligned}\]</div></div></div>
-<div class="example"><h3>例題4　指数関数と三角関数</h3><p>\(\displaystyle\int_0^{\pi/2}e^x\sin x\,dx\)</p><div class="solution"><p>2回部分積分して、元の積分を含む等式を解きます。原始関数は \(\frac12e^x(\sin x-\cos x)\) です。</p><div class="formula">\[\begin{aligned}\int_0^{\pi/2}e^x\sin x\,dx&=\left[\frac{e^x}{2}(\sin x-\cos x)\right]_0^{\pi/2}\\&=\boxed{\frac{e^{\pi/2}+1}{2}}\end{aligned}\]</div></div></div>
-<div class="example"><h3>例題5　積分区間に負の値がある場合</h3><p>\(\displaystyle\int_{-1}^{1}xe^x\,dx\)</p><div class="solution"><p>原始関数は \((x-1)e^x\) です。下端の値も忘れずに引きます。</p><div class="formula">\[\begin{aligned}\int_{-1}^{1}xe^x\,dx&=[(x-1)e^x]_{-1}^{1}\\&=0-(-2e^{-1})=\boxed{\frac2e}\end{aligned}\]</div></div></div></section>
+<div class="example"><h3>例題1　多項式と三角関数</h3><p>\(\displaystyle\int_0^{\pi/2}x\cos x\,dx\)</p><div class="solution"><p>\(u=x,\;dv=\cos x\,dx\) から \(du=dx,\;v=\sin x\) です。</p><div class="formula">\[\begin{aligned}\int_0^{\pi/2}x\cos x\,dx&amp;=[x\sin x]_0^{\pi/2}-\int_0^{\pi/2}\sin x\,dx\\&amp;=\frac\pi2-1\end{aligned}\]</div></div></div>
+<div class="example"><h3>例題2　対数関数</h3><p>\(\displaystyle\int_1^e\log x\,dx\)</p><div class="solution"><p>\(u=\log x,\;dv=dx\) として \(du=dx/x,\;v=x\) を使います。</p><div class="formula">\[\begin{aligned}\int_1^e\log x\,dx&amp;=[x\log x]_1^e-\int_1^e1\,dx\\&amp;=e-(e-1)=\boxed{1}\end{aligned}\]</div></div></div>
+<div class="example"><h3>例題3　2回の部分積分</h3><p>\(\displaystyle\int_0^1 x^2e^x\,dx\)</p><div class="solution"><p>最初に \(u=x^2\)、次に残る積分で \(u=x\) とします。</p><div class="formula">\[\begin{aligned}\int_0^1 x^2e^x\,dx&amp;=[x^2e^x]_0^1-2\int_0^1xe^x\,dx\\&amp;=e-2\cdot1=\boxed{e-2}\end{aligned}\]</div></div></div>
+<div class="example"><h3>例題4　指数関数と三角関数</h3><p>\(\displaystyle\int_0^{\pi/2}e^x\sin x\,dx\)</p><div class="solution"><p>2回部分積分して、元の積分を含む等式を解きます。原始関数は \(\frac12e^x(\sin x-\cos x)\) です。</p><div class="formula">\[\begin{aligned}\int_0^{\pi/2}e^x\sin x\,dx&amp;=\left[\frac{e^x}{2}(\sin x-\cos x)\right]_0^{\pi/2}\\&amp;=\boxed{\frac{e^{\pi/2}+1}{2}}\end{aligned}\]</div></div></div>
+<div class="example"><h3>例題5　積分区間に負の値がある場合</h3><p>\(\displaystyle\int_{-1}^{1}xe^x\,dx\)</p><div class="solution"><p>原始関数は \((x-1)e^x\) です。下端の値も忘れずに引きます。</p><div class="formula">\[\begin{aligned}\int_{-1}^{1}xe^x\,dx&amp;=[(x-1)e^x]_{-1}^{1}\\&amp;=0-(-2e^{-1})=\boxed{\frac2e}\end{aligned}\]</div></div></div></section>
 <section class="panel"><h2>5．練習問題</h2><p>自分で計算してから解答を開きましょう。</p>
 <div class="quiz"><strong>問1</strong>　\(\displaystyle\int_0^1 xe^{2x}\,dx\)<details><summary>解答・解説</summary><p>\(u=x,\;dv=e^{2x}\,dx\) とします。</p><div class="formula">\[\left[\frac{xe^{2x}}2-\frac{e^{2x}}4\right]_0^1=\boxed{\frac{e^2+1}{4}}\]</div></details></div>
 <div class="quiz"><strong>問2</strong>　\(\displaystyle\int_0^{\pi}x\sin x\,dx\)<details><summary>解答・解説</summary><p>\(u=x,\;dv=\sin x\,dx\) です。</p><div class="formula">\[[-x\cos x+\sin x]_0^\pi=\boxed{\pi}\]</div></details></div>
@@ -39,7 +59,7 @@
 <div class="quiz"><strong>問5</strong>　\(\displaystyle\int_0^{\pi/2}x\sin2x\,dx\)<details><summary>解答・解説</summary><p>\(v=-\frac12\cos2x\) として部分積分します。</p><div class="formula">\[\left[-\frac x2\cos2x+\frac14\sin2x\right]_0^{\pi/2}=\boxed{\frac\pi4}\]</div></details></div>
 <div class="quiz"><strong>問6</strong>　\(\displaystyle\int_0^1x^3e^x\,dx\)<details><summary>解答・解説</summary><p>3回の部分積分で原始関数 \(e^x(x^3-3x^2+6x-6)\) を得ます。</p><div class="formula">\[\boxed{6-2e}\]</div></details></div></section>
 <section class="panel"><h2>6．発展問題とまとめ</h2><h3>発展：定積分の漸化式</h3><p>\(I_n=\displaystyle\int_0^1x^ne^x\,dx\) とおくと、部分積分によって</p><div class="formula">\[\boxed{I_n=e-nI_{n-1}\quad(n\ge1),\qquad I_0=e-1}\]</div><p>を得ます。この関係から \(I_1,I_2,I_3\) を順に計算できます。</p><div class="tip"><strong>まとめ：</strong>部分積分法を使うときは、\(u\) の選択、原始関数 \(v\) の符号、区間端点の代入の3点を確認しましょう。最後に不定積分のような \(+C\) は付けません。</div></section>
-<nav class="back" aria-label="ページ移動"><a href="math_subject_3.html">← 数学Ⅲの授業一覧へ戻る</a><a href="math3_lesson24.html">← 前の授業「定積分の置換積分法」</a><a href="math3_definite_integral_problems.html">次の授業「定積分の種々の問題」 →</a></nav></main><footer><div class="wrap">みんなの数学データベース｜高校生のための授業</div></footer>
+<nav aria-label="授業ページの移動" class="md3-unified-navigation"><a href="math3_lesson24.html">← 前の授業「定積分の置換積分法」</a><a href="math_subject_3.html">数学Ⅲの授業一覧へ戻る</a><a href="math3_definite_integral_problems.html">次の授業「定積分の種々の問題」 →</a></nav></main><footer class="md3-unified-footer"><div class="md3-width">みんなの数学データベース｜高校生のための授業</div></footer>
 <script>
 (function(){
 'use strict';const slider=document.getElementById('bSlider'),out=document.getElementById('bValue'),g=document.getElementById('graphDrawing'),txt=document.getElementById('areaInfo');if(!slider||!out||!g||!txt)return;
