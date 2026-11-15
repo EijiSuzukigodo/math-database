@@ -37,8 +37,30 @@ body>footer a{color:#e9f2fc!important}
 .matha-unified-goal p,.lesson-goal p,section.goal p,section.aim p,section.objective p{font-size:14px!important;color:#526a80!important}
 .goal-pill,section.goal .pill,section.aim small{font-size:13px!important}
 @media(max-width:550px){.course-unified-goal{padding:12px 14px}body>header{padding:18px 0 22px!important}}
-</style><link href="lesson_common_style.css?v=20261115" rel="stylesheet"/></head><body><header class="standard-lesson-header"><a class="lesson-head-back" href="math_subject_c.html">← 数学Cの授業一覧に戻る</a><h1 class="lesson-head-title">座標空間における図形</h1><p class="lesson-head-meta">数学C ／ 座標空間における図形</p></header>
-<main class="wrap"><section aria-label="授業のねらい" class="standard-lesson-goal"><span class="standard-goal-label">授業のねらい</span><h2 class="standard-goal-title">座標空間における図形の考え方を理解する</h2><p class="standard-goal-subtitle">球面の方程式、平面・直線との位置関係、距離や共有点を動く立体図と例題で学びます。</p></section><p class="lead">座標空間で点の集まりを方程式として捉えます。球面の中心と半径、平面との交わり、直線との共有点を、図を動かして確かめましょう。</p>
+</style><style id="md-unification-css">
+/* 数学Ⅲと共通の授業レイアウト：他の図・数式へのCSS干渉を避ける */
+html{scroll-behavior:smooth}
+body{margin:0!important;background:#f2f7fc!important;color:#19334e!important;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif!important;line-height:1.8!important}
+#md-standard-header{background:linear-gradient(110deg,#17365d,#215f99)!important;color:#fff!important;padding:24px 0 29px!important;box-sizing:border-box!important;min-height:0!important}
+#md-standard-header .md-inner{max-width:970px;margin:auto;padding:0 17px;box-sizing:border-box}
+#md-standard-header .md-kicker{color:#e4effc;font-size:14px!important;font-weight:400!important;letter-spacing:0!important}
+#md-standard-header h1{color:#fff!important;font-size:clamp(25px,4.5vw,35px)!important;line-height:1.4!important;margin:8px 0 5px!important;padding:0!important;border:0!important;text-align:left!important}
+#md-standard-header .md-subtitle{color:#e4effc!important;font-size:14px!important;line-height:1.6!important;margin:0!important}
+#md-standard-main{max-width:970px!important;width:auto!important;box-sizing:border-box!important;margin:0 auto!important;padding:22px 17px 46px!important;background:transparent!important;min-height:0!important}
+#md-standard-goal{display:block!important;box-sizing:border-box!important;background:#fff!important;border:1px solid #dbe6f1!important;border-radius:14px!important;margin:0 0 22px!important;padding:22px 25px!important;box-shadow:0 3px 13px #193a5b0a!important;color:#19334e!important;max-width:100%!important}
+#md-standard-goal .md-goal-tag{display:inline-block!important;color:#145888!important;background:#e6f3ff!important;border-radius:20px!important;font-size:13px!important;font-weight:700!important;padding:2px 12px!important;line-height:1.7!important}
+#md-standard-goal .md-goal-title{color:#174b78!important;font-size:23px!important;line-height:1.5!important;font-weight:700!important;border:none!important;margin:10px 0 7px!important;padding:0!important}
+#md-standard-goal p{color:#445d72!important;margin:0!important;font-size:16px!important;line-height:1.8!important}
+#md-standard-footer-nav{display:flex!important;flex-wrap:wrap!important;gap:10px!important;justify-content:flex-start!important;align-items:center!important;margin:25px 0 0!important;padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important}
+#md-standard-footer-nav a{display:inline-block!important;padding:10px 15px!important;border-radius:9px!important;background:#e5f1fd!important;color:#175988!important;text-decoration:none!important;font-weight:700!important;font-size:15px!important;line-height:1.7!important;border:0!important}
+#md-standard-footer{background:#112e4c!important;color:#ecf5fc!important;padding:20px 0!important;margin:0!important;font-size:13px!important;text-align:left!important;border:0!important}
+#md-standard-footer .md-inner{max-width:970px;margin:auto;padding:0 17px}
+/* SVGの幅を全指定する規則を数学用の数式に適用させない */
+mjx-container svg{max-width:none!important;width:auto!important;height:auto!important}
+mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden}
+@media(max-width:640px){#md-standard-goal{padding:17px 15px!important}#md-standard-goal .md-goal-title{font-size:20px!important}}
+</style></head><body><header id="md-standard-header"><div class="md-inner"><div class="md-kicker">みんなの数学データベース ／ 高校数学 ／ 数学C</div><h1>座標空間における図形</h1><p class="md-subtitle">空間のベクトル｜球面・平面・直線の位置関係</p></div></header>
+<main class="wrap" id="md-standard-main"><section id="md-standard-goal"><span class="md-goal-tag">授業のねらい</span><h2 class="md-goal-title">座標空間における図形</h2><p>球面の方程式、平面・直線との位置関係、距離や共有点を動く立体図と例題で学びます。</p></section><p class="lead">座標空間で点の集まりを方程式として捉えます。球面の中心と半径、平面との交わり、直線との共有点を、図を動かして確かめましょう。</p>
 <section class="chapter"><h2>1．球面の方程式</h2>
 <p>中心が \(C(a,b,c)\)、半径が \(r&gt;0\) の球面は、中心からの距離が \(r\) である点 \(P(x,y,z)\) の集まりです。</p>
 <div class="formula">\[\boxed{(x-a)^2+(y-b)^2+(z-c)^2=r^2}\]</div>
@@ -82,7 +104,7 @@ body>footer a{color:#e9f2fc!important}
 <div class="question"><strong>問題3：</strong>球面 \(x^2+y^2+z^2=4\) と直線 \(x=t,y=0,z=0\) の共有点はいくつ？<div><label for="q3">個数</label><input id="q3" inputmode="decimal"/></div><button onclick="check(3,2)">答え合わせ</button><p aria-live="polite" class="result" id="a3"></p><details><summary>解説</summary>\(t^2=4\) に実数解が2つあるので共有点は2個です。</details></div>
 <div class="question"><strong>問題4：</strong>点 \(P(2,0,0)\) から平面 \(x=0\) までの距離は？<div><label for="q4">距離</label><input id="q4" inputmode="decimal"/></div><button onclick="check(4,2)">答え合わせ</button><p aria-live="polite" class="result" id="a4"></p><details><summary>解説</summary>\(|2|/\sqrt1=2\) です。</details></div>
 </section>
-<section class="chapter"><h2>まとめ</h2><p>球面は「中心からの距離が一定」の点の集まりです。平面との交わりは中心からの距離で、直線との共有点は2次方程式の解で判断できます。</p></section></main><nav aria-label="授業一覧へ戻る" class="standard-lesson-bottom"><a href="math_subject_c.html">← 数学Cの授業一覧へ戻る</a></nav><footer class="standard-lesson-footer">みんなの数学データベース｜数学Cの授業</footer>
+<section class="chapter"><h2>まとめ</h2><p>球面は「中心からの距離が一定」の点の集まりです。平面との交わりは中心からの距離で、直線との共有点は2次方程式の解で判断できます。</p><p><a href="math_subject_c.html">← 数学Cの授業一覧へ戻る</a></p></section><nav id="md-standard-footer-nav"><a href="vector_space_lesson06.html">← 前の授業</a><a href="math_subject_c.html">↑ 数学Cの授業一覧に戻る</a><a href="vector_space_lesson08.html">次の授業 →</a></nav></main><footer id="md-standard-footer"><div class="md-inner">みんなの数学データベース｜高校生のための授業</div></footer>
 <script>
 'use strict';const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
 function E(tag,attrs={},val){let n=document.createElementNS(NS,tag);for(let [k,v] of Object.entries(attrs))n.setAttribute(k,String(v));if(val!==undefined)n.textContent=val;return n}
