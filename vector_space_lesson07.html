@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第7講 座標空間における図形｜数学C</title>
+<style>
+:root{--navy:#173b5e;--blue:#12639c;--bg:#f3f7fd;--edge:#d7e5f2}*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:#1d344c;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;font-size:16px;line-height:1.8}
+a{color:#125d97}header{background:linear-gradient(110deg,#16375b,#2573a4);color:#fff;padding:18px 16px}header .head{max-width:980px;margin:auto}header a{color:#fff}header h1{font-size:clamp(1.65rem,4vw,2.4rem);margin:12px 0 0}header p{margin:0;color:#e4f2fc}
+.wrap{max-width:980px;margin:auto;padding:16px 14px 40px}.lead{padding:12px;background:#e9f3ff;border-left:5px solid #3c84bd;border-radius:8px}.chapter{background:#fff;border:1px solid var(--edge);border-radius:15px;padding:16px;margin:16px 0;box-shadow:0 2px 8px #19334d0b}
+h2{font-size:1.35rem;color:#144e80;border-bottom:1px solid #e4edf6;padding-bottom:8px;margin:0 0 15px}h3{font-size:1.06rem;color:#174c7a}.formula{overflow-x:auto;text-align:center;background:#f5f9ff;border:1px solid #e3ebf5;border-radius:10px;padding:10px;margin:10px 0;font-size:1rem}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.panel{border:1px solid var(--edge);border-radius:12px;padding:14px;background:#fbfdff}.hint{color:#596e82;font-size:.91rem}
+label{font-weight:700;display:block;margin:8px 0 2px}input[type=range]{width:100%;accent-color:#12639c;min-height:28px}.value{font-variant-numeric:tabular-nums;background:#e8f3fc;padding:2px 8px;border-radius:5px}
+svg.diagram{display:block;width:100%;height:auto;background:white;border:1px solid #deebf5;border-radius:12px}.readout{background:#eaf4ff;border-radius:8px;padding:10px;margin:10px 0;font-variant-numeric:tabular-nums;white-space:pre-line}
+button{padding:9px 16px;background:#186397;color:#fff;border:0;border-radius:9px;font-size:.95rem;font-weight:700;min-height:44px;cursor:pointer}details{background:#f7fbff;border:1px solid #dce9f3;padding:12px;border-radius:10px;margin:10px 0}summary{cursor:pointer;color:#165b8a;font-weight:700;min-height:32px}.question{border:1px solid #d5e4f1;background:#fbfdff;border-radius:12px;padding:13px;margin:12px 0}.question input{font-size:16px;max-width:180px;padding:7px;border-radius:6px;border:1px solid #a7bdce}.result{min-height:1.5em;font-weight:700}.ok{color:#167448}.bad{color:#ad4e30}footer{text-align:center;background:#183853;color:#fff;padding:19px}
+mjx-container[display="true"]{margin:.45em 0!important}mjx-container{max-width:100%} .formula mjx-container{font-size:100%!important}
+@media(max-width:650px){.grid{grid-template-columns:1fr}.chapter{padding:13px}.wrap{padding:12px 10px 30px}header h1{font-size:1.65rem}}
+</style>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head><body><header><div class="head"><a href="math_subject_c.html">← 数学Cの授業</a><h1>第7講　座標空間における図形</h1><p>空間のベクトル｜球面・平面・直線の位置関係</p></div></header>
+<main class="wrap"><p class="lead">座標空間で点の集まりを方程式として捉えます。球面の中心と半径、平面との交わり、直線との共有点を、図を動かして確かめましょう。</p>
+<section class="chapter"><h2>1．球面の方程式</h2>
+<p>中心が \(C(a,b,c)\)、半径が \(r>0\) の球面は、中心からの距離が \(r\) である点 \(P(x,y,z)\) の集まりです。</p>
+<div class="formula">\[\boxed{(x-a)^2+(y-b)^2+(z-c)^2=r^2}\]</div>
+<p><strong>球面</strong>は表面だけです。内部まで含めた球体は \((x-a)^2+(y-b)^2+(z-c)^2\le r^2\) で表します。</p>
+<h3>例題1</h3><p>中心 \(C(1,-2,3)\)、半径 \(4\) の球面の方程式を求めなさい。</p>
+<details open><summary>解答・解説</summary><div class="formula">\[\boxed{(x-1)^2+(y+2)^2+(z-3)^2=16}\]</div><p>中心の座標の符号と、半径の2乗に注意します。</p></details>
+<div class="grid"><svg class="diagram" viewBox="0 0 480 350" role="img" aria-label="半径を変えられる球面の立体的な図"><g id="sphereG"></g></svg>
+<div class="panel"><h3>球面を動かす</h3><p>中心は \(C(1,-2,3)\) に固定して、半径を変えてみましょう。</p><label for="radius">半径 \(r\)：<span class="value" id="radiusV">3</span></label><input id="radius" type="range" min="1" max="4.5" step="0.5" value="3"><div class="readout" id="sphereInfo" aria-live="polite"></div><p class="hint">球面の輪郭と緯線・経線を立体的に描いた模式図です。見る向きは固定しています。</p></div></div>
+</section>
+<section class="chapter"><h2>2．方程式を平方完成して中心と半径を求める</h2>
+<p>\(x^2+y^2+z^2+Dx+Ey+Fz+G=0\) は、平方完成すると球面の形になることがあります。</p>
+<h3>例題2</h3><p>次の方程式が表す球面の中心と半径を求めなさい。</p>
+<div class="formula">\[x^2+y^2+z^2-2x+4y-6z-2=0\]</div>
+<details open><summary>解法を読む</summary><div class="formula">\[(x-1)^2+(y+2)^2+(z-3)^2=16\]</div><p>したがって中心は \(\boxed{(1,-2,3)}\)、半径は \(\boxed{4}\) です。</p></details>
+<p class="hint">右辺が0なら半径0の1点、負なら実数座標の点を表しません。</p>
+</section>
+<section class="chapter"><h2>3．球面と平面の位置関係</h2>
+<p>球面の中心から平面までの距離を \(d\)、球の半径を \(r\) とすると、交わり方は距離だけで決まります。</p>
+<div class="formula">\[\begin{array}{c|c}d<r&円で交わる\\d=r&1点で接する\\d>r&共有点なし\end{array}\]</div>
+<p>交わる円の半径を \(\rho\) とすれば、直角三角形から \(\rho=\sqrt{r^2-d^2}\) です。</p>
+<h3>例題3</h3><p>球面 \(x^2+y^2+z^2=25\) と平面 \(z=3\) の交わりを求めなさい。</p>
+<details open><summary>解法を読む</summary><p>\(z=3\) を代入して \(x^2+y^2+9=25\) より</p><div class="formula">\[\boxed{z=3,\quad x^2+y^2=16}\]</div><p>半径4の円です。</p></details>
+<div class="grid"><svg class="diagram" viewBox="0 0 480 350" role="img" aria-label="球面と高さを動かせる水平面の交わりを示す図"><g id="sliceG"></g></svg>
+<div class="panel"><h3>平面の高さを変える</h3><p>球面 \(x^2+y^2+z^2=25\) と、平面 \(z=h\) の関係です。</p><label for="height">\(h\)：<span class="value" id="heightV">3</span></label><input id="height" type="range" min="-6" max="6" step="0.5" value="3"><div class="readout" id="sliceInfo" aria-live="polite"></div><p class="hint">緑色は共有点がつくる円、橙色は動かしている平面です。</p></div></div>
+</section>
+<section class="chapter"><h2>4．直線と球面の共有点</h2><p>直線上の点を媒介変数 \(t\) で表し、球面の方程式に代入します。得られる2次方程式の実数解の個数が、共有点の個数に対応します。</p>
+<h3>例題4</h3><p>球面 \(x^2+y^2+z^2=9\) と、直線 \(x=t,\ y=2,\ z=0\) の共有点を求めなさい。</p>
+<details open><summary>解法を読む</summary><div class="formula">\[t^2+2^2=9\Longrightarrow t^2=5\]</div><div class="formula">\[\boxed{(\sqrt5,2,0),\quad(-\sqrt5,2,0)}\]</div><p>2個の共有点があります。</p></details>
+<div class="grid"><svg class="diagram" viewBox="0 0 480 330" role="img" aria-label="球面と直線上を移動する点を示す立体的な図"><g id="lineG"></g></svg>
+<div class="panel"><h3>直線上の点を動かす</h3><label for="lineT">\(t\)：<span class="value" id="lineTV">2</span></label><input id="lineT" type="range" min="-4" max="4" step="0.1" value="2"><div class="readout" id="lineInfo" aria-live="polite"></div><p class="hint">赤い点が直線上を動きます。球面上の点では \(t=\pm\sqrt5\) です。</p></div></div>
+</section>
+<section class="chapter"><h2>5．点と平面の距離</h2><p>点 \(P(x_0,y_0,z_0)\) から平面 \(ax+by+cz+d=0\) までの距離は、平面に垂直な方向へ下ろした垂線の長さです。</p>
+<div class="formula">\[\boxed{D=\frac{|ax_0+by_0+cz_0+d|}{\sqrt{a^2+b^2+c^2}}}\]</div>
+<h3>例題5</h3><p>点 \(P(1,2,3)\) から平面 \(2x-y+2z-4=0\) までの距離を求めなさい。</p>
+<details open><summary>解法を読む</summary><div class="formula">\[D=\frac{|2-2+6-4|}{\sqrt{4+1+4}}=\boxed{\frac23}\]</div><p>分母は平面の法線ベクトル \((2,-1,2)\) の大きさです。</p></details>
+<p class="hint">平面の一般形と距離公式の証明は、次の第8講「平面の方程式」で詳しく扱います。</p>
+</section>
+<section class="chapter"><h2>6．練習問題</h2><p>数字を入力して答え合わせができます。解説も開けます。</p>
+<div class="question"><strong>問題1：</strong>中心 \(C(0,1,-1)\)、半径3の球面の方程式の右辺は？<div><label for="q1">右辺の数</label><input id="q1" inputmode="decimal"></div><button onclick="check(1,9)">答え合わせ</button><p id="a1" class="result" aria-live="polite"></p><details><summary>解説</summary>\(x^2+(y-1)^2+(z+1)^2=9\) です。</details></div>
+<div class="question"><strong>問題2：</strong>球面 \(x^2+y^2+z^2=49\) と平面 \(z=4\) の交わりの円の半径は？<div><label for="q2">半径</label><input id="q2" inputmode="decimal"></div><button onclick="check(2,Math.sqrt(33))">答え合わせ</button><p id="a2" class="result" aria-live="polite"></p><details><summary>解説</summary>円の半径は \(\sqrt{49-16}=\sqrt{33}\) です。入力欄では小数でも判定します（例：5.74456）。</details></div>
+<div class="question"><strong>問題3：</strong>球面 \(x^2+y^2+z^2=4\) と直線 \(x=t,y=0,z=0\) の共有点はいくつ？<div><label for="q3">個数</label><input id="q3" inputmode="decimal"></div><button onclick="check(3,2)">答え合わせ</button><p id="a3" class="result" aria-live="polite"></p><details><summary>解説</summary>\(t^2=4\) に実数解が2つあるので共有点は2個です。</details></div>
+<div class="question"><strong>問題4：</strong>点 \(P(2,0,0)\) から平面 \(x=0\) までの距離は？<div><label for="q4">距離</label><input id="q4" inputmode="decimal"></div><button onclick="check(4,2)">答え合わせ</button><p id="a4" class="result" aria-live="polite"></p><details><summary>解説</summary>\(|2|/\sqrt1=2\) です。</details></div>
+</section>
+<section class="chapter"><h2>まとめ</h2><p>球面は「中心からの距離が一定」の点の集まりです。平面との交わりは中心からの距離で、直線との共有点は2次方程式の解で判断できます。</p><p><a href="math_subject_c.html">← 数学Cの授業一覧へ戻る</a></p></section></main><footer>みんなの数学データベース｜数学C</footer>
+<script>
+'use strict';const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
+function E(tag,attrs={},val){let n=document.createElementNS(NS,tag);for(let [k,v] of Object.entries(attrs))n.setAttribute(k,String(v));if(val!==undefined)n.textContent=val;return n}
+function clear(id){let n=$(id);n.replaceChildren();return n}
+function proj([x,y,z],origin=[240,195],k=32){return {x:origin[0]+k*(.84*x-.65*y),y:origin[1]+k*(.28*x+.4*y-.87*z)}}
+function ln(g,a,b,color='#6c90b2',w=2,d=''){g.appendChild(E('line',{x1:a.x,y1:a.y,x2:b.x,y2:b.y,stroke:color,'stroke-width':w,'stroke-dasharray':d}))}
+function poly(g,a,fill,stroke='#749bb8'){g.appendChild(E('polygon',{points:a.map(p=>p.x+','+p.y).join(' '),fill,stroke,'stroke-width':1.6}))}
+function ellipse(g,p,rx,ry,color,fill='none',dash=''){g.appendChild(E('ellipse',{cx:p.x,cy:p.y,rx,ry,stroke:color,'stroke-width':2,fill,'stroke-dasharray':dash}))}
+function mark(g,p,text,color='#b34c3c'){g.appendChild(E('circle',{cx:p.x,cy:p.y,r:5,fill:color,stroke:'#fff','stroke-width':1.5}));g.appendChild(E('text',{x:p.x+8,y:p.y-9,fill:color,'font-size':14,'font-weight':700},text))}
+function fmt(v){return Number(v.toFixed(3)).toString()}
+function wire(g,c,r,o,k=31){let center=proj(c,o,k);ellipse(g,center,r*k*.93,r*k*.8,'#447aa5','#deecf8');ellipse(g,center,r*k*.93,r*k*.33,'#79a4c6','none','5 4');let pts=[];for(let i=0;i<=40;i++){let a=-Math.PI/2+i*Math.PI/40;pts.push(proj([c[0]+r*Math.cos(a),c[1],c[2]+r*Math.sin(a)],o,k))}g.appendChild(E('polyline',{points:pts.map(p=>p.x+','+p.y).join(' '),stroke:'#80a9c8','stroke-width':1.5,fill:'none','stroke-dasharray':'4 4'}));return center}
+function axes(g,o,k){let z=proj([0,0,0],o,k);for(let [p,s] of [[[4,0,0],'x'],[[0,4,0],'y'],[[0,0,4],'z']]){let e=proj(p,o,k);ln(g,z,e,'#bdcad5',1.6);g.appendChild(E('text',{x:e.x+5,y:e.y-3,fill:'#667f92','font-size':14},s))}mark(g,z,'O','#8196aa')}
+function sphere(){let r=Number($('radius').value),g=clear('sphereG'),o=[240,225],k=24;axes(g,o,k);let c=[1,-2,3],p=wire(g,c,r,o,k);mark(g,p,'C','#25729d');$('radiusV').textContent=fmt(r);$('sphereInfo').textContent='中心 C(1, -2, 3)\n半径 r = '+fmt(r)+'\n(x−1)²+(y+2)²+(z−3)² = '+fmt(r*r)}
+function slice(){let h=Number($('height').value),g=clear('sliceG'),o=[240,230],k=25;axes(g,o,k);let c=[0,0,0];wire(g,c,5,o,k);let plane=[[ -5,-5,h],[5,-5,h],[5,5,h],[-5,5,h]].map(v=>proj(v,o,k));poly(g,plane,'#f5be6880','#c1843e');if(Math.abs(h)<=5){let rad=Math.sqrt(25-h*h),center=proj([0,0,h],o,k);ellipse(g,center,rad*k*.93,rad*k*.33,'#138c62','none');mark(g,center,'H','#168f6a')}mark(g,proj([0,0,0],o,k),'O','#365e8d');$('heightV').textContent=fmt(h);$('sliceInfo').textContent=Math.abs(h)<5?'円で交わる\n交わりの円の半径 = '+fmt(Math.sqrt(25-h*h)):Math.abs(h)===5?'1点で接する\n交わりの円の半径 = 0':'共有点はない（平面が球面から離れている）'}
+function line(){let t=Number($('lineT').value),g=clear('lineG'),o=[240,208],k=33;axes(g,o,32);wire(g,[0,0,0],3,o,33);ln(g,proj([-4,2,0],o,k),proj([4,2,0],o,k),'#d18837',3);for(let s of [-Math.sqrt(5),Math.sqrt(5)])mark(g,proj([s,2,0],o,k),'Q','#11825d');mark(g,proj([t,2,0],o,k),'P','#c44d40');$('lineTV').textContent=fmt(t);let value=t*t+4;$('lineInfo').textContent='P('+fmt(t)+', 2, 0)\nx²+y²+z² = '+fmt(value)+'\n球面では 9 になる\n共有点：t = ±√5 ≈ ±2.236'}
+function check(n,correct){let v=$('q'+n).value.trim(),el=$('a'+n);if(!v){el.textContent='答えを入力してください。';el.className='result bad';return}let val=Number(v),good=Number.isFinite(val)&&Math.abs(val-correct)<(n===2?.002:1e-8);el.textContent=good?'正解です！':'もう一度考えてみましょう。';el.className='result '+(good?'ok':'bad')}
+for(let [id,fn] of [['radius',sphere],['height',slice],['lineT',line]])$(id).addEventListener('input',fn);sphere();slice();line();
+</script></body></html>
