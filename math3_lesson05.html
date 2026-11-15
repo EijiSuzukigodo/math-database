@@ -1,1 +1,113 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>無限等比数列｜みんなの数学データベース</title><style>*{box-sizing:border-box}body{margin:0;background:#f2f7fc;color:#18314c;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.75}a{color:#176cae}.wrap{max-width:1080px;margin:auto;padding:0 17px}header{background:linear-gradient(110deg,#17365d,#24689c);color:white;padding:24px 0 28px}header a{color:white}header h1{font-size:clamp(26px,4.2vw,36px);margin:10px 0 5px}header p{font-size:14px;color:#e3effc;margin:0}main{padding:22px 0 52px}.course-unified-goal{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px}.course-goal-label{display:block;font-size:13px;color:#215f91;font-weight:700}.course-goal-title{font-size:clamp(21px,3.2vw,27px);margin:0 0 4px;color:#17365d}.course-goal-subtitle{font-size:14px;color:#526a80;margin:0}.subject-unit,.paper{background:white;border:1px solid #d6e3ef;border-radius:15px;padding:20px;margin:20px 0}.subject-unit>h2{color:#174c79;font-size:23px;margin:0 0 5px}.subject-unit-sub{font-size:14px;color:#63788c;margin:0 0 16px}.subject-list{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.subject-item{background:#fbfdff;border:1px solid #d6e3ef;border-radius:12px;padding:16px;min-width:0}.subject-name{font-size:18px;line-height:1.5;margin:0 0 6px}.subject-name a{text-decoration:none}.subject-desc{font-size:14px;color:#526a80;margin:0}.paper h2{color:#174c79;border-bottom:2px solid #bcd3e8;padding-bottom:7px}.formula{background:#f3f8ff;border:1px solid #d6e5fa;border-radius:9px;padding:12px;overflow-x:auto}.example{background:#fffaf0;border-left:5px solid #e6a345;border-radius:9px;padding:12px 16px}.exercise{background:#f8faff;border:1px solid #d6e3f0;border-radius:10px;padding:12px 16px}.backnav{display:flex;gap:12px;flex-wrap:wrap;margin:25px 0 15px}.backnav a{padding:8px 13px;background:#e5f1fc;border-radius:9px;text-decoration:none;font-weight:700}footer{background:#142f4d;color:#e9f2fc;padding:20px 0;font-size:13px;text-align:center}details summary{cursor:pointer;color:#176cae;font-weight:700}.controls{display:flex;gap:20px;flex-wrap:wrap}.controls label{display:flex;align-items:center;gap:10px}.controls input{width:150px}canvas{width:100%;height:auto;border:1px solid #d6e3ef;border-radius:10px;background:#fff}button,a,input{touch-action:manipulation}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #edaa45;outline-offset:2px}@media(max-width:640px){.subject-list{grid-template-columns:1fr}.subject-unit,.paper{padding:15px}}</style><script>window.MathJax={tex:{inlineMath:[["\(","\)" ]],displayMath:[["\[","\]"]]}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script></head><body><header><div class="wrap"><a href="math_subject_3.html">← 数学Ⅲの授業へ戻る</a><h1>無限等比数列</h1><p>数学Ⅲ／第2章 極限｜みんなの数学データベース</p></div></header><main class="wrap"><section class="course-unified-goal"><span class="course-goal-label">授業のねらい</span><h2 class="course-goal-title">無限等比数列を理解する</h2><p class="course-goal-subtitle">公比による収束・発散を理解し、極限を求められるようにします。</p></section><section class="paper"><h2>1．無限等比数列の定義</h2><p>初項 \(a\)、公比 \(r\) の等比数列は \(a,ar,ar^2,\ldots\) であり、一般項は \(a_n=ar^{n-1}\) です。</p><h2>2．極限の分類</h2><p>初項 \(a\ne 0\) のとき、次のように分類します。</p><div class="formula">\[\lim_{n\to\infty}ar^{n-1}=\begin{cases}0&(|r|<1)\\a&(r=1)\end{cases}\]</div><p>\(r>1\) は符号に応じて正または負の無限大へ発散し、\(r\le -1\) では振動して極限が存在しません。\(a=0\) なら常に0です。</p></section><section class="paper"><h2>3．動く数列（公比と収束）</h2><p>公比を変えると第1項から第12項までの値がどのように変わるか観察しましょう。</p><div class="controls"><label>公比 r <input id="r" type="range" min="-1.5" max="1.5" step="0.05" value="0.5"><output id="rv">0.50</output></label></div><canvas id="graph" width="760" height="300" aria-label="公比の変化を表す数列グラフ"></canvas><script>(()=>{let r=document.getElementById('r'),o=document.getElementById('rv'),c=document.getElementById('graph'),ctx=c.getContext('2d');function draw(){let v=+r.value;o.textContent=v.toFixed(2);ctx.clearRect(0,0,760,300);ctx.strokeStyle='#a9bed2';ctx.beginPath();ctx.moveTo(32,155);ctx.lineTo(735,155);ctx.stroke();for(let i=1;i<=12;i++){let y=Math.pow(v,i-1);let cy=155-Math.max(-3,Math.min(3,y))*40;ctx.fillStyle='#176cae';ctx.beginPath();ctx.arc(36+i*54,cy,4,0,7);ctx.fill()}ctx.fillStyle='#18314c';ctx.font='14px sans-serif';ctx.fillText('aₙ = rⁿ⁻¹ （初項1）',15,22);ctx.fillText('n →',691,181)}r.addEventListener('input',draw);draw()})()</script></section><section class="paper"><h2>4．例題</h2><div class="example"><strong>例題1</strong>　\(a_n=3(\tfrac12)^{n-1}\) の極限を求めなさい。<p><strong>解答</strong>　\(|r|=\tfrac12<1\) より \(\lim_{n\to\infty}a_n=0\)。</p></div><div class="example"><strong>例題2</strong>　\(a_n=2(-2)^{n-1}\) の極限を調べなさい。<p><strong>解答</strong>　正負が交互に変化し、絶対値も大きくなるため振動して発散します。</p></div><h2>5．練習問題</h2><div class="exercise">① \(a_n=5(\tfrac34)^{n-1}\)　② \(a_n=(-1)^{n-1}\)　③ \(a_n=-2(1)^{n-1}\)<details><summary>解答を表示</summary><p>① 0　② 振動して発散　③ −2</p></details></div></section><nav class="backnav"><a href="math_subject_3.html">← 数学Ⅲの授業一覧へ戻る</a></nav></main><footer><div class="wrap">みんなの数学データベース｜高校生のための授業</div></footer></body></html>
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>無限等比数列｜数学Ⅲ｜みんなの数学データベース</title><style>
+header{background:linear-gradient(110deg,#17365d,#24689c);color:white;padding:24px 0 28px}header header h1{font-size:clamp(26px,4.2vw,36px);margin:10px 0 5px;line-height:1.35}header .goal{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px}.goal-label{display:block;font-size:13px;font-weight:700;color:#215f91}.goal-title{font-size:clamp(21px,3.2vw,27px);line-height:1.4;margin:3px 0 6px;color:#17365d}.goal .paper{border:1px solid #d6e3f0;background:white;border-radius:14px;padding:clamp(16px,3vw,30px);margin:18px 0}.formula{background:#f2f7ff;border:1px solid #d6e5fa;border-radius:10px;text-align:center;overflow-x:auto;padding:11px 8px;margin:12px 0}.example{border-left:5px solid #e6a345;background:#fff9ec;border-radius:9px;padding:14px 16px;margin:15px 0}.answer{border-left:5px solid #3ca07b;background:#effbf5;border-radius:9px;padding:14px 16px;margin:12px 0}.exercise{background:#f7faff;border:1px solid #d7e3f0;border-radius:10px;padding:14px 16px;margin:13px 0}.muted{color:#526a80}.small{font-size:14px}.nav-back{margin:24px 0 12px}footer{background:#142f4d;color:#e9f2fc;text-align:center;padding:20px 0;font-size:13px}.plot{border:1px solid #d6e3ef;border-radius:12px;display:block;width:100%;height:auto;background:#fff}.controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;margin:12px 0}.controls label{display:block;font-weight:700;color:#17365d}.controls input,.controls select{width:100%;font:inherit;padding:9px}.controls input[type=range]{padding:4px}.reading{background:#eaf4ff;padding:12px;border-radius:9px;margin:10px 0;font-size:15px}summary{cursor:pointer;color:#145e95;font-weight:700}button,a,summary{touch-action:manipulation}a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid orange;outline-offset:3px}@media(max-width:560px){.paper{padding:15px}}
+
+/* Unified lesson shell, matching other Math III lessons */
+
+.standard-lesson-header 
+.standard-lesson-header h1{font-size:clamp(26px,4.2vw,36px);margin:6px 0 3px}
+.standard-lesson-header 
+
+
+
+
+nav.standard-lesson-bottom{max-width:1040px;margin:8px auto 28px;padding:0 17px;text-align:center}
+nav.standard-lesson-bottom 
+footer.standard-lesson-footer{background:#142f4d;color:#e9f2fc;padding:20px 15px;font-size:13px;text-align:center}
+.graph-svg{display:block;width:100%;height:auto;aspect-ratio: 900 / 450;border:1px solid #d6e3ef;border-radius:12px;background:#fff}
+.graph-svg text{font-family:-apple-system,BlinkMacSystemFont,Meiryo,sans-serif;font-size:16px;fill:#526a80}
+.graph-svg .grid-line{stroke:#dce6f0;stroke-width:1}
+.graph-svg .axis-line{stroke:#7897b2;stroke-width:2}
+.graph-svg .limit-line{stroke:#cb5261;stroke-width:2;stroke-dasharray:9 6}
+.graph-svg .seq-dot{fill:#206da5}
+
+*{box-sizing:border-box}
+body{margin:0;background:#f2f6fc;color:#1c3148;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.8;font-size:16px}
+a{color:#176cae}
+.wrap{max-width:1040px;margin:auto;padding:0 17px}
+main{padding:38px 0 58px}
+h2{color:#174c7b;border-bottom:2px solid #c5d9eb;padding-bottom:7px;margin:28px 0 14px;font-size:clamp(21px,3vw,26px)}
+h3{color:#17365d;margin:19px 0 8px}
+p{overflow-wrap:anywhere}
+.standard-lesson-header{background:linear-gradient(110deg,#17365d,#24689c);color:white;padding:24px max(17px,calc((100vw - 1006px)/2)) 28px}
+.lesson-head-back{color:#fff;display:inline-block;margin-bottom:8px}
+.lesson-head-title{font-size:clamp(26px,4.2vw,36px);margin:6px 0 3px}
+.lesson-head-meta{font-size:14px;color:#e3effc;margin:0}
+.standard-lesson-goal{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px}
+.standard-goal-label{display:block;font-size:13px;font-weight:700;color:#215f91}
+.standard-goal-title{border:0;padding:0;font-size:clamp(21px,3.2vw,27px);margin:5px 0;color:#17365d}
+.standard-goal-subtitle{font-size:14px;color:#526a80;margin:0}
+.standard-lesson-bottom{max-width:1040px;margin:8px auto 28px;padding:0 17px}
+.standard-lesson-bottom a{display:inline-block;background:#e7f2fc;border-radius:9px;padding:10px 14px;font-weight:700}
+.standard-lesson-footer{background:#142f4d;color:#e9f2fc;padding:20px 15px;font-size:13px;text-align:center}
+/* 数学I・II・III・A・B・C共通：白いカード型「授業のねらい」 */
+main .standard-lesson-goal {
+  display:block !important; box-sizing:border-box !important;
+  background:#ffffff !important; border:1px solid #d8e4f0 !important;
+  border-left:1px solid #d8e4f0 !important;
+  border-radius:18px !important; padding:24px 24px 28px !important;
+  margin:0 0 24px !important; box-shadow:0 2px 6px rgba(19,52,83,.025) !important;
+}
+main .standard-lesson-goal .standard-goal-label {
+  display:inline-block !important; background:#e8f3fc !important;
+  color:#23618e !important; border-radius:24px !important;
+  padding:6px 14px !important; font-size:14px !important;
+  line-height:1.5 !important; font-weight:700 !important;
+}
+main .standard-lesson-goal .standard-goal-title {
+  display:block !important; color:#173f63 !important; border:0 !important;
+  padding:0 !important; margin:14px 0 18px !important;
+  font-size:clamp(22px,3.2vw,27px) !important;
+  font-weight:750 !important; line-height:1.5 !important;
+}
+main .standard-lesson-goal .standard-goal-subtitle {
+  color:#263e56 !important; font-size:16px !important;
+  line-height:1.9 !important; margin:0 !important;
+  font-weight:500 !important;
+}
+@media(max-width:600px){main .standard-lesson-goal{padding:20px 18px 24px !important;}}
+
+/* Header-to-goal gap: dedicated spacer, not margin collapse */
+.header-goal-spacer{display:none!important;}
+body > main.wrap{padding-top:22px!important;}
+body > main.wrap > .standard-lesson-goal:first-child{margin-top:0!important;}
+
+.geom-controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:12px 0 18px}.geom-controls label{font-weight:700;display:block}.geom-controls input{display:block;width:100%;margin-top:8px;accent-color:#24689c}.geom-controls output{color:#14689a}.case-table{width:100%;border-collapse:collapse;margin:15px 0}.case-table th,.case-table td{border:1px solid #d7e4ef;padding:9px;text-align:left}.case-table th{background:#eaf4ff}.note{background:#eff6ff;border-left:4px solid #4388bb;padding:12px 15px;border-radius:8px}.graph-box{background:white;border:1px solid #d6e3ef;border-radius:12px;padding:10px}.graph-box svg{width:100%;height:auto;display:block}.graph-box svg text{font-family:Meiryo,sans-serif;font-size:15px;fill:#536b80}
+</style><script>window.MathJax={tex:{inlineMath:[["\(","\)"]],displayMath:[["\[","\]"]]}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script></head><body>
+<header class="standard-lesson-header"><div class="wrap"><a class="lesson-head-back" href="math_subject_3.html">← 数学Ⅲの授業一覧に戻る</a><h1 class="lesson-head-title">無限等比数列</h1><p class="lesson-head-meta">数学Ⅲ ／ 第2章 極限 ／ 第2講　｜　みんなの数学データベース</p></div></header>
+<main class="wrap">
+<section class="standard-lesson-goal" aria-label="授業のねらい"><span class="standard-goal-label">授業のねらい</span><h2 class="standard-goal-title">無限等比数列の収束と発散を理解する</h2><p class="standard-goal-subtitle">初項と公比から数列の一般項を表し、公比の値によって収束・発散がどのように決まるかをグラフで確かめ、極限を正しく求められるようになる。</p></section>
+<section class="paper"><span class="pill">基本事項</span><h2>1．無限等比数列とは</h2>
+<p>初項を \(a\)、公比を \(r\) とする等比数列は、</p><div class="formula">\[a,\ ar,\ ar^2,\ ar^3,\ldots\]</div><p>と続き、一般項は</p><div class="formula">\[a_n=ar^{n-1}\quad(n=1,2,3,\ldots)\]</div>
+<p>です。無限に続く等比数列を<strong>無限等比数列</strong>といいます。数列の極限を調べるときは、特に<strong>公比 \(r\) の絶対値と符号</strong>に注目します。</p>
+<div class="note"><strong>ここで扱うのは数列の極限です。</strong> 項を加えて得られる「無限等比級数の和」は次の「無限級数」の授業で学びます。</div></section>
+<section class="paper"><span class="pill">重要事項</span><h2>2．公比による収束・発散の分類</h2>
+<p>まず初項 \(a\ne0\) の場合を考えます。</p>
+<table class="case-table"><thead><tr><th>公比 \(r\)</th><th>\(a_n=ar^{n-1}\) の振る舞い</th></tr></thead><tbody>
+<tr><td>\(|r|&lt;1\)</td><td>\(0\) に収束</td></tr><tr><td>\(r=1\)</td><td>すべての項が \(a\) で、\(a\) に収束</td></tr>
+<tr><td>\(r&gt;1\)</td><td>\(a&gt;0\) なら \(+\infty\)、\(a&lt;0\) なら \(-\infty\) に発散</td></tr>
+<tr><td>\(r\le-1\)</td><td>符号が交互に変わるため収束しない（振動）</td></tr></tbody></table>
+<p>ただし、<strong>\(a=0\) の場合</strong>は公比にかかわらずすべての項が0なので、極限は0です。</p>
+<div class="formula">\[\lim_{n\to\infty}ar^{n-1}=\begin{cases}0 & (|r|<1),\\ a & (r=1),\end{cases}\qquad(a\ne0)\]</div>
+<h3>なぜ \(|r|&lt;1\) なら0に近づくのか</h3><p>例えば \(r=\dfrac12\) なら \(1,\dfrac12,\dfrac14,\dfrac18,\ldots\) です。前の項に毎回 \(\dfrac12\) を掛けるので、項の絶対値はだんだん小さくなり、0に近づきます。公比が負でも、\(|r|&lt;1\) なら絶対値は小さくなります。</p></section>
+<section class="paper"><span class="pill">動く図形</span><h2>3．グラフで収束・発散を観察する</h2>
+<p>初項 \(a=1\) とし、公比 \(r\) と項数を変更しましょう。<strong>青い点</strong>が数列の各項を表します。初期状態でもグラフが表示されるSVG方式です。</p>
+<div class="geom-controls"><div><label for="ratio">公比 \(r\)：<output id="ratio-val">0.50</output></label><input id="ratio" type="range" min="-1.5" max="1.5" step="0.05" value="0.5"></div><div><label for="terms">表示する項数：<output id="terms-val">12</output></label><input id="terms" type="range" min="5" max="25" step="1" value="12"></div></div>
+<div class="graph-box"><svg id="geom-plot" role="img" aria-label="無限等比数列のグラフ。横軸は項番号、縦軸は数列の値" viewBox="0 0 900 410" xmlns="http://www.w3.org/2000/svg"><line x1="65" x2="860" y1="350.0" y2="350.0" stroke="#e1e9f2"/><text x="58" y="355.0" text-anchor="end">-1.1</text><line x1="65" x2="860" y1="287.0" y2="287.0" stroke="#e1e9f2"/><text x="58" y="292.0" text-anchor="end">-0.5</text><line x1="65" x2="860" y1="224.0" y2="224.0" stroke="#e1e9f2"/><text x="58" y="229.0" text-anchor="end">0.2</text><line x1="65" x2="860" y1="161.0" y2="161.0" stroke="#e1e9f2"/><text x="58" y="166.0" text-anchor="end">0.8</text><line x1="65" x2="860" y1="98.0" y2="98.0" stroke="#e1e9f2"/><text x="58" y="103.0" text-anchor="end">1.5</text><line x1="65" x2="860" y1="35.0" y2="35.0" stroke="#e1e9f2"/><text x="58" y="40.0" text-anchor="end">2.1</text><line x1="65" x2="860" y1="350" y2="350" stroke="#7a96ac"/><line x1="65" x2="65" y1="30" y2="350" stroke="#7a96ac"/><circle cx="70.0" cy="144.8" r="6" fill="#206da5"/><text x="70.0" y="385" text-anchor="middle">1</text><circle cx="140.9" cy="192.5" r="6" fill="#206da5"/><text x="140.9" y="385" text-anchor="middle">2</text><circle cx="211.8" cy="216.4" r="6" fill="#206da5"/><text x="211.8" y="385" text-anchor="middle">3</text><circle cx="282.7" cy="228.3" r="6" fill="#206da5"/><text x="282.7" y="385" text-anchor="middle">4</text><circle cx="353.6" cy="234.3" r="6" fill="#206da5"/><text x="353.6" y="385" text-anchor="middle">5</text><circle cx="424.5" cy="237.2" r="6" fill="#206da5"/><text x="424.5" y="385" text-anchor="middle">6</text><circle cx="495.5" cy="238.7" r="6" fill="#206da5"/><text x="495.5" y="385" text-anchor="middle">7</text><circle cx="566.4" cy="239.5" r="6" fill="#206da5"/><text x="566.4" y="385" text-anchor="middle">8</text><circle cx="637.3" cy="239.9" r="6" fill="#206da5"/><text x="637.3" y="385" text-anchor="middle">9</text><circle cx="708.2" cy="240.0" r="6" fill="#206da5"/><text x="708.2" y="385" text-anchor="middle">10</text><circle cx="779.1" cy="240.1" r="6" fill="#206da5"/><text x="779.1" y="385" text-anchor="middle">11</text><circle cx="850.0" cy="240.2" r="6" fill="#206da5"/><text x="850.0" y="385" text-anchor="middle">12</text></svg></div>
+<div class="reading" id="geom-status" aria-live="polite">公比 0.50：数列は 0 に収束します。</div>
+<h3>観察のポイント</h3><p>① \(r=0.5\) と \(r=-0.5\) の違いを観察します。② \(r=1\) と \(r=-1\) を比べます。③ \(|r|&gt;1\) では点の高さがどのように変わるかを確かめます。</p></section>
+<section class="paper"><span class="pill">例題</span><h2>4．例題と詳しい解答</h2>
+<div class="example"><strong>例題1</strong>　\(a_n=6\left(\dfrac23\right)^{n-1}\) の極限を求めなさい。</div><div class="answer"><strong>解答</strong>　初項は6、公比は \(\dfrac23\) です。\(\left|\dfrac23\right|&lt;1\) なので、\[\boxed{\lim_{n\to\infty}a_n=0}\]</div>
+<div class="example"><strong>例題2</strong>　\(a_n=3(-2)^{n-1}\) の極限を調べなさい。</div><div class="answer"><strong>解答</strong>　数列は \(3,-6,12,-24,\ldots\) となります。符号が交互に変わり、絶対値は大きくなります。したがって<strong>振動して発散</strong>し、有限な極限値は存在しません。</div>
+<div class="example"><strong>例題3</strong>　\(a_n=-5\cdot 2^{n-1}\) の極限を調べなさい。</div><div class="answer"><strong>解答</strong>　\(r=2&gt;1\)、初項が負なので、各項は負のまま絶対値が大きくなります。よって \[\boxed{a_n\longrightarrow-\infty}\]です。</div>
+<div class="example"><strong>例題4</strong>　数列 \(a_n=2r^{n-1}\) が0に収束するための \(r\) の条件を求めなさい。</div><div class="answer"><strong>解答</strong>　初項 \(2\ne0\) より、0に収束するのは \(|r|&lt;1\) のときに限ります。したがって \[\boxed{-1&lt;r&lt;1}\]</div></section>
+<section class="paper"><span class="pill">練習問題</span><h2>5．自分で解いてみよう</h2>
+<p>各数列の極限を求めるか、発散の仕方を答えなさい。</p>
+<div class="exercise"><strong>問1</strong>　\(a_n=4\left(-\dfrac13\right)^{n-1}\)<details><summary>解答と解説を表示</summary><p>\(\left|-\dfrac13\right|&lt;1\) より、極限は <strong>0</strong>。</p></details></div>
+<div class="exercise"><strong>問2</strong>　\(a_n=-3\cdot 1^{n-1}\)<details><summary>解答と解説を表示</summary><p>公比1なので、すべての項が \(-3\) です。極限は <strong>\(-3\)</strong>。</p></details></div>
+<div class="exercise"><strong>問3</strong>　\(a_n=(-1)^{n-1}\)<details><summary>解答と解説を表示</summary><p>\(1,-1,1,-1,\ldots\) と振動するので、<strong>収束しません</strong>。</p></details></div>
+<div class="exercise"><strong>問4</strong>　\(a_n=0\cdot 3^{n-1}\)<details><summary>解答と解説を表示</summary><p>初項が0のため、どの項も0です。極限は <strong>0</strong>。公比3だけで判断しない点が重要です。</p></details></div></section>
+<section class="paper"><span class="pill">発展</span><h2>6．発展問題</h2><p>\(a_n=(x-2)^{n-1}\) が0に収束するような実数 \(x\) の範囲を求めましょう。</p><details><summary>解答と解説を表示</summary><p>公比は \(r=x-2\)、初項は1です。\(|x-2|&lt;1\) より、\(-1&lt;x-2&lt;1\) です。したがって \[\boxed{1&lt;x&lt;3}\]</p></details></section>
+<section class="paper"><h2>7．まとめ</h2><p>無限等比数列の極限は、<strong>初項が0かどうか</strong>を確認したうえで、<strong>公比 \(r\) の値</strong>で分類します。\(|r|&lt;1\) なら0に収束し、\(r=1\) なら初項に収束します。それ以外では通常発散します。</p><p>次の授業では、数列の各項を足し合わせる<strong>「無限級数」</strong>を学びます。</p></section>
+<nav class="standard-lesson-bottom"><a href="math_subject_3.html">← 数学Ⅲの授業一覧に戻る</a></nav>
+</main><footer class="standard-lesson-footer">みんなの数学データベース｜高校生のための授業</footer>
+<script>(function(){'use strict';var svg=document.getElementById('geom-plot'),rs=document.getElementById('ratio'),ts=document.getElementById('terms'),ro=document.getElementById('ratio-val'),to=document.getElementById('terms-val'),status=document.getElementById('geom-status');if(!svg||!rs||!ts)return;var NS='http://www.w3.org/2000/svg';function add(tag,attrs,value){var el=document.createElementNS(NS,tag);Object.keys(attrs).forEach(function(k){el.setAttribute(k,attrs[k]);});if(value!==undefined)el.textContent=value;svg.appendChild(el);return el;}function draw(){var r=Number(rs.value),N=Number(ts.value),vals=[],i;for(i=0;i<N;i++){vals.push(Math.pow(r,i));}ro.textContent=r.toFixed(2);to.textContent=N;var low=Math.min(-1,...vals),high=Math.max(2,...vals),pad=(high-low)*.05;low-=pad;high+=pad;var x=function(n){return 70+(n-1)/Math.max(1,N-1)*780},y=function(v){return 35+(high-v)/(high-low)*315};while(svg.firstChild)svg.removeChild(svg.firstChild);for(i=0;i<6;i++){var v=low+(high-low)*i/5,yy=y(v);add('line',{x1:65,x2:860,y1:yy,y2:yy,stroke:'#e1e9f2'});add('text',{x:58,y:yy+5,'text-anchor':'end'},v.toFixed(1));}add('line',{x1:65,x2:860,y1:350,y2:350,stroke:'#7a96ac'});add('line',{x1:65,x2:65,y1:30,y2:350,stroke:'#7a96ac'});for(i=0;i<N;i++){add('circle',{cx:x(i+1),cy:y(vals[i]),r:6,fill:'#206da5'});if(N<=15||i===0||(i+1)%5===0||i===N-1){add('text',{x:x(i+1),y:385,'text-anchor':'middle'},String(i+1));}}var msg=Math.abs(r)<1?'0 に収束します':r===1?'1 に収束します':r>1?'+∞ に発散します':'符号が交互に変わり、収束しません';status.textContent='初項 1、公比 '+r.toFixed(2)+'：'+msg;}rs.addEventListener('input',draw);ts.addEventListener('input',draw);try{draw();}catch(e){status.textContent='初期グラフを表示しています。';}})();</script></body></html>
