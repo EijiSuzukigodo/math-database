@@ -23,8 +23,30 @@ body>footer a{color:#e9f2fc!important}
 .matha-unified-goal p,.lesson-goal p,section.goal p,section.aim p,section.objective p{font-size:14px!important;color:#526a80!important}
 .goal-pill,section.goal .pill,section.aim small{font-size:13px!important}
 @media(max-width:550px){.course-unified-goal{padding:12px 14px}body>header{padding:18px 0 22px!important}}
-</style><link href="lesson_common_style.css?v=20261115" rel="stylesheet"/></head>
-<body><header class="standard-lesson-header"><a class="lesson-head-back" href="math_subject_b.html">← 数学Bの授業一覧に戻る</a><h1 class="lesson-head-title">確率変数の和と期待値</h1><p class="lesson-head-meta">数学B ／ 確率変数の和と期待値</p></header><main class="wrap"><section aria-label="授業のねらい" class="standard-lesson-goal"><span class="standard-goal-label">授業のねらい</span><h2 class="standard-goal-title">同時分布から、確率変数の和の期待値まで理解する</h2><p class="standard-goal-subtitle">2つの確率変数が同時にとる値を表に整理し、周辺分布を求め、独立でない場合にも期待値の加法性が成立することを学びます。</p></section>
+</style><style id="md-unification-css">
+/* 数学Ⅲと共通の授業レイアウト：他の図・数式へのCSS干渉を避ける */
+html{scroll-behavior:smooth}
+body{margin:0!important;background:#f2f7fc!important;color:#19334e!important;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif!important;line-height:1.8!important}
+#md-standard-header{background:linear-gradient(110deg,#17365d,#215f99)!important;color:#fff!important;padding:24px 0 29px!important;box-sizing:border-box!important;min-height:0!important}
+#md-standard-header .md-inner{max-width:970px;margin:auto;padding:0 17px;box-sizing:border-box}
+#md-standard-header .md-kicker{color:#e4effc;font-size:14px!important;font-weight:400!important;letter-spacing:0!important}
+#md-standard-header h1{color:#fff!important;font-size:clamp(25px,4.5vw,35px)!important;line-height:1.4!important;margin:8px 0 5px!important;padding:0!important;border:0!important;text-align:left!important}
+#md-standard-header .md-subtitle{color:#e4effc!important;font-size:14px!important;line-height:1.6!important;margin:0!important}
+#md-standard-main{max-width:970px!important;width:auto!important;box-sizing:border-box!important;margin:0 auto!important;padding:22px 17px 46px!important;background:transparent!important;min-height:0!important}
+#md-standard-goal{display:block!important;box-sizing:border-box!important;background:#fff!important;border:1px solid #dbe6f1!important;border-radius:14px!important;margin:0 0 22px!important;padding:22px 25px!important;box-shadow:0 3px 13px #193a5b0a!important;color:#19334e!important;max-width:100%!important}
+#md-standard-goal .md-goal-tag{display:inline-block!important;color:#145888!important;background:#e6f3ff!important;border-radius:20px!important;font-size:13px!important;font-weight:700!important;padding:2px 12px!important;line-height:1.7!important}
+#md-standard-goal .md-goal-title{color:#174b78!important;font-size:23px!important;line-height:1.5!important;font-weight:700!important;border:none!important;margin:10px 0 7px!important;padding:0!important}
+#md-standard-goal p{color:#445d72!important;margin:0!important;font-size:16px!important;line-height:1.8!important}
+#md-standard-footer-nav{display:flex!important;flex-wrap:wrap!important;gap:10px!important;justify-content:flex-start!important;align-items:center!important;margin:25px 0 0!important;padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important}
+#md-standard-footer-nav a{display:inline-block!important;padding:10px 15px!important;border-radius:9px!important;background:#e5f1fd!important;color:#175988!important;text-decoration:none!important;font-weight:700!important;font-size:15px!important;line-height:1.7!important;border:0!important}
+#md-standard-footer{background:#112e4c!important;color:#ecf5fc!important;padding:20px 0!important;margin:0!important;font-size:13px!important;text-align:left!important;border:0!important}
+#md-standard-footer .md-inner{max-width:970px;margin:auto;padding:0 17px}
+/* SVGの幅を全指定する規則を数学用の数式に適用させない */
+mjx-container svg{max-width:none!important;width:auto!important;height:auto!important}
+mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden}
+@media(max-width:640px){#md-standard-goal{padding:17px 15px!important}#md-standard-goal .md-goal-title{font-size:20px!important}}
+</style></head>
+<body><header id="md-standard-header"><div class="md-inner"><div class="md-kicker">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>確率変数の和と期待値</h1><p class="md-subtitle">みんなの数学データベース｜数学B 統計的な推測</p></div></header><main class="wrap" id="md-standard-main"><section id="md-standard-goal"><span class="md-goal-tag">授業のねらい</span><h2 class="md-goal-title">同時分布から、確率変数の和の期待値まで理解する</h2><p>2つの確率変数が同時にとる値を表に整理し、周辺分布を求め、独立でない場合にも期待値の加法性が成立することを学びます。</p></section>
 
 <article class="paper">
 <h2>1. 同時分布とは</h2><p>2つの確率変数 \(X,Y\) について、「\(X=x_i\) かつ \(Y=y_j\)」となる確率を <strong>同時確率</strong> といい、\(P(X=x_i,Y=y_j)\) と書きます。すべての組の同時確率を並べたものを <strong>同時分布（同時確率分布）</strong> といいます。</p>
@@ -55,7 +77,7 @@ body>footer a{color:#e9f2fc!important}
 <div class="exercise"><strong>標準（元の問題）</strong><p>\(E(X)=3,\ E(Y)=2\) のとき、\(E(2X-Y+5)\) を求めましょう。</p><details><summary>解答と考え方</summary><p>\(2\cdot3-2+5=9\)。係数をそれぞれの期待値に掛けます。</p></details></div>
 <div class="exercise"><strong>応用（元の問題）</strong><p>1回のさいころの出目を \(X\) とし、\(Y=7-X\) とします。\(E(X+Y)\) を求めましょう。\(X,Y\) は独立ですか。</p><details><summary>解答と考え方</summary><p>\(X+Y=7\) が常に成立するため、\(E(X+Y)=7\) です。\(Y\) は \(X\) から一意に決まるので独立ではありません。それでも期待値の加法性は成り立ちます。</p></details></div>
 <h2>9. まとめ</h2><p>同時分布は2変数の値の組の確率を示します。行と列の合計から周辺分布を求められます。期待値の和の公式は独立性がなくても成り立ちます。一方、分散の和の公式には独立性などの条件が必要です。次の「独立な確率変数と期待値・分散」で確認しましょう。</p>
-</article><nav class="nav"><a href="mathb_lesson12.html">次の授業：独立な確率変数 →</a></nav></main><nav aria-label="授業一覧へ戻る" class="standard-lesson-bottom"><a href="math_subject_b.html">← 数学Bの授業一覧へ戻る</a></nav><footer class="standard-lesson-footer">みんなの数学データベース｜数学Bの授業</footer>
+</article><nav id="md-standard-footer-nav"><a href="mathb_lesson11.html">← 前の授業</a><a href="math_subject_b.html">↑ 数学Bの授業一覧に戻る</a><a href="mathb_lesson12.html">次の授業 →</a></nav></main><footer id="md-standard-footer"><div class="md-inner">みんなの数学データベース｜高校生のための授業</div></footer>
 <script>
 (function(){const input=document.getElementById('t'),svg=document.getElementById('jointGraph');function redraw(){const t=Number(input.value)/100,v=[t,.5-t,.5-t,t];document.getElementById('tv').textContent=t.toFixed(2);['p00','p01','p10','p11'].forEach((id,i)=>document.getElementById(id).textContent=v[i].toFixed(2));document.getElementById('comment').textContent=Math.abs(t-.25)<.00001?'XとYは独立です。': '周辺分布は変わりませんが、XとYは独立ではありません。';let s='<text x="15" y="20" font-size="15" fill="#1c3148">同時確率の棒グラフ</text>';let labels=['(0,0)','(0,1)','(1,0)','(1,1)'];for(let i=0;i<4;i++){let x=50+i*145,h=v[i]*250;s+=`<rect x="${x}" y="${173-h}" width="70" height="${h}" fill="#3d8bc6" rx="3"/><text x="${x+35}" y="${165-h}" font-size="14" text-anchor="middle" fill="#1c3148">${v[i].toFixed(2)}</text><text x="${x+35}" y="197" font-size="14" text-anchor="middle" fill="#1c3148">${labels[i]}</text>`;}s+='<line x1="20" y1="173" x2="605" y2="173" stroke="#778ba1"/>';svg.innerHTML=s;}input.addEventListener('input',redraw);redraw();})();
 </script></body></html>

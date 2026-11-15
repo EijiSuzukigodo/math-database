@@ -25,8 +25,30 @@ body>footer a{color:#e9f2fc!important}
 .matha-unified-goal p,.lesson-goal p,section.goal p,section.aim p,section.objective p{font-size:14px!important;color:#526a80!important}
 .goal-pill,section.goal .pill,section.aim small{font-size:13px!important}
 @media(max-width:550px){.course-unified-goal{padding:12px 14px}body>header{padding:18px 0 22px!important}}
-</style><link href="lesson_common_style.css?v=20261115" rel="stylesheet"/></head><body>
-<header class="standard-lesson-header"><a class="lesson-head-back" href="math_subject_b.html">← 数学Bの授業一覧に戻る</a><h1 class="lesson-head-title">正規分布</h1><p class="lesson-head-meta">数学B ／ 正規分布</p></header><main class="wrap"><section aria-label="授業のねらい" class="standard-lesson-goal"><span class="standard-goal-label">授業のねらい</span><h2 class="standard-goal-title">正規分布の考え方を理解する</h2><p class="standard-goal-subtitle">平均μ、分散σ²の左右対称な釣鐘型の確率分布です。</p></section><p class="intro">正規分布の形・標準化・確率の求め方を、グラフを動かしながら理解しましょう。元の教材の例題と練習問題も収録しています。</p><article class="paper">
+</style><style id="md-unification-css">
+/* 数学Ⅲと共通の授業レイアウト：他の図・数式へのCSS干渉を避ける */
+html{scroll-behavior:smooth}
+body{margin:0!important;background:#f2f7fc!important;color:#19334e!important;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif!important;line-height:1.8!important}
+#md-standard-header{background:linear-gradient(110deg,#17365d,#215f99)!important;color:#fff!important;padding:24px 0 29px!important;box-sizing:border-box!important;min-height:0!important}
+#md-standard-header .md-inner{max-width:970px;margin:auto;padding:0 17px;box-sizing:border-box}
+#md-standard-header .md-kicker{color:#e4effc;font-size:14px!important;font-weight:400!important;letter-spacing:0!important}
+#md-standard-header h1{color:#fff!important;font-size:clamp(25px,4.5vw,35px)!important;line-height:1.4!important;margin:8px 0 5px!important;padding:0!important;border:0!important;text-align:left!important}
+#md-standard-header .md-subtitle{color:#e4effc!important;font-size:14px!important;line-height:1.6!important;margin:0!important}
+#md-standard-main{max-width:970px!important;width:auto!important;box-sizing:border-box!important;margin:0 auto!important;padding:22px 17px 46px!important;background:transparent!important;min-height:0!important}
+#md-standard-goal{display:block!important;box-sizing:border-box!important;background:#fff!important;border:1px solid #dbe6f1!important;border-radius:14px!important;margin:0 0 22px!important;padding:22px 25px!important;box-shadow:0 3px 13px #193a5b0a!important;color:#19334e!important;max-width:100%!important}
+#md-standard-goal .md-goal-tag{display:inline-block!important;color:#145888!important;background:#e6f3ff!important;border-radius:20px!important;font-size:13px!important;font-weight:700!important;padding:2px 12px!important;line-height:1.7!important}
+#md-standard-goal .md-goal-title{color:#174b78!important;font-size:23px!important;line-height:1.5!important;font-weight:700!important;border:none!important;margin:10px 0 7px!important;padding:0!important}
+#md-standard-goal p{color:#445d72!important;margin:0!important;font-size:16px!important;line-height:1.8!important}
+#md-standard-footer-nav{display:flex!important;flex-wrap:wrap!important;gap:10px!important;justify-content:flex-start!important;align-items:center!important;margin:25px 0 0!important;padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important}
+#md-standard-footer-nav a{display:inline-block!important;padding:10px 15px!important;border-radius:9px!important;background:#e5f1fd!important;color:#175988!important;text-decoration:none!important;font-weight:700!important;font-size:15px!important;line-height:1.7!important;border:0!important}
+#md-standard-footer{background:#112e4c!important;color:#ecf5fc!important;padding:20px 0!important;margin:0!important;font-size:13px!important;text-align:left!important;border:0!important}
+#md-standard-footer .md-inner{max-width:970px;margin:auto;padding:0 17px}
+/* SVGの幅を全指定する規則を数学用の数式に適用させない */
+mjx-container svg{max-width:none!important;width:auto!important;height:auto!important}
+mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden}
+@media(max-width:640px){#md-standard-goal{padding:17px 15px!important}#md-standard-goal .md-goal-title{font-size:20px!important}}
+</style></head><body>
+<header id="md-standard-header"><div class="md-inner"><div class="md-kicker">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>正規分布</h1><p class="md-subtitle">数学B｜統計的な推測</p></div></header><main class="wrap" id="md-standard-main"><section id="md-standard-goal"><span class="md-goal-tag">授業のねらい</span><h2 class="md-goal-title">正規分布</h2><p>平均μ、分散σ²の左右対称な釣鐘型の確率分布です。</p></section><p class="intro">正規分布の形・標準化・確率の求め方を、グラフを動かしながら理解しましょう。元の教材の例題と練習問題も収録しています。</p><article class="paper">
 <h2>1．基本事項：正規分布とは</h2><p>平均 \(\mu\)、分散 \(\sigma^2\) の左右対称な釣鐘型の確率分布です。\(\sigma&gt;0\) とします。</p><div class="formula">\[\boxed{X\sim N(\mu,\sigma^2)}\]</div>
 <p>曲線の下全体の面積が1で、区間に入る確率はその区間の曲線下の面積です。連続型の確率変数なので、1点だけをとる確率は0です。</p>
 <div class="formula">\[f(x)=\frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)\]</div>
@@ -55,7 +77,7 @@ body>footer a{color:#e9f2fc!important}
 <div class="exercise"><strong>練習問題7</strong><p>\(X\sim N(100,20^2)\)。\(P(X\ge140)\) を求めよ。</p><details><summary>解答・解説を表示</summary><p>\(Z\ge2\) より \(\boxed{0.0228}\)（近似値）。</p></details></div>
 <div class="exercise"><strong>練習問題8</strong><p>正規分布で、標準偏差を2倍にすると分散は何倍になるか。</p><details><summary>解答・解説を表示</summary><p>\(V(X)=\sigma^2\) だから \((2\sigma)^2=4\sigma^2\)。\(\boxed{4\text{倍}}\)。</p></details></div>
 <h2>8．まとめ</h2><p>正規分布では、平均 \(\mu\) が中心、分散 \(\sigma^2\) が広がりを決めます。標準化して \(N(0,1)\) の表を利用すると、区間の確率を求められます。元の例題と練習問題も復習しましょう。</p>
-</article></main><nav aria-label="授業一覧へ戻る" class="standard-lesson-bottom"><a href="math_subject_b.html">← 数学Bの授業一覧へ戻る</a></nav><footer class="standard-lesson-footer">みんなの数学データベース｜数学Bの授業</footer>
+</article><nav id="md-standard-footer-nav"><a href="mathb_lesson13.html">← 前の授業</a><a href="math_subject_b.html">↑ 数学Bの授業一覧に戻る</a><a href="mathb_lesson15.html">次の授業 →</a></nav></main><footer id="md-standard-footer"><div class="md-inner">みんなの数学データベース｜高校生のための授業</div></footer>
 <script>
 (function(){'use strict';const $=id=>document.getElementById(id);const NS='http://www.w3.org/2000/svg';function E(name,atts,parent){const n=document.createElementNS(NS,name);for(const [k,v] of Object.entries(atts||{}))n.setAttribute(k,v);if(parent)parent.appendChild(n);return n;}function T(x,y,text,parent,extra){const n=E('text',{x,y,'font-size':13,fill:'#4b6177',...extra},parent);n.textContent=text;return n;}
 function pdf(x,mu=0,s=1){const z=(x-mu)/s;return Math.exp(-.5*z*z)/(Math.sqrt(2*Math.PI)*s);}function erf(x){const sign=x<0?-1:1;x=Math.abs(x);const t=1/(1+0.3275911*x);const y=1-(((((1.061405429*t-1.453152027)*t)+1.421413741)*t-0.284496736)*t+0.254829592)*t*Math.exp(-x*x);return sign*y;}function Phi(x){return (1+erf(x/Math.sqrt(2)))/2;}

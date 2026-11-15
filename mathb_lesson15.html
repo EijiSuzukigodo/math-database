@@ -26,8 +26,30 @@ body>footer a{color:#e9f2fc!important}
 .matha-unified-goal p,.lesson-goal p,section.goal p,section.aim p,section.objective p{font-size:14px!important;color:#526a80!important}
 .goal-pill,section.goal .pill,section.aim small{font-size:13px!important}
 @media(max-width:550px){.course-unified-goal{padding:12px 14px}body>header{padding:18px 0 22px!important}}
-</style><link href="lesson_common_style.css?v=20261115" rel="stylesheet"/></head><body>
-<header class="standard-lesson-header"><a class="lesson-head-back" href="math_subject_b.html">← 数学Bの授業一覧に戻る</a><h1 class="lesson-head-title">母集団と標本</h1><p class="lesson-head-meta">数学B ／ 母集団と標本</p></header><main class="wrap"><section aria-label="授業のねらい" class="standard-lesson-goal"><span class="standard-goal-label">授業のねらい</span><h2 class="standard-goal-title">母集団と標本の考え方を理解する</h2><p class="standard-goal-subtitle">全体を母集団、そこから選んだ一部を標本といいます。</p></section><p class="intro">母集団・標本・無作為抽出・標本平均の意味を、実際に標本を抽出しながら学びましょう。既存の例題と練習問題も残しています。</p><article class="paper">
+</style><style id="md-unification-css">
+/* 数学Ⅲと共通の授業レイアウト：他の図・数式へのCSS干渉を避ける */
+html{scroll-behavior:smooth}
+body{margin:0!important;background:#f2f7fc!important;color:#19334e!important;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif!important;line-height:1.8!important}
+#md-standard-header{background:linear-gradient(110deg,#17365d,#215f99)!important;color:#fff!important;padding:24px 0 29px!important;box-sizing:border-box!important;min-height:0!important}
+#md-standard-header .md-inner{max-width:970px;margin:auto;padding:0 17px;box-sizing:border-box}
+#md-standard-header .md-kicker{color:#e4effc;font-size:14px!important;font-weight:400!important;letter-spacing:0!important}
+#md-standard-header h1{color:#fff!important;font-size:clamp(25px,4.5vw,35px)!important;line-height:1.4!important;margin:8px 0 5px!important;padding:0!important;border:0!important;text-align:left!important}
+#md-standard-header .md-subtitle{color:#e4effc!important;font-size:14px!important;line-height:1.6!important;margin:0!important}
+#md-standard-main{max-width:970px!important;width:auto!important;box-sizing:border-box!important;margin:0 auto!important;padding:22px 17px 46px!important;background:transparent!important;min-height:0!important}
+#md-standard-goal{display:block!important;box-sizing:border-box!important;background:#fff!important;border:1px solid #dbe6f1!important;border-radius:14px!important;margin:0 0 22px!important;padding:22px 25px!important;box-shadow:0 3px 13px #193a5b0a!important;color:#19334e!important;max-width:100%!important}
+#md-standard-goal .md-goal-tag{display:inline-block!important;color:#145888!important;background:#e6f3ff!important;border-radius:20px!important;font-size:13px!important;font-weight:700!important;padding:2px 12px!important;line-height:1.7!important}
+#md-standard-goal .md-goal-title{color:#174b78!important;font-size:23px!important;line-height:1.5!important;font-weight:700!important;border:none!important;margin:10px 0 7px!important;padding:0!important}
+#md-standard-goal p{color:#445d72!important;margin:0!important;font-size:16px!important;line-height:1.8!important}
+#md-standard-footer-nav{display:flex!important;flex-wrap:wrap!important;gap:10px!important;justify-content:flex-start!important;align-items:center!important;margin:25px 0 0!important;padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important}
+#md-standard-footer-nav a{display:inline-block!important;padding:10px 15px!important;border-radius:9px!important;background:#e5f1fd!important;color:#175988!important;text-decoration:none!important;font-weight:700!important;font-size:15px!important;line-height:1.7!important;border:0!important}
+#md-standard-footer{background:#112e4c!important;color:#ecf5fc!important;padding:20px 0!important;margin:0!important;font-size:13px!important;text-align:left!important;border:0!important}
+#md-standard-footer .md-inner{max-width:970px;margin:auto;padding:0 17px}
+/* SVGの幅を全指定する規則を数学用の数式に適用させない */
+mjx-container svg{max-width:none!important;width:auto!important;height:auto!important}
+mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden}
+@media(max-width:640px){#md-standard-goal{padding:17px 15px!important}#md-standard-goal .md-goal-title{font-size:20px!important}}
+</style></head><body>
+<header id="md-standard-header"><div class="md-inner"><div class="md-kicker">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>母集団と標本</h1><p class="md-subtitle">数学B｜統計的な推測</p></div></header><main class="wrap" id="md-standard-main"><section id="md-standard-goal"><span class="md-goal-tag">授業のねらい</span><h2 class="md-goal-title">母集団と標本</h2><p>全体を母集団、そこから選んだ一部を標本といいます。</p></section><p class="intro">母集団・標本・無作為抽出・標本平均の意味を、実際に標本を抽出しながら学びましょう。既存の例題と練習問題も残しています。</p><article class="paper">
 <h2>1．母集団と標本</h2>
 <p>ある集団全体の性質を調べたいとき、その<strong>調査対象全体を母集団</strong>、母集団から実際に選んだ一部分を<strong>標本</strong>といいます。母集団に属する個体の数を<strong>母集団の大きさ</strong>、選んだ個体の数を<strong>標本の大きさ</strong>といいます。</p>
 <div class="note"><strong>例：</strong>ある学校の生徒800人の身長を調べるとき、800人全員が母集団です。その中から選んだ40人は標本で、標本の大きさは40です。</div>
@@ -83,7 +105,7 @@ body>footer a{color:#e9f2fc!important}
 <div class="exercise"><strong>練習7</strong><p>母集団100個、母分散36から10個を非復元で単純無作為抽出する。標本平均の分散は？</p><details><summary>解答と解説</summary><div class="formula">\[V(\bar X)=\frac{36}{10}\frac{90}{99}=\boxed{\frac{36}{11}}\]</div></details></div>
 <div class="exercise"><strong>練習8</strong><p>昼休みに食堂を利用する生徒だけにアンケートして「全校生徒」の昼食を推測することの問題点を説明せよ。</p><details><summary>解答と解説</summary><p>食堂を使わない生徒が調査対象から外れるため、抽出に偏りが生じる可能性があります。</p></details></div>
 <h2>9．まとめ</h2><ul><li>母集団は調べたい全体、標本はその一部。</li><li>標本平均は標本ごとに変わり、無作為抽出では確率変数となる。</li><li>独立な抽出では \(E(\bar X)=\mu\)、\(V(\bar X)=\sigma^2/n\)。</li><li>標本数が多いほど標本平均は安定しやすい。ただし、偏った抽出には注意する。</li></ul>
-</article></main><nav aria-label="授業一覧へ戻る" class="standard-lesson-bottom"><a href="math_subject_b.html">← 数学Bの授業一覧へ戻る</a></nav><footer class="standard-lesson-footer">みんなの数学データベース｜数学Bの授業</footer>
+</article><nav id="md-standard-footer-nav"><a href="mathb_lesson14.html">← 前の授業</a><a href="math_subject_b.html">↑ 数学Bの授業一覧に戻る</a><a href="mathb_lesson16.html">次の授業 →</a></nav></main><footer id="md-standard-footer"><div class="md-inner">みんなの数学データベース｜高校生のための授業</div></footer>
 <script>
 (function(){'use strict';const $=id=>document.getElementById(id);const NS='http://www.w3.org/2000/svg';function E(name,atts,parent){const n=document.createElementNS(NS,name);for(const [k,v] of Object.entries(atts||{}))n.setAttribute(k,v);if(parent)parent.appendChild(n);return n;}function T(x,y,text,parent,extra){const n=E('text',{x,y,'font-size':13,fill:'#4b6177',...extra},parent);n.textContent=text;return n;}
 function pdf(x,mu=0,s=1){const z=(x-mu)/s;return Math.exp(-.5*z*z)/(Math.sqrt(2*Math.PI)*s);}function erf(x){const sign=x<0?-1:1;x=Math.abs(x);const t=1/(1+0.3275911*x);const y=1-(((((1.061405429*t-1.453152027)*t)+1.421413741)*t-0.284496736)*t+0.254829592)*t*Math.exp(-x*x);return sign*y;}function Phi(x){return (1+erf(x/Math.sqrt(2)))/2;}
