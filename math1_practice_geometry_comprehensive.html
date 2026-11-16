@@ -1,0 +1,49 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>図形と計量の総合問題｜高校生のための問題演習</title><style>
+*{box-sizing:border-box}
+body{margin:0;background:#f3f7fb;color:#1d3852;font:16px/1.85 -apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif}
+.wrap{max-width:960px;margin:auto;padding:0 18px}
+header{background:linear-gradient(110deg,#17365d,#236c9e);color:#fff;padding:24px 0 29px}
+.small{font-size:14px;color:#e6f1fa}
+header h1{font-size:clamp(25px,4.2vw,35px);margin:8px 0 4px;line-height:1.4}
+main{padding-top:22px;padding-bottom:42px}
+.panel{background:#fff;border:1px solid #dce7f2;border-radius:14px;padding:21px 23px;margin:0 0 22px;box-shadow:0 3px 12px #16395a0b}
+.goal{border-left:5px solid #3986ba}
+.tag{display:inline-block;font-size:13px;border-radius:20px;padding:2px 12px;color:#175580;background:#e8f3fd;font-weight:700}
+.goal h2{font-size:22px;color:#175680;margin:10px 0 7px}
+.goal p{margin:0}
+.panel h2{font-size:22px;color:#185682;margin:0 0 12px;border-bottom:2px solid #e0edf7;padding-bottom:8px}
+.problem{border-bottom:1px solid #dde9f3;padding:18px 0}
+.problem:last-child{border-bottom:0}
+.problem h3{font-size:18px;color:#18537c;margin:0 0 8px}
+.q{margin:8px 0 14px}
+.hint,.answer{padding:12px 14px;border-radius:9px;margin-top:9px}
+.hint{background:#edf6fc;border-left:4px solid #7daed3}
+.answer{background:#f6faff;border:1px solid #e0eaf5}
+.answer p{margin:8px 0}
+details{margin:9px 0}
+summary{color:#126497;font-weight:700;cursor:pointer;padding:4px 2px}
+nav{margin-top:23px}
+nav a{display:inline-block;background:#e6f1fb;border-radius:10px;padding:9px 14px;color:#165984;text-decoration:none;font-weight:700}
+footer{background:#142f4b;color:#e3eefa;padding:18px 0;font-size:13px}
+mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;padding:3px 0}
+a:focus-visible,summary:focus-visible{outline:3px solid #e8a440;outline-offset:2px}
+@media(max-width:640px){.panel{padding:17px 15px}.panel h2{font-size:20px}}
+</style><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']],processEscapes:true},svg:{fontCache:'global'}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script></head><body><header><div class="wrap"><div class="small">みんなの数学データベース ／ 高校数学 ／ 数学Ⅰ</div><h1>図形と計量の総合問題</h1><div class="small">数学Ⅰ ／ 高校生のための問題演習</div></div></header><main class="wrap"><section class="panel goal"><span class="tag">学習のねらい</span><h2>図形の情報を整理し、適切な公式を組み合わせて解く</h2><p>基本3問・標準4問・応用4問・発展3問、全14問です。問題を読んだらまず自分で考え、必要に応じて「着眼点」を開き、解いた後に詳しい解説で確認しましょう。</p></section><section class="panel"><h2>基本問題｜公式と辺・角の関係</h2>
+<article class="problem"><h3>問題1　2辺とその間の角から面積</h3><p>三角形 \(ABC\) で \(AB=6,\ AC=8,\ \angle A=30^\circ\) とする。面積を求めよ。</p><details><summary>着眼点を見る</summary><div class="hint">2辺とその間の角が分かるので、面積公式 \(S=\frac12 bc\sin A\) を直接使う。</div></details><details><summary>解答・詳しい解説を見る</summary><div class="answer">\[S=\frac12\cdot6\cdot8\cdot\sin30^\circ=24\cdot\frac12=\boxed{12}.\]</div></details></article>
+<article class="problem"><h3>問題2　余弦定理で辺を求める</h3><p>三角形の2辺が \(5,7\)、その間の角が \(60^\circ\) である。残りの辺の長さを求めよ。</p><details><summary>着眼点を見る</summary><div class="hint">求める辺は既知の角の対辺。余弦定理を利用する。</div></details><details><summary>解答・詳しい解説を見る</summary><div class="answer">\[c^2=5^2+7^2-2\cdot5\cdot7\cos60^\circ=25+49-35=39.\]\[\boxed{c=\sqrt{39}}.\]</div></details></article>
+<article class="problem"><h3>問題3　正弦定理と辺の比</h3><p>三角形 \(ABC\) で \(\angle A=30^\circ,\ \angle B=45^\circ,\ BC=4\) とする。\(CA\) の長さを求めよ。</p><details><summary>着眼点を見る</summary><div class="hint">\(BC\) が角 \(A\) の対辺、\(CA\) が角 \(B\) の対辺であることを確認する。</div></details><details><summary>解答・詳しい解説を見る</summary><div class="answer">正弦定理より\[\frac{CA}{\sin45^\circ}=\frac{BC}{\sin30^\circ}=8.\]よって\[\boxed{CA=4\sqrt2}.\]</div></details></article>
+</section><section class="panel"><h2>標準問題｜複数の公式を組み合わせる</h2>
+<article class="problem"><h3>問題4　3辺から面積を求める</h3><p>三角形の3辺が \(5,7,8\) である。その面積を求めよ。</p><details><summary>着眼点を見る</summary><div class="hint">長さ \(5,7\) の間の角の余弦を、対辺 \(8\) を用いて求める。</div></details><details><summary>解答・詳しい解説を見る</summary><div class="answer">\[\cos C=\frac{5^2+7^2-8^2}{2\cdot5\cdot7}=\frac17.\]\[\sin C=\sqrt{1-\frac1{49}}=\frac{4\sqrt3}{7}.\]\[S=\frac12\cdot5\cdot7\cdot\frac{4\sqrt3}{7}=\boxed{10\sqrt3}.\]</div></details></article>
+<article class="problem"><h3>問題5　内接円と外接円</h3><p>3辺が \(5,5,6\) の三角形について、内接円の半径 \(r\) と外接円の半径 \(R\) を求めよ。</p><details><summary>着眼点を見る</summary><div class="hint">底辺 \(6\) の二等辺三角形として高さを求め、面積 \(S\) から \(S=rs\)、\(S=abc/(4R)\) を使う。</div></details><details><summary>解答・詳しい解説を見る</summary><div class="answer">高さは \(\sqrt{5^2-3^2}=4\)、面積は \(S=\frac12\cdot6\cdot4=12\)。半周長 \(s=(5+5+6)/2=8\) なので\[r=\frac{S}{s}=\boxed{\frac32}.\]また\[R=\frac{abc}{4S}=\frac{5\cdot5\cdot6}{4\cdot12}=\boxed{\frac{25}{8}}.\]</div></details></article>
+<article class="problem"><h3>問題6　中線の長さ</h3><p>三角形 \(ABC\) で \(AB=5,\ AC=7,\ BC=8\) とする。\(BC\) の中点を \(M\) とするとき、\(AM\) を求めよ。</p><details><summary>着眼点を見る</summary><div class="hint">\(BM=CM=4\)。角 \(B\) を余弦定理で求め、\(\triangle ABM\) にもう一度余弦定理を使う。</div></details><details><summary>解答・詳しい解説を見る</summary><div class="answer">まず\[\cos B=\frac{5^2+8^2-7^2}{2\cdot5\cdot8}=\frac12.\]次に\[AM^2=AB^2+BM^2-2\cdot AB\cdot BM\cos B=25+16-20=21.\]\[\boxed{AM=\sqrt{21}}.\]</div></details></article>
+<article class="problem"><h3>問題7　角の二等分線と辺の比</h3><p>三角形 \(ABC\) で \(AB=6,\ AC=9,\ BC=10\) とする。\(\angle A\) の二等分線と \(BC\) の交点を \(D\) とするとき、\(BD,DC\) を求めよ。</p><details><summary>着眼点を見る</summary><div class="hint">角の二等分線の性質より \(BD:DC=AB:AC\)。</div></details><details><summary>解答・詳しい解説を見る</summary><div class="answer">\[BD:DC=6:9=2:3,\qquad BD+DC=10.\]したがって\[\boxed{BD=4,\quad DC=6}.\]</div></details></article>
+</section><section class="panel"><h2>応用問題｜図形の条件を読み取る</h2>
+<article class="problem"><h3>問題8　鈍角かどうかを判定</h3><p>3辺が \(5,7,9\) の三角形で、長さ \(9\) の辺に対する角が鋭角・直角・鈍角のどれかを判定せよ。</p><details><summary>着眼点を見る</summary><div class="hint">最も長い辺の対角について余弦定理を使い、余弦の符号を調べる。</div></details><details><summary>解答・詳しい解説を見る</summary><div class="answer">\[\cos C=\frac{5^2+7^2-9^2}{2\cdot5\cdot7}=\frac{-7}{70}=-\frac1{10}<0.\]よって\(C\) は \(90^\circ\) より大きい。\[\boxed{\text{鈍角}}.\]</div></details></article>
+<article class="problem"><h3>問題9　高さと三角比</h3><p>平らな地面の点 \(P\) から建物の足元 \(Q\) までの水平距離は \(20\,\mathrm m\)、頂上 \(T\) への仰角は \(30^\circ\) である。建物の高さ \(QT\) を求めよ（目の高さは考えない）。</p><details><summary>着眼点を見る</summary><div class="hint">直角三角形 \(PQT\) で正接を利用し、水平距離と高さの比を作る。</div></details><details><summary>解答・詳しい解説を見る</summary><div class="answer">\[\tan30^\circ=\frac{QT}{PQ}=\frac{QT}{20}.\]\[QT=20\cdot\frac1{\sqrt3}=\boxed{\frac{20\sqrt3}{3}\,\mathrm m}.\]</div></details></article>
+<article class="problem"><h3>問題10　面積の比と角の二等分線</h3><p>三角形 \(ABC\) で \(AB:AC=3:2\)。\(\angle A\) の二等分線が \(BC\) と交わる点を \(D\) とする。\(\triangle ABD\) と \(\triangle ACD\) の面積の比を求めよ。</p><details><summary>着眼点を見る</summary><div class="hint">二つの三角形は \(BC\) を底辺とみると高さが共通。面積比は \(BD:DC\)。</div></details><details><summary>解答・詳しい解説を見る</summary><div class="answer">角の二等分線の性質より\[BD:DC=AB:AC=3:2.\]共通の高さを持つため\[\boxed{[ABD]:[ACD]=3:2}.\]</div></details></article>
+<article class="problem"><h3>問題11　2辺と面積から第三辺</h3><p>三角形の2辺は \(5,8\)、面積は \(12\) である。残りの辺の長さをすべて求めよ。</p><details><summary>着眼点を見る</summary><div class="hint">面積からは \(\sin C\) だけが分かる。\(\cos C\) の符号が2通りあることを忘れない。</div></details><details><summary>解答・詳しい解説を見る</summary><div class="answer">\[12=\frac12\cdot5\cdot8\sin C\ \Longrightarrow\ \sin C=\frac35,\quad\cos C=\pm\frac45.\]余弦定理より\[c^2=5^2+8^2-80\cos C=89-80\cos C.\]\(\cos C=4/5\) で \(c=5\)、\(\cos C=-4/5\) で \(c=\sqrt{153}=3\sqrt{17}\)。\[\boxed{c=5,\ 3\sqrt{17}}.\]</div></details></article>
+</section><section class="panel"><h2>発展問題｜場合分けと最大・最小</h2>
+<article class="problem"><h3>問題12　整数辺と鈍角の条件</h3><p>長さが \(5,7,x\) の三角形で、\(x\) は整数とする。辺 \(x\) に対する角が鈍角となる \(x\) をすべて求めよ。</p><details><summary>着眼点を見る</summary><div class="hint">三角形の成立条件と「\(x\) の対角が鈍角」の条件を別々に立てて共通部分を取る。</div></details><details><summary>解答・詳しい解説を見る</summary><div class="answer">三角形の成立条件は\[7-5<x<7+5\quad\Longrightarrow\quad2<x<12.\]対角が鈍角なら余弦定理より\[x^2>5^2+7^2=74.\]\(x\) は正の整数だから \(x\geqq9\)。合わせて\[\boxed{x=9,10,11}.\]</div></details></article>
+<article class="problem"><h3>問題13　二通りの三角形</h3><p>三角形 \(ABC\) で \(A=30^\circ,\ a=BC=6,\ b=CA=8\) とする。辺 \(c=AB\) の長さをすべて求めよ。</p><details><summary>着眼点を見る</summary><div class="hint">2辺と、その一方の対角が与えられた場合は三角形が2通りできることがある。余弦定理を \(c\) の方程式にする。</div></details><details><summary>解答・詳しい解説を見る</summary><div class="answer">余弦定理より\[6^2=8^2+c^2-2\cdot8c\cos30^\circ\]なので\[c^2-8\sqrt3c+28=0.\]解の公式から\[c=\frac{8\sqrt3\pm\sqrt{(8\sqrt3)^2-112}}2=4\sqrt3\pm2\sqrt5.\]両方とも正で三角形の成立条件も満たす。\[\boxed{c=4\sqrt3+2\sqrt5,\quad4\sqrt3-2\sqrt5}.\]</div></details></article>
+<article class="problem"><h3>問題14　周が一定のときの面積最大</h3><p>三角形の1辺が \(8\)、周の長さが \(18\) である。この三角形の面積の最大値を求めよ。</p><details><summary>着眼点を見る</summary><div class="hint">残りの2辺を \(a,b\) とすると \(a+b=10\)。ヘロンの公式と \(ab\) の最大値を使う。</div></details><details><summary>解答・詳しい解説を見る</summary><div class="answer">半周長は \(s=9\)。ヘロンの公式から\[S^2=9(9-8)(9-a)(9-b)=9(9-a)(9-b).\]ここで \(b=10-a\) なので\[S^2=9(9-a)(a-1)=9\{16-(a-5)^2\}\leqq144.\]\(a=b=5\) なら3辺 \(5,5,8\) は三角形を作り、等号成立。よって\[\boxed{\text{面積の最大値は }12}.\]</div></details></article>
+</section><nav aria-label="問題演習一覧に戻る"><a href="high_school_practice.html">← 高校生のための問題演習に戻る</a></nav></main><footer><div class="wrap">みんなの数学データベース｜高校生のための問題演習</div></footer></body></html>
