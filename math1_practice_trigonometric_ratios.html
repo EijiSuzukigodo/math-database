@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="数学Ⅰ「三角比」入試対策14問。相互関係、正弦定理、余弦定理、面積、最大値、整数条件を着眼点と詳しい解説で学習します。">
+<title>三角比｜高校生のための問題演習</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f3f7fb;color:#1d3852;font:16px/1.85 -apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif}
+.wrap{max-width:960px;margin:auto;padding:0 18px}
+header{background:linear-gradient(110deg,#17365d,#236c9e);color:#fff;padding:24px 0 29px}
+.small{font-size:14px;color:#e6f1fa}
+header h1{font-size:clamp(25px,4.2vw,35px);margin:8px 0 4px;line-height:1.4}
+main{padding-top:22px;padding-bottom:42px}
+.panel{background:#fff;border:1px solid #dce7f2;border-radius:14px;padding:21px 23px;margin:0 0 22px;box-shadow:0 3px 12px #16395a0b}
+.goal{border-left:5px solid #3986ba}
+.tag{display:inline-block;font-size:13px;border-radius:20px;padding:2px 12px;color:#175580;background:#e8f3fd;font-weight:700}
+.goal h2{font-size:22px;color:#175680;margin:10px 0 7px}
+.goal p{margin:0}
+.panel h2{font-size:22px;color:#185682;margin:0 0 12px;border-bottom:2px solid #e0edf7;padding-bottom:8px}
+.problem{border-bottom:1px solid #dde9f3;padding:18px 0}
+.problem:last-child{border-bottom:0}
+.problem h3{font-size:18px;color:#18537c;margin:0 0 8px}
+.q{margin:8px 0 14px}
+.hint,.answer{padding:12px 14px;border-radius:9px;margin-top:9px}
+.hint{background:#edf6fc;border-left:4px solid #7daed3}
+.answer{background:#f6faff;border:1px solid #e0eaf5}
+.answer p{margin:8px 0}
+details{margin:9px 0}
+summary{color:#126497;font-weight:700;cursor:pointer;padding:4px 2px}
+nav{margin-top:23px}
+nav a{display:inline-block;background:#e6f1fb;border-radius:10px;padding:9px 14px;color:#165984;text-decoration:none;font-weight:700}
+footer{background:#142f4b;color:#e3eefa;padding:18px 0;font-size:13px}
+mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;padding:3px 0}
+a:focus-visible,summary:focus-visible{outline:3px solid #e8a440;outline-offset:2px}
+@media(max-width:640px){.panel{padding:17px 15px}.panel h2{font-size:20px}}
+</style>
+<script>
+window.MathJax = {
+ tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']],processEscapes:true},
+ svg:{fontCache:'global'},
+ options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head><body>
+<header><div class="wrap"><div class="small">みんなの数学データベース ／ 高校数学 ／ 数学Ⅰ</div><h1>三角比</h1><div class="small">数学Ⅰ ／ 高校生のための問題演習</div></div></header>
+<main class="wrap">
+<section class="panel goal"><span class="tag">学習のねらい</span><h2>三角比を、角・辺・面積の条件を読み解く道具として使う</h2>
+<p>基本3問、標準4問、応用4問、発展3問の全14問。はじめに自分で考え、必要に応じて「着眼点」、最後に「解答・詳しい解説」を開きましょう。証明や条件の確認まで丁寧に取り組みます。</p></section>
+<section class="panel" aria-label="基本問題"><h2>基本問題｜三角比の性質を使う</h2>
+<article class="problem">
+          <h3>問題1　鋭角の三角比</h3>
+          <p class="q">鋭角 \(\theta\) について \(\sin\theta=\dfrac35\) のとき、\(\cos\theta,\tan\theta\) を求めよ。</p>
+          <details><summary>着眼点を見る</summary><div class="hint">\(\sin^2\theta+\cos^2\theta=1\) を使い、鋭角なので余弦は正と判断する。</div></details>
+          <details><summary>解答・詳しい解説を見る</summary><div class="answer">\[\cos\theta=\sqrt{1-\frac9{25}}=\frac45,\qquad \tan\theta=\frac{\sin\theta}{\cos\theta}=\frac34.\]</div></details>
+          </article>
+<article class="problem">
+          <h3>問題2　鈍角の三角比</h3>
+          <p class="q">\(90^\circ<\theta<180^\circ\)、\(\sin\theta=\dfrac5{13}\) のとき、\(\cos\theta,\tan\theta\) を求めよ。</p>
+          <details><summary>着眼点を見る</summary><div class="hint">第2象限では \(\sin\theta>0,\ \cos\theta<0\) に注意する。</div></details>
+          <details><summary>解答・詳しい解説を見る</summary><div class="answer">\[\cos\theta=-\sqrt{1-\frac{25}{169}}=-\frac{12}{13},\quad \tan\theta=-\frac5{12}.\]</div></details>
+          </article>
+<article class="problem">
+          <h3>問題3　同じ正弦値をとる角</h3>
+          <p class="q">\(0^\circ\leqq\theta\leqq180^\circ\) の範囲で、\(\sin\theta=\dfrac12\) を満たす \(\theta\) をすべて求めよ。</p>
+          <details><summary>着眼点を見る</summary><div class="hint">正弦は第1象限と第2象限で正。同じ値となる角は補角の関係になる。</div></details>
+          <details><summary>解答・詳しい解説を見る</summary><div class="answer">\[\boxed{\theta=30^\circ,\ 150^\circ}\]</div></details>
+          </article>
+</section>
+<section class="panel" aria-label="標準問題"><h2>標準問題｜公式を選んで解く</h2>
+<article class="problem">
+          <h3>問題4　和の平方の利用</h3>
+          <p class="q">鋭角 \(\theta\) について \(\sin\theta+\cos\theta=\sqrt{\dfrac32}\) である。\(2\sin\theta\cos\theta\) を求めよ。</p>
+          <details><summary>着眼点を見る</summary><div class="hint">左辺を2乗し、\(\sin^2\theta+\cos^2\theta=1\) を利用する。</div></details>
+          <details><summary>解答・詳しい解説を見る</summary><div class="answer">\[\frac32=(\sin\theta+\cos\theta)^2=1+2\sin\theta\cos\theta.\]\[\boxed{2\sin\theta\cos\theta=\frac12}\]</div></details>
+          </article>
+<article class="problem">
+          <h3>問題5　正接による式の整理</h3>
+          <p class="q">鋭角 \(\theta\) が \(\tan\theta=2\) を満たす。\(\dfrac{2\sin\theta+\cos\theta}{\sin\theta-3\cos\theta}\) の値を求めよ。</p>
+          <details><summary>着眼点を見る</summary><div class="hint">分子と分母を \(\cos\theta\) で割り、\(\tan\theta\) だけの式にする。</div></details>
+          <details><summary>解答・詳しい解説を見る</summary><div class="answer">\[\frac{2\tan\theta+1}{\tan\theta-3}=\frac{5}{-1}=\boxed{-5}.\]</div></details>
+          </article>
+<article class="problem">
+          <h3>問題6　余弦定理と面積</h3>
+          <p class="q">三角形の2辺が \(5,7\)、その間の角が \(60^\circ\) である。残りの辺の長さと面積を求めよ。</p>
+          <details><summary>着眼点を見る</summary><div class="hint">辺の長さは余弦定理、面積は \(\frac12 ab\sin C\)。</div></details>
+          <details><summary>解答・詳しい解説を見る</summary><div class="answer">\[c^2=5^2+7^2-2\cdot5\cdot7\cos60^\circ=39.\]\[\boxed{c=\sqrt{39}},\qquad \boxed{S=\frac{35\sqrt3}{4}}.\]</div></details>
+          </article>
+<article class="problem">
+          <h3>問題7　正弦定理による辺の長さ</h3>
+          <p class="q">三角形 \(ABC\) で \(A=30^\circ,\ B=45^\circ,\ BC=6\) である。\(CA\) と \(C\) を求めよ。</p>
+          <details><summary>着眼点を見る</summary><div class="hint">\(BC\) は角 \(A\) の対辺。正弦定理で対応する辺の比を作る。</div></details>
+          <details><summary>解答・詳しい解説を見る</summary><div class="answer">\[\frac{CA}{\sin45^\circ}=\frac6{\sin30^\circ}=12.\]\[\boxed{CA=6\sqrt2,\quad C=105^\circ}.\]</div></details>
+          </article>
+</section>
+<section class="panel" aria-label="応用問題"><h2>応用問題｜複数の性質を組み合わせる</h2>
+<article class="problem">
+          <h3>問題8　三辺から三角形の面積</h3>
+          <p class="q">三角形の3辺の長さが \(7,8,9\) である。面積を求めよ。</p>
+          <details><summary>着眼点を見る</summary><div class="hint">長さ \(7,8\) の間の角を \(C\) として、まず余弦定理で \(\cos C\) を求める。</div></details>
+          <details><summary>解答・詳しい解説を見る</summary><div class="answer">\[\cos C=\frac{7^2+8^2-9^2}{2\cdot7\cdot8}=\frac27.\]\[\sin C=\sqrt{1-\frac4{49}}=\frac{3\sqrt5}{7}.\]\[\boxed{S=\frac12\cdot7\cdot8\cdot\frac{3\sqrt5}{7}=12\sqrt5}.\]</div></details>
+          </article>
+<article class="problem">
+          <h3>問題9　外接円の半径</h3>
+          <p class="q">三角形の2辺が \(6,8\)、その間の角が \(60^\circ\) である。外接円の半径 \(R\) を求めよ。</p>
+          <details><summary>着眼点を見る</summary><div class="hint">まず余弦定理で \(60^\circ\) の対辺を求め、次に正弦定理 \(c=2R\sin C\) を使う。</div></details>
+          <details><summary>解答・詳しい解説を見る</summary><div class="answer">\[c^2=6^2+8^2-2\cdot6\cdot8\cos60^\circ=52,\quad c=2\sqrt{13}.\]\[2R\cdot\frac{\sqrt3}{2}=2\sqrt{13}.\]\[\boxed{R=\frac{2\sqrt{39}}3}.\]</div></details>
+          </article>
+<article class="problem">
+          <h3>問題10　2つの三角比の差</h3>
+          <p class="q">鋭角 \(\theta\) について \(\tan\theta+\dfrac1{\tan\theta}=\dfrac{10}{3}\) である。\((\sin\theta-\cos\theta)^2\) を求めよ。</p>
+          <details><summary>着眼点を見る</summary><div class="hint">\(\tan\theta+\dfrac1{\tan\theta}=\dfrac1{\sin\theta\cos\theta}\) を利用する。</div></details>
+          <details><summary>解答・詳しい解説を見る</summary><div class="answer">\[\frac1{\sin\theta\cos\theta}=\frac{10}{3}\quad\Longrightarrow\quad \sin\theta\cos\theta=\frac3{10}.\]\[(\sin\theta-\cos\theta)^2=1-2\sin\theta\cos\theta=\boxed{\frac25}.\]</div></details>
+          </article>
+<article class="problem">
+          <h3>問題11　三角比の最大値</h3>
+          <p class="q">\(0^\circ\leqq\theta\leqq180^\circ\) における \(3\sin\theta+4\cos\theta\) の最大値を求めよ。また、最大値をとるときの \(\sin\theta,\cos\theta\) を求めよ。</p>
+          <details><summary>着眼点を見る</summary><div class="hint">\((3\sin\theta+4\cos\theta)^2\leqq(3^2+4^2)(\sin^2\theta+\cos^2\theta)\) を考える。</div></details>
+          <details><summary>解答・詳しい解説を見る</summary><div class="answer">\[3\sin\theta+4\cos\theta\leqq\sqrt{3^2+4^2}\sqrt{\sin^2\theta+\cos^2\theta}=5.\]\(\sin\theta=\dfrac35,\ \cos\theta=\dfrac45\) なら等号が成立し、角も指定された範囲にある。したがって \[\boxed{\text{最大値 }5,\quad \sin\theta=\frac35,\quad\cos\theta=\frac45}.\]</div></details>
+          </article>
+</section>
+<section class="panel" aria-label="発展問題"><h2>発展問題｜条件整理と論証</h2>
+<article class="problem">
+          <h3>問題12　整数の辺と鈍角三角形</h3>
+          <p class="q">三角形の2辺が \(5,7\) で、残りの辺の長さを整数 \(x\) とする。長さ \(x\) の辺に対する角が鈍角となる \(x\) をすべて求めよ。</p>
+          <details><summary>着眼点を見る</summary><div class="hint">三角形の成立条件と、余弦定理で \(\cos C<0\) となる条件を同時に調べる。</div></details>
+          <details><summary>解答・詳しい解説を見る</summary><div class="answer">三角形の成立条件は \(7-5<x<7+5\)、すなわち \(2<x<12\)。角 \(C\) が鈍角であることは \[x^2>5^2+7^2=74\] と同値。\(x\) は整数だから \(\boxed{x=9,10,11}\)。</div></details>
+          </article>
+<article class="problem">
+          <h3>問題13　角が定まらない場合</h3>
+          <p class="q">三角形の2辺が \(5,8\) で面積が \(12\) である。残りの1辺の長さをすべて求めよ。</p>
+          <details><summary>着眼点を見る</summary><div class="hint">面積から \(\sin C\) が決まっても、\(\cos C\) の符号は2通りあり得る。</div></details>
+          <details><summary>解答・詳しい解説を見る</summary><div class="answer">\[12=\frac12\cdot5\cdot8\sin C\quad\Longrightarrow\quad\sin C=\frac35.\]\[\cos C=\pm\frac45.\]\[c^2=5^2+8^2-2\cdot5\cdot8\cos C=89-80\cos C.\]\(\cos C=\frac45\) なら \(c^2=25\)、\(\cos C=-\frac45\) なら \(c^2=153\)。したがって \[\boxed{c=5,\ 3\sqrt{17}}.\]</div></details>
+          </article>
+<article class="problem">
+          <h3>問題14　辺の和が一定のときの最小値</h3>
+          <p class="q">三角形の2辺の長さが \(a,b>0\)、その間の角が \(60^\circ\) で、\(a+b=12\) とする。残りの1辺 \(c\) の最小値を求めよ。</p>
+          <details><summary>着眼点を見る</summary><div class="hint">余弦定理で \(c^2\) を \(ab\) で表し、和が一定のときの積の最大値を利用する。</div></details>
+          <details><summary>解答・詳しい解説を見る</summary><div class="answer">\[c^2=a^2+b^2-ab=(a+b)^2-3ab=144-3ab.\]\[(a-b)^2\geqq0\ \Longrightarrow\ 4ab\leqq(a+b)^2=144,\quad ab\leqq36.\]\[c^2\geqq144-108=36.\]\(a=b=6\) のとき等号が成立するので、\(\boxed{\min c=6}\)。</div></details>
+          </article>
+</section>
+<nav aria-label="問題演習一覧に戻る"><a href="high_school_practice.html">← 高校生のための問題演習に戻る</a></nav>
+</main><footer><div class="wrap">みんなの数学データベース｜高校生のための問題演習</div></footer>
+</body></html>
