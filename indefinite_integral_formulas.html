@@ -18,6 +18,8 @@ ul {padding-inline-start:1.4em;margin:12px 0 0}
 li + li {margin-top:6px}
 footer a {color:#175588}
 math {vertical-align:middle}
+.math-parenthesis,.math-absolute-bar {font-family:"Times New Roman",serif}
+.math-absolute-bar {font-size:.85em}
 .eq math[display="block"] {margin:.32em 0;min-width:max-content}
 </style>
 <style id="course-typography">
@@ -39,9 +41,9 @@ body main :is(.eq,.math-box,.textbook-math) math{font-size:1em;math-style:normal
 <main>
 <section>
 <h2>不定積分と積分定数</h2>
-<p>ある区間で <math displaystyle="true"><mrow><mi>F</mi><mo>′</mo><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></math> なら、<math displaystyle="true"><mrow><mi>F</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></math> は <math displaystyle="true"><mrow><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></math> の原始関数です。その区間での不定積分は、次のように表します。</p>
+<p>ある区間で <math displaystyle="true"><mrow><mi>F</mi><mo>′</mo><mtext class="math-parenthesis">(</mtext><mi>x</mi><mtext class="math-parenthesis">)</mtext><mo>=</mo><mi>f</mi><mtext class="math-parenthesis">(</mtext><mi>x</mi><mtext class="math-parenthesis">)</mtext></mrow></math> なら、<math displaystyle="true"><mrow><mi>F</mi><mtext class="math-parenthesis">(</mtext><mi>x</mi><mtext class="math-parenthesis">)</mtext></mrow></math> は <math displaystyle="true"><mrow><mi>f</mi><mtext class="math-parenthesis">(</mtext><mi>x</mi><mtext class="math-parenthesis">)</mtext></mrow></math> の原始関数です。その区間での不定積分は、次のように表します。</p>
 <div class="eq">
-<math display="block" displaystyle="true"><mrow><mo>∫</mo><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo><mspace width=".20em"/><mi mathvariant="normal">d</mi><mi>x</mi><mo>=</mo><mi>F</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>+</mo><mi>C</mi></mrow></math>
+<math display="block" displaystyle="true"><mrow><mo>∫</mo><mi>f</mi><mtext class="math-parenthesis">(</mtext><mi>x</mi><mtext class="math-parenthesis">)</mtext><mspace width=".20em"/><mi mathvariant="normal">d</mi><mi>x</mi><mo>=</mo><mi>F</mi><mtext class="math-parenthesis">(</mtext><mi>x</mi><mtext class="math-parenthesis">)</mtext><mo>+</mo><mi>C</mi></mrow></math>
 </div>
 <p><math displaystyle="true"><mrow><mi>C</mi></mrow></math> は積分定数です。同じ導関数をもつ二つの関数の差は、その区間では定数になります。定義域が分かれているときは、区間ごとに積分定数をとれます。</p>
 </section>
@@ -50,7 +52,7 @@ body main :is(.eq,.math-box,.textbook-math) math{font-size:1em;math-style:normal
 <div class="eq">
 <math display="block" displaystyle="true"><mrow><mo>∫</mo><mi>k</mi><mspace width=".20em"/><mi mathvariant="normal">d</mi><mi>x</mi><mo>=</mo><mi>k</mi><mi>x</mi><mo>+</mo><mi>C</mi></mrow></math>
 <math display="block" displaystyle="true"><mrow><mo>∫</mo><msup><mrow><mi>x</mi></mrow><mrow><mi>r</mi></mrow></msup><mspace width=".20em"/><mi mathvariant="normal">d</mi><mi>x</mi><mo>=</mo><mfrac><mrow><msup><mrow><mi>x</mi></mrow><mrow><mi>r</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow><mrow><mi>r</mi><mo>+</mo><mn>1</mn></mrow></mfrac><mo>+</mo><mi>C</mi></mrow></math>
-<math display="block" displaystyle="true"><mrow><mo>∫</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>x</mi></mrow></mfrac><mspace width=".20em"/><mi mathvariant="normal">d</mi><mi>x</mi><mo>=</mo><mi mathvariant="normal">log</mi><mo fence="true">|</mo><mi>x</mi><mo fence="true">|</mo><mo>+</mo><mi>C</mi></mrow></math>
+<math display="block" displaystyle="true"><mrow><mo>∫</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>x</mi></mrow></mfrac><mspace width=".20em"/><mi mathvariant="normal">d</mi><mi>x</mi><mo>=</mo><mi mathvariant="normal">log</mi><mtext class="math-absolute-bar">|</mtext><mi>x</mi><mtext class="math-absolute-bar">|</mtext><mo>+</mo><mi>C</mi></mrow></math>
 </div>
 <ul>
 <li><math displaystyle="true"><mrow><mi>k</mi></mrow></math> は定数です。</li>
@@ -64,7 +66,7 @@ body main :is(.eq,.math-box,.textbook-math) math{font-size:1em;math-style:normal
 <math display="block" displaystyle="true"><mrow><mo>∫</mo><mi mathvariant="normal">sin</mi><mi>x</mi><mspace width=".20em"/><mi mathvariant="normal">d</mi><mi>x</mi><mo>=</mo><mo>−</mo><mi mathvariant="normal">cos</mi><mi>x</mi><mo>+</mo><mi>C</mi></mrow></math>
 <math display="block" displaystyle="true"><mrow><mo>∫</mo><mi mathvariant="normal">cos</mi><mi>x</mi><mspace width=".20em"/><mi mathvariant="normal">d</mi><mi>x</mi><mo>=</mo><mi mathvariant="normal">sin</mi><mi>x</mi><mo>+</mo><mi>C</mi></mrow></math>
 <math display="block" displaystyle="true"><mrow><mo>∫</mo><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mrow><mi mathvariant="normal">cos</mi></mrow><mrow><mn>2</mn></mrow></msup><mi>x</mi></mrow></mfrac><mspace width=".20em"/><mi mathvariant="normal">d</mi><mi>x</mi><mo>=</mo><mi mathvariant="normal">tan</mi><mi>x</mi><mo>+</mo><mi>C</mi></mrow></math>
-<math display="block" displaystyle="true"><mrow><mo>∫</mo><mi mathvariant="normal">tan</mi><mi>x</mi><mspace width=".20em"/><mi mathvariant="normal">d</mi><mi>x</mi><mo>=</mo><mo>−</mo><mi mathvariant="normal">log</mi><mo fence="true">|</mo><mi mathvariant="normal">cos</mi><mi>x</mi><mo fence="true">|</mo><mo>+</mo><mi>C</mi></mrow></math>
+<math display="block" displaystyle="true"><mrow><mo>∫</mo><mi mathvariant="normal">tan</mi><mi>x</mi><mspace width=".20em"/><mi mathvariant="normal">d</mi><mi>x</mi><mo>=</mo><mo>−</mo><mi mathvariant="normal">log</mi><mtext class="math-absolute-bar">|</mtext><mi mathvariant="normal">cos</mi><mi>x</mi><mtext class="math-absolute-bar">|</mtext><mo>+</mo><mi>C</mi></mrow></math>
 </div>
 <p>角はラジアンで表します。下の2つの公式は、<math displaystyle="true"><mrow><mi mathvariant="normal">cos</mi><mi>x</mi><mo>≠</mo><mn>0</mn></mrow></math> となる各区間で使います。</p>
 </section>
@@ -78,18 +80,18 @@ body main :is(.eq,.math-box,.textbook-math) math{font-size:1em;math-style:normal
 </section>
 <section>
 <h2>和・差と定数倍</h2>
-<p>同じ区間における <math displaystyle="true"><mrow><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></math>、<math displaystyle="true"><mrow><mi>g</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></math> の原始関数を、それぞれ <math displaystyle="true"><mrow><mi>F</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></math>、<math displaystyle="true"><mrow><mi>G</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></math> とします。<math displaystyle="true"><mrow><mi>a</mi></mrow></math>、<math displaystyle="true"><mrow><mi>b</mi></mrow></math> が定数なら、次の式が成り立ちます。</p>
+<p>同じ区間における <math displaystyle="true"><mrow><mi>f</mi><mtext class="math-parenthesis">(</mtext><mi>x</mi><mtext class="math-parenthesis">)</mtext></mrow></math>、<math displaystyle="true"><mrow><mi>g</mi><mtext class="math-parenthesis">(</mtext><mi>x</mi><mtext class="math-parenthesis">)</mtext></mrow></math> の原始関数を、それぞれ <math displaystyle="true"><mrow><mi>F</mi><mtext class="math-parenthesis">(</mtext><mi>x</mi><mtext class="math-parenthesis">)</mtext></mrow></math>、<math displaystyle="true"><mrow><mi>G</mi><mtext class="math-parenthesis">(</mtext><mi>x</mi><mtext class="math-parenthesis">)</mtext></mrow></math> とします。<math displaystyle="true"><mrow><mi>a</mi></mrow></math>、<math displaystyle="true"><mrow><mi>b</mi></mrow></math> が定数なら、次の式が成り立ちます。</p>
 <div class="eq">
-<math display="block" displaystyle="true"><mrow><mo>∫</mo><mo>(</mo><mi>a</mi><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>+</mo><mi>b</mi><mi>g</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>)</mo><mspace width=".20em"/><mi mathvariant="normal">d</mi><mi>x</mi><mo>=</mo><mi>a</mi><mi>F</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>+</mo><mi>b</mi><mi>G</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>+</mo><mi>C</mi></mrow></math>
+<math display="block" displaystyle="true"><mrow><mo>∫</mo><mtext class="math-parenthesis">(</mtext><mi>a</mi><mi>f</mi><mtext class="math-parenthesis">(</mtext><mi>x</mi><mtext class="math-parenthesis">)</mtext><mo>+</mo><mi>b</mi><mi>g</mi><mtext class="math-parenthesis">(</mtext><mi>x</mi><mtext class="math-parenthesis">)</mtext><mtext class="math-parenthesis">)</mtext><mspace width=".20em"/><mi mathvariant="normal">d</mi><mi>x</mi><mo>=</mo><mi>a</mi><mi>F</mi><mtext class="math-parenthesis">(</mtext><mi>x</mi><mtext class="math-parenthesis">)</mtext><mo>+</mo><mi>b</mi><mi>G</mi><mtext class="math-parenthesis">(</mtext><mi>x</mi><mtext class="math-parenthesis">)</mtext><mo>+</mo><mi>C</mi></mrow></math>
 </div>
 </section>
 <section>
 <h2>公式の確かめ方</h2>
-<p>右辺を微分して、積分記号の中の関数に戻ることを確かめます。たとえば <math displaystyle="true"><mrow><mi>x</mi><mo>&lt;</mo><mn>0</mn></mrow></math> では <math displaystyle="true"><mrow><mi mathvariant="normal">log</mi><mo fence="true">|</mo><mi>x</mi><mo fence="true">|</mo><mo>=</mo><mi mathvariant="normal">log</mi><mo>(</mo><mo>−</mo><mi>x</mi><mo>)</mo></mrow></math> なので、合成関数の微分法を使うと次のようになります。</p>
+<p>右辺を微分して、積分記号の中の関数に戻ることを確かめます。たとえば <math displaystyle="true"><mrow><mi>x</mi><mo>&lt;</mo><mn>0</mn></mrow></math> では <math displaystyle="true"><mrow><mi mathvariant="normal">log</mi><mtext class="math-absolute-bar">|</mtext><mi>x</mi><mtext class="math-absolute-bar">|</mtext><mo>=</mo><mi mathvariant="normal">log</mi><mtext class="math-parenthesis">(</mtext><mo>−</mo><mi>x</mi><mtext class="math-parenthesis">)</mtext></mrow></math> なので、合成関数の微分法を使うと次のようになります。</p>
 <div class="eq">
-<math display="block" displaystyle="true"><mrow><mo>(</mo><mi mathvariant="normal">log</mi><mo fence="true">|</mo><mi>x</mi><mo fence="true">|</mo><mo>)</mo><mo>′</mo><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mo>−</mo><mi>x</mi></mrow></mfrac><mo>·</mo><mo>(</mo><mo>−</mo><mn>1</mn><mo>)</mo><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>x</mi></mrow></mfrac></mrow></math>
+<math display="block" displaystyle="true"><mrow><mtext class="math-parenthesis">(</mtext><mi mathvariant="normal">log</mi><mtext class="math-absolute-bar">|</mtext><mi>x</mi><mtext class="math-absolute-bar">|</mtext><mtext class="math-parenthesis">)</mtext><mo>′</mo><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mo>−</mo><mi>x</mi></mrow></mfrac><mo>·</mo><mtext class="math-parenthesis">(</mtext><mo>−</mo><mn>1</mn><mtext class="math-parenthesis">)</mtext><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>x</mi></mrow></mfrac></mrow></math>
 </div>
-<p><math displaystyle="true"><mrow><mi>x</mi><mo>&gt;</mo><mn>0</mn></mrow></math> では <math displaystyle="true"><mrow><mi mathvariant="normal">log</mi><mo fence="true">|</mo><mi>x</mi><mo fence="true">|</mo><mo>=</mo><mi mathvariant="normal">log</mi><mi>x</mi></mrow></math> なので、同じく導関数は <math displaystyle="true"><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><mi>x</mi></mrow></mfrac></mrow></math> です。</p>
+<p><math displaystyle="true"><mrow><mi>x</mi><mo>&gt;</mo><mn>0</mn></mrow></math> では <math displaystyle="true"><mrow><mi mathvariant="normal">log</mi><mtext class="math-absolute-bar">|</mtext><mi>x</mi><mtext class="math-absolute-bar">|</mtext><mo>=</mo><mi mathvariant="normal">log</mi><mi>x</mi></mrow></math> なので、同じく導関数は <math displaystyle="true"><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><mi>x</mi></mrow></mfrac></mrow></math> です。</p>
 </section>
 </main>
 <footer><a href="theorem_category_calculus.html">← 極限・微分・積分の定理・公式に戻る</a></footer>
