@@ -1,0 +1,59 @@
+<!doctype html><html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>三角関数の合成｜みんなの数学データベース</title><style>
+*{box-sizing:border-box}body{margin:0;background:#f4f8fc;color:#19334d;font:17px/1.8 -apple-system,"Hiragino Sans",sans-serif}header{background:#173e62;color:white;padding:26px max(5%,calc((100vw - 900px)/2))}header p,h1,h2,h3{margin:0}header p{font-size:15px}h1{font-size:clamp(27px,5vw,40px)}main,footer{max-width:932px;padding:16px;margin:auto}section{background:white;border:1px solid #d6e2ef;border-radius:14px;padding:clamp(15px,3vw,28px);margin:0 0 16px}h2{font-size:22px;color:#194e78}h3{font-size:18px;margin-top:16px}p{margin:8px 0}.eq{padding:11px;background:#eef5fc;border-radius:8px;margin:8px 0;font:clamp(18px,3vw,24px)/1.75 Georgia,serif;overflow-x:auto}.frac{display:inline-flex;vertical-align:middle;flex-direction:column;align-items:stretch;text-align:center;line-height:1.25;margin:0 .12em;font-size:1em}.frac>span{padding:.1em .18em}.frac>span:first-child{border-bottom:1.5px solid}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center}svg{width:100%;height:auto;display:block}input{width:100%;height:44px}button,summary{font:inherit;cursor:pointer;color:#174e7c}button{min-height:44px;padding:5px 12px;background:#eff6fc;border:1px solid #adc5da;border-radius:7px}table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}th,td{padding:6px;border-bottom:1px solid #cedbe6;text-align:center}.blue{color:#1768ac}.orange{color:#aa480a}summary{padding:9px 0;font-weight:bold}footer a{color:#175588}@media(max-width:650px){.grid{grid-template-columns:1fr}}
+.green{color:#187351}.frac{font-family:Georgia,serif;white-space:nowrap;margin-block:.12em}output{display:inline-block;min-height:2.6em}math{vertical-align:middle;font-size:1em}svg text{font:17px Georgia,serif;fill:#19334d}.buttons{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}.eq{line-height:2}.frac{white-space:nowrap}</style><header><p>みんなの数学データベース ／ 数学Ⅱ</p><h1>三角関数の合成</h1><p>三角関数 ／ 定理・公式の証明</p></header><main>
+<section><h2>授業のねらい</h2><p>同じ角のサインとコサインの和を、一つのサインで表します。グラフの高さと式を対応させ、最大値・最小値をとる角を求めましょう。</p></section>
+<section><h2>1．加法定理を逆向きに使う</h2><p>sin <i>x</i> ＋ cos <i>x</i> の係数はどちらも 1 です。√2 をくくると、かっこの中に cos <span class="frac"><span>π</span><span>4</span></span> と sin <span class="frac"><span>π</span><span>4</span></span> が現れます。</p>
+<div class="eq">sin <i>x</i> ＋ cos <i>x</i><br>＝ √2（<span class="frac"><span>1</span><span>√2</span></span> sin <i>x</i> ＋ <span class="frac"><span>1</span><span>√2</span></span> cos <i>x</i>）<br>＝ √2（sin <i>x</i> cos <span class="frac"><span>π</span><span>4</span></span> ＋ cos <i>x</i> sin <span class="frac"><span>π</span><span>4</span></span>）<br>＝ √2 sin（<i>x</i> ＋ <span class="frac"><span>π</span><span>4</span></span>）</div>
+<p>右辺の波は、<i>y</i> ＝ sin <i>x</i> のグラフを左に <span class="frac"><span>π</span><span>4</span></span> だけ移し、縦に √2 倍した形です。</p></section>
+<section><h2>2．同じ位置で波の高さを足そう</h2><p>青の実線は sin <i>x</i>、赤の破線は cos <i>x</i>、緑の太線はその和です。縦の補助線を動かし、3つの高さを読み比べましょう。</p>
+<svg viewBox="0 0 660 300" aria-label="横軸はラジアン。サイン、コサイン、その和のグラフ" role="img" id="plot"></svg>
+<label for="slider"><b>角 <i>x</i> ＝ <output id="angle"></output></b>（ラジアン）</label><input id="slider" type="range" min="-24" max="24" value="0" step="1"><div class="buttons"><button id="peak">最大になる位置へ</button> <button id="bottom">最小になる位置へ</button> <button id="zero">0 に戻す</button></div>
+<table><thead><tr><th>sin <i>x</i></th><th>cos <i>x</i></th><th>和</th></tr></thead><tbody><tr><td id="s"></td><td id="c"></td><td id="sum"></td></tr></tbody></table><p>表は小数第3位までの近似値です。<i>x</i> ＝ −<span class="frac"><span>π</span><span>4</span></span> では、一方が正でもう一方が負になり、足すとちょうど 0 になります。</p></section>
+<section><h2>3．一般の合成の公式</h2><p><i>a</i>、<i>b</i> の少なくとも一方が 0 でないとき、<i>r</i> ＝ <math><msqrt><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup></mrow></msqrt></math> とおきます。点 (<i>a</i>, <i>b</i>) の方向が角 α です。</p>
+<div class="eq">cos α ＝ <span class="frac"><span><i>a</i></span><span><i>r</i></span></span>，　sin α ＝ <span class="frac"><span><i>b</i></span><span><i>r</i></span></span><br><i>a</i> sin <i>x</i> ＋ <i>b</i> cos <i>x</i> ＝ <i>r</i> sin（<i>x</i> ＋ α）</div><p>右辺を展開すると、sin <i>x</i> の係数は <i>r</i> cos α ＝ <i>a</i>、cos <i>x</i> の係数は <i>r</i> sin α ＝ <i>b</i> となります。</p></section>
+<section><h2>4．例題　最大値と最小値</h2><p>−π ≦ <i>x</i> ≦ π で、<i>y</i> ＝ sin <i>x</i> ＋ cos <i>x</i> の最大値と最小値を求めましょう。</p><p>合成すると <i>y</i> ＝ √2 sin（<i>x</i> ＋ <span class="frac"><span>π</span><span>4</span></span>）。サインが 1 になるときに波は最も高く、−1 になるときに最も低くなります。</p><div class="eq"><i>x</i> ＋ <span class="frac"><span>π</span><span>4</span></span> ＝ <span class="frac"><span>π</span><span>2</span></span> のとき、<i>x</i> ＝ <span class="frac"><span>π</span><span>4</span></span>、最大値 √2<br><i>x</i> ＋ <span class="frac"><span>π</span><span>4</span></span> ＝ −<span class="frac"><span>π</span><span>2</span></span> のとき、<i>x</i> ＝ −<span class="frac"><span>3π</span><span>4</span></span>、最小値 −√2</div></section>
+<section><h2>5．練習問題</h2><p>√3 sin <i>x</i> − cos <i>x</i> を合成し、0 ≦ <i>x</i> ≦ 2π で最大値をとる角を求めましょう。</p><details><summary>解答を見る</summary><p><i>r</i> ＝ 2。cos α ＝ <span class="frac"><span>√3</span><span>2</span></span>、sin α ＝ −<span class="frac"><span>1</span><span>2</span></span> をともに満たす角として α ＝ −<span class="frac"><span>π</span><span>6</span></span> を選べます。</p><div class="eq">√3 sin <i>x</i> − cos <i>x</i> ＝ 2 sin（<i>x</i> − <span class="frac"><span>π</span><span>6</span></span>）</div><p><i>x</i> − <span class="frac"><span>π</span><span>6</span></span> ＝ <span class="frac"><span>π</span><span>2</span></span>、すなわち <i>x</i> ＝ <span class="frac"><span>2π</span><span>3</span></span> のとき、最大値は 2 です。</p></details></section></main><footer><a href="theorem_category_functions.html">← 関数とグラフの定理・公式に戻る</a></footer>
+<script>
+const get=id=>document.getElementById(id);
+const plot=get('plot'), slider=get('slider'), pi=Math.PI;
+const X=t=>345+285*t/pi, Y=v=>146-75*v;
+function shape(tag,attrs,text){
+ const node=document.createElementNS('http://www.w3.org/2000/svg',tag);
+ for(const [k,v] of Object.entries(attrs))node.setAttribute(k,v);
+ if(text!==undefined)node.textContent=text;
+ plot.appendChild(node);return node;
+}
+function line(x1,y1,x2,y2,color){return shape('line',{x1,y1,x2,y2,stroke:color});}
+for(const v of [-1,0,1]){
+ line(60,Y(v),630,Y(v),v?'#d2deea':'#64798e');
+ shape('text',{x:48,y:Y(v)+5,'text-anchor':'end'},String(v));
+}
+for(const [i,label] of ['−π','−π/2','0','π/2','π'].entries()){
+ const x=X((i-2)*pi/2);line(x,28,x,255,i===2?'#64798e':'#d2deea');
+ const match=label.match(/^(−?π)\/2$/);
+ if(match){shape('text',{x,y:272,'text-anchor':'middle'},match[1]);line(x-10,275,x+10,275,'#173e62');shape('text',{x,y:292,'text-anchor':'middle'},'2');}
+ else shape('text',{x,y:282,'text-anchor':'middle'},label);
+}
+shape('text',{x:640,y:142},'x');shape('text',{x:353,y:23},'y');
+const waves=[{f:Math.sin,color:'#1869a8'},{f:Math.cos,color:'#b7433f'},{f:t=>Math.sin(t)+Math.cos(t),color:'#17744f'}];
+for(const [i,w] of waves.entries()){
+ const points=Array.from({length:361},(_,j)=>{const t=(j/180-1)*pi;return X(t)+','+Y(w.f(t));}).join(' ');
+ shape('polyline',{points,fill:'none',stroke:w.color,'stroke-width':i===2?4:2.5,'stroke-dasharray':i===1?'7 4':'none'});
+}
+const cursor=line(0,24,0,258,'#3b4550');cursor.setAttribute('stroke-dasharray','3 3');
+const dots=waves.map((w,i)=>shape('circle',{r:7-i*1.6,fill:'white',stroke:w.color,'stroke-width':2.5}));
+function update(){
+ const k=Number(slider.value),t=k*pi/24, x=X(t);
+ let n=Math.abs(k),d=24;
+ while(d){const rest=n%d;n=d;d=rest;}
+ const num=Math.abs(k)/n,den=24/n;
+ const top=(num===1?'':num)+'π',sign=k<0?'−':'';
+ get('angle').innerHTML=k===0?'0':sign+(den===1?top:'<span class="frac"><span>'+top+'</span><span>'+den+'</span></span>');
+ slider.setAttribute('aria-valuetext',k===0?'0':sign+top+(den===1?'':'/'+den)+' ラジアン');
+ cursor.setAttribute('x1',x);cursor.setAttribute('x2',x);
+ waves.forEach((w,i)=>{const y=w.f(t);dots[i].setAttribute('cx',x);dots[i].setAttribute('cy',Y(y));get(['s','c','sum'][i]).textContent=(Math.abs(y)<0.0005?0:y).toFixed(3);});
+}
+slider.addEventListener('input',update);
+for(const [id,k] of [['peak',6],['bottom',-18],['zero',0]])get(id).onclick=()=>{slider.value=k;update();};
+update();
+</script></html>
