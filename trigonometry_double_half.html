@@ -1,0 +1,36 @@
+<!doctype html><html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>倍角・半角の公式｜みんなの数学データベース</title><style>
+*{box-sizing:border-box}body{margin:0;background:#f4f8fc;color:#19334d;font:17px/1.8 -apple-system,"Hiragino Sans",sans-serif}header{background:#173e62;color:white;padding:26px max(5%,calc((100vw - 900px)/2))}header p,h1,h2,h3{margin:0}header p{font-size:15px}h1{font-size:clamp(27px,5vw,40px)}main,footer{max-width:932px;padding:16px;margin:auto}section{background:white;border:1px solid #d6e2ef;border-radius:14px;padding:clamp(15px,3vw,28px);margin:0 0 16px}h2{font-size:22px;color:#194e78}h3{font-size:18px;margin-top:16px}p{margin:8px 0}.eq{padding:11px;background:#eef5fc;border-radius:8px;margin:8px 0;font:clamp(18px,3vw,24px)/1.75 Georgia,serif;overflow-x:auto}.frac{display:inline-flex;vertical-align:middle;flex-direction:column;align-items:stretch;text-align:center;line-height:1.25;margin:0 .12em;font-size:1em}.frac>span{padding:.1em .18em}.frac>span:first-child{border-bottom:1.5px solid}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center}svg{width:100%;height:auto;display:block}input{width:100%;height:44px}button,summary{font:inherit;cursor:pointer;color:#174e7c}button{min-height:44px;padding:5px 12px;background:#eff6fc;border:1px solid #adc5da;border-radius:7px}table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}th,td{padding:6px;border-bottom:1px solid #cedbe6;text-align:center}.blue{color:#1768ac}.orange{color:#aa480a}summary{padding:9px 0;font-weight:bold}footer a{color:#175588}@media(max-width:650px){.grid{grid-template-columns:1fr}}
+</style><header><p>みんなの数学データベース ／ 数学Ⅱ</p><h1>倍角・半角の公式</h1><p>三角関数 ／ 定理・公式の証明</p></header><main>
+<section><h2>授業のねらい</h2><p>加法定理から倍角の公式を導き、角が2倍になると単位円上の点がどう動くかを確かめます。半角では、角の位置から値の符号を判断します。</p></section>
+<section><h2>1．加法定理から倍角の公式へ</h2><p>α＝β＝θ とすると、α＋β＝2θ です。サインの加法定理の右辺には同じ積が2つ現れます。</p><div class="eq">sin 2θ ＝ sin θ cos θ ＋ cos θ sin θ<br>　　　＝ 2 sin θ cos θ</div><p>コサインでは、差の形が残ります。sin²θ＋cos²θ＝1 を使うと、片方の関数だけでも表せます。</p><div class="eq">cos 2θ ＝ cos²θ − sin²θ<br>　　　＝ 2 cos²θ − 1<br>　　　＝ 1 − 2 sin²θ</div><p>sin 2θ を cos 2θ で割り、さらに分子・分母を cos²θ で割ると、タンジェントの式になります。</p><div class="eq">tan 2θ ＝ <span class="frac"><span>2 tan θ</span><span>1 − tan²θ</span></span></div><p>この式は cos θ ≠ 0、かつ cos 2θ ≠ 0 のときに使えます。</p></section>
+<section><h2>2．単位円で θ と 2θ を見比べよう</h2><p>θ を動かして、青い点が半周する間にオレンジの点が何周するかを確かめましょう。点の横座標はコサイン、縦座標はサインです。</p><div class="grid"><svg viewBox="-145 -145 290 290" role="img" aria-label="角θと角2θの位置を示す単位円"><circle r="100" fill="#f6faff" stroke="#9db4c8"/><path d="M-128 0H128 M0 -128V128" stroke="#96a8b8"/><g font-size="12" fill="#4b6072"><text x="121" y="-6">x</text><text x="5" y="-119">y</text><text x="104" y="16">1</text><text x="-14" y="16">O</text></g><g stroke="#1768ac" stroke-width="3"><line id="ray1"/><circle id="dot1" r="6" fill="white"/></g><g stroke="#c25810" stroke-width="2"><line id="ray2" stroke-dasharray="6 3"/><circle id="dot2" r="3" fill="#c25810"/></g></svg><div><label for="angle"><b>角 θ を動かす</b>（π/12ずつ）</label><input id="angle" type="range" min="-12" max="12" value="2"><p><b class="blue">θ ＝ <output id="theta"></output></b><br><b class="orange">2θ ＝ <output id="double"></output></b></p><button id="reset">π/6 に戻す</button></div></div><table><thead><tr><th>点</th><th>横座標 x</th><th>縦座標 y</th></tr></thead><tbody><tr><th class="blue">θ</th><td id="x1"></td><td id="y1"></td></tr><tr><th class="orange">2θ</th><td id="x2"></td><td id="y2"></td></tr></tbody></table><p>倍角の公式で計算すると、2 cos²θ − 1 ≈ <b id="cx"></b>、2 sin θ cos θ ≈ <b id="sy"></b>。オレンジの点の座標と比べましょう。</p></section>
+<section><h2>3．半角の公式と符号</h2><p>倍角の公式 cos 2u ＝ 1 − 2 sin²u と cos 2u ＝ 2 cos²u − 1 に、u ＝ θ/2 を代入して整理します。</p><div class="eq">sin²(θ/2) ＝ <span class="frac"><span>1 − cos θ</span><span>2</span></span><br>cos²(θ/2) ＝ <span class="frac"><span>1 ＋ cos θ</span><span>2</span></span></div><p>平方根を取るときは、<b>半分にした角 θ/2</b> がどの象限にあるかを確かめます。縦座標の符号が sin、横座標の符号が cos の符号になります。</p></section>
+<section><h2>4．例題</h2><h3>① sin θ ＝ 3/5 で θ が第2象限のとき</h3><p>横座標は負なので cos θ ＝ −4/5。したがって</p><div class="eq">sin 2θ ＝ 2 × <span class="frac"><span>3</span><span>5</span></span> × （−<span class="frac"><span>4</span><span>5</span></span>）＝ −<span class="frac"><span>24</span><span>25</span></span><br>cos 2θ ＝ 1 − 2 × （<span class="frac"><span>3</span><span>5</span></span>）² ＝ <span class="frac"><span>7</span><span>25</span></span></div><h3>② 半角の公式で cos 105° を求める</h3><p>105° は 210° の半分です。cos 210° ＝ −√3/2 より、cos²105° ＝ (2 − √3)/4。105° は第2象限なので、負の平方根を選びます。</p><div class="eq">cos 105° ＝ −<span class="frac"><span>√(2 − √3)</span><span>2</span></span></div></section>
+<section><h2>5．練習問題</h2><p>① tan θ ＝ 1/2 のとき、tan 2θ を求めよう。</p><details><summary>解答を見る</summary><p>2 tan θ ＝ 1、1 − tan²θ ＝ 3/4 なので、tan 2θ ＝ 4/3。</p></details><p>② 半角の公式で sin 15° を求めよう。</p><details><summary>解答を見る</summary><p>cos 30° ＝ √3/2 より sin²15° ＝ (2 − √3)/4。15° は第1象限なので sin 15° ＝ √(2 − √3)/2。</p></details></section></main><footer><a href="theorem_category_functions.html">← 関数とグラフの定理・公式に戻る</a></footer>
+<script>
+const get=id=>document.getElementById(id);
+function angleLabel(k){
+ if(!k)return '0';
+ let divisor=12, remainder=Math.abs(k);
+ while(remainder){const next=divisor%remainder;divisor=remainder;remainder=next;}
+ const n=Math.abs(k)/divisor, d=12/divisor;
+ return (k<0?'−':'')+(n===1?'':n)+'π'+(d===1?'':'/'+d);
+}
+function display(value){return (Math.abs(value)<0.00005?0:value).toFixed(4);}
+function update(){
+ const k=Number(get('angle').value), t=k*Math.PI/12;
+ for(const m of [1,2]){
+  const x=Math.cos(m*t), y=Math.sin(m*t);
+  get('ray'+m).setAttribute('x2',100*x);get('ray'+m).setAttribute('y2',-100*y);
+  get('dot'+m).setAttribute('cx',100*x);get('dot'+m).setAttribute('cy',-100*y);
+  get('x'+m).textContent=display(x);get('y'+m).textContent=display(y);
+  get(m===1?'theta':'double').textContent=angleLabel(m*k)+' rad（'+15*m*k+'°）';
+ }
+ get('angle').setAttribute('aria-valuetext',angleLabel(k)+' ラジアン');
+ get('cx').textContent=display(2*Math.cos(t)**2-1);
+ get('sy').textContent=display(2*Math.sin(t)*Math.cos(t));
+}
+get('angle').addEventListener('input',update);
+get('reset').addEventListener('click',()=>{get('angle').value=2;update();});
+update();
+</script></html>
