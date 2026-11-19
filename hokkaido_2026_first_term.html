@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="ja"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>北海道大学 2026年度 前期試験｜みんなの数学データベース</title>
+<style>*{box-sizing:border-box}body{margin:0;background:#f4f7fb;color:#1d2939;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.8}header{background:linear-gradient(110deg,#17365d,#245b91);color:white;padding:28px 0}a{color:#176cae}.wrap{width:min(960px,calc(100% - 32px));margin:auto}header a{color:white}h1{font-size:clamp(24px,4vw,34px);margin:12px 0 4px}main{padding:28px 0 60px}.panel{background:white;border:1px solid #d9e5f1;border-radius:16px;padding:22px;margin-bottom:18px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:14px}.card{border:1px solid #dde6f0;border-radius:12px;padding:16px;background:#fff}h2{color:#17365d}h3{color:#17365d;margin:0 0 6px}.muted{color:#596b7e}.notice{background:#fff7e9;border-left:4px solid #cc8a20;padding:12px 16px;border-radius:8px}.btn{display:inline-block;background:#176cae;color:white;padding:9px 16px;border-radius:9px;text-decoration:none;font-weight:bold}footer{background:#132c4a;color:#e5eaf1;padding:20px 0;font-size:13px}
+h2{margin-top:0}h3{margin-top:1.15rem}.panel{padding:clamp(14px,3vw,22px)}
+.panel p{margin:.65rem 0}.scroll{overflow-x:auto;max-width:100%}
+table{border-collapse:collapse;width:100%;margin:1rem 0;text-align:left}
+th,td{padding:.5rem;border:1px solid #d9e5f1}th{background:#eef5fc}
+caption{text-align:left;font-weight:700;color:#17365d}
+figure{margin:1rem 0 0;border:1px solid #d9e5f1;border-radius:12px;padding:clamp(10px,2vw,16px)}
+canvas{display:block;width:100%;max-width:680px;height:auto;margin:.5rem auto}
+input[type=range]{display:block;width:100%;max-width:420px;accent-color:#176cae}
+output{font-weight:700;color:#17365d}section[id]{scroll-margin-top:1rem}
+</style><link rel="stylesheet" href="lesson_common_style.css">
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head><body>
+<header><div class="wrap"><div class="site-parent-link"><a href="hokkaido_university_exams.html">北海道大学の入試一覧に戻る</a></div><h1>北海道大学 2026年度 前期試験</h1></div></header>
+<main class="wrap">
+<section class="panel"><h2>北海道大学の公式問題</h2><ul>
+<li><a href="https://www.hokudai.ac.jp/admission/R08_Aexam_MathA.pdf">前期 数学αの問題（PDF）</a></li>
+<li><a href="https://www.hokudai.ac.jp/admission/R08_Aexam_MathB.pdf">前期 数学βの問題（PDF）</a></li>
+</ul><p>以下は「みんなの数学データベース」が作成した独自の解答・解説です。大問番号は大学のPDFに対応しています。</p></section>
+<nav class="panel" aria-label="解答の目次"><h2>解答の目次</h2>
+<p>数学α ｜ <a href="#a1">第1問</a>　<a href="#a2">第2問</a>　<a href="#a3">第3問</a>　<a href="#a4">第4問</a></p>
+<p>数学β ｜ <a href="#b1">第1問</a>　<a href="#b2">第2問</a>　<a href="#b3">第3問</a>　<a href="#b4">第4問</a>　<a href="#b5">第5問</a></p></nav>
+
+<section class="panel" id="a1"><h2>数学α 第1問　3次関数と面積</h2>
+<h3>(1) 極値</h3><p>導関数は \(f'(x)=3x^2-4x=x(3x-4)\) です。因数の符号を調べると、次の増減表になります。</p>
+<div class="scroll"><table><caption>増減表</caption><thead><tr><th scope="col">\(x\)</th><th scope="col">\(x&lt;0\)</th><th scope="col">\(0\)</th><th scope="col">\(0&lt;x&lt;\frac43\)</th><th scope="col">\(\frac43\)</th><th scope="col">\(x&gt;\frac43\)</th></tr></thead><tbody>
+<tr><th scope="row">\(f'(x)\)</th><td>＋</td><td>0</td><td>−</td><td>0</td><td>＋</td></tr>
+<tr><th scope="row">\(f(x)\)</th><td>増加</td><td>極大値 0</td><td>減少</td><td>極小値 \(-\frac{32}{27}\)</td><td>増加</td></tr></tbody></table></div>
+<h3>(2) 最大値</h3><p>区間の左端では \(f(0)=0\) です。一方、右端では \(f(a)=a^2(a-2)&gt;0\) です。増減表から最大値の候補は両端なので、最大値は \(\boxed{a^2(a-2)}\) です。</p>
+<h3>(3) 絶対値を含む積分</h3><p>\(f(x)=x^2(x-2)\) の符号は \(x=2\) を境に変わります。負の区間では符号を反転させると、面積が正になります。\(F(x)=\frac{x^4}{4}-\frac{2x^3}{3}\) とすると \(F(0)=0\)、\(F(2)=-\frac43\) なので、</p>
+<div class="scroll">\[\int_0^a |f(x)|\,\mathrm{d}x=-[F(x)]_0^2+[F(x)]_2^a=\boxed{\frac{a^4}{4}-\frac{2a^3}{3}+\frac83}.\]</div>
+<figure><label for="endpoint">積分区間の右端（\(a\)）</label> <output id="a-value" for="endpoint">2.8</output>
+<input id="endpoint" type="range" min="2.1" max="3.2" value="2.8" step="0.1">
+<canvas id="area-graph" width="680" height="360" role="img" aria-label="3次関数のグラフ。x軸より下と上の部分を塗り分けた図">負の区間は 0 から 2、正の区間は 2 から右端です。</canvas>
+<figcaption>橙色は \(x\) 軸より下、青色は上の領域です。右端を動かして、青色の面積がどう変わるか確かめましょう。面積の合計（近似値） <output id="area-value" for="endpoint"></output></figcaption></figure>
+</section>
+
+<section class="panel" id="a2"><h2>数学α 第2問　数列の置換</h2>
+<h3>(1) \(b_n\) の漸化式</h3>
+<div class="scroll">\[b_{n+1}=\frac{1}{\frac{2}{a_n+1}+2}=\frac{a_n+1}{2(a_n+2)}=\boxed{\frac{1-b_n}{2}}.\]</div>
+<h3>(2) 一般項</h3><p>定数 \(c\) が \(c=\frac{1-c}{2}\) を満たすとき、\(c=\frac13\) です。漸化式の両辺からこれを引くと、\(b_{n+1}-\frac13=-\frac12(b_n-\frac13)\) となります。</p>
+<p>\(b_1=\frac16\) なので、\(r_n=\left(-\frac12\right)^{n-1}\) と書けば \(b_n=\frac13-\frac16 r_n\)。置換を戻すと、</p>
+<div class="scroll">\[\boxed{a_n=\frac{6}{2-r_n}-2},\qquad r_n=\left(-\frac12\right)^{n-1}.\]</div>
+</section>
+
+<section class="panel" id="a3"><h2>数学α 第3問　垂線の足と四面体</h2>
+<h3>(1) 座標</h3><p>\(\overrightarrow{AB}=(0,0,2)\)、\(\overrightarrow{AC}=(-1,-1,-2)\) です。点 \(A\) に \(s\overrightarrow{AB}+t\overrightarrow{AC}\) を加えると、\(\boxed{H=(-t,1-t,2s-2t)}\) です。</p>
+<h3>(2) 垂線の足</h3><p>\(\overrightarrow{OH}\) が平面に垂直なら、平面内の独立な2方向との内積がともに0です。\(\overrightarrow{AB}\) との内積から \(4(s-t)=0\)。これを \(\overrightarrow{AC}\) との内積に代入すると \(2t-1=0\) です。</p>
+<div class="scroll">\[s=t=\frac12,\qquad \boxed{H=\left(-\frac12,\frac12,0\right)}.\]</div>
+<h3>(3) 体積</h3><p>底辺を \(AB\) とすると長さは2です。\(AB\) は \(z\) 軸方向なので、\(C\) から直線 \(AB\) までの距離は \(xy\) 平面に投影して \(\sqrt{(-1)^2+(-1)^2}=\sqrt2\)。よって底面積は \(\sqrt2\)、四面体の高さは \(OH=\frac1{\sqrt2}\) です。</p>
+<div class="scroll">\[V=\frac13\cdot\sqrt2\cdot\frac1{\sqrt2}=\boxed{\frac13}.\]</div>
+</section>
+
+<section class="panel" id="a4"><h2>数学α 第4問　確率と素因数</h2>
+<p>一回ごとに、素因数 \(2,3,5\) のどれか一つが加わります。それぞれの確率は \(\frac46,\frac16,\frac16\) です。</p>
+<h3>(1) 4の倍数</h3><p>素因数2が2個以上必要です。3回中ちょうど2回か3回なので、</p>
+<div class="scroll">\[\binom32\left(\frac23\right)^2\frac13+\left(\frac23\right)^3=\boxed{\frac{20}{27}}.\]</div>
+<h3>(2) 平方数</h3><p>各素因数の指数がすべて偶数になります。指数の組は「4個とも同じ」または「2個ずつ2種類」です。表は、さいころの目の並び \(6^4\) 通りのうちの件数です。</p>
+<table><caption>平方数になる場合</caption><thead><tr><th scope="col">素因数の内訳</th><th scope="col">目の並びの数</th></tr></thead><tbody>
+<tr><td>2を4個</td><td>256</td></tr><tr><td>3を4個／5を4個</td><td>1ずつ</td></tr>
+<tr><td>2と3を2個ずつ／2と5を2個ずつ</td><td>96ずつ</td></tr>
+<tr><td>3と5を2個ずつ</td><td>6</td></tr></tbody></table>
+<p>たとえば2と3を2個ずつなら、2の位置の選び方が \(\binom42=6\) 通りあり、それぞれ2を生む目が4通りずつなので \(6\cdot4^2=96\) 通りです。合計は456通りで、確率は \(\boxed{\frac{19}{54}}\) です。</p></section>
+
+<section class="panel" id="b1"><h2>数学β 第1問　分数型の漸化式</h2>
+<h3>(1) −2にならないことの証明</h3><p>初項は \(-8\) です。仮に \(a_m=-2\) となる最小の番号 \(m\) があれば、\(m\geqq2\) です。漸化式より \(-2(a_{m-1}+1)=2\)、すなわち \(a_{m-1}=-2\)。最小の番号を選んだことに矛盾します。</p>
+<h3>(2) \(b_n\) の漸化式</h3><p>(1) によって置換の分母は0になりません。もとの漸化式から \(a_n+1\ne0\) なので、代入して整理できます。</p>
+<div class="scroll">\[b_{n+1}=\frac{a_n+1}{2(a_n+2)}=\boxed{\frac{1-b_n}{2}}.\]</div>
+<h3>(3) 一般項</h3><p>\(b_1=-\frac16\) なので、\(b_n-\frac13=-\frac12\left(-\frac12\right)^{n-1}\) です。置換を戻すと、</p>
+<div class="scroll">\[\boxed{a_n=\frac{6}{2-3r_n}-2},\qquad r_n=\left(-\frac12\right)^{n-1}.\]</div>
+</section>
+
+<section class="panel" id="b2"><h2>数学β 第2問　三角関数の積分と極限</h2>
+<h3>(1) 部分積分</h3><p>積分変数は \(t\) です。\(\cos(x-t)\) を \(t\) で微分すると \(\sin(x-t)\) になるので、</p>
+<div class="scroll">\[\int_0^x t\sin(x-t)\,\mathrm{d}t=[t\cos(x-t)]_0^x-\int_0^x\cos(x-t)\,\mathrm{d}t=\boxed{x-\sin x}.\]</div>
+<h3>(2) \(f(x)\) の計算</h3><p>平方を展開すると、最初の項の積分は \(\int_0^x\sin^2 u\,\mathrm{d}u=\frac x2-\frac{\sin 2x}{4}\) です。交差項は (1) の \(-\frac12\) 倍、最後は \(\int_0^x\frac{t^2}{16}\,\mathrm{d}t=\frac{x^3}{48}\) です。合計すると、</p>
+<div class="scroll">\[\boxed{f(x)=\frac{\sin x(1-\cos x)}2+\frac{x^3}{48}}.\]</div>
+<h3>(3) 極限</h3><p>\(1-\cos x=2\sin^2\frac x2\) を使うと、近づけたい式を基本極限の積にできます。</p>
+<div class="scroll">\[\frac{f(x)}{x^3}=\frac14\frac{\sin x}{x}\left(\frac{\sin(x/2)}{x/2}\right)^2+\frac1{48}\ \longrightarrow\ \boxed{\frac{13}{48}}.\]</div>
+</section>
+
+<section class="panel" id="b3"><h2>数学β 第3問　複素数平面の軌跡</h2>
+<h3>(1) 実部と虚部</h3><p>\(\alpha=u+vi\) とすると、和と差の絶対値はそれぞれ \(2|u|\) と \(2|v|\) です。第2象限では \(u&lt;0\)、\(v&gt;0\) なので \(u=-v\)。さらに \(u^2+v^2=1\) より、\(\boxed{\alpha=\frac{-1+i}{\sqrt2}}\) です。</p>
+<h3>(2) 単位円から直線へ</h3><p>虚部が正の1の3乗根は \(\beta=\frac{-1+\sqrt3\,i}{2}\) です。\(z=\beta+\frac1w\) を \(|z|=1\) に代入し、両辺に \(|w|\) を掛けると \(|\beta w+1|=|w|\)。\(|\beta|=1\) なので両辺を2乗して整理すると、\(2\operatorname{Re}(\beta w)+1=0\) です。</p>
+<p>\(w=u+vi\) と書けば、軌跡は \(\boxed{u+\sqrt3\,v=1}\) です。この直線は原点を通らず、直線上のどの点からも \(z=\beta+\frac1w\) に戻せます。その点は単位円上にあり \(\beta\) と異なるので、軌跡は直線全体です。</p>
+<figure><canvas id="complex-graph" width="680" height="300" role="img" aria-label="実軸との交点が1、虚軸との交点が1割るルート3の右下がりの直線"></canvas><figcaption>実軸上の \(1\) と虚軸上の \(\frac{i}{\sqrt3}\) を結ぶ直線です。</figcaption></figure>
+</section>
+
+<section class="panel" id="b4"><h2>数学β 第4問　四面体の体積の最小値</h2>
+<h3>(1) \(x\) 軸との交点</h3><p>\(xz\) 平面で直線 \(CP\) を調べます。\(z=h+(3-h)x\) なので、\(z=0\) とおくと \(\boxed{x_A=\frac h{h-3}}\) です。</p>
+<h3>(2) 体積</h3><p>同様に \(yz\) 平面で \(CQ\) を調べると \(y_B=\frac{2h}{h-3}\) です。底面 \(OAB\) は直角三角形、高さは \(OC=h\) です。</p>
+<div class="scroll">\[V=\frac13\cdot\frac12\cdot\frac{h}{h-3}\cdot\frac{2h}{h-3}\cdot h=\boxed{\frac{h^3}{3(h-3)^2}}.\]</div>
+<h3>(3) 最小値</h3><p>\(V'(h)=\frac{h^2(h-9)}{3(h-3)^3}\) です。\(h&gt;3\) では導関数の符号は \(h-9\) で決まり、\(3&lt;h&lt;9\) で減少、\(h&gt;9\) で増加します。よって \(h=9\) のとき最小値 \(\boxed{\frac{27}{4}}\) をとります。</p>
+</section>
+
+<section class="panel" id="b5"><h2>数学β 第5問　確率と終了までの期待値</h2>
+<h3>(1) 4の倍数</h3><p>2倍が0回または1回の場合を全体から引きます。1回あたりの2倍の確率は \(\frac23\) です。</p>
+<div class="scroll">\[\boxed{1-\left(\frac13\right)^n-n\frac23\left(\frac13\right)^{n-1}=1-\frac{2n+1}{3^n}}.\]</div>
+<h3>(2) 終了までの回数</h3><p>終了回数を \(T\) とします。毎回少なくとも2倍なので4回までに必ず終了します。「さらに1回必要か」を足し上げると期待値になります。</p>
+<table><caption>各回を終えてもまだ続く確率</caption><thead><tr><th scope="col">済んだ回数</th><th scope="col">続く条件</th><th scope="col">確率</th></tr></thead><tbody>
+<tr><td>0・1回</td><td>必ず続く</td><td>各1</td></tr>
+<tr><td>2回</td><td>15・25に達する3通りの目の並びを除く</td><td>\(\frac{33}{36}=\frac{11}{12}\)</td></tr>
+<tr><td>3回</td><td>積が8または12</td><td>\(\frac{4^3+3\cdot4^2}{6^3}=\frac{14}{27}\)</td></tr>
+<tr><td>4回</td><td>必ず終了済み</td><td>0</td></tr></tbody></table>
+<p>たとえば3回で積が12となるには、2倍が2回、3倍が1回です。3倍の位置は3通り、2倍になる目は各4通りです。</p>
+<div class="scroll">\[E(T)=1+1+\frac{11}{12}+\frac{14}{27}=\boxed{\frac{371}{108}}\ \text{（回）}.\]</div></section>
+<p><a href="https://www.hokudai.ac.jp/admission/faculty/general/R8examanswer.html">北海道大学の公式公開資料一覧</a></p>
+</main>
+<footer><div class="wrap"><div class="site-parent-link"><a href="hokkaido_university_exams.html">北海道大学の入試一覧に戻る</a></div>みんなの数学データベース</div></footer>
+<script>
+(() => {
+  const endpoint = document.getElementById('endpoint');
+  const area = document.getElementById('area-graph').getContext('2d');
+  const complex = document.getElementById('complex-graph').getContext('2d');
+  const f = x => x * x * (x - 2);
+  const primitive = x => x ** 4 / 4 - 2 * x ** 3 / 3;
+
+  function line(ctx, x1, y1, x2, y2, color, width = 1) {
+    ctx.beginPath();
+    ctx.strokeStyle = color;
+    ctx.lineWidth = width;
+    ctx.moveTo(x1, y1);
+    ctx.lineTo(x2, y2);
+    ctx.stroke();
+  }
+
+  function drawArea() {
+    const a = endpoint.valueAsNumber;
+    const X = x => 54 + 175 * x;
+    const Y = y => 276 - 17 * y;
+    area.clearRect(0, 0, 680, 360);
+
+    for (const [start, end, color] of [[0, 2, '#ffcd99'], [2, a, '#abd8fa']]) {
+      area.beginPath();
+      area.moveTo(X(start), Y(0));
+      for (let i = 0; i <= 100; i++) {
+        const x = start + (end - start) * i / 100;
+        area.lineTo(X(x), Y(f(x)));
+      }
+      area.lineTo(X(end), Y(0));
+      area.closePath();
+      area.fillStyle = color;
+      area.fill();
+    }
+    line(area, X(0), Y(0), X(3.42), Y(0), '#64748b');
+    line(area, X(0), Y(-2), X(0), Y(14), '#64748b');
+    line(area, X(a), Y(0), X(a), Y(f(a)), '#176cae', 2);
+    area.beginPath();
+    area.moveTo(X(0), Y(0));
+    for (let i = 1; i <= 160; i++) {
+      const x = 3.2 * i / 160;
+      area.lineTo(X(x), Y(f(x)));
+    }
+    area.strokeStyle = '#17365d';
+    area.lineWidth = 3;
+    area.stroke();
+    area.font = '20px Georgia, serif';
+    area.fillStyle = '#17365d';
+    area.fillText('0', X(0) - 16, Y(0) + 23);
+    area.fillText('2', X(2) - 5, Y(0) + 23);
+    area.fillText('a', X(a) + 1, Y(0) + 25);
+    area.fillText('x', X(3.46), Y(0) + 5);
+    area.fillText('y', X(0) - 18, Y(14));
+    document.getElementById('a-value').value = a.toFixed(1);
+    document.getElementById('area-value').value = (primitive(a) + 8 / 3).toFixed(3);
+  }
+
+  function drawComplex() {
+    const X = u => 320 + 110 * u;
+    const Y = v => 157 - 110 * v;
+    line(complex, X(-2.6), Y(0), X(2.8), Y(0), '#64748b');
+    line(complex, X(0), Y(-1.14), X(0), Y(1.22), '#64748b');
+    line(complex, X(-1), Y(2 / Math.sqrt(3)), X(2.65), Y(-1.65 / Math.sqrt(3)), '#176cae', 4);
+    complex.font = '21px Georgia, serif';
+    complex.fillStyle = '#17365d';
+    for (const [u, v] of [[1, 0], [0, 1 / Math.sqrt(3)]]) {
+      complex.beginPath();
+      complex.arc(X(u), Y(v), 5, 0, Math.PI * 2);
+      complex.fill();
+    }
+    complex.fillText('1', X(1) + 5, Y(0) + 26);
+    complex.fillText('i / √3', X(0) + 16, Y(1 / Math.sqrt(3)) - 8);
+    complex.fillText('O', X(0) - 24, Y(0) + 23);
+    complex.fillText('実軸', X(2.62), Y(0) + 25);
+    complex.fillText('虚軸', X(0) + 12, Y(1.18));
+  }
+
+  endpoint.addEventListener('input', drawArea);
+  drawArea();
+  drawComplex();
+})();
+</script>
+
+</body></html>
