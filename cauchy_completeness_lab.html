@@ -3,7 +3,10 @@
 <title>コーシー列と実数の完備性｜みんなの数学データベース</title>
 <style>
 :root{color-scheme:light;--navy:#17365d;--blue:#216caa;--line:#d6e3f0;--ink:#203348}*{box-sizing:border-box}body{margin:0;color:var(--ink);background:#f4f8fc;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.8}header{background:linear-gradient(115deg,#17365d,#2769a2);color:white;padding:26px 0 30px}.wrap{width:min(980px,calc(100% - 30px));margin:auto}a{color:#19659e}header a{color:#fff}.eyebrow{font-size:13px;opacity:.9}h1{font-size:clamp(25px,4vw,36px);margin:8px 0}main{padding:24px 0 55px}section{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;margin:18px 0;box-shadow:0 3px 20px #17365d08}h2{color:var(--navy);font-size:clamp(19px,3.2vw,25px);margin:0 0 12px}h3{color:#205b90}p{margin:9px 0} .intro{background:#eef6ff;border-left:5px solid #2a7bb9;padding:13px 17px;border-radius:9px}.math{font-family:Georgia,"Times New Roman",serif;font-size:1.1em}.formula{padding:12px 14px;background:#f3f8fe;border-radius:9px;overflow-x:auto;font-size:clamp(16px,2.2vw,21px);text-align:center}.controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.control{padding:13px;border:1px solid var(--line);border-radius:10px;background:#fbfdff}.control label{display:flex;justify-content:space-between;gap:10px;font-weight:700;color:#183b61}.control output{color:#145a95;font-variant-numeric:tabular-nums}select,input[type=range]{width:100%;accent-color:#2075b3;min-height:34px}select{font-size:16px;padding:10px;border:1px solid #a9c4dd;border-radius:8px;background:#fff}.plot{display:block;width:100%;height:auto;background:white;border:1px solid var(--line);border-radius:10px;touch-action:pan-y}.legend{display:flex;flex-wrap:wrap;gap:15px;font-size:13px;color:#435e78}.legend span::before{content:'';display:inline-block;width:13px;height:13px;border-radius:4px;background:var(--c);margin-right:5px;vertical-align:-1px}.result{padding:12px 15px;border-radius:10px;background:#eff5fb;border-left:4px solid #2675b5;font-weight:600}.sm{font-size:13px;color:#506980}.note{padding:14px;background:#fff7e8;border-radius:10px;border-left:4px solid #d69b36}.answer{border:1px solid var(--line);border-radius:10px;padding:12px;margin:10px 0}summary{cursor:pointer;color:var(--blue);font-weight:700}footer{text-align:center;padding:25px;background:#132c4a;color:white}footer a{color:white}@media(max-width:650px){section{padding:16px}.controls{grid-template-columns:1fr}header{padding:22px 0}.legend{gap:8px}}
-</style></head><body>
+</style><link rel="stylesheet" href="lesson_common_style.css">
+</head><body>
+<nav class="site-return-links" aria-label="ページの移動"><a href="analysis.html">解析学 に戻る</a></nav>
+
 <header><div class="wrap"><a href="analysis.html">← 解析学の目次へ</a><div class="eyebrow">みんなの数学データベース／解析学・操作型教材</div><h1>コーシー列と実数の完備性</h1><div>「極限値が先に分からなくても、数列の収束を調べられる」</div></div></header>
 <main class="wrap">
 <section><h2>1．コーシー列とは？</h2><p>数列の<strong>後ろのほうの項どうし</strong>が、いくらでも近くなる数列を<strong>コーシー列</strong>といいます。</p><div class="formula math">任意の ε &gt; 0 に対して、ある N が存在し、<br>m, n ≥ N ならば |a<sub>n</sub> − a<sub>m</sub>| &lt; ε</div><p>「ある時点より先では、どの2項を選んでも距離が ε より小さい」という意味です。極限値 <span class="math">L</span> を先に知らなくても定義できます。</p><p class="intro">ε–N論法：項と<strong>極限値</strong>の距離を調べる。<br>コーシー条件：<strong>項と項</strong>の距離を調べる。</p></section>
@@ -45,4 +48,5 @@ let msg;if(type==='inv')msg=`厳密な保証：N > 1/ε = ${fmt(1/eps)} とす�
 }
 ids.forEach(k=>el[k].addEventListener(k==='seq'?'change':'input',draw));draw();
 })();
-</script></body></html>
+</script><nav class="site-return-links" aria-label="ページの移動"><a href="analysis.html">解析学 に戻る</a></nav>
+</body></html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>体積｜数学Ⅲ 第6章 積分法の応用｜みんなの数学データベース</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f2f7fc;color:#18314c;font:16px/1.8 -apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif} .wrap{max-width:980px;margin:auto;padding:0 18px}header{background:linear-gradient(110deg,#17365d,#215f99);color:white;padding:22px 0 29px}header h1{margin:8px 0 3px;font-size:clamp(27px,4.5vw,35px);line-height:1.35}header p{margin:0;color:#dbeafa;font-size:14px}main{padding-top:22px;padding-bottom:45px}.goal,.panel{background:white;border:1px solid #d8e5f2;border-radius:14px;padding:21px 24px;margin-bottom:20px;box-shadow:0 4px 17px #17365d0a}.goal .tag{display:inline-block;background:#e5f2ff;color:#1a5e8e;border-radius:30px;padding:3px 12px;font-size:13px;font-weight:700}.goal h2{font-size:22px;color:#154d7c;margin:11px 0 8px}.goal p{margin:0;color:#4d6073}.panel h2{font-size:21px;color:#184f7b;margin:0 0 13px;padding-bottom:8px;border-bottom:2px solid #e1eff9}.panel h3{font-size:18px;color:#215882;margin:19px 0 7px}p{margin:9px 0}.formula{background:#f5faff;border:1px solid #e2edf7;border-radius:9px;padding:10px 12px;margin:13px 0;overflow-x:auto}.tip{background:#eaf4fc;border-left:4px solid #3488c4;border-radius:7px;padding:11px 14px;margin:14px 0}.example{border:1px solid #dce7f0;border-radius:11px;padding:14px 16px;margin:14px 0}.example h3{margin:0 0 7px}.solution{background:#f6fbff;border-radius:8px;padding:9px 13px;margin:10px 0}.quiz{border:1px solid #dfebf5;border-radius:10px;padding:11px 15px;margin:11px 0}summary{color:#11629b;cursor:pointer;font-weight:700;margin-top:7px}.graphbox{border:1px solid #dce8f2;border-radius:12px;background:#fbfdff;padding:12px}#volumeGraph{display:block;width:100%;height:auto;max-height:360px}input[type=range]{width:100%;accent-color:#1a70ac}.readout{background:#ebf5fc;border-radius:8px;padding:10px;font-size:15px} .back{display:flex;gap:10px;flex-wrap:wrap;margin:23px 0}.back a{display:inline-block;background:#e6f1fc;color:#145c93;padding:9px 14px;border-radius:8px;text-decoration:none;font-weight:700}footer{background:#112e4c;color:#e8f2fd;padding:19px 0;font-size:13px}mjx-container{max-width:100%;font-size:100%!important}mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;padding:2px 0;margin:.65em 0!important}a:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #eda22c;outline-offset:3px}@media(max-width:560px){.goal,.panel{padding:17px 15px}.goal h2{font-size:20px}}
+</style>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']],processEscapes:true},svg:{fontCache:'global'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+<script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script><style>
+/* 数学Ⅲ 共通デザイン（全教材統一） */
+.md3-unified-header{background:linear-gradient(110deg,#17365d,#215f99)!important;color:#fff!important;padding:24px 0 29px!important;margin:0!important;border-radius:0!important}
+.md3-unified-header .md3-width,.md3-unified-footer .md3-width{max-width:970px;margin:0 auto;padding:0 17px}
+.md3-unified-header .md3-breadcrumb,.md3-unified-header .md3-subtitle{font-size:14px!important;color:#e4effc!important;line-height:1.65!important;margin:0!important}
+.md3-unified-header h1{font-family:inherit!important;color:#fff!important;font-size:clamp(25px,4.5vw,35px)!important;line-height:1.4!important;margin:8px 0 5px!important;padding:0!important;border:none!important}
+body>main,body>main.wrap{padding-top:22px!important;margin-top:0!important}
+body>main>section:first-child{margin-top:0!important}
+body>main>section:first-child:is(.goal,.standard-lesson-goal){background:#fff!important;border:1px solid #dbe6f1!important;border-radius:14px!important;padding:22px 25px!important;margin-bottom:22px!important;box-shadow:0 3px 13px #193a5b0a!important}
+body>main>section:first-child:is(.goal,.standard-lesson-goal)>h2{color:#174b78!important;font-size:23px!important;line-height:1.5!important;margin:10px 0 7px!important;border:0!important;padding:0!important}
+body>main>section:first-child:is(.goal,.standard-lesson-goal)>span:first-child{display:inline-block!important;color:#145888!important;background:#e6f3ff!important;border-radius:20px!important;font-size:13px!important;font-weight:700!important;padding:2px 12px!important}
+body>main>section:first-child:is(.goal,.standard-lesson-goal)>p{color:#445d72!important;margin:0!important}
+.md3-unified-navigation{display:flex!important;flex-wrap:wrap!important;gap:10px!important;max-width:970px!important;margin:26px auto 19px!important;padding:0 2px!important;align-items:center!important;position:static!important}
+.md3-unified-navigation a{display:inline-block!important;background:#e5f1fd!important;color:#175988!important;padding:10px 15px!important;border-radius:9px!important;font-size:15px!important;text-decoration:none!important;font-weight:700!important;line-height:1.5!important}
+.md3-unified-navigation a:hover{background:#d2e7fa!important}
+.md3-unified-footer{display:block!important;background:#112e4c!important;color:#ecf5fc!important;padding:20px 0!important;font-size:13px!important;text-align:left!important;margin:0!important;border:0!important}
+mjx-container{max-width:100%!important}mjx-container[display="true"]{overflow-x:auto!important;overflow-y:hidden!important}
+@media(max-width:640px){body>main>section:first-child:is(.goal,.standard-lesson-goal){padding:17px 15px!important}}
+mjx-container svg{width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;display:inline-block!important}
+</style><style id="md3-final-unified-css">
+/* 数学Ⅲ全授業の構造を統一（グラフのsvgには干渉しない） */
+html,body{margin:0}body{background:#f2f7fc;color:#19334e;line-height:1.8;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif}
+#md3-header{background:linear-gradient(110deg,#17365d,#215f99)!important;color:white!important;padding:24px 0 29px!important;min-height:0!important}
+#md3-header .md3-common-width{max-width:970px;margin:auto;padding:0 17px}
+#md3-header .md3-common-top{font-size:14px!important;font-weight:400!important;color:#e4effc!important;line-height:1.6!important;margin:0!important}
+#md3-header h1{color:#fff!important;font-size:clamp(25px,4.5vw,35px)!important;line-height:1.4!important;margin:8px 0 5px!important;padding:0!important;border:0!important;text-align:left!important}
+#md3-header .md3-common-bottom{color:#e4effc!important;font-size:14px!important;line-height:1.6!important;margin:0!important}
+#md3-main{padding-top:22px!important;padding-bottom:40px!important;box-sizing:border-box!important;max-width:970px!important;margin:0 auto!important;width:calc(100% - 34px)!important}
+#md3-goal{box-sizing:border-box!important;background:white!important;border:1px solid #dbe6f1!important;border-radius:14px!important;margin:0 0 22px!important;padding:22px 25px!important;box-shadow:0 3px 13px #193a5b0a!important;color:#19334e!important;width:100%!important;max-width:none!important;display:block!important}
+#md3-goal .md3-goal-tag{display:inline-block!important;background:#e6f3ff!important;color:#145888!important;border-radius:20px!important;font-weight:700!important;padding:2px 12px!important;font-size:13px!important;line-height:1.7!important}
+#md3-goal .md3-goal-title{border:0!important;padding:0!important;font-size:23px!important;color:#174b78!important;margin:10px 0 7px!important;line-height:1.5!important;text-align:left!important}
+#md3-goal p{margin:0!important;color:#445d72!important;font-size:16px!important;line-height:1.8!important}
+#md3-bottom-return{max-width:970px!important;margin:25px auto 0!important;padding:0!important;display:block!important;text-align:left!important;border:0!important;background:none!important;box-shadow:none!important}
+#md3-bottom-return a{color:#175988!important;background:#e5f1fd!important;border-radius:9px!important;padding:10px 15px!important;font-size:15px!important;font-weight:700!important;display:inline-block!important;text-decoration:none!important;line-height:1.7!important;border:0!important}
+#md3-footer{background:#112e4c!important;color:#ecf5fc!important;font-size:13px!important;line-height:1.7!important;padding:20px 0!important;margin:0!important;text-align:left!important;border:0!important}
+#md3-footer .md3-common-width{max-width:970px;margin:auto;padding:0 17px}
+#md3-main mjx-container svg{max-width:none!important;width:auto!important;height:auto!important}
+mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;max-width:100%}
+@media(max-width:640px){#md3-goal{padding:17px 15px!important}#md3-goal .md3-goal-title{font-size:20px!important}}
+</style><link rel="stylesheet" href="lesson_common_style.css">
+</head><body>
+<nav class="site-return-links" aria-label="ページの移動"><a href="math_subject_3.html">数学Ⅲの授業 に戻る</a><a href="math3_areas_by_integration.html">前の講義 · 面積｜数学Ⅲ 第6章 積分法の応用</a></nav>
+<header id="md3-header"><div class="md3-common-width"><div class="md3-common-top">みんなの数学データベース ／ 高校数学 ／ 数学Ⅲ</div><h1>体積</h1><p class="md3-common-bottom">数学Ⅲ ／ </p></div></header>
+<main class="wrap" id="md3-main"><section class="md3-standard-goal" id="md3-goal"><span class="md3-goal-tag">授業のねらい</span><h2 class="md3-goal-title">断面積を積分して立体の体積を求められるようになる</h2><p>断面積による体積の考え方を理解し、回転体の円板法・ワッシャー法、2曲線で囲まれた部分の回転、回転体以外の立体の体積を計算できるようになります。</p></section>
+<section class="panel"><h2>1．断面積と体積</h2><p>立体を座標軸に垂直な薄い板に分けると、各板の体積は「断面積 × 厚さ」に近づきます。厚さを十分小さくして足し合わせると、定積分で体積を表せます。</p>
+<div class="formula">\[\boxed{V=\int_a^b A(x)\,dx}\]</div><p>ここで \(A(x)\) は、位置 \(x\) での断面積です。断面積を正しく求めることが最も重要です。</p>
+<div class="tip"><strong>注意：</strong>立体の断面積が負になることはありません。長さ・面積・体積の単位にも気を付けましょう。</div></section>
+<section class="panel"><h2>2．回転体の体積（円板法）</h2><p>\(y=f(x)\geq0\) と \(x\) 軸で囲まれた部分を、\(x\) 軸のまわりに1回転させます。断面は半径 \(f(x)\) の円なので、断面積は \(\pi\{f(x)\}^2\) です。</p>
+<div class="formula">\[\boxed{V=\pi\int_a^b \{f(x)\}^2\,dx}\]</div>
+<h3>動く図：断面を動かして体積を考える</h3><p>\(y=\sqrt{x}\)（\(0\leq x\leq2\)）を \(x\) 軸のまわりに回転させた立体を考えます。スライダーで断面の位置を変えてください。図の楕円は、半径が \(\sqrt{x}\) の円を斜めから見た模式図です。</p>
+<div class="graphbox"><svg aria-label="回転体の断面の位置と大きさを示す動く図" id="volumeGraph" role="img" viewbox="0 0 760 350"><g id="volumeDrawing"></g></svg><label for="sectionX">断面の位置 x = <output id="sectionValue">1.0</output></label><input id="sectionX" max="2" min="0.1" step="0.05" type="range" value="1"/><div aria-live="polite" class="readout" id="sectionInfo">断面積：π、体積：2π</div></div>
+<p>全体の体積は、次のように計算できます。</p><div class="formula">\[V=\pi\int_0^2(\sqrt{x})^2\,dx=\pi\left[\frac{x^2}{2}\right]_0^2=2\pi\]</div></section>
+<section class="panel"><h2>3．穴のある回転体（ワッシャー法）</h2><p>外側の半径を \(R(x)\)、内側の半径を \(r(x)\) とすると、断面はドーナツ状になります。断面積は「外側の円の面積 − 内側の円の面積」です。</p><div class="formula">\[\boxed{V=\pi\int_a^b\bigl(R(x)^2-r(x)^2\bigr)\,dx}\]</div><div class="tip">積分する前に、回転軸から測った<strong>外側と内側の半径</strong>を図で確かめましょう。回転軸が \(y=k\) の場合には、軸からの距離で半径を表します。</div></section>
+<section class="panel"><h2>4．回転体以外の立体</h2><p>断面が正方形、三角形、半円などの場合も、断面積 \(A(x)\) が求められれば同じ公式で体積が計算できます。</p><p>例えば、一辺が \(x\) の正方形が \(x\) 軸に垂直な断面となる立体（\(0\leq x\leq2\)）では、</p><div class="formula">\[V=\int_0^2 x^2\,dx=\left[\frac{x^3}{3}\right]_0^2=\frac83\]</div></section>
+<section class="panel"><h2>5．例題と詳しい解説</h2>
+<div class="example"><h3>例題1　放物線の回転体</h3><p>\(y=x\)、\(x=0\)、\(x=2\)、\(x\) 軸で囲まれた部分を \(x\) 軸のまわりに回転させる。体積を求めなさい。</p><div class="solution"><p>半径は \(x\) なので断面積は \(\pi x^2\) です。</p><div class="formula">\[V=\pi\int_0^2 x^2\,dx=\pi\left[\frac{x^3}{3}\right]_0^2=\boxed{\frac{8\pi}{3}}\]</div></div></div>
+<div class="example"><h3>例題2　2曲線の間を回転する</h3><p>\(y=\sqrt{x}\) と \(y=x\) で囲まれた部分を \(x\) 軸のまわりに回転させた体積を求めなさい。</p><div class="solution"><p>交点は \(x=0,1\)。\(0\le x\le1\) では \(\sqrt{x}\ge x\) なので、外半径は \(\sqrt{x}\)、内半径は \(x\)。</p><div class="formula">\[V=\pi\int_0^1(x-x^2)\,dx=\pi\left[\frac{x^2}2-\frac{x^3}3\right]_0^1=\boxed{\frac\pi6}\]</div></div></div>
+<div class="example"><h3>例題3　\(y\) 軸まわりの回転</h3><p>\(x=y^2\)、\(y=0\)、\(y=2\)、\(y\) 軸で囲まれた部分を \(y\) 軸のまわりに回転させる。体積を求めなさい。</p><div class="solution"><p>\(y\) に垂直に切ると、半径が \(y^2\) の円です。</p><div class="formula">\[V=\pi\int_0^2 y^4\,dy=\pi\left[\frac{y^5}5\right]_0^2=\boxed{\frac{32\pi}{5}}\]</div></div></div>
+<div class="example"><h3>例題4　回転軸が \(x\) 軸以外</h3><p>\(y=x^2\) と \(y=1\) で囲まれた部分を、直線 \(y=1\) のまわりに回転させる。体積を求めなさい。</p><div class="solution"><p>交点は \(x=\pm1\)。回転軸からの半径は \(1-x^2\)。</p><div class="formula">\[\begin{aligned}V&amp;=\pi\int_{-1}^{1}(1-x^2)^2\,dx\\&amp;=2\pi\int_0^1(1-2x^2+x^4)\,dx=\boxed{\frac{16\pi}{15}}\end{aligned}\]</div></div></div>
+<div class="example"><h3>例題5　半円形の断面</h3><p>\(0\le x\le2\) の各点で、直径が \(2x\) の半円を断面にもつ立体の体積を求めなさい。</p><div class="solution"><p>半径は \(x\) なので、半円の面積は \(A(x)=\frac12\pi x^2\)。</p><div class="formula">\[V=\frac\pi2\int_0^2x^2\,dx=\boxed{\frac{4\pi}{3}}\]</div></div></div></section>
+<section class="panel"><h2>6．練習問題</h2><p>自分で計算してから、解答・解説を開いて確かめましょう。</p>
+<div class="quiz"><strong>問1</strong>　\(y=x^2\)（\(0\le x\le1\)）と \(x\) 軸に囲まれた部分を \(x\) 軸まわりに回転させる。<details><summary>解答・解説</summary><div class="formula">\[V=\pi\int_0^1x^4\,dx=\boxed{\frac\pi5}\]</div></details></div>
+<div class="quiz"><strong>問2</strong>　\(y=\sqrt{x}\)（\(0\le x\le4\)）を \(x\) 軸まわりに回転させる。<details><summary>解答・解説</summary><div class="formula">\[V=\pi\int_0^4x\,dx=\boxed{8\pi}\]</div></details></div>
+<div class="quiz"><strong>問3</strong>　\(y=2\) と \(y=x\)（\(0\le x\le2\)）の間を \(x\) 軸まわりに回転させる。<details><summary>解答・解説</summary><div class="formula">\[V=\pi\int_0^2(4-x^2)\,dx=\boxed{\frac{16\pi}{3}}\]</div></details></div>
+<div class="quiz"><strong>問4</strong>　\(x=y\)（\(0\le y\le3\)）を \(y\) 軸まわりに回転させる。<details><summary>解答・解説</summary><div class="formula">\[V=\pi\int_0^3y^2\,dy=\boxed{9\pi}\]</div></details></div>
+<div class="quiz"><strong>問5</strong>　断面が一辺 \(\sqrt{x}\) の正方形で、\(1\le x\le4\) の立体の体積を求める。<details><summary>解答・解説</summary><div class="formula">\[V=\int_1^4x\,dx=\boxed{\frac{15}{2}}\]</div></details></div>
+<div class="quiz"><strong>問6</strong>　\(y=1-x^2\)（\(-1\le x\le1\)）と \(x\) 軸に囲まれた部分を \(x\) 軸まわりに回転させる。<details><summary>解答・解説</summary><div class="formula">\[V=\pi\int_{-1}^1(1-2x^2+x^4)\,dx=\boxed{\frac{16\pi}{15}}\]</div></details></div></section>
+<section class="panel"><h2>7．発展問題とまとめ</h2><h3>発展：体積を求める方向を選ぶ</h3><p>\(y=x^2\)、\(x=0\)、\(y=1\) で囲まれた部分を \(y\) 軸のまわりに回転させる。\(y\) に垂直な断面は半径 \(\sqrt y\) の円です。</p><div class="formula">\[V=\pi\int_0^1(\sqrt y)^2\,dy=\boxed{\frac\pi2}\]</div><div class="tip"><strong>まとめ：</strong>まず回転軸と断面の向きを決め、断面積を式にし、最後に積分します。穴のある回転体では「外側の半径の2乗 − 内側の半径の2乗」です。</div></section>
+<nav id="md3-bottom-return"><a href="math_subject_3.html">← 数学Ⅲに戻る</a></nav></main>
+<script>(function(){const s=document.getElementById('sectionX'),v=document.getElementById('sectionValue'),g=document.getElementById('volumeDrawing'),info=document.getElementById('sectionInfo');if(!s||!g)return;
+const X=x=>95+x*255,Y=y=>178-y*75;
+function draw(){let a=+s.value,r=Math.sqrt(a),px=X(a),ry=r*75;
+let top=[],bot=[];for(let i=0;i<=100;i++){let x=i/50, yy=Math.sqrt(x);top.push((i?'L':'M')+X(x).toFixed(2)+' '+Y(yy).toFixed(2));bot.push('L'+X(x).toFixed(2)+' '+(178+yy*75).toFixed(2));}
+let path=top.join(' ')+' '+bot.reverse().join(' ')+' Z';
+let axes='<line x1="75" y1="178" x2="650" y2="178" stroke="#42566d" stroke-width="2"/><line x1="95" y1="32" x2="95" y2="324" stroke="#42566d" stroke-width="2"/><text x="654" y="173" font-size="16">x</text>';
+let shape='<path d="'+path+'" fill="#d6eafb" stroke="#236da2" stroke-width="2" opacity=".88"/>';
+let disc='<ellipse cx="'+px+'" cy="178" rx="'+(Math.max(8,r*25))+'" ry="'+ry+'" fill="#f5b357" fill-opacity=".53" stroke="#cc771b" stroke-width="3"/>';
+let marker='<line x1="'+px+'" y1="'+(178-ry)+'" x2="'+px+'" y2="'+(178+ry)+'" stroke="#bd6415" stroke-width="2" stroke-dasharray="6 4"/>';
+g.innerHTML=axes+shape+disc+marker+'<text x="108" y="36" fill="#1b5785" font-size="17">y = √x を x 軸まわりに回転</text><text x="106" y="311" font-size="15" fill="#456078">青：回転体の輪郭（模式図）　橙：現在の断面</text>';
+v.textContent=a.toFixed(2);info.textContent='x = '+a.toFixed(2)+'、断面の半径 = '+r.toFixed(3)+'、断面積 = '+a.toFixed(2)+'π。全体の体積は 2π です。';}
+s.addEventListener('input',draw);draw();})();</script><footer id="md3-footer"><div class="md3-common-width">みんなの数学データベース｜高校生のための授業</div></footer><nav class="site-return-links" aria-label="ページの移動"><a href="math_subject_3.html">数学Ⅲの授業 に戻る</a><a href="math3_areas_by_integration.html">前の講義 · 面積｜数学Ⅲ 第6章 積分法の応用</a></nav>
+</body></html>

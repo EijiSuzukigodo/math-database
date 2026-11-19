@@ -69,7 +69,10 @@ body>footer.lesson-standard-footer>div{max-width:970px!important;margin:auto!imp
 /* MathJax SVG may not inherit broad responsive SVG sizing */
 mjx-container svg{width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;display:inline-block!important}
 @media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
-</style></head><body><header class="lesson-standard-header"><div class="lesson-standard-width"><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学C</div><h1>2次曲線と直線</h1><p class="lesson-standard-bottom">数学C ／ 第25講</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>2次曲線と直線</h2><p>直線との共有点、判別式、放物線・楕円・双曲線の接線を1ページで学びます。</p></section>
+</style><link rel="stylesheet" href="lesson_common_style.css">
+</head><body>
+<nav class="site-return-links" aria-label="ページの移動"><a href="math_subject_c.html">数学Cの授業 に戻る</a></nav>
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学C</div><h1>2次曲線と直線</h1><p class="lesson-standard-bottom">数学C</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>2次曲線と直線</h2><p>直線との共有点、判別式、放物線・楕円・双曲線の接線を1ページで学びます。</p></section>
 
 <section><h2>1．この授業で学ぶこと</h2><p>放物線・楕円・双曲線と直線の共有点の個数を調べ、接線の方程式を求めます。直線を動かして、共有点が2個・1個・0個となる様子を確かめましょう。</p></section>
 <section id="cross"><h2>1．2次曲線と直線の共有点</h2><p>二次曲線と直線の式を連立し、一方の文字を消去します。二次方程式になる場合、その判別式から共有点の個数を判断できます。</p><div class="eq">\[Ax^2+Bx+C=0\quad (A\ne 0),\qquad D=B^2-4AC\]</div><p>判別式が正なら2個、0なら1個（接する）、負なら0個です。ただし二次の係数が0になる場合は一次方程式として別に調べます。</p>
@@ -94,4 +97,5 @@ if(mode==='parabola'){for(let x=-2.2;x<=2.2;x+=.015){let y=x*x;const p=pt(x,y);i
 else if(mode==='ellipse'){ctx.ellipse(cx,cy,3*scale,2*scale,0,0,Math.PI*2);ctx.stroke();line(-9,k,9,k,'#e69c2e',3);if(Math.abs(k)<=2){let r=3*Math.sqrt(Math.max(0,1-k*k/4));dot(-r,k);if(r>.001)dot(r,k)}state.textContent='楕円 x²/9+y²/4=1 と y=k：共有点 '+(Math.abs(k)>2?'0個':Math.abs(k)===2?'1個':'2個')+'（k = '+k.toFixed(2)+'）'}
 else{for(let sign of [-1,1]){ctx.beginPath();let first=true;for(let y=-5;y<=5;y+=.025){let x=sign*2*Math.sqrt(1+y*y/4),p=pt(x,y);if(first){ctx.moveTo(...p);first=false}else ctx.lineTo(...p)}ctx.stroke()}line(k,-5,k,5,'#e69c2e',3);if(Math.abs(k)>=2){let r=Math.sqrt(k*k-4);dot(k,-r);if(r>.001)dot(k,r)}state.textContent='双曲線 x²/4−y²/4=1 と x=k：共有点 '+(Math.abs(k)<2?'0個':Math.abs(k)===2?'1個':'2個')+'（k = '+k.toFixed(2)+'）'}
 }slider.addEventListener('input',draw);document.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>{mode=b.dataset.mode;document.querySelectorAll('[data-mode]').forEach(x=>x.classList.toggle('active',x===b));slider.value=1;draw()}));draw();})();
-</script><footer class="lesson-standard-footer"><div>みんなの数学データベース｜高校生のための授業</div></footer></body></html>
+</script><footer class="lesson-standard-footer"><div>みんなの数学データベース｜高校生のための授業</div></footer><nav class="site-return-links" aria-label="ページの移動"><a href="math_subject_c.html">数学Cの授業 に戻る</a></nav>
+</body></html>
