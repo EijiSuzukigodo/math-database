@@ -15,9 +15,7 @@ h2{font-size:clamp(19px,3vw,23px);color:var(--navy);margin:34px 0 12px;border-bo
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 <link rel="stylesheet" href="lesson_common_style.css">
 </head><body>
-<nav class="site-return-links" aria-label="ページの移動"><a href="high_school_questions.html">高校生のための質問コーナー に戻る</a></nav>
-
-<header><div class="wrap"><a href="high_school_questions.html">← 質問コーナーに戻る</a><h1>公開された質問・解答<br>二次方程式の解の公式</h1></div></header>
+<header><div class="wrap"><div class="site-parent-link"><a href="high_school_questions.html">高校生のための質問コーナーに戻る</a></div><h1>公開された質問・解答<br>二次方程式の解の公式</h1></div></header>
 <main class="wrap"><article class="paper">
 <span class="label">数学Ⅰ｜質問・解答サンプル </span>
 <h2>質問</h2><div class="question">二次方程式の解の公式はどのように求めるのですか？ 公式の証明と、具体的な例題も教えてください。</div>
@@ -25,14 +23,14 @@ h2{font-size:clamp(19px,3vw,23px);color:var(--navy);margin:34px 0 12px;border-bo
 <h2>解答 ①　二次方程式と解の公式</h2>
 <p>一般に、<strong>二次方程式</strong>は次の形で表されます。</p>
 <div class="math-scroll">\[ ax^2+bx+c=0\qquad(a\ne0) \]</div>
-<p>実数の範囲で解を考えるとき、<strong>判別式</strong> \(D=b^2-4ac\) が \(D\ge0\) ならば、解は次の公式で求められます。</p>
+<p>実数の範囲で解を考えるとき、<strong>判別式</strong> \(D=b^2-4ac\) が \(D\geqq0\) ならば、解は次の公式で求められます。</p>
 <div class="key"><strong>二次方程式の解の公式</strong><div class="math-scroll">\[\boxed{\displaystyle x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}}\]</div></div>
 <h2>解答 ②　解の公式の証明</h2>
 <p>ポイントは、式を <strong>平方完成</strong> することです。</p>
 <div class="step"><strong>手順1：両辺を \(a\) で割る</strong><div class="math-scroll">\[ax^2+bx+c=0\]</div><div class="math-scroll">\[x^2+\frac ba x+\frac ca=0\]</div></div>
 <div class="step"><strong>手順2：定数項を右辺に移す</strong><div class="math-scroll">\[x^2+\frac ba x=-\frac ca\]</div></div>
 <div class="step"><strong>手順3：平方完成する</strong><p>\(x\) の係数の半分 \(\frac b{2a}\) を二乗して、両辺に足します。</p><div class="math-scroll">\[x^2+\frac ba x+\left(\frac b{2a}\right)^2=-\frac ca+\left(\frac b{2a}\right)^2\]</div><div class="math-scroll">\[\left(x+\frac b{2a}\right)^2=\frac{b^2-4ac}{4a^2}\]</div></div>
-<div class="step"><strong>手順4：平方根をとる</strong><p>まず \(D=b^2-4ac\ge0\) の場合を考えます。左辺は平方なので、</p><div class="math-scroll">\[x+\frac b{2a}=\pm\frac{\sqrt{b^2-4ac}}{2|a|}\]</div><p>\(\pm\) が両方の符号を表すため、分母の \(|a|\) を \(a\) としても同じ2つの値を表せます。</p><div class="math-scroll">\[x+\frac b{2a}=\pm\frac{\sqrt{b^2-4ac}}{2a}\]</div></div>
+<div class="step"><strong>手順4：平方根をとる</strong><p>まず \(D=b^2-4ac\geqq0\) の場合を考えます。左辺は平方なので、</p><div class="math-scroll">\[x+\frac b{2a}=\pm\frac{\sqrt{b^2-4ac}}{2|a|}\]</div><p>\(\pm\) が両方の符号を表すため、分母の \(|a|\) を \(a\) としても同じ2つの値を表せます。</p><div class="math-scroll">\[x+\frac b{2a}=\pm\frac{\sqrt{b^2-4ac}}{2a}\]</div></div>
 <div class="step"><strong>手順5：\(x\) を求める</strong><div class="math-scroll">\[x=-\frac b{2a}\pm\frac{\sqrt{b^2-4ac}}{2a}\]</div><div class="math-scroll">\[\therefore\quad\boxed{\displaystyle x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}}\]</div></div>
 <p>以上で、解の公式が平方完成から導かれました。</p>
 <h2>例題1　解の公式で解いてみよう</h2>
@@ -51,7 +49,6 @@ h2{font-size:clamp(19px,3vw,23px);color:var(--navy);margin:34px 0 12px;border-bo
 <ul><li>\(D>0\)：異なる2つの実数解をもつ</li><li>\(D=0\)：実数の重解をもつ</li><li>\(D<0\)：実数解をもたない</li></ul>
 <p class="note">複素数まで考える場合、\(D<0\) でも複素数の解を求められます。</p>
 <h2>まとめ</h2><div class="key">二次方程式の解の公式は、両辺を \(a\) で割り、平方完成することで導かれます。<div class="math-scroll">\[\boxed{\displaystyle x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}}\]</div></div>
-<a class="back" href="high_school_questions.html">← 質問コーナーに戻る</a>
-</article></main><footer>みんなの数学データベース</footer>
-<nav class="site-return-links" aria-label="ページの移動"><a href="high_school_questions.html">高校生のための質問コーナー に戻る</a></nav>
+
+</article></main><footer><div class="site-parent-link"><a href="high_school_questions.html">高校生のための質問コーナーに戻る</a></div>みんなの数学データベース</footer>
 </body></html>

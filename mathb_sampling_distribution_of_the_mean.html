@@ -73,9 +73,7 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 </style><link rel="stylesheet" href="lesson_common_style.css">
 </head>
 <body>
-<nav class="site-return-links" aria-label="ページの移動"><a href="math_subject_b.html">数学Bの授業 に戻る</a><a href="mathb_populations_and_samples.html">前の講義 · 母集団と標本</a></nav>
-
-<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>標本平均とその分布</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>標本平均とその分布</h2><p>独立な無作為標本の平均の分散は標本サイズに反比例します。</p></section>
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>標本平均とその分布</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>標本平均とその分布</h2><p>独立な無作為標本の平均の分散は標本サイズに反比例します。</p></section>
 <article class="paper">
 <h2>1．基本事項：標本平均の意味</h2>
 <p>母集団の平均を \(\mu\)、分散を \(\sigma^2\) とします。同じ分布に従い、互いに独立な \(n\) 個の確率変数 \(X_1,X_2,\dots,X_n\) をとると、標本平均は</p>
@@ -108,22 +106,22 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <h2>4．解説付き例題</h2>
 <div class="example"><strong>例題1（元の教材から引き継ぎ）</strong><p>母分散が16で、標本サイズが4の標本平均の分散を求めよ。</p></div><div class="answer"><strong>解答</strong><div class="formula">\[V(\overline X)=\frac{16}{4}=\boxed4\]</div></div>
 <div class="example"><strong>例題2</strong><p>母平均70、母標準偏差12の集団から、大きさ36の独立な標本をとる。標本平均の期待値と標準偏差を求めよ。</p></div><div class="answer"><strong>解答</strong><div class="formula">\[E(\overline X)=70,\qquad \sigma_{\overline X}=\frac{12}{\sqrt{36}}=\boxed2\]</div></div>
-<div class="example"><strong>例題3</strong><p>母集団が \(N(50,100)\) に従う。独立に25個抽出した標本平均が54以上になる確率を、標準正規分布表を用いて求めよ。</p></div><div class="answer"><strong>解答</strong><p>標本平均の標準偏差は \(10/5=2\)。したがって、</p><div class="formula">\[P(\overline X\ge54)=P\!\left(Z\ge\frac{54-50}{2}\right)=P(Z\ge2)\approx\boxed{0.0228}\]</div></div>
-<div class="example"><strong>例題4</strong><p>母平均20、母分散9の集団から大きさ100の独立な標本をとる。標本平均が19.4以上20.6以下となる確率を、正規近似で求めよ。</p></div><div class="answer"><strong>解答</strong><p>標準誤差は \(3/10=0.3\)。標準化すると \(-2\le Z\le2\) だから、</p><div class="formula">\[P(19.4\le\overline X\le20.6)\approx P(-2\le Z\le2)\approx\boxed{0.9544}\]</div><p>この近似には中心極限定理を用いています。</p></div>
-<div class="example"><strong>例題5</strong><p>母標準偏差が15のとき、標本平均の標準偏差を3以下にするには標本サイズをいくつ以上にすればよいか。</p></div><div class="answer"><strong>解答</strong><div class="formula">\[\frac{15}{\sqrt n}\le3\ \Longleftrightarrow\ \sqrt n\ge5\ \Longleftrightarrow\ \boxed{n\ge25}\]</div></div>
+<div class="example"><strong>例題3</strong><p>母集団が \(N(50,100)\) に従う。独立に25個抽出した標本平均が54以上になる確率を、標準正規分布表を用いて求めよ。</p></div><div class="answer"><strong>解答</strong><p>標本平均の標準偏差は \(10/5=2\)。したがって、</p><div class="formula">\[P(\overline X\geqq54)=P\!\left(Z\geqq\frac{54-50}{2}\right)=P(Z\geqq2)\approx\boxed{0.0228}\]</div></div>
+<div class="example"><strong>例題4</strong><p>母平均20、母分散9の集団から大きさ100の独立な標本をとる。標本平均が19.4以上20.6以下となる確率を、正規近似で求めよ。</p></div><div class="answer"><strong>解答</strong><p>標準誤差は \(3/10=0.3\)。標準化すると \(-2\leqq Z\leqq2\) だから、</p><div class="formula">\[P(19.4\leqq\overline X\leqq20.6)\approx P(-2\leqq Z\leqq2)\approx\boxed{0.9544}\]</div><p>この近似には中心極限定理を用いています。</p></div>
+<div class="example"><strong>例題5</strong><p>母標準偏差が15のとき、標本平均の標準偏差を3以下にするには標本サイズをいくつ以上にすればよいか。</p></div><div class="answer"><strong>解答</strong><div class="formula">\[\frac{15}{\sqrt n}\leqq3\ \Longleftrightarrow\ \sqrt n\geqq5\ \Longleftrightarrow\ \boxed{n\geqq25}\]</div></div>
 <div class="example"><strong>例題6</strong><p>0と1をとり、1の確率が0.4である変数を独立に10個抽出する。標本平均の平均と分散を求めよ。</p></div><div class="answer"><strong>解答</strong><p>母平均は0.4、母分散は \(0.4\times0.6=0.24\)。したがって、</p><div class="formula">\[E(\overline X)=\boxed{0.4},\qquad V(\overline X)=\frac{0.24}{10}=\boxed{0.024}\]</div></div>
 <h2>5．練習問題</h2>
 <div class="exercise"><strong>練習1（元の教材から引き継ぎ）</strong><p>母分散25、標本サイズ100の標本平均の標準偏差を求めよ。</p><details><summary>解答と解説を表示</summary><div class="formula">\[\sigma_{\overline X}=\sqrt{\frac{25}{100}}=\boxed{0.5}\]</div></details></div>
 <div class="exercise"><strong>練習2</strong><p>母平均10、母分散36から大きさ9の独立な標本をとる。標本平均の期待値と分散を求めよ。</p><details><summary>解答と解説を表示</summary><p>期待値は10、分散は \(36/9=\boxed4\)。</p></details></div>
-<div class="exercise"><strong>練習3</strong><p>母標準偏差8のとき、標本平均の標準偏差を1以下にするのに必要な標本サイズは？</p><details><summary>解答と解説を表示</summary><p>\(8/\sqrt n\le1\) より \(\boxed{n\ge64}\)。</p></details></div>
+<div class="exercise"><strong>練習3</strong><p>母標準偏差8のとき、標本平均の標準偏差を1以下にするのに必要な標本サイズは？</p><details><summary>解答と解説を表示</summary><p>\(8/\sqrt n\leqq1\) より \(\boxed{n\geqq64}\)。</p></details></div>
 <div class="exercise"><strong>練習4</strong><p>正規母集団 \(N(100,64)\) から大きさ16の独立な標本をとる。標本平均の分布は？</p><details><summary>解答と解説を表示</summary><p>\(\overline X\sim\boxed{N(100,4)}\)。</p></details></div>
-<div class="exercise"><strong>練習5</strong><p>練習4で \(P(\overline X\ge104)\) を求めよ。</p><details><summary>解答と解説を表示</summary><p>標準偏差2、標準化すると \(Z\ge2\) なので約 \(\boxed{0.0228}\)。</p></details></div>
+<div class="exercise"><strong>練習5</strong><p>練習4で \(P(\overline X\geqq104)\) を求めよ。</p><details><summary>解答と解説を表示</summary><p>標準偏差2、標準化すると \(Z\geqq2\) なので約 \(\boxed{0.0228}\)。</p></details></div>
 <div class="exercise"><strong>練習6</strong><p>1をとる確率が0.5の変数を独立に20個抽出する。標本平均の分散を求めよ。</p><details><summary>解答と解説を表示</summary><p>母分散 \(0.5(1-0.5)=0.25\) より \(0.25/20=\boxed{0.0125}\)。</p></details></div>
 <div class="exercise"><strong>練習7</strong><p>標本サイズを9倍にすると、標本平均の分散と標準偏差はそれぞれ何倍になるか。</p><details><summary>解答と解説を表示</summary><p>分散は \(\boxed{1/9}\) 倍、標準偏差は \(\boxed{1/3}\) 倍。</p></details></div>
 <div class="exercise"><strong>練習8（考察）</strong><p>母集団が正規分布でない場合、標本平均は必ず正規分布に従うか。</p><details><summary>解答と解説を表示</summary><p>必ずとはいえない。独立同分布で有限の分散をもつなどの条件下では、標本数が十分大きいと標準化した標本平均の分布を標準正規分布で近似できる。</p></details></div>
 <h2>6．まとめ</h2><div class="formula">\[\boxed{E(\overline X)=\mu,\qquad V(\overline X)=\frac{\sigma^2}{n},\qquad \sigma_{\overline X}=\frac{\sigma}{\sqrt n}}\]</div>
 <p>「母平均は変わらず、ばらつきは標本数を増やすほど小さくなる」という点を意識しましょう。正規母集団なら標本平均も正規分布に従い、一般の母集団でも中心極限定理により正規近似が役立ちます。</p>
-</article><nav aria-label="授業一覧に戻る" class="lesson-standard-return"><a href="math_subject_b.html">← 数学Bに戻る</a></nav></main>
+</article><nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav></main>
 <script>
 (function(){'use strict';
 const nIn=document.getElementById('n'),pIn=document.getElementById('p'),canvas=document.getElementById('plot');let counts=[],total=0,last=null;
@@ -141,5 +139,4 @@ c.strokeStyle='#66788c';c.beginPath();c.moveTo(L,T);c.lineTo(L,T+ih);c.lineTo(w-
 function sample(){let {n,p}=params(),k=0;for(let i=0;i<n;i++)if(Math.random()<p)k++;counts[k]++;total++;last=k;}
 document.getElementById('once').addEventListener('click',()=>{sample();draw()});document.getElementById('hundred').addEventListener('click',()=>{for(let i=0;i<100;i++)sample();draw()});document.getElementById('reset').addEventListener('click',reset);nIn.addEventListener('input',reset);pIn.addEventListener('input',reset);window.addEventListener('resize',draw);reset();
 })();
-</script><footer class="lesson-standard-footer"><div>みんなの数学データベース｜高校生のための授業</div></footer><nav class="site-return-links" aria-label="ページの移動"><a href="math_subject_b.html">数学Bの授業 に戻る</a><a href="mathb_populations_and_samples.html">前の講義 · 母集団と標本</a></nav>
-</body></html>
+</script><footer class="lesson-standard-footer"><div><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div>みんなの数学データベース｜高校生のための授業</div></footer></body></html>

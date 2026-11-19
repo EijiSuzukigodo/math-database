@@ -4,16 +4,14 @@
 *{box-sizing:border-box}body{margin:0;background:#f3f7fc;color:#18304d;font-family:-apple-system,BlinkMacSystemFont,'Hiragino Kaku Gothic ProN',Meiryo,sans-serif;line-height:1.7}header{background:#17365d;color:#fff;padding:20px 16px}header .wrap{max-width:950px;margin:auto}header a{color:#fff}h1{font-size:clamp(22px,4vw,30px);margin:8px 0}main{max-width:950px;margin:20px auto;padding:0 14px 45px}.panel{background:#fff;border:1px solid #dce5ef;border-radius:15px;padding:18px;margin:14px 0;box-shadow:0 3px 12px #143a6010}h2{font-size:20px;margin:0 0 10px;color:#17365d}.small{color:#52677d;font-size:14px}.figure{width:100%;height:auto;touch-action:none;background:#fbfdff;border:1px solid #e0eaf3;border-radius:12px;display:block}.buttons{display:flex;flex-wrap:wrap;gap:9px;margin:12px 0}button{background:#2465a2;border:0;border-radius:9px;color:#fff;padding:10px 13px;font-size:15px;cursor:pointer}button:focus-visible{outline:3px solid #f2b23e}button.secondary{background:#536e89}.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:9px}.stat{background:#f0f6ff;border-radius:10px;padding:10px}.stat strong{display:block;font-size:19px;color:#17365d}.formula{font-size:clamp(16px,3vw,21px);font-weight:bold;text-align:center;overflow-wrap:anywhere;margin:8px 0}.result{background:#eaf7f0;padding:12px;border-radius:10px;margin-top:10px;color:#17563d}svg text{font-family:-apple-system,BlinkMacSystemFont,Meiryo,sans-serif;user-select:none}footer{text-align:center;color:#65788d;font-size:13px;padding:15px}
 </style><link rel="stylesheet" href="lesson_common_style.css">
 </head><body>
-<nav class="site-return-links" aria-label="ページの移動"><a href="high_school.html">高校数学 に戻る</a></nav>
-
-<header><div class="wrap"><a href="high_school.html">← 高校数学に戻る</a><h1>正弦定理・余弦定理を動かして理解する</h1><div>数学Ⅰ ｜ 図形と計量</div></div></header>
+<header><div class="wrap"><div class="site-parent-link"><a href="high_school.html">📐 高校数学に戻る</a></div><h1>正弦定理・余弦定理を動かして理解する</h1><div>数学Ⅰ ｜ 図形と計量</div></div></header>
 <main><section class="panel"><h2>① 三角形を動かしてみよう</h2><p>青い点 A・B・C を指でドラッグしてください。三角形の形と数値が変わります。</p>
 <svg id="figure" class="figure" viewBox="0 0 640 390" role="img" aria-label="頂点を動かせる三角形"><g id="drawing"></g></svg>
 <div class="buttons"><button data-shape="acute">鋭角三角形</button><button data-shape="right">直角三角形</button><button data-shape="obtuse">鈍角三角形</button><button class="secondary" data-shape="reset">最初に戻す</button></div><p class="small">※ 頂点を近づけすぎると計算が不安定になるため、一直線に近い形は避けるようにしています。</p></section>
 <section class="panel"><h2>② 辺と角度を確認する</h2><p class="small">a は A の向かいの辺 BC、b は B の向かいの辺 CA、c は C の向かいの辺 AB です。</p><div id="stats" class="stats" aria-live="polite"></div></section>
 <section class="panel"><h2>③ 正弦定理</h2><div class="formula">a / sin A = b / sin B = c / sin C = 2R</div><p>三角形の形を変えても、3つの比は等しくなります。R は外接円の半径です。</p><div id="sine" class="stats"></div><div id="sineResult" class="result"></div></section>
-<section class="panel"><h2>④ 余弦定理</h2><div class="formula">a² = b² + c² − 2bc cos A</div><p>角 A に向かい合う辺 a の長さを、残りの2辺と角 A から求められます。</p><div id="cosine" class="stats"></div><div id="cosResult" class="result"></div></section>
-<section class="panel"><h2>⑤ 考えてみよう</h2><p>鋭角・直角・鈍角の三角形で、正弦定理と余弦定理はどちらも成り立つでしょうか？ 上のボタンを切り替えて確かめましょう。</p><p class="small">表示値は小数第3位で四捨五入しています。そのため、計算結果にはわずかな丸め誤差があります。</p></section></main><footer>みんなの数学データベース</footer>
+<section class="panel"><h2>④ 余弦定理</h2><div class="formula"><math><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>=</mo><msup><mi>b</mi><mn>2</mn></msup><mo>+</mo><msup><mi>c</mi><mn>2</mn></msup><mo>−</mo><mn>2</mn><mi>b</mi><mi>c</mi><mi>cos</mi><mi>A</mi></mrow></math></div><p>角 A に向かい合う辺 a の長さを、残りの2辺と角 A から求められます。</p><div id="cosine" class="stats"></div><div id="cosResult" class="result"></div></section>
+<section class="panel"><h2>⑤ 考えてみよう</h2><p>鋭角・直角・鈍角の三角形で、正弦定理と余弦定理はどちらも成り立つでしょうか？ 上のボタンを切り替えて確かめましょう。</p><p class="small">表示値は小数第3位で四捨五入しています。そのため、計算結果にはわずかな丸め誤差があります。</p></section></main><footer><div class="site-parent-link"><a href="high_school.html">📐 高校数学に戻る</a></div>みんなの数学データベース</footer>
 <script>
 (()=>{'use strict';
 const svg=document.getElementById('figure'), drawing=document.getElementById('drawing');
@@ -44,5 +42,4 @@ svg.addEventListener('pointermove',e=>{if(drag<0)return;const q=pos(e);const old
 for(const ev of ['pointerup','pointercancel','lostpointercapture'])svg.addEventListener(ev,()=>{drag=-1;});
 document.querySelectorAll('[data-shape]').forEach(b=>b.addEventListener('click',()=>{P=shapes[b.dataset.shape].map(([x,y])=>({x,y}));render();}));render();
 })();
-</script><nav class="site-return-links" aria-label="ページの移動"><a href="high_school.html">高校数学 に戻る</a></nav>
-</body></html>
+</script></body></html>

@@ -70,9 +70,7 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 @media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
 </style><link rel="stylesheet" href="lesson_common_style.css">
 </head><body>
-<nav class="site-return-links" aria-label="ページの移動"><a href="math_subject_b.html">数学Bの授業 に戻る</a><a href="mathb_sigma_notation.html">前の講義 · 和の記号Σ</a></nav>
-
-<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>階差数列</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>階差数列</h2><p>隣り合う項の差を取ると規則が見えることがあります。</p></section>
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>階差数列</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>階差数列</h2><p>隣り合う項の差を取ると規則が見えることがあります。</p></section>
 <article class="paper">
 <h2>1．基本事項</h2>
 <p>隣り合う項の差を取ると規則が見えることがあります。数列 \(\{a_n\}\) から作る \(\{b_n\}\) を<strong>階差数列</strong>といいます。</p>
@@ -85,9 +83,9 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <div class="formula">\[\begin{aligned}b_1&amp;=a_2-a_1\\b_2&amp;=a_3-a_2\\&amp;\ \vdots\\b_{n-1}&amp;=a_n-a_{n-1}\end{aligned}\]</div>
 <p>これらをすべて足すと途中の項が打ち消し合います。</p>
 <div class="formula">\[b_1+b_2+\cdots+b_{n-1}=a_n-a_1\]</div>
-<div class="formula">\[\boxed{a_n=a_1+\sum_{k=1}^{n-1}b_k}\quad(n\ge 2)\]</div>
+<div class="formula">\[\boxed{a_n=a_1+\sum_{k=1}^{n-1}b_k}\quad(n\geqq 2)\]</div>
 <p>したがって「最初の項」と「階差数列」が分かれば、元の数列を求められます。</p>
-<div class="warning"><strong>重要：</strong> 和の上端は \(n\) ではなく \(n-1\) です。また、式を \(n\ge2\) で求めた場合は、\(n=1\) にも成り立つか別に確かめます。</div>
+<div class="warning"><strong>重要：</strong> 和の上端は \(n\) ではなく \(n-1\) です。また、式を \(n\geqq2\) で求めた場合は、\(n=1\) にも成り立つか別に確かめます。</div>
 <h2>動く教材：階差数列を作ってみよう</h2>
 <p>初項 \(a_1\) と階差の形 \(b_n=pn+q\)、表示する項数を変えてください。青が元の数列、緑が隣り合う差です。</p>
 <div class="viz" id="viz">
@@ -104,7 +102,7 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <p class="legend">青い丸は \((n,a_n)\) です。数列の値が負になっても表示できます。</p>
 </div>
 <h3>階差が1次式の場合の一般項</h3>
-<p>\(b_n=pn+q\) なら、\(n\ge2\) において</p>
+<p>\(b_n=pn+q\) なら、\(n\geqq2\) において</p>
 <div class="formula">\[\begin{aligned}a_n&amp;=a_1+\sum_{k=1}^{n-1}(pk+q)\\&amp;=a_1+\frac{p(n-1)n}{2}+q(n-1).\end{aligned}\]</div>
 <p>この式は \(n=1\) を代入しても \(a_1\) となるので、\(n=1\) にも成り立ちます。</p>
 <h2>解説付き例題</h2>
@@ -130,9 +128,9 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <p>① 差は必ず「後ろの項 − 前の項」です。② 元の数列の初項が必要です。③ 一般項を復元するときの和は \(n-1\) までです。④ 求めた一般項が \(n=1\) で正しいか検算します。</p>
 <h2>まとめ</h2>
 <p>隣り合う項の差を取ると規則が見えることがあります。例題で使った考え方を練習問題でも確かめましょう。</p>
-<div class="formula">\[\boxed{b_n=a_{n+1}-a_n}\qquad\boxed{a_n=a_1+\sum_{k=1}^{n-1}b_k\ (n\ge 2)}\]</div>
+<div class="formula">\[\boxed{b_n=a_{n+1}-a_n}\qquad\boxed{a_n=a_1+\sum_{k=1}^{n-1}b_k\ (n\geqq 2)}\]</div>
 <p>「差をとる → 差の規則を調べる → 和をとって元の数列へ戻す」という流れを身につけましょう。</p>
-</article><nav aria-label="授業一覧に戻る" class="lesson-standard-return"><a href="math_subject_b.html">← 数学Bに戻る</a></nav></main>
+</article><nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav></main>
 <script>
 (function(){
  const ids=['a1','p','q','count']; const $=id=>document.getElementById(id); const ns='http://www.w3.org/2000/svg';
@@ -148,5 +146,4 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
  }
  ids.forEach(id=>$(id).addEventListener('input',render));render();
 })();
-</script><footer class="lesson-standard-footer"><div>みんなの数学データベース｜高校生のための授業</div></footer><nav class="site-return-links" aria-label="ページの移動"><a href="math_subject_b.html">数学Bの授業 に戻る</a><a href="mathb_sigma_notation.html">前の講義 · 和の記号Σ</a></nav>
-</body></html>
+</script><footer class="lesson-standard-footer"><div><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div>みんなの数学データベース｜高校生のための授業</div></footer></body></html>

@@ -10,10 +10,9 @@
 .answer{font-weight:750;color:#145b96}.subtle{color:#536779;font-size:.94rem}
 @media(max-width:600px){.lesson{padding:13px}.formula{font-size:1.01rem}}
 </style><link rel="stylesheet" href="lesson_common_style.css">
-</head><body>
-<nav class="site-return-links" aria-label="ページの移動"><a href="math2bc_2026_index.html">2026年度 共通テスト 数学Ⅱ・B・C に戻る</a></nav>
+</head><body><header class="site-parent-landmark"><div class="site-parent-link"><a href="math2bc_2026_index.html">2026年度 共通テスト数学Ⅱ・B・Cに戻る</a></div></header>
 <main>
-<nav><a href="math2bc_2026_index.html">← 数学Ⅱ・B・C目次</a><a href="entrance_exams.html">入試目次（既存サイト）</a></nav>
+<nav><a href="entrance_exams.html">入試目次（既存サイト）</a></nav>
 <h1>2026年度 共通テスト 数学Ⅱ・B・C</h1><h2>第5問：統計的な推測</h2><p>正規分布・標本平均・信頼区間・母比率の検定を、数値とグラフを動かして学びます。</p>
 <p class="note"><strong>教材の位置づけ：</strong>2026年度本試験の出題分野に対応した操作型の概念学習教材です。公式問題の設問・空欄・正解を完全に再現した解答教材ではありません。下の数値例は学習用の例です。</p>
 <h2>1. 正規分布：平均と標準偏差</h2><p>元の教材の「平均」「標準偏差」を動かす操作を残し、平均からの範囲に入る確率を色付きの面積で示します。</p>
@@ -36,7 +35,7 @@
   <div class="solved"><strong>解答</strong><p>平均からのずれを標準偏差で割って標準化します。</p>
     <div class="formula">Z = <span class="frac"><span class="num">X − 50</span><span class="den">10</span></span></div>
     <p>下端40は Z = −1、上端60は Z = 1 に対応します。したがって、</p>
-    <div class="formula">P(40 ≤ X ≤ 60) = P(−1 ≤ Z ≤ 1) ≈ 0.6827</div>
+    <div class="formula">P(40 ≦ X ≦ 60) = P(−1 ≦ Z ≦ 1) ≈ 0.6827</div>
     <p class="answer">答え：約68.27％</p>
   </div>
   <p class="subtle">ポイント：平均 ±1σ の範囲の確率は約68.27％、±2σ は約95.45％です。「95％信頼区間」の1.96とは意味が異なるので区別しましょう。</p>
@@ -53,7 +52,7 @@
     <p>まず標準誤差を求めます。</p>
     <div class="formula"><span class="frac"><span class="num">12</span><span class="den">√36</span></span> = 2</div>
     <p>続いて、標準正規分布の95％に対応する値1.96を利用します。</p>
-    <div class="formula">50 ± 1.96 × 2 = 50 ± 3.92</div>
+    <div class="formula"><math><mrow><mn>50</mn><mo>±</mo><mn>1.96</mn><mo>×</mo><mn>2</mn><mo>=</mo><mn>50</mn><mo>±</mo><mn>3.92</mn></mrow></math></div>
     <p class="answer">答え：46.08 以上 53.92 以下</p>
   </div>
   <p class="subtle">95％とは、同じ方法で標本抽出と区間構成を繰り返したとき、約95％の区間が真の母平均を含むという意味です。</p>
@@ -88,10 +87,9 @@
 <p><a href="https://www.dnc.ac.jp/kyotsu/kakomondai/index.html" target="_blank" rel="noopener">大学入試センター：公式問題・正解</a></p><small>iPad・PC対応／外部ライブラリ不要／解答・証明追加版 2026-11-08</small></main>
 <script>
 (()=>{'use strict';const $=id=>document.getElementById(id),ns='http://www.w3.org/2000/svg';function el(svg,tag,attrs){const e=document.createElementNS(ns,tag);Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,v));svg.appendChild(e);return e}function clear(svg){svg.replaceChildren()}function line(s,x1,y1,x2,y2,color='#b7cad9',w=1){el(s,'line',{x1,y1,x2,y2,stroke:color,'stroke-width':w})}function txt(s,x,y,t,size=14){const e=el(s,'text',{x,y,fill:'#36536b','font-size':size,'text-anchor':'middle'});e.textContent=t}function phi(z){const sign=z<0?-1:1,x=Math.abs(z)/Math.sqrt(2),t=1/(1+.3275911*x);const erf=1-(((((1.061405429*t-1.453152027)*t)+1.421413741)*t-.284496736)*t+.254829592)*t*Math.exp(-x*x);return .5*(1+sign*erf)}const pdf=z=>Math.exp(-z*z/2)/Math.sqrt(2*Math.PI);const fmt=x=>Number(x).toFixed(2);function axes(s,w,h,y){line(s,35,y,w-20,y,'#738da3',2)}
-function normal(){let m=+$('mu').value,sd=+$('sd').value,k=+$('k').value;$('muVal').textContent=m;$('sdVal').textContent=sd;$('kVal').textContent=k;const s=$('normal');clear(s);let lo=-13,hi=13,x=v=>35+(v-lo)/(hi-lo)*620,y=v=>252-v*195;axes(s,680,300,252);let pts=[],fill=[];for(let i=0;i<=520;i++){let v=lo+(hi-lo)*i/520,d=pdf((v-m)/sd)/sd;pts.push(x(v)+','+y(d));if(v>=m-k*sd&&v<=m+k*sd)fill.push([x(v),y(d)])}if(fill.length){let d='M'+x(m-k*sd)+' 252 L'+fill.map(p=>p.join(' ')).join(' L')+' L'+x(m+k*sd)+' 252 Z';el(s,'path',{d,fill:'#b7e0f6'})}el(s,'polyline',{points:pts.join(' '),fill:'none',stroke:'#1379be','stroke-width':3});line(s,x(m),52,x(m),252,'#ed8936',2);txt(s,x(m),275,'μ='+m);$('normalResult').textContent='P(μ−'+k+'σ ≤ X ≤ μ+'+k+'σ) ≈ '+fmt((2*phi(k)-1)*100)+'％'}
+function normal(){let m=+$('mu').value,sd=+$('sd').value,k=+$('k').value;$('muVal').textContent=m;$('sdVal').textContent=sd;$('kVal').textContent=k;const s=$('normal');clear(s);let lo=-13,hi=13,x=v=>35+(v-lo)/(hi-lo)*620,y=v=>252-v*195;axes(s,680,300,252);let pts=[],fill=[];for(let i=0;i<=520;i++){let v=lo+(hi-lo)*i/520,d=pdf((v-m)/sd)/sd;pts.push(x(v)+','+y(d));if(v>=m-k*sd&&v<=m+k*sd)fill.push([x(v),y(d)])}if(fill.length){let d='M'+x(m-k*sd)+' 252 L'+fill.map(p=>p.join(' ')).join(' L')+' L'+x(m+k*sd)+' 252 Z';el(s,'path',{d,fill:'#b7e0f6'})}el(s,'polyline',{points:pts.join(' '),fill:'none',stroke:'#1379be','stroke-width':3});line(s,x(m),52,x(m),252,'#ed8936',2);txt(s,x(m),275,'μ='+m);$('normalResult').textContent='P(μ−'+k+'σ ≦ X ≦ μ+'+k+'σ) ≈ '+fmt((2*phi(k)-1)*100)+'％'}
 function sampling(){let n=+$('n').value,sd=+$('popSd').value,se=sd/Math.sqrt(n);$('nVal').textContent=n;$('popSdVal').textContent=sd;const s=$('sampling');clear(s);axes(s,680,270,225);const x=v=>340+v*14,y=v=>225-v*140;for(let [sig,color] of [[sd,'#c5cfd8'],[se,'#1479b6']]){let pts=[];for(let px=35;px<=655;px+=3){let v=(px-340)/14;pts.push(px+','+y(pdf(v/sig)/sig*15))}el(s,'polyline',{points:pts.join(' '),fill:'none',stroke:color,'stroke-width':3})}txt(s,340,250,'中心：母平均 μ');txt(s,155,28,'灰：母集団',13);txt(s,485,28,'青：標本平均',13);$('samplingResult').textContent='標本平均の標準誤差 = '+fmt(sd)+' / √'+n+' ≈ '+fmt(se)}
 function ci(){let a=+$('xbar').value,sd=+$('ciSd').value,n=+$('ciN').value;if(!Number.isFinite(a)||!(sd>0)||!(n>=1)||!Number.isInteger(n)){$('ciResult').textContent='σは正、nは1以上の整数にしてください。';clear($('ciGraph'));return}let h=1.96*sd/Math.sqrt(n),s=$('ciGraph');clear(s);line(s,45,85,635,85,'#809bb0',2);line(s,180,85,500,85,'#1379be',7);for(let [x,t] of [[180,fmt(a-h)],[340,fmt(a)],[500,fmt(a+h)]]){line(s,x,65,x,104,'#135b96',2);txt(s,x,126,t)}$('ciResult').textContent='95％信頼区間：['+fmt(a-h)+', '+fmt(a+h)+']（誤差 ±'+fmt(h)+'）'}
 function test(){let p=+$('p0').value,n=+$('testN').value,c=+$('success').value,s=$('testGraph');clear(s);if(!(p>0&&p<1)||!(n>=1)||!Number.isInteger(n)||!(c>=0&&c<=n)||!Number.isInteger(c)){$('testResult').textContent='0<p₀<1、nは正の整数、xは0～nの整数にしてください。';return}let ph=c/n,se=Math.sqrt(p*(1-p)/n),z=(ph-p)/se,prob=2*(1-phi(Math.abs(z))),x=v=>340+v*75,y=v=>210-v*360;axes(s,680,250,210);for(let [a,b] of [[-4.1,-1.96],[1.96,4.1]]){let pts=[];for(let i=0;i<=100;i++){let v=a+(b-a)*i/100;pts.push([x(v),y(pdf(v))])}el(s,'path',{d:'M'+x(a)+' 210 L'+pts.map(q=>q.join(' ')).join(' L')+' L'+x(b)+' 210 Z',fill:'#ffd8bd'})}let pts=[];for(let i=0;i<=250;i++){let v=-4.1+8.2*i/250;pts.push(x(v)+','+y(pdf(v)))}el(s,'polyline',{points:pts.join(' '),fill:'none',stroke:'#1379be','stroke-width':3});let zx=x(Math.max(-4.1,Math.min(4.1,z)));line(s,zx,50,zx,210,'#d3543f',2);txt(s,x(-1.96),233,'−1.96');txt(s,x(1.96),233,'1.96');txt(s,zx,42,'z='+fmt(z),13);let caution=n*p<5||n*(1-p)<5?' ※正規近似の条件に注意。':'';$('testResult').textContent='p̂='+fmt(ph)+'、z='+fmt(z)+'、両側p値≈'+fmt(prob)+' → '+(Math.abs(z)>1.9599639845?'5％水準で棄却':'5％水準では棄却できない')+'。'+caution}
 const steps=['① 問題の対象が「母平均」か「母比率」かを確認する。','② 母平均なら、標本平均の標準誤差 σ/√n を考える。標本サイズが大きいほど小さくなる。','③ 信頼区間なら、推定値 ± 臨界値×標準誤差。95％では標準正規分布の1.96を使う。','④ 母比率の検定なら、帰無仮説の p₀ で標準誤差を求め、z値を計算して棄却域と比較する。'];let idx=0;function step(){$('stepText').textContent=steps[idx];$('stepCount').textContent=(idx+1)+' / '+steps.length;$('prev').disabled=idx===0;$('next').disabled=idx===steps.length-1} $('prev').onclick=()=>{idx=Math.max(0,idx-1);step()};$('next').onclick=()=>{idx=Math.min(steps.length-1,idx+1);step()};for(let id of ['mu','sd','k'])$(id).addEventListener('input',normal);for(let id of ['n','popSd'])$(id).addEventListener('input',sampling);for(let id of ['xbar','ciSd','ciN'])$(id).addEventListener('input',ci);for(let id of ['p0','testN','success'])$(id).addEventListener('input',test);normal();sampling();ci();test();step();
-})();</script><nav class="site-return-links" aria-label="ページの移動"><a href="math2bc_2026_index.html">2026年度 共通テスト 数学Ⅱ・B・C に戻る</a></nav>
-</body></html>
+})();</script><footer class="site-parent-landmark"><div class="site-parent-link"><a href="math2bc_2026_index.html">2026年度 共通テスト数学Ⅱ・B・Cに戻る</a></div><div>みんなの数学データベース</div></footer></body></html>

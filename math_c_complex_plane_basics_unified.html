@@ -70,9 +70,7 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 @media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
 </style><link rel="stylesheet" href="lesson_common_style.css">
 </head><body>
-<nav class="site-return-links" aria-label="ページの移動"><a href="math_subject_c.html">数学Cの授業 に戻る</a></nav>
-
-<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学C</div><h1>複素数平面</h1><p class="lesson-standard-bottom">数学C</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>複素数平面</h2><p>複素数と点の対応、加減算、共役複素数、絶対値と距離を動く図で学びます。</p></section>
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_c.html">数学Cの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学C</div><h1>複素数平面</h1><p class="lesson-standard-bottom">数学C</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>複素数平面</h2><p>複素数と点の対応、加減算、共役複素数、絶対値と距離を動く図で学びます。</p></section>
 <section id="s1"><h2>1．複素数平面と点の対応</h2><p>複素数 \(z=a+bi\) を、横軸が実軸、縦軸が虚軸の平面上の点 \(P(a,b)\) で表します。</p><div class="math">\[z=a+bi\quad\longleftrightarrow\quad P(a,b)\]</div><p>例えば \(3+2i\) は点 \((3,2)\) です。虚部が0のときは実軸上、実部が0のときは虚軸上にあります。</p>
 <div class="interactive"><canvas aria-label="複素数平面。スライダーの値に応じて点Pと点Qが移動します" height="510" id="plane" role="img" width="620"></canvas><div>
 <label>点 P の実部 a：<output id="av">3</output></label><input id="a" max="4" min="-4" step="0.5" type="range" value="3"/>
@@ -86,7 +84,7 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <section id="s3"><h2>3．共役複素数と絶対値</h2><p>\(z=a+bi\) の共役複素数は \(\overline z=a-bi\) です。複素数平面では、実軸について対称な点になります。</p><div class="math">\[\overline z=a-bi,\qquad |z|=\sqrt{a^2+b^2}\]\[z\overline z=|z|^2=a^2+b^2\]</div><div class="result" id="conj"></div><h3>例題</h3><div class="example">\(z=-3+4i\) の共役複素数と絶対値を求めなさい。<details><summary>解答と解説</summary><p>\(\overline z=-3-4i\)、\(|z|=\sqrt{(-3)^2+4^2}=5\)。</p></details></div></section>
 <section id="s4"><h2>4．複素数平面における2点間の距離</h2><p>複素数 \(\alpha=a+bi\)、\(\beta=c+di\) を表す2点間の距離は、差の絶対値になります。</p><div class="math">\[PQ=|\beta-\alpha|=\sqrt{(c-a)^2+(d-b)^2}\]</div><div class="result" id="dist"></div><h3>例題</h3><div class="example">点 \(A(1+2i)\) と点 \(B(4+6i)\) の距離を求めなさい。<details><summary>解答と解説</summary><p>\(|(4+6i)-(1+2i)|=|3+4i|=\sqrt{9+16}=5\)。</p></details></div></section>
 <section id="s5"><h2>5．練習問題</h2><div class="example"><b>問1</b> \(z=-2+3i\) の共役複素数と絶対値を求めなさい。<details><summary>答え・解説</summary><p>\(\overline z=-2-3i\)、\(|z|=\sqrt{13}\)。</p></details></div><div class="example"><b>問2</b> \(z=1-2i,\ w=3+i\) のとき \(z+w\) と \(z-w\) を求めなさい。<details><summary>答え・解説</summary><p>\(z+w=4-i\)、\(z-w=-2-3i\)。</p></details></div><div class="example"><b>問3</b> \(A(-1+2i)\)、\(B(2-2i)\) の距離を求めなさい。<details><summary>答え・解説</summary><p>\(AB=|3-4i|=5\)。</p></details></div></section>
-<nav aria-label="授業一覧に戻る" class="lesson-standard-return"><a href="math_subject_c.html">← 数学Cに戻る</a></nav></main>
+<nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav></main>
 <script>
 const ids=['a','b','c','d'];const el=Object.fromEntries(ids.map(id=>[id,document.getElementById(id)]));const canvas=document.getElementById('plane'),ctx=canvas.getContext('2d');
 function fmt(v){return Number(v.toFixed(2)).toString()}function complex(a,b){return fmt(a)+(b<0?' − ':' + ')+fmt(Math.abs(b))+'i'}
@@ -97,5 +95,4 @@ function point(x,y,color,label,dash){const px=cx+x*unit,py=cy-y*unit;ctx.strokeS
 point(a,b,'#1071b2','P');point(c,d,'#cb7040','Q');point(a,-b,'#138767','P̄',true);
 document.getElementById('readout').textContent='P: '+complex(a,b)+'　／　Q: '+complex(c,d);document.getElementById('ops').textContent='P＋Q = '+complex(a+c,b+d)+'　　P−Q = '+complex(a-c,b-d);document.getElementById('conj').textContent='P の共役 = '+complex(a,-b)+'　　|P| = √'+fmt(a*a+b*b)+' ≈ '+fmt(Math.hypot(a,b));document.getElementById('dist').textContent='PQ = √'+fmt((a-c)**2+(b-d)**2)+' ≈ '+fmt(Math.hypot(c-a,d-b));}
 ids.forEach(id=>el[id].addEventListener('input',draw));draw();
-</script><footer class="lesson-standard-footer"><div>みんなの数学データベース｜高校生のための授業</div></footer><nav class="site-return-links" aria-label="ページの移動"><a href="math_subject_c.html">数学Cの授業 に戻る</a></nav>
-</body></html>
+</script><footer class="lesson-standard-footer"><div><div class="site-parent-link"><a href="math_subject_c.html">数学Cの授業一覧に戻る</a></div>みんなの数学データベース｜高校生のための授業</div></footer></body></html>
