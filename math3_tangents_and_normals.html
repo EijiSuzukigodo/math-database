@@ -50,8 +50,7 @@ mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;max-width:100%}
 </style><link rel="stylesheet" href="lesson_common_style.css">
 </head>
 <body>
-<nav class="site-return-links" aria-label="ページの移動"><a href="math_subject_3.html">数学Ⅲの授業 に戻る</a><a href="math3_higher_order_derivatives.html">前の講義 · 第n次導関数｜数学Ⅲ</a></nav>
-<header id="md3-header"><div class="md3-common-width"><div class="md3-common-top">みんなの数学データベース ／ 高校数学 ／ 数学Ⅲ</div><h1>接線、法線</h1><p class="md3-common-bottom">数学Ⅲ ／ </p></div></header>
+<header id="md3-header"><div class="md3-common-width"><div class="site-parent-link"><a href="math_subject_3.html">数学Ⅲの授業一覧に戻る</a></div><div class="md3-common-top">みんなの数学データベース ／ 高校数学 ／ 数学Ⅲ</div><h1>接線、法線</h1><p class="md3-common-bottom">数学Ⅲ ／ </p></div></header>
 <main id="md3-main"><section class="md3-standard-goal" id="md3-goal"><span class="md3-goal-tag">授業のねらい</span><h2 class="md3-goal-title">導関数を使って接線・法線の方程式を求める</h2><p>微分係数が接線の傾きを表すことを理解し、曲線上の点での接線と法線の方程式を求められるようになる。水平な接線や、曲線外の点から引く接線も考え、動くグラフでその関係を確かめます。</p></section>
 <section><span class="pill">基本事項</span><h2>1. 接線の方程式</h2><p>関数 \(y=f(x)\) が \(x=a\) で微分可能であるとき、曲線上の点 \(P(a,f(a))\) における接線の傾きは \(f'(a)\) です。</p><div class="formula">\[\boxed{y-f(a)=f'(a)(x-a)}\]</div><p>これは、傾き \(m\)、通る点 \((a,b)\) が分かる直線の方程式 \(y-b=m(x-a)\) に、\(m=f'(a)\)、\(b=f(a)\) を代入したものです。</p>
 <div class="example"><strong>例題1　接線の方程式</strong><p>曲線 \(y=x^2+1\) の \(x=2\) における接線を求めよ。</p><strong>解説</strong><p>\(f'(x)=2x\) なので、\(f'(2)=4\)。接点は \((2,5)\) です。よって、</p>\[y-5=4(x-2)\]\[\boxed{y=4x-3}\]</div>
@@ -80,7 +79,7 @@ mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;max-width:100%}
 </section>
 <section><span class="pill">発展</span><h2>6. 法線の特徴を考える</h2><p>曲線 \(y=x^2\) の点 \((a,a^2)\) における法線が、\(y\) 軸と交わる点を求めてみましょう（\(a\ne0\)）。</p><details><summary>考え方・解答を表示</summary><p>法線は \(y-a^2=-\frac1{2a}(x-a)\)。\(x=0\) と置くと、</p>\[y-a^2=\frac12\]\[\boxed{\left(0,a^2+\frac12\right)}\]<p>つまり、法線の \(y\) 切片は \(a^2+\frac12\) となります。</p></details></section>
 <section><span class="pill">まとめ</span><h2>7. 本時のまとめ</h2><p><strong>接線：</strong> 傾き \(f'(a)\) を使って求めます。<strong>法線：</strong> 接線の傾きが0でないときは、その負の逆数を使います。傾きが0のときは、法線は垂直な直線 \(x=a\) です。</p><div class="note">計算の基本は「接点を求める → 導関数で傾きを求める → 点と傾きから直線の式を作る」です。</div></section>
-<nav id="md3-bottom-return"><a href="math_subject_3.html">← 数学Ⅲに戻る</a></nav></main>
+<nav id="md3-bottom-return"></nav></main>
 <script>
 (function(){'use strict';var slider=document.getElementById('aSlider');var val=document.getElementById('aVal');var t=document.getElementById('tangent');var n=document.getElementById('normal');var p=document.getElementById('point');var label=document.getElementById('pointlabel');var readout=document.getElementById('graph-text');if(!slider||!t||!n||!p)return;
 function sx(x){return 360+x*91}function sy(y){return 305-y*43}
@@ -89,5 +88,4 @@ function fmt(x){if(Math.abs(x)<.000001)x=0;return String(Math.round(x*100)/100)}
 function lineText(m,b){return 'y = '+fmt(m)+'x '+(b>=0?'+ ':'− ')+fmt(Math.abs(b))}
 function draw(){var a=Number(slider.value),y=a*a,m=2*a;val.textContent=a.toFixed(1);t.setAttribute('d',path(function(x){return m*(x-a)+y}));if(Math.abs(a)<.0000001){n.setAttribute('d','M'+sx(0)+',24 L'+sx(0)+',391')}else{n.setAttribute('d',path(function(x){return -(x-a)/(2*a)+y}))}p.setAttribute('cx',sx(a));p.setAttribute('cy',sy(y));label.setAttribute('x',sx(a)+10);label.setAttribute('y',sy(y)-9);readout.textContent='接点 P('+fmt(a)+', '+fmt(y)+') ／ 接線：'+lineText(m,y-m*a)+' ／ 法線：'+(Math.abs(a)<.0000001?'x = 0':lineText(-1/(2*a),y+0.5));}
 slider.addEventListener('input',draw);draw();})();
-</script><footer id="md3-footer"><div class="md3-common-width">みんなの数学データベース｜高校生のための授業</div></footer><nav class="site-return-links" aria-label="ページの移動"><a href="math_subject_3.html">数学Ⅲの授業 に戻る</a><a href="math3_higher_order_derivatives.html">前の講義 · 第n次導関数｜数学Ⅲ</a></nav>
-</body></html>
+</script><footer id="md3-footer"><div class="md3-common-width"><div class="site-parent-link"><a href="math_subject_3.html">数学Ⅲの授業一覧に戻る</a></div>みんなの数学データベース｜高校生のための授業</div></footer></body></html>

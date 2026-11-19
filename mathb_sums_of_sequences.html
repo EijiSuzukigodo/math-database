@@ -74,9 +74,7 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 @media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
 </style><link rel="stylesheet" href="lesson_common_style.css">
 </head><body>
-<nav class="site-return-links" aria-label="ページの移動"><a href="math_subject_b.html">数学Bの授業 に戻る</a><a href="mathb_difference_sequences.html">前の講義 · 階差数列</a></nav>
-
-<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>いろいろな数列の和</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>いろいろな数列の和</h2><p>和の公式と式の変形を組み合わせて求めます。</p></section>
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>いろいろな数列の和</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>いろいろな数列の和</h2><p>和の公式と式の変形を組み合わせて求めます。</p></section>
 
 <article class="paper"><section id="basic"><h2>基本事項</h2><p>このページでは、公式を直接使う方法ではなく、<strong>項を変形する・消し合わせる・群に分ける</strong>方法を学びます。</p><p>自然数・平方数・立方数の和の公式や例題は、<a href="mathb_sigma_notation.html">「和の記号 Σ」</a> のページにまとめました。</p><h2>考え方</h2><p>まず条件と求める量を明確にし、上の関係式を使える形に整理します。等号変形や定義域などの条件も確かめましょう。</p><p>解法の見分け方： (1) 分母が積なら部分分数分解、(2) 平方根を含む分母なら有理化、(3) 規則的に区切られた数列なら群数列、(4) k・r^k 型は和をずらして引く工夫が有効です。</p></section>
 <section id="fraction"><h2>1. 部分分数分解を利用する和</h2><p class="good">「和の記号 Σ」にあった部分分数分解の発展例題も、この項目に統合しました。基本例題から発展例題へ進めます。</p><p>分母に2つの因数があるとき、<strong>差の形</strong>にすると途中の項が相殺されることがあります。これを「望遠鏡型の和（テレスコーピング）」と呼びます。</p><h3>基本公式の導出</h3><div class="formula">\[\frac{1}{k(k+1)}=\frac1k-\frac1{k+1}\]</div><p>右辺を通分すると \(\frac{(k+1)-k}{k(k+1)}\) となり、左辺と一致します。</p>
@@ -122,7 +120,7 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <div class="exercise"><strong>問題9（奇数の群数列）</strong><p>\(1\mid3,5\mid7,9,11\mid\cdots\) の第6群の和を求めよ。</p><details><summary>解答と解説を見る</summary><p>第 \(n\) 群の和は \(n^3\)。したがって \(6^3=216\)。</p></details></div>
 </section>
 <section id="summary"><h2>まとめ</h2><p>和の基本公式は「和の記号 Σ」へ移し、ここでは式変形と群数列の工夫に重点を置きました。</p><p>和の公式と式の変形を組み合わせて求めます。例題で使った考え方を、練習問題でも確かめましょう。</p><div class="good"><strong>解法の選び方</strong><ol><li>群に区切られている → 各群の項数・初項・末項を求める</li><li>\(\frac1{k(k+1)}\) のような積が分母 → 部分分数分解</li><li>\(\sqrt{k+1}+\sqrt{k}\) が分母 → 有理化</li><li>\(k\cdot r^k\) → 和を \(r\) 倍して引く</li><li>符号が交互 → 2項ずつ組にする</li></ol></div><p class="muted">計算後は \(n=1\) や \(n=2\) を代入して、元の和と一致するか確認しましょう。</p></section>
-</article><nav aria-label="授業一覧に戻る" class="lesson-standard-return"><a href="math_subject_b.html">← 数学Bに戻る</a></nav></main>
+</article><nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav></main>
 <script>
 (function(){
  const f=document.getElementById('fracN'),r=document.getElementById('rootN');
@@ -133,5 +131,4 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
  f.addEventListener('input',updateF);r.addEventListener('input',updateR);updateF();updateR();
 })();
 </script><script>(function(){const s=document.getElementById('groupN'),diagram=document.getElementById('groupDiagram'),result=document.getElementById('groupResult'),out=document.getElementById('groupOut');if(!s)return;function show(){const n=Number(s.value);out.textContent=n;diagram.replaceChildren();let start=1;for(let k=1;k<=n;k++){const box=document.createElement('div');box.className='group-box'+(k===n?' active':'');const title=document.createElement('div');title.className='group-title';title.textContent='第'+k+'群';box.appendChild(title);const items=document.createElement('div');items.className='group-items';for(let j=0;j<k;j++){const item=document.createElement('span');item.className='group-item';item.textContent=start+j;items.appendChild(item)}box.appendChild(items);diagram.appendChild(box);start+=k}const first=1+n*(n-1)/2,last=n*(n+1)/2;result.textContent='第'+n+'群：初項 '+first+'、末項 '+last+'、項数 '+n+'、和 '+(n*(n*n+1)/2)}s.addEventListener('input',show);show()})();</script>
-<footer class="lesson-standard-footer"><div>みんなの数学データベース｜高校生のための授業</div></footer><nav class="site-return-links" aria-label="ページの移動"><a href="math_subject_b.html">数学Bの授業 に戻る</a><a href="mathb_difference_sequences.html">前の講義 · 階差数列</a></nav>
-</body></html>
+<footer class="lesson-standard-footer"><div><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div>みんなの数学データベース｜高校生のための授業</div></footer></body></html>

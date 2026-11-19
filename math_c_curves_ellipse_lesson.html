@@ -10,9 +10,7 @@ window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},opt
 <style id="no-read-aloud">button[data-say],button[data-speak],button.speak,button.stopSpeech,button.stopvoice,button[onclick*="speak("],button[onclick*="stopSpeech("],button[onclick*="Speak("]{display:none!important}</style>
 <link rel="stylesheet" href="lesson_common_style.css">
 </head><body>
-<nav class="site-return-links" aria-label="ページの移動"><a href="high_school_video_lessons.html#subject5">高校生のための授業 に戻る</a><a href="math_c_curves_parabola_lesson.html">前の講義 · 数学C 放物線の焦点・準線と方程式</a></nav>
-
-<header><div class="wrap"><a href="high_school_video_lessons.html#subject5">← 高校生のための授業へ</a><h1>数学C 楕円の定義と方程式</h1><div>平面上の曲線　｜　焦点・長軸と短軸・円の伸縮・軌跡</div><p class="small" style="color:#e0f0fb">教科書の学習順に沿った独自解説。分数は教科書式の上下表示。グラフは指で操作でき、日本語読み上げも利用できます。</p></div></header>
+<header><div class="wrap"><div class="site-parent-link"><a href="math_subject_c.html">数学Cの授業一覧に戻る</a></div><a href="high_school_video_lessons.html#subject5">← 高校生のための授業へ</a><h1>数学C 楕円の定義と方程式</h1><div>平面上の曲線　｜　焦点・長軸と短軸・円の伸縮・軌跡</div><p class="small" style="color:#e0f0fb">教科書の学習順に沿った独自解説。分数は教科書式の上下表示。グラフは指で操作でき、日本語読み上げも利用できます。</p></div></header>
 <main class="wrap">
 <section class="card toc"><p class="small">※ 数式の整形にはMathJaxを利用しています。数式の表示にはインターネット接続が必要です。</p><span class="pill">学習の道順</span><p>① 楕円の定義　→　② 方程式の導出　→　③ 縦長の楕円　→　④ 円の伸縮　→　⑤ 内分点の軌跡　→　⑥ 練習問題</p><a href="#definition">定義と動く図</a><a href="#proof">方程式の導出</a><a href="#vertical">縦長の楕円</a><a href="#scaling">円の伸縮</a><a href="#locus">軌跡</a><a href="#practice">練習問題</a></section>
 <section class="card" id="definition"><span class="pill">1　楕円の定義</span><h2>2つの焦点からの距離の和が一定</h2><p>異なる2点 <strong>F₁, F₂</strong> からの距離の和が一定 <strong>2a</strong> となる点 P の軌跡を、<strong>楕円</strong>といいます。焦点を F₁(−c, 0), F₂(c, 0) として考えます。</p>
@@ -56,8 +54,8 @@ window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},opt
 <div class="mini" style="margin-top:12px"><h3>問題3　縦長の楕円</h3><p>\(9x^2+4y^2=36\) の焦点を求めましょう。</p><details class="answer"><summary>解答と考え方を表示</summary><p>\(\dfrac{x^2}{4}+\dfrac{y^2}{9}=1\) だから長半径は3、短半径は2。c²=9−4=5。焦点は <strong>(0,±√5)</strong> です。</p></details></div>
 <p class="note">※図の数値は学習用に四捨五入して表示しています。楕円が円になる場合など、特別な場合もスライダーで試してみましょう。</p>
 <div class="btns"><button hidden aria-hidden="true" tabindex="-1" style="display:none!important" class="ghost stopSpeech" type="button">■ 読み上げ停止</button></div></section>
-<section class="card"><h2>学習のまとめ</h2><p>楕円は<strong>2焦点からの距離の和が一定</strong>の点の集まり。標準形と焦点、長軸・短軸の関係を押さえ、円の伸縮や内分点の軌跡とも結び付けましょう。</p><p><a href="high_school_video_lessons.html#subject5">← 高校生のための授業へ戻る</a></p></section>
-</main><footer><div class="wrap">みんなの数学データベース｜数学C 平面上の曲線　</div></footer>
+<section class="card"><h2>学習のまとめ</h2><p>楕円は<strong>2焦点からの距離の和が一定</strong>の点の集まり。標準形と焦点、長軸・短軸の関係を押さえ、円の伸縮や内分点の軌跡とも結び付けましょう。</p><p></p></section>
+</main><footer><div class="wrap"><div class="site-parent-link"><a href="math_subject_c.html">数学Cの授業一覧に戻る</a></div>みんなの数学データベース｜数学C 平面上の曲線　</div></footer>
 <script>
 (()=>{'use strict';const $=id=>document.getElementById(id);let animation=null;const PI=Math.PI;
 const fmt=v=>(Math.round(v*100)/100).toFixed(2);const xray=(ctx,W,H,S,x,y,ox=W/2,oy=H/2)=>[ox+x*S,oy-y*S];
@@ -74,5 +72,4 @@ $('play').addEventListener('click',()=>{if(animation){cancelAnimationFrame(anima
 $('reset').addEventListener('click',()=>{$('a').value=4;$('ratio').value=.65;$('t').value=50;drawEllipse();});
 function stop(){if('speechSynthesis'in window)window.speechSynthesis.cancel();}document.querySelectorAll('.stopSpeech').forEach(b=>b.addEventListener('click',stop));document.querySelectorAll('[data-speak]').forEach(b=>b.addEventListener('click',()=>{if(!('speechSynthesis'in window)){alert('このブラウザでは音声読み上げが利用できません。Safariでお試しください。');return;}stop();const msg=new SpeechSynthesisUtterance(b.dataset.speak);msg.lang='ja-JP';msg.rate=.88;let voices=window.speechSynthesis.getVoices(),v=voices.find(v=>v.lang.toLowerCase()==='ja-jp')||voices.find(v=>v.lang.toLowerCase().startsWith('ja'));if(v)msg.voice=v;window.speechSynthesis.speak(msg);}));window.addEventListener('pagehide',()=>{stop();if(animation)cancelAnimationFrame(animation)});
 drawEllipse();drawScale();drawLocus();})();
-</script><nav class="site-return-links" aria-label="ページの移動"><a href="high_school_video_lessons.html#subject5">高校生のための授業 に戻る</a><a href="math_c_curves_parabola_lesson.html">前の講義 · 数学C 放物線の焦点・準線と方程式</a></nav>
-</body></html>
+</script></body></html>

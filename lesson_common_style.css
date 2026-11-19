@@ -30,11 +30,22 @@ body :is(mjx-container[display="true"], math[display="block"], .katex-display) {
   max-width: 100%; overflow-x: auto; overflow-y: hidden;
 }
 body video { max-width: 100%; }
-.site-return-links {
-  box-sizing: border-box; display: flex; flex-wrap: wrap; gap: .5rem 1rem;
-  width: 100%; max-width: 980px; margin: 0 auto; padding: .625rem 1rem;
-  background: #fff; border-block: 1px solid #d9e6f2;
-  color: #12304f; font: 600 .9375rem/1.5 -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+/* Return links share the header and footer backgrounds. */
+body :is(header, footer) .site-parent-link {
+  display: block;
+  margin: 0 0 .625rem;
+  font-size: .9375rem;
+  line-height: 1.5;
 }
-.site-return-links a { color: #174a77; text-decoration: underline; overflow-wrap: anywhere; }
-.site-return-links a:focus-visible { outline: 2px solid #174a77; outline-offset: 3px; }
+body :is(header, footer) .site-parent-link a {
+  color: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: .15em;
+  overflow-wrap: anywhere;
+}
+.site-parent-link a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+.site-parent-landmark { padding: .75rem 1rem; }

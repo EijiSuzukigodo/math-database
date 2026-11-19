@@ -15,9 +15,7 @@ button{font:inherit;border-radius:10px;border:1px solid #bad4e9;padding:10px 14p
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <link rel="stylesheet" href="lesson_common_style.css">
 </head><body>
-<nav class="site-return-links" aria-label="ページの移動"><a href="high_school_video_lessons.html#subject5">高校生のための授業 に戻る</a><a href="math_c_curves_tangents_lesson.html">前の講義 · 二次曲線と接線</a></nav>
-
-<header><a href="high_school_video_lessons.html#subject5">← 高校数学の授業目次へ</a><h1>数学C｜平面上の曲線 <br>二次曲線と直線の共有点</h1><p>動く図・教科書形式の数式・日本語読み上げで理解しよう</p></header>
+<header><div class="site-parent-link"><a href="math_subject_c.html">数学Cの授業一覧に戻る</a></div><h1>数学C｜平面上の曲線 <br>二次曲線と直線の共有点</h1><p>動く図・教科書形式の数式・日本語読み上げで理解しよう</p></header>
 <main class="wrap">
 <section class="card"><span class="pill">この授業の学習目標</span><h2>交点が2個・1個・0個になる理由を理解しよう</h2>
 <p>二次曲線と直線を連立して交点を求めます。直線を動かしながら、<strong>交点の個数と判別式の関係</strong>を確認しましょう。</p>
@@ -66,8 +64,8 @@ button{font:inherit;border-radius:10px;border:1px solid #bad4e9;padding:10px 14p
 <details><summary>問題4：\(y=x^2\) と \(y=x+k\) が接するときの \(k\) は？</summary><div class="eq">\[D=1+4k=0\quad\Longrightarrow\quad\boxed{k=-\frac14}\]</div><p>接点は \(\left(\frac12,\frac14\right)\) です。</p></details>
 <details><summary>発展：二次方程式にならない場合は？</summary><p>双曲線 \(x^2-y^2=1\) と直線 \(y=x-1\) を連立すると、\(x^2-(x-1)^2=1\) から \(2x-1=1\)、つまり \(x=1\)、\(y=0\) です。共有点は1個ですが、この直線はその点での接線ではありません。<strong>消去後に二次の項が消えた場合、判別式だけで接線と決めつけない</strong>ことが大切です。</p></details>
 <div class="btns"><button type="button" class="primary" data-speak="練習問題に取り組みましょう。解答を見る前に、連立方程式を立て、交点の個数を考えてください。問題の見出しを押すと解答が開きます。">▶ 練習の説明を読み上げる</button><button type="button" class="stop">■ 読み上げ停止</button></div></section>
-<section class="card"><h2>まとめ</h2><p>交点の個数を調べる基本は、<strong>連立 → 一文字を消去 → 解の個数を調べる</strong>ことです。動く図に戻って、交点の変化をもう一度観察しましょう。</p><p><a href="#interactive">↑ 動く図に戻る</a>　／　<a href="high_school_video_lessons.html#subject5">高校数学の授業目次へ</a></p></section>
-<footer>みんなの数学データベース｜数学C「平面上の曲線」</footer></main>
+<section class="card"><h2>まとめ</h2><p>交点の個数を調べる基本は、<strong>連立 → 一文字を消去 → 解の個数を調べる</strong>ことです。動く図に戻って、交点の変化をもう一度観察しましょう。</p><p><a href="#interactive">↑ 動く図に戻る</a>　／　</p></section>
+<footer><div class="site-parent-link"><a href="math_subject_c.html">数学Cの授業一覧に戻る</a></div>みんなの数学データベース｜数学C「平面上の曲線」</footer></main>
 <script>
 (()=>{'use strict';
 const canvas=document.getElementById('graph'),ctx=canvas.getContext('2d'),slider=document.getElementById('kSlider'),output=document.getElementById('kValue'),readout=document.getElementById('readout'),eq=document.getElementById('curveEq');
@@ -91,5 +89,4 @@ function speak(msg){if(!('speechSynthesis'in window)){alert('このブラウザ�
 document.querySelectorAll('[data-speak]').forEach(b=>b.addEventListener('click',()=>speak(b.dataset.speak)));document.getElementById('speakState').addEventListener('click',()=>speak(readout.textContent.replaceAll('/',' わる ')));document.querySelectorAll('.stop').forEach(b=>b.addEventListener('click',()=>{if('speechSynthesis'in window)speechSynthesis.cancel()}));window.addEventListener('pagehide',()=>{if('speechSynthesis'in window)speechSynthesis.cancel()});
 })();
 </script>
-<nav class="site-return-links" aria-label="ページの移動"><a href="high_school_video_lessons.html#subject5">高校生のための授業 に戻る</a><a href="math_c_curves_tangents_lesson.html">前の講義 · 二次曲線と接線</a></nav>
 </body></html>

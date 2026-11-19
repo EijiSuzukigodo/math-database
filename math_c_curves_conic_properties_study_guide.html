@@ -71,8 +71,7 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 
 <link rel="stylesheet" href="lesson_common_style.css">
 </head><body>
-<nav class="site-return-links" aria-label="ページの移動"><a href="math_subject_c.html">数学Cの授業 に戻る</a><a href="math_c_curves_conic_translations_study_guide.html">前の講義 · 2次曲線の平行移動｜数学C</a></nav>
-<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学C</div><h1>2次曲線の性質</h1><p class="lesson-standard-bottom">数学C ／ 式と曲線</p></div></header><main class="lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>2次曲線の性質の基本を理解し、問題に活用できるようになる</h2><p>離心率と焦点・準線の関係を学びます。</p></section>
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_c.html">数学Cの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学C</div><h1>2次曲線の性質</h1><p class="lesson-standard-bottom">数学C ／ 式と曲線</p></div></header><main class="lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>2次曲線の性質の基本を理解し、問題に活用できるようになる</h2><p>離心率と焦点・準線の関係を学びます。</p></section>
 <section class="card" hidden="" style="display:none!important"><span class="tag">この授業の目標</span><h2>1つの比で、3種類の曲線がつながる</h2><p>平面上の点 \(P\) から、固定された焦点 \(F\) までの距離と、固定された準線 \(\ell\) までの距離の<strong>比が一定</strong>である点の集まりを考えましょう。</p><div class="math">\[\boxed{\frac{PF}{PH}=e\qquad(e&gt;0)}\]</div><p>ここで \(H\) は点 \(P\) から準線 \(\ell\) に下ろした垂線の足です。この \(e\) を<strong>離心率</strong>といいます。</p><div class="grid"><div class="mini"><h3>\(0&lt;e&lt;1\)</h3><p><strong>楕円</strong>：閉じた曲線</p></div><div class="mini"><h3>\(e=1\)</h3><p><strong>放物線</strong>：1方向へ開く曲線</p></div><div class="mini"><h3>\(e&gt;1\)</h3><p><strong>双曲線</strong>：2つの枝をもつ曲線</p></div></div><div class="buttons speech"><button hidden="" aria-hidden="true" tabindex="-1" style="display:none!important" class="btn" onclick="speak('離心率は、点から焦点までの距離を、準線までの距離で割った比です。離心率が1より小さいと楕円、1なら放物線、1より大きいと双曲線になります。')">▶ この説明を読み上げる</button><button hidden="" aria-hidden="true" tabindex="-1" style="display:none!important" class="btn alt" onclick="stopSpeech()">■ 読み上げ停止</button></div></section>
 <section class="card"><span class="tag">1 動く図</span><h2>離心率を動かして、曲線の形を比べる</h2><p>焦点を \(F(2,0)\)、準線を \(x=0\) に固定します。スライダーを動かすと、<strong>同じ条件式から曲線が変化</strong>します。</p>
 <div class="controls"><label for="ecc">離心率 \(e\)</label><input id="ecc" type="range" min="0.2" max="1.8" step="0.05" value="0.65"><strong id="eccVal" aria-live="polite">0.65</strong></div>
@@ -93,7 +92,7 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <p><strong>問題2：</strong> 双曲線 \(\frac{x^2}{9}-\frac{y^2}{16}=1\) の離心率を求めましょう。</p><details><summary>解答・解説を表示</summary><p>\(a=3,\ b=4\) なので \(c=\sqrt{9+16}=5\)。したがって</p><div class="math">\[\boxed{e=\frac53}\]</div></details>
 <p><strong>問題3：</strong> 焦点と準線からの距離の比が \(3:2\) のとき、できる曲線は何でしょうか。</p><details><summary>解答・解説を表示</summary><p>\(e=\frac32&gt;1\) なので <strong>双曲線</strong> です。</p></details>
 <div class="note"><strong>まとめ：</strong> \(e&lt;1\) は楕円、\(e=1\) は放物線、\(e&gt;1\) は双曲線。距離の比という1つの考え方で、二次曲線を統一的に理解できます。</div></section>
-<nav aria-label="授業一覧に戻る" class="lesson-standard-return"><a href="math_subject_c.html">← 数学Cに戻る</a></nav></main><script>
+<nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav></main><script>
 'use strict';
 const plot=document.getElementById('plot'),ctx=plot.getContext('2d'),eCtl=document.getElementById('ecc'),pCtl=document.getElementById('pos');
 function setE(v){eCtl.value=String(v);draw()}
@@ -109,5 +108,4 @@ let px,py;if(e<.999){let den=1-e*e,cx=2/den,a=2*e/den,b=2*e/Math.sqrt(den),theta
 line(px,py,2,0,'#f39834',3);line(px,py,0,py,'#12a376',3,[7,5]);dot(px,py,7,'#e68523');dot(0,py,5,'#1ca276');ctx.fillStyle='#ad5f0d';ctx.font='bold 21px sans-serif';let tx=X(px)+12,ty=Y(py)-12;if(tx>W-40)tx-=49;if(ty<25)ty+=35;ctx.fillText('P',tx,ty);ctx.fillStyle='#08745d';ctx.fillText('H',X(0)-24,Y(py)-13);
 let pf=Math.hypot(px-2,py),ph=Math.abs(px);let kind=e<.999?'楕円':e>1.001?'双曲線':'放物線';document.getElementById('readout').textContent=`${kind}：e = ${e.toFixed(2)} ｜ PF ≈ ${pf.toFixed(2)}　PH ≈ ${ph.toFixed(2)}　PF÷PH ≈ ${(pf/ph).toFixed(2)}`}
 eCtl.addEventListener('input',draw);pCtl.addEventListener('input',draw);draw();
-</script><nav class="site-return-links" aria-label="ページの移動"><a href="math_subject_c.html">数学Cの授業 に戻る</a><a href="math_c_curves_conic_translations_study_guide.html">前の講義 · 2次曲線の平行移動｜数学C</a></nav>
-</body></html>
+</script><footer class="site-parent-landmark"><div class="site-parent-link"><a href="math_subject_c.html">数学Cの授業一覧に戻る</a></div><div>みんなの数学データベース</div></footer></body></html>

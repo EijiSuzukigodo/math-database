@@ -99,9 +99,7 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 @media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
 </style><link rel="stylesheet" href="lesson_common_style.css">
 </head><body>
-<nav class="site-return-links" aria-label="ページの移動"><a href="math_subject_1.html">数学Ⅰの授業 に戻る</a></nav>
-
-<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学Ⅰ</div><h1>仮説検定の考え方</h1><p class="lesson-standard-bottom">数学Ⅰ</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>仮説検定の考え方を理解する</h2><p>帰無仮説・有意水準・確率の意味を理解し、データに基づく判断の考え方を学びましょう。</p></section><article class="paper">
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_1.html">数学Ⅰの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学Ⅰ</div><h1>仮説検定の考え方</h1><p class="lesson-standard-bottom">数学Ⅰ</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>仮説検定の考え方を理解する</h2><p>帰無仮説・有意水準・確率の意味を理解し、データに基づく判断の考え方を学びましょう。</p></section><article class="paper">
 <h2>1　仮説検定とは</h2>
 <p>ある主張がデータと矛盾していないかを調べる方法の一つが<strong>仮説検定</strong>です。まず「差がない」「偶然の結果である」などの<strong>帰無仮説</strong>を置き、その仮説のもとで観測結果がどのくらい珍しいかを考えます。</p>
 <p>帰無仮説と対立する主張を<strong>対立仮説</strong>といいます。あらかじめ判断の基準となる<strong>有意水準</strong>を決めます（例：5％）。</p>
@@ -145,7 +143,7 @@ P(X\geqq21)=\sum_{k=21}^{30}{}_ {30}C_k
 <div class="example"><p><strong>問題3</strong>　p値が2％だったとき、「帰無仮説が正しい確率は2％」と言えますか。</p><details><summary>解答・解説</summary><p>言えません。p値は、帰無仮説が正しいと仮定したときに、観測結果と同程度以上に極端な結果が起こる確率です。</p></details></div>
 <div class="example"><p><strong>問題4</strong>　有意水準1％でp値が2％なら、帰無仮説を棄却できますか。</p><details><summary>解答・解説</summary><p>棄却できません。2％は1％より大きいためです。有意水準5％なら結論が異なることにも注意しましょう。</p></details></div>
 <p class="note">数式はインターネット接続時にMathJaxで教科書形式になります。動く確率分布はインターネット接続がなくても動作します。</p>
-</article><nav aria-label="授業一覧に戻る" class="lesson-standard-return"><a href="math_subject_1.html">← 数学Ⅰに戻る</a></nav></main>
+</article><nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav></main>
 <script>
 (function(){
 const svg=document.getElementById('bars'),slider=document.getElementById('observed'),count=document.getElementById('count'),tail=document.getElementById('tailFormula'),decision=document.getElementById('decision');
@@ -156,10 +154,9 @@ add('line',{x1:42,y1:240,x2:652,y2:240,stroke:'#8296a8','stroke-width':1.5});
 for(let k=0;k<=10;k++){let h=coeff[k]/252*186,x=51+k*54;add('rect',{x,y:240-h,width:35,height:h,rx:3,fill:k>=n?'#e99442':'#398bc0'});add('text',{x:x+17.5,y:260,'text-anchor':'middle','font-size':14,fill:'#324b60'},String(k));}
 add('text',{x:345,y:283,'text-anchor':'middle','font-size':13,fill:'#49657a'},'表の回数');
 const numerator=coeff.slice(n).reduce((a,b)=>a+b,0),pct=100*numerator/1024;
-tail.textContent='P(X ≥ '+n+') = '+numerator+'/1024 ≈ '+pct.toFixed(2)+'％';
+tail.textContent='P(X ≧ '+n+') = '+numerator+'/1024 ≈ '+pct.toFixed(2)+'％';
 decision.textContent='片側検定・有意水準5％：'+(pct<=5?'帰無仮説を棄却します。':'帰無仮説を棄却しません。');
 }
 slider.addEventListener('input',draw);draw();
 })();
-</script><footer class="lesson-standard-footer"><div>みんなの数学データベース｜高校生のための授業</div></footer><nav class="site-return-links" aria-label="ページの移動"><a href="math_subject_1.html">数学Ⅰの授業 に戻る</a></nav>
-</body></html>
+</script><footer class="lesson-standard-footer"><div><div class="site-parent-link"><a href="math_subject_1.html">数学Ⅰの授業一覧に戻る</a></div>みんなの数学データベース｜高校生のための授業</div></footer></body></html>

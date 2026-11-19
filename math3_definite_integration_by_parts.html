@@ -50,8 +50,7 @@ mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;max-width:100%}
 </style><link rel="stylesheet" href="lesson_common_style.css">
 </head>
 <body>
-<nav class="site-return-links" aria-label="ページの移動"><a href="math_subject_3.html">数学Ⅲの授業 に戻る</a></nav>
-<header id="md3-header"><div class="md3-common-width"><div class="md3-common-top">みんなの数学データベース ／ 高校数学 ／ 数学Ⅲ</div><h1>定積分の部分積分法</h1><p class="md3-common-bottom">数学Ⅲ ／ </p></div></header>
+<header id="md3-header"><div class="md3-common-width"><div class="site-parent-link"><a href="math_subject_3.html">数学Ⅲの授業一覧に戻る</a></div><div class="md3-common-top">みんなの数学データベース ／ 高校数学 ／ 数学Ⅲ</div><h1>定積分の部分積分法</h1><p class="md3-common-bottom">数学Ⅲ ／ </p></div></header>
 <main class="wrap" id="md3-main"><section class="md3-standard-goal" id="md3-goal"><span class="md3-goal-tag">授業のねらい</span><h2 class="md3-goal-title">定積分の部分積分法を理解し、積分区間を正しく処理できるようになる</h2><p>積の微分法から公式を導き、積分区間の端点を代入する手順を身につけます。多項式と指数・対数・三角関数などの積の定積分を、途中式を省かずに計算しましょう。</p></section>
 <section class="panel"><h2>1．定積分の部分積分法の公式</h2>
 <p>積の微分法を積分区間 \([a,b]\) で積分すると、次の関係になります。</p>
@@ -66,11 +65,11 @@ mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;max-width:100%}
 <h3>基本例</h3><p>\(\displaystyle\int_0^1 xe^x\,dx\) を求めます。\(u=x,\;dv=e^x\,dx\) とすると、\(du=dx,\;v=e^x\) です。</p>
 <div class="formula">\[\begin{aligned}\int_0^1 xe^x\,dx&amp;=[xe^x]_0^1-\int_0^1e^x\,dx\\&amp;=e-(e-1)\\&amp;=\boxed{1}\end{aligned}\]</div></section>
 <section class="panel"><h2>3．動くグラフで面積と定積分を確かめる</h2>
-<p>曲線 \(y=xe^x\) と \(x\) 軸で囲まれる \(0\le x\le b\) の部分を色で表示します。スライダーで \(b\) を変えると、面積と部分積分で計算した値が同時に変わります。</p>
+<p>曲線 \(y=xe^x\) と \(x\) 軸で囲まれる \(0\leqq x\leqq b\) の部分を色で表示します。スライダーで \(b\) を変えると、面積と部分積分で計算した値が同時に変わります。</p>
 <div class="graph-wrap"><svg aria-label="y=x eのx乗のグラフと0からbまでの面積" id="areaGraph" role="img" viewbox="0 0 700 360"><rect fill="#fff" height="360" rx="8" width="700"></rect><g id="graphDrawing"></g></svg>
 <label for="bSlider">積分区間の上端 b：<output id="bValue">1.0</output></label><input id="bSlider" max="2" min="0" step="0.05" type="range" value="1"/><div aria-live="polite" class="readout" id="areaInfo"></div></div>
 <div class="formula">\[\int_0^b xe^x\,dx=[xe^x]_0^b-\int_0^b e^x\,dx=(b-1)e^b+1\]</div>
-<p>この例では \(x\ge0\) で \(xe^x\ge0\) なので、定積分の値は色を塗った部分の面積に一致します。</p></section>
+<p>この例では \(x\geqq0\) で \(xe^x\geqq0\) なので、定積分の値は色を塗った部分の面積に一致します。</p></section>
 <section class="panel"><h2>4．例題と詳しい解説</h2>
 <div class="example"><h3>例題1　多項式と三角関数</h3><p>\(\displaystyle\int_0^{\pi/2}x\cos x\,dx\)</p><div class="solution"><p>\(u=x,\;dv=\cos x\,dx\) から \(du=dx,\;v=\sin x\) です。</p><div class="formula">\[\begin{aligned}\int_0^{\pi/2}x\cos x\,dx&amp;=[x\sin x]_0^{\pi/2}-\int_0^{\pi/2}\sin x\,dx\\&amp;=\frac\pi2-1\end{aligned}\]</div></div></div>
 <div class="example"><h3>例題2　対数関数</h3><p>\(\displaystyle\int_1^e\log x\,dx\)</p><div class="solution"><p>\(u=\log x,\;dv=dx\) として \(du=dx/x,\;v=x\) を使います。</p><div class="formula">\[\begin{aligned}\int_1^e\log x\,dx&amp;=[x\log x]_1^e-\int_1^e1\,dx\\&amp;=e-(e-1)=\boxed{1}\end{aligned}\]</div></div></div>
@@ -84,8 +83,8 @@ mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;max-width:100%}
 <div class="quiz"><strong>問4</strong>　\(\displaystyle\int_0^1x^2e^{2x}\,dx\)<details><summary>解答・解説</summary><p>2回の部分積分で原始関数を得ます。</p><div class="formula">\[\left[e^{2x}\left(\frac{x^2}2-\frac x2+\frac14\right)\right]_0^1=\boxed{\frac{e^2-1}{4}}\]</div></details></div>
 <div class="quiz"><strong>問5</strong>　\(\displaystyle\int_0^{\pi/2}x\sin2x\,dx\)<details><summary>解答・解説</summary><p>\(v=-\frac12\cos2x\) として部分積分します。</p><div class="formula">\[\left[-\frac x2\cos2x+\frac14\sin2x\right]_0^{\pi/2}=\boxed{\frac\pi4}\]</div></details></div>
 <div class="quiz"><strong>問6</strong>　\(\displaystyle\int_0^1x^3e^x\,dx\)<details><summary>解答・解説</summary><p>3回の部分積分で原始関数 \(e^x(x^3-3x^2+6x-6)\) を得ます。</p><div class="formula">\[\boxed{6-2e}\]</div></details></div></section>
-<section class="panel"><h2>6．発展問題とまとめ</h2><h3>発展：定積分の漸化式</h3><p>\(I_n=\displaystyle\int_0^1x^ne^x\,dx\) とおくと、部分積分によって</p><div class="formula">\[\boxed{I_n=e-nI_{n-1}\quad(n\ge1),\qquad I_0=e-1}\]</div><p>を得ます。この関係から \(I_1,I_2,I_3\) を順に計算できます。</p><div class="tip"><strong>まとめ：</strong>部分積分法を使うときは、\(u\) の選択、原始関数 \(v\) の符号、区間端点の代入の3点を確認しましょう。最後に不定積分のような \(+C\) は付けません。</div></section>
-<nav id="md3-bottom-return"><a href="math_subject_3.html">← 数学Ⅲに戻る</a></nav></main>
+<section class="panel"><h2>6．発展問題とまとめ</h2><h3>発展：定積分の漸化式</h3><p>\(I_n=\displaystyle\int_0^1x^ne^x\,dx\) とおくと、部分積分によって</p><div class="formula">\[\boxed{I_n=e-nI_{n-1}\quad(n\geqq1),\qquad I_0=e-1}\]</div><p>を得ます。この関係から \(I_1,I_2,I_3\) を順に計算できます。</p><div class="tip"><strong>まとめ：</strong>部分積分法を使うときは、\(u\) の選択、原始関数 \(v\) の符号、区間端点の代入の3点を確認しましょう。最後に不定積分のような \(+C\) は付けません。</div></section>
+<nav id="md3-bottom-return"></nav></main>
 <script>
 (function(){
 'use strict';const slider=document.getElementById('bSlider'),out=document.getElementById('bValue'),g=document.getElementById('graphDrawing'),txt=document.getElementById('areaInfo');if(!slider||!out||!g||!txt)return;
@@ -93,8 +92,7 @@ const W=700,H=360,xmin=-.2,xmax=2.3,ymin=-.5,ymax=16;
 const X=x=>55+(x-xmin)/(xmax-xmin)*595,Y=y=>307-(y-ymin)/(ymax-ymin)*270;
 const f=x=>x*Math.exp(x);const p=(x,y)=>X(x).toFixed(2)+','+Y(y).toFixed(2);
 function render(){const b=Number(slider.value),N=90;out.value=b.toFixed(2);let curve='',shade=p(0,0);for(let i=0;i<=140;i++){let x=xmin+(xmax-xmin)*i/140;curve+=(i?' L':'M')+p(x,f(x));}for(let i=0;i<=N;i++){const x=b*i/N;shade+=' '+p(x,f(x));}shade+=' '+p(b,0);const area=(b-1)*Math.exp(b)+1;const boundary=b*Math.exp(b);const rem=Math.exp(b)-1;let grid='';for(let x=0;x<=2;x++)grid+='<line x1="'+X(x)+'" y1="'+Y(0)+'" x2="'+X(x)+'" y2="'+Y(16)+'" stroke="#e6edf3"/><text x="'+(X(x)-4)+'" y="331" fill="#53677a" font-size="14">'+x+'</text>';for(let y=0;y<=15;y+=5)grid+='<line x1="'+X(xmin)+'" y1="'+Y(y)+'" x2="'+X(xmax)+'" y2="'+Y(y)+'" stroke="#e6edf3"/><text x="13" y="'+(Y(y)+5)+'" fill="#53677a" font-size="14">'+y+'</text>';
-g.innerHTML=grid+'<line x1="'+X(xmin)+'" x2="'+X(xmax)+'" y1="'+Y(0)+'" y2="'+Y(0)+'" stroke="#6b8094" stroke-width="1.6"/><path d="M'+shade+' Z" fill="#8ec9e3" fill-opacity=".6"/><path d="'+curve+'" fill="none" stroke="#166caa" stroke-width="3"/><line x1="'+X(b)+'" x2="'+X(b)+'" y1="'+Y(0)+'" y2="'+Y(f(b))+'" stroke="#d96a43" stroke-dasharray="5 4" stroke-width="2"/><circle cx="'+X(b)+'" cy="'+Y(f(b))+'" r="5" fill="#d96a43"/><text x="68" y="28" fill="#1c527e" font-size="18">y = x eˣ　(0 ≤ x ≤ b)</text><text x="'+Math.min(X(b)+9,620)+'" y="'+Math.max(45,Y(f(b))-9)+'" fill="#a4502b" font-size="15">b</text>';
+g.innerHTML=grid+'<line x1="'+X(xmin)+'" x2="'+X(xmax)+'" y1="'+Y(0)+'" y2="'+Y(0)+'" stroke="#6b8094" stroke-width="1.6"/><path d="M'+shade+' Z" fill="#8ec9e3" fill-opacity=".6"/><path d="'+curve+'" fill="none" stroke="#166caa" stroke-width="3"/><line x1="'+X(b)+'" x2="'+X(b)+'" y1="'+Y(0)+'" y2="'+Y(f(b))+'" stroke="#d96a43" stroke-dasharray="5 4" stroke-width="2"/><circle cx="'+X(b)+'" cy="'+Y(f(b))+'" r="5" fill="#d96a43"/><text x="68" y="28" fill="#1c527e" font-size="18">y = x eˣ　(0 ≦ x ≦ b)</text><text x="'+Math.min(X(b)+9,620)+'" y="'+Math.max(45,Y(f(b))-9)+'" fill="#a4502b" font-size="15">b</text>';
 txt.textContent='b='+b.toFixed(2)+'： 定積分 = '+area.toFixed(4)+' ／ 境界項 b e^b = '+boundary.toFixed(4)+' ／ 引く積分 (e^b−1) = '+rem.toFixed(4);}
 slider.addEventListener('input',render);render();})();
-</script><footer id="md3-footer"><div class="md3-common-width">みんなの数学データベース｜高校生のための授業</div></footer><nav class="site-return-links" aria-label="ページの移動"><a href="math_subject_3.html">数学Ⅲの授業 に戻る</a></nav>
-</body></html>
+</script><footer id="md3-footer"><div class="md3-common-width"><div class="site-parent-link"><a href="math_subject_3.html">数学Ⅲの授業一覧に戻る</a></div>みんなの数学データベース｜高校生のための授業</div></footer></body></html>

@@ -72,9 +72,7 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 @media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
 </style><link rel="stylesheet" href="lesson_common_style.css">
 </head><body>
-<nav class="site-return-links" aria-label="ページの移動"><a href="math_subject_b.html">数学Bの授業 に戻る</a><a href="mathb_geometric_sequences_and_sums.html">前の講義 · 等比数列とその和</a></nav>
-
-<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>和の記号Σ</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>和の記号Σ</h2><p>Σは項を指定した範囲で足し合わせる記号です。</p></section>
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>和の記号Σ</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>和の記号Σ</h2><p>Σは項を指定した範囲で足し合わせる記号です。</p></section>
 <article class="paper">
 <h2>1．基本事項：Σの読み方</h2>
 <p>Σ（シグマ）は、項を指定した範囲で足し合わせる記号です。例えば、</p>
@@ -117,7 +115,7 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <p>Σの開始が k＝0 なら、最初の項は a です。等比数列では公比 r＝1 の場合を別に扱います。</p>
 <h2>5．計算の工夫</h2>
 <h3>① 区間の途中から始まる場合</h3>
-<div class="formula">\[\sum_{k=p}^{q}a_k=\sum_{k=1}^{q}a_k-\sum_{k=1}^{p-1}a_k\quad(1\le p\le q)\]</div>
+<div class="formula">\[\sum_{k=p}^{q}a_k=\sum_{k=1}^{q}a_k-\sum_{k=1}^{p-1}a_k\quad(1\leqq p\leqq q)\]</div>
 <p>例えば \(\sum_{k=5}^{10}k\) は、1から10の和から1から4の和を引きます。</p>
 <h3>② 添字をずらす場合</h3>
 <div class="formula">\[\sum_{k=2}^{n+1}(k-1)^2=\sum_{j=1}^{n}j^2\]</div>
@@ -146,7 +144,7 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <div class="exercise"><strong>問題7（発展）</strong><p>\(\sum_{k=1}^{n}\bigl((k+1)^3-k^3\bigr)\) を求めよ。</p><details><summary>解答と解説</summary><p>中間の項が相殺され、\(\boxed{(n+1)^3-1}\) です。</p></details></div>
 <h2>8．まとめ</h2>
 <p>Σは項を指定した範囲で足し合わせる記号です。まず上下の範囲を読み、各項を2〜3個展開して意味をつかみましょう。自然数・平方数・立方数・等比数列の和を使い分け、定数の個数や添字のずれを確認すると計算ミスが減ります。</p>
-</article><nav aria-label="授業一覧に戻る" class="lesson-standard-return"><a href="math_subject_b.html">← 数学Bに戻る</a></nav></main>
+</article><nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav></main>
 <script>
 (function(){'use strict';
 const kind=document.getElementById('kind'), count=document.getElementById('count'), nval=document.getElementById('nval'), bars=document.getElementById('bars'), sum=document.getElementById('summation'), expansion=document.getElementById('expansion');
@@ -158,5 +156,4 @@ node('text',{x:38,y:252,'font-size':12,fill:'#506b82'},'横軸：k（項の番�
 const label=t==='odd'?'2k−1':t==='square'?'k²':t==='linear'?'2k＋1':'k';sum.textContent='Σ（k＝1 から '+n+' まで） '+label+' ＝ '+total; expansion.textContent='実際の足し算：'+vals.join(' ＋ ')+' ＝ '+total;}
 kind.addEventListener('change',render);count.addEventListener('input',render);render();})();
 </script>
-<footer class="lesson-standard-footer"><div>みんなの数学データベース｜高校生のための授業</div></footer><nav class="site-return-links" aria-label="ページの移動"><a href="math_subject_b.html">数学Bの授業 に戻る</a><a href="mathb_geometric_sequences_and_sums.html">前の講義 · 等比数列とその和</a></nav>
-</body></html>
+<footer class="lesson-standard-footer"><div><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div>みんなの数学データベース｜高校生のための授業</div></footer></body></html>

@@ -128,8 +128,7 @@ mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;max-width:100%}
 @media(max-width:640px){#md3-goal{padding:17px 15px!important}#md3-goal .md3-goal-title{font-size:20px!important}}
 </style><link rel="stylesheet" href="lesson_common_style.css">
 </head><body>
-<nav class="site-return-links" aria-label="ページの移動"><a href="math_subject_3.html">数学Ⅲの授業 に戻る</a><a href="math3_infinite_geometric_sequences.html">前の講義 · 無限等比数列｜数学Ⅲ</a></nav>
-<header id="md3-header"><div class="md3-common-width"><div class="md3-common-top">みんなの数学データベース ／ 高校数学 ／ 数学Ⅲ</div><h1>関数の極限</h1><p class="md3-common-bottom">数学Ⅲ ／ </p></div></header><main class="wrap" id="md3-main"><section aria-label="授業のねらい" class="md3-standard-goal" id="md3-goal"><span class="md3-goal-tag">授業のねらい</span><h2 class="md3-goal-title">関数の極限と左右からの近づき方を理解する</h2><p>関数がある点に近づくときの値の振る舞いをグラフで確認し、左右の極限、極限の基本法則、無限大での極限を使って正しく計算できるようになる。</p></section>
+<header id="md3-header"><div class="md3-common-width"><div class="site-parent-link"><a href="math_subject_3.html">数学Ⅲの授業一覧に戻る</a></div><div class="md3-common-top">みんなの数学データベース ／ 高校数学 ／ 数学Ⅲ</div><h1>関数の極限</h1><p class="md3-common-bottom">数学Ⅲ ／ </p></div></header><main class="wrap" id="md3-main"><section aria-label="授業のねらい" class="md3-standard-goal" id="md3-goal"><span class="md3-goal-tag">授業のねらい</span><h2 class="md3-goal-title">関数の極限と左右からの近づき方を理解する</h2><p>関数がある点に近づくときの値の振る舞いをグラフで確認し、左右の極限、極限の基本法則、無限大での極限を使って正しく計算できるようになる。</p></section>
 <section class="paper"><span class="pill">基本事項</span><h2>1．関数の極限とは</h2>
 <p>変数 \(x\) がある値 \(a\) に限りなく近づくとき、関数 \(f(x)\) の値がある数 \(L\) に近づくなら、</p>
 <div class="formula">\[\lim_{x\to a}f(x)=L\]</div>
@@ -155,7 +154,7 @@ mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;max-width:100%}
 <div class="example"><strong>例題1</strong>　\(\displaystyle\lim_{x\to2}(x^2-3x+4)\) を求めなさい。</div><div class="answer"><strong>解答</strong>　多項式は連続なので直接代入できます。\[\lim_{x\to2}(x^2-3x+4)=4-6+4=\boxed{2}\]</div>
 <div class="example"><strong>例題2</strong>　\(\displaystyle\lim_{x\to1}\frac{x^2-1}{x-1}\) を求めなさい。</div><div class="answer"><strong>解答</strong>　そのまま代入すると \(\frac00\) の形ですが、\(x\ne1\) で因数分解できます。\[\frac{x^2-1}{x-1}=\frac{(x-1)(x+1)}{x-1}=x+1\]したがって \[\lim_{x\to1}\frac{x^2-1}{x-1}=\boxed{2}\]</div>
 <div class="example"><strong>例題3</strong>　\(\displaystyle\lim_{x\to0}\frac{\sqrt{x+4}-2}{x}\) を求めなさい。</div><div class="answer"><strong>解答</strong>　分子を有理化して、\(x\ne0\) で\[\frac{\sqrt{x+4}-2}{x}=\frac{(x+4)-4}{x(\sqrt{x+4}+2)}=\frac1{\sqrt{x+4}+2}\]よって \[\boxed{\lim_{x\to0}\frac{\sqrt{x+4}-2}{x}=\frac14}\]</div>
-<div class="example"><strong>例題4</strong>　\(f(x)=\begin{cases}x+1&amp;(x&lt;0)\\3-x&amp;(x\ge0)\end{cases}\) の \(x\to0\) の極限を調べなさい。</div><div class="answer"><strong>解答</strong>　左側からは \(x+1\to1\)、右側からは \(3-x\to3\) です。\[\lim_{x\to-0}f(x)=1,\quad\lim_{x\to+0}f(x)=3\]左右の極限が異なるため、<strong>\(\displaystyle\lim_{x\to0}f(x)\) は存在しません</strong>。</div></section>
+<div class="example"><strong>例題4</strong>　\(f(x)=\begin{cases}x+1&amp;(x&lt;0)\\3-x&amp;(x\geqq0)\end{cases}\) の \(x\to0\) の極限を調べなさい。</div><div class="answer"><strong>解答</strong>　左側からは \(x+1\to1\)、右側からは \(3-x\to3\) です。\[\lim_{x\to-0}f(x)=1,\quad\lim_{x\to+0}f(x)=3\]左右の極限が異なるため、<strong>\(\displaystyle\lim_{x\to0}f(x)\) は存在しません</strong>。</div></section>
 <section class="paper"><span class="pill">無限大</span><h2>6．無限大での極限と無限大への発散</h2>
 <p>\(x\) が大きくなる場合は \(x\to\infty\)、小さくなる場合は \(x\to-\infty\) と表します。</p><div class="formula">\[\lim_{x\to\infty}\frac{2x^2+1}{x^2-3}=2\]</div>
 <p>分子・分母を最高次数の \(x^2\) で割ると、\(\dfrac{2+1/x^2}{1-3/x^2}\to2\) です。</p><p>一方、\(f(x)=1/x\) に対して、\(x\to0+\) で \(+\infty\)、\(x\to0-\) で \(-\infty\) に発散します。これは有限の極限が存在することとは異なります。</p></section>
@@ -167,7 +166,7 @@ mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;max-width:100%}
 <section class="paper"><span class="pill">発展</span><h2>8．発展問題</h2>
 <p>\(\displaystyle\lim_{x\to2}\frac{x^2-4}{x^2-3x+2}\) を求めなさい。</p><details><summary>解答と解説</summary><p>分子は \((x-2)(x+2)\)、分母は \((x-2)(x-1)\) なので、\(x\ne2\) で約分して \[\lim_{x\to2}\frac{x+2}{x-1}=\boxed{4}\]となります。</p></details></section>
 <section class="paper"><h2>9．まとめ</h2><p>関数の極限を求めるときは、<strong>左右から同じ値に近づくか</strong>を確認し、計算できる場合は式を整理します。次の「三角関数と極限」では、\(\displaystyle\lim_{x\to0}\frac{\sin x}{x}=1\) などの重要な極限を学びます。</p></section>
-<nav id="md3-bottom-return"><a href="math_subject_3.html">← 数学Ⅲに戻る</a></nav></main><script>(function(){'use strict';
+<nav id="md3-bottom-return"></nav></main><script>(function(){'use strict';
 var svg=document.getElementById('limit-plot'), sel=document.getElementById('kind'), sli=document.getElementById('hval'), out=document.getElementById('h-out'), status=document.getElementById('limit-status');
 if(!svg||!sel||!sli)return;
 var NS='http://www.w3.org/2000/svg';
@@ -190,5 +189,4 @@ var l=dot(left,'#cf5566'),r=dot(right,'#22976d');
 var intro={hole:'左右とも 2 に近づきます。x=1 で関数は定義されません。',jump:'左側極限は 1、右側極限は 3。極限は存在しません。',pole:'左側は −∞、右側は +∞ に発散します。',smooth:'左右とも 1 に近づきます。x=1 の関数値も 1 です。'};
 status.textContent='a='+d.a+'、h='+h.toFixed(2)+'。左の値 '+l.toFixed(2)+'、右の値 '+r.toFixed(2)+'。'+intro[sel.value];}
 sel.addEventListener('change',draw);sli.addEventListener('input',draw);try{draw();}catch(e){status.textContent='初期グラフを表示しています。';}
-})();</script><footer id="md3-footer"><div class="md3-common-width">みんなの数学データベース｜高校生のための授業</div></footer><nav class="site-return-links" aria-label="ページの移動"><a href="math_subject_3.html">数学Ⅲの授業 に戻る</a><a href="math3_infinite_geometric_sequences.html">前の講義 · 無限等比数列｜数学Ⅲ</a></nav>
-</body></html>
+})();</script><footer id="md3-footer"><div class="md3-common-width"><div class="site-parent-link"><a href="math_subject_3.html">数学Ⅲの授業一覧に戻る</a></div>みんなの数学データベース｜高校生のための授業</div></footer></body></html>

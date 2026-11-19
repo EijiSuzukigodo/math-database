@@ -4,14 +4,12 @@
 *{box-sizing:border-box}body{margin:0;background:#f5f7fa;color:#1d2939;font-family:-apple-system,BlinkMacSystemFont,'Hiragino Kaku Gothic ProN',Meiryo,sans-serif;line-height:1.7}header{background:#17365d;color:#fff;padding:24px 0}.wrap{width:min(900px,calc(100% - 28px));margin:auto}h1{font-size:clamp(24px,4vw,34px);margin:6px 0}h2{color:#17365d;font-size:23px}h3{color:#17365d}a{color:#245b91}.back{color:white;text-decoration:none}main{padding:22px 0 60px}.panel{background:#fff;border:1px solid #e1e7ef;border-radius:16px;padding:20px;margin:18px 0;box-shadow:0 4px 16px #17365d0a}.lead{font-size:18px}.formula{background:#eaf2fb;border-radius:12px;padding:14px;text-align:center;font-size:clamp(19px,4vw,26px);font-weight:bold;color:#17365d;overflow-wrap:anywhere}.controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:20px 0}.control{background:#f1f6fc;border-radius:12px;padding:12px}input[type=range]{width:100%;min-height:34px;accent-color:#245b91}.diagram{width:min(100%,490px);display:block;margin:14px auto}.diagram text{font-family:Arial,sans-serif;font-weight:700;fill:#17365d}.small{font-size:14px;color:#667085}.pill{display:inline-block;background:#eaf2fb;color:#17365d;padding:4px 10px;border-radius:99px;font-weight:700}details{border:1px solid #d9e3ee;border-radius:12px;padding:12px 15px;margin:12px 0;background:#fff}summary{cursor:pointer;font-weight:700;color:#17365d}button{border:0;border-radius:10px;background:#17365d;color:#fff;padding:12px 18px;font-size:16px;font-weight:700;cursor:pointer;min-height:44px}.answer{background:#f0f7ed;border-radius:10px;padding:12px;margin-top:10px}.exercise{background:#f7f9fc;padding:14px;border-radius:12px;margin:10px 0}footer{background:#132c4a;color:white;padding:20px 0}@media(max-width:550px){.controls{grid-template-columns:1fr}.panel{padding:15px}}
 </style><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link rel="stylesheet" href="lesson_common_style.css">
 </head><body>
-<nav class="site-return-links" aria-label="ページの移動"><a href="high_school.html">高校数学 に戻る</a></nav>
-
-<header><div class="wrap"><a class="back" href="high_school.html">← 高校数学に戻る</a><h1>📐 展開と因数分解を図で理解する</h1><div>数学Ⅰ → 数と式</div></div></header>
+<header><div class="wrap"><div class="site-parent-link"><a href="high_school.html">📐 高校数学に戻る</a></div><h1>📐 展開と因数分解を図で理解する</h1><div>数学Ⅰ → 数と式</div></div></header>
 <main class="wrap">
 <p class="lead">文字式の公式は、図形の<strong>面積</strong>として考えると、仕組みが見えてきます。</p>
 <section class="panel"><h2>1. 正方形の面積から展開を考える</h2>
 <p>1辺が <strong>a+b</strong> の正方形を、縦と横それぞれ <strong>a</strong> と <strong>b</strong> に分けます。</p>
-<div class="formula">(a+b)² = a² + 2ab + b²</div>
+<div class="formula"><math><mrow><mo>(</mo><mi>a</mi><mo>+</mo><mi>b</mi><msup><mo>)</mo><mn>2</mn></msup><mo>=</mo><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><mn>2</mn><mi>a</mi><mi>b</mi><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup></mrow></math></div>
 <div class="controls"><div class="control"><label for="a"><strong>a = <output id="aVal">3</output></strong></label><input id="a" type="range" min="1" max="8" value="3" step="1"></div><div class="control"><label for="b"><strong>b = <output id="bVal">2</output></strong></label><input id="b" type="range" min="1" max="8" value="2" step="1"></div></div>
 <svg class="diagram" viewBox="0 0 460 470" role="img" aria-label="1辺a+bの正方形をa²、ab、ab、b²の4つに分けた面積図">
 <g id="squares" transform="translate(48 54)">
@@ -32,8 +30,8 @@
 <div class="formula" id="calculation">(3+2)² = 9 + 6 + 6 + 4 = 25</div>
 <p>左辺は「大きな正方形の面積」、右辺は「4つの小さな部分の面積の合計」。どちらも同じ面積です。</p>
 </section>
-<section class="panel"><h2>2. なぜ真ん中が 2ab なの？</h2><p>図を見ると、縦 a・横 b の長方形と、縦 b・横 a の長方形があります。どちらの面積も <strong>ab</strong> なので、合わせて <strong>2ab</strong> です。</p><div class="formula">a² + ab + ab + b² = a² + 2ab + b²</div><p>つまり、<strong>(a+b)² は a²+b² ではありません。</strong>真ん中の2つの長方形を忘れないようにしましょう。</p></section>
-<section class="panel"><h2>3. 因数分解は展開の逆向き</h2><p>展開は「かっこを外す」操作、因数分解は「式を積の形にまとめる」操作です。</p><div class="formula">a² + 2ab + b² = (a+b)²</div><p>たとえば <strong>x²+6x+9</strong> は、a=x、b=3 と考えると、<strong>(x+3)²</strong> に因数分解できます。</p><details><summary>もう一つの公式も確認する</summary><p><strong>(a−b)² = a²−2ab+b²</strong></p><p>引き算の場合は真ん中が −2ab になります。</p></details><details><summary>和と差の積の公式を見る</summary><p><strong>(a+b)(a−b)=a²−b²</strong></p><p>展開すると +ab と −ab が打ち消し合います。</p></details></section>
+<section class="panel"><h2>2. なぜ真ん中が 2ab なの？</h2><p>図を見ると、縦 a・横 b の長方形と、縦 b・横 a の長方形があります。どちらの面積も <strong>ab</strong> なので、合わせて <strong>2ab</strong> です。</p><div class="formula"><math><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><mi>a</mi><mi>b</mi><mo>+</mo><mi>a</mi><mi>b</mi><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup><mo>=</mo><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><mn>2</mn><mi>a</mi><mi>b</mi><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup></mrow></math></div><p>つまり、<strong>(a+b)² は a²+b² ではありません。</strong>真ん中の2つの長方形を忘れないようにしましょう。</p></section>
+<section class="panel"><h2>3. 因数分解は展開の逆向き</h2><p>展開は「かっこを外す」操作、因数分解は「式を積の形にまとめる」操作です。</p><div class="formula"><math><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><mn>2</mn><mi>a</mi><mi>b</mi><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup><mo>=</mo><mo>(</mo><mi>a</mi><mo>+</mo><mi>b</mi><msup><mo>)</mo><mn>2</mn></msup></mrow></math></div><p>たとえば <strong>x²+6x+9</strong> は、a=x、b=3 と考えると、<strong>(x+3)²</strong> に因数分解できます。</p><details><summary>もう一つの公式も確認する</summary><p><strong>(a−b)² = a²−2ab+b²</strong></p><p>引き算の場合は真ん中が −2ab になります。</p></details><details><summary>和と差の積の公式を見る</summary><p><strong>(a+b)(a−b)=a²−b²</strong></p><p>展開すると +ab と −ab が打ち消し合います。</p></details></section>
 
 <section class="panel"><h2>4. 因数分解の基本公式を整理しよう</h2><p>公式は展開を逆にたどれば確かめられます。文字は実数・複素数のいずれでも成り立ちます。</p>
 <div class="formula">\[a^2+2ab+b^2=(a+b)^2\]</div>
@@ -77,8 +75,8 @@
 <div class="exercise"><strong>問題7：</strong> \(x^4+4y^4\) を因数分解しなさい。<details><summary>解答・解説を表示</summary><div class="answer">\[\begin{aligned}x^4+4y^4&=(x^2+2y^2)^2-(2xy)^2\\&=(x^2-2xy+2y^2)(x^2+2xy+2y^2)\end{aligned}\]</div></details></div>
 <div class="exercise"><strong>問題8：</strong> \(x^3+y^3+z^3-3xyz\) について、\(x+y+z=0\) のときの値を求めなさい。<details><summary>解答・解説を表示</summary><div class="answer">因数分解公式より、\(x+y+z=0\) ならば値は \(0\) です。</div></details></div>
 </section>
-<p><a href="high_school.html">← 高校数学の単元一覧に戻る</a></p>
-</main><footer><div class="wrap">みんなの数学データベース</div></footer>
+<p></p>
+</main><footer><div class="wrap"><div class="site-parent-link"><a href="high_school.html">📐 高校数学に戻る</a></div>みんなの数学データベース</div></footer>
 <script>
 (function(){
 const a=document.getElementById('a'),b=document.getElementById('b');
@@ -92,5 +90,4 @@ document.getElementById('aVal').textContent=av;document.getElementById('bVal').t
 document.getElementById('calculation').textContent=`(${av}+${bv})² = ${av*av} + ${av*bv} + ${av*bv} + ${bv*bv} = ${total*total}`;
 }a.addEventListener('input',update);b.addEventListener('input',update);update();
 })();
-</script><nav class="site-return-links" aria-label="ページの移動"><a href="high_school.html">高校数学 に戻る</a></nav>
-</body></html>
+</script></body></html>

@@ -72,9 +72,7 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 @media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
 </style><link rel="stylesheet" href="lesson_common_style.css">
 </head><body>
-<nav class="site-return-links" aria-label="ページの移動"><a href="math_subject_b.html">数学Bの授業 に戻る</a></nav>
-
-<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>数列</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>数列</h2><p>一定の順に並ぶ数を数列といい、各数を項といいます。</p></section>
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>数列</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>数列</h2><p>一定の順に並ぶ数を数列といい、各数を項といいます。</p></section>
 <article class="paper">
 <h2>1．基本事項 — 数列とは</h2><p>一定の順に並ぶ数を<strong>数列</strong>といい、各数を<strong>項</strong>といいます。先頭の項を第1項（初項）、次を第2項といいます。</p>
 <div class="formula">\[a_1,\ a_2,\ a_3,\ \ldots,\ a_n,\ \ldots\]</div>
@@ -84,7 +82,7 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <h2>2．一般項と数列の和</h2><p>第1項から第 \(n\) 項までの和を \(S_n\) と表します。</p>
 <div class="formula">\[S_n=a_1+a_2+\cdots+a_n\]</div>
 <p>たとえば、\(a_n=2n-1\) なら、最初の5項の和は \(1+3+5+7+9=25\) です。<strong>一般項は「1つの項」</strong>、<strong>和は「複数の項の合計」</strong>を表します。</p>
-<div class="formula">\[a_n=S_n-S_{n-1}\qquad(n\geq 2)\]</div>
+<div class="formula">\[a_n=S_n-S_{n-1}\qquad(n\geqq 2)\]</div>
 <p>この関係は、\(S_n\) と \(S_{n-1}\) の共通する項が引き算で消えることからわかります。第1項は \(a_1=S_1\) です。</p>
 <h2>3．動く教材 — 項と和を見てみよう</h2>
 <div class="panel"><div class="controls"><label for="kind">数列の種類</label><select id="kind"><option value="odd">奇数の数列：2n−1</option><option value="linear">3n+1</option><option value="square">平方数：n²</option><option value="geom">2の累乗：2^(n−1)</option></select></div>
@@ -95,15 +93,15 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <h2>5．解説付き例題</h2>
 <div class="example"><strong>例題1（既存の例題）</strong><p>\(a_n=2n-1\) の第5項を求めよ。</p></div><h3>解答と解説</h3><div class="answer"><p>一般項に \(n=5\) を代入して、\(a_5=2\times5-1=9\) です。</p></div>
 <div class="example"><strong>例題2</strong><p>\(a_n=n^2+1\) の最初の4項と、その和 \(S_4\) を求めよ。</p></div><div class="answer"><p>\(a_1=2,\ a_2=5,\ a_3=10,\ a_4=17\) なので、\[S_4=2+5+10+17=34\]</p></div>
-<div class="example"><strong>例題3（和から一般項へ）</strong><p>\(S_n=n(n+1)\) のとき、一般項 \(a_n\) を求めよ。</p></div><div class="answer"><p>\(n\geq2\) のとき、\[a_n=S_n-S_{n-1}=n(n+1)-(n-1)n=2n\]また \(a_1=S_1=2\) なので、\(n=1\) でも同じ式が成り立ちます。したがって \(\boxed{a_n=2n}\) です。</p></div>
+<div class="example"><strong>例題3（和から一般項へ）</strong><p>\(S_n=n(n+1)\) のとき、一般項 \(a_n\) を求めよ。</p></div><div class="answer"><p>\(n\geqq2\) のとき、\[a_n=S_n-S_{n-1}=n(n+1)-(n-1)n=2n\]また \(a_1=S_1=2\) なので、\(n=1\) でも同じ式が成り立ちます。したがって \(\boxed{a_n=2n}\) です。</p></div>
 <h2>6．練習問題（タップして解説を確認）</h2>
 <div class="exercise"><strong>問題1（既存の練習問題）</strong><p>\(a_n=3n+1\) の第4項を求めよ。</p><details><summary>解答・解説を見る</summary><p>\(a_4=3\times4+1=\boxed{13}\) です。</p></details></div>
 <div class="exercise"><strong>問題2</strong><p>\(a_n=2n+3\) の初項、第6項を求めよ。</p><details><summary>解答・解説を見る</summary><p>\(a_1=2+3=\boxed{5}\)、\(a_6=12+3=\boxed{15}\)。</p></details></div>
 <div class="exercise"><strong>問題3</strong><p>\(a_n=n^2\) の最初の4項の和を求めよ。</p><details><summary>解答・解説を見る</summary><p>\(S_4=1+4+9+16=\boxed{30}\)。一般項の値を順に書いてから足します。</p></details></div>
-<div class="exercise"><strong>問題4（発展）</strong><p>\(S_n=3n^2-n\) となる数列の一般項を求めよ。</p><details><summary>解答・解説を見る</summary><p>\(n\geq2\) のとき \[a_n=(3n^2-n)-\{3(n-1)^2-(n-1)\}=6n-4\] \(a_1=S_1=2\) で、\(6\cdot1-4=2\)。よって \(\boxed{a_n=6n-4}\)（\(n\geq1\)）。</p></details></div>
-<h2>7．まとめ</h2><p>一定の順に並ぶ数を数列といい、各数を項といいます。一般項 \(a_n\) を使えば任意の項を求められ、和 \(S_n\) は第1項から第 \(n\) 項までを足したものです。和がわかっているときは、\(a_1=S_1\)、\(a_n=S_n-S_{n-1}\ (n\geq2)\) を利用できます。</p><p>次の授業「等差数列とその和」で、規則的な数列の一般項や和を公式で求める方法を学びます。</p>
+<div class="exercise"><strong>問題4（発展）</strong><p>\(S_n=3n^2-n\) となる数列の一般項を求めよ。</p><details><summary>解答・解説を見る</summary><p>\(n\geqq2\) のとき \[a_n=(3n^2-n)-\{3(n-1)^2-(n-1)\}=6n-4\] \(a_1=S_1=2\) で、\(6\cdot1-4=2\)。よって \(\boxed{a_n=6n-4}\)（\(n\geqq1\)）。</p></details></div>
+<h2>7．まとめ</h2><p>一定の順に並ぶ数を数列といい、各数を項といいます。一般項 \(a_n\) を使えば任意の項を求められ、和 \(S_n\) は第1項から第 \(n\) 項までを足したものです。和がわかっているときは、\(a_1=S_1\)、\(a_n=S_n-S_{n-1}\ (n\geqq2)\) を利用できます。</p><p>次の授業「等差数列とその和」で、規則的な数列の一般項や和を公式で求める方法を学びます。</p>
 <div class="nav"><a href="mathb_arithmetic_sequences_and_sums.html">次へ：等差数列とその和 →</a></div>
-</article><nav aria-label="授業一覧に戻る" class="lesson-standard-return"><a href="math_subject_b.html">← 数学Bに戻る</a></nav></main>
+</article><nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav></main>
 <script>
 (function(){'use strict';
 const svg=document.getElementById('seqChart'),kind=document.getElementById('kind'),slider=document.getElementById('count'),countOut=document.getElementById('nValue'),readout=document.getElementById('seqReadout');
@@ -112,5 +110,4 @@ const NS='http://www.w3.org/2000/svg';function node(tag,attrs,text){const e=docu
 function draw(){const n=Number(slider.value),opt=options[kind.value],values=Array.from({length:n},(_,i)=>opt.f(i+1)),sum=values.reduce((a,b)=>a+b,0),max=Math.max(...values,1);countOut.textContent=n;while(svg.firstChild)svg.removeChild(svg.firstChild);node('line',{x1:45,y1:245,x2:675,y2:245,stroke:'#869dad','stroke-width':2});const width=580/n,gap=Math.min(10,width*.23);values.forEach((v,i)=>{const x=58+i*width,h=175*v/max;node('rect',{x:x+gap/2,y:245-h,width:Math.max(4,width-gap),height:h,rx:3,fill:i===n-1?'#d27b38':'#2582b8'});node('text',{x:x+width/2,y:262,'font-size':Math.max(11,Math.min(16,width*.35)),'text-anchor':'middle',fill:'#27465d'},i+1);node('text',{x:x+width/2,y:Math.max(17,235-h),'font-size':Math.max(10,Math.min(16,width*.30)),'text-anchor':'middle',fill:'#173a61'},v)});node('text',{x:355,y:292,'font-size':14,'text-anchor':'middle',fill:'#50697d'},'項番号 n');readout.textContent=`一般項 aₙ = ${opt.name} ／ 第${n}項 = ${values[n-1]} ／ 第1項から第${n}項までの和 = ${sum} ／ 並び：${values.join('，')}`}
 kind.addEventListener('change',draw);slider.addEventListener('input',draw);draw();
 })();
-</script><footer class="lesson-standard-footer"><div>みんなの数学データベース｜高校生のための授業</div></footer><nav class="site-return-links" aria-label="ページの移動"><a href="math_subject_b.html">数学Bの授業 に戻る</a></nav>
-</body></html>
+</script><footer class="lesson-standard-footer"><div><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div>みんなの数学データベース｜高校生のための授業</div></footer></body></html>
