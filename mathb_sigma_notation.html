@@ -71,10 +71,17 @@ body>footer.lesson-standard-footer>div{max-width:970px!important;margin:auto!imp
 mjx-container svg{width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;display:inline-block!important}
 @media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
 </style><link rel="stylesheet" href="lesson_common_style.css">
+<link rel="stylesheet" href="high_school_lesson_reading.css">
 </head><body>
-<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>和の記号Σ</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>和の記号Σ</h2><p>Σは項を指定した範囲で足し合わせる記号です。</p></section>
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>和の記号Σ</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main" data-hs-lesson=""><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>和の記号Σ</h2><p>Σは項を指定した範囲で足し合わせる記号です。</p><p class="hs-outcome"><strong>この授業でできるようになること</strong><br>和の始まりと終わりを読み取り、\(\sum\) を具体的な足し算に直す。</p></section>
+<nav class="hs-study-nav" aria-label="授業の進め方">
+<a href="#hs-explanation">説明</a>
+<a href="#hs-examples">例題と解説</a>
+<a href="#hs-practice">練習問題</a>
+<a href="#hs-summary">まとめ</a></nav>
+
 <article class="paper">
-<h2>1．基本事項：Σの読み方</h2>
+<h2 id="hs-explanation">1．基本事項：Σの読み方</h2>
 <p>Σ（シグマ）は、項を指定した範囲で足し合わせる記号です。例えば、</p>
 <div class="formula">\[\sum_{k=1}^{5}k=1+2+3+4+5=15\]</div>
 <p>は「<strong>k に1、2、3、4、5を順に代入して足す</strong>」という意味です。</p>
@@ -104,7 +111,7 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <h3>③ 立方数の和</h3>
 <div class="formula">\[\boxed{\sum_{k=1}^{n}k^3=\left\{\frac{n(n+1)}{2}\right\}^{2}}\]</div>
 <p>立方数の和は、自然数の和の2乗に等しいという特徴があります。</p>
-<h3>④ 基本公式の例題と応用（「いろいろな数列の和」から移動）</h3><p>これまで別ページに掲載していた平方数の和の例題を、Σの公式を学ぶこのページへまとめました。</p><h3>解説付き例題（元の教材）</h3><div class="example"><strong>例題</strong><p>\(1^2+2^2+3^2+4^2\) を求める。</p></div><h3>解答と解説</h3><div class="answer"><p>1+4+9+16=30 です。</p><p>公式を使っても \(\frac{4\cdot5\cdot9}{6}=30\) と求められます。</p></div>
+<h3>④ 基本公式の例題と応用（「いろいろな数列の和」から移動）</h3><p>これまで別ページに掲載していた平方数の和の例題を、Σの公式を学ぶこのページへまとめました。</p><h3 id="hs-examples">解説付き例題（元の教材）</h3><div class="example"><strong>例題</strong><p>\(1^2+2^2+3^2+4^2\) を求める。</p></div><h3>解答と解説</h3><div class="answer"><p>1+4+9+16=30 です。</p><p>公式を使っても \(\frac{4\cdot5\cdot9}{6}=30\) と求められます。</p></div>
 <h3>例題2：平方数の和</h3><div class="example">\(\displaystyle\sum_{k=1}^{10}k^2\) を求めよ。</div><div class="answer"><div class="formula">\[\sum_{k=1}^{10}k^2=\frac{10\cdot11\cdot21}{6}=385\]</div><p>項数が多いときほど、公式が便利です。</p></div>
 <h3>例題3：連続する整数の積の和</h3><div class="example">\(\displaystyle\sum_{k=1}^{n}k(k+1)\) を求めよ。</div><div class="answer"><p>\(k(k+1)=k^2+k\) と展開して分けます。</p><div class="formula">\[\begin{aligned}\sum_{k=1}^n k(k+1)&amp;=\sum_{k=1}^n k^2+\sum_{k=1}^n k\\&amp;=\frac{n(n+1)(2n+1)}6+\frac{n(n+1)}2\\&amp;=\frac{n(n+1)(n+2)}3\end{aligned}\]</div></div><h3>⑤ 定数・係数の性質</h3>
 <div class="formula">\[\sum_{k=1}^{n}(ca_k+db_k)=c\sum_{k=1}^{n}a_k+d\sum_{k=1}^{n}b_k\]</div>
@@ -134,15 +141,15 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <div class="answer"><div class="formula">\[2\cdot\frac{n(n+1)}2-n=n^2\]</div><p>最初の n 個の奇数の和は n² になります。</p></div>
 <div class="example"><strong>例題5</strong><p>\(\sum_{k=0}^{5}2^k\) を求める。</p></div>
 <div class="answer"><div class="formula">\[\frac{2^6-1}{2-1}=63\]</div><p>k は0から5までの6項です。</p></div>
-<p class="note">部分分数分解の発展例題は、<a href="mathb_sums_of_sequences.html">「いろいろな数列の和」</a> のページへ移しました。</p><h2>7．練習問題（解答・解説付き）</h2><div class="exercise"><strong>追加問題A0（発展）</strong><p>\(\displaystyle\sum_{k=1}^{n}k2^{k-1}\)</p><details><summary>解答と解説を見る</summary><p>例題9と同じ方法で \((n-1)2^n+1\)。</p></details></div><div class="exercise"><strong>追加問題C（平方数・一次式）</strong><p>\(\displaystyle\sum_{k=1}^{n}(3k^2-2k)\)</p><details><summary>解答と解説を見る</summary><p>\(3\frac{n(n+1)(2n+1)}6-2\frac{n(n+1)}2=\frac{n(n+1)(2n-1)}2\)。</p></details></div><div class="exercise"><strong>追加問題B</strong><p>\(\displaystyle\sum_{k=1}^{20}k^2\)</p><details><summary>解答と解説を見る</summary><p>\(\frac{20\cdot21\cdot41}{6}=2870\)。</p></details></div><div class="exercise"><strong>追加問題A（元の教材）</strong><p>\(1^2+2^2+3^2+4^2+5^2\)</p><details><summary>解答と解説を見る</summary><p>\(1+4+9+16+25=55\)。</p></details></div>
-<div class="exercise"><strong>問題1（元の教材の問題）</strong><p>1から30までの和を求める。</p><details><summary>解答を見る</summary><p>\(\dfrac{30\cdot31}{2}=\boxed{465}\)</p></details></div>
-<div class="exercise"><strong>問題2</strong><p>\(\sum_{k=1}^{12}(2k+3)\) を計算せよ。</p><details><summary>解答と解説</summary><p>\(2\cdot\dfrac{12\cdot13}{2}+3\cdot12=156+36=\boxed{192}\)</p></details></div>
-<div class="exercise"><strong>問題3</strong><p>\(\sum_{k=1}^{6}k^2\) を求めよ。</p><details><summary>解答と解説</summary><p>\(\dfrac{6\cdot7\cdot13}{6}=\boxed{91}\)</p></details></div>
-<div class="exercise"><strong>問題4</strong><p>\(\sum_{k=3}^{9}(2k-1)\) を求めよ。</p><details><summary>解答と解説</summary><p>初項5、末項17、7項なので、\(\dfrac{(5+17)\cdot7}{2}=\boxed{77}\)</p></details></div>
-<div class="exercise"><strong>問題5</strong><p>\(\sum_{k=1}^{n}(k^2+k)\) を n で表せ。</p><details><summary>解答と解説</summary><p>\(\dfrac{n(n+1)(2n+1)}6+\dfrac{n(n+1)}2=\boxed{\dfrac{n(n+1)(n+2)}3}\)</p></details></div>
-<div class="exercise"><strong>問題6</strong><p>\(\sum_{k=1}^{7}3^{k-1}\) を求めよ。</p><details><summary>解答と解説</summary><p>初項1、公比3、7項なので、\(\dfrac{3^7-1}{3-1}=\boxed{1093}\)</p></details></div>
-<div class="exercise"><strong>問題7（発展）</strong><p>\(\sum_{k=1}^{n}\bigl((k+1)^3-k^3\bigr)\) を求めよ。</p><details><summary>解答と解説</summary><p>中間の項が相殺され、\(\boxed{(n+1)^3-1}\) です。</p></details></div>
-<h2>8．まとめ</h2>
+<p class="note">部分分数分解の発展例題は、<a href="mathb_sums_of_sequences.html">「いろいろな数列の和」</a> のページへ移しました。</p><h2 id="hs-practice">7．練習問題（解答・解説付き）</h2><div class="exercise"><strong>追加問題A0（発展）</strong><p>\(\displaystyle\sum_{k=1}^{n}k2^{k-1}\)</p><details><summary>解答・解説を表示</summary><p>例題9と同じ方法で \((n-1)2^n+1\)。</p></details></div><div class="exercise"><strong>追加問題C（平方数・一次式）</strong><p>\(\displaystyle\sum_{k=1}^{n}(3k^2-2k)\)</p><details><summary>解答・解説を表示</summary><p>\(3\frac{n(n+1)(2n+1)}6-2\frac{n(n+1)}2=\frac{n(n+1)(2n-1)}2\)。</p></details></div><div class="exercise"><strong>追加問題B</strong><p>\(\displaystyle\sum_{k=1}^{20}k^2\)</p><details><summary>解答・解説を表示</summary><p>\(\frac{20\cdot21\cdot41}{6}=2870\)。</p></details></div><div class="exercise"><strong>追加問題A（元の教材）</strong><p>\(1^2+2^2+3^2+4^2+5^2\)</p><details><summary>解答・解説を表示</summary><p>\(1+4+9+16+25=55\)。</p></details></div>
+<div class="exercise"><strong>問題1（元の教材の問題）</strong><p>1から30までの和を求める。</p><details><summary>解答・解説を表示</summary><p>\(\dfrac{30\cdot31}{2}=\boxed{465}\)</p></details></div>
+<div class="exercise"><strong>問題2</strong><p>\(\sum_{k=1}^{12}(2k+3)\) を計算せよ。</p><details><summary>解答・解説を表示</summary><p>\(2\cdot\dfrac{12\cdot13}{2}+3\cdot12=156+36=\boxed{192}\)</p></details></div>
+<div class="exercise"><strong>問題3</strong><p>\(\sum_{k=1}^{6}k^2\) を求めよ。</p><details><summary>解答・解説を表示</summary><p>\(\dfrac{6\cdot7\cdot13}{6}=\boxed{91}\)</p></details></div>
+<div class="exercise"><strong>問題4</strong><p>\(\sum_{k=3}^{9}(2k-1)\) を求めよ。</p><details><summary>解答・解説を表示</summary><p>初項5、末項17、7項なので、\(\dfrac{(5+17)\cdot7}{2}=\boxed{77}\)</p></details></div>
+<div class="exercise"><strong>問題5</strong><p>\(\sum_{k=1}^{n}(k^2+k)\) を n で表せ。</p><details><summary>解答・解説を表示</summary><p>\(\dfrac{n(n+1)(2n+1)}6+\dfrac{n(n+1)}2=\boxed{\dfrac{n(n+1)(n+2)}3}\)</p></details></div>
+<div class="exercise"><strong>問題6</strong><p>\(\sum_{k=1}^{7}3^{k-1}\) を求めよ。</p><details><summary>解答・解説を表示</summary><p>初項1、公比3、7項なので、\(\dfrac{3^7-1}{3-1}=\boxed{1093}\)</p></details></div>
+<div class="exercise"><strong>問題7（発展）</strong><p>\(\sum_{k=1}^{n}\bigl((k+1)^3-k^3\bigr)\) を求めよ。</p><details><summary>解答・解説を表示</summary><p>中間の項が相殺され、\(\boxed{(n+1)^3-1}\) です。</p></details></div>
+<h2 id="hs-summary">8．まとめ</h2>
 <p>Σは項を指定した範囲で足し合わせる記号です。まず上下の範囲を読み、各項を2〜3個展開して意味をつかみましょう。自然数・平方数・立方数・等比数列の和を使い分け、定数の個数や添字のずれを確認すると計算ミスが減ります。</p>
 </article><nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav></main>
 <script>

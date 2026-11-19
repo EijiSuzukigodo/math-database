@@ -111,19 +111,37 @@ body>footer.lesson-standard-footer>div{max-width:970px!important;margin:auto!imp
 mjx-container svg{width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;display:inline-block!important}
 @media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
 </style><link rel="stylesheet" href="lesson_common_style.css">
+<link rel="stylesheet" href="high_school_lesson_reading.css">
 </head><body>
-<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_2.html">数学Ⅱの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学Ⅱ</div><h1>等式の証明と不等式の証明</h1><p class="lesson-standard-bottom">数学Ⅱ</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>等式の証明方法を理解する</h2><p>「等式の証明」の考え方を理解し、例題や練習問題に活用できるようになる。</p></section><article class="paper">
-<h2>1. 等式の証明とは</h2><p>等式 \(A=B\) が成り立つことを、式の変形や与えられた条件を用いて論理的に示します。</p>
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_2.html">数学Ⅱの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学Ⅱ</div><h1>等式の証明と不等式の証明</h1><p class="lesson-standard-bottom">数学Ⅱ</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main" data-hs-lesson=""><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>等式の証明方法を理解する</h2><p>「等式の証明」の考え方を理解し、例題や練習問題に活用できるようになる。</p></section>
+<nav class="hs-study-nav" aria-label="授業の進め方">
+<a href="#hs-explanation">説明</a>
+<a href="#hs-examples">例題と解説</a>
+<a href="#hs-practice">練習問題</a>
+<a href="#hs-summary">まとめ</a></nav>
+<article class="paper">
+<h2 id="hs-explanation">1. 等式の証明とは</h2><div class="hs-table"><table><caption>差に注目する証明</caption>
+<thead><tr><th scope="col">示したいこと</th><th scope="col">調べること</th></tr></thead>
+<tbody>
+<tr><th scope="row">\(A=B\)</th><td>\(A-B=0\)</td></tr>
+<tr><th scope="row">\(A\geqq B\)</th><td>\(A-B\geqq0\)</td></tr>
+</tbody></table></div>
+<p>等式 \(A=B\) が成り立つことを、式の変形や与えられた条件を用いて論理的に示します。</p>
 <h3>よく使う3つの方法</h3><div class="formula">\[\begin{aligned}&amp;①\ A\text{ を変形して }B\text{ を導く}\&amp;②\ A,B\text{ をそれぞれ変形して同じ式にする}\&amp;③\ A-B=0\text{ を示す}\end{aligned}\]</div><p>証明の途中では、<strong>何を示そうとしているか</strong>を意識し、等式が成立する条件を確認します。</p>
-<h2>2. 方法①：一方を変形する</h2><div class="example"><h3>例題1　次の等式を証明せよ</h3><div class="formula">\[a^3-b^3=(a-b)^3+3ab(a-b)\]</div><p><strong>証明</strong>　右辺を展開すると、</p><div class="formula">\[\begin{aligned}(a-b)^3+3ab(a-b)&amp;=a^3-3a^2b+3ab^2-b^3\&amp;\quad+3a^2b-3ab^2\&amp;=a^3-b^3\end{aligned}\]</div><p>よって等式は成り立つ。</p></div>
+<h2>2. 方法①：一方を変形する</h2><div class="example"><h3 id="hs-examples">例題1　次の等式を証明せよ</h3><div class="formula">\[a^3-b^3=(a-b)^3+3ab(a-b)\]</div><p><strong>証明</strong>　右辺を展開すると、</p><div class="formula">\[\begin{aligned}(a-b)^3+3ab(a-b)&amp;=a^3-3a^2b+3ab^2-b^3\&amp;\quad+3a^2b-3ab^2\&amp;=a^3-b^3\end{aligned}\]</div><p>よって等式は成り立つ。</p></div>
 <h2>3. 方法②：両辺を同じ式にする</h2><div class="example"><h3>例題2　次の等式を証明せよ</h3><div class="formula">\[(a^2+b^2)(x^2+y^2)=(ax+by)^2+(ay-bx)^2\]</div><p><strong>証明</strong>　左辺を展開すると、</p><div class="formula">\[a^2x^2+a^2y^2+b^2x^2+b^2y^2\]</div><p>右辺を展開すると、</p><div class="formula">\[\begin{aligned}&amp;a^2x^2+2abxy+b^2y^2\&amp;\quad+a^2y^2-2abxy+b^2x^2\&amp;=a^2x^2+a^2y^2+b^2x^2+b^2y^2\end{aligned}\]</div><p>両辺が同じ式になるので等式は成り立つ。</p></div>
 <h2>4. 方法③：差が0になることを示す</h2><div class="example"><h3>例題3　次の等式を証明せよ</h3><div class="formula">\[(a+b)^2-(a-b)^2=4ab\]</div><p><strong>証明</strong>　左辺から右辺を引くと、</p><div class="formula">\[\begin{aligned}&amp;(a+b)^2-(a-b)^2-4ab\&amp;=a^2+2ab+b^2-(a^2-2ab+b^2)-4ab\&amp;=0\end{aligned}\]</div><p>よって等式は成り立つ。</p></div>
 <h2>5. 条件付きの等式</h2><p>条件があるときは、条件から文字を消去する方法や、条件式の因数分解を利用します。</p><div class="example"><h3>例題4　\(a+b+c=0\) のとき、次の等式を証明せよ</h3><div class="formula">\[a^3+b^3+c^3=3abc\]</div><p><strong>証明</strong>　\(c=-(a+b)\) より、</p><div class="formula">\[\begin{aligned}a^3+b^3+c^3-3abc&amp;=a^3+b^3-(a+b)^3+3ab(a+b)\&amp;=a^3+b^3-a^3-3a^2b-3ab^2-b^3\&amp;\quad+3a^2b+3ab^2=0\end{aligned}\]</div><p>したがって \(a^3+b^3+c^3=3abc\) である。</p></div><p class="small">発展：恒等式 \(a^3+b^3+c^3-3abc=(a+b+c)(a^2+b^2+c^2-ab-bc-ca)\) を使っても証明できます。</p>
 <h2>6. 比例式を利用する証明</h2><p>\(a:b=c:d\) は、分母が0でないとき \(\dfrac ab=\dfrac cd\) と表せます。共通の比を \(k\) と置くと、\(a=bk,\ c=dk\) と表せます。</p><div class="example"><h3>例題5　\(\dfrac ab=\dfrac cd\) のとき、次の等式を証明せよ</h3><p>ただし \(b\ne0,\ d\ne0,\ b+d\ne0,\ b-d\ne0\) とする。</p><div class="formula">\[\frac{a+c}{b+d}=\frac{a-c}{b-d}\]</div><p><strong>証明</strong>　\(\dfrac ab=\dfrac cd=k\) と置くと \(a=bk,\ c=dk\)。よって</p><div class="formula">\[\frac{a+c}{b+d}=\frac{bk+dk}{b+d}=k\]</div><div class="formula">\[\frac{a-c}{b-d}=\frac{bk-dk}{b-d}=k\]</div><p>したがって両辺は等しい。</p></div>
 <h2>7. 連比</h2><p>\(a:b:c=1:2:3\) ならば \(a=k,b=2k,c=3k\) と表せます。</p><div class="example"><h3>例題6　\(a:b:c=1:2:3\)、\(a+b+c=24\) のとき \(a,b,c\) を求めよ</h3><div class="formula">\[a=k,\ b=2k,\ c=3k\]</div><div class="formula">\[k+2k+3k=24\ \Longrightarrow\ k=4\]</div><p>したがって \(a=4,\ b=8,\ c=12\)。</p></div>
-<h2>8. 練習問題</h2>
+<h2 id="hs-practice">8. 練習問題</h2>
 <div class="example"><p><strong>問題1</strong>　\((a+b)^3-(a-b)^3=6a^2b+2b^3\) を証明せよ。</p><details><summary>解答・解説を表示</summary><div class="formula">\[\begin{aligned}(a+b)^3-(a-b)^3&amp;=(a^3+3a^2b+3ab^2+b^3)\&amp;\quad-(a^3-3a^2b+3ab^2-b^3)\&amp;=6a^2b+2b^3\end{aligned}\]</div></details></div>
 <div class="example"><p><strong>問題2</strong>　\(a+b+c=0\) のとき \(a^2+b^2+c^2=-2(ab+bc+ca)\) を証明せよ。</p><details><summary>解答・解説を表示</summary><p>条件を2乗して、</p><div class="formula">\[0=(a+b+c)^2=a^2+b^2+c^2+2(ab+bc+ca)\]</div><p>移項すればよい。</p></details></div>
 <div class="example"><p><strong>問題3</strong>　\(\dfrac ab=\dfrac cd\) のとき \(\dfrac{2a+3c}{2b+3d}=\dfrac ab\) を証明せよ。ただし分母は0でないとする。</p><details><summary>解答・解説を表示</summary><p>共通比を \(k\) とおくと \(a=bk,c=dk\)。</p><div class="formula">\[\frac{2a+3c}{2b+3d}=\frac{2bk+3dk}{2b+3d}=k=\frac ab\]</div></details></div>
 <div class="example"><p><strong>問題4</strong>　\(a:b:c=3:4:5\)、\(a+b+c=36\) のとき \(a,b,c\) を求めよ。</p><details><summary>解答・解説を表示</summary><p>\(a=3k,b=4k,c=5k\) とすると \(12k=36\) より \(k=3\)。したがって \(a=9,b=12,c=15\)。</p></details></div>
-<p class="note">数式はMathJaxで教科書形式に表示します。表示にはインターネット接続が必要です。</p><section class="review-practice"><h2>追加の練習問題（基本・標準）</h2><p>途中式をノートに書いてから、解答を開いて確認しましょう。</p><div class="review-question"><p><strong>問題 1：</strong>\((a+b)^2-(a-b)^2=4ab\) を証明せよ。</p><details><summary>解答・考え方を確認</summary><p>左辺を展開すると \(a^2+2ab+b^2-(a^2-2ab+b^2)=4ab\)。</p></details></div><div class="review-question"><p><strong>問題 2：</strong>\(a^2+b^2\geqq2ab\) を実数 \(a,b\) について示せ。</p><details><summary>解答・考え方を確認</summary><p>\((a-b)^2\geqq0\) を変形すればよい。</p></details></div></section></article><nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav></main><footer class="lesson-standard-footer"><div><div class="site-parent-link"><a href="math_subject_2.html">数学Ⅱの授業一覧に戻る</a></div>みんなの数学データベース｜高校生のための授業</div></footer></body></html>
+<p class="note">数式はMathJaxで教科書形式に表示します。表示にはインターネット接続が必要です。</p><section class="review-practice"><h2>追加の練習問題（基本・標準）</h2><p>途中式をノートに書いてから、解答を開いて確認しましょう。</p><div class="review-question"><p><strong>問題 1：</strong>\((a+b)^2-(a-b)^2=4ab\) を証明せよ。</p><details><summary>解答・解説を表示</summary><p>左辺を展開すると \(a^2+2ab+b^2-(a^2-2ab+b^2)=4ab\)。</p></details></div><div class="review-question"><p><strong>問題 2：</strong>\(a^2+b^2\geqq2ab\) を実数 \(a,b\) について示せ。</p><details><summary>解答・解説を表示</summary><p>\((a-b)^2\geqq0\) を変形すればよい。</p></details></div></section></article><nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav>
+<section class="hs-study-panel" id="hs-summary">
+<h2>まとめ</h2>
+<p>等式は差が0になること、不等式は差の符号を示すことで証明できます。平方や相加平均・相乗平均を使ったときは等号条件まで確認します。</p>
+</section>
+</main><footer class="lesson-standard-footer"><div><div class="site-parent-link"><a href="math_subject_2.html">数学Ⅱの授業一覧に戻る</a></div>みんなの数学データベース｜高校生のための授業</div></footer></body></html>

@@ -80,28 +80,41 @@ body>footer.lesson-standard-footer>div{max-width:970px!important;margin:auto!imp
 mjx-container svg{width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;display:inline-block!important}
 @media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
 </style><link rel="stylesheet" href="lesson_common_style.css">
+<link rel="stylesheet" href="high_school_lesson_reading.css">
 </head><body>
-<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_1.html">数学Ⅰの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学Ⅰ</div><h1>命題と証明</h1><p class="lesson-standard-bottom">数学Ⅰ</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>命題の関係を理解し、証明方法を使い分ける</h2><p>命題の逆・裏・対偶の関係を整理し、対偶による証明と背理法の考え方を学びます。具体例と切り替え図を通して、論理的に説明する力を身につけましょう。</p></section><article class="paper">
-<h2>1　命題の逆・裏・対偶</h2><p>命題「\(p\Rightarrow q\)」に対して、逆・裏・対偶を次のように定めます。</p>
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_1.html">数学Ⅰの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学Ⅰ</div><h1>命題と証明</h1><p class="lesson-standard-bottom">数学Ⅰ</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main" data-hs-lesson=""><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>命題の関係を理解し、証明方法を使い分ける</h2><p>命題の逆・裏・対偶の関係を整理し、対偶による証明と背理法の考え方を学びます。具体例と切り替え図を通して、論理的に説明する力を身につけましょう。</p></section>
+<nav class="hs-study-nav" aria-label="授業の進め方">
+<a href="#hs-explanation">説明</a>
+<a href="#hs-examples">例題と解説</a>
+<a href="#hs-practice">練習問題</a>
+<a href="#hs-summary">まとめ</a></nav>
+<article class="paper">
+<h2 id="hs-explanation">1　命題の逆・裏・対偶</h2><div class="hs-table"><table><caption>二つの証明の考え方</caption>
+<thead><tr><th scope="col">方法</th><th scope="col">着目点</th></tr></thead>
+<tbody>
+<tr><th scope="row">対偶</th><td>「\(p\) ならば \(q\)」を「\(q\) でなければ \(p\) でない」に言い換える</td></tr>
+<tr><th scope="row">背理法</th><td>結論が成り立たないと仮定し、条件との矛盾を示す</td></tr>
+</tbody></table></div>
+<p>命題「\(p\Rightarrow q\)」に対して、逆・裏・対偶を次のように定めます。</p>
 <div class="eq">\[\begin{array}{c|c}\text{名称}&amp;\text{命題}\\\hline \text{もとの命題}&amp;p\Rightarrow q\\ \text{逆}&amp;q\Rightarrow p\\ \text{裏}&amp;\overline{p}\Rightarrow\overline{q}\\ \text{対偶}&amp;\overline{q}\Rightarrow\overline{p}\end{array}\]</div>
 <p>もとの命題と対偶は、必ず同じ真偽になります。逆と裏も同じ真偽です。</p>
 <div class="ex"><h3>動く教材：逆・裏・対偶を切り替えよう</h3><p>「\(n\) が4の倍数なら \(n\) は偶数である」を使って、各命題の真偽を確かめます。</p>
 <div class="controls"><button class="active" data-kind="original">もとの命題</button><button data-kind="converse">逆</button><button data-kind="inverse">裏</button><button data-kind="contra">対偶</button></div><div aria-live="polite" id="relation"><strong>もとの命題（真）</strong><p>4の倍数なら偶数である。</p><p>4の倍数は \(4k=2(2k)\) と表せるので、必ず偶数です。</p></div><p class="tip">反例が1つでも見つかれば、その命題は偽です。例えば「偶数なら4の倍数」は \(n=2\) が反例です。</p></div>
-<div class="ex"><h3>例題1</h3><p>命題「実数 \(x\) が \(x&gt;2\) なら \(x&gt;0\)」の対偶を求めなさい。</p><p><strong>解答：</strong>「\(x\leqq0\) なら \(x\leqq2\)」です。対偶はもとの命題と同じく真です。</p></div>
+<div class="ex"><h3 id="hs-examples">例題1</h3><p>命題「実数 \(x\) が \(x&gt;2\) なら \(x&gt;0\)」の対偶を求めなさい。</p><p><strong>解答：</strong>「\(x\leqq0\) なら \(x\leqq2\)」です。対偶はもとの命題と同じく真です。</p></div>
 <h2>2　対偶を利用した証明</h2><p>「\(p\Rightarrow q\)」を直接示しにくいとき、対偶「\(\overline{q}\Rightarrow\overline{p}\)」を証明します。</p>
 <div class="ex"><h3>例題2　\(n^2\) が偶数なら \(n\) は偶数</h3><p><strong>証明：</strong>対偶「\(n\) が奇数なら \(n^2\) も奇数」を示します。</p><p>奇数は整数 \(k\) を用いて \(n=2k+1\) と表せます。</p><div class="eq">\[\begin{aligned}n^2&amp;=(2k+1)^2\\&amp;=4k^2+4k+1\\&amp;=2(2k^2+2k)+1\end{aligned}\]</div><p>これは奇数なので対偶が真です。よって、もとの命題も真です。□</p></div>
 <h2>3　背理法</h2><p>証明したいことを否定して仮定し、矛盾を導く方法を<strong>背理法</strong>といいます。</p>
 <div class="ex"><h3>例題3　\(\sqrt2\) は無理数である</h3><p><strong>証明：</strong>\(\sqrt2\) が有理数であると仮定します。互いに素な正整数 \(a,b\) を使って</p><div class="eq">\[\sqrt2=\frac ab\]</div><p>と表せます。両辺を2乗すると \(a^2=2b^2\) です。したがって \(a^2\) は偶数であり、例題2より \(a\) は偶数です。</p><p>\(a=2c\) とおくと、</p><div class="eq">\[4c^2=2b^2\quad\Rightarrow\quad b^2=2c^2\]</div><p>よって \(b\) も偶数です。しかし、\(a,b\) がともに偶数であることは「互いに素」に矛盾します。したがって \(\sqrt2\) は無理数です。□</p></div>
 <h2>4　「すべて」と「ある」の否定</h2><p>「すべての \(x\) について成り立つ」の否定は「成り立たない \(x\) が少なくとも1つある」です。</p>
-<p>「∀」は「すべての」、「∃」は「少なくとも一つ存在する」を表します。「⇔」は左右の条件が同値であることを示します。</p><div class="eq">\[\begin{aligned}\overline{(\forall x\ P(x))}&amp;\iff\exists x\ \overline{P(x)}\\\overline{(\exists x\ P(x))}&amp;\iff\forall x\ \overline{P(x)}\end{aligned}\]</div>
+<p>「すべての \(x\) で \(P(x)\) が成り立つ」の否定は、「\(P(x)\) が成り立たない \(x\) が少なくとも一つ存在する」です。</p><p>「\(P(x)\) が成り立つ \(x\) が少なくとも一つ存在する」の否定は、「すべての \(x\) で \(P(x)\) が成り立たない」です。</p>
 <div class="ex"><h3>例題4</h3><p>「すべての実数 \(x\) について \(x^2&gt;0\)」の否定は「\(x^2\leqq0\) を満たす実数 \(x\) がある」です。\(x=0\) が反例となります。</p></div>
-<h2>5　練習問題</h2>
-<div class="ex"><strong>問題1</strong><p>「\(x&gt;3\) なら \(x&gt;1\)」の逆と対偶を述べ、それぞれの真偽を調べなさい。</p><details><summary>解答・詳しい解説を見る</summary><p>逆：「\(x&gt;1\) なら \(x&gt;3\)」は偽。反例 \(x=2\)。対偶：「\(x\leqq1\) なら \(x\leqq3\)」は真です。</p></details></div>
-<div class="ex"><strong>問題2</strong><p>整数 \(n\) について「\(n^2\) が3の倍数なら \(n\) は3の倍数」を対偶を使って証明しなさい。</p><details><summary>解答・詳しい解説を見る</summary><p>対偶は「\(n\) が3の倍数でなければ \(n^2\) も3の倍数でない」。\(n=3k+1\) または \(3k+2\) と書けます。</p><div class="eq">\[\begin{aligned}(3k+1)^2&amp;=3(3k^2+2k)+1\\(3k+2)^2&amp;=3(3k^2+4k+1)+1\end{aligned}\]</div><p>いずれも3で割ると余り1なので、対偶は真。したがってもとの命題も真です。</p></details></div>
-<div class="ex"><strong>問題3</strong><p>\(\sqrt3\) が無理数であることを背理法で証明しなさい。</p><details><summary>解答・詳しい解説を見る</summary><p>\(\sqrt3=a/b\)（\(a,b\) は互いに素な正整数）と仮定すると \(a^2=3b^2\)。問題2より \(a\) は3の倍数なので \(a=3c\) と書けます。代入して \(b^2=3c^2\)。よって \(b\) も3の倍数となり、互いに素という仮定に矛盾します。</p></details></div>
-<div class="ex"><strong>問題4</strong><p>「ある整数 \(n\) について \(n^2&lt;0\)」の否定を述べなさい。</p><details><summary>解答・詳しい解説を見る</summary><p>「すべての整数 \(n\) について \(n^2\geqq0\)」です。これは真です。</p></details></div>
-<div class="ex"><strong>問題5</strong><p>\(1+\sqrt2\) が無理数であることを証明しなさい。</p><details><summary>解答・詳しい解説を見る</summary><p>有理数だと仮定すると、そこから有理数1を引いた \(\sqrt2\) も有理数となります。しかし \(\sqrt2\) は無理数なので矛盾します。</p></details></div>
-<h2>6　まとめ</h2><p><strong>直接証明：</strong>仮定から結論を導く。<strong>対偶による証明：</strong>対偶を示す。<strong>背理法：</strong>結論の否定から矛盾を導く。</p>
+<h2 id="hs-practice">5　練習問題</h2>
+<div class="ex"><strong>問題1</strong><p>「\(x&gt;3\) なら \(x&gt;1\)」の逆と対偶を述べ、それぞれの真偽を調べなさい。</p><details><summary>解答・解説を表示</summary><p>逆：「\(x&gt;1\) なら \(x&gt;3\)」は偽。反例 \(x=2\)。対偶：「\(x\leqq1\) なら \(x\leqq3\)」は真です。</p></details></div>
+<div class="ex"><strong>問題2</strong><p>整数 \(n\) について「\(n^2\) が3の倍数なら \(n\) は3の倍数」を対偶を使って証明しなさい。</p><details><summary>解答・解説を表示</summary><p>対偶は「\(n\) が3の倍数でなければ \(n^2\) も3の倍数でない」。\(n=3k+1\) または \(3k+2\) と書けます。</p><div class="eq">\[\begin{aligned}(3k+1)^2&amp;=3(3k^2+2k)+1\\(3k+2)^2&amp;=3(3k^2+4k+1)+1\end{aligned}\]</div><p>いずれも3で割ると余り1なので、対偶は真。したがってもとの命題も真です。</p></details></div>
+<div class="ex"><strong>問題3</strong><p>\(\sqrt3\) が無理数であることを背理法で証明しなさい。</p><details><summary>解答・解説を表示</summary><p>\(\sqrt3=a/b\)（\(a,b\) は互いに素な正整数）と仮定すると \(a^2=3b^2\)。問題2より \(a\) は3の倍数なので \(a=3c\) と書けます。代入して \(b^2=3c^2\)。よって \(b\) も3の倍数となり、互いに素という仮定に矛盾します。</p></details></div>
+<div class="ex"><strong>問題4</strong><p>「ある整数 \(n\) について \(n^2&lt;0\)」の否定を述べなさい。</p><details><summary>解答・解説を表示</summary><p>「すべての整数 \(n\) について \(n^2\geqq0\)」です。これは真です。</p></details></div>
+<div class="ex"><strong>問題5</strong><p>\(1+\sqrt2\) が無理数であることを証明しなさい。</p><details><summary>解答・解説を表示</summary><p>有理数だと仮定すると、そこから有理数1を引いた \(\sqrt2\) も有理数となります。しかし \(\sqrt2\) は無理数なので矛盾します。</p></details></div>
+<h2 id="hs-summary">6　まとめ</h2><p><strong>直接証明：</strong>仮定から結論を導く。<strong>対偶による証明：</strong>対偶を示す。<strong>背理法：</strong>結論の否定から矛盾を導く。</p>
 <p class="tip">数式の教科書表示にはインターネット接続が必要です。切り替え図はオフラインでも動作します。</p>
 </article><nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav></main>
 <script>(function(){const cases={original:['もとの命題（真）','4の倍数なら偶数である。','4の倍数は 4k = 2(2k) と書けるので、必ず偶数です。'],converse:['逆（偽）','偶数なら4の倍数である。','反例：2は偶数ですが4の倍数ではありません。'],inverse:['裏（偽）','4の倍数でなければ偶数ではない。','反例：2は4の倍数ではありませんが偶数です。'],contra:['対偶（真）','偶数でなければ4の倍数ではない。','奇数は4の倍数になりません。もとの命題と同じ真偽です。']};const target=document.getElementById('relation');document.querySelectorAll('[data-kind]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-kind]').forEach(x=>x.classList.toggle('active',x===b));const c=cases[b.dataset.kind];target.replaceChildren();const h=document.createElement('strong');h.textContent=c[0];const p=document.createElement('p');p.textContent=c[1];const q=document.createElement('p');q.textContent=c[2];target.append(h,p,q)}));})();</script><footer class="lesson-standard-footer"><div><div class="site-parent-link"><a href="math_subject_1.html">数学Ⅰの授業一覧に戻る</a></div>みんなの数学データベース｜高校生のための授業</div></footer></body></html>

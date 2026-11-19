@@ -68,18 +68,30 @@ body>footer.lesson-standard-footer>div{max-width:970px!important;margin:auto!imp
 mjx-container svg{width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;display:inline-block!important}
 @media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
 </style><link rel="stylesheet" href="lesson_common_style.css">
+<link rel="stylesheet" href="high_school_lesson_reading.css">
 </head>
 <body>
-<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_c.html">数学Cの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学C</div><h1>空間の座標</h1><p class="lesson-standard-bottom">数学C</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>空間の座標</h2><p>空間座標の読み方、座標平面への射影、2点間の距離と中点を動く立体図で学びます。</p><p class="goal-expanded">空間の点は、3つの数 \(x,y,z\) で表します。点を動かしながら、座標平面・2点間の距離・中点の公式を理解しましょう。</p></section>
-<section><h2>1．空間座標と座標平面</h2><p>互いに垂直な3本の座標軸を \(x\) 軸、\(y\) 軸、\(z\) 軸といいます。点 \(P\) の座標を \(P(x,y,z)\) と表します。</p><p>\(xy\) 平面は \(z=0\)、\(yz\) 平面は \(x=0\)、\(zx\) 平面は \(y=0\) です。</p>
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_c.html">数学Cの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学C</div><h1>空間の座標</h1><p class="lesson-standard-bottom">数学C</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main" data-hs-lesson=""><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>空間の座標</h2><p>空間座標の読み方、座標平面への射影、2点間の距離と中点を動く立体図で学びます。</p><p class="goal-expanded">空間の点は、3つの数 \(x,y,z\) で表します。点を動かしながら、座標平面・2点間の距離・中点の公式を理解しましょう。</p><p class="hs-outcome"><strong>この授業でできるようになること</strong><br>空間の点の座標を読み、座標平面への射影、2点間の距離、中点を求める。</p></section>
+<nav class="hs-study-nav" aria-label="授業の進め方">
+<a href="#hs-explanation">説明</a>
+<a href="#hs-examples">例題と解説</a>
+<a href="#hs-practice">練習問題</a>
+<a href="#hs-summary">まとめ</a></nav>
+
+<section><h2 id="hs-explanation">1．空間座標と座標平面</h2><p>互いに垂直な3本の座標軸を \(x\) 軸、\(y\) 軸、\(z\) 軸といいます。点 \(P\) の座標を \(P(x,y,z)\) と表します。</p><p>\(xy\) 平面は \(z=0\)、\(yz\) 平面は \(x=0\)、\(zx\) 平面は \(y=0\) です。</p>
 <div class="figure"><canvas aria-label="空間の座標軸、点P、座標平面への射影を表す操作可能な図" height="540" id="space" role="img" width="900">3次元座標の図</canvas><p class="small" style="text-align:center;margin:0">青：x軸　緑：y軸　橙：z軸 ／ 赤：点P　破線：座標方向の補助線</p></div>
 <div class="control-grid"><div class="control"><label for="px">x 座標：<output id="vx">2</output></label><input id="px" max="4" min="-4" step="0.5" type="range" value="2"/></div><div class="control"><label for="py">y 座標：<output id="vy">2</output></label><input id="py" max="4" min="-4" step="0.5" type="range" value="2"/></div><div class="control"><label for="pz">z 座標：<output id="vz">3</output></label><input id="pz" max="4" min="-4" step="0.5" type="range" value="3"/></div><div class="control"><label for="angle">視点の回転：<output id="va">25</output>°</label><input id="angle" max="150" min="-150" step="5" type="range" value="25"/></div></div><p><button id="reset" type="button">座標と視点を初期値に戻す</button></p>
 <div aria-live="polite" class="stat" id="pointstat"></div><p class="note">点 \(P(x,y,z)\) を \(xy\) 平面へ下ろした点は \(H(x,y,0)\) です。\(P\) の真下の点を見つけてみましょう。</p></section>
 <section><h2>2．2点間の距離</h2><p>点 \(A(x_1,y_1,z_1)\)、\(B(x_2,y_2,z_2)\) の距離は、三平方の定理から次のようになります。</p><div class="formula">\[\boxed{AB=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2}}\]</div><p>原点 \(O(0,0,0)\) と点 \(P(x,y,z)\) の距離は、\(OP=\sqrt{x^2+y^2+z^2}\) です。</p>
-<h3>例題1</h3><p>\(A(1,2,3),\ B(4,6,15)\) の距離を求めましょう。</p><details><summary>解答を見る</summary><div class="formula">\[AB=\sqrt{(4-1)^2+(6-2)^2+(15-3)^2}=\sqrt{9+16+144}=13\]</div></details></section>
-<section><h2>3．線分の中点と内分点</h2><p>線分 \(AB\) の中点 \(M\) の座標は、各座標の平均です。</p><div class="formula">\[\boxed{M\left(\frac{x_1+x_2}{2},\frac{y_1+y_2}{2},\frac{z_1+z_2}{2}\right)}\]</div><p>また、\(AP:PB=m:n\) に内分する点 \(Q\) は、次のように表せます。</p><div class="formula">\[Q\left(\frac{nx_1+mx_2}{m+n},\frac{ny_1+my_2}{m+n},\frac{nz_1+mz_2}{m+n}\right)\]</div><h3>例題2</h3><p>\(A(2,-1,4),\ B(6,3,8)\) の中点を求めましょう。</p><details><summary>解答を見る</summary><div class="formula">\[M\left(\frac{2+6}{2},\frac{-1+3}{2},\frac{4+8}{2}\right)=(4,1,6)\]</div></details></section>
-<section><h2>4．練習問題</h2><p><strong>問題1</strong>　点 \(P(-2,3,4)\) について、\(xy\) 平面に関して対称な点の座標を求めましょう。</p><details><summary>解答・解説を見る</summary><p>\(xy\) 平面について対称な点は、\(x,y\) 座標を変えずに \(z\) 座標の符号だけを変えます。</p><div class="formula">\[(-2,3,-4)\]</div></details><p><strong>問題2</strong>　\(A(-1,2,0),\ B(3,5,12)\) の距離を求めましょう。</p><details><summary>解答・解説を見る</summary><div class="formula">\[AB=\sqrt{4^2+3^2+12^2}=\sqrt{169}=13\]</div></details><p><strong>問題3</strong>　\(A(1,0,2),\ B(7,6,8)\) を \(AP:PB=1:2\) に内分する点を求めましょう。</p><details><summary>解答・解説を見る</summary><div class="formula">\[Q=\left(\frac{2\cdot1+1\cdot7}{3},\frac{2\cdot0+1\cdot6}{3},\frac{2\cdot2+1\cdot8}{3}\right)=(3,2,4)\]</div></details></section>
-<nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav></main>
+<h3 id="hs-examples">例題1</h3><p>\(A(1,2,3),\ B(4,6,15)\) の距離を求めましょう。</p><details><summary>解答・解説を表示</summary><div class="formula">\[AB=\sqrt{(4-1)^2+(6-2)^2+(15-3)^2}=\sqrt{9+16+144}=13\]</div></details></section>
+<section><h2>3．線分の中点と内分点</h2><p>線分 \(AB\) の中点 \(M\) の座標は、各座標の平均です。</p><div class="formula">\[\boxed{M\left(\frac{x_1+x_2}{2},\frac{y_1+y_2}{2},\frac{z_1+z_2}{2}\right)}\]</div><p>また、\(AP:PB=m:n\) に内分する点 \(Q\) は、次のように表せます。</p><div class="formula">\[Q\left(\frac{nx_1+mx_2}{m+n},\frac{ny_1+my_2}{m+n},\frac{nz_1+mz_2}{m+n}\right)\]</div><h3>例題2</h3><p>\(A(2,-1,4),\ B(6,3,8)\) の中点を求めましょう。</p><details><summary>解答・解説を表示</summary><div class="formula">\[M\left(\frac{2+6}{2},\frac{-1+3}{2},\frac{4+8}{2}\right)=(4,1,6)\]</div></details></section>
+<section><h2 id="hs-practice">4．練習問題</h2><p><strong>問題1</strong>　点 \(P(-2,3,4)\) について、\(xy\) 平面に関して対称な点の座標を求めましょう。</p><details><summary>解答・解説を表示</summary><p>\(xy\) 平面について対称な点は、\(x,y\) 座標を変えずに \(z\) 座標の符号だけを変えます。</p><div class="formula">\[(-2,3,-4)\]</div></details><p><strong>問題2</strong>　\(A(-1,2,0),\ B(3,5,12)\) の距離を求めましょう。</p><details><summary>解答・解説を表示</summary><div class="formula">\[AB=\sqrt{4^2+3^2+12^2}=\sqrt{169}=13\]</div></details><p><strong>問題3</strong>　\(A(1,0,2),\ B(7,6,8)\) を \(AP:PB=1:2\) に内分する点を求めましょう。</p><details><summary>解答・解説を表示</summary><div class="formula">\[Q=\left(\frac{2\cdot1+1\cdot7}{3},\frac{2\cdot0+1\cdot6}{3},\frac{2\cdot2+1\cdot8}{3}\right)=(3,2,4)\]</div></details></section>
+<nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav>
+<section class="hs-study-panel" id="hs-summary">
+<h2>まとめ</h2>
+<p>空間の点は3つの座標で表します。中点の座標は各成分の平均、距離は各成分の差の平方の和の平方根です。</p>
+</section>
+</main>
 <script>
 (()=>{'use strict';
 const canvas=document.getElementById('space'),ctx=canvas.getContext('2d');const inputs=['px','py','pz','angle'].map(id=>document.getElementById(id));

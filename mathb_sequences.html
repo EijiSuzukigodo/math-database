@@ -71,10 +71,17 @@ body>footer.lesson-standard-footer>div{max-width:970px!important;margin:auto!imp
 mjx-container svg{width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;display:inline-block!important}
 @media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
 </style><link rel="stylesheet" href="lesson_common_style.css">
+<link rel="stylesheet" href="high_school_lesson_reading.css">
 </head><body>
-<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>数列</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>数列</h2><p>一定の順に並ぶ数を数列といい、各数を項といいます。</p></section>
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>数列</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main" data-hs-lesson=""><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>数列</h2><p>一定の順に並ぶ数を数列といい、各数を項といいます。</p><p class="hs-outcome"><strong>この授業でできるようになること</strong><br>数列の項と添字を読み取り、一般項から指定された項を求める。</p></section>
+<nav class="hs-study-nav" aria-label="授業の進め方">
+<a href="#hs-explanation">説明</a>
+<a href="#hs-examples">例題と解説</a>
+<a href="#hs-practice">練習問題</a>
+<a href="#hs-summary">まとめ</a></nav>
+
 <article class="paper">
-<h2>1．基本事項 — 数列とは</h2><p>一定の順に並ぶ数を<strong>数列</strong>といい、各数を<strong>項</strong>といいます。先頭の項を第1項（初項）、次を第2項といいます。</p>
+<h2 id="hs-explanation">1．基本事項 — 数列とは</h2><p>一定の順に並ぶ数を<strong>数列</strong>といい、各数を<strong>項</strong>といいます。先頭の項を第1項（初項）、次を第2項といいます。</p>
 <div class="formula">\[a_1,\ a_2,\ a_3,\ \ldots,\ a_n,\ \ldots\]</div>
 <p>第 \(n\) 項を \(n\) の式で表したものを<strong>一般項</strong>といいます。たとえば \(1,3,5,7,\ldots\) は、一般項 \(a_n=2n-1\) で表せます。</p>
 <div class="table-wrap"><table><thead><tr><th>項番号 \(n\)</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr></thead><tbody><tr><th>\(a_n=2n-1\)</th><td>1</td><td>3</td><td>5</td><td>7</td><td>9</td></tr><tr><th>\(a_n=3n+1\)</th><td>4</td><td>7</td><td>10</td><td>13</td><td>16</td></tr></tbody></table></div>
@@ -90,16 +97,16 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <svg aria-label="数列の各項を縦棒で示したグラフ" class="chart" id="seqChart" role="img" viewbox="0 0 700 300"></svg><div aria-live="polite" class="readout" id="seqReadout">読み込み中</div><p class="muted">棒の高さが第1項から第n項までの値を表します。選んだ項数までの和も更新されます。</p></div>
 <div class="callout"><strong>観察してみよう</strong>　奇数の数列を選び、項数を1から8まで動かしてみましょう。和が \(1,4,9,16,\ldots\) と平方数になることが見つかります。\(1+3+\cdots+(2n-1)=n^2\) です。</div>
 <h2>4．考え方と注意点</h2><ol><li>項番号 \(n\) は、通常1から始まることを確認します。</li><li>第 \(k\) 項なら、一般項の \(n\) に \(k\) を代入します。</li><li>数列の和を求めるときは、<strong>何項足すのか</strong>を先に確認します。</li><li>並んだ項を数個見ただけでは一般項が一意に決まらない場合もあります。規則が問題文で指定されているか確認します。</li></ol>
-<h2>5．解説付き例題</h2>
+<h2 id="hs-examples">5．解説付き例題</h2>
 <div class="example"><strong>例題1（既存の例題）</strong><p>\(a_n=2n-1\) の第5項を求めよ。</p></div><h3>解答と解説</h3><div class="answer"><p>一般項に \(n=5\) を代入して、\(a_5=2\times5-1=9\) です。</p></div>
 <div class="example"><strong>例題2</strong><p>\(a_n=n^2+1\) の最初の4項と、その和 \(S_4\) を求めよ。</p></div><div class="answer"><p>\(a_1=2,\ a_2=5,\ a_3=10,\ a_4=17\) なので、\[S_4=2+5+10+17=34\]</p></div>
 <div class="example"><strong>例題3（和から一般項へ）</strong><p>\(S_n=n(n+1)\) のとき、一般項 \(a_n\) を求めよ。</p></div><div class="answer"><p>\(n\geqq2\) のとき、\[a_n=S_n-S_{n-1}=n(n+1)-(n-1)n=2n\]また \(a_1=S_1=2\) なので、\(n=1\) でも同じ式が成り立ちます。したがって \(\boxed{a_n=2n}\) です。</p></div>
-<h2>6．練習問題（タップして解説を確認）</h2>
-<div class="exercise"><strong>問題1（既存の練習問題）</strong><p>\(a_n=3n+1\) の第4項を求めよ。</p><details><summary>解答・解説を見る</summary><p>\(a_4=3\times4+1=\boxed{13}\) です。</p></details></div>
-<div class="exercise"><strong>問題2</strong><p>\(a_n=2n+3\) の初項、第6項を求めよ。</p><details><summary>解答・解説を見る</summary><p>\(a_1=2+3=\boxed{5}\)、\(a_6=12+3=\boxed{15}\)。</p></details></div>
-<div class="exercise"><strong>問題3</strong><p>\(a_n=n^2\) の最初の4項の和を求めよ。</p><details><summary>解答・解説を見る</summary><p>\(S_4=1+4+9+16=\boxed{30}\)。一般項の値を順に書いてから足します。</p></details></div>
-<div class="exercise"><strong>問題4（発展）</strong><p>\(S_n=3n^2-n\) となる数列の一般項を求めよ。</p><details><summary>解答・解説を見る</summary><p>\(n\geqq2\) のとき \[a_n=(3n^2-n)-\{3(n-1)^2-(n-1)\}=6n-4\] \(a_1=S_1=2\) で、\(6\cdot1-4=2\)。よって \(\boxed{a_n=6n-4}\)（\(n\geqq1\)）。</p></details></div>
-<h2>7．まとめ</h2><p>一定の順に並ぶ数を数列といい、各数を項といいます。一般項 \(a_n\) を使えば任意の項を求められ、和 \(S_n\) は第1項から第 \(n\) 項までを足したものです。和がわかっているときは、\(a_1=S_1\)、\(a_n=S_n-S_{n-1}\ (n\geqq2)\) を利用できます。</p><p>次の授業「等差数列とその和」で、規則的な数列の一般項や和を公式で求める方法を学びます。</p>
+<h2 id="hs-practice">6．練習問題（タップして解説を確認）</h2>
+<div class="exercise"><strong>問題1（既存の練習問題）</strong><p>\(a_n=3n+1\) の第4項を求めよ。</p><details><summary>解答・解説を表示</summary><p>\(a_4=3\times4+1=\boxed{13}\) です。</p></details></div>
+<div class="exercise"><strong>問題2</strong><p>\(a_n=2n+3\) の初項、第6項を求めよ。</p><details><summary>解答・解説を表示</summary><p>\(a_1=2+3=\boxed{5}\)、\(a_6=12+3=\boxed{15}\)。</p></details></div>
+<div class="exercise"><strong>問題3</strong><p>\(a_n=n^2\) の最初の4項の和を求めよ。</p><details><summary>解答・解説を表示</summary><p>\(S_4=1+4+9+16=\boxed{30}\)。一般項の値を順に書いてから足します。</p></details></div>
+<div class="exercise"><strong>問題4（発展）</strong><p>\(S_n=3n^2-n\) となる数列の一般項を求めよ。</p><details><summary>解答・解説を表示</summary><p>\(n\geqq2\) のとき \[a_n=(3n^2-n)-\{3(n-1)^2-(n-1)\}=6n-4\] \(a_1=S_1=2\) で、\(6\cdot1-4=2\)。よって \(\boxed{a_n=6n-4}\)（\(n\geqq1\)）。</p></details></div>
+<h2 id="hs-summary">7．まとめ</h2><p>一定の順に並ぶ数を数列といい、各数を項といいます。一般項 \(a_n\) を使えば任意の項を求められ、和 \(S_n\) は第1項から第 \(n\) 項までを足したものです。和がわかっているときは、\(a_1=S_1\)、\(a_n=S_n-S_{n-1}\ (n\geqq2)\) を利用できます。</p><p>次の授業「等差数列とその和」で、規則的な数列の一般項や和を公式で求める方法を学びます。</p>
 <div class="nav"><a href="mathb_arithmetic_sequences_and_sums.html">次へ：等差数列とその和 →</a></div>
 </article><nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav></main>
 <script>

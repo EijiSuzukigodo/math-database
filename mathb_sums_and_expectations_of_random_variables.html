@@ -68,13 +68,20 @@ body>footer.lesson-standard-footer>div{max-width:970px!important;margin:auto!imp
 mjx-container svg{width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;display:inline-block!important}
 @media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
 </style><link rel="stylesheet" href="lesson_common_style.css">
+<link rel="stylesheet" href="high_school_lesson_reading.css">
 </head>
 <body>
-<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>確率変数の和と期待値</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>同時分布から、確率変数の和の期待値まで理解する</h2><p>2つの確率変数が同時にとる値を表に整理し、周辺分布を求め、独立でない場合にも期待値の加法性が成立することを学びます。</p></section>
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>確率変数の和と期待値</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main" data-hs-lesson=""><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>同時分布から、確率変数の和の期待値まで理解する</h2><p>2つの確率変数が同時にとる値を表に整理し、周辺分布を求め、独立でない場合にも期待値の加法性が成立することを学びます。</p><p class="hs-outcome"><strong>この授業でできるようになること</strong><br>同時分布表を読み、二つの確率変数の和の期待値を求める。</p></section>
+<nav class="hs-study-nav" aria-label="授業の進め方">
+<a href="#hs-explanation">説明</a>
+<a href="#hs-examples">例題と解説</a>
+<a href="#hs-practice">練習問題</a>
+<a href="#hs-summary">まとめ</a></nav>
+
 <article class="paper">
-<h2>1. 同時分布とは</h2><p>2つの確率変数 \(X,Y\) について、「\(X=x_i\) かつ \(Y=y_j\)」となる確率を <strong>同時確率</strong> といい、\(P(X=x_i,Y=y_j)\) と書きます。すべての組の同時確率を並べたものを <strong>同時分布（同時確率分布）</strong> といいます。</p>
+<h2 id="hs-explanation">1. 同時分布とは</h2><p>2つの確率変数 \(X,Y\) について、「\(X=x_i\) かつ \(Y=y_j\)」となる確率を <strong>同時確率</strong> といい、\(P(X=x_i,Y=y_j)\) と書きます。すべての組の同時確率を並べたものを <strong>同時分布（同時確率分布）</strong> といいます。</p>
 <div class="formula">\[p_{ij}=P(X=x_i,Y=y_j),\qquad \sum_i\sum_jp_{ij}=1\]</div>
-<h3>例：2枚の硬貨</h3><p>硬貨Aと硬貨Bを1枚ずつ投げ、表が出たら1、裏なら0とします。\(X\) を硬貨Aの値、\(Y\) を硬貨Bの値とすると、4通りの結果はいずれも確率 \(\frac14\) です。</p>
+<h3 id="hs-examples">例：2枚の硬貨</h3><p>硬貨Aと硬貨Bを1枚ずつ投げ、表が出たら1、裏なら0とします。\(X\) を硬貨Aの値、\(Y\) を硬貨Bの値とすると、4通りの結果はいずれも確率 \(\frac14\) です。</p>
 <div class="table-wrap"><table><caption>同時分布表（行：X、列：Y）</caption><thead><tr><th>\(X\backslash Y\)</th><th>\(Y=0\)</th><th>\(Y=1\)</th><th>行の合計</th></tr></thead><tbody><tr><th>\(X=0\)</th><td>\(\frac14\)</td><td>\(\frac14\)</td><td class="total">\(\frac12\)</td></tr><tr><th>\(X=1\)</th><td>\(\frac14\)</td><td>\(\frac14\)</td><td class="total">\(\frac12\)</td></tr><tr><th>列の合計</th><td class="total">\(\frac12\)</td><td class="total">\(\frac12\)</td><td class="total">\(1\)</td></tr></tbody></table></div>
 <p>表の中央の4つが同時確率で、すべて足すと1になります。</p>
 <h2>2. 周辺分布の求め方</h2><p>同時分布表を横に足すと\(X\)の確率分布、縦に足すと\(Y\)の確率分布が得られます。このように一方の確率変数だけについてまとめたものを<strong>周辺分布</strong>といいます。</p>
@@ -93,13 +100,13 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <h2>7. 解説付き例題</h2>
 <div class="example"><strong>例題2（元の例題1）</strong><p>\(E(X)=3,\ E(Y)=5\) のとき、\(E(X+Y)\) を求めましょう。</p></div><div class="answer"><strong>解答・解説</strong><p>期待値の加法性より、\(E(X+Y)=3+5=8\) です。</p></div>
 <div class="example"><strong>例題3（元の例題2）</strong><p>\(E(X)=2,\ E(Y)=-1\) のとき、\(E(3X-2Y+4)\) を求めましょう。</p></div><div class="answer"><strong>解答・解説</strong><div class="formula">\[3E(X)-2E(Y)+4=3\cdot2-2(-1)+4=12\]</div></div>
-<h2>8. 練習問題</h2>
-<div class="exercise"><strong>問題1：同時分布</strong><p>\(P(0,0)=0.2,\ P(0,1)=0.3,\ P(1,0)=0.1,\ P(1,1)=0.4\) のとき、\(P(X=1),P(Y=1),E(X+Y)\) を求めよ。</p><details><summary>解答を見る</summary><p>\(P(X=1)=0.1+0.4=0.5\)、\(P(Y=1)=0.3+0.4=0.7\)。よって \(E(X+Y)=0.5+0.7=1.2\)。</p></details></div>
-<div class="exercise"><strong>問題2：独立性の確認</strong><p>問題1の \(X,Y\) は独立ですか。</p><details><summary>解答を見る</summary><p>独立ではありません。例えば \(P(X=1,Y=1)=0.4\) ですが、\(P(X=1)P(Y=1)=0.5\times0.7=0.35\) です。</p></details></div>
-<div class="exercise"><strong>基本（元の問題）</strong><p>\(E(X)=4,\ E(Y)=7\) のとき、\(E(X+Y)\) を求めましょう。</p><details><summary>解答と考え方</summary><p>\(4+7=11\)。和の期待値は期待値の和です。</p></details></div>
-<div class="exercise"><strong>標準（元の問題）</strong><p>\(E(X)=3,\ E(Y)=2\) のとき、\(E(2X-Y+5)\) を求めましょう。</p><details><summary>解答と考え方</summary><p>\(2\cdot3-2+5=9\)。係数をそれぞれの期待値に掛けます。</p></details></div>
-<div class="exercise"><strong>応用（元の問題）</strong><p>1回のさいころの出目を \(X\) とし、\(Y=7-X\) とします。\(E(X+Y)\) を求めましょう。\(X,Y\) は独立ですか。</p><details><summary>解答と考え方</summary><p>\(X+Y=7\) が常に成立するため、\(E(X+Y)=7\) です。\(Y\) は \(X\) から一意に決まるので独立ではありません。それでも期待値の加法性は成り立ちます。</p></details></div>
-<h2>9. まとめ</h2><p>同時分布は2変数の値の組の確率を示します。行と列の合計から周辺分布を求められます。期待値の和の公式は独立性がなくても成り立ちます。一方、分散の和の公式には独立性などの条件が必要です。次の「独立な確率変数と期待値・分散」で確認しましょう。</p>
+<h2 id="hs-practice">8. 練習問題</h2>
+<div class="exercise"><strong>問題1：同時分布</strong><p>\(P(0,0)=0.2,\ P(0,1)=0.3,\ P(1,0)=0.1,\ P(1,1)=0.4\) のとき、\(P(X=1),P(Y=1),E(X+Y)\) を求めよ。</p><details><summary>解答・解説を表示</summary><p>\(P(X=1)=0.1+0.4=0.5\)、\(P(Y=1)=0.3+0.4=0.7\)。よって \(E(X+Y)=0.5+0.7=1.2\)。</p></details></div>
+<div class="exercise"><strong>問題2：独立性の確認</strong><p>問題1の \(X,Y\) は独立ですか。</p><details><summary>解答・解説を表示</summary><p>独立ではありません。例えば \(P(X=1,Y=1)=0.4\) ですが、\(P(X=1)P(Y=1)=0.5\times0.7=0.35\) です。</p></details></div>
+<div class="exercise"><strong>基本（元の問題）</strong><p>\(E(X)=4,\ E(Y)=7\) のとき、\(E(X+Y)\) を求めましょう。</p><details><summary>解答・解説を表示</summary><p>\(4+7=11\)。和の期待値は期待値の和です。</p></details></div>
+<div class="exercise"><strong>標準（元の問題）</strong><p>\(E(X)=3,\ E(Y)=2\) のとき、\(E(2X-Y+5)\) を求めましょう。</p><details><summary>解答・解説を表示</summary><p>\(2\cdot3-2+5=9\)。係数をそれぞれの期待値に掛けます。</p></details></div>
+<div class="exercise"><strong>応用（元の問題）</strong><p>1回のさいころの出目を \(X\) とし、\(Y=7-X\) とします。\(E(X+Y)\) を求めましょう。\(X,Y\) は独立ですか。</p><details><summary>解答・解説を表示</summary><p>\(X+Y=7\) が常に成立するため、\(E(X+Y)=7\) です。\(Y\) は \(X\) から一意に決まるので独立ではありません。それでも期待値の加法性は成り立ちます。</p></details></div>
+<h2 id="hs-summary">9. まとめ</h2><p>同時分布は2変数の値の組の確率を示します。行と列の合計から周辺分布を求められます。期待値の和の公式は独立性がなくても成り立ちます。一方、分散の和の公式には独立性などの条件が必要です。次の「独立な確率変数と期待値・分散」で確認しましょう。</p>
 </article><nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav></main>
 <script>
 (function(){const input=document.getElementById('t'),svg=document.getElementById('jointGraph');function redraw(){const t=Number(input.value)/100,v=[t,.5-t,.5-t,t];document.getElementById('tv').textContent=t.toFixed(2);['p00','p01','p10','p11'].forEach((id,i)=>document.getElementById(id).textContent=v[i].toFixed(2));document.getElementById('comment').textContent=Math.abs(t-.25)<.00001?'XとYは独立です。': '周辺分布は変わりませんが、XとYは独立ではありません。';let s='<text x="15" y="20" font-size="15" fill="#1c3148">同時確率の棒グラフ</text>';let labels=['(0,0)','(0,1)','(1,0)','(1,1)'];for(let i=0;i<4;i++){let x=50+i*145,h=v[i]*250;s+=`<rect x="${x}" y="${173-h}" width="70" height="${h}" fill="#3d8bc6" rx="3"/><text x="${x+35}" y="${165-h}" font-size="14" text-anchor="middle" fill="#1c3148">${v[i].toFixed(2)}</text><text x="${x+35}" y="197" font-size="14" text-anchor="middle" fill="#1c3148">${labels[i]}</text>`;}s+='<line x1="20" y1="173" x2="605" y2="173" stroke="#778ba1"/>';svg.innerHTML=s;}input.addEventListener('input',redraw);redraw();})();

@@ -111,8 +111,21 @@ body>footer.lesson-standard-footer>div{max-width:970px!important;margin:auto!imp
 mjx-container svg{width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;display:inline-block!important}
 @media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
 </style><link rel="stylesheet" href="lesson_common_style.css">
+<link rel="stylesheet" href="high_school_lesson_reading.css">
 </head><body>
-<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_2.html">数学Ⅱの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学Ⅱ</div><h1>解と係数の関係</h1><p class="lesson-standard-bottom">数学Ⅱ</p></div></header><main class="lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>解と係数の関係を理解し、活用する</h2><p>「解と係数の関係」の考え方を理解し、例題や練習問題に活用できるようになる。</p></section><h2>1．2次方程式の解と係数の関係</h2>
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_2.html">数学Ⅱの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学Ⅱ</div><h1>解と係数の関係</h1><p class="lesson-standard-bottom">数学Ⅱ</p></div></header><main class="lesson-standard-main" id="md-standard-main" data-hs-lesson=""><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>解と係数の関係を理解し、活用する</h2><p>「解と係数の関係」の考え方を理解し、例題や練習問題に活用できるようになる。</p></section>
+<nav class="hs-study-nav" aria-label="授業の進め方">
+<a href="#hs-explanation">説明</a>
+<a href="#hs-examples">例題と解説</a>
+<a href="#hs-practice">練習問題</a>
+<a href="#hs-summary">まとめ</a></nav>
+<h2 id="hs-explanation">1．2次方程式の解と係数の関係</h2><div class="hs-table"><table><caption>2次方程式の解の和と積</caption>
+<thead><tr><th scope="col">量</th><th scope="col">\(x^2-5x+6=0\) の例</th></tr></thead>
+<tbody>
+<tr><th scope="row">解の和</th><td>\(2+3=5\)</td></tr>
+<tr><th scope="row">解の積</th><td>\(2\cdot3=6\)</td></tr>
+</tbody></table></div>
+
 <p>2次方程式の2つの解を直接求めなくても、その<strong>和と積</strong>は係数から分かります。</p>
 <p>2次方程式 \(ax^2+bx+c=0\)（\(a\ne0\)）の2つの解を \(\alpha,\beta\) とすると、解の公式より</p>
 <div class="math">\[\alpha=\frac{-b+\sqrt{b^2-4ac}}{2a},\qquad\beta=\frac{-b-\sqrt{b^2-4ac}}{2a}\]</div>
@@ -120,37 +133,37 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <div class="math">\[\alpha+\beta=\frac{-2b}{2a}=-\frac ba\]</div>
 <div class="math">\[\alpha\beta=\frac{(-b)^2-(b^2-4ac)}{4a^2}=\frac ca\]</div>
 <div class="theorem"><strong>重要公式：解と係数の関係</strong><div class="math">\[\boxed{\alpha+\beta=-\frac ba,\qquad\alpha\beta=\frac ca}\]</div><p>重解の場合も、複素数の解の場合も成り立ちます。</p></div>
-<div class="example"><h3>例題1　和と積を求める</h3><p>\(3x^2-5x-6=0\) の2つの解を \(\alpha,\beta\) とする。\(\alpha+\beta\) と \(\alpha\beta\) を求めよ。</p><div class="solution"><strong>解説・解答</strong><div class="math">\[\alpha+\beta=\frac53,\qquad\alpha\beta=-2\]</div></div></div>
+<div class="example"><h3 id="hs-examples">例題1　和と積を求める</h3><p>\(3x^2-5x-6=0\) の2つの解を \(\alpha,\beta\) とする。\(\alpha+\beta\) と \(\alpha\beta\) を求めよ。</p><div class="solution"><strong>解説・解答</strong><div class="math">\[\alpha+\beta=\frac53,\qquad\alpha\beta=-2\]</div></div></div>
 <h2>2．和と積から式の値を求める</h2>
 <p>和と積を使えば、解を求めずに対称式の値を計算できます。</p>
 <div class="math">\[\alpha^2+\beta^2=(\alpha+\beta)^2-2\alpha\beta\]</div>
 <div class="math">\[\alpha^3+\beta^3=(\alpha+\beta)^3-3\alpha\beta(\alpha+\beta)\]</div>
 <div class="example"><h3>例題2　2つの解の平方・立方の和</h3><p>\(x^2+2x+3=0\) の2つの解を \(\alpha,\beta\) とする。\(\alpha^2+\beta^2\)、\(\alpha^3+\beta^3\) を求めよ。</p><div class="solution"><strong>解説・解答</strong><p>解と係数の関係より、\(\alpha+\beta=-2\)、\(\alpha\beta=3\)。</p><div class="math">\[\begin{aligned}\alpha^2+\beta^2&amp;=(-2)^2-2\cdot3=-2,\[3pt]\alpha^3+\beta^3&amp;=(-2)^3-3\cdot3\cdot(-2)=10\end{aligned}\]</div></div></div>
-<div class="exercise"><h3>練習1</h3><p>\(x^2-3x-1=0\) の2つの解を \(\alpha,\beta\) とする。\(\alpha^2+\beta^2\)、\(\dfrac1\alpha+\dfrac1\beta\) を求めよ。</p><details><summary>解答を表示</summary><div class="math">\[\alpha+\beta=3,\quad\alpha\beta=-1\]</div><div class="math">\[\alpha^2+\beta^2=9+2=11,\qquad\frac1\alpha+\frac1\beta=\frac{\alpha+\beta}{\alpha\beta}=-3\]</div></details></div>
+<div class="exercise"><h3 id="hs-practice">練習1</h3><p>\(x^2-3x-1=0\) の2つの解を \(\alpha,\beta\) とする。\(\alpha^2+\beta^2\)、\(\dfrac1\alpha+\dfrac1\beta\) を求めよ。</p><details><summary>解答・解説を表示</summary><div class="math">\[\alpha+\beta=3,\quad\alpha\beta=-1\]</div><div class="math">\[\alpha^2+\beta^2=9+2=11,\qquad\frac1\alpha+\frac1\beta=\frac{\alpha+\beta}{\alpha\beta}=-3\]</div></details></div>
 <h2>3．2次式の因数分解</h2>
 <p>2次方程式 \(ax^2+bx+c=0\) の2つの解が \(\alpha,\beta\) ならば、次のように因数分解できます。</p>
 <div class="theorem"><strong>重要公式：2次式の因数分解</strong><div class="math">\[\boxed{ax^2+bx+c=a(x-\alpha)(x-\beta)}\]</div></div>
 <p>実際、右辺を展開すると</p>
 <div class="math">\[a(x-\alpha)(x-\beta)=a\{x^2-(\alpha+\beta)x+\alpha\beta\}=ax^2+bx+c\]</div>
 <div class="example"><h3>例題3　複素数の範囲で因数分解</h3><p>\(2x^2-2x+3\) を複素数の範囲で因数分解せよ。</p><div class="solution"><strong>解説・解答</strong><p>\(2x^2-2x+3=0\) の解は</p><div class="math">\[x=\frac{1\pm\sqrt5\,i}{2}\]</div><p>よって、</p><div class="math">\[2x^2-2x+3=2\left(x-\frac{1+\sqrt5\,i}{2}\right)\left(x-\frac{1-\sqrt5\,i}{2}\right)\]</div></div></div>
-<div class="exercise"><h3>練習2</h3><p>\(x^2+4x+5\) を複素数の範囲で因数分解せよ。</p><details><summary>解答を表示</summary><p>解は \(x=-2\pm i\)。</p><div class="math">\[x^2+4x+5=(x+2-i)(x+2+i)\]</div></details></div>
+<div class="exercise"><h3>練習2</h3><p>\(x^2+4x+5\) を複素数の範囲で因数分解せよ。</p><details><summary>解答・解説を表示</summary><p>解は \(x=-2\pm i\)。</p><div class="math">\[x^2+4x+5=(x+2-i)(x+2+i)\]</div></details></div>
 <h2>4．2数を解とする2次方程式</h2>
 <p>2数 \(\alpha,\beta\) を解とする、最高次の係数が1の2次方程式は、次の式で表せます。</p>
 <div class="theorem"><strong>重要公式：2数を解とする2次方程式</strong><div class="math">\[\boxed{x^2-(\alpha+\beta)x+\alpha\beta=0}\]</div><p>和を \(p\)、積を \(q\) とすれば、\(x^2-px+q=0\) です。</p></div>
 <div class="example"><h3>例題4　指定された2数を解とする方程式</h3><p>\(1+\sqrt5\,i\)、\(1-\sqrt5\,i\) を解とする2次方程式を1つ求めよ。</p><div class="solution"><strong>解説・解答</strong><p>和は \(2\)、積は \(1+5=6\) です。</p><div class="math">\[\boxed{x^2-2x+6=0}\]</div></div></div>
-<div class="exercise"><h3>練習3</h3><p>\(-3\)、\(4\) を解とする2次方程式を1つ求めよ。</p><details><summary>解答を表示</summary><p>和は \(1\)、積は \(-12\) です。</p><div class="math">\[\boxed{x^2-x-12=0}\]</div></details></div>
+<div class="exercise"><h3>練習3</h3><p>\(-3\)、\(4\) を解とする2次方程式を1つ求めよ。</p><details><summary>解答・解説を表示</summary><p>和は \(1\)、積は \(-12\) です。</p><div class="math">\[\boxed{x^2-x-12=0}\]</div></details></div>
 <h2>5．解を変換して新しい方程式を作る</h2>
 <div class="example"><h3>例題5　2つの解から新しい2つの解を作る</h3><p>\(x^2+2x+4=0\) の2つの解を \(\alpha,\beta\) とする。\(\alpha-1\)、\(\beta-1\) を解とする2次方程式を作れ。</p><div class="solution"><strong>解説・解答</strong><p>もとの解の和は \(-2\)、積は \(4\)。新しい2つの解の和と積は</p><div class="math">\[\begin{aligned}(\alpha-1)+(\beta-1)&amp;=-2-2=-4,\(\alpha-1)(\beta-1)&amp;=4-(-2)+1=7\end{aligned}\]</div><p>よって、求める方程式は</p><div class="math">\[\boxed{x^2+4x+7=0}\]</div></div></div>
-<div class="exercise"><h3>練習4</h3><p>\(2x^2-3x+1=0\) の2つの解を \(\alpha,\beta\) とする。\(2\alpha\)、\(2\beta\) を解とする2次方程式を作れ。</p><details><summary>解答を表示</summary><p>もとの和は \(\dfrac32\)、積は \(\dfrac12\)。新しい和は3、積は2。</p><div class="math">\[\boxed{x^2-3x+2=0}\]</div></details></div>
+<div class="exercise"><h3>練習4</h3><p>\(2x^2-3x+1=0\) の2つの解を \(\alpha,\beta\) とする。\(2\alpha\)、\(2\beta\) を解とする2次方程式を作れ。</p><details><summary>解答・解説を表示</summary><p>もとの和は \(\dfrac32\)、積は \(\dfrac12\)。新しい和は3、積は2。</p><div class="math">\[\boxed{x^2-3x+2=0}\]</div></details></div>
 <h2>6．2次方程式の実数解の符号</h2>
 <p>係数が実数である2次方程式の2つの解 \(\alpha,\beta\) が<strong>異なる実数</strong>のとき、和と積から符号を判定できます。</p>
 <p>判別式を \(D=b^2-4ac\) とします。</p>
 <div class="theorem"><strong>2つの異なる実数解の符号の判定</strong><div class="math">\[\begin{aligned}\text{ともに正}&amp;\iff D\gt 0,\ \alpha+\beta\gt 0,\ \alpha\beta\gt 0\[3pt]\text{ともに負}&amp;\iff D\gt 0,\ \alpha+\beta\lt 0,\ \alpha\beta\gt 0\[3pt]\text{異符号}&amp;\iff \alpha\beta\lt 0\end{aligned}\]</div><p>異符号なら自動的に異なる2つの実数解をもちます。重解を含む場合は別に確認します。</p></div>
 <div class="example"><h3>例題6　文字を含む方程式の解がともに正</h3><p>\(x^2+2mx+m+2=0\) が異なる2つの正の実数解をもつように、\(m\) の範囲を求めよ。</p><div class="solution"><strong>解説・解答</strong><p>判別式、解の和、解の積を調べます。</p><div class="math">\[\begin{aligned}\frac D4&amp;=m^2-(m+2)=(m-2)(m+1),\\alpha+\beta&amp;=-2m,\\alpha\beta&amp;=m+2\end{aligned}\]</div><p>必要十分条件は</p><div class="math">\[\begin{aligned}(m-2)(m+1)&amp;\gt 0,\-2m&amp;\gt 0,\m+2&amp;\gt 0\end{aligned}\]</div><p>共通範囲は</p><div class="math">\[\boxed{-2\lt m\lt -1}\]</div></div></div>
-<div class="exercise"><h3>練習5</h3><p>\(x^2-(m+1)x+m-2=0\) が異符号の2つの実数解をもつ条件を求めよ。</p><details><summary>解答を表示</summary><p>解の積が負ならよいので、</p><div class="math">\[m-2\lt 0\quad\Longrightarrow\quad\boxed{m\lt 2}\]</div></details></div>
+<div class="exercise"><h3>練習5</h3><p>\(x^2-(m+1)x+m-2=0\) が異符号の2つの実数解をもつ条件を求めよ。</p><details><summary>解答・解説を表示</summary><p>解の積が負ならよいので、</p><div class="math">\[m-2\lt 0\quad\Longrightarrow\quad\boxed{m\lt 2}\]</div></details></div>
 <h2>7．発展：解と係数の関係を利用した応用</h2>
 <div class="example"><h3>例題7　解の一方が他方の3倍</h3><p>\(x^2-8x+m=0\) の2つの解の一方が他方の3倍である。\(m\) と2つの解を求めよ。</p><div class="solution"><strong>解説・解答</strong><p>2つの解を \(t,3t\) とおきます。和が8だから、</p><div class="math">\[t+3t=8\quad\Longrightarrow\quad t=2\]</div><p>積は \(m=2\cdot6=12\)。</p><div class="math">\[\boxed{m=12,\qquad x=2,6}\]</div></div></div>
 <div class="example"><h3>例題8　異なる2つの正の解をもつ条件</h3><p>\(x^2+2mx+m+2=0\) の2つの解がともに正である条件を、判別式と和・積の観点から説明せよ。</p><div class="solution"><strong>解説・解答</strong><p>異なる2つの正の実数解なら、\(D\gt 0\)、和が正、積が正の3条件を同時に満たします。例題6の結果より、\(-2\lt m\lt-1\) です。</p></div></div>
-<div class="exercise"><h3>練習6　総合</h3><p>\(x^2-4x+k=0\) が異なる2つの正の実数解をもつように、\(k\) の範囲を求めよ。</p><details><summary>解答を表示</summary><p>判別式は \(D=16-4k\gt 0\)、和は4、積は\(k\)。</p><div class="math">\[\boxed{0\lt k\lt 4}\]</div></details></div>
-<h2>まとめ</h2>
-<div class="theorem"><div class="math">\[\boxed{\alpha+\beta=-\frac ba,\qquad\alpha\beta=\frac ca}\]</div><div class="math">\[\boxed{ax^2+bx+c=a(x-\alpha)(x-\beta)}\]</div><div class="math">\[\boxed{x^2-(\alpha+\beta)x+\alpha\beta=0}\]</div><p>解の符号を調べるときは、<strong>判別式・和・積</strong>の3点を確認しましょう。</p></div><section class="review-practice"><h2>1．追加の練習問題（基本・標準）</h2><p>途中式をノートに書いてから、解答を開いて確認しましょう。</p><div class="review-question"><p><strong>問題 1：</strong>\(x^2-5x+6=0\) の2解の和と積を求めよ。</p><details><summary>解答・考え方を確認</summary><p>解と係数の関係より和5、積6。</p></details></div><div class="review-question"><p><strong>問題 2：</strong>2解が2と3である2次方程式を作れ。</p><details><summary>解答・考え方を確認</summary><p>\((x-2)(x-3)=0\)、すなわち \(x^2-5x+6=0\)。</p></details></div></section><nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav></main><footer class="lesson-standard-footer"><div><div class="site-parent-link"><a href="math_subject_2.html">数学Ⅱの授業一覧に戻る</a></div>みんなの数学データベース｜高校生のための授業</div></footer></body></html>
+<div class="exercise"><h3>練習6　総合</h3><p>\(x^2-4x+k=0\) が異なる2つの正の実数解をもつように、\(k\) の範囲を求めよ。</p><details><summary>解答・解説を表示</summary><p>判別式は \(D=16-4k\gt 0\)、和は4、積は\(k\)。</p><div class="math">\[\boxed{0\lt k\lt 4}\]</div></details></div>
+<h2 id="hs-summary">まとめ</h2>
+<div class="theorem"><div class="math">\[\boxed{\alpha+\beta=-\frac ba,\qquad\alpha\beta=\frac ca}\]</div><div class="math">\[\boxed{ax^2+bx+c=a(x-\alpha)(x-\beta)}\]</div><div class="math">\[\boxed{x^2-(\alpha+\beta)x+\alpha\beta=0}\]</div><p>解の符号を調べるときは、<strong>判別式・和・積</strong>の3点を確認しましょう。</p></div><section class="review-practice"><h2>1．追加の練習問題（基本・標準）</h2><p>途中式をノートに書いてから、解答を開いて確認しましょう。</p><div class="review-question"><p><strong>問題 1：</strong>\(x^2-5x+6=0\) の2解の和と積を求めよ。</p><details><summary>解答・解説を表示</summary><p>解と係数の関係より和5、積6。</p></details></div><div class="review-question"><p><strong>問題 2：</strong>2解が2と3である2次方程式を作れ。</p><details><summary>解答・解説を表示</summary><p>\((x-2)(x-3)=0\)、すなわち \(x^2-5x+6=0\)。</p></details></div></section><nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav></main><footer class="lesson-standard-footer"><div><div class="site-parent-link"><a href="math_subject_2.html">数学Ⅱの授業一覧に戻る</a></div>みんなの数学データベース｜高校生のための授業</div></footer></body></html>

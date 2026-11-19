@@ -53,10 +53,17 @@ html,body{margin:0}body{background:#f2f7fc;color:#19334e;line-height:1.8;font-fa
 mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;max-width:100%}
 @media(max-width:640px){#md3-goal{padding:17px 15px!important}#md3-goal .md3-goal-title{font-size:20px!important}}
 </style><link rel="stylesheet" href="lesson_common_style.css">
+<link rel="stylesheet" href="high_school_lesson_reading.css">
 </head><body>
 <header id="md3-header"><div class="md3-common-width"><div class="site-parent-link"><a href="math_subject_3.html">数学Ⅲの授業一覧に戻る</a></div><div class="md3-common-top">みんなの数学データベース ／ 高校数学 ／ 数学Ⅲ</div><h1>速度と加速度</h1><p class="md3-common-bottom">数学Ⅲ ／ </p></div></header>
-<main class="wrap" id="md3-main"><section class="md3-standard-goal" id="md3-goal"><span class="md3-goal-tag">授業のねらい</span><h2 class="md3-goal-title">位置・速度・加速度の関係を理解し、運動を微分で表せるようになる</h2><p>位置を時刻の関数として表し、微分によって速度と加速度を求めます。速度の符号と進行方向、加速度の符号と速度の増減を区別し、グラフや具体的な運動に応用できるようにします。</p></section>
-<section class="lesson"><h2>1．1　位置・速度・加速度</h2>
+<main class="wrap" id="md3-main" data-hs-lesson=""><section class="md3-standard-goal" id="md3-goal"><span class="md3-goal-tag">授業のねらい</span><h2 class="md3-goal-title">位置・速度・加速度の関係を理解し、運動を微分で表せるようになる</h2><p>位置を時刻の関数として表し、微分によって速度と加速度を求めます。速度の符号と進行方向、加速度の符号と速度の増減を区別し、グラフや具体的な運動に応用できるようにします。</p></section>
+<nav class="hs-study-nav" aria-label="授業の進め方">
+<a href="#hs-explanation">説明</a>
+<a href="#hs-examples">例題と解説</a>
+<a href="#hs-practice">練習問題</a>
+<a href="#hs-summary">まとめ</a></nav>
+
+<section class="lesson"><h2 id="hs-explanation">1．1　位置・速度・加速度</h2>
 <p>一直線上を動く物体の位置を、時刻 \(t\) の関数 \(x=f(t)\) で表します。時刻 \(t\) から \(t+h\) までの平均速度は次のとおりです。</p>
 <div class="formula">\[\frac{f(t+h)-f(t)}{h}\]</div>
 <p>\(h\to0\) とした極限が瞬間の<strong>速度</strong>です。速度をさらに微分したものが<strong>加速度</strong>です。</p>
@@ -71,7 +78,7 @@ mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;max-width:100%}
 <p class="small">青線：位置のグラフ。赤点：時刻 \(t\) での位置。オレンジ色の破線：その点での接線。接線の傾きが速度です。縦軸は選択した運動に合わせて自動調整されます。</p>
 </section>
 <section class="lesson"><h2>3．3　速度の符号と運動の向き</h2><p>速度 \(v(t)\) の符号によって進行方向が決まります。物体が<strong>向きを変える候補</strong>は、\(v(t)=0\) となる時刻です。ただし、その前後で速度の符号が変わるかを確認しなければなりません。</p>
-<div class="example"><strong>例題1　位置から速度と加速度を求める</strong><p>\(x(t)=t^3-3t^2+2t\) のとき、\(v(t),a(t)\) を求めよ。</p><p><strong>解説</strong>　時刻 \(t\) で微分して、</p><div class="formula">\[v(t)=3t^2-6t+2\]\[a(t)=6t-6\]</div></div>
+<div class="example"><strong id="hs-examples">例題1　位置から速度と加速度を求める</strong><p>\(x(t)=t^3-3t^2+2t\) のとき、\(v(t),a(t)\) を求めよ。</p><p><strong>解説</strong>　時刻 \(t\) で微分して、</p><div class="formula">\[v(t)=3t^2-6t+2\]\[a(t)=6t-6\]</div></div>
 <div class="example"><strong>例題2　進行方向が変わる時刻</strong><p>\(x(t)=t^2-4t+3\ (t\geqq0)\) について、進行方向が変わる時刻を求めよ。</p><p><strong>解説</strong>　\(v(t)=2t-4\) なので、\(v(t)=0\) より \(t=2\)。\(0\leqq t&lt;2\) で負、\(t&gt;2\) で正となるため、\(\boxed{t=2}\) で向きが変わる。</p></div>
 </section>
 <section class="lesson"><h2>4．4　加速度と速さの変化</h2>
@@ -80,15 +87,15 @@ mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;max-width:100%}
 <div class="example"><strong>例題4　静止していても加速度がある</strong><p>\(x(t)=t^2-4t+5\) の \(t=2\) での速度と加速度を求めよ。</p><p><strong>解説</strong>　\(v(2)=2\cdot2-4=0\)、\(a(2)=2\)。一瞬静止していても、加速度は0でない。</p></div>
 <div class="example"><strong>例題5　鉛直投げ上げ</strong><p>地面から鉛直上向きに初速度 \(20\,\mathrm{m/s}\) で投げた物体の高さを \(h(t)=20t-5t^2\) とする。最高点に達する時刻と高さを求めよ。</p><p><strong>解説</strong>　\(v(t)=20-10t\)。上昇から下降へ変わるのは \(v(t)=0\)、すなわち \(t=2\)。このとき \(h(2)=40-20=20\)。答えは \(\boxed{2\,\mathrm{s},\ 20\,\mathrm{m}}\)。</p></div>
 </section>
-<section class="lesson"><h2>5．5　練習問題</h2><p>まず自分で解き、続いて解説を開いて確認しましょう。</p><ol>
-<li>\(x(t)=3t^2-2t+1\) の速度と加速度を求めよ。<details class="answer"><summary>解答・解説を見る</summary>\(v(t)=6t-2\)、\(a(t)=6\)。1回微分すると速度、2回微分すると加速度になる。</details></li>
-<li>\(x(t)=t^3-3t^2\ (t\geqq0)\) の進行方向が変わる時刻を求めよ。<details class="answer"><summary>解答・解説を見る</summary>\(v=3t(t-2)\)。\(0<t<2\) で負、\(t="">2\) で正なので \(t=2\) で向きが変わる。\(t=0\) は定義域の端点である。</t<2\)></details></li>
-<li>\(x(t)=5t-t^2\) の \(t=1\) での速度、加速度、速さを求めよ。<details class="answer"><summary>解答・解説を見る</summary>\(v=5-2t\)、\(a=-2\)。\(t=1\) では速度 \(3\)、加速度 \(-2\)、速さ \(3\)。</details></li>
-<li>\(x(t)=t^2-6t\) の \(0<t<5\) class="answer" において、速さが減少する区間を求めよ。<details=""><summary>解答・解説を見る</summary>\(v=2t-6\)、\(a=2\)。異符号となる \(0<t<3\) details="" で速さが減少する。<=""></t<3\)></t<5\)></li>
-<li>\(x(t)=2t^3-9t^2+12t\ (t\geqq0)\) の静止する時刻を求めよ。<details class="answer"><summary>解答・解説を見る</summary>\(v=6t^2-18t+12=6(t-1)(t-2)\) より、\(t=1,2\)。いずれも速度の符号が変わるため進行方向も変わる。</details></li>
-<li>\(h(t)=12t-3t^2\ (0\leqq t\leqq4)\) の最高点に達する時刻と高さを求めよ。<details class="answer"><summary>解答・解説を見る</summary>\(v=12-6t=0\) より \(t=2\)。高さは \(h(2)=24-12=12\)。答えは \(2\,\mathrm{s},12\,\mathrm{m}\)。</details></li>
+<section class="lesson"><h2 id="hs-practice">5．5　練習問題</h2><p>まず自分で解き、続いて解説を開いて確認しましょう。</p><ol>
+<li>\(x(t)=3t^2-2t+1\) の速度と加速度を求めよ。<details class="answer"><summary>解答・解説を表示</summary>\(v(t)=6t-2\)、\(a(t)=6\)。1回微分すると速度、2回微分すると加速度になる。</details></li>
+<li>\(x(t)=t^3-3t^2\ (t\geqq0)\) の進行方向が変わる時刻を求めよ。<details class="answer"><summary>解答・解説を表示</summary>\(v=3t(t-2)\)。\(0<t<2\) で負、\(t="">2\) で正なので \(t=2\) で向きが変わる。\(t=0\) は定義域の端点である。</t<2\)></details></li>
+<li>\(x(t)=5t-t^2\) の \(t=1\) での速度、加速度、速さを求めよ。<details class="answer"><summary>解答・解説を表示</summary>\(v=5-2t\)、\(a=-2\)。\(t=1\) では速度 \(3\)、加速度 \(-2\)、速さ \(3\)。</details></li>
+<li>\(x(t)=t^2-6t\) の \(0<t<5\) class="answer" において、速さが減少する区間を求めよ。<details=""><summary>解答・解説を表示</summary>\(v=2t-6\)、\(a=2\)。異符号となる \(0<t<3\) details="" で速さが減少する。<=""></t<3\)></t<5\)></li>
+<li>\(x(t)=2t^3-9t^2+12t\ (t\geqq0)\) の静止する時刻を求めよ。<details class="answer"><summary>解答・解説を表示</summary>\(v=6t^2-18t+12=6(t-1)(t-2)\) より、\(t=1,2\)。いずれも速度の符号が変わるため進行方向も変わる。</details></li>
+<li>\(h(t)=12t-3t^2\ (0\leqq t\leqq4)\) の最高点に達する時刻と高さを求めよ。<details class="answer"><summary>解答・解説を表示</summary>\(v=12-6t=0\) より \(t=2\)。高さは \(h(2)=24-12=12\)。答えは \(2\,\mathrm{s},12\,\mathrm{m}\)。</details></li>
 </ol></section>
-<section class="lesson"><h2>6．6　発展問題・まとめ</h2><div class="example"><strong>発展問題</strong><p>\(x(t)=t^3-6t^2+9t\ (t\geqq0)\) について、物体の進行方向と速さの増減を調べよ。</p><details class="answer"><summary>解答・解説を見る</summary><p>\(v=3(t-1)(t-3)\)、\(a=6t-12\)。進行方向は \(0\leqq t&lt;1\) で正、\(1<t<3\) で負、\(t="">3\) で正。速さの増減は速度と加速度の符号で判断し、\(0<t<1\) は増加、\(2<t<3\)="" は減少、\(1<t<2\)="" は減少、\(t="">3\) は増加。\(t=1,3\) では一瞬静止する。</t<1\)></t<3\)></p></details></div>
+<section class="lesson"><h2 id="hs-summary">6．6　発展問題・まとめ</h2><div class="example"><strong>発展問題</strong><p>\(x(t)=t^3-6t^2+9t\ (t\geqq0)\) について、物体の進行方向と速さの増減を調べよ。</p><details class="answer"><summary>解答・解説を表示</summary><p>\(v=3(t-1)(t-3)\)、\(a=6t-12\)。進行方向は \(0\leqq t&lt;1\) で正、\(1<t<3\) で負、\(t="">3\) で正。速さの増減は速度と加速度の符号で判断し、\(0<t<1\) は増加、\(2<t<3\)="" は減少、\(1<t<2\)="" は減少、\(t="">3\) は増加。\(t=1,3\) では一瞬静止する。</t<1\)></t<3\)></p></details></div>
 <p>覚えることは、位置を1回微分すると<strong>速度</strong>、2回微分すると<strong>加速度</strong>になること、そして<strong>速度の符号は向き</strong>、<strong>速度と加速度の符号の組合せは速さの変化</strong>を教えることです。</p></section>
 <nav id="md3-bottom-return"></nav></main>
 <script>
