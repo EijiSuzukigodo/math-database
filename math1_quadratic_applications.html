@@ -88,11 +88,16 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <section class="card"><h2>3　定義域が動く最大・最小</h2><div class="example"><strong>例題2</strong><p>\(y=(x-1)^2\) について、\(t\leqq x\leqq t+2\) のときの最小値を求めます。</p><p>頂点 \(x=1\) が定義域に入るかどうかで場合分けします。</p><div class="math">\[\min y=\begin{cases}(t+1)^2 &amp;(t&lt;-1)\\0 &amp;(-1\leqq t\leqq1)\\(t-1)^2 &amp;(t&gt;1)\end{cases}\]</div><p>最大値は両端の値を比較します。\(t+1\) が0以下なら左端、0以上なら右端で最大です。</p><div class="math">\[\max y=\begin{cases}(t-1)^2 &amp;(t\leqq0)\\(t+1)^2 &amp;(t\geqq0)\end{cases}\]</div></div><div class="controls"><label for="shift">定義域の左端 \(t\)：<strong id="shiftValue">0.0</strong></label><input id="shift" max="3" min="-3" step="0.1" type="range" value="0"/></div><canvas aria-label="動く定義域と放物線の最大最小のグラフ" height="310" id="domainGraph" role="img" width="660"></canvas><div aria-live="polite" class="result" id="domainResult"></div></section>
 <section class="card"><h2>4　例題：利益の最大値</h2><div class="example"><strong>例題3</strong><p>ある商品の販売価格を \(x\) 百円とすると、販売個数が \(40-2x\) 個になるとします。売上 \(R\)（百円）の最大値を求めましょう。ただし \(0\leqq x\leqq20\) とします。</p><div class="math">\[R=x(40-2x)=-2(x-10)^2+200\]</div><p>\(x=10\) のとき最大値は \(200\)（百円）、すなわち <strong>20,000円</strong> です。価格は1,000円、販売個数は20個です。</p></div></section>
 <section class="card"><h2 id="hs-practice">5　練習問題</h2><p>答えを考えてから「解答・解説」を開いてください。</p>
-<details><summary>問題1　周が24 cmの長方形の面積の最大値</summary><p>縦を \(x\) とすると \(S=x(12-x)=-(x-6)^2+36\)。\(0&lt;x&lt;12\) より、最大値は \(\boxed{36\,\mathrm{cm}^2}\)（正方形）。</p></details>
-<details><summary>問題2　\(y=(x-2)^2+1\)、\(0\leqq x\leqq5\) の最大値と最小値</summary><p>頂点 \(x=2\) で最小値 \(\boxed{1}\)。両端は \(y(0)=5\)、\(y(5)=10\) なので最大値 \(\boxed{10}\)。</p></details>
-<details><summary>問題3　\(y=-x^2+6x-5\)、\(1\leqq x\leqq4\) の最大値と最小値</summary><p>\(y=-(x-3)^2+4\)。最大値 \(\boxed4\)（\(x=3\)）。両端を比べると \(y(1)=0\)、\(y(4)=3\) より最小値 \(\boxed0\)。</p></details>
-<details><summary>問題4　\(y=(x-1)^2\)、\(2\leqq x\leqq4\) の最大値と最小値</summary><p>定義域が頂点の右側にあるので単調増加。最小値 \(\boxed1\)（\(x=2\)）、最大値 \(\boxed9\)（\(x=4\)）。</p></details>
-<details><summary>問題5　\(y=(x-1)^2\)、\(-2\leqq x\leqq0\) の最大値と最小値</summary><p>定義域が頂点の左側にあるので単調減少。最大値 \(\boxed9\)（\(x=-2\)）、最小値 \(\boxed1\)（\(x=0\)）。</p></details>
+<p class="hs-exercise-question">問題1　周が24 cmの長方形の面積の最大値</p>
+<details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>縦を \(x\) とすると \(S=x(12-x)=-(x-6)^2+36\)。\(0&lt;x&lt;12\) より、最大値は \(\boxed{36\,\mathrm{cm}^2}\)（正方形）。</p></details>
+<p class="hs-exercise-question">問題2　\(y=(x-2)^2+1\)、\(0\leqq x\leqq5\) の最大値と最小値</p>
+<details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>頂点 \(x=2\) で最小値 \(\boxed{1}\)。両端は \(y(0)=5\)、\(y(5)=10\) なので最大値 \(\boxed{10}\)。</p></details>
+<p class="hs-exercise-question">問題3　\(y=-x^2+6x-5\)、\(1\leqq x\leqq4\) の最大値と最小値</p>
+<details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(y=-(x-3)^2+4\)。最大値 \(\boxed4\)（\(x=3\)）。両端を比べると \(y(1)=0\)、\(y(4)=3\) より最小値 \(\boxed0\)。</p></details>
+<p class="hs-exercise-question">問題4　\(y=(x-1)^2\)、\(2\leqq x\leqq4\) の最大値と最小値</p>
+<details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>定義域が頂点の右側にあるので単調増加。最小値 \(\boxed1\)（\(x=2\)）、最大値 \(\boxed9\)（\(x=4\)）。</p></details>
+<p class="hs-exercise-question">問題5　\(y=(x-1)^2\)、\(-2\leqq x\leqq0\) の最大値と最小値</p>
+<details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>定義域が頂点の左側にあるので単調減少。最大値 \(\boxed9\)（\(x=-2\)）、最小値 \(\boxed1\)（\(x=0\)）。</p></details>
 </section><section class="card"><h2 id="hs-summary">まとめ</h2><p>2次関数の最大・最小は、頂点の位置と定義域の関係で決まります。文章題では、変数の範囲を最初に確認することが大切です。</p></section><nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav></main>
 <script>
 (function(){'use strict';

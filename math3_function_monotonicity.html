@@ -46,12 +46,13 @@ mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;max-width:100%}
 <link rel="stylesheet" href="high_school_lesson_reading.css">
 </head><body>
 <header id="md3-header"><div class="md3-common-width"><div class="site-parent-link"><a href="math_subject_3.html">数学Ⅲの授業一覧に戻る</a></div><div class="md3-common-top">みんなの数学データベース ／ 高校数学 ／ 数学Ⅲ</div><h1>関数の値の変化</h1><p class="md3-common-bottom">数学Ⅲ ／ </p></div></header><main id="md3-main" data-hs-lesson=""><section class="md3-standard-goal" id="md3-goal"><span class="md3-goal-tag">授業のねらい</span><h2 class="md3-goal-title">導関数を使って、関数の増減と極値を調べる</h2><p>導関数の符号から関数の増加・減少を判断し、増減表を作って極大・極小を求めます。動くグラフで接線の傾きと関数の値の変化を結びつけ、例題・練習問題で解法を身につけます。</p></section>
-<p class="hs-notation"><strong>記号の読み方</strong> \(\mathbb R\) は実数全体の集合です。</p>
 <nav class="hs-study-nav" aria-label="授業の進め方">
 <a href="#hs-explanation">説明</a>
 <a href="#hs-examples">例題と解説</a>
 <a href="#hs-practice">練習問題</a>
 <a href="#hs-summary">まとめ</a></nav>
+<p class="hs-notation"><strong>記号の読み方</strong> \(\mathbb R\) は実数全体の集合です。</p>
+
 
 <section><span class="pill">基本事項</span><h2 id="hs-explanation">1. 導関数の符号と増加・減少</h2><p>微分可能な関数 \(f(x)\) について、ある区間で導関数が正なら関数は増加、負なら減少します。</p>
 <div class="formula">\[f'(x)&gt;0\ \Longrightarrow\ f(x)\text{ は増加}\]</div><div class="formula">\[f'(x)&lt;0\ \Longrightarrow\ f(x)\text{ は減少}\]</div>
@@ -73,12 +74,17 @@ mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;max-width:100%}
 <div class="example"><strong>例題5　\(f(x)=xe^{-x}\) （\(x\in\mathbb R\)）</strong><p>積の微分法より \(f'(x)=e^{-x}(1-x)\)。\(e^{-x}&gt;0\) より、\(x&lt;1\) で増加、\(x&gt;1\) で減少。したがって \(x=1\) で極大値 \(\frac1e\) です。</p></div>
 </section>
 <section><span class="pill">練習問題</span><h2 id="hs-practice">5. 練習問題（解答・解説付き）</h2><p>まず自分で増減表を書き、解答を開いて確かめましょう。</p>
-<details><summary>問題1　\(f(x)=x^2-4x+1\) の極値</summary><p>\(f'(x)=2x-4\)。\(x&lt;2\) で負、\(x&gt;2\) で正。よって \(x=2\) で極小値 \(-3\)。</p></details>
-<details><summary>問題2　\(f(x)=x^3-12x\) の極値</summary><p>\(f'(x)=3(x-2)(x+2)\)。符号は「＋，−，＋」。\(x=-2\) で極大値 \(16\)、\(x=2\) で極小値 \(-16\)。</p></details>
-<details><summary>問題3　\(f(x)=x^3+3x\) の増減</summary><p>\(f'(x)=3x^2+3&gt;0\) です。すべての実数で増加し、極値はありません。</p></details>
-<details><summary>問題4　\(f(x)=x+\frac1x\) （\(x&gt;0\)）の極値</summary><p>\(f'(x)=1-\frac1{x^2}=\frac{(x-1)(x+1)}{x^2}\)。\(0&lt;x&lt;1\) で減少、\(x&gt;1\) で増加。\(x=1\) で極小値 2。</p></details>
-<p>問題5　\(f(x)=\sin x\)（\(0&lt;x&lt;2\pi\)）の極値を求めなさい。</p><details><summary>解答・解説を表示</summary><p>\(f'(x)=\cos x\) より、\(x=\dfrac{\pi}{2}\) で極大値 \(1\)、\(x=\dfrac{3\pi}{2}\) で極小値 \(-1\) です。</p></details>
-<details><summary>問題6　\(f(x)=x^4\) の \(x=0\) の極値</summary><p>\(f'(x)=4x^3\) は \(x=0\) で負から正に変わるので、\(x=0\) で極小値 0 です。</p></details>
+<p class="hs-exercise-question">問題1　\(f(x)=x^2-4x+1\) の極値</p>
+<details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(f'(x)=2x-4\)。\(x&lt;2\) で負、\(x&gt;2\) で正。よって \(x=2\) で極小値 \(-3\)。</p></details>
+<p class="hs-exercise-question">問題2　\(f(x)=x^3-12x\) の極値</p>
+<details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(f'(x)=3(x-2)(x+2)\)。符号は「＋，−，＋」。\(x=-2\) で極大値 \(16\)、\(x=2\) で極小値 \(-16\)。</p></details>
+<p class="hs-exercise-question">問題3　\(f(x)=x^3+3x\) の増減</p>
+<details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(f'(x)=3x^2+3&gt;0\) です。すべての実数で増加し、極値はありません。</p></details>
+<p class="hs-exercise-question">問題4　\(f(x)=x+\frac1x\) （\(x&gt;0\)）の極値</p>
+<details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(f'(x)=1-\frac1{x^2}=\frac{(x-1)(x+1)}{x^2}\)。\(0&lt;x&lt;1\) で減少、\(x&gt;1\) で増加。\(x=1\) で極小値 2。</p></details>
+<p>問題5　\(f(x)=\sin x\)（\(0&lt;x&lt;2\pi\)）の極値を求めなさい。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(f'(x)=\cos x\) より、\(x=\dfrac{\pi}{2}\) で極大値 \(1\)、\(x=\dfrac{3\pi}{2}\) で極小値 \(-1\) です。</p></details>
+<p class="hs-exercise-question">問題6　\(f(x)=x^4\) の \(x=0\) の極値</p>
+<details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(f'(x)=4x^3\) は \(x=0\) で負から正に変わるので、\(x=0\) で極小値 0 です。</p></details>
 </section>
 <section><span class="pill">発展・まとめ</span><h2>6. よくある誤りと発展</h2><p>\(f'(x)=0\) となる点を見つけただけでは極値と判断できません。<strong>その点の左右で導関数の符号が変わるか</strong>を必ず確かめましょう。</p><div class="note">次の「関数の最大と最小」では、閉区間の端点も含めて値を比較します。「極大・極小」と「最大・最小」は違う概念です。</div></section>
 <script>

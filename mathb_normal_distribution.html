@@ -97,14 +97,14 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <div class="example"><strong>例題5：上側確率</strong><p>\(X\sim N(100,15^2)\) のとき、\(P(X\geqq130)\) を求めよ。</p></div><div class="answer"><strong>解答</strong><p>\(Z=(130-100)/15=2\) なので \(P(X\geqq130)\approx1-0.9772=\boxed{0.0228}\)。</p></div>
 <div class="example"><strong>例題6：二項分布の正規近似（発展）</strong><p>\(X\sim B(100,0.5)\) のとき、\(P(X\leqq60)\) を連続補正を使って近似せよ。</p></div><div class="answer"><strong>解答</strong><p>平均は50、標準偏差は5。連続補正を行うと \(P(X\leqq60)\approx P(Y\leqq60.5)\)（\(Y\sim N(50,25)\)）。</p><div class="formula">\[z=\frac{60.5-50}{5}=2.1,\qquad P(X\leqq60)\approx\Phi(2.1)\approx\boxed{0.9821}\]</div><p>二項分布は離散型なので、正規近似では連続補正が役立ちます。</p></div>
 <h2 id="hs-practice">7．練習問題</h2>
-<div class="exercise"><strong>元の練習問題1</strong><p>平均50、標準偏差5の値40を標準化する。</p><details><summary>解答・解説を表示</summary><div class="formula">\[\frac{40-50}{5}=\boxed{-2}\]</div></details></div>
-<div class="exercise"><strong>練習問題2</strong><p>\(X\sim N(80,8^2)\)。\(X=96\) を標準化せよ。</p><details><summary>解答・解説を表示</summary><p>\((96-80)/8=\boxed{2}\)。</p></details></div>
-<div class="exercise"><strong>練習問題3</strong><p>\(Z\sim N(0,1)\)。\(P(Z\geqq1)\) を求めよ。</p><details><summary>解答・解説を表示</summary><p>\(1-\Phi(1)=\boxed{0.1587}\)（近似値）。</p></details></div>
-<div class="exercise"><strong>練習問題4</strong><p>\(P(-2\leqq Z\leqq2)\) を求めよ。</p><details><summary>解答・解説を表示</summary><p>\(0.9772-0.0228=\boxed{0.9544}\)（近似値）。</p></details></div>
-<div class="exercise"><strong>練習問題5</strong><p>\(X\sim N(60,10^2)\)。\(P(X\leqq70)\) を求めよ。</p><details><summary>解答・解説を表示</summary><p>標準化すると1。\(\boxed{0.8413}\)（近似値）。</p></details></div>
-<div class="exercise"><strong>練習問題6</strong><p>\(X\sim N(60,10^2)\)。\(P(50\leqq X\leqq70)\) を求めよ。</p><details><summary>解答・解説を表示</summary><p>標準化して \(-1\leqq Z\leqq1\)。\(\boxed{0.6826}\)（近似値）。</p></details></div>
-<div class="exercise"><strong>練習問題7</strong><p>\(X\sim N(100,20^2)\)。\(P(X\geqq140)\) を求めよ。</p><details><summary>解答・解説を表示</summary><p>\(Z\geqq2\) より \(\boxed{0.0228}\)（近似値）。</p></details></div>
-<div class="exercise"><strong>練習問題8</strong><p>正規分布で、標準偏差を2倍にすると分散は何倍になるか。</p><details><summary>解答・解説を表示</summary><p>\(V(X)=\sigma^2\) だから \((2\sigma)^2=4\sigma^2\)。\(\boxed{4\text{倍}}\)。</p></details></div>
+<div class="exercise"><strong>元の練習問題1</strong><p>平均50、標準偏差5の値40を標準化する。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><div class="formula">\[\frac{40-50}{5}=\boxed{-2}\]</div></details></div>
+<div class="exercise"><strong>練習問題2</strong><p>\(X\sim N(80,8^2)\)。\(X=96\) を標準化せよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\((96-80)/8=\boxed{2}\)。</p></details></div>
+<div class="exercise"><strong>練習問題3</strong><p>\(Z\sim N(0,1)\)。\(P(Z\geqq1)\) を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(1-\Phi(1)=\boxed{0.1587}\)（近似値）。</p></details></div>
+<div class="exercise"><strong>練習問題4</strong><p>\(P(-2\leqq Z\leqq2)\) を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(0.9772-0.0228=\boxed{0.9544}\)（近似値）。</p></details></div>
+<div class="exercise"><strong>練習問題5</strong><p>\(X\sim N(60,10^2)\)。\(P(X\leqq70)\) を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>標準化すると1。\(\boxed{0.8413}\)（近似値）。</p></details></div>
+<div class="exercise"><strong>練習問題6</strong><p>\(X\sim N(60,10^2)\)。\(P(50\leqq X\leqq70)\) を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>標準化して \(-1\leqq Z\leqq1\)。\(\boxed{0.6826}\)（近似値）。</p></details></div>
+<div class="exercise"><strong>練習問題7</strong><p>\(X\sim N(100,20^2)\)。\(P(X\geqq140)\) を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(Z\geqq2\) より \(\boxed{0.0228}\)（近似値）。</p></details></div>
+<div class="exercise"><strong>練習問題8</strong><p>正規分布で、標準偏差を2倍にすると分散は何倍になるか。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(V(X)=\sigma^2\) だから \((2\sigma)^2=4\sigma^2\)。\(\boxed{4\text{倍}}\)。</p></details></div>
 <h2 id="hs-summary">8．まとめ</h2><p>正規分布では、平均 \(\mu\) が中心、分散 \(\sigma^2\) が広がりを決めます。標準化して \(N(0,1)\) の表を利用すると、区間の確率を求められます。元の例題と練習問題も復習しましょう。</p>
 </article><nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav></main>
 <script>

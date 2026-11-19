@@ -77,14 +77,14 @@ mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;max-width:100%}
 <div class="example"><strong>例題5　接線と法線が座標軸と交わる点</strong><p>曲線 \(y=x^2\) の点 \((2,4)\) における接線と法線を求めよ。</p><strong>解説</strong><p>接線の傾きは4なので \(y-4=4(x-2)\)、法線の傾きは \(-\frac14\) なので \(y-4=-\frac14(x-2)\)。</p>\[\boxed{\text{接線 }y=4x-4}\]\[\boxed{\text{法線 }y=-\frac14x+\frac92}\]</div>
 </section>
 <section><span class="pill">練習問題</span><h2 id="hs-practice">5. 自分で解いてみよう</h2><p>問題を解いた後、「解答・解説を表示」を押すと途中式を確認できます。</p>
-<div class="exercise"><strong>問題1</strong>　\(y=x^3\) の \(x=2\) における接線を求めよ。</div><details><summary>解答・解説を表示</summary><p>\(f'(x)=3x^2\) より \(f'(2)=12\)、接点は \((2,8)\)。</p>\[y-8=12(x-2)\]\[\boxed{y=12x-16}\]</details>
-<div class="exercise"><strong>問題2</strong>　\(y=x^2+2x\) の \(x=0\) における法線を求めよ。</div><details><summary>解答・解説を表示</summary><p>\(f'(x)=2x+2\) より、接点は \((0,0)\)、接線の傾きは2、法線の傾きは \(-\frac12\)。</p>\[\boxed{y=-\frac12x}\]</details>
-<div class="exercise"><strong>問題3</strong>　\(y=x^3-3x^2\) の接線が水平になる点をすべて求めよ。</div><details><summary>解答・解説を表示</summary><p>\(f'(x)=3x^2-6x=3x(x-2)\) なので \(x=0,2\)。</p>\[\boxed{(0,0),\quad(2,-4)}\]</details>
-<div class="exercise"><strong>問題4</strong>　\(y=\frac1x\) の \(x=1\) における法線を求めよ。</div><details><summary>解答・解説を表示</summary><p>\(f'(x)=-\frac1{x^2}\) より接線の傾きは \(-1\)、法線の傾きは1。接点は \((1,1)\)。</p>\[\boxed{y=x}\]</details>
-<div class="exercise"><strong>問題5</strong>　点 \((0,-4)\) を通る \(y=x^2\) の接線をすべて求めよ。</div><details><summary>解答・解説を表示</summary><p>接点を \((t,t^2)\) と置くと接線は \(y=2tx-t^2\)。\(-4=-t^2\) より \(t=\pm2\)。</p>\[\boxed{y=4x-4,\quad y=-4x-4}\]</details>
-<div class="exercise"><strong>問題6</strong>　\(y=x^2\) の原点における接線と法線を求めよ。</div><details><summary>解答・解説を表示</summary><p>\(f'(0)=0\) なので接線は水平、法線は垂直。</p>\[\boxed{\text{接線 }y=0,\quad\text{法線 }x=0}\]</details>
+<div class="exercise"><strong>問題1</strong>　\(y=x^3\) の \(x=2\) における接線を求めよ。</div><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(f'(x)=3x^2\) より \(f'(2)=12\)、接点は \((2,8)\)。</p>\[y-8=12(x-2)\]\[\boxed{y=12x-16}\]</details>
+<div class="exercise"><strong>問題2</strong>　\(y=x^2+2x\) の \(x=0\) における法線を求めよ。</div><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(f'(x)=2x+2\) より、接点は \((0,0)\)、接線の傾きは2、法線の傾きは \(-\frac12\)。</p>\[\boxed{y=-\frac12x}\]</details>
+<div class="exercise"><strong>問題3</strong>　\(y=x^3-3x^2\) の接線が水平になる点をすべて求めよ。</div><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(f'(x)=3x^2-6x=3x(x-2)\) なので \(x=0,2\)。</p>\[\boxed{(0,0),\quad(2,-4)}\]</details>
+<div class="exercise"><strong>問題4</strong>　\(y=\frac1x\) の \(x=1\) における法線を求めよ。</div><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(f'(x)=-\frac1{x^2}\) より接線の傾きは \(-1\)、法線の傾きは1。接点は \((1,1)\)。</p>\[\boxed{y=x}\]</details>
+<div class="exercise"><strong>問題5</strong>　点 \((0,-4)\) を通る \(y=x^2\) の接線をすべて求めよ。</div><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>接点を \((t,t^2)\) と置くと接線は \(y=2tx-t^2\)。\(-4=-t^2\) より \(t=\pm2\)。</p>\[\boxed{y=4x-4,\quad y=-4x-4}\]</details>
+<div class="exercise"><strong>問題6</strong>　\(y=x^2\) の原点における接線と法線を求めよ。</div><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(f'(0)=0\) なので接線は水平、法線は垂直。</p>\[\boxed{\text{接線 }y=0,\quad\text{法線 }x=0}\]</details>
 </section>
-<section><span class="pill">発展</span><h2>6. 法線の特徴を考える</h2><p>曲線 \(y=x^2\) の点 \((a,a^2)\) における法線が、\(y\) 軸と交わる点を求めてみましょう（\(a\ne0\)）。</p><details><summary>解答・解説を表示</summary><p>法線は \(y-a^2=-\frac1{2a}(x-a)\)。\(x=0\) と置くと、</p>\[y-a^2=\frac12\]\[\boxed{\left(0,a^2+\frac12\right)}\]<p>つまり、法線の \(y\) 切片は \(a^2+\frac12\) となります。</p></details></section>
+<section><span class="pill">発展</span><h2>6. 法線の特徴を考える</h2><p>曲線 \(y=x^2\) の点 \((a,a^2)\) における法線が、\(y\) 軸と交わる点を求めてみましょう（\(a\ne0\)）。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>法線は \(y-a^2=-\frac1{2a}(x-a)\)。\(x=0\) と置くと、</p>\[y-a^2=\frac12\]\[\boxed{\left(0,a^2+\frac12\right)}\]<p>つまり、法線の \(y\) 切片は \(a^2+\frac12\) となります。</p></details></section>
 <section><span class="pill">まとめ</span><h2 id="hs-summary">7. 本時のまとめ</h2><p><strong>接線：</strong> 傾き \(f'(a)\) を使って求めます。<strong>法線：</strong> 接線の傾きが0でないときは、その負の逆数を使います。傾きが0のときは、法線は垂直な直線 \(x=a\) です。</p><div class="note">計算の基本は「接点を求める → 導関数で傾きを求める → 点と傾きから直線の式を作る」です。</div></section>
 <nav id="md3-bottom-return"></nav></main>
 <script>
