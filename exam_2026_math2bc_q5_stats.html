@@ -17,14 +17,14 @@
 <p class="note"><strong>教材の位置づけ：</strong>2026年度本試験の出題分野に対応した操作型の概念学習教材です。公式問題の設問・空欄・正解を完全に再現した解答教材ではありません。下の数値例は学習用の例です。</p>
 <h2>1. 正規分布：平均と標準偏差</h2><p>元の教材の「平均」「標準偏差」を動かす操作を残し、平均からの範囲に入る確率を色付きの面積で示します。</p>
 <section class="panel"><div class="controls"><label>平均 μ：<output id="muVal">0</output><input id="mu" type="range" min="-4" max="4" step="0.1" value="0"></label><label>標準偏差 σ：<output id="sdVal">1</output><input id="sd" type="range" min="0.2" max="3" step="0.1" value="1"></label><label>色を塗る範囲：平均 ± <output id="kVal">1</output>σ<input id="k" type="range" min="0.5" max="3" step="0.5" value="1"></label></div><svg id="normal" viewBox="0 0 680 300" role="img" aria-label="平均と標準偏差に応じて変わる正規分布曲線と範囲内の確率"></svg><p id="normalResult" class="result" aria-live="polite"></p><p><small>曲線の下の全体の面積は1。色付き部分が指定した範囲の確率です。</small></p></section>
-<h2>2. 標本平均の分布</h2><p>母集団の標準偏差が σ のとき、独立な標本の平均の標準偏差（標準誤差）は σ/√n です。標本サイズ n を増やすと分布が狭くなります。</p>
+<h2>2. 標本平均の分布</h2><p>母集団の標準偏差が σ のとき、独立な標本の平均の標準偏差（標準誤差）は σ/<math><msqrt><mi>n</mi></msqrt></math> です。標本サイズ n を増やすと分布が狭くなります。</p>
 <section class="panel"><div class="controls"><label>標本の大きさ n：<output id="nVal">25</output><input id="n" type="range" min="1" max="200" step="1" value="25"></label><label>母標準偏差 σ：<output id="popSdVal">10</output><input id="popSd" type="range" min="2" max="20" step="1" value="10"></label></div><svg id="sampling" viewBox="0 0 680 270" role="img" aria-label="標本の大きさで変わる標本平均の分布"></svg><p id="samplingResult" class="result"></p><p><small>正規母集団を想定したモデルです。一般の母集団でも条件のもとで中心極限定理により近似できます。</small></p></section>
-<h2>3. 95％信頼区間</h2><p>母標準偏差 σ が既知で、標本平均が正規分布に従う場合、母平均 μ の95％信頼区間は <strong class="math">x̄ ± 1.96 × σ/√n</strong> です。</p>
+<h2>3. 95％信頼区間</h2><p>母標準偏差 σ が既知で、標本平均が正規分布に従う場合、母平均 μ の95％信頼区間は <strong class="math">x̄ ± 1.96 × σ/<math><msqrt><mi>n</mi></msqrt></math></strong> です。</p>
 <section class="panel"><div class="controls"><label>標本平均 x̄：<input id="xbar" type="number" value="50" step="0.5"></label><label>母標準偏差 σ：<input id="ciSd" type="number" value="12" min="0.1" step="0.5"></label><label>標本の大きさ n：<input id="ciN" type="number" value="36" min="1" step="1"></label></div><p id="ciResult" class="result" aria-live="polite"></p><svg id="ciGraph" viewBox="0 0 680 150" role="img" aria-label="95パーセント信頼区間を示す数直線"></svg><p><small>95％とは、同じ方法で区間を何度も作ると、その約95％が固定された母平均を含むという意味です。</small></p></section>
 <h2>4. 母比率の仮説検定</h2><p>帰無仮説 H₀：p = p₀ を両側検定します。標本比率 p̂ = x/n として、z = (p̂ − p₀)/√(p₀(1−p₀)/n) を計算します。</p>
 <section class="panel"><div class="controls"><label>仮説の母比率 p₀：<input id="p0" type="number" value="0.5" min="0.01" max="0.99" step="0.05"></label><label>標本の大きさ n：<input id="testN" type="number" value="100" min="1" step="1"></label><label>該当する個数 x：<input id="success" type="number" value="60" min="0" step="1"></label></div><p id="testResult" class="result" aria-live="polite"></p><svg id="testGraph" viewBox="0 0 680 250" role="img" aria-label="標準正規分布の両側棄却域と検定統計量"></svg><p><small>有意水準5％、両側検定。正規近似は np₀ と n(1−p₀) が十分大きいときに利用します。検定結果は帰無仮説が真である確率を示すものではありません。</small></p></section>
 <h2>5. 解法の着眼点を順番に学ぶ</h2><div class="panel"><p id="stepText" class="step" aria-live="polite"></p><div class="buttons"><button id="prev">前の説明</button><button id="next">次の説明</button></div><p id="stepCount"></p></div>
-<h2>6. 練習問題</h2><details><summary>練習①：σ=8、n=64 の標準誤差は？</summary><p>σ/√n = 8/8 = <strong>1</strong> です。</p></details><details><summary>練習②：x̄=40、σ=10、n=100 の95％信頼区間は？</summary><p>40 ± 1.96×10/10 = 40 ± 1.96。したがって <strong>[38.04, 41.96]</strong> です。</p></details><details><summary>練習③：p₀=0.5、n=100、x=60 の両側5％検定では？</summary><p>p̂=0.6、標準誤差=0.05、z=2。|z|&gt;1.96 なので <strong>帰無仮説を棄却</strong>します（正規近似）。</p></details>
+<h2>6. 練習問題</h2><details><summary>練習①：σ=8、n=64 の標準誤差は？</summary><p>σ/<math><msqrt><mi>n</mi></msqrt></math> = <math><mfrac><mrow><mn>8</mn></mrow><mrow><mn>8</mn></mrow></mfrac></math> = <strong>1</strong> です。</p></details><details><summary>練習②：x̄=40、σ=10、n=100 の95％信頼区間は？</summary><p>40 ± 1.96×<math><mfrac><mrow><mn>10</mn></mrow><mrow><mn>10</mn></mrow></mfrac></math> = 40 ± 1.96。したがって <strong>[38.04, 41.96]</strong> です。</p></details><details><summary>練習③：p₀=0.5、n=100、x=60 の両側5％検定では？</summary><p>p̂=0.6、標準誤差=0.05、z=2。|z|&gt;1.96 なので <strong>帰無仮説を棄却</strong>します（正規近似）。</p></details>
 
 <section class="lesson" id="worked-examples">
   <span class="tag">解答・詳しい解説</span>
@@ -42,15 +42,15 @@
   <h3>例題② 標本平均の標準誤差</h3>
   <p><strong>問題：</strong>母標準偏差 σ = 12、標本の大きさ n = 36 のとき、標本平均の標準偏差を求めましょう。</p>
   <div class="solved"><strong>解答</strong>
-    <div class="formula">標準誤差 = <span class="frac"><span class="num">σ</span><span class="den">√n</span></span> = <span class="frac"><span class="num">12</span><span class="den">√36</span></span> = <span class="frac"><span class="num">12</span><span class="den">6</span></span> = 2</div>
+    <div class="formula">標準誤差 = <span class="frac"><span class="num">σ</span><span class="den"><math><msqrt><mi>n</mi></msqrt></math></span></span> = <span class="frac"><span class="num">12</span><span class="den"><math><msqrt><mn>36</mn></msqrt></math></span></span> = <span class="frac"><span class="num">12</span><span class="den">6</span></span> = 2</div>
     <p class="answer">答え：2</p>
-    <p>標本の大きさを4倍にすると、標準誤差は半分になります。これは分母に √n があるからです。</p>
+    <p>標本の大きさを4倍にすると、標準誤差は半分になります。これは分母に <math><msqrt><mi>n</mi></msqrt></math> があるからです。</p>
   </div>
   <h3>例題③ 母平均の95％信頼区間</h3>
   <p><strong>問題：</strong>標本平均が50、既知の母標準偏差が12、標本の大きさが36とします。正規モデルのもとで母平均の95％信頼区間を求めましょう。</p>
   <div class="solved"><strong>解答</strong>
     <p>まず標準誤差を求めます。</p>
-    <div class="formula"><span class="frac"><span class="num">12</span><span class="den">√36</span></span> = 2</div>
+    <div class="formula"><span class="frac"><span class="num">12</span><span class="den"><math><msqrt><mn>36</mn></msqrt></math></span></span> = 2</div>
     <p>続いて、標準正規分布の95％に対応する値1.96を利用します。</p>
     <div class="formula"><math><mrow><mn>50</mn><mo>±</mo><mn>1.96</mn><mo>×</mo><mn>2</mn><mo>=</mo><mn>50</mn><mo>±</mo><mn>3.92</mn></mrow></math></div>
     <p class="answer">答え：46.08 以上 53.92 以下</p>
@@ -68,23 +68,23 @@
 </section>
 <section class="lesson" id="proofs">
   <span class="tag">公式の根拠</span>
-  <h2>8. なぜ標準誤差は σ/√n なのか</h2>
+  <h2>8. なぜ標準誤差は σ/<math><msqrt><mi>n</mi></msqrt></math> なのか</h2>
   <p>互いに独立で、いずれも分散が σ² の確率変数 X₁, …, Xₙ を考えます。標本平均を次のように定めます。</p>
   <div class="formula">X̄ = <span class="frac"><span class="num">X₁ + X₂ + … + Xₙ</span><span class="den">n</span></span></div>
   <p>独立な確率変数の和の分散は、各分散の和になるため、</p>
   <div class="formula">V(X̄) = <span class="frac"><span class="num">nσ²</span><span class="den">n²</span></span> = <span class="frac"><span class="num">σ²</span><span class="den">n</span></span></div>
   <p>標準偏差は分散の正の平方根なので、</p>
-  <div class="formula">SD(X̄) = <span class="frac"><span class="num">σ</span><span class="den">√n</span></span></div>
+  <div class="formula">SD(X̄) = <span class="frac"><span class="num">σ</span><span class="den"><math><msqrt><mi>n</mi></msqrt></math></span></span></div>
   <p>これが、標本平均の<strong>標準誤差</strong>です。独立性などの仮定が重要です。</p>
-  <details><summary>発展：標準化と95％信頼区間の関係</summary><p>標本平均が正規分布に従い、母標準偏差 σ が既知なら、標準化した量 (X̄−μ)/(σ/√n) は標準正規分布に従います。この量が −1.96 から 1.96 に入る確率が約95％であることを変形すると、母平均 μ の信頼区間が得られます。</p></details>
+  <details><summary>発展：標準化と95％信頼区間の関係</summary><p>標本平均が正規分布に従い、母標準偏差 σ が既知なら、標準化した量 (X̄−μ)/(σ/<math><msqrt><mi>n</mi></msqrt></math>) は標準正規分布に従います。この量が −1.96 から 1.96 に入る確率が約95％であることを変形すると、母平均 μ の信頼区間が得られます。</p></details>
 </section>
 <section class="lesson" id="practice-more">
   <span class="tag">理解度チェック</span><h2>9. 追加の練習問題</h2>
-  <details><summary>問題① 母標準偏差15、標本の大きさ100。標準誤差は？</summary><p class="answer">答え：1.5</p><p>15 ÷ √100 = 15 ÷ 10 = 1.5。</p></details>
+  <details><summary>問題① 母標準偏差15、標本の大きさ100。標準誤差は？</summary><p class="answer">答え：1.5</p><p>15 ÷ <math><msqrt><mn>100</mn></msqrt></math> = 15 ÷ 10 = 1.5。</p></details>
   <details><summary>問題② 標本平均80、母標準偏差20、標本数100。95％信頼区間は？</summary><p class="answer">答え：76.08 以上 83.92 以下</p><p>標準誤差は20 ÷ 10 = 2。誤差幅は1.96×2 = 3.92。80 ± 3.92 を計算します。</p></details>
   <details><summary>問題③ 有意水準5％の両側検定で z = 1.5。棄却する？</summary><p class="answer">答え：棄却できない</p><p>|1.5| は1.96より小さいため、5％水準では帰無仮説を棄却できません。「帰無仮説が正しいと証明された」という意味ではありません。</p></details>
 </section>
-<p><a href="https://www.dnc.ac.jp/kyotsu/kakomondai/index.html" target="_blank" rel="noopener">大学入試センター：公式問題・正解</a></p><small>iPad・PC対応／外部ライブラリ不要／解答・証明追加版 2026-11-08</small></main>
+<p><a href="https://www.dnc.ac.jp/albums/abm.php?d=2144&amp;f=abm00017550.pdf&amp;n=2026_ol_18_sugaku2BC.pdf" target="_blank" rel="noopener">大学入試センターの公式問題PDFを開く ↗</a></p><small>iPad・PC対応／外部ライブラリ不要／解答・証明追加版 2026-11-08</small></main>
 <script>
 (()=>{'use strict';const $=id=>document.getElementById(id),ns='http://www.w3.org/2000/svg';function el(svg,tag,attrs){const e=document.createElementNS(ns,tag);Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,v));svg.appendChild(e);return e}function clear(svg){svg.replaceChildren()}function line(s,x1,y1,x2,y2,color='#b7cad9',w=1){el(s,'line',{x1,y1,x2,y2,stroke:color,'stroke-width':w})}function txt(s,x,y,t,size=14){const e=el(s,'text',{x,y,fill:'#36536b','font-size':size,'text-anchor':'middle'});e.textContent=t}function phi(z){const sign=z<0?-1:1,x=Math.abs(z)/Math.sqrt(2),t=1/(1+.3275911*x);const erf=1-(((((1.061405429*t-1.453152027)*t)+1.421413741)*t-.284496736)*t+.254829592)*t*Math.exp(-x*x);return .5*(1+sign*erf)}const pdf=z=>Math.exp(-z*z/2)/Math.sqrt(2*Math.PI);const fmt=x=>Number(x).toFixed(2);function axes(s,w,h,y){line(s,35,y,w-20,y,'#738da3',2)}
 function normal(){let m=+$('mu').value,sd=+$('sd').value,k=+$('k').value;$('muVal').textContent=m;$('sdVal').textContent=sd;$('kVal').textContent=k;const s=$('normal');clear(s);let lo=-13,hi=13,x=v=>35+(v-lo)/(hi-lo)*620,y=v=>252-v*195;axes(s,680,300,252);let pts=[],fill=[];for(let i=0;i<=520;i++){let v=lo+(hi-lo)*i/520,d=pdf((v-m)/sd)/sd;pts.push(x(v)+','+y(d));if(v>=m-k*sd&&v<=m+k*sd)fill.push([x(v),y(d)])}if(fill.length){let d='M'+x(m-k*sd)+' 252 L'+fill.map(p=>p.join(' ')).join(' L')+' L'+x(m+k*sd)+' 252 Z';el(s,'path',{d,fill:'#b7e0f6'})}el(s,'polyline',{points:pts.join(' '),fill:'none',stroke:'#1379be','stroke-width':3});line(s,x(m),52,x(m),252,'#ed8936',2);txt(s,x(m),275,'μ='+m);$('normalResult').textContent='P(μ−'+k+'σ ≦ X ≦ μ+'+k+'σ) ≈ '+fmt((2*phi(k)-1)*100)+'％'}
