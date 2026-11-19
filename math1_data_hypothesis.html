@@ -97,8 +97,11 @@ body>footer.lesson-standard-footer>div{max-width:970px!important;margin:auto!imp
 /* MathJax SVG may not inherit broad responsive SVG sizing */
 mjx-container svg{width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;display:inline-block!important}
 @media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
-</style></head><body>
-<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学Ⅰ</div><h1>仮説検定の考え方</h1><p class="lesson-standard-bottom">数学Ⅰ ／ 第36講</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>仮説検定の考え方を理解する</h2><p>帰無仮説・有意水準・確率の意味を理解し、データに基づく判断の考え方を学びましょう。</p></section><article class="paper">
+</style><link rel="stylesheet" href="lesson_common_style.css">
+</head><body>
+<nav class="site-return-links" aria-label="ページの移動"><a href="math_subject_1.html">数学Ⅰの授業 に戻る</a></nav>
+
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学Ⅰ</div><h1>仮説検定の考え方</h1><p class="lesson-standard-bottom">数学Ⅰ</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>仮説検定の考え方を理解する</h2><p>帰無仮説・有意水準・確率の意味を理解し、データに基づく判断の考え方を学びましょう。</p></section><article class="paper">
 <h2>1　仮説検定とは</h2>
 <p>ある主張がデータと矛盾していないかを調べる方法の一つが<strong>仮説検定</strong>です。まず「差がない」「偶然の結果である」などの<strong>帰無仮説</strong>を置き、その仮説のもとで観測結果がどのくらい珍しいかを考えます。</p>
 <p>帰無仮説と対立する主張を<strong>対立仮説</strong>といいます。あらかじめ判断の基準となる<strong>有意水準</strong>を決めます（例：5％）。</p>
@@ -153,9 +156,10 @@ add('line',{x1:42,y1:240,x2:652,y2:240,stroke:'#8296a8','stroke-width':1.5});
 for(let k=0;k<=10;k++){let h=coeff[k]/252*186,x=51+k*54;add('rect',{x,y:240-h,width:35,height:h,rx:3,fill:k>=n?'#e99442':'#398bc0'});add('text',{x:x+17.5,y:260,'text-anchor':'middle','font-size':14,fill:'#324b60'},String(k));}
 add('text',{x:345,y:283,'text-anchor':'middle','font-size':13,fill:'#49657a'},'表の回数');
 const numerator=coeff.slice(n).reduce((a,b)=>a+b,0),pct=100*numerator/1024;
-tail.textContent='P(X ≧ '+n+') = '+numerator+'/1024 ≈ '+pct.toFixed(2)+'％';
+tail.textContent='P(X ≥ '+n+') = '+numerator+'/1024 ≈ '+pct.toFixed(2)+'％';
 decision.textContent='片側検定・有意水準5％：'+(pct<=5?'帰無仮説を棄却します。':'帰無仮説を棄却しません。');
 }
 slider.addEventListener('input',draw);draw();
 })();
-</script><footer class="lesson-standard-footer"><div>みんなの数学データベース｜高校生のための授業</div></footer></body></html>
+</script><footer class="lesson-standard-footer"><div>みんなの数学データベース｜高校生のための授業</div></footer><nav class="site-return-links" aria-label="ページの移動"><a href="math_subject_1.html">数学Ⅰの授業 に戻る</a></nav>
+</body></html>

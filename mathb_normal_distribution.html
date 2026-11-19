@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>正規分布｜みんなの数学データベース</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f2f6fc;color:#1c3148;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.85;font-size:16px}a{color:#186da8}.wrap{max-width:1040px;margin:auto;padding:0 15px}header{background:linear-gradient(110deg,#17365d,#246ca3);color:#fff;padding:24px 0}header a{color:#fff}h1{font-size:clamp(24px,4vw,34px);margin:9px 0 3px}header p{margin:0;color:#e4f0fa}main{padding:22px 0 55px}.nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}.nav a{padding:7px 12px;border-radius:8px;background:#e2effb;text-decoration:none;font-weight:700}.intro{background:#e4f1ff;border-left:5px solid #2585bd;padding:15px;border-radius:9px}.paper{background:white;border:1px solid #d6e3f0;border-radius:14px;padding:clamp(15px,3vw,32px);margin:18px 0}h2{color:#174c7b;border-bottom:2px solid #bcd3e8;padding-bottom:7px;margin:29px 0 14px;font-size:1.4rem}h3{color:#123e65;font-size:1.13rem;margin:20px 0 8px}p{overflow-wrap:anywhere}.formula{background:#f3f8ff;border:1px solid #d6e5fa;border-radius:10px;padding:11px 8px;margin:13px 0;overflow-x:auto;text-align:center;font-size:.98rem}.example{border-left:5px solid #e6a345;background:#fffaf0;border-radius:9px;padding:13px 16px;margin:16px 0 5px}.answer{border-left:5px solid #3ca07b;background:#f0faf5;border-radius:9px;padding:13px 16px;margin:6px 0 18px}.exercise{background:#f8faff;border:1px solid #d6e3f0;border-radius:10px;padding:13px 16px;margin:12px 0}details{margin-top:8px}summary{cursor:pointer;color:#145e95;font-weight:700}.note{border-left:4px solid #3c85b4;background:#edf7fd;border-radius:8px;padding:11px 15px;margin:13px 0}footer{background:#142f4d;color:#e6f2ff;padding:20px 0;font-size:13px}.demo{background:#fbfdff;border:1px solid #bed3e4;border-radius:12px;padding:15px;margin:19px 0}.controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:11px}.control{display:block;background:#f3f8fd;border-radius:9px;padding:9px 11px}.control input{width:100%;accent-color:#256ca3}.value{font-variant-numeric:tabular-nums;font-weight:bold;color:#134d7d}.chart{width:100%;height:auto;max-height:360px;border:1px solid #d7e4ef;background:#fff;border-radius:8px;display:block}.legend{font-size:.9rem;color:#465f79}.stats{font-weight:700;background:#e9f4ff;padding:10px;border-radius:8px}.math-inline{white-space:normal}mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden;padding:3px 0}mjx-container{font-size:100%!important}.scroll{overflow-x:auto}.data-table{border-collapse:collapse;width:100%;font-size:.94rem}.data-table td,.data-table th{border:1px solid #b7cde0;padding:7px;text-align:center}.data-table th{background:#e9f3fd}@media(max-width:430px){body{font-size:15px}.formula{font-size:.9rem}.paper{padding:15px}.wrap{padding:0 12px}h2{font-size:1.25rem}}
+</style><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},chtml:{scale:1},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+<script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><style id="six-subjects-unified">
+/* 共通デザイン（数学 I/A/II/B/III/C）: 教材のプログラムや数式には非干渉 */
+:root{--course-navy:#17365d;--course-blue:#24689c;--course-paper:#ffffff;--course-muted:#526a80}
+body{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.75}
+body>header{background:linear-gradient(110deg,var(--course-navy),var(--course-blue))!important;color:#fff!important;padding:24px 0 28px!important}
+body>header a{color:#fff!important}
+body>header h1{font-size:clamp(26px,4.2vw,36px)!important;line-height:1.35!important;margin:10px 0 5px!important;font-weight:750!important}
+body>header p,body>header span{font-size:14px!important;line-height:1.6!important;color:#e3effc!important}
+body>footer{background:#142f4d!important;color:#e9f2fc!important;padding:20px 0!important;font-size:13px!important;text-align:center!important}
+body>footer a{color:#e9f2fc!important}
+.course-unified-goal{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px;color:#18314c}
+.course-unified-goal .course-goal-label{display:block;font-size:13px;font-weight:700;color:#215f91;margin:0 0 5px}
+.course-unified-goal .course-goal-title{font-size:clamp(21px,3.2vw,27px);font-weight:750;line-height:1.4;margin:0 0 5px;color:#17365d}
+.course-unified-goal .course-goal-subtitle{font-size:14px!important;color:#526a80!important;margin:0;line-height:1.65}
+/* 既存の「授業のねらい」も見出しとサブタイトルの強弱を統一 */
+.matha-unified-goal,.lesson-goal,section.goal,section.aim,section.objective{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px}
+.matha-unified-goal .goal-title,.lesson-goal .goal-title,section.goal h2,section.aim h2,section.objective h2{font-size:clamp(21px,3.2vw,27px)!important;line-height:1.4!important;margin:5px 0!important;color:#17365d!important}
+.matha-unified-goal p,.lesson-goal p,section.goal p,section.aim p,section.objective p{font-size:14px!important;color:#526a80!important}
+.goal-pill,section.goal .pill,section.aim small{font-size:13px!important}
+@media(max-width:550px){.course-unified-goal{padding:12px 14px}body>header{padding:18px 0 22px!important}}
+</style><style id="md-unification-css">
+/* 数学Ⅲと共通の授業レイアウト：他の図・数式へのCSS干渉を避ける */
+html{scroll-behavior:smooth}
+body{margin:0!important;background:#f2f7fc!important;color:#19334e!important;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif!important;line-height:1.8!important}
+#md-standard-header{background:linear-gradient(110deg,#17365d,#215f99)!important;color:#fff!important;padding:24px 0 29px!important;box-sizing:border-box!important;min-height:0!important}
+#md-standard-header .md-inner{max-width:970px;margin:auto;padding:0 17px;box-sizing:border-box}
+#md-standard-header .md-kicker{color:#e4effc;font-size:14px!important;font-weight:400!important;letter-spacing:0!important}
+#md-standard-header h1{color:#fff!important;font-size:clamp(25px,4.5vw,35px)!important;line-height:1.4!important;margin:8px 0 5px!important;padding:0!important;border:0!important;text-align:left!important}
+#md-standard-header .md-subtitle{color:#e4effc!important;font-size:14px!important;line-height:1.6!important;margin:0!important}
+#md-standard-main{max-width:970px!important;width:auto!important;box-sizing:border-box!important;margin:0 auto!important;padding:22px 17px 46px!important;background:transparent!important;min-height:0!important}
+#md-standard-goal{display:block!important;box-sizing:border-box!important;background:#fff!important;border:1px solid #dbe6f1!important;border-radius:14px!important;margin:0 0 22px!important;padding:22px 25px!important;box-shadow:0 3px 13px #193a5b0a!important;color:#19334e!important;max-width:100%!important}
+#md-standard-goal .md-goal-tag{display:inline-block!important;color:#145888!important;background:#e6f3ff!important;border-radius:20px!important;font-size:13px!important;font-weight:700!important;padding:2px 12px!important;line-height:1.7!important}
+#md-standard-goal .md-goal-title{color:#174b78!important;font-size:23px!important;line-height:1.5!important;font-weight:700!important;border:none!important;margin:10px 0 7px!important;padding:0!important}
+#md-standard-goal p{color:#445d72!important;margin:0!important;font-size:16px!important;line-height:1.8!important}
+#md-standard-footer-nav{display:flex!important;flex-wrap:wrap!important;gap:10px!important;justify-content:flex-start!important;align-items:center!important;margin:25px 0 0!important;padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important}
+#md-standard-footer-nav a{display:inline-block!important;padding:10px 15px!important;border-radius:9px!important;background:#e5f1fd!important;color:#175988!important;text-decoration:none!important;font-weight:700!important;font-size:15px!important;line-height:1.7!important;border:0!important}
+#md-standard-footer{background:#112e4c!important;color:#ecf5fc!important;padding:20px 0!important;margin:0!important;font-size:13px!important;text-align:left!important;border:0!important}
+#md-standard-footer .md-inner{max-width:970px;margin:auto;padding:0 17px}
+/* SVGの幅を全指定する規則を数学用の数式に適用させない */
+mjx-container svg{max-width:none!important;width:auto!important;height:auto!important}
+mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden}
+@media(max-width:640px){#md-standard-goal{padding:17px 15px!important}#md-standard-goal .md-goal-title{font-size:20px!important}}
+</style><style>
+/* 2026年11月 共通ページ構造：数学I/II/A/B/C */
+html{scroll-padding-top:10px}
+body .lesson-standard-header{background:linear-gradient(110deg,#17365d,#215f99)!important;color:#fff!important;padding:24px 0 29px!important;margin:0!important;border:0!important;border-radius:0!important;text-align:left!important}
+body .lesson-standard-header .lesson-standard-width{max-width:970px!important;margin:0 auto!important;padding:0 17px!important}
+body .lesson-standard-header .lesson-standard-top,body .lesson-standard-header .lesson-standard-bottom{font-family:inherit!important;font-size:14px!important;line-height:1.65!important;color:#e4effc!important;font-weight:400!important;margin:0!important;padding:0!important;letter-spacing:normal!important}
+body .lesson-standard-header h1{font-family:inherit!important;color:#fff!important;font-size:clamp(25px,4.5vw,35px)!important;line-height:1.4!important;margin:8px 0 5px!important;padding:0!important;max-width:none!important;font-weight:700!important;border:0!important;text-align:left!important}
+/* Main and goal gap: exactly 22px measured from the header's lower edge */
+body>main.lesson-standard-main{display:block!important;box-sizing:border-box!important;max-width:970px!important;width:100%!important;margin:0 auto!important;padding:22px 17px 40px!important;position:relative!important;top:auto!important;transform:none!important}
+body>main.lesson-standard-main>.lesson-standard-goal{display:block!important;background:#fff!important;border:1px solid #dbe6f1!important;border-radius:14px!important;padding:22px 25px!important;margin:0 0 22px!important;box-shadow:0 3px 13px #193a5b0a!important;position:static!important;transform:none!important}
+body>main.lesson-standard-main>.lesson-standard-goal>.lesson-standard-goal-label{display:inline-block!important;font-size:13px!important;color:#145888!important;background:#e6f3ff!important;border-radius:20px!important;font-weight:700!important;padding:2px 12px!important;margin:0!important;line-height:1.6!important}
+body>main.lesson-standard-main>.lesson-standard-goal>h2{color:#174b78!important;font-size:23px!important;line-height:1.5!important;margin:10px 0 7px!important;padding:0!important;border:0!important;text-align:left!important}
+body>main.lesson-standard-main>.lesson-standard-goal>p{margin:0!important;color:#445d72!important;font-size:16px!important;line-height:1.8!important}
+body>main.lesson-standard-main>.lesson-standard-return{display:block!important;clear:both!important;margin:28px 0 0!important;padding:0!important;text-align:left!important;background:transparent!important;border:0!important;position:static!important;transform:none!important}
+body>main.lesson-standard-main>.lesson-standard-return a{display:inline-block!important;background:#e5f1fd!important;color:#175988!important;text-decoration:none!important;border:0!important;border-radius:9px!important;padding:10px 15px!important;font-weight:700!important;font-size:15px!important;line-height:1.5!important}
+body>footer.lesson-standard-footer{display:block!important;background:#112e4c!important;color:#ecf5fc!important;padding:20px 0!important;font-size:13px!important;line-height:1.7!important;text-align:left!important;margin:0!important;border:0!important;border-radius:0!important;clear:both!important}
+body>footer.lesson-standard-footer>div{max-width:970px!important;margin:auto!important;padding:0 17px!important}
+/* MathJax SVG may not inherit broad responsive SVG sizing */
+mjx-container svg{width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;display:inline-block!important}
+@media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
+</style><link rel="stylesheet" href="lesson_common_style.css">
+</head><body>
+<nav class="site-return-links" aria-label="ページの移動"><a href="math_subject_b.html">数学Bの授業 に戻る</a><a href="mathb_binomial_distribution.html">前の講義 · 二項分布</a></nav>
+
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>正規分布</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>正規分布</h2><p>平均μ、分散σ²の左右対称な釣鐘型の確率分布です。</p></section><article class="paper">
+<h2>1．基本事項：正規分布とは</h2><p>平均 \(\mu\)、分散 \(\sigma^2\) の左右対称な釣鐘型の確率分布です。\(\sigma&gt;0\) とします。</p><div class="formula">\[\boxed{X\sim N(\mu,\sigma^2)}\]</div>
+<p>曲線の下全体の面積が1で、区間に入る確率はその区間の曲線下の面積です。連続型の確率変数なので、1点だけをとる確率は0です。</p>
+<div class="formula">\[f(x)=\frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)\]</div>
+<p><strong>平均 \(\mu\)</strong> は山の中心を決め、<strong>標準偏差 \(\sigma\)</strong> は山の幅を決めます。標準偏差が大きいと、山が低く横に広がります。</p>
+<h2>2．動く図①：平均と標準偏差を変える</h2><div class="demo"><div class="controls"><label class="control">平均 μ：<span class="value" id="muLabel">0</span><input id="mu" max="3" min="-3" step="0.5" type="range" value="0"/></label><label class="control">標準偏差 σ：<span class="value" id="sigmaLabel">1.0</span><input id="sigma" max="2.5" min="0.5" step="0.1" type="range" value="1"/></label></div><svg aria-label="平均と標準偏差を変える正規分布曲線" class="chart" id="shapeChart" role="img" viewbox="0 0 760 300"></svg><p class="legend">青：現在の分布、点線：標準正規分布 N(0,1)。平均と標準偏差を動かすと形が変わります。</p><p aria-live="polite" class="stats" id="shapeStats"></p></div>
+<h2>3．標準化と標準正規分布</h2><p>正規分布は平均と標準偏差が異なっていても、標準化によって同じ表を利用できます。</p><div class="formula">\[\boxed{Z=\frac{X-\mu}{\sigma}\sim N(0,1)}\]</div>
+<p>まず「平均から何標準偏差だけ離れているか」を考え、\(X\) を \(Z\) に変換します。</p>
+<div class="example"><strong>元の例題：標準化</strong><p>平均70、標準偏差10の値80を標準化する。</p></div><div class="answer"><strong>解答と解説</strong><div class="formula">\[Z=\frac{80-70}{10}=\boxed{1}\]</div><p>平均より標準偏差1つ分だけ大きい値です。</p></div>
+<h2>4．正規分布の確率と分布表</h2><p>\(\Phi(z)=P(Z\le z)\) と書くと、次のように表せます。</p><div class="formula">\[\boxed{P(a\le X\le b)=\Phi\!\left(\frac{b-\mu}{\sigma}\right)-\Phi\!\left(\frac{a-\mu}{\sigma}\right)}\]</div>
+<p>表によっては \(P(0\le Z\le z)\) を掲載するものもあります。その場合は、左右対称性と \(P(Z\le0)=0.5\) を使ってください。</p><div class="scroll"><table class="data-table"><thead><tr><th>z</th><th>Φ(z) = P(Z ≤ z)（近似値）</th><th>P(0 ≤ Z ≤ z)（近似値）</th></tr></thead><tbody><tr><td>0.00</td><td>0.5000</td><td>0.0000</td></tr><tr><td>0.50</td><td>0.6915</td><td>0.1915</td></tr><tr><td>1.00</td><td>0.8413</td><td>0.3413</td></tr><tr><td>1.64</td><td>0.9495</td><td>0.4495</td></tr><tr><td>1.96</td><td>0.9750</td><td>0.4750</td></tr><tr><td>2.00</td><td>0.9772</td><td>0.4772</td></tr></tbody></table></div>
+<h2>5．動く図②：範囲を選んで確率を調べる</h2><div class="demo"><p>標準正規分布 \(Z\sim N(0,1)\) で、\(P(a\le Z\le b)\) を色で示します。</p><div class="controls"><label class="control">下限 a：<span class="value" id="aLabel">-1.0</span><input id="lower" max="3" min="-3" step="0.1" type="range" value="-1"/></label><label class="control">上限 b：<span class="value" id="bLabel">1.0</span><input id="upper" max="3" min="-3" step="0.1" type="range" value="1"/></label></div><svg aria-label="標準正規分布の区間確率の面積" class="chart" id="areaChart" role="img" viewbox="0 0 760 300"></svg><p aria-live="polite" class="stats" id="areaStats"></p><p class="legend">表示される確率は数値近似です。下限が上限を超えると、区間の確率を0として表示します。</p></div>
+<h2>6．解説付き例題</h2>
+<div class="example"><strong>例題1：標準正規分布の片側確率</strong><p>\(Z\sim N(0,1)\) のとき、\(P(Z\le1)\) を求めよ。</p></div><div class="answer"><strong>解答</strong><p>分布表より \(P(Z\le1)=\boxed{0.8413}\)（近似値）。</p></div>
+<div class="example"><strong>例題2：中央の確率</strong><p>\(P(-1\le Z\le1)\) を求めよ。</p></div><div class="answer"><strong>解答</strong><div class="formula">\[\Phi(1)-\Phi(-1)\approx0.8413-0.1587=\boxed{0.6826}\]</div><p>平均の前後1標準偏差に入る確率は約68％です。</p></div>
+<div class="example"><strong>例題3：一般の正規分布</strong><p>\(X\sim N(70,10^2)\) のとき、\(P(X\le80)\) を求めよ。</p></div><div class="answer"><strong>解答</strong><p>標準化すると \(Z=(80-70)/10=1\) なので、\(P(X\le80)\approx\boxed{0.8413}\)。</p></div>
+<div class="example"><strong>例題4：区間の確率</strong><p>\(X\sim N(50,5^2)\) のとき、\(P(45\le X\le60)\) を求めよ。</p></div><div class="answer"><strong>解答</strong><p>45と60を標準化するとそれぞれ \(-1,2\)。</p><div class="formula">\[\Phi(2)-\Phi(-1)\approx0.9772-0.1587=\boxed{0.8185}\]</div></div>
+<div class="example"><strong>例題5：上側確率</strong><p>\(X\sim N(100,15^2)\) のとき、\(P(X\ge130)\) を求めよ。</p></div><div class="answer"><strong>解答</strong><p>\(Z=(130-100)/15=2\) なので \(P(X\ge130)\approx1-0.9772=\boxed{0.0228}\)。</p></div>
+<div class="example"><strong>例題6：二項分布の正規近似（発展）</strong><p>\(X\sim B(100,0.5)\) のとき、\(P(X\le60)\) を連続補正を使って近似せよ。</p></div><div class="answer"><strong>解答</strong><p>平均は50、標準偏差は5。連続補正を行うと \(P(X\le60)\approx P(Y\le60.5)\)（\(Y\sim N(50,25)\)）。</p><div class="formula">\[z=\frac{60.5-50}{5}=2.1,\qquad P(X\le60)\approx\Phi(2.1)\approx\boxed{0.9821}\]</div><p>二項分布は離散型なので、正規近似では連続補正が役立ちます。</p></div>
+<h2>7．練習問題</h2>
+<div class="exercise"><strong>元の練習問題1</strong><p>平均50、標準偏差5の値40を標準化する。</p><details><summary>解答・解説を表示</summary><div class="formula">\[\frac{40-50}{5}=\boxed{-2}\]</div></details></div>
+<div class="exercise"><strong>練習問題2</strong><p>\(X\sim N(80,8^2)\)。\(X=96\) を標準化せよ。</p><details><summary>解答・解説を表示</summary><p>\((96-80)/8=\boxed{2}\)。</p></details></div>
+<div class="exercise"><strong>練習問題3</strong><p>\(Z\sim N(0,1)\)。\(P(Z\ge1)\) を求めよ。</p><details><summary>解答・解説を表示</summary><p>\(1-\Phi(1)=\boxed{0.1587}\)（近似値）。</p></details></div>
+<div class="exercise"><strong>練習問題4</strong><p>\(P(-2\le Z\le2)\) を求めよ。</p><details><summary>解答・解説を表示</summary><p>\(0.9772-0.0228=\boxed{0.9544}\)（近似値）。</p></details></div>
+<div class="exercise"><strong>練習問題5</strong><p>\(X\sim N(60,10^2)\)。\(P(X\le70)\) を求めよ。</p><details><summary>解答・解説を表示</summary><p>標準化すると1。\(\boxed{0.8413}\)（近似値）。</p></details></div>
+<div class="exercise"><strong>練習問題6</strong><p>\(X\sim N(60,10^2)\)。\(P(50\le X\le70)\) を求めよ。</p><details><summary>解答・解説を表示</summary><p>標準化して \(-1\le Z\le1\)。\(\boxed{0.6826}\)（近似値）。</p></details></div>
+<div class="exercise"><strong>練習問題7</strong><p>\(X\sim N(100,20^2)\)。\(P(X\ge140)\) を求めよ。</p><details><summary>解答・解説を表示</summary><p>\(Z\ge2\) より \(\boxed{0.0228}\)（近似値）。</p></details></div>
+<div class="exercise"><strong>練習問題8</strong><p>正規分布で、標準偏差を2倍にすると分散は何倍になるか。</p><details><summary>解答・解説を表示</summary><p>\(V(X)=\sigma^2\) だから \((2\sigma)^2=4\sigma^2\)。\(\boxed{4\text{倍}}\)。</p></details></div>
+<h2>8．まとめ</h2><p>正規分布では、平均 \(\mu\) が中心、分散 \(\sigma^2\) が広がりを決めます。標準化して \(N(0,1)\) の表を利用すると、区間の確率を求められます。元の例題と練習問題も復習しましょう。</p>
+</article><nav aria-label="授業一覧に戻る" class="lesson-standard-return"><a href="math_subject_b.html">← 数学Bに戻る</a></nav></main>
+<script>
+(function(){'use strict';const $=id=>document.getElementById(id);const NS='http://www.w3.org/2000/svg';function E(name,atts,parent){const n=document.createElementNS(NS,name);for(const [k,v] of Object.entries(atts||{}))n.setAttribute(k,v);if(parent)parent.appendChild(n);return n;}function T(x,y,text,parent,extra){const n=E('text',{x,y,'font-size':13,fill:'#4b6177',...extra},parent);n.textContent=text;return n;}
+function pdf(x,mu=0,s=1){const z=(x-mu)/s;return Math.exp(-.5*z*z)/(Math.sqrt(2*Math.PI)*s);}function erf(x){const sign=x<0?-1:1;x=Math.abs(x);const t=1/(1+0.3275911*x);const y=1-(((((1.061405429*t-1.453152027)*t)+1.421413741)*t-0.284496736)*t+0.254829592)*t*Math.exp(-x*x);return sign*y;}function Phi(x){return (1+erf(x/Math.sqrt(2)))/2;}
+const xmin=-8,xmax=8,left=48,right=738,base=250,top=25;const sx=x=>left+(x-xmin)/(xmax-xmin)*(right-left);const sy=(y,max)=>base-y/max*(base-top);function axes(svg,max){E('line',{x1:left,y1:base,x2:right,y2:base,stroke:'#8296aa','stroke-width':1.4},svg);E('line',{x1:sx(0),y1:base,x2:sx(0),y2:top,stroke:'#d0dce8'},svg);for(let x=-8;x<=8;x+=2){const px=sx(x);E('line',{x1:px,y1:base,x2:px,y2:base+5,stroke:'#8296aa'},svg);T(px,base+22,String(x),svg,{'text-anchor':'middle'});}T(16,23,'密度',svg);}
+function line(svg,mu,s,max,color,dash){const coords=[];for(let i=0;i<=480;i++){const x=xmin+(xmax-xmin)*i/480;coords.push((i?'L':'M')+sx(x).toFixed(2)+' '+sy(pdf(x,mu,s),max).toFixed(2));}E('path',{d:coords.join(' '),fill:'none',stroke:color,'stroke-width':3,...(dash?{'stroke-dasharray':'8 6'}:{})},svg);}
+function updateShape(){const mu=Number($('mu').value),s=Number($('sigma').value),svg=$('shapeChart');svg.replaceChildren();const max=.85;axes(svg,max);line(svg,0,1,max,'#95aabd',true);line(svg,mu,s,max,'#216fac');E('line',{x1:sx(mu),y1:base,x2:sx(mu),y2:sy(pdf(mu,mu,s),max),stroke:'#216fac','stroke-dasharray':'4 4'},svg);$('muLabel').textContent=mu.toFixed(1);$('sigmaLabel').textContent=s.toFixed(1);$('shapeStats').textContent='平均 μ = '+mu.toFixed(1)+' ／ 分散 σ² = '+(s*s).toFixed(2)+' ／ 標準偏差 σ = '+s.toFixed(1);}
+function updateArea(){const a=Number($('lower').value),b=Number($('upper').value),svg=$('areaChart');svg.replaceChildren();const max=.47;axes(svg,max);if(a<b){const coords=['M'+sx(a)+' '+base];for(let i=0;i<=240;i++){const x=a+(b-a)*i/240;coords.push('L'+sx(x).toFixed(2)+' '+sy(pdf(x),max).toFixed(2));}coords.push('L'+sx(b)+' '+base+' Z');E('path',{d:coords.join(' '),fill:'#8ec7ee','fill-opacity':'.67'},svg);}line(svg,0,1,max,'#216fac');for(const [x,col] of [[a,'#be6d31'],[b,'#29815a']]){E('line',{x1:sx(x),y1:base,x2:sx(x),y2:sy(pdf(x),max),stroke:col,'stroke-width':2},svg);}const prob=a<b?Math.max(0,Phi(b)-Phi(a)):0;$('aLabel').textContent=a.toFixed(1);$('bLabel').textContent=b.toFixed(1);$('areaStats').textContent='P('+a.toFixed(1)+' ≤ Z ≤ '+b.toFixed(1)+') ≈ '+prob.toFixed(4)+'（約 '+(prob*100).toFixed(2)+' %）';}
+for(const id of ['mu','sigma'])$(id).addEventListener('input',updateShape);for(const id of ['lower','upper'])$(id).addEventListener('input',updateArea);updateShape();updateArea();})();
+</script><footer class="lesson-standard-footer"><div>みんなの数学データベース｜高校生のための授業</div></footer><nav class="site-return-links" aria-label="ページの移動"><a href="math_subject_b.html">数学Bの授業 に戻る</a><a href="mathb_binomial_distribution.html">前の講義 · 二項分布</a></nav>
+</body></html>

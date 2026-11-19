@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>平面の方程式｜数学C</title>
+<style>
+:root{--navy:#173b5e;--blue:#12639c;--bg:#f3f7fd;--edge:#d7e5f2}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:#1d344c;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;font-size:16px;line-height:1.8}a{color:#125d97}header{background:linear-gradient(110deg,#16375b,#2573a4);color:white;padding:18px 16px}header .head{max-width:980px;margin:auto}header a{color:white}header h1{font-size:clamp(1.65rem,4vw,2.4rem);margin:12px 0 0}header p{margin:0;color:#e4f2fc}.wrap{max-width:980px;margin:auto;padding:16px 14px 40px}.lead{padding:12px;background:#e9f3ff;border-left:5px solid #3c84bd;border-radius:8px}.chapter{background:#fff;border:1px solid var(--edge);border-radius:15px;padding:16px;margin:16px 0;box-shadow:0 2px 8px #19334d0b}h2{font-size:1.35rem;color:#144e80;border-bottom:1px solid #e4edf6;padding-bottom:8px;margin:0 0 15px}h3{font-size:1.06rem;color:#174c7a}.formula{overflow-x:auto;text-align:center;background:#f5f9ff;border:1px solid #e3ebf5;border-radius:10px;padding:10px;margin:10px 0;font-size:1rem}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.panel{border:1px solid var(--edge);border-radius:12px;padding:14px;background:#fbfdff}.hint{color:#596e82;font-size:.91rem}label{font-weight:700;display:block;margin:8px 0 2px}input[type=range]{width:100%;accent-color:#12639c;min-height:28px}.value{font-variant-numeric:tabular-nums;background:#e8f3fc;padding:2px 8px;border-radius:5px}svg.diagram{display:block;width:100%;height:auto;background:white;border:1px solid #deebf5;border-radius:12px}.readout{background:#eaf4ff;border-radius:8px;padding:10px;margin:10px 0;font-variant-numeric:tabular-nums;white-space:pre-line}button{padding:9px 16px;background:#186397;color:#fff;border:0;border-radius:9px;font-size:.95rem;font-weight:700;min-height:44px;cursor:pointer}details{background:#f7fbff;border:1px solid #dce9f3;padding:12px;border-radius:10px;margin:10px 0}summary{cursor:pointer;color:#165b8a;font-weight:700;min-height:32px}.question{border:1px solid #d5e4f1;background:#fbfdff;border-radius:12px;padding:13px;margin:12px 0}.question input{font-size:16px;max-width:180px;padding:7px;border-radius:6px;border:1px solid #a7bdce}.result{min-height:1.5em;font-weight:700}.ok{color:#167448}.bad{color:#ad4e30}footer{text-align:center;background:#183853;color:#fff;padding:19px}mjx-container[display="true"]{margin:.45em 0!important}mjx-container{max-width:100%}.formula mjx-container{font-size:100%!important}@media(max-width:650px){.grid{grid-template-columns:1fr}.chapter{padding:13px}.wrap{padding:12px 10px 30px}header h1{font-size:1.65rem}}
+</style>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'global'}};</script><script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script><style id="six-subjects-unified">
+/* 共通デザイン（数学 I/A/II/B/III/C）: 教材のプログラムや数式には非干渉 */
+:root{--course-navy:#17365d;--course-blue:#24689c;--course-paper:#ffffff;--course-muted:#526a80}
+body{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.75}
+body>header{background:linear-gradient(110deg,var(--course-navy),var(--course-blue))!important;color:#fff!important;padding:24px 0 28px!important}
+body>header a{color:#fff!important}
+body>header h1{font-size:clamp(26px,4.2vw,36px)!important;line-height:1.35!important;margin:10px 0 5px!important;font-weight:750!important}
+body>header p,body>header span{font-size:14px!important;line-height:1.6!important;color:#e3effc!important}
+body>footer{background:#142f4d!important;color:#e9f2fc!important;padding:20px 0!important;font-size:13px!important;text-align:center!important}
+body>footer a{color:#e9f2fc!important}
+.course-unified-goal{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px;color:#18314c}
+.course-unified-goal .course-goal-label{display:block;font-size:13px;font-weight:700;color:#215f91;margin:0 0 5px}
+.course-unified-goal .course-goal-title{font-size:clamp(21px,3.2vw,27px);font-weight:750;line-height:1.4;margin:0 0 5px;color:#17365d}
+.course-unified-goal .course-goal-subtitle{font-size:14px!important;color:#526a80!important;margin:0;line-height:1.65}
+/* 既存の「授業のねらい」も見出しとサブタイトルの強弱を統一 */
+.matha-unified-goal,.lesson-goal,section.goal,section.aim,section.objective{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px}
+.matha-unified-goal .goal-title,.lesson-goal .goal-title,section.goal h2,section.aim h2,section.objective h2{font-size:clamp(21px,3.2vw,27px)!important;line-height:1.4!important;margin:5px 0!important;color:#17365d!important}
+.matha-unified-goal p,.lesson-goal p,section.goal p,section.aim p,section.objective p{font-size:14px!important;color:#526a80!important}
+.goal-pill,section.goal .pill,section.aim small{font-size:13px!important}
+@media(max-width:550px){.course-unified-goal{padding:12px 14px}body>header{padding:18px 0 22px!important}}
+</style><style id="md-unification-css">
+/* 数学Ⅲと共通の授業レイアウト：他の図・数式へのCSS干渉を避ける */
+html{scroll-behavior:smooth}
+body{margin:0!important;background:#f2f7fc!important;color:#19334e!important;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif!important;line-height:1.8!important}
+#md-standard-header{background:linear-gradient(110deg,#17365d,#215f99)!important;color:#fff!important;padding:24px 0 29px!important;box-sizing:border-box!important;min-height:0!important}
+#md-standard-header .md-inner{max-width:970px;margin:auto;padding:0 17px;box-sizing:border-box}
+#md-standard-header .md-kicker{color:#e4effc;font-size:14px!important;font-weight:400!important;letter-spacing:0!important}
+#md-standard-header h1{color:#fff!important;font-size:clamp(25px,4.5vw,35px)!important;line-height:1.4!important;margin:8px 0 5px!important;padding:0!important;border:0!important;text-align:left!important}
+#md-standard-header .md-subtitle{color:#e4effc!important;font-size:14px!important;line-height:1.6!important;margin:0!important}
+#md-standard-main{max-width:970px!important;width:auto!important;box-sizing:border-box!important;margin:0 auto!important;padding:22px 17px 46px!important;background:transparent!important;min-height:0!important}
+#md-standard-goal{display:block!important;box-sizing:border-box!important;background:#fff!important;border:1px solid #dbe6f1!important;border-radius:14px!important;margin:0 0 22px!important;padding:22px 25px!important;box-shadow:0 3px 13px #193a5b0a!important;color:#19334e!important;max-width:100%!important}
+#md-standard-goal .md-goal-tag{display:inline-block!important;color:#145888!important;background:#e6f3ff!important;border-radius:20px!important;font-size:13px!important;font-weight:700!important;padding:2px 12px!important;line-height:1.7!important}
+#md-standard-goal .md-goal-title{color:#174b78!important;font-size:23px!important;line-height:1.5!important;font-weight:700!important;border:none!important;margin:10px 0 7px!important;padding:0!important}
+#md-standard-goal p{color:#445d72!important;margin:0!important;font-size:16px!important;line-height:1.8!important}
+#md-standard-footer-nav{display:flex!important;flex-wrap:wrap!important;gap:10px!important;justify-content:flex-start!important;align-items:center!important;margin:25px 0 0!important;padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important}
+#md-standard-footer-nav a{display:inline-block!important;padding:10px 15px!important;border-radius:9px!important;background:#e5f1fd!important;color:#175988!important;text-decoration:none!important;font-weight:700!important;font-size:15px!important;line-height:1.7!important;border:0!important}
+#md-standard-footer{background:#112e4c!important;color:#ecf5fc!important;padding:20px 0!important;margin:0!important;font-size:13px!important;text-align:left!important;border:0!important}
+#md-standard-footer .md-inner{max-width:970px;margin:auto;padding:0 17px}
+/* SVGの幅を全指定する規則を数学用の数式に適用させない */
+mjx-container svg{max-width:none!important;width:auto!important;height:auto!important}
+mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden}
+@media(max-width:640px){#md-standard-goal{padding:17px 15px!important}#md-standard-goal .md-goal-title{font-size:20px!important}}
+</style><style>
+/* 2026年11月 共通ページ構造：数学I/II/A/B/C */
+html{scroll-padding-top:10px}
+body .lesson-standard-header{background:linear-gradient(110deg,#17365d,#215f99)!important;color:#fff!important;padding:24px 0 29px!important;margin:0!important;border:0!important;border-radius:0!important;text-align:left!important}
+body .lesson-standard-header .lesson-standard-width{max-width:970px!important;margin:0 auto!important;padding:0 17px!important}
+body .lesson-standard-header .lesson-standard-top,body .lesson-standard-header .lesson-standard-bottom{font-family:inherit!important;font-size:14px!important;line-height:1.65!important;color:#e4effc!important;font-weight:400!important;margin:0!important;padding:0!important;letter-spacing:normal!important}
+body .lesson-standard-header h1{font-family:inherit!important;color:#fff!important;font-size:clamp(25px,4.5vw,35px)!important;line-height:1.4!important;margin:8px 0 5px!important;padding:0!important;max-width:none!important;font-weight:700!important;border:0!important;text-align:left!important}
+/* Main and goal gap: exactly 22px measured from the header's lower edge */
+body>main.lesson-standard-main{display:block!important;box-sizing:border-box!important;max-width:970px!important;width:100%!important;margin:0 auto!important;padding:22px 17px 40px!important;position:relative!important;top:auto!important;transform:none!important}
+body>main.lesson-standard-main>.lesson-standard-goal{display:block!important;background:#fff!important;border:1px solid #dbe6f1!important;border-radius:14px!important;padding:22px 25px!important;margin:0 0 22px!important;box-shadow:0 3px 13px #193a5b0a!important;position:static!important;transform:none!important}
+body>main.lesson-standard-main>.lesson-standard-goal>.lesson-standard-goal-label{display:inline-block!important;font-size:13px!important;color:#145888!important;background:#e6f3ff!important;border-radius:20px!important;font-weight:700!important;padding:2px 12px!important;margin:0!important;line-height:1.6!important}
+body>main.lesson-standard-main>.lesson-standard-goal>h2{color:#174b78!important;font-size:23px!important;line-height:1.5!important;margin:10px 0 7px!important;padding:0!important;border:0!important;text-align:left!important}
+body>main.lesson-standard-main>.lesson-standard-goal>p{margin:0!important;color:#445d72!important;font-size:16px!important;line-height:1.8!important}
+body>main.lesson-standard-main>.lesson-standard-return{display:block!important;clear:both!important;margin:28px 0 0!important;padding:0!important;text-align:left!important;background:transparent!important;border:0!important;position:static!important;transform:none!important}
+body>main.lesson-standard-main>.lesson-standard-return a{display:inline-block!important;background:#e5f1fd!important;color:#175988!important;text-decoration:none!important;border:0!important;border-radius:9px!important;padding:10px 15px!important;font-weight:700!important;font-size:15px!important;line-height:1.5!important}
+body>footer.lesson-standard-footer{display:block!important;background:#112e4c!important;color:#ecf5fc!important;padding:20px 0!important;font-size:13px!important;line-height:1.7!important;text-align:left!important;margin:0!important;border:0!important;border-radius:0!important;clear:both!important}
+body>footer.lesson-standard-footer>div{max-width:970px!important;margin:auto!important;padding:0 17px!important}
+/* MathJax SVG may not inherit broad responsive SVG sizing */
+mjx-container svg{width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;display:inline-block!important}
+@media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
+</style><link rel="stylesheet" href="lesson_common_style.css">
+</head>
+<body>
+<nav class="site-return-links" aria-label="ページの移動"><a href="math_subject_c.html">数学Cの授業 に戻る</a><a href="vector_space_coordinate_geometry.html">前の講義 · 座標空間における図形｜数学C</a></nav>
+
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学C</div><h1>平面の方程式</h1><p class="lesson-standard-bottom">数学C</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>平面の方程式</h2><p>法線ベクトル、3点を通る平面、直線と平面の交点、点と平面の距離を動く立体図で学びます。 平面は、1つの点と平面に垂直な 法線ベクトル によって決まります。基本公式から、3点を通る平面、直線との交点、距離の求め方まで学習しましょう。</p></section>
+<section class="chapter"><h2>1．法線ベクトルと平面の方程式</h2>
+<p>平面上の点を \(P(x,y,z)\)、平面上の定点を \(P_0(x_0,y_0,z_0)\)、0でない法線ベクトルを \(\vec n=(a,b,c)\) とします。平面上では \(\overrightarrow{P_0P}\perp\vec n\) です。</p>
+<div class="formula">\[\vec n\cdot\overrightarrow{P_0P}=0\]</div><div class="formula">\[\boxed{a(x-x_0)+b(y-y_0)+c(z-z_0)=0}\]</div><p>展開すると、平面の一般形 \(\boxed{ax+by+cz+d=0}\) が得られます。ただし \((a,b,c)\ne(0,0,0)\) です。</p>
+<h3>例題1</h3><p>点 \(P_0(1,2,-1)\) を通り、法線ベクトルが \(\vec n=(2,-1,3)\) の平面を求めなさい。</p>
+<details open=""><summary>解答・解説</summary><div class="formula">\[2(x-1)-(y-2)+3(z+1)=0\]</div><div class="formula">\[\boxed{2x-y+3z+3=0}\]</div><p>法線ベクトルの成分が、そのまま \(x,y,z\) の係数になります。</p></details>
+<div class="grid"><svg aria-label="法線ベクトルと平面の傾き、位置を変えられる立体図" class="diagram" id="planeSvg" role="img" viewbox="0 0 480 355"></svg>
+<div class="panel"><h3>動く立体図</h3><p>平面 \(ax+by+2z=d\) の \(a,b,d\) を変えます。青い面が平面、赤い矢印が法線ベクトルです。</p>
+<label for="coefA">\(a\)：<span class="value" id="valA">1</span></label><input id="coefA" max="3" min="-3" step="0.5" type="range" value="1"/>
+<label for="coefB">\(b\)：<span class="value" id="valB">1</span></label><input id="coefB" max="3" min="-3" step="0.5" type="range" value="1"/>
+<label for="coefD">\(d\)：<span class="value" id="valD">2</span></label><input id="coefD" max="4" min="-4" step="0.5" type="range" value="2"/>
+<div aria-live="polite" class="readout" id="planeInfo"></div><p class="hint">一定の見方で立体的に投影した模式図です。回転表示ではありません。</p></div></div></section>
+<section class="chapter"><h2>2．3点を通る平面の方程式</h2><p>同一直線上にない3点 \(A,B,C\) が与えられたら、平面内の2本のベクトル \(\overrightarrow{AB},\overrightarrow{AC}\) に垂直な法線 \(\vec n\) を求めます。</p><h3>例題2</h3><p>3点 \(A(1,0,0), B(0,1,0), C(0,0,1)\) を通る平面の方程式を求めなさい。</p>
+<details open=""><summary>解答・解説</summary><p>\(\overrightarrow{AB}=(-1,1,0),\ \overrightarrow{AC}=(-1,0,1)\) です。\(\vec n=(a,b,c)\) とすると</p><div class="formula">\[-a+b=0,\quad -a+c=0\]</div><p>したがって \(a=b=c\) となるため、法線ベクトルとして \((1,1,1)\) を選べます。点 \(A\) を代入すると</p><div class="formula">\[\boxed{x+y+z=1}\]</div></details>
+<p class="hint">3点が同一直線上にある場合は、平面がただ1つに定まらないので注意しましょう。</p></section>
+<section class="chapter"><h2>3．直線と平面の交点</h2><p>直線を媒介変数 \(t\) で表し、その座標を平面の方程式に代入して \(t\) を決めます。</p><h3>例題3</h3><p>直線 \(\,(x,y,z)=(1,0,0)+t(1,1,1)\,\) と平面 \(x+y+z=4\) の交点を求めなさい。</p>
+<details open=""><summary>解答・解説</summary><p>直線上では \(x=1+t,\ y=t,\ z=t\) なので</p><div class="formula">\[1+t+t+t=4\Longrightarrow t=1\]</div><p>したがって交点は \(\boxed{(2,1,1)}\) です。</p></details>
+<div class="grid"><svg aria-label="平面と直線の交点を点を動かしながら調べる図" class="diagram" id="lineSvg" role="img" viewbox="0 0 480 325"></svg><div class="panel"><h3>直線上の点を動かす</h3><p>直線 \((x,y,z)=(1+t,t,t)\) 上の点を動かします。</p><label for="lineT">\(t\)：<span class="value" id="valT">1</span></label><input id="lineT" max="3" min="-1" step="0.1" type="range" value="1"/><div aria-live="polite" class="readout" id="lineInfo"></div><p class="hint">緑の点が交点 \(Q(2,1,1)\)、赤の点が移動する点です。</p></div></div>
+<p>一般には、分母に当たる \(\vec n\cdot\vec v\) が0なら直線と平面は平行です。その場合は、直線が平面に含まれるか、共有点がないかを調べます。</p></section>
+<section class="chapter"><h2>4．点と平面の距離公式の証明</h2><p>平面 \(ax+by+cz+d=0\) と点 \(P(x_0,y_0,z_0)\) を考えます。平面の法線は \(\vec n=(a,b,c)\) です。</p><p>平面上の点 \(Q\) をとり、\(\overrightarrow{QP}\) を法線方向へ射影した長さが距離となります。</p>
+<div class="formula">\[\boxed{D=\frac{|ax_0+by_0+cz_0+d|}{\sqrt{a^2+b^2+c^2}}}\]</div>
+<details><summary>公式の証明を読む</summary><p>\(\overrightarrow{QP}=(x_0-x_Q,y_0-y_Q,z_0-z_Q)\) と置くと、平面上の \(Q\) に対して \(ax_Q+by_Q+cz_Q+d=0\) です。したがって</p><div class="formula">\[\vec n\cdot\overrightarrow{QP}=ax_0+by_0+cz_0+d\]</div><p>内積を法線の長さ \(\lVert\vec n\rVert\) で割り、絶対値を取れば垂線の長さになります。</p></details>
+<h3>例題4</h3><p>点 \(P(1,2,3)\) から平面 \(2x-y+2z-4=0\) までの距離を求めなさい。</p><details open=""><summary>解答・解説</summary><div class="formula">\[D=\frac{|2-2+6-4|}{\sqrt{2^2+(-1)^2+2^2}}=\boxed{\frac23}\]</div></details></section>
+<section class="chapter"><h2>5．練習問題</h2>
+<div class="question"><strong>問題1：</strong>点 \((0,0,2)\) を通り、法線が \((1,2,3)\) の平面を \(x+2y+3z=k\) とする。\(k\) は？<label for="q1">数値で入力</label><input id="q1" inputmode="decimal"/><button onclick="check(1,6)">答え合わせ</button><p aria-live="polite" class="result" id="a1"></p><details><summary>解説</summary>\(1\cdot0+2\cdot0+3\cdot2=6\) です。</details></div>
+<div class="question"><strong>問題2：</strong>3点 \((2,0,0),(0,2,0),(0,0,2)\) を通る平面を \(x+y+z=k\) とする。\(k\) は？<label for="q2">数値で入力</label><input id="q2" inputmode="decimal"/><button onclick="check(2,2)">答え合わせ</button><p aria-live="polite" class="result" id="a2"></p><details><summary>解説</summary>いずれの点も \(x+y+z=2\) を満たします。</details></div>
+<div class="question"><strong>問題3：</strong>直線 \((x,y,z)=(0,0,0)+t(1,1,1)\) と平面 \(x+y+z=9\) の交点の \(t\) は？<label for="q3">数値で入力</label><input id="q3" inputmode="decimal"/><button onclick="check(3,3)">答え合わせ</button><p aria-live="polite" class="result" id="a3"></p><details><summary>解説</summary>\(3t=9\) より \(t=3\) です。</details></div>
+<div class="question"><strong>問題4：</strong>点 \((0,0,5)\) と平面 \(z=1\) の距離は？<label for="q4">数値で入力</label><input id="q4" inputmode="decimal"/><button onclick="check(4,4)">答え合わせ</button><p aria-live="polite" class="result" id="a4"></p><details><summary>解説</summary>\(|5-1|=4\) です。</details></div></section>
+<section class="chapter"><h2>まとめ</h2><p>平面の係数 \((a,b,c)\) は法線ベクトルです。平面の上の点と法線がわかれば方程式を決められ、直線との交点や点からの距離も計算できます。</p></section><nav aria-label="授業一覧に戻る" class="lesson-standard-return"><a href="math_subject_c.html">← 数学Cに戻る</a></nav></main>
+<script>
+'use strict';const $=id=>document.getElementById(id),ns='http://www.w3.org/2000/svg';
+function E(tag,attrs={},value){const e=document.createElementNS(ns,tag);for(const [k,v] of Object.entries(attrs))e.setAttribute(k,String(v));if(value!==undefined)e.textContent=value;return e}
+function p([x,y,z],o=[235,200],k=35){return [o[0]+k*(.86*x-.58*y),o[1]+k*(.27*x+.41*y-.9*z)]}
+function ln(g,A,B,color='#829aaf',w=2,d=''){const u=p(A),v=p(B);g.append(E('line',{x1:u[0],y1:u[1],x2:v[0],y2:v[1],stroke:color,'stroke-width':w,'stroke-dasharray':d}))}
+function dot(g,A,name,color='#c84f43'){let q=p(A);g.append(E('circle',{cx:q[0],cy:q[1],r:5,fill:color,stroke:'white','stroke-width':1.5}));g.append(E('text',{x:q[0]+8,y:q[1]-8,fill:color,'font-size':14,'font-weight':700},name))}
+function surface(g,corners,fill='#4c9ed47a'){const pts=corners.map(x=>p(x).join(',')).join(' ');g.append(E('polygon',{points:pts,fill,stroke:'#377ead','stroke-width':2}))}
+function axes(g){for(const [q,n] of [[[4,0,0],'x'],[[0,4,0],'y'],[[0,0,4],'z']]){ln(g,[0,0,0],q,'#a7b7c6',1.5);let v=p(q);g.append(E('text',{x:v[0]+3,y:v[1]-3,fill:'#58768b','font-size':14},n))}dot(g,[0,0,0],'O','#718a9e')}
+const fmt=x=>Number(x.toFixed(2)).toString();
+function arrow(g,A,B){ln(g,A,B,'#ca533d',3);const u=p(A),v=p(B),dx=v[0]-u[0],dy=v[1]-u[1],l=Math.hypot(dx,dy)||1;g.append(E('polygon',{points:`${v[0]},${v[1]} ${v[0]-12*dx/l+5*dy/l},${v[1]-12*dy/l-5*dx/l} ${v[0]-12*dx/l-5*dy/l},${v[1]-12*dy/l+5*dx/l}`,fill:'#ca533d'}))}
+function plane(){let a=Number($('coefA').value),b=Number($('coefB').value),d=Number($('coefD').value);for(let [id,v] of [['valA',a],['valB',b],['valD',d]])$(id).textContent=fmt(v);let svg=$('planeSvg');svg.replaceChildren();axes(svg);const z=(x,y)=>(d-a*x-b*y)/2;surface(svg,[[-2,-2,z(-2,-2)],[2,-2,z(2,-2)],[2,2,z(2,2)],[-2,2,z(-2,2)]]);let c=[0,0,d/2];dot(svg,c,'P₀','#245c9a');let len=Math.hypot(a,b,2);arrow(svg,c,[c[0]+2*a/len,c[1]+2*b/len,c[2]+4/len]);$('planeInfo').textContent=`平面：${fmt(a)}x + (${fmt(b)})y + 2z = ${fmt(d)}\n法線ベクトル n = (${fmt(a)}, ${fmt(b)}, 2)\n平面上の点 P₀ = (0, 0, ${fmt(d/2)})`}
+function line(){let t=Number($('lineT').value),svg=$('lineSvg');$('valT').textContent=fmt(t);svg.replaceChildren();axes(svg);surface(svg,[[-1,-1,6], [5,-1,0],[5,5,-6],[-1,5,0]],'#4c9ed44d');ln(svg,[-.3,-1.3,-1.3],[4,3,3],'#d38836',3);dot(svg,[2,1,1],'Q','#138e5e');dot(svg,[1+t,t,t],'P','#ca533d');$('lineInfo').textContent=`P(${fmt(1+t)}, ${fmt(t)}, ${fmt(t)})\nx+y+z = ${fmt(1+3*t)}\n平面上にあるのは t=1 のとき`}
+function check(n,answer){let v=$('q'+n).value.trim(),o=$('a'+n);if(!v){o.textContent='答えを入力してください。';o.className='result bad';return}let ok=Number.isFinite(Number(v))&&Math.abs(Number(v)-answer)<1e-8;o.textContent=ok?'正解です！':'もう一度考えてみましょう。';o.className='result '+(ok?'ok':'bad')}
+for(const id of ['coefA','coefB','coefD'])$(id).addEventListener('input',plane);$('lineT').addEventListener('input',line);plane();line();
+</script><footer class="lesson-standard-footer"><div>みんなの数学データベース｜高校生のための授業</div></footer><nav class="site-return-links" aria-label="ページの移動"><a href="math_subject_c.html">数学Cの授業 に戻る</a><a href="vector_space_coordinate_geometry.html">前の講義 · 座標空間における図形｜数学C</a></nav>
+</body></html>

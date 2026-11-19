@@ -14,3 +14,27 @@ body > header.standard-lesson-header{background:linear-gradient(125deg,#17375f,#
 body > footer.standard-lesson-footer{background:#12304f!important;color:#e6eef7!important;text-align:center!important;padding:18px 16px!important;font-size:14px!important;font-weight:400!important;line-height:1.7!important;margin:0!important}
 body > footer.standard-lesson-footer *{color:#e6eef7!important}
 @media(max-width:600px){body > header.standard-lesson-header{padding:20px 16px!important}.standard-lesson-goal .standard-goal-subtitle{font-size:15px!important}}
+
+/* Shared reading styles and page navigation. */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif !important;
+  font-size: 1rem !important;
+  -webkit-text-size-adjust: 100%;
+}
+body :is(h1, .standard-lesson-header .lesson-head-title) { font-size: clamp(1.5rem, 4vw, 2.125rem) !important; }
+body :is(h2, .standard-lesson-goal .standard-goal-title) { font-size: clamp(1.25rem, 3.5vw, 1.625rem) !important; }
+body h3 { font-size: 1.125rem !important; }
+body main :is(p, li):not(.small, .note, .muted, .label, .tag, .badge, .lesson-head-meta, .caption, .formula, .math, .eq) { font-size: 1rem; }
+body :is(.lesson-standard-header h1, .subject-standard-header h1, .lecture-standard-header h1) { font-size: clamp(1.5rem, 4vw, 2.125rem) !important; }
+body :is(mjx-container[display="true"], math[display="block"], .katex-display) {
+  max-width: 100%; overflow-x: auto; overflow-y: hidden;
+}
+body video { max-width: 100%; }
+.site-return-links {
+  box-sizing: border-box; display: flex; flex-wrap: wrap; gap: .5rem 1rem;
+  width: 100%; max-width: 980px; margin: 0 auto; padding: .625rem 1rem;
+  background: #fff; border-block: 1px solid #d9e6f2;
+  color: #12304f; font: 600 .9375rem/1.5 -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+.site-return-links a { color: #174a77; text-decoration: underline; overflow-wrap: anywhere; }
+.site-return-links a:focus-visible { outline: 2px solid #174a77; outline-offset: 3px; }

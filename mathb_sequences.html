@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>数列｜数学B｜みんなの数学データベース</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f2f6fc;color:#1c3148;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.85}a{color:#186da8}.wrap{max-width:1040px;margin:auto;padding:0 17px}header{background:linear-gradient(110deg,#17365d,#246ca3);color:#fff;padding:25px 0}header a{color:#fff}header h1{font-size:clamp(25px,4vw,36px);margin:10px 0 4px}header p{margin:0;color:#e4f0fa}main{padding:24px 0 60px}h2{color:#174c7b;border-bottom:2px solid #bcd3e8;padding-bottom:7px;margin:30px 0 16px}h3{color:#123e65}p{overflow-wrap:anywhere}.nav{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:17px}.nav a{padding:7px 12px;background:#e2effb;border-radius:8px;text-decoration:none;font-weight:700}.intro{background:#e4f1ff;border-left:5px solid #2585bd;padding:16px;border-radius:9px;margin:0 0 20px}.paper{background:#fff;border:1px solid #d6e3f0;border-radius:14px;padding:clamp(17px,3vw,34px);margin:18px 0}.formula{background:#f3f8ff;border:1px solid #d6e5fa;border-radius:10px;padding:12px 8px;margin:14px 0;overflow-x:auto;text-align:center}.example{border-left:5px solid #e6a345;background:#fffaf0;border-radius:9px;padding:14px 16px}.answer{border-left:5px solid #3ca07b;background:#f0faf5;border-radius:9px;padding:14px 16px}.exercise{background:#f8faff;border:1px solid #d6e3f0;border-radius:10px;padding:13px 16px;margin-top:16px}summary{cursor:pointer;color:#145e95;font-weight:700}details{margin-top:9px}footer{background:#142f4d;color:#e6f2ff;padding:20px 0;font-size:13px}.muted{color:#526c82}.chip{display:inline-block;border-radius:25px;background:#e5f3fe;color:#246a96;padding:3px 10px;font-size:12px;font-weight:700}button,a,input{touch-action:manipulation}a:focus-visible,summary:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid orange;outline-offset:3px}.math-scroll{overflow-x:auto}.panel{background:#f8fbff;border:1px solid #cddfee;border-radius:12px;padding:16px;margin:20px 0}.controls{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin:10px 0}.controls label{font-weight:bold}.controls input[type=range]{width:min(100%,320px);accent-color:#176aaf}.controls select{font-size:16px;padding:7px;border-radius:8px;border:1px solid #aac6df;background:#fff}.readout{background:#e6f2ff;border-radius:10px;padding:10px 14px;margin:12px 0}.chart{display:block;width:100%;height:auto;border:1px solid #dce8f1;border-radius:10px;background:#fff}.callout{border-left:4px solid #176da1;padding:10px 14px;background:#f2f8ff}.table-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;min-width:430px}th,td{border:1px solid #cbdce9;padding:8px;text-align:center}th{background:#ecf5ff}ol li{margin-bottom:9px}@media(max-width:520px){.wrap{padding:0 12px}.paper{padding:17px}.chart{min-height:190px}}
+</style>
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"]]},svg:{fontCache:"global"}};</script>
+<script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<style id="six-subjects-unified">
+/* 共通デザイン（数学 I/A/II/B/III/C）: 教材のプログラムや数式には非干渉 */
+:root{--course-navy:#17365d;--course-blue:#24689c;--course-paper:#ffffff;--course-muted:#526a80}
+body{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.75}
+body>header{background:linear-gradient(110deg,var(--course-navy),var(--course-blue))!important;color:#fff!important;padding:24px 0 28px!important}
+body>header a{color:#fff!important}
+body>header h1{font-size:clamp(26px,4.2vw,36px)!important;line-height:1.35!important;margin:10px 0 5px!important;font-weight:750!important}
+body>header p,body>header span{font-size:14px!important;line-height:1.6!important;color:#e3effc!important}
+body>footer{background:#142f4d!important;color:#e9f2fc!important;padding:20px 0!important;font-size:13px!important;text-align:center!important}
+body>footer a{color:#e9f2fc!important}
+.course-unified-goal{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px;color:#18314c}
+.course-unified-goal .course-goal-label{display:block;font-size:13px;font-weight:700;color:#215f91;margin:0 0 5px}
+.course-unified-goal .course-goal-title{font-size:clamp(21px,3.2vw,27px);font-weight:750;line-height:1.4;margin:0 0 5px;color:#17365d}
+.course-unified-goal .course-goal-subtitle{font-size:14px!important;color:#526a80!important;margin:0;line-height:1.65}
+/* 既存の「授業のねらい」も見出しとサブタイトルの強弱を統一 */
+.matha-unified-goal,.lesson-goal,section.goal,section.aim,section.objective{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px}
+.matha-unified-goal .goal-title,.lesson-goal .goal-title,section.goal h2,section.aim h2,section.objective h2{font-size:clamp(21px,3.2vw,27px)!important;line-height:1.4!important;margin:5px 0!important;color:#17365d!important}
+.matha-unified-goal p,.lesson-goal p,section.goal p,section.aim p,section.objective p{font-size:14px!important;color:#526a80!important}
+.goal-pill,section.goal .pill,section.aim small{font-size:13px!important}
+@media(max-width:550px){.course-unified-goal{padding:12px 14px}body>header{padding:18px 0 22px!important}}
+</style><style id="md-unification-css">
+/* 数学Ⅲと共通の授業レイアウト：他の図・数式へのCSS干渉を避ける */
+html{scroll-behavior:smooth}
+body{margin:0!important;background:#f2f7fc!important;color:#19334e!important;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif!important;line-height:1.8!important}
+#md-standard-header{background:linear-gradient(110deg,#17365d,#215f99)!important;color:#fff!important;padding:24px 0 29px!important;box-sizing:border-box!important;min-height:0!important}
+#md-standard-header .md-inner{max-width:970px;margin:auto;padding:0 17px;box-sizing:border-box}
+#md-standard-header .md-kicker{color:#e4effc;font-size:14px!important;font-weight:400!important;letter-spacing:0!important}
+#md-standard-header h1{color:#fff!important;font-size:clamp(25px,4.5vw,35px)!important;line-height:1.4!important;margin:8px 0 5px!important;padding:0!important;border:0!important;text-align:left!important}
+#md-standard-header .md-subtitle{color:#e4effc!important;font-size:14px!important;line-height:1.6!important;margin:0!important}
+#md-standard-main{max-width:970px!important;width:auto!important;box-sizing:border-box!important;margin:0 auto!important;padding:22px 17px 46px!important;background:transparent!important;min-height:0!important}
+#md-standard-goal{display:block!important;box-sizing:border-box!important;background:#fff!important;border:1px solid #dbe6f1!important;border-radius:14px!important;margin:0 0 22px!important;padding:22px 25px!important;box-shadow:0 3px 13px #193a5b0a!important;color:#19334e!important;max-width:100%!important}
+#md-standard-goal .md-goal-tag{display:inline-block!important;color:#145888!important;background:#e6f3ff!important;border-radius:20px!important;font-size:13px!important;font-weight:700!important;padding:2px 12px!important;line-height:1.7!important}
+#md-standard-goal .md-goal-title{color:#174b78!important;font-size:23px!important;line-height:1.5!important;font-weight:700!important;border:none!important;margin:10px 0 7px!important;padding:0!important}
+#md-standard-goal p{color:#445d72!important;margin:0!important;font-size:16px!important;line-height:1.8!important}
+#md-standard-footer-nav{display:flex!important;flex-wrap:wrap!important;gap:10px!important;justify-content:flex-start!important;align-items:center!important;margin:25px 0 0!important;padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important}
+#md-standard-footer-nav a{display:inline-block!important;padding:10px 15px!important;border-radius:9px!important;background:#e5f1fd!important;color:#175988!important;text-decoration:none!important;font-weight:700!important;font-size:15px!important;line-height:1.7!important;border:0!important}
+#md-standard-footer{background:#112e4c!important;color:#ecf5fc!important;padding:20px 0!important;margin:0!important;font-size:13px!important;text-align:left!important;border:0!important}
+#md-standard-footer .md-inner{max-width:970px;margin:auto;padding:0 17px}
+/* SVGの幅を全指定する規則を数学用の数式に適用させない */
+mjx-container svg{max-width:none!important;width:auto!important;height:auto!important}
+mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden}
+@media(max-width:640px){#md-standard-goal{padding:17px 15px!important}#md-standard-goal .md-goal-title{font-size:20px!important}}
+</style><style>
+/* 2026年11月 共通ページ構造：数学I/II/A/B/C */
+html{scroll-padding-top:10px}
+body .lesson-standard-header{background:linear-gradient(110deg,#17365d,#215f99)!important;color:#fff!important;padding:24px 0 29px!important;margin:0!important;border:0!important;border-radius:0!important;text-align:left!important}
+body .lesson-standard-header .lesson-standard-width{max-width:970px!important;margin:0 auto!important;padding:0 17px!important}
+body .lesson-standard-header .lesson-standard-top,body .lesson-standard-header .lesson-standard-bottom{font-family:inherit!important;font-size:14px!important;line-height:1.65!important;color:#e4effc!important;font-weight:400!important;margin:0!important;padding:0!important;letter-spacing:normal!important}
+body .lesson-standard-header h1{font-family:inherit!important;color:#fff!important;font-size:clamp(25px,4.5vw,35px)!important;line-height:1.4!important;margin:8px 0 5px!important;padding:0!important;max-width:none!important;font-weight:700!important;border:0!important;text-align:left!important}
+/* Main and goal gap: exactly 22px measured from the header's lower edge */
+body>main.lesson-standard-main{display:block!important;box-sizing:border-box!important;max-width:970px!important;width:100%!important;margin:0 auto!important;padding:22px 17px 40px!important;position:relative!important;top:auto!important;transform:none!important}
+body>main.lesson-standard-main>.lesson-standard-goal{display:block!important;background:#fff!important;border:1px solid #dbe6f1!important;border-radius:14px!important;padding:22px 25px!important;margin:0 0 22px!important;box-shadow:0 3px 13px #193a5b0a!important;position:static!important;transform:none!important}
+body>main.lesson-standard-main>.lesson-standard-goal>.lesson-standard-goal-label{display:inline-block!important;font-size:13px!important;color:#145888!important;background:#e6f3ff!important;border-radius:20px!important;font-weight:700!important;padding:2px 12px!important;margin:0!important;line-height:1.6!important}
+body>main.lesson-standard-main>.lesson-standard-goal>h2{color:#174b78!important;font-size:23px!important;line-height:1.5!important;margin:10px 0 7px!important;padding:0!important;border:0!important;text-align:left!important}
+body>main.lesson-standard-main>.lesson-standard-goal>p{margin:0!important;color:#445d72!important;font-size:16px!important;line-height:1.8!important}
+body>main.lesson-standard-main>.lesson-standard-return{display:block!important;clear:both!important;margin:28px 0 0!important;padding:0!important;text-align:left!important;background:transparent!important;border:0!important;position:static!important;transform:none!important}
+body>main.lesson-standard-main>.lesson-standard-return a{display:inline-block!important;background:#e5f1fd!important;color:#175988!important;text-decoration:none!important;border:0!important;border-radius:9px!important;padding:10px 15px!important;font-weight:700!important;font-size:15px!important;line-height:1.5!important}
+body>footer.lesson-standard-footer{display:block!important;background:#112e4c!important;color:#ecf5fc!important;padding:20px 0!important;font-size:13px!important;line-height:1.7!important;text-align:left!important;margin:0!important;border:0!important;border-radius:0!important;clear:both!important}
+body>footer.lesson-standard-footer>div{max-width:970px!important;margin:auto!important;padding:0 17px!important}
+/* MathJax SVG may not inherit broad responsive SVG sizing */
+mjx-container svg{width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;display:inline-block!important}
+@media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
+</style><link rel="stylesheet" href="lesson_common_style.css">
+</head><body>
+<nav class="site-return-links" aria-label="ページの移動"><a href="math_subject_b.html">数学Bの授業 に戻る</a></nav>
+
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>数列</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>数列</h2><p>一定の順に並ぶ数を数列といい、各数を項といいます。</p></section>
+<article class="paper">
+<h2>1．基本事項 — 数列とは</h2><p>一定の順に並ぶ数を<strong>数列</strong>といい、各数を<strong>項</strong>といいます。先頭の項を第1項（初項）、次を第2項といいます。</p>
+<div class="formula">\[a_1,\ a_2,\ a_3,\ \ldots,\ a_n,\ \ldots\]</div>
+<p>第 \(n\) 項を \(n\) の式で表したものを<strong>一般項</strong>といいます。たとえば \(1,3,5,7,\ldots\) は、一般項 \(a_n=2n-1\) で表せます。</p>
+<div class="table-wrap"><table><thead><tr><th>項番号 \(n\)</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr></thead><tbody><tr><th>\(a_n=2n-1\)</th><td>1</td><td>3</td><td>5</td><td>7</td><td>9</td></tr><tr><th>\(a_n=3n+1\)</th><td>4</td><td>7</td><td>10</td><td>13</td><td>16</td></tr></tbody></table></div>
+<p>数列は、項の数が有限なら有限数列、どこまでも続くなら無限数列といいます。有限数列の最後の項は末項です。</p>
+<h2>2．一般項と数列の和</h2><p>第1項から第 \(n\) 項までの和を \(S_n\) と表します。</p>
+<div class="formula">\[S_n=a_1+a_2+\cdots+a_n\]</div>
+<p>たとえば、\(a_n=2n-1\) なら、最初の5項の和は \(1+3+5+7+9=25\) です。<strong>一般項は「1つの項」</strong>、<strong>和は「複数の項の合計」</strong>を表します。</p>
+<div class="formula">\[a_n=S_n-S_{n-1}\qquad(n\geq 2)\]</div>
+<p>この関係は、\(S_n\) と \(S_{n-1}\) の共通する項が引き算で消えることからわかります。第1項は \(a_1=S_1\) です。</p>
+<h2>3．動く教材 — 項と和を見てみよう</h2>
+<div class="panel"><div class="controls"><label for="kind">数列の種類</label><select id="kind"><option value="odd">奇数の数列：2n−1</option><option value="linear">3n+1</option><option value="square">平方数：n²</option><option value="geom">2の累乗：2^(n−1)</option></select></div>
+<div class="controls"><label for="count">表示する項数 <output id="nValue">5</output></label><input id="count" max="12" min="1" step="1" type="range" value="5"/></div>
+<svg aria-label="数列の各項を縦棒で示したグラフ" class="chart" id="seqChart" role="img" viewbox="0 0 700 300"></svg><div aria-live="polite" class="readout" id="seqReadout">読み込み中</div><p class="muted">棒の高さが第1項から第n項までの値を表します。選んだ項数までの和も更新されます。</p></div>
+<div class="callout"><strong>観察してみよう</strong>　奇数の数列を選び、項数を1から8まで動かしてみましょう。和が \(1,4,9,16,\ldots\) と平方数になることが見つかります。\(1+3+\cdots+(2n-1)=n^2\) です。</div>
+<h2>4．考え方と注意点</h2><ol><li>項番号 \(n\) は、通常1から始まることを確認します。</li><li>第 \(k\) 項なら、一般項の \(n\) に \(k\) を代入します。</li><li>数列の和を求めるときは、<strong>何項足すのか</strong>を先に確認します。</li><li>並んだ項を数個見ただけでは一般項が一意に決まらない場合もあります。規則が問題文で指定されているか確認します。</li></ol>
+<h2>5．解説付き例題</h2>
+<div class="example"><strong>例題1（既存の例題）</strong><p>\(a_n=2n-1\) の第5項を求めよ。</p></div><h3>解答と解説</h3><div class="answer"><p>一般項に \(n=5\) を代入して、\(a_5=2\times5-1=9\) です。</p></div>
+<div class="example"><strong>例題2</strong><p>\(a_n=n^2+1\) の最初の4項と、その和 \(S_4\) を求めよ。</p></div><div class="answer"><p>\(a_1=2,\ a_2=5,\ a_3=10,\ a_4=17\) なので、\[S_4=2+5+10+17=34\]</p></div>
+<div class="example"><strong>例題3（和から一般項へ）</strong><p>\(S_n=n(n+1)\) のとき、一般項 \(a_n\) を求めよ。</p></div><div class="answer"><p>\(n\geq2\) のとき、\[a_n=S_n-S_{n-1}=n(n+1)-(n-1)n=2n\]また \(a_1=S_1=2\) なので、\(n=1\) でも同じ式が成り立ちます。したがって \(\boxed{a_n=2n}\) です。</p></div>
+<h2>6．練習問題（タップして解説を確認）</h2>
+<div class="exercise"><strong>問題1（既存の練習問題）</strong><p>\(a_n=3n+1\) の第4項を求めよ。</p><details><summary>解答・解説を見る</summary><p>\(a_4=3\times4+1=\boxed{13}\) です。</p></details></div>
+<div class="exercise"><strong>問題2</strong><p>\(a_n=2n+3\) の初項、第6項を求めよ。</p><details><summary>解答・解説を見る</summary><p>\(a_1=2+3=\boxed{5}\)、\(a_6=12+3=\boxed{15}\)。</p></details></div>
+<div class="exercise"><strong>問題3</strong><p>\(a_n=n^2\) の最初の4項の和を求めよ。</p><details><summary>解答・解説を見る</summary><p>\(S_4=1+4+9+16=\boxed{30}\)。一般項の値を順に書いてから足します。</p></details></div>
+<div class="exercise"><strong>問題4（発展）</strong><p>\(S_n=3n^2-n\) となる数列の一般項を求めよ。</p><details><summary>解答・解説を見る</summary><p>\(n\geq2\) のとき \[a_n=(3n^2-n)-\{3(n-1)^2-(n-1)\}=6n-4\] \(a_1=S_1=2\) で、\(6\cdot1-4=2\)。よって \(\boxed{a_n=6n-4}\)（\(n\geq1\)）。</p></details></div>
+<h2>7．まとめ</h2><p>一定の順に並ぶ数を数列といい、各数を項といいます。一般項 \(a_n\) を使えば任意の項を求められ、和 \(S_n\) は第1項から第 \(n\) 項までを足したものです。和がわかっているときは、\(a_1=S_1\)、\(a_n=S_n-S_{n-1}\ (n\geq2)\) を利用できます。</p><p>次の授業「等差数列とその和」で、規則的な数列の一般項や和を公式で求める方法を学びます。</p>
+<div class="nav"><a href="mathb_arithmetic_sequences_and_sums.html">次へ：等差数列とその和 →</a></div>
+</article><nav aria-label="授業一覧に戻る" class="lesson-standard-return"><a href="math_subject_b.html">← 数学Bに戻る</a></nav></main>
+<script>
+(function(){'use strict';
+const svg=document.getElementById('seqChart'),kind=document.getElementById('kind'),slider=document.getElementById('count'),countOut=document.getElementById('nValue'),readout=document.getElementById('seqReadout');
+const options={odd:{name:'2n−1',f:n=>2*n-1},linear:{name:'3n+1',f:n=>3*n+1},square:{name:'n²',f:n=>n*n},geom:{name:'2^(n−1)',f:n=>2**(n-1)}};
+const NS='http://www.w3.org/2000/svg';function node(tag,attrs,text){const e=document.createElementNS(NS,tag);for(const [k,v] of Object.entries(attrs||{}))e.setAttribute(k,String(v));if(text!==undefined)e.textContent=String(text);svg.appendChild(e);return e}
+function draw(){const n=Number(slider.value),opt=options[kind.value],values=Array.from({length:n},(_,i)=>opt.f(i+1)),sum=values.reduce((a,b)=>a+b,0),max=Math.max(...values,1);countOut.textContent=n;while(svg.firstChild)svg.removeChild(svg.firstChild);node('line',{x1:45,y1:245,x2:675,y2:245,stroke:'#869dad','stroke-width':2});const width=580/n,gap=Math.min(10,width*.23);values.forEach((v,i)=>{const x=58+i*width,h=175*v/max;node('rect',{x:x+gap/2,y:245-h,width:Math.max(4,width-gap),height:h,rx:3,fill:i===n-1?'#d27b38':'#2582b8'});node('text',{x:x+width/2,y:262,'font-size':Math.max(11,Math.min(16,width*.35)),'text-anchor':'middle',fill:'#27465d'},i+1);node('text',{x:x+width/2,y:Math.max(17,235-h),'font-size':Math.max(10,Math.min(16,width*.30)),'text-anchor':'middle',fill:'#173a61'},v)});node('text',{x:355,y:292,'font-size':14,'text-anchor':'middle',fill:'#50697d'},'項番号 n');readout.textContent=`一般項 aₙ = ${opt.name} ／ 第${n}項 = ${values[n-1]} ／ 第1項から第${n}項までの和 = ${sum} ／ 並び：${values.join('，')}`}
+kind.addEventListener('change',draw);slider.addEventListener('input',draw);draw();
+})();
+</script><footer class="lesson-standard-footer"><div>みんなの数学データベース｜高校生のための授業</div></footer><nav class="site-return-links" aria-label="ページの移動"><a href="math_subject_b.html">数学Bの授業 に戻る</a></nav>
+</body></html>

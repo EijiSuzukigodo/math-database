@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>速度と道のり｜数学Ⅲ｜みんなの数学データベース</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f2f7fc;color:#18314c;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;font-size:16px;line-height:1.85}
+header{background:linear-gradient(110deg,#17365d,#215f99);color:white;padding:25px 0 31px}header h1{font-size:clamp(26px,4.5vw,36px);margin:8px 0 2px}header p{margin:0;color:#e5f1ff;font-size:14px}.wrap{max-width:980px;padding:0 18px;margin:0 auto}main{padding-top:22px;padding-bottom:48px}
+.goal,.panel{border:1px solid #dae7f3;border-radius:15px;background:#fff;padding:21px 24px;margin:0 0 21px;box-shadow:0 4px 14px #183c600b}.goal .label{display:inline-block;background:#e5f2ff;color:#216694;border-radius:20px;padding:3px 12px;font-size:13px;font-weight:700}.goal h2{font-size:23px;color:#194f7f;margin:9px 0 5px;line-height:1.55}.goal p{margin:0;color:#506779}
+.panel h2{font-size:21px;color:#18547f;border-bottom:2px solid #e8f1fa;padding-bottom:9px;margin:0 0 12px}.panel h3{font-size:18px;color:#195680;margin:20px 0 8px}.panel p{margin:7px 0 10px}.mathbox{border-radius:9px;background:#f4f9ff;border:1px solid #dceaf8;padding:10px;margin:12px 0;overflow-x:auto;text-align:center}
+.tip{padding:12px 15px;border-left:4px solid #2988be;background:#eff8ff;border-radius:8px;margin:14px 0}.example{border:1px solid #dbe7f2;border-radius:11px;padding:14px 16px;margin:15px 0}.example h3{margin:0 0 8px}.answer{background:#f8fbff;border-radius:8px;padding:11px 14px;margin:10px 0}.problem{padding:12px 15px;margin:12px 0;border-radius:10px;border:1px solid #dbe7f2}details{margin-top:8px}summary{cursor:pointer;color:#11659a;font-weight:700}
+.graph{border:1px solid #d9e8f4;background:#fbfdff;border-radius:12px;padding:12px;margin:15px 0}#motionSvg{display:block;width:100%;height:auto;max-height:370px}input[type=range]{width:100%;accent-color:#1975b3}label{display:block;color:#23557e;font-weight:700}.values{background:#eef6fd;border-radius:9px;padding:10px 12px;margin-top:10px}.back{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}.back a{display:inline-block;text-decoration:none;color:#175d8e;background:#e6f2fe;border-radius:9px;padding:10px 14px;font-weight:700}footer{background:#102e4c;color:#eaf3fd;padding:19px 0;font-size:13px}mjx-container{max-width:100%}mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;margin:.7em 0!important;padding:3px 0}
+@media(max-width:600px){.goal,.panel{padding:17px 15px}.goal h2{font-size:20px}.panel h2{font-size:19px}}a:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid #e6a23d;outline-offset:3px}
+</style>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']],processEscapes:true},svg:{fontCache:'global'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script><script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script><style>
+/* 数学Ⅲ 共通デザイン（全教材統一） */
+.md3-unified-header{background:linear-gradient(110deg,#17365d,#215f99)!important;color:#fff!important;padding:24px 0 29px!important;margin:0!important;border-radius:0!important}
+.md3-unified-header .md3-width,.md3-unified-footer .md3-width{max-width:970px;margin:0 auto;padding:0 17px}
+.md3-unified-header .md3-breadcrumb,.md3-unified-header .md3-subtitle{font-size:14px!important;color:#e4effc!important;line-height:1.65!important;margin:0!important}
+.md3-unified-header h1{font-family:inherit!important;color:#fff!important;font-size:clamp(25px,4.5vw,35px)!important;line-height:1.4!important;margin:8px 0 5px!important;padding:0!important;border:none!important}
+body>main,body>main.wrap{padding-top:22px!important;margin-top:0!important}
+body>main>section:first-child{margin-top:0!important}
+body>main>section:first-child:is(.goal,.standard-lesson-goal){background:#fff!important;border:1px solid #dbe6f1!important;border-radius:14px!important;padding:22px 25px!important;margin-bottom:22px!important;box-shadow:0 3px 13px #193a5b0a!important}
+body>main>section:first-child:is(.goal,.standard-lesson-goal)>h2{color:#174b78!important;font-size:23px!important;line-height:1.5!important;margin:10px 0 7px!important;border:0!important;padding:0!important}
+body>main>section:first-child:is(.goal,.standard-lesson-goal)>span:first-child{display:inline-block!important;color:#145888!important;background:#e6f3ff!important;border-radius:20px!important;font-size:13px!important;font-weight:700!important;padding:2px 12px!important}
+body>main>section:first-child:is(.goal,.standard-lesson-goal)>p{color:#445d72!important;margin:0!important}
+.md3-unified-navigation{display:flex!important;flex-wrap:wrap!important;gap:10px!important;max-width:970px!important;margin:26px auto 19px!important;padding:0 2px!important;align-items:center!important;position:static!important}
+.md3-unified-navigation a{display:inline-block!important;background:#e5f1fd!important;color:#175988!important;padding:10px 15px!important;border-radius:9px!important;font-size:15px!important;text-decoration:none!important;font-weight:700!important;line-height:1.5!important}
+.md3-unified-navigation a:hover{background:#d2e7fa!important}
+.md3-unified-footer{display:block!important;background:#112e4c!important;color:#ecf5fc!important;padding:20px 0!important;font-size:13px!important;text-align:left!important;margin:0!important;border:0!important}
+mjx-container{max-width:100%!important}mjx-container[display="true"]{overflow-x:auto!important;overflow-y:hidden!important}
+@media(max-width:640px){body>main>section:first-child:is(.goal,.standard-lesson-goal){padding:17px 15px!important}}
+mjx-container svg{width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;display:inline-block!important}
+</style><style id="md3-final-unified-css">
+/* 数学Ⅲ全授業の構造を統一（グラフのsvgには干渉しない） */
+html,body{margin:0}body{background:#f2f7fc;color:#19334e;line-height:1.8;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif}
+#md3-header{background:linear-gradient(110deg,#17365d,#215f99)!important;color:white!important;padding:24px 0 29px!important;min-height:0!important}
+#md3-header .md3-common-width{max-width:970px;margin:auto;padding:0 17px}
+#md3-header .md3-common-top{font-size:14px!important;font-weight:400!important;color:#e4effc!important;line-height:1.6!important;margin:0!important}
+#md3-header h1{color:#fff!important;font-size:clamp(25px,4.5vw,35px)!important;line-height:1.4!important;margin:8px 0 5px!important;padding:0!important;border:0!important;text-align:left!important}
+#md3-header .md3-common-bottom{color:#e4effc!important;font-size:14px!important;line-height:1.6!important;margin:0!important}
+#md3-main{padding-top:22px!important;padding-bottom:40px!important;box-sizing:border-box!important;max-width:970px!important;margin:0 auto!important;width:calc(100% - 34px)!important}
+#md3-goal{box-sizing:border-box!important;background:white!important;border:1px solid #dbe6f1!important;border-radius:14px!important;margin:0 0 22px!important;padding:22px 25px!important;box-shadow:0 3px 13px #193a5b0a!important;color:#19334e!important;width:100%!important;max-width:none!important;display:block!important}
+#md3-goal .md3-goal-tag{display:inline-block!important;background:#e6f3ff!important;color:#145888!important;border-radius:20px!important;font-weight:700!important;padding:2px 12px!important;font-size:13px!important;line-height:1.7!important}
+#md3-goal .md3-goal-title{border:0!important;padding:0!important;font-size:23px!important;color:#174b78!important;margin:10px 0 7px!important;line-height:1.5!important;text-align:left!important}
+#md3-goal p{margin:0!important;color:#445d72!important;font-size:16px!important;line-height:1.8!important}
+#md3-bottom-return{max-width:970px!important;margin:25px auto 0!important;padding:0!important;display:block!important;text-align:left!important;border:0!important;background:none!important;box-shadow:none!important}
+#md3-bottom-return a{color:#175988!important;background:#e5f1fd!important;border-radius:9px!important;padding:10px 15px!important;font-size:15px!important;font-weight:700!important;display:inline-block!important;text-decoration:none!important;line-height:1.7!important;border:0!important}
+#md3-footer{background:#112e4c!important;color:#ecf5fc!important;font-size:13px!important;line-height:1.7!important;padding:20px 0!important;margin:0!important;text-align:left!important;border:0!important}
+#md3-footer .md3-common-width{max-width:970px;margin:auto;padding:0 17px}
+#md3-main mjx-container svg{max-width:none!important;width:auto!important;height:auto!important}
+mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;max-width:100%}
+@media(max-width:640px){#md3-goal{padding:17px 15px!important}#md3-goal .md3-goal-title{font-size:20px!important}}
+</style><link rel="stylesheet" href="lesson_common_style.css">
+</head>
+<body>
+<nav class="site-return-links" aria-label="ページの移動"><a href="math_subject_3.html">数学Ⅲの授業 に戻る</a><a href="math3_arc_length.html">前の講義 · 曲線の長さ｜数学Ⅲ</a></nav>
+<header id="md3-header"><div class="md3-common-width"><div class="md3-common-top">みんなの数学データベース ／ 高校数学 ／ 数学Ⅲ</div><h1>速度と道のり</h1><p class="md3-common-bottom">数学Ⅲ ／ </p></div></header>
+<main class="wrap" id="md3-main"><section class="md3-standard-goal" id="md3-goal"><span class="md3-goal-tag">授業のねらい</span><h2 class="md3-goal-title">速度のグラフから変位と道のりを正しく求められるようになる</h2><p>速度の符号と運動方向の関係を理解し、定積分で変位を、速度の絶対値の定積分で道のりを求めます。向きが変わる時刻に注意して計算できるようになります。</p></section>
+<section class="panel"><h2>1．位置・速度・加速度の関係</h2><p>直線上を運動する点の時刻 \(t\) における位置を \(x(t)\)、速度を \(v(t)\)、加速度を \(a(t)\) とします。</p>
+<div class="mathbox">\[\boxed{v(t)=x'(t),\qquad a(t)=v'(t)=x''(t)}\]</div><p>速度を積分すると位置の変化が求められます。</p><div class="mathbox">\[\boxed{x(b)-x(a)=\int_a^b v(t)\,dt}\]</div>
+<p>この \(x(b)-x(a)\) を<strong>変位</strong>といいます。変位には正負の符号があります。</p></section>
+<section class="panel"><h2>2．変位と道のりの違い</h2><p>速度 \(v(t)\) が正なら正の向きに、負なら負の向きに移動します。一方、<strong>速さ</strong>は \(|v(t)|\) で、常に0以上です。</p><div class="mathbox">\[\boxed{\text{変位}=\int_a^b v(t)\,dt}\]</div><div class="mathbox">\[\boxed{\text{道のり}=\int_a^b |v(t)|\,dt}\]</div>
+<div class="tip"><strong>重要：</strong>速度が負の区間は、変位の計算では負、道のりの計算では正として数えます。道のりは、負にならず、変位の絶対値以上です。</div></section>
+<section class="panel"><h2>3．動くグラフ：速度の符号と面積を観察しよう</h2><p>\(v(t)=t-2\)（\(0\le t\le4\)）の運動を考えます。青色は正の速度、オレンジ色は負の速度を表します。上端 \(b\) を動かし、変位と道のりの違いを確かめましょう。</p>
+<div class="graph"><svg aria-label="速度v=t-2のグラフ。積分区間の右端を変えると変位と道のりが変わる" id="motionSvg" role="img" viewbox="0 0 700 350"></svg><label for="endSlider">積分区間の右端 b：<output id="endValue">4.0</output></label><input id="endSlider" max="4" min="0" step="0.1" type="range" value="4"/><div aria-live="polite" class="values" id="motionResult"></div></div>
+<p>例えば \(b=4\) のとき、負の面積と正の面積が打ち消し合い、変位は0です。しかし実際には往復しているため、道のりは0にはなりません。</p></section>
+<section class="panel"><h2>4．例題と詳しい解説</h2>
+<div class="example"><h3>例題1　速度が正の場合</h3><p>\(v(t)=2t+1\)（\(0\le t\le2\)）の変位と道のりを求めなさい。</p><div class="answer"><p>この区間では \(v(t)&gt;0\) なので、変位と道のりは等しい。</p><div class="mathbox">\[\begin{aligned}\int_0^2(2t+1)\,dt&amp;=[t^2+t]_0^2\\&amp;=\boxed{6}\end{aligned}\]</div></div></div>
+<div class="example"><h3>例題2　運動の向きが変わる場合</h3><p>\(v(t)=t-2\)（\(0\le t\le4\)）の変位と道のりを求めなさい。</p><div class="answer"><p>\(t=2\) で速度が0になり、符号が変化する。</p><div class="mathbox">\[\text{変位}=\int_0^4(t-2)\,dt=\left[\frac{t^2}{2}-2t\right]_0^4=\boxed{0}\]</div><div class="mathbox">\[\begin{aligned}\text{道のり}&amp;=-\int_0^2(t-2)\,dt+\int_2^4(t-2)\,dt\\&amp;=2+2=\boxed{4}\end{aligned}\]</div></div></div>
+<div class="example"><h3>例題3　速度が2回符号を変える場合</h3><p>\(v(t)=t(t-2)\)（\(0\le t\le3\)）の変位と道のりを求めなさい。</p><div class="answer"><p>\(0<t<2\) p="" では正。<="" では負、\(2<t\le3\)=""><div class="mathbox">\[\text{変位}=\left[\frac{t^3}{3}-t^2\right]_0^3=\boxed{0}\]</div><div class="mathbox">\[\begin{aligned}\text{道のり}&amp;=-\int_0^2(t^2-2t)\,dt+\int_2^3(t^2-2t)\,dt\\&amp;=\frac43+\frac43=\boxed{\frac83}\end{aligned}\]</div></t<2\)></p></div></div>
+<div class="example"><h3>例題4　位置を求める</h3><p>\(v(t)=3t^2-4t\)、\(x(0)=5\) のとき、\(x(t)\) と \(x(2)\) を求めなさい。</p><div class="answer"><p>速度を積分し、初期位置から積分定数を決める。</p><div class="mathbox">\[x(t)=\int(3t^2-4t)\,dt=t^3-2t^2+C\]</div><p>\(x(0)=5\) より \(C=5\)。</p><div class="mathbox">\[\boxed{x(t)=t^3-2t^2+5},\qquad\boxed{x(2)=5}\]</div></div></div>
+<div class="example"><h3>例題5　三角関数で表された速度</h3><p>\(v(t)=\sin t\)（\(0\le t\le2\pi\)）の変位と道のりを求めなさい。</p><div class="answer"><p>\(0<t<\pi\) p="" は正、\(\pi<t<2\pi\)="" は負。<=""><div class="mathbox">\[\text{変位}=\int_0^{2\pi}\sin t\,dt=[-\cos t]_0^{2\pi}=\boxed{0}\]</div><div class="mathbox">\[\text{道のり}=\int_0^\pi\sin t\,dt-\int_\pi^{2\pi}\sin t\,dt=\boxed{4}\]</div></t<\pi\)></p></div></div>
+</section>
+<section class="panel"><h2>5．練習問題</h2><p>自分で解いた後、「解答・解説」を開いて確認しましょう。</p>
+<div class="problem"><strong>問1</strong>　\(v(t)=3t\)（\(0\le t\le2\)）の変位と道のり。<details><summary>解答・解説</summary><p>速度は0以上。\(\int_0^2 3t\,dt=[\frac32t^2]_0^2=6\)。変位・道のりともに \(\boxed{6}\)。</p></details></div>
+<div class="problem"><strong>問2</strong>　\(v(t)=t-1\)（\(0\le t\le3\)）の変位と道のり。<details><summary>解答・解説</summary><div class="mathbox">\[\text{変位}=\left[\frac{t^2}{2}-t\right]_0^3=\boxed{\frac32}\]</div><p>\(t=1\) で符号が変わる。\(\int_0^1|t-1|dt=\frac12\)、\(\int_1^3|t-1|dt=2\)。道のりは \(\boxed{\frac52}\)。</p></details></div>
+<div class="problem"><strong>問3</strong>　\(v(t)=2-t\)（\(0\le t\le4\)）の変位と道のり。<details><summary>解答・解説</summary><p>\(t=2\) で符号が変わる。変位 \(\boxed{0}\)、道のり \(\boxed{4}\)。</p></details></div>
+<div class="problem"><strong>問4</strong>　\(v(t)=t^2-1\)（\(0\le t\le2\)）の変位と道のり。<details><summary>解答・解説</summary><div class="mathbox">\[\text{変位}=\left[\frac{t^3}{3}-t\right]_0^2=\boxed{\frac23}\]</div><p>\(t=1\) で区切る。\(-\int_0^1(t^2-1)dt+\int_1^2(t^2-1)dt=\frac23+\frac43=\boxed{2}\)。</p></details></div>
+<div class="problem"><strong>問5</strong>　\(v(t)=6t-6\)、\(x(0)=2\)。\(x(2)\) と、\(0\le t\le2\) の道のりを求めなさい。<details><summary>解答・解説</summary><p>\(x(t)=3t^2-6t+2\) なので \(\boxed{x(2)=2}\)。\(t=1\) で向きが変わるため道のりは \(3+3=\boxed{6}\)。</p></details></div>
+<div class="problem"><strong>問6</strong>　\(v(t)=\cos t\)（\(0\le t\le\pi\)）の変位と道のり。<details><summary>解答・解説</summary><p>\(t=\frac\pi2\) で速度の符号が変わる。変位 \(\int_0^\pi\cos t\,dt=\boxed{0}\)、道のり \(\int_0^{\pi/2}\cos t\,dt-\int_{\pi/2}^\pi\cos t\,dt=\boxed{2}\)。</p></details></div>
+</section>
+<section class="panel"><h2>6．発展問題とまとめ</h2><h3>発展：道のりを求める一般的な手順</h3><p>速度が \(v(t)\) で与えられたとき、区間 \([a,b]\) での道のりを求めるには、まず \(v(t)=0\) の解をすべて調べ、その時刻で区間を分割します。それぞれの区間で速度の符号を確認し、負となる区間の積分にマイナスを付けます。</p><div class="tip"><strong>まとめ：</strong>変位は「符号付きの移動量」、道のりは「実際に進んだ長さ」です。式が似ていても意味が異なります。必ず速度の符号を先に調べましょう。</div></section>
+<nav id="md3-bottom-return"><a href="math_subject_3.html">← 数学Ⅲに戻る</a></nav></main>
+<script>
+(function(){
+'use strict';
+const svg=document.getElementById('motionSvg'), slider=document.getElementById('endSlider'),endValue=document.getElementById('endValue'),result=document.getElementById('motionResult');
+const X=t=>74+138*t,Y=v=>172-63*v;
+const p=(x,y)=>`${x.toFixed(1)},${y.toFixed(1)}`;
+function areaPoints(a,b){return p(X(a),Y(0))+' '+p(X(a),Y(a-2))+' '+p(X(b),Y(b-2))+' '+p(X(b),Y(0));}
+function draw(){
+let b=Number(slider.value), neg=Math.min(b,2),pos=Math.max(b,2), displacement=b*b/2-2*b;
+let negativeArea=neg*neg/2-2*neg; // negative or zero
+let positiveArea=b>2?(b-2)*(b-2)/2:0;
+let distance=-negativeArea+positiveArea;
+let content='<rect width="700" height="350" rx="9" fill="#fff"/>';
+for(let t=0;t<=4;t++){content+=`<line x1="${X(t)}" x2="${X(t)}" y1="45" y2="297" stroke="#e8eff6"/><text x="${X(t)}" y="319" text-anchor="middle" font-size="15" fill="#53687a">${t}</text>`;}
+for(let v=-2;v<=2;v++){content+=`<line x1="63" x2="642" y1="${Y(v)}" y2="${Y(v)}" stroke="${v===0?'#6f8294':'#e8eff6'}" stroke-width="${v===0?1.8:1}"/><text x="53" y="${Y(v)+5}" text-anchor="end" font-size="13" fill="#53687a">${v}</text>`;}
+if(neg>0)content+=`<polygon points="${areaPoints(0,neg)}" fill="#eda85e" opacity="0.75"/>`;
+if(b>2)content+=`<polygon points="${areaPoints(2,b)}" fill="#5b9fd2" opacity="0.75"/>`;
+content+=`<line x1="${X(0)}" y1="${Y(-2)}" x2="${X(4)}" y2="${Y(2)}" stroke="#214f7d" stroke-width="3"/>`;
+content+=`<line x1="${X(b)}" x2="${X(b)}" y1="45" y2="297" stroke="#246ca4" stroke-dasharray="5 5" stroke-width="2"/>`;
+content+=`<circle cx="${X(b)}" cy="${Y(b-2)}" r="5" fill="#246ca4" stroke="white" stroke-width="2"/>`;
+content+='<text x="643" y="185" font-size="16" fill="#53687a">t</text><text x="19" y="34" font-size="16" fill="#53687a">v(t)</text><text x="365" y="28" text-anchor="middle" font-size="18" font-weight="bold" fill="#193f65">v(t) = t − 2</text>';
+svg.innerHTML=content;
+endValue.textContent=b.toFixed(1);result.textContent=`0 から ${b.toFixed(1)} まで：変位 = ${displacement.toFixed(2)}、道のり = ${distance.toFixed(2)}。負の部分は道のりでは正として加えます。`;
+}
+slider.addEventListener('input',draw);draw();
+})();
+</script><footer id="md3-footer"><div class="md3-common-width">みんなの数学データベース｜高校生のための授業</div></footer><nav class="site-return-links" aria-label="ページの移動"><a href="math_subject_3.html">数学Ⅲの授業 に戻る</a><a href="math3_arc_length.html">前の講義 · 曲線の長さ｜数学Ⅲ</a></nav>
+</body></html>

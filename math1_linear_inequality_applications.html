@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>一次不等式の応用｜数学Ⅰ｜みんなの数学データベース</title><style>*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f2f6fb;color:#263b50;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;line-height:1.85}header{background:linear-gradient(125deg,#17365c,#24679d);color:white;padding:25px max(18px,calc((100vw - 1040px)/2))}header a{color:#eff7ff}header h1{font-size:clamp(25px,4vw,38px);line-height:1.35;margin:12px 0 5px}header p{color:#e3effa;margin:0}main{max-width:1040px;margin:auto;padding:18px 16px 60px}a{color:#1265a0}.toc{display:flex;flex-wrap:wrap;gap:9px;margin:14px 0}.toc a{background:white;border:1px solid #ccddeb;border-radius:10px;padding:7px 11px;text-decoration:none;font-size:14px;font-weight:700}.card{background:white;border:1px solid #d8e5f1;border-radius:16px;padding:clamp(17px,3.5vw,28px);margin:18px 0;box-shadow:0 6px 20px #163f6210}h2{color:#1a4d7b;margin:0 0 18px;font-size:clamp(22px,3.5vw,29px)}h3{color:#1b5987;font-size:clamp(19px,3vw,23px);border-bottom:2px solid #dce9f4;padding-bottom:7px;margin:28px 0 12px}h4{color:#1d5d8e;font-size:18px;margin:20px 0 8px}p{margin:10px 0}.tag{display:inline-block;border-radius:999px;background:#e5f1fd;color:#175985;font-weight:700;padding:3px 12px;font-size:13px}.formula{background:#edf5ff;border-left:5px solid #2a83bd;border-radius:9px;padding:15px 18px;margin:15px 0;overflow-x:auto;text-align:center}.example{background:#fff8e9;border-left:5px solid #dca342;border-radius:10px;padding:17px 18px;margin:16px 0}.proof{background:#f3f8fc;border:1px solid #bcd3e7;border-radius:10px;padding:15px 18px;margin:15px 0}.exercise{background:#fbfdff;border:1px solid #cbddeb;border-radius:10px;padding:14px 17px;margin:15px 0}.columns{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}.columns>*{min-width:0}.check{background:#eaf6ef;border-left:5px solid #37835e;border-radius:10px;padding:12px 16px;margin:14px 0}details{border-top:1px solid #e0e9f2;margin-top:13px;padding-top:10px}summary{color:#086aa9;font-weight:700;cursor:pointer}ol{padding-left:1.5rem}li{margin-bottom:8px}.bottom{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;margin-top:22px}.bottom a{background:#e4f1fc;padding:9px 13px;border-radius:9px;text-decoration:none;font-weight:700}svg{max-width:100%;height:auto;display:block;margin:10px auto}figure{margin:10px 0;text-align:center}.figure-label{font-size:13px;color:#52687a}footer{background:#173650;color:white;text-align:center;padding:18px;font-size:13px}math{font-size:1.05em}math[display="block"]{font-size:1.1em;max-width:100%;overflow-x:auto;padding:4px 0} @media(max-width:520px){.card{padding:15px}.formula{padding:11px 8px}math[display="block"]{font-size:1em}} .math-render.display{display:block;overflow-x:auto;text-align:center;margin:.4em auto}.math-render.inline{display:inline}.math-render math{font-size:1.12em}</style><style>
+/* 数学Ⅰ 授業のねらい：統一表示（この領域だけに適用） */
+.lesson-goal-unified{background:#fff;border:1px solid #d9e5ef;border-radius:16px;padding:24px;margin:0 0 30px;box-shadow:0 1px 3px rgba(20,55,80,.04);color:#18314c}
+.lesson-goal-unified .goal-pill-unified{display:inline-block;background:#e8f2fc;color:#19567f;border-radius:30px;padding:4px 13px;font-size:14px;font-weight:700;line-height:1.6}
+.lesson-goal-unified .goal-title-unified{font-size:clamp(20px,3.5vw,25px);font-weight:750;border:0;margin:12px 0;padding:0;color:#174f73;line-height:1.5;background:none;box-shadow:none}
+.lesson-goal-unified p{margin:0;line-height:1.95}
+@media(max-width:600px){.lesson-goal-unified{padding:18px}}
+</style><style>
+/* 数学Ⅰ教材共通：ページ最下部のナビゲーション */
+.math1-bottom-nav{max-width:1120px;margin:34px auto 22px;padding:0 16px;text-align:center;clear:both}
+.math1-bottom-nav a{display:inline-block;background:#e5f2ff;color:#175b91;border:1px solid #c9e2f4;border-radius:10px;padding:12px 20px;text-decoration:none;font-size:16px;font-weight:700;line-height:1.5}
+.math1-bottom-nav a:hover,.math1-bottom-nav a:focus-visible{background:#d1e9fc;outline-offset:3px}
+.math1-bottom-footer{background:#17365d!important;color:#fff!important;padding:18px 12px!important;text-align:center!important;font-size:13px!important;line-height:1.7!important;margin:0!important;width:100%!important;max-width:none!important;border:0!important;border-radius:0!important}
+.math1-bottom-footer *{color:#fff!important}
+</style><style id="six-subjects-unified">
+/* 共通デザイン（数学 I/A/II/B/III/C）: 教材のプログラムや数式には非干渉 */
+:root{--course-navy:#17365d;--course-blue:#24689c;--course-paper:#ffffff;--course-muted:#526a80}
+body{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.75}
+body>header{background:linear-gradient(110deg,var(--course-navy),var(--course-blue))!important;color:#fff!important;padding:24px 0 28px!important}
+body>header a{color:#fff!important}
+body>header h1{font-size:clamp(26px,4.2vw,36px)!important;line-height:1.35!important;margin:10px 0 5px!important;font-weight:750!important}
+body>header p,body>header span{font-size:14px!important;line-height:1.6!important;color:#e3effc!important}
+body>footer{background:#142f4d!important;color:#e9f2fc!important;padding:20px 0!important;font-size:13px!important;text-align:center!important}
+body>footer a{color:#e9f2fc!important}
+.course-unified-goal{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px;color:#18314c}
+.course-unified-goal .course-goal-label{display:block;font-size:13px;font-weight:700;color:#215f91;margin:0 0 5px}
+.course-unified-goal .course-goal-title{font-size:clamp(21px,3.2vw,27px);font-weight:750;line-height:1.4;margin:0 0 5px;color:#17365d}
+.course-unified-goal .course-goal-subtitle{font-size:14px!important;color:#526a80!important;margin:0;line-height:1.65}
+/* 既存の「授業のねらい」も見出しとサブタイトルの強弱を統一 */
+.matha-unified-goal,.lesson-goal,section.goal,section.aim,section.objective{background:#eaf4ff;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:18px 0 22px}
+.matha-unified-goal .goal-title,.lesson-goal .goal-title,section.goal h2,section.aim h2,section.objective h2{font-size:clamp(21px,3.2vw,27px)!important;line-height:1.4!important;margin:5px 0!important;color:#17365d!important}
+.matha-unified-goal p,.lesson-goal p,section.goal p,section.aim p,section.objective p{font-size:14px!important;color:#526a80!important}
+.goal-pill,section.goal .pill,section.aim small{font-size:13px!important}
+@media(max-width:550px){.course-unified-goal{padding:12px 14px}body>header{padding:18px 0 22px!important}}
+</style><style id="md-unification-css">
+/* 数学Ⅲと共通の授業レイアウト：他の図・数式へのCSS干渉を避ける */
+html{scroll-behavior:smooth}
+body{margin:0!important;background:#f2f7fc!important;color:#19334e!important;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif!important;line-height:1.8!important}
+#md-standard-header{background:linear-gradient(110deg,#17365d,#215f99)!important;color:#fff!important;padding:24px 0 29px!important;box-sizing:border-box!important;min-height:0!important}
+#md-standard-header .md-inner{max-width:970px;margin:auto;padding:0 17px;box-sizing:border-box}
+#md-standard-header .md-kicker{color:#e4effc;font-size:14px!important;font-weight:400!important;letter-spacing:0!important}
+#md-standard-header h1{color:#fff!important;font-size:clamp(25px,4.5vw,35px)!important;line-height:1.4!important;margin:8px 0 5px!important;padding:0!important;border:0!important;text-align:left!important}
+#md-standard-header .md-subtitle{color:#e4effc!important;font-size:14px!important;line-height:1.6!important;margin:0!important}
+#md-standard-main{max-width:970px!important;width:auto!important;box-sizing:border-box!important;margin:0 auto!important;padding:22px 17px 46px!important;background:transparent!important;min-height:0!important}
+#md-standard-goal{display:block!important;box-sizing:border-box!important;background:#fff!important;border:1px solid #dbe6f1!important;border-radius:14px!important;margin:0 0 22px!important;padding:22px 25px!important;box-shadow:0 3px 13px #193a5b0a!important;color:#19334e!important;max-width:100%!important}
+#md-standard-goal .md-goal-tag{display:inline-block!important;color:#145888!important;background:#e6f3ff!important;border-radius:20px!important;font-size:13px!important;font-weight:700!important;padding:2px 12px!important;line-height:1.7!important}
+#md-standard-goal .md-goal-title{color:#174b78!important;font-size:23px!important;line-height:1.5!important;font-weight:700!important;border:none!important;margin:10px 0 7px!important;padding:0!important}
+#md-standard-goal p{color:#445d72!important;margin:0!important;font-size:16px!important;line-height:1.8!important}
+#md-standard-footer-nav{display:flex!important;flex-wrap:wrap!important;gap:10px!important;justify-content:flex-start!important;align-items:center!important;margin:25px 0 0!important;padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important}
+#md-standard-footer-nav a{display:inline-block!important;padding:10px 15px!important;border-radius:9px!important;background:#e5f1fd!important;color:#175988!important;text-decoration:none!important;font-weight:700!important;font-size:15px!important;line-height:1.7!important;border:0!important}
+#md-standard-footer{background:#112e4c!important;color:#ecf5fc!important;padding:20px 0!important;margin:0!important;font-size:13px!important;text-align:left!important;border:0!important}
+#md-standard-footer .md-inner{max-width:970px;margin:auto;padding:0 17px}
+/* SVGの幅を全指定する規則を数学用の数式に適用させない */
+mjx-container svg{max-width:none!important;width:auto!important;height:auto!important}
+mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden}
+@media(max-width:640px){#md-standard-goal{padding:17px 15px!important}#md-standard-goal .md-goal-title{font-size:20px!important}}
+</style><style>
+/* 2026年11月 共通ページ構造：数学I/II/A/B/C */
+html{scroll-padding-top:10px}
+body .lesson-standard-header{background:linear-gradient(110deg,#17365d,#215f99)!important;color:#fff!important;padding:24px 0 29px!important;margin:0!important;border:0!important;border-radius:0!important;text-align:left!important}
+body .lesson-standard-header .lesson-standard-width{max-width:970px!important;margin:0 auto!important;padding:0 17px!important}
+body .lesson-standard-header .lesson-standard-top,body .lesson-standard-header .lesson-standard-bottom{font-family:inherit!important;font-size:14px!important;line-height:1.65!important;color:#e4effc!important;font-weight:400!important;margin:0!important;padding:0!important;letter-spacing:normal!important}
+body .lesson-standard-header h1{font-family:inherit!important;color:#fff!important;font-size:clamp(25px,4.5vw,35px)!important;line-height:1.4!important;margin:8px 0 5px!important;padding:0!important;max-width:none!important;font-weight:700!important;border:0!important;text-align:left!important}
+/* Main and goal gap: exactly 22px measured from the header's lower edge */
+body>main.lesson-standard-main{display:block!important;box-sizing:border-box!important;max-width:970px!important;width:100%!important;margin:0 auto!important;padding:22px 17px 40px!important;position:relative!important;top:auto!important;transform:none!important}
+body>main.lesson-standard-main>.lesson-standard-goal{display:block!important;background:#fff!important;border:1px solid #dbe6f1!important;border-radius:14px!important;padding:22px 25px!important;margin:0 0 22px!important;box-shadow:0 3px 13px #193a5b0a!important;position:static!important;transform:none!important}
+body>main.lesson-standard-main>.lesson-standard-goal>.lesson-standard-goal-label{display:inline-block!important;font-size:13px!important;color:#145888!important;background:#e6f3ff!important;border-radius:20px!important;font-weight:700!important;padding:2px 12px!important;margin:0!important;line-height:1.6!important}
+body>main.lesson-standard-main>.lesson-standard-goal>h2{color:#174b78!important;font-size:23px!important;line-height:1.5!important;margin:10px 0 7px!important;padding:0!important;border:0!important;text-align:left!important}
+body>main.lesson-standard-main>.lesson-standard-goal>p{margin:0!important;color:#445d72!important;font-size:16px!important;line-height:1.8!important}
+body>main.lesson-standard-main>.lesson-standard-return{display:block!important;clear:both!important;margin:28px 0 0!important;padding:0!important;text-align:left!important;background:transparent!important;border:0!important;position:static!important;transform:none!important}
+body>main.lesson-standard-main>.lesson-standard-return a{display:inline-block!important;background:#e5f1fd!important;color:#175988!important;text-decoration:none!important;border:0!important;border-radius:9px!important;padding:10px 15px!important;font-weight:700!important;font-size:15px!important;line-height:1.5!important}
+body>footer.lesson-standard-footer{display:block!important;background:#112e4c!important;color:#ecf5fc!important;padding:20px 0!important;font-size:13px!important;line-height:1.7!important;text-align:left!important;margin:0!important;border:0!important;border-radius:0!important;clear:both!important}
+body>footer.lesson-standard-footer>div{max-width:970px!important;margin:auto!important;padding:0 17px!important}
+/* MathJax SVG may not inherit broad responsive SVG sizing */
+mjx-container svg{width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;display:inline-block!important}
+@media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
+</style><link rel="stylesheet" href="lesson_common_style.css">
+</head><body>
+<nav class="site-return-links" aria-label="ページの移動"><a href="math_subject_1.html">数学Ⅰの授業 に戻る</a><a href="math1_linear_inequalities.html">前の講義 · 一次不等式｜数学Ⅰ</a></nav>
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学Ⅰ</div><h1>一次不等式の応用</h1><p class="lesson-standard-bottom">数学Ⅰ</p></div></header><main class="lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>不等式を身近な問題や絶対値に活用する</h2><p>文章から条件を読み取り、不等式を立てて解きます。また絶対値を含む方程式・不等式では、数直線上の距離に着目し、必要に応じて場合分けします。</p></section>
+<section class="card" id="story"><h2>1 一次不等式の文章題</h2><h3>A 料金と個数の問題</h3><div class="example"><strong>例題 1</strong><p>1冊240円のノートを買います。送料が360円かかり、予算は3000円以内です。何冊まで買えますか。</p><p>ノートの冊数を <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>x</mi>
+</math></span> 冊とすると</p><div class="formula"><span class="math-render display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<mn>240</mn>
+<mi>x</mi>
+<mo>+</mo>
+<mn>360</mn>
+<mo>≤</mo>
+<mn>3000</mn>
+</math></span></div><p>送料を移項して</p><div class="formula"><span class="math-render display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable columnalign="right left" columnspacing="0em" displaystyle="true" rowspacing="3pt">
+<mtr>
+<mtd>
+<mn>240</mn>
+<mi>x</mi>
+</mtd>
+<mtd>
+<mi></mi>
+<mo>≤</mo>
+<mn>2640</mn>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mi>x</mi>
+</mtd>
+<mtd>
+<mi></mi>
+<mo>≤</mo>
+<mn>11</mn>
+</mtd>
+</mtr>
+</mtable>
+</math></span></div><p>冊数は0以上の整数なので、<strong>最大11冊</strong>です。</p></div><h3>B 距離と速さの問題</h3><div class="example"><strong>例題 2</strong><p>駅までの道のりは1500mです。歩く速さが毎分75mのとき、18分以内に着くには何m以上の地点まで走っておく必要がありますか。ただし走る速さは毎分150mとします。</p><p>走る距離を <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>x</mi>
+</math></span> mとすると、所要時間は</p><div class="formula"><span class="math-render display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<mfrac>
+<mi>x</mi>
+<mn>150</mn>
+</mfrac>
+<mo>+</mo>
+<mfrac>
+<mrow>
+<mn>1500</mn>
+<mo>−</mo>
+<mi>x</mi>
+</mrow>
+<mn>75</mn>
+</mfrac>
+<mo>≤</mo>
+<mn>18</mn>
+</math></span></div><p>両辺に150を掛けると</p><div class="formula"><span class="math-render display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable columnalign="right left" columnspacing="0em" displaystyle="true" rowspacing="3pt">
+<mtr>
+<mtd>
+<mi>x</mi>
+<mo>+</mo>
+<mn>2</mn>
+<mo stretchy="false">(</mo>
+<mn>1500</mn>
+<mo>−</mo>
+<mi>x</mi>
+<mo stretchy="false">)</mo>
+</mtd>
+<mtd>
+<mi></mi>
+<mo>≤</mo>
+<mn>2700</mn>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mo>−</mo>
+<mi>x</mi>
+</mtd>
+<mtd>
+<mi></mi>
+<mo>≤</mo>
+<mo>−</mo>
+<mn>300</mn>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mi>x</mi>
+</mtd>
+<mtd>
+<mi></mi>
+<mo>≥</mo>
+<mn>300</mn>
+</mtd>
+</mtr>
+</mtable>
+</math></span></div><p>したがって、<strong>300m以上走る</strong>必要があります。</p></div></section>
+<section class="card" id="simultaneous"><h2>2 条件を同時に満たす数</h2><p>文章題では、価格、個数、時間など複数の条件から連立不等式を立てることがあります。整数の条件も忘れないようにしましょう。</p><div class="example"><strong>例題 3</strong><p>ある整数 <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>n</mi>
+</math></span> は、3倍して5を加えると20以上、4倍して2を引くと30未満になります。このような整数 <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>n</mi>
+</math></span> をすべて求めましょう。</p><div class="formula"><span class="math-render display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow data-mjx-texclass="INNER">
+<mo data-mjx-texclass="OPEN">{</mo>
+<mtable columnalign="left left" columnspacing="1em" rowspacing=".2em">
+<mtr>
+<mtd>
+<mn>3</mn>
+<mi>n</mi>
+<mo>+</mo>
+<mn>5</mn>
+<mo>≥</mo>
+<mn>20</mn>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mn>4</mn>
+<mi>n</mi>
+<mo>−</mo>
+<mn>2</mn>
+<mo>&lt;</mo>
+<mn>30</mn>
+</mtd>
+</mtr>
+</mtable>
+<mo data-mjx-texclass="CLOSE" fence="true" stretchy="true" symmetric="true"></mo>
+</mrow>
+</math></span></div><p>それぞれを解くと</p><div class="formula"><span class="math-render display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>n</mi>
+<mo>≥</mo>
+<mn>5</mn>
+<mo>,</mo>
+<mstyle scriptlevel="0">
+<mspace width="2em"></mspace>
+</mstyle>
+<mi>n</mi>
+<mo>&lt;</mo>
+<mn>8</mn>
+</math></span></div><p>よって <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mn>5</mn>
+<mo>≤</mo>
+<mi>n</mi>
+<mo>&lt;</mo>
+<mn>8</mn>
+</math></span> を満たす整数は、<strong>5、6、7</strong> です。</p></div></section>
+<section class="card" id="absolute"><h2>3 絶対値を含む方程式・不等式</h2><p>絶対値 <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mo stretchy="false">|</mo>
+<mi>x</mi>
+<mo>−</mo>
+<mi>a</mi>
+<mo stretchy="false">|</mo>
+</math></span> は、数直線で <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>x</mi>
+</math></span> と <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>a</mi>
+</math></span> の間の距離を表します。</p><div class="formula"><span class="math-render display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<mo stretchy="false">|</mo>
+<mi>x</mi>
+<mrow data-mjx-texclass="ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<mo>=</mo>
+<mrow data-mjx-texclass="INNER">
+<mo data-mjx-texclass="OPEN">{</mo>
+<mtable columnalign="left left" columnspacing="1em" rowspacing=".2em">
+<mtr>
+<mtd>
+<mi>x</mi>
+</mtd>
+<mtd>
+<mo stretchy="false">(</mo>
+<mi>x</mi>
+<mo>≥</mo>
+<mn>0</mn>
+<mo stretchy="false">)</mo>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mo>−</mo>
+<mi>x</mi>
+</mtd>
+<mtd>
+<mo stretchy="false">(</mo>
+<mi>x</mi>
+<mo>&lt;</mo>
+<mn>0</mn>
+<mo stretchy="false">)</mo>
+</mtd>
+</mtr>
+</mtable>
+<mo data-mjx-texclass="CLOSE" fence="true" stretchy="true" symmetric="true"></mo>
+</mrow>
+</math></span></div><h3>A 絶対値の方程式</h3><div class="example"><strong>例題 4</strong><p><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mo stretchy="false">|</mo>
+<mn>2</mn>
+<mi>x</mi>
+<mo>−</mo>
+<mn>1</mn>
+<mrow data-mjx-texclass="ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<mo>=</mo>
+<mn>3</mn>
+</math></span> を解きましょう。</p><p>絶対値が3になるのは、中の数が3または−3のときです。</p><div class="formula"><span class="math-render display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<mn>2</mn>
+<mi>x</mi>
+<mo>−</mo>
+<mn>1</mn>
+<mo>=</mo>
+<mn>3</mn>
+<mstyle scriptlevel="0">
+<mspace width="1em"></mspace>
+</mstyle>
+<mtext>または</mtext>
+<mstyle scriptlevel="0">
+<mspace width="1em"></mspace>
+</mstyle>
+<mn>2</mn>
+<mi>x</mi>
+<mo>−</mo>
+<mn>1</mn>
+<mo>=</mo>
+<mo>−</mo>
+<mn>3</mn>
+</math></span></div><p>したがって、<strong><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>x</mi>
+<mo>=</mo>
+<mn>2</mn>
+<mo>,</mo>
+<mo>−</mo>
+<mn>1</mn>
+</math></span></strong> です。</p></div><h3>B 絶対値の不等式</h3><div class="formula"><span class="math-render display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable columnalign="right left right" columnspacing="0em 2em" displaystyle="true" rowspacing="3pt">
+<mtr>
+<mtd>
+<mo stretchy="false">|</mo>
+<mi>x</mi>
+<mrow data-mjx-texclass="ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<mo>&lt;</mo>
+<mi>c</mi>
+</mtd>
+<mtd>
+<mi></mi>
+<mo stretchy="false">⟺</mo>
+</mtd>
+<mtd>
+<mtext> </mtext>
+<mo>−</mo>
+<mi>c</mi>
+<mo>&lt;</mo>
+<mi>x</mi>
+<mo>&lt;</mo>
+<mi>c</mi>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mo stretchy="false">|</mo>
+<mi>x</mi>
+<mrow data-mjx-texclass="ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<mo>&gt;</mo>
+<mi>c</mi>
+</mtd>
+<mtd>
+<mi></mi>
+<mo stretchy="false">⟺</mo>
+</mtd>
+<mtd>
+<mtext> </mtext>
+<mi>x</mi>
+<mo>&lt;</mo>
+<mo>−</mo>
+<mi>c</mi>
+<mtext> </mtext>
+<mtext>または</mtext>
+<mtext> </mtext>
+<mi>x</mi>
+<mo>&gt;</mo>
+<mi>c</mi>
+</mtd>
+</mtr>
+</mtable>
+<mstyle scriptlevel="0">
+<mspace width="2em"></mspace>
+</mstyle>
+<mo stretchy="false">(</mo>
+<mi>c</mi>
+<mo>&gt;</mo>
+<mn>0</mn>
+<mo stretchy="false">)</mo>
+</math></span></div><div class="example"><strong>例題 5</strong><p><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mo stretchy="false">|</mo>
+<mi>x</mi>
+<mo>−</mo>
+<mn>4</mn>
+<mrow data-mjx-texclass="ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<mo>≤</mo>
+<mn>3</mn>
+</math></span> を解きましょう。</p><p>4からの距離が3以下であることを意味するので</p><div class="formula"><span class="math-render display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<mo>−</mo>
+<mn>3</mn>
+<mo>≤</mo>
+<mi>x</mi>
+<mo>−</mo>
+<mn>4</mn>
+<mo>≤</mo>
+<mn>3</mn>
+</math></span></div><p>各項に4を加えると</p><div class="formula"><span class="math-render display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<mn>1</mn>
+<mo>≤</mo>
+<mi>x</mi>
+<mo>≤</mo>
+<mn>7</mn>
+</math></span></div><p>端点を含む区間が解です。</p></div></section>
+<section class="card" id="case"><h2>4 場合分けを使って解く</h2><p>絶対値の中に文字があるときは、<strong>中身が0以上か負か</strong>で分けて考えます。求めた解は最後にその場合の条件と照合しましょう。</p><div class="example"><strong>例題 6</strong><p><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mo stretchy="false">|</mo>
+<mi>x</mi>
+<mo>−</mo>
+<mn>4</mn>
+<mrow data-mjx-texclass="ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<mo>≤</mo>
+<mn>2</mn>
+<mi>x</mi>
+</math></span> を解きましょう。</p><h4>① <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>x</mi>
+<mo>≥</mo>
+<mn>4</mn>
+</math></span> のとき</h4><p><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mo stretchy="false">|</mo>
+<mi>x</mi>
+<mo>−</mo>
+<mn>4</mn>
+<mrow data-mjx-texclass="ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<mo>=</mo>
+<mi>x</mi>
+<mo>−</mo>
+<mn>4</mn>
+</math></span> なので</p><div class="formula"><span class="math-render display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>x</mi>
+<mo>−</mo>
+<mn>4</mn>
+<mo>≤</mo>
+<mn>2</mn>
+<mi>x</mi>
+<mstyle scriptlevel="0">
+<mspace width="1em"></mspace>
+</mstyle>
+<mo stretchy="false">⟹</mo>
+<mstyle scriptlevel="0">
+<mspace width="1em"></mspace>
+</mstyle>
+<mi>x</mi>
+<mo>≥</mo>
+<mo>−</mo>
+<mn>4</mn>
+</math></span></div><p>条件 <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>x</mi>
+<mo>≥</mo>
+<mn>4</mn>
+</math></span> と合わせ、<strong><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>x</mi>
+<mo>≥</mo>
+<mn>4</mn>
+</math></span></strong>。</p><h4>② <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>x</mi>
+<mo>&lt;</mo>
+<mn>4</mn>
+</math></span> のとき</h4><p><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mo stretchy="false">|</mo>
+<mi>x</mi>
+<mo>−</mo>
+<mn>4</mn>
+<mrow data-mjx-texclass="ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<mo>=</mo>
+<mn>4</mn>
+<mo>−</mo>
+<mi>x</mi>
+</math></span> なので</p><div class="formula"><span class="math-render display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<mn>4</mn>
+<mo>−</mo>
+<mi>x</mi>
+<mo>≤</mo>
+<mn>2</mn>
+<mi>x</mi>
+<mstyle scriptlevel="0">
+<mspace width="1em"></mspace>
+</mstyle>
+<mo stretchy="false">⟹</mo>
+<mstyle scriptlevel="0">
+<mspace width="1em"></mspace>
+</mstyle>
+<mi>x</mi>
+<mo>≥</mo>
+<mfrac>
+<mn>4</mn>
+<mn>3</mn>
+</mfrac>
+</math></span></div><p>条件 <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>x</mi>
+<mo>&lt;</mo>
+<mn>4</mn>
+</math></span> と合わせ、<strong><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mfrac>
+<mn>4</mn>
+<mn>3</mn>
+</mfrac>
+<mo>≤</mo>
+<mi>x</mi>
+<mo>&lt;</mo>
+<mn>4</mn>
+</math></span></strong>。</p><p>2つの範囲を合わせて、求める解は</p><div class="formula"><span class="math-render display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<menclose notation="box">
+<mrow data-mjx-texclass="ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow data-mjx-texclass="ORD">
+<mi>x</mi>
+<mo>≥</mo>
+<mfrac>
+<mn>4</mn>
+<mn>3</mn>
+</mfrac>
+</mrow>
+</mstyle>
+</mrow>
+</menclose>
+</math></span></div></div><div class="check"><strong>確認のポイント</strong>　右辺が負の場合は、絶対値が0以上であることと矛盾することがあります。場合分けでは必ず、最初の条件に戻って確かめましょう。</div></section>
+<section class="card" id="practice"><h2>5 練習問題</h2><div class="exercise"><ol><li>1本180円の鉛筆を買い、包装代120円を払います。合計を1200円以内にするには最大何本買えますか。</li><li>整数 <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>n</mi>
+</math></span> が <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mn>2</mn>
+<mi>n</mi>
+<mo>+</mo>
+<mn>1</mn>
+<mo>&gt;</mo>
+<mn>7</mn>
+</math></span>、<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mn>3</mn>
+<mi>n</mi>
+<mo>−</mo>
+<mn>2</mn>
+<mo>≤</mo>
+<mn>16</mn>
+</math></span> を満たすとき、<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>n</mi>
+</math></span> をすべて求めなさい。</li><li><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mo stretchy="false">|</mo>
+<mi>x</mi>
+<mo>−</mo>
+<mn>3</mn>
+<mrow data-mjx-texclass="ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<mo>=</mo>
+<mn>5</mn>
+</math></span> を解きなさい。</li><li><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mo stretchy="false">|</mo>
+<mn>2</mn>
+<mi>x</mi>
+<mo>+</mo>
+<mn>1</mn>
+<mrow data-mjx-texclass="ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<mo>&lt;</mo>
+<mn>7</mn>
+</math></span> を解きなさい。</li><li><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mo stretchy="false">|</mo>
+<mi>x</mi>
+<mo>−</mo>
+<mn>2</mn>
+<mrow data-mjx-texclass="ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<mo>≥</mo>
+<mn>4</mn>
+</math></span> を解きなさい。</li></ol><details><summary>解答・解説を見る</summary><ol><li><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mn>180</mn>
+<mi>x</mi>
+<mo>+</mo>
+<mn>120</mn>
+<mo>≤</mo>
+<mn>1200</mn>
+</math></span> より <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>x</mi>
+<mo>≤</mo>
+<mn>6</mn>
+</math></span>。最大 <strong>6本</strong>。</li><li><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>n</mi>
+<mo>&gt;</mo>
+<mn>3</mn>
+</math></span>、<span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>n</mi>
+<mo>≤</mo>
+<mn>6</mn>
+</math></span>。よって <strong>4、5、6</strong>。</li><li><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>x</mi>
+<mo>−</mo>
+<mn>3</mn>
+<mo>=</mo>
+<mn>5</mn>
+</math></span> または <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>x</mi>
+<mo>−</mo>
+<mn>3</mn>
+<mo>=</mo>
+<mo>−</mo>
+<mn>5</mn>
+</math></span>。よって <strong><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>x</mi>
+<mo>=</mo>
+<mn>8</mn>
+<mo>,</mo>
+<mo>−</mo>
+<mn>2</mn>
+</math></span></strong>。</li><li><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mo>−</mo>
+<mn>7</mn>
+<mo>&lt;</mo>
+<mn>2</mn>
+<mi>x</mi>
+<mo>+</mo>
+<mn>1</mn>
+<mo>&lt;</mo>
+<mn>7</mn>
+</math></span> より <strong><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mo>−</mo>
+<mn>4</mn>
+<mo>&lt;</mo>
+<mi>x</mi>
+<mo>&lt;</mo>
+<mn>3</mn>
+</math></span></strong>。</li><li><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>x</mi>
+<mo>−</mo>
+<mn>2</mn>
+<mo>≤</mo>
+<mo>−</mo>
+<mn>4</mn>
+</math></span> または <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>x</mi>
+<mo>−</mo>
+<mn>2</mn>
+<mo>≥</mo>
+<mn>4</mn>
+</math></span>。よって <strong><span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>x</mi>
+<mo>≤</mo>
+<mo>−</mo>
+<mn>2</mn>
+</math></span> または <span class="math-render inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>x</mi>
+<mo>≥</mo>
+<mn>6</mn>
+</math></span></strong>。</li></ol></details></div></section>
+<nav aria-label="授業一覧に戻る" class="lesson-standard-return"><a href="math_subject_1.html">← 数学Ⅰに戻る</a></nav></main><footer class="lesson-standard-footer"><div>みんなの数学データベース｜高校生のための授業</div></footer><nav class="site-return-links" aria-label="ページの移動"><a href="math_subject_1.html">数学Ⅰの授業 に戻る</a><a href="math1_linear_inequalities.html">前の講義 · 一次不等式｜数学Ⅰ</a></nav>
+</body></html>
