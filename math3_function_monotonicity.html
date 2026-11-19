@@ -55,11 +55,11 @@ mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;max-width:100%}
 
 <section><span class="pill">基本事項</span><h2 id="hs-explanation">1. 導関数の符号と増加・減少</h2><p>微分可能な関数 \(f(x)\) について、ある区間で導関数が正なら関数は増加、負なら減少します。</p>
 <div class="formula">\[f'(x)&gt;0\ \Longrightarrow\ f(x)\text{ は増加}\]</div><div class="formula">\[f'(x)&lt;0\ \Longrightarrow\ f(x)\text{ は減少}\]</div>
-<p>これは平均値の定理から説明できます。\(a<b\) \(c\)="" \(f'(c)="" が存在します。したがって="" に対し、\(f(b)-f(a)="f'(c)(b-a)\)" を満たす="">0\) なら \(f(b)&gt;f(a)\) です。</b\)></p><div class="note">注意：\(f'(a)=0\) であっても、必ず極大・極小になるとは限りません（例：\(f(x)=x^3\) の \(x=0\)）。</div></section>
+<p>これは平均値の定理から説明できます。\(a&lt;b\) に対し、平均値の定理より \(f(b)-f(a)=f'(c)(b-a)\) を満たす \(c\) が存在します。\(f'(c)&gt;0\) なら \(f(b)&gt;f(a)\) です。</p><div class="note">注意：\(f'(a)=0\) であっても、必ず極大・極小になるとは限りません（例：\(f(x)=x^3\) の \(x=0\)）。</div></section>
 <section><span class="pill">解法の手順</span><h2>2. 増減表と極大・極小</h2>
 <p><strong>増減表の作り方</strong>は、①微分して \(f'(x)\) を求める → ②\(f'(x)=0\) の解と導関数が存在しない点を調べる → ③区間ごとの符号を決める → ④増減と極値をまとめる、の順です。</p>
 <div class="example"><strong id="hs-examples">例題1　\(f(x)=x^3-3x\) の増減と極値</strong><p>\(f'(x)=3x^2-3=3(x+1)(x-1)\)。したがって \(f'(x)=0\) は \(x=-1,1\) です。</p>
-<div class="table-wrap"><table class="variation"><thead><tr><th>\(x\)</th><th>\(x&lt;-1\)</th><th>\(-1\)</th><th>\(-1<x<1\)< th=""><th>\(1\)</th><th>\(x&gt;1\)</th></x<1\)<></th></tr></thead><tbody><tr><th>\(f'(x)\)</th><td>＋</td><td>0</td><td>−</td><td>0</td><td>＋</td></tr><tr><th>\(f(x)\)</th><td>↗</td><td>極大 2</td><td>↘</td><td>極小 −2</td><td>↗</td></tr></tbody></table></div>
+<div class="table-wrap"><table class="variation"><thead><tr><th>\(x\)</th><th>\(x&lt;-1\)</th><th>\(-1\)</th><th>\(-1&lt;x&lt;1\)</th><th>\(1\)</th><th>\(x&gt;1\)</th></tr></thead><tbody><tr><th>\(f'(x)\)</th><td>＋</td><td>0</td><td>−</td><td>0</td><td>＋</td></tr><tr><th>\(f(x)\)</th><td>↗</td><td>極大 2</td><td>↘</td><td>極小 −2</td><td>↗</td></tr></tbody></table></div>
 <p>\(f(-1)=2\)、\(f(1)=-2\)。したがって <strong>\(x=-1\) で極大値 2、\(x=1\) で極小値 \(-2\)</strong> をとります。</p></div>
 <div class="note"><strong>重要：</strong>導関数の符号が「＋から−」に変わる点では極大、「−から＋」に変わる点では極小になります。符号が変わらない点は極値とは限りません。</div></section>
 <section><span class="pill">動く図</span><h2>3. 接線の傾きと値の変化</h2><p>\(f(x)=x^3-3x\) 上の点を動かしましょう。青がグラフ、赤が接線です。接線の傾きが正・負・0のどれになるかを確認してください。</p>
@@ -69,15 +69,15 @@ mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;max-width:100%}
 <section><span class="pill">例題</span><h2>4. 例題で手順を確かめる</h2>
 <div class="example"><strong>例題2　\(f(x)=x^4-4x^2\)</strong><p>\(f'(x)=4x^3-8x=4x(x^2-2)\) より、停留点は \(x=-\sqrt2,0,\sqrt2\) です。符号を左から調べると「−，＋，−，＋」。</p><p>よって \(x=-\sqrt2,\sqrt2\) で極小値 \(-4\)、\(x=0\) で極大値 0 です。</p></div>
 <div class="example"><strong>例題3　\(f(x)=x^3\)</strong><p>\(f'(x)=3x^2\geqq0\) で、\(x=0\) の前後で符号は変わりません。したがって全体で増加し、\(x=0\) は極値ではありません。</p></div>
-<div class="example"><strong>例題4　\(f(x)=\log x-x\) （\(x&gt;0\)）</strong><p>\(f'(x)=\frac1x-1=\frac{1-x}{x}\)。\(0<x<1\) で正、\(x="">1\) で負。よって \(x=1\) で極大値 \(f(1)=-1\) をとります。</x<1\)></p></div>
+<div class="example"><strong>例題4　\(f(x)=\log x-x\) （\(x&gt;0\)）</strong><p>\(f'(x)=\frac1x-1=\frac{1-x}{x}\)。\(0&lt;x&lt;1\) で正、\(x&gt;1\) で負。よって \(x=1\) で極大値 \(f(1)=-1\) をとります。</p></div>
 <div class="example"><strong>例題5　\(f(x)=xe^{-x}\) （\(x\in\mathbb R\)）</strong><p>積の微分法より \(f'(x)=e^{-x}(1-x)\)。\(e^{-x}&gt;0\) より、\(x&lt;1\) で増加、\(x&gt;1\) で減少。したがって \(x=1\) で極大値 \(\frac1e\) です。</p></div>
 </section>
 <section><span class="pill">練習問題</span><h2 id="hs-practice">5. 練習問題（解答・解説付き）</h2><p>まず自分で増減表を書き、解答を開いて確かめましょう。</p>
 <details><summary>問題1　\(f(x)=x^2-4x+1\) の極値</summary><p>\(f'(x)=2x-4\)。\(x&lt;2\) で負、\(x&gt;2\) で正。よって \(x=2\) で極小値 \(-3\)。</p></details>
 <details><summary>問題2　\(f(x)=x^3-12x\) の極値</summary><p>\(f'(x)=3(x-2)(x+2)\)。符号は「＋，−，＋」。\(x=-2\) で極大値 \(16\)、\(x=2\) で極小値 \(-16\)。</p></details>
 <details><summary>問題3　\(f(x)=x^3+3x\) の増減</summary><p>\(f'(x)=3x^2+3&gt;0\) です。すべての実数で増加し、極値はありません。</p></details>
-<details><summary>問題4　\(f(x)=x+\frac1x\) （\(x&gt;0\)）の極値</summary><p>\(f'(x)=1-\frac1{x^2}=\frac{(x-1)(x+1)}{x^2}\)。\(0<x<1\) で減少、\(x="">1\) で増加。\(x=1\) で極小値 2。</x<1\)></p></details>
-<details><summary>問題5　\(f(x)=\sin x\) （\(0<x<2\pi\)）の極値< summary=""><p>\(f'(x)=\cos x\)。\(x=\frac\pi2\) で極大値 1、\(x=\frac{3\pi}2\) で極小値 \(-1\)。</p></x<2\pi\)）の極値<></summary></details>
+<details><summary>問題4　\(f(x)=x+\frac1x\) （\(x&gt;0\)）の極値</summary><p>\(f'(x)=1-\frac1{x^2}=\frac{(x-1)(x+1)}{x^2}\)。\(0&lt;x&lt;1\) で減少、\(x&gt;1\) で増加。\(x=1\) で極小値 2。</p></details>
+<p>問題5　\(f(x)=\sin x\)（\(0&lt;x&lt;2\pi\)）の極値を求めなさい。</p><details><summary>解答・解説を表示</summary><p>\(f'(x)=\cos x\) より、\(x=\dfrac{\pi}{2}\) で極大値 \(1\)、\(x=\dfrac{3\pi}{2}\) で極小値 \(-1\) です。</p></details>
 <details><summary>問題6　\(f(x)=x^4\) の \(x=0\) の極値</summary><p>\(f'(x)=4x^3\) は \(x=0\) で負から正に変わるので、\(x=0\) で極小値 0 です。</p></details>
 </section>
 <section><span class="pill">発展・まとめ</span><h2>6. よくある誤りと発展</h2><p>\(f'(x)=0\) となる点を見つけただけでは極値と判断できません。<strong>その点の左右で導関数の符号が変わるか</strong>を必ず確かめましょう。</p><div class="note">次の「関数の最大と最小」では、閉区間の端点も含めて値を比較します。「極大・極小」と「最大・最小」は違う概念です。</div></section>
