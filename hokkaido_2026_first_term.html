@@ -58,13 +58,13 @@ output{font-weight:700;color:#17365d}section[id]{scroll-margin-top:1rem}
 <section class="panel" id="a4"><h2>数学α 第4問　確率と素因数</h2>
 <p>一回ごとに、素因数 \(2,3,5\) のどれか一つが加わります。それぞれの確率は \(\frac46,\frac16,\frac16\) です。</p>
 <h3>(1) 4の倍数</h3><p>素因数2が2個以上必要です。3回中ちょうど2回か3回なので、</p>
-<div class="scroll">\[\binom32\left(\frac23\right)^2\frac13+\left(\frac23\right)^3=\boxed{\frac{20}{27}}.\]</div>
+<div class="scroll">\[{}_{3}\mathrm{C}_{2}\left(\frac23\right)^2\frac13+\left(\frac23\right)^3=\boxed{\frac{20}{27}}.\]</div>
 <h3>(2) 平方数</h3><p>各素因数の指数がすべて偶数になります。指数の組は「4個とも同じ」または「2個ずつ2種類」です。表は、さいころの目の並び \(6^4\) 通りのうちの件数です。</p>
 <table><caption>平方数になる場合</caption><thead><tr><th scope="col">素因数の内訳</th><th scope="col">目の並びの数</th></tr></thead><tbody>
 <tr><td>2を4個</td><td>256</td></tr><tr><td>3を4個／5を4個</td><td>1ずつ</td></tr>
 <tr><td>2と3を2個ずつ／2と5を2個ずつ</td><td>96ずつ</td></tr>
 <tr><td>3と5を2個ずつ</td><td>6</td></tr></tbody></table>
-<p>たとえば2と3を2個ずつなら、2の位置の選び方が \(\binom42=6\) 通りあり、それぞれ2を生む目が4通りずつなので \(6\cdot4^2=96\) 通りです。合計は456通りで、確率は \(\boxed{\frac{19}{54}}\) です。</p></section>
+<p>たとえば2と3を2個ずつなら、2の位置の選び方が \({}_{4}\mathrm{C}_{2}=6\) 通りあり、それぞれ2を生む目が4通りずつなので \(6\cdot4^2=96\) 通りです。合計は456通りで、確率は \(\boxed{\frac{19}{54}}\) です。</p></section>
 
 <section class="panel" id="b1"><h2>数学β 第1問　分数型の漸化式</h2>
 <h3>(1) −2にならないことの証明</h3><p>初項は \(-8\) です。仮に \(a_m=-2\) となる最小の番号 \(m\) があれば、\(m\geqq2\) です。漸化式より \(-2(a_{m-1}+1)=2\)、すなわち \(a_{m-1}=-2\)。最小の番号を選んだことに矛盾します。</p>
