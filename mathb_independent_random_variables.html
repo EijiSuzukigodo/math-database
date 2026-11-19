@@ -72,12 +72,13 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 </head>
 <body>
 <header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>独立な確率変数と期待値・分散</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main" data-hs-lesson=""><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>独立な確率変数と期待値・分散</h2><p>独立である2変数の和の分散は各分散の和になります。</p><p class="hs-outcome"><strong>この授業でできるようになること</strong><br>二つの確率変数が独立かを確かめ、独立な場合に分散を足して計算する。</p></section>
-<p class="hs-notation"><strong>記号の読み方</strong> \(\operatorname{Cov}(X,Y)\) は \(X,Y\) の共分散です。この記号を使う式は発展事項です。</p>
 <nav class="hs-study-nav" aria-label="授業の進め方">
 <a href="#hs-explanation">説明</a>
 <a href="#hs-examples">例題と解説</a>
 <a href="#hs-practice">練習問題</a>
 <a href="#hs-summary">まとめ</a></nav>
+<p class="hs-notation"><strong>記号の読み方</strong> \(\operatorname{Cov}(X,Y)\) は \(X,Y\) の共分散です。この記号を使う式は発展事項です。</p>
+
 
 <article class="paper">
 <h2 id="hs-explanation">1．独立な確率変数とは</h2>
@@ -159,13 +160,13 @@ V(X+Y+Z)=2+3+5=\boxed{10}.
 <p>期待値の計算には独立性は不要ですが、分散の計算では独立性を使っています。</p></div>
 <div class="exercise"><strong>追加練習問題7</strong>
 <p>独立な確率変数 \(X,Y\) が \(E(X)=3,\ E(Y)=1,\ V(X)=2,\ V(Y)=4\) を満たすとき、\(E(3X-2Y)\) と \(V(3X-2Y)\) を求めよ。</p>
-<details><summary>解答・解説を表示</summary>
+<details><summary class="hs-answer-toggle">解答・解説を表示</summary>
 <p>\(E(3X-2Y)=3\cdot3-2\cdot1=\boxed{7}\)。</p>
 <p>\(V(3X-2Y)=3^2\cdot2+(-2)^2\cdot4=\boxed{34}\)。</p>
 </details></div>
 <div class="exercise"><strong>追加練習問題8</strong>
 <p>\(E(X)=2,\ E(Y)=-1,\ E(Z)=5\) のとき、独立性を仮定せず \(E(X+Y+Z)\) を求めよ。</p>
-<details><summary>解答・解説を表示</summary>
+<details><summary class="hs-answer-toggle">解答・解説を表示</summary>
 <p>\(E(X+Y+Z)=2-1+5=\boxed{6}\)。期待値の加法性は独立でなくても成立します。</p>
 </details></div>
 <h2>5．動く教材：2枚の硬貨から考える</h2>
@@ -178,12 +179,12 @@ V(X+Y+Z)=2+3+5=\boxed{10}.
 <div class="example"><strong>例題5：独立でないとどうなる？</strong><p>1枚の公平な硬貨の表を1、裏を0とし、\(Y=X\) とします。\(V(X+Y)\) と \(V(X)+V(Y)\) を比較しましょう。</p></div>
 <div class="answer"><p>\(X+Y=2X\)、\(V(X)=\tfrac14\) より、</p><div class="formula">\[V(X+Y)=4V(X)=1,\qquad V(X)+V(Y)=\frac12.\]</div><p>2つは一致しません。独立性を確かめずに分散の加法公式を使うことはできません。</p></div>
 <h2 id="hs-practice">7．練習問題</h2>
-<div class="exercise"><strong>問題1（元ページの練習問題）</strong><p>独立な \(X,Y\) の分散が3と4である。\(V(X-Y)\) を求めよ。</p><details><summary>解答・解説を表示</summary><p>\(V(X-Y)=3+4=\boxed{7}\)。差でも分散は加えます。</p></details></div>
-<div class="exercise"><strong>問題2</strong><p>独立な \(X,Y\) について \(E(X)=2\), \(E(Y)=3\) である。\(E(XY)\), \(E(X+Y)\) を求めよ。</p><details><summary>解答・解説を表示</summary><p>\(E(XY)=2\cdot3=6\)、\(E(X+Y)=2+3=5\)。</p></details></div>
-<div class="exercise"><strong>問題3</strong><p>独立な \(X,Y\) で \(V(X)=5\), \(V(Y)=8\)。\(V(X+Y)\), \(V(X-Y)\) は？</p><details><summary>解答・解説を表示</summary><p>どちらも \(5+8=13\)。</p></details></div>
-<div class="exercise"><strong>問題4</strong><p>独立な \(X,Y\) がそれぞれ確率 \(\tfrac12\) で0または1を取る。\(P(X+Y=1)\) を求めよ。</p><details><summary>解答・解説を表示</summary><p>\((X,Y)=(0,1),(1,0)\) の2通り。各確率 \(\tfrac14\) より \(\boxed{\tfrac12}\)。</p></details></div>
-<div class="exercise"><strong>問題5</strong><p>同時分布で \(P(X=1)=\tfrac12\), \(P(Y=1)=\tfrac13\), \(P(X=1,Y=1)=\tfrac16\) とする。ただし \(X,Y\) はそれぞれ0か1しか取らない。独立か判定せよ。</p><details><summary>解答・解説を表示</summary><p>\(P(1,1)=\tfrac12\cdot\tfrac13=\tfrac16\)。残りも周辺確率から決まり、\(P(1,0)=\tfrac13\), \(P(0,1)=\tfrac16\), \(P(0,0)=\tfrac13\) で、すべて周辺確率の積と等しいため独立。</p></details></div>
-<div class="exercise"><strong>問題6（発展）</strong><p>独立な \(X,Y\) で、\(V(X)=2\), \(V(Y)=3\) とする。\(V(2X-3Y)\) を求めよ。</p><details><summary>解答・解説を表示</summary><p>定数倍すると分散には係数の2乗がかかるので、\(4\cdot2+9\cdot3=\boxed{35}\)。</p></details></div>
+<div class="exercise"><strong>問題1（元ページの練習問題）</strong><p>独立な \(X,Y\) の分散が3と4である。\(V(X-Y)\) を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(V(X-Y)=3+4=\boxed{7}\)。差でも分散は加えます。</p></details></div>
+<div class="exercise"><strong>問題2</strong><p>独立な \(X,Y\) について \(E(X)=2\), \(E(Y)=3\) である。\(E(XY)\), \(E(X+Y)\) を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(E(XY)=2\cdot3=6\)、\(E(X+Y)=2+3=5\)。</p></details></div>
+<div class="exercise"><strong>問題3</strong><p>独立な \(X,Y\) で \(V(X)=5\), \(V(Y)=8\)。\(V(X+Y)\), \(V(X-Y)\) は？</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>どちらも \(5+8=13\)。</p></details></div>
+<div class="exercise"><strong>問題4</strong><p>独立な \(X,Y\) がそれぞれ確率 \(\tfrac12\) で0または1を取る。\(P(X+Y=1)\) を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\((X,Y)=(0,1),(1,0)\) の2通り。各確率 \(\tfrac14\) より \(\boxed{\tfrac12}\)。</p></details></div>
+<div class="exercise"><strong>問題5</strong><p>同時分布で \(P(X=1)=\tfrac12\), \(P(Y=1)=\tfrac13\), \(P(X=1,Y=1)=\tfrac16\) とする。ただし \(X,Y\) はそれぞれ0か1しか取らない。独立か判定せよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(P(1,1)=\tfrac12\cdot\tfrac13=\tfrac16\)。残りも周辺確率から決まり、\(P(1,0)=\tfrac13\), \(P(0,1)=\tfrac16\), \(P(0,0)=\tfrac13\) で、すべて周辺確率の積と等しいため独立。</p></details></div>
+<div class="exercise"><strong>問題6（発展）</strong><p>独立な \(X,Y\) で、\(V(X)=2\), \(V(Y)=3\) とする。\(V(2X-3Y)\) を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>定数倍すると分散には係数の2乗がかかるので、\(4\cdot2+9\cdot3=\boxed{35}\)。</p></details></div>
 <h2 id="hs-summary">まとめ</h2><p>また、係数付きの和では、期待値は係数をそのまま掛けて加え、独立な確率変数の分散は係数の2乗を掛けて加えます。</p>
 <p>期待値の和は、独立かどうかに関係なく加えることができます。一方、分散の加法公式 \(V(X\pm Y)=V(X)+V(Y)\) を使う際は、<strong>独立であること</strong>を確認します。独立なら積の期待値についても \(E(XY)=E(X)E(Y)\) が使えます。</p>
 </article><nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav></main>

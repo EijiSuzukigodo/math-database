@@ -85,9 +85,9 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <a href="#hs-practice">練習問題</a>
 <a href="#hs-summary">まとめ</a></nav>
 
-<section class="paper"><h2 id="hs-explanation">1. 素数とは</h2><p><b>素数</b>とは、1より大きい自然数で、正の約数が <b>1 とその数自身の2つだけ</b>である数です。</p><div class="note">2, 3, 5, 7, 11, 13, 17, … は素数です。<br/><b>1は素数ではありません。</b> 2は唯一の偶数の素数です。</div><div class="example"><b>例題1</b>　15と17は素数ですか。<details><summary>解答・解説を表示</summary><p>15 = 3 × 5 なので素数ではありません。17の正の約数は1と17だけなので素数です。</p></details></div></section>
+<section class="paper"><h2 id="hs-explanation">1. 素数とは</h2><p><b>素数</b>とは、1より大きい自然数で、正の約数が <b>1 とその数自身の2つだけ</b>である数です。</p><div class="note">2, 3, 5, 7, 11, 13, 17, … は素数です。<br/><b>1は素数ではありません。</b> 2は唯一の偶数の素数です。</div><div class="example"><b>例題1</b>　15と17は素数ですか。<details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>15 = 3 × 5 なので素数ではありません。17の正の約数は1と17だけなので素数です。</p></details></div></section>
 <section class="paper"><h2>2. エラトステネスのふるい</h2><p>1から100までの数から素数を見つけます。まず1を除き、2, 3, 5, 7 の倍数を順に除きます。ただし、それぞれの数自身は残します。</p><div class="controls"><button id="next">次の段階へ</button><button id="reset">最初から</button><strong aria-live="polite" id="stageLabel">準備：1は素数ではありません</strong></div><div class="grid" id="sieve"></div><p class="muted">黄色：残っている素数の候補　灰色：除いた数</p></section>
-<section class="paper"><h2>3. 素因数分解とは</h2><p>自然数を素数だけの積で表すことを<b>素因数分解</b>といいます。</p><div class="formula">60 = 2 × 2 × 3 × 5 = 2<sup>2</sup> × 3 × 5</div><p>素因数分解は、因数を並べる順序を除いて一通りに決まります。</p><div class="example"><b>例題2</b>　84を素因数分解しましょう。<details><summary>解答・解説を表示</summary><p>84 = 2 × 42 = 2 × 2 × 21 = 2 × 2 × 3 × 7</p><div class="formula">84 = 2<sup>2</sup> × 3 × 7</div></details></div></section>
+<section class="paper"><h2>3. 素因数分解とは</h2><p>自然数を素数だけの積で表すことを<b>素因数分解</b>といいます。</p><div class="formula">60 = 2 × 2 × 3 × 5 = 2<sup>2</sup> × 3 × 5</div><p>素因数分解は、因数を並べる順序を除いて一通りに決まります。</p><div class="example"><b>例題2</b>　84を素因数分解しましょう。<details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>84 = 2 × 42 = 2 × 2 × 21 = 2 × 2 × 3 × 7</p><div class="formula">84 = 2<sup>2</sup> × 3 × 7</div></details></div></section>
 <section class="paper"><h2>4. 数を変えて素因数分解を調べよう</h2><p>数を入力すると、素因数分解と因数の木が変わります。</p><div class="controls"><label for="n">自然数（2〜360）</label><input id="n" max="360" min="2" type="number" value="72"/><button id="calc">図を更新</button></div><div aria-live="polite" class="formula" id="result"></div><svg aria-label="素因数分解の木" class="tree" id="tree" role="img" viewbox="0 0 520 260"></svg><p class="muted" id="treeNote"></p></section>
 
 <section class="hs-study-panel" id="hs-examples">
@@ -95,7 +95,7 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <p>84を素因数分解します。</p>
 <p><strong>解き方</strong> 2で2回割ると21、さらに3で割ると7です。7は素数なので \(84=2^2\cdot3\cdot7\) となります。</p>
 </section>
-<section class="paper"><h2 id="hs-practice">5. 練習問題</h2><ol><li>次のうち素数をすべて選びましょう。<br/>1, 2, 9, 13, 21, 29<details><summary>解答・解説を表示</summary>2, 13, 29。1は素数ではなく、9 = 3 × 3、21 = 3 × 7です。</details></li><li>90を素因数分解しましょう。<details><summary>解答・解説を表示</summary>90 = 2 × 45 = 2 × 3 × 3 × 5 = 2 × 3<sup>2</sup> × 5。</details></li><li>180の正の約数は何個ありますか。<details><summary>解答・解説を表示</summary>180 = 2<sup>2</sup> × 3<sup>2</sup> × 5 なので、(2 + 1) × (2 + 1) × (1 + 1) = <b>18個</b>です。</details></li></ol></section>
+<section class="paper"><h2 id="hs-practice">5. 練習問題</h2><ol><li>次のうち素数をすべて選びましょう。<br/>1, 2, 9, 13, 21, 29<details><summary class="hs-answer-toggle">解答・解説を表示</summary>2, 13, 29。1は素数ではなく、9 = 3 × 3、21 = 3 × 7です。</details></li><li>90を素因数分解しましょう。<details><summary class="hs-answer-toggle">解答・解説を表示</summary>90 = 2 × 45 = 2 × 3 × 3 × 5 = 2 × 3<sup>2</sup> × 5。</details></li><li>180の正の約数は何個ありますか。<details><summary class="hs-answer-toggle">解答・解説を表示</summary>180 = 2<sup>2</sup> × 3<sup>2</sup> × 5 なので、(2 + 1) × (2 + 1) × (1 + 1) = <b>18個</b>です。</details></li></ol></section>
 <nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav>
 <section class="hs-study-panel" id="hs-summary">
 <h2>まとめ</h2>

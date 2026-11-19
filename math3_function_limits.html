@@ -166,12 +166,12 @@ mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;max-width:100%}
 <p>\(x\) が大きくなる場合は \(x\to\infty\)、小さくなる場合は \(x\to-\infty\) と表します。</p><div class="formula">\[\lim_{x\to\infty}\frac{2x^2+1}{x^2-3}=2\]</div>
 <p>分子・分母を最高次数の \(x^2\) で割ると、\(\dfrac{2+1/x^2}{1-3/x^2}\to2\) です。</p><p>一方、\(f(x)=1/x\) に対して、\(x\to0+\) で \(+\infty\)、\(x\to0-\) で \(-\infty\) に発散します。これは有限の極限が存在することとは異なります。</p></section>
 <section class="paper"><span class="pill">練習問題</span><h2 id="hs-practice">7．練習問題（解説付き）</h2>
-<div class="exercise"><strong>問1</strong>　\(\displaystyle\lim_{x\to3}(2x^2-x)\)<details><summary>解答・解説を表示</summary><p>直接代入して \(2\cdot9-3=\boxed{15}\)。</p></details></div>
-<div class="exercise"><strong>問2</strong>　\(\displaystyle\lim_{x\to-2}\frac{x^2+3x+2}{x+2}\)<details><summary>解答・解説を表示</summary><p>\(x^2+3x+2=(x+1)(x+2)\)。\(x\ne-2\) で約分し、\(x+1\to\boxed{-1}\)。</p></details></div>
-<div class="exercise"><strong>問3</strong>　\(\displaystyle\lim_{x\to\infty}\frac{3x^2-x}{2x^2+1}\)<details><summary>解答・解説を表示</summary><p>分子・分母を \(x^2\) で割ると \(\dfrac{3-1/x}{2+1/x^2}\to\boxed{\frac32}\)。</p></details></div>
-<div class="exercise"><strong>問4</strong>　\(\displaystyle\lim_{x\to0-}\frac1x\)、\(\displaystyle\lim_{x\to0+}\frac1x\) を調べなさい。<details><summary>解答・解説を表示</summary><p>左側からは \(-\infty\)、右側からは \(+\infty\)。したがって、有限な両側極限は存在しません。</p></details></div></section>
+<div class="exercise"><strong>問1</strong>　\(\displaystyle\lim_{x\to3}(2x^2-x)\)<details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>直接代入して \(2\cdot9-3=\boxed{15}\)。</p></details></div>
+<div class="exercise"><strong>問2</strong>　\(\displaystyle\lim_{x\to-2}\frac{x^2+3x+2}{x+2}\)<details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(x^2+3x+2=(x+1)(x+2)\)。\(x\ne-2\) で約分し、\(x+1\to\boxed{-1}\)。</p></details></div>
+<div class="exercise"><strong>問3</strong>　\(\displaystyle\lim_{x\to\infty}\frac{3x^2-x}{2x^2+1}\)<details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>分子・分母を \(x^2\) で割ると \(\dfrac{3-1/x}{2+1/x^2}\to\boxed{\frac32}\)。</p></details></div>
+<div class="exercise"><strong>問4</strong>　\(\displaystyle\lim_{x\to0-}\frac1x\)、\(\displaystyle\lim_{x\to0+}\frac1x\) を調べなさい。<details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>左側からは \(-\infty\)、右側からは \(+\infty\)。したがって、有限な両側極限は存在しません。</p></details></div></section>
 <section class="paper"><span class="pill">発展</span><h2>8．発展問題</h2>
-<p>\(\displaystyle\lim_{x\to2}\frac{x^2-4}{x^2-3x+2}\) を求めなさい。</p><details><summary>解答・解説を表示</summary><p>分子は \((x-2)(x+2)\)、分母は \((x-2)(x-1)\) なので、\(x\ne2\) で約分して \[\lim_{x\to2}\frac{x+2}{x-1}=\boxed{4}\]となります。</p></details></section>
+<p>\(\displaystyle\lim_{x\to2}\frac{x^2-4}{x^2-3x+2}\) を求めなさい。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>分子は \((x-2)(x+2)\)、分母は \((x-2)(x-1)\) なので、\(x\ne2\) で約分して \[\lim_{x\to2}\frac{x+2}{x-1}=\boxed{4}\]となります。</p></details></section>
 <section class="paper"><h2 id="hs-summary">9．まとめ</h2><p>関数の極限を求めるときは、<strong>左右から同じ値に近づくか</strong>を確認し、計算できる場合は式を整理します。次の「三角関数と極限」では、\(\displaystyle\lim_{x\to0}\frac{\sin x}{x}=1\) などの重要な極限を学びます。</p></section>
 <nav id="md3-bottom-return"></nav></main><script>(function(){'use strict';
 var svg=document.getElementById('limit-plot'), sel=document.getElementById('kind'), sli=document.getElementById('hval'), out=document.getElementById('h-out'), status=document.getElementById('limit-status');

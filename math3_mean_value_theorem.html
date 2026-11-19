@@ -63,12 +63,18 @@ mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;max-width:100%}
 <div class="example"><strong>例題5　導関数の符号への応用</strong><p>ある区間で \(f'(x)&gt;0\) が常に成り立つなら、\(a&lt;b\) に対して平均値の定理より \(f(b)-f(a)=f'(c)(b-a)&gt;0\) です。したがって関数はその区間で<strong>単調増加</strong>です。</p></div>
 </section>
 <section><span class="pill">練習問題</span><h2 id="hs-practice">6. 練習問題（解答・解説付き）</h2>
-<details><summary>問題1　\(f(x)=x^2\)、区間 \([0,4]\) で c を求めよ</summary><p>平均変化率 \(4\)、\(f'(c)=2c=4\)。よって \(\boxed{c=2}\)。</p></details>
-<details><summary>問題2　\(f(x)=x^3\)、区間 \([-1,1]\)</summary><p>平均変化率 \(\frac{1-(-1)}{2}=1\)。\(3c^2=1\) より \(\boxed{c=\pm1/\sqrt3}\)。どちらも区間内です。</p></details>
-<details><summary>問題3　\(f(x)=x^2-4x\)、区間 \([0,4]\) でロルの定理</summary><p>両端は \(0\)。導関数 \(2x-4=0\) より \(\boxed{c=2}\)。</p></details>
-<details><summary>問題4　\(f(x)=1/x\)、区間 \([1,2]\)</summary><p>平均変化率 \(-\frac12\)。導関数は \(-1/x^2\) なので \(-1/c^2=-1/2\) より \(\boxed{c=\sqrt2}\)。</p></details>
-<details><summary>問題5　平均値の定理の仮定を2つ述べよ</summary><p>\(\boxed{[a,b]\text{ で連続、}(a,b)\text{ で微分可能}}\) です。</p></details>
-<details><summary>問題6　\(f'(x)=0\) が区間内のすべての点で成立するとき</summary><p>任意の \(a&lt;b\) で平均値の定理を用いると、\(f(b)-f(a)=f'(c)(b-a)=0\)。よってその区間で \(f\) は一定です。</p></details>
+<p class="hs-exercise-question">問題1　\(f(x)=x^2\)、区間 \([0,4]\) で c を求めよ</p>
+<details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>平均変化率 \(4\)、\(f'(c)=2c=4\)。よって \(\boxed{c=2}\)。</p></details>
+<p class="hs-exercise-question">問題2　\(f(x)=x^3\)、区間 \([-1,1]\)</p>
+<details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>平均変化率 \(\frac{1-(-1)}{2}=1\)。\(3c^2=1\) より \(\boxed{c=\pm1/\sqrt3}\)。どちらも区間内です。</p></details>
+<p class="hs-exercise-question">問題3　\(f(x)=x^2-4x\)、区間 \([0,4]\) でロルの定理</p>
+<details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>両端は \(0\)。導関数 \(2x-4=0\) より \(\boxed{c=2}\)。</p></details>
+<p class="hs-exercise-question">問題4　\(f(x)=1/x\)、区間 \([1,2]\)</p>
+<details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>平均変化率 \(-\frac12\)。導関数は \(-1/x^2\) なので \(-1/c^2=-1/2\) より \(\boxed{c=\sqrt2}\)。</p></details>
+<p class="hs-exercise-question">問題5　平均値の定理の仮定を2つ述べよ</p>
+<details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(\boxed{[a,b]\text{ で連続、}(a,b)\text{ で微分可能}}\) です。</p></details>
+<p class="hs-exercise-question">問題6　\(f'(x)=0\) が区間内のすべての点で成立するとき</p>
+<details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>任意の \(a&lt;b\) で平均値の定理を用いると、\(f(b)-f(a)=f'(c)(b-a)=0\)。よってその区間で \(f\) は一定です。</p></details>
 </section><section><span class="pill">発展・まとめ</span><h2>7. 平均値の定理の活用</h2><p>平均値の定理は、関数の増減や不等式の証明に使われます。<strong>「両端を結ぶ割線と同じ傾きをもつ接線がある」</strong>という幾何学的意味と、連続性・微分可能性の仮定をセットで覚えましょう。</p></section>
 <script>
 (()=>{const svg=document.getElementById('mvt-plot'),left=document.getElementById('left'),right=document.getElementById('right'),lv=document.getElementById('leftv'),rv=document.getElementById('rightv'),status=document.getElementById('mvt-status');if(!svg)return;const W=650,H=430,xmin=-3.2,xmax=3.3,ymin=-1.1,ymax=10.8,X=x=>42+(x-xmin)/(xmax-xmin)*565,Y=y=>H-33-(y-ymin)/(ymax-ymin)*375;const LN=(a,b,c,d,col,w=2)=>`<line x1="${X(a)}" y1="${Y(b)}" x2="${X(c)}" y2="${Y(d)}" stroke="${col}" stroke-width="${w}"/>`;function curve(f){let d='';for(let i=0;i<=280;i++){let x=xmin+(xmax-xmin)*i/280;d+=(i?' L':'M')+X(x).toFixed(2)+','+Y(f(x)).toFixed(2)}return d}function render(){let a=Number(left.value),b=Number(right.value),c=(a+b)/2,m=a+b;lv.textContent=a.toFixed(1);rv.textContent=b.toFixed(1);let s='<rect width="650" height="430" fill="white"/>';for(let x=-3;x<=3;x++)s+=LN(x,ymin,x,ymax,'#e9eef5',1);for(let y=0;y<=10;y+=2)s+=LN(xmin,y,xmax,y,'#e9eef5',1);s+=LN(xmin,0,xmax,0,'#657a8d',2)+LN(0,ymin,0,ymax,'#657a8d',2);s+=`<path d="${curve(x=>x*x)}" fill="none" stroke="#246da5" stroke-width="3"/>`;s+=`<path d="${curve(x=>a*a+m*(x-a))}" fill="none" stroke="#d65246" stroke-width="2.6"/>`;s+=`<path d="${curve(x=>c*c+2*c*(x-c))}" fill="none" stroke="#23976a" stroke-width="2.6"/>`;for(let [x,col] of [[a,'#d65246'],[b,'#d65246'],[c,'#23976a']])s+=`<circle cx="${X(x)}" cy="${Y(x*x)}" r="6" fill="${col}" stroke="white" stroke-width="2"/>`;s+=`<text x="${X(a)+7}" y="${Y(a*a)-9}" font-size="16" fill="#a5362d">A</text><text x="${X(b)+7}" y="${Y(b*b)-9}" font-size="16" fill="#a5362d">B</text><text x="${X(c)+8}" y="${Y(c*c)-13}" font-size="16" fill="#147d58">C</text>`;svg.innerHTML=s;status.textContent=`a=${a.toFixed(1)}、b=${b.toFixed(1)}、c=${c.toFixed(2)}。割線の傾き = ${m.toFixed(2)}、接線の傾き f'(c) = ${(2*c).toFixed(2)}。`; }left.addEventListener('input',render);right.addEventListener('input',render);render()})();

@@ -97,14 +97,14 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <div class="example"><strong>例題6（第一種・第二種の誤り）</strong><p>実際には母平均が50なのに「50ではない」と判定した。何という誤りか。</p></div><div class="answer"><p><strong>第一種の誤り</strong>です。逆に帰無仮説が偽なのに棄却できないのが第二種の誤りです。</p></div>
 <h2>6．発展：二項分布の正確な検定</h2><p>成功確率が \(1/2\) という帰無仮説のもとで、独立な試行を10回行って9回成功したとします。右片側p値は正規近似ではなく二項分布から直接計算できます。</p><div class="formula">\[\begin{aligned}p&amp;=P(X\geqq9)\&amp;=\frac{{}_{10}\mathrm{C}_{9}+{}_{10}\mathrm{C}_{10}}{2^{10}}\&amp;=\frac{11}{1024}\approx0.0107\end{aligned}\]</div><p>5％水準なら棄却し、1％水準では棄却できません。標本が小さい場合は、このように元の確率分布を使う方法が重要です。</p>
 <h2 id="hs-practice">7．練習問題</h2>
-<div class="exercise"><strong>練習1（元の教材）</strong><p>標本平均52、\(\mu_0=50,\ \sigma=10,\ n=100\) の \(Z\) を求めよ。</p><details><summary>解答・解説を表示</summary><div class="formula">\[Z=\frac{52-50}{10/\sqrt{100}}=\boxed{2}\]</div></details></div>
-<div class="exercise"><strong>練習2</strong><p>\(\mu_0=100,\ \sigma=15,\ n=25,\ \bar X=94\)。\(Z\) を求めよ。</p><details><summary>解答・解説を表示</summary><p>\(15/\sqrt{25}=3\) なので \(Z=(94-100)/3=\boxed{-2}\)。</p></details></div>
-<div class="exercise"><strong>練習3</strong><p>練習2の値で、有意水準5％の両側検定なら帰無仮説を棄却するか。</p><details><summary>解答・解説を表示</summary><p>\(|-2|&gt;1.96\) なので棄却します。</p></details></div>
-<div class="exercise"><strong>練習4</strong><p>\(Z=1.7\) のとき、有意水準5％の右片側検定ではどうか。</p><details><summary>解答・解説を表示</summary><p>\(1.7&gt;1.645\) なので棄却します。</p></details></div>
-<div class="exercise"><strong>練習5</strong><p>\(Z=1.7\) のとき、有意水準5％の両側検定ではどうか。</p><details><summary>解答・解説を表示</summary><p>\(|1.7|&lt;1.96\) なので棄却できません。検定の方向に注意します。</p></details></div>
-<div class="exercise"><strong>練習6</strong><p>両側検定のp値が0.03である。有意水準5％と1％それぞれの結論を答えよ。</p><details><summary>解答・解説を表示</summary><p>5％では \(0.03&lt;0.05\) より棄却、1％では \(0.03&gt;0.01\) より棄却できません。</p></details></div>
-<div class="exercise"><strong>練習7</strong><p>帰無仮説が正しいのに棄却した。この誤りの名称を答えよ。</p><details><summary>解答・解説を表示</summary><p>第一種の誤りです。</p></details></div>
-<div class="exercise"><strong>練習8</strong><p>独立な硬貨投げを5回行い5回とも表だった。帰無仮説「表の確率は1/2」のもとで、右片側p値を求めよ。</p><details><summary>解答・解説を表示</summary><div class="formula">\[P(X\geqq5)=\frac{1}{2^5}=\boxed{\frac1{32}=0.03125}\]</div><p>5％水準では帰無仮説を棄却します。</p></details></div>
+<div class="exercise"><strong>練習1（元の教材）</strong><p>標本平均52、\(\mu_0=50,\ \sigma=10,\ n=100\) の \(Z\) を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><div class="formula">\[Z=\frac{52-50}{10/\sqrt{100}}=\boxed{2}\]</div></details></div>
+<div class="exercise"><strong>練習2</strong><p>\(\mu_0=100,\ \sigma=15,\ n=25,\ \bar X=94\)。\(Z\) を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(15/\sqrt{25}=3\) なので \(Z=(94-100)/3=\boxed{-2}\)。</p></details></div>
+<div class="exercise"><strong>練習3</strong><p>練習2の値で、有意水準5％の両側検定なら帰無仮説を棄却するか。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(|-2|&gt;1.96\) なので棄却します。</p></details></div>
+<div class="exercise"><strong>練習4</strong><p>\(Z=1.7\) のとき、有意水準5％の右片側検定ではどうか。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(1.7&gt;1.645\) なので棄却します。</p></details></div>
+<div class="exercise"><strong>練習5</strong><p>\(Z=1.7\) のとき、有意水準5％の両側検定ではどうか。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(|1.7|&lt;1.96\) なので棄却できません。検定の方向に注意します。</p></details></div>
+<div class="exercise"><strong>練習6</strong><p>両側検定のp値が0.03である。有意水準5％と1％それぞれの結論を答えよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>5％では \(0.03&lt;0.05\) より棄却、1％では \(0.03&gt;0.01\) より棄却できません。</p></details></div>
+<div class="exercise"><strong>練習7</strong><p>帰無仮説が正しいのに棄却した。この誤りの名称を答えよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>第一種の誤りです。</p></details></div>
+<div class="exercise"><strong>練習8</strong><p>独立な硬貨投げを5回行い5回とも表だった。帰無仮説「表の確率は1/2」のもとで、右片側p値を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><div class="formula">\[P(X\geqq5)=\frac{1}{2^5}=\boxed{\frac1{32}=0.03125}\]</div><p>5％水準では帰無仮説を棄却します。</p></details></div>
 <h2 id="hs-summary">8．まとめ</h2><p>帰無仮説を置き、観測結果がそれと矛盾する程度を評価します。例題で使った考え方を、練習問題でも確かめましょう。</p><p><strong>「仮説 → 検定統計量 → 棄却域・p値 → 結論」</strong>の順に整理することが大切です。棄却できないことと、帰無仮説が真と確定することは違います。</p>
 </article><nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav></main>
 <script>
