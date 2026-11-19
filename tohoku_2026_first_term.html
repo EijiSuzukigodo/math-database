@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ja"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>東北大学 2026年度 前期試験｜みんなの数学データベース</title>
+<style>*{box-sizing:border-box}body{margin:0;background:#f4f7fb;color:#1d2939;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.8}header{background:linear-gradient(110deg,#17365d,#245b91);color:white;padding:28px 0}a{color:#176cae}.wrap{width:min(960px,calc(100% - 32px));margin:auto}header a{color:white}h1{font-size:clamp(24px,4vw,34px);margin:12px 0 4px}main{padding:28px 0 60px}.panel{background:white;border:1px solid #d9e5f1;border-radius:16px;padding:22px;margin-bottom:18px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:14px}.card{border:1px solid #dde6f0;border-radius:12px;padding:16px;background:#fff}h2{color:#17365d}h3{color:#17365d;margin:0 0 6px}.muted{color:#596b7e}.notice{background:#fff7e9;border-left:4px solid #cc8a20;padding:12px 16px;border-radius:8px}.btn{display:inline-block;background:#176cae;color:white;padding:9px 16px;border-radius:9px;text-decoration:none;font-weight:bold}footer{background:#132c4a;color:#e5eaf1;padding:20px 0;font-size:13px}
+h2{margin-top:0}h3{margin-top:1.15rem}.panel{padding:clamp(14px,3vw,22px)}
+.panel p{margin:.65rem 0}.scroll{overflow-x:auto;max-width:100%}
+table{border-collapse:collapse;width:100%;margin:1rem 0;text-align:left}
+th,td{padding:.5rem;border:1px solid #d9e5f1}th{background:#eef5fc}
+caption{text-align:left;font-weight:700;color:#17365d}
+figure{margin:1rem 0 0;border:1px solid #d9e5f1;border-radius:12px;padding:clamp(10px,2vw,16px)}
+canvas{display:block;width:100%;max-width:680px;height:auto;margin:.5rem auto}
+input[type=range]{display:block;width:100%;max-width:420px;accent-color:#176cae}
+output{font-weight:700;color:#17365d}section[id]{scroll-margin-top:1rem}
+</style><link rel="stylesheet" href="lesson_common_style.css">
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head><body>
+<header><div class="wrap"><div class="site-parent-link"><a href="tohoku_university_exams.html">東北大学の入試一覧に戻る</a></div><h1>東北大学 2026年度 前期試験</h1></div></header>
+<main class="wrap">
+<section class="panel" aria-labelledby="official">
+<h2 id="official">東北大学の公式問題</h2>
+<ul>
+<li><a href="https://admissions.tohoku.ac.jp/ja/adcms/wp-content/uploads/2026/05/eq_2026mathematics_l.pdf">前期 数学（文系等）の問題（PDF）</a></li>
+<li><a href="https://admissions.tohoku.ac.jp/ja/adcms/wp-content/uploads/2026/05/eq_2026mathematics_s.pdf">前期 数学（理系）の問題（PDF）</a></li>
+<li><a href="https://admissions.tohoku.ac.jp/ja/materials/ito/">東北大学の過去問公開ページ</a></li>
+</ul>
+<p>以下は「みんなの数学データベース」の独自解答です。第1問と第2問は共通解説にまとめています。</p>
+</section>
+<nav class="panel" aria-label="解答の目次"><h2>解答の目次</h2>
+<p>文系等 ｜ <a href="#c1">第1問</a>　<a href="#c2">第2問</a>　<a href="#l3">第3問</a>　<a href="#l4">第4問</a></p>
+<p>理系 ｜ <a href="#c1">第1問</a>　<a href="#c2">第2問</a>　<a href="#s3">第3問</a>　<a href="#s4">第4問</a>　<a href="#s5">第5問</a>　<a href="#s6">第6問</a></p>
+</nav>
+<section class="panel" id="c1"><h2>文系等・理系 第1問　放物線の接線と垂直二等分線</h2>
+<h3>(1) 接線の本数</h3>
+<p>接点を \((r,r^2)\) とすると接線は \(y=2rx-r^2\) です。これが \((u,u-1)\) を通る条件は \(r^2-2ur+u-1=0\) です。判別式の4分の1は \(u^2-u+1=(u-\frac12)^2+\frac34&gt;0\) なので、異なる接点が2つあります。接線の傾きも異なります。</p>
+<h3>(2) 垂直二等分線と最小値</h3>
+<p>2つの解を \(r_1,r_2\) とすると、解と係数の関係から \(r_1+r_2=2u\)、\(r_1r_2=u-1\) です。接点を結ぶ直線の傾きは \(r_1+r_2=2u\)、中点は \((u,2u^2-u+1)\) です。\(u&gt;0\) なので垂直二等分線の傾きは \(-\frac{1}{2u}\) となり、\(y\) 軸と交わります。</p>
+<div class="scroll">\[q(u)=2u^2-u+1+\frac12=2\left(u-\frac14\right)^2+\frac{11}{8}.\]</div>
+<p>最小値は \(\boxed{\frac{11}{8}}\)、そのとき \(\boxed{u=\frac14}\) です。</p>
+</section>
+<section class="panel" id="c2"><h2>文系等・理系 第2問　平方数の余り</h2>
+<h3>(1) 正の整数解の例</h3><p>\(1^2+2\cdot2^2=3^2\) なので \(\boxed{(1,2,3)}\) です。</p>
+<h3>(2) 無数にあること</h3><p>正の整数 \(k\) に対し、等式の両辺を \(k^2\) 倍すると \((k,2k,3k)\) も解です。\(k\) を変えると異なる解が得られます。</p>
+<h3>(3) 偶数と4の倍数</h3><p>\(c^2-a^2=2b^2\) は偶数なので、\(a,c\) の偶奇は同じです。したがって \(a+c\) は偶数です。平方数を4で割った余りは、元の整数が偶数なら0、奇数なら1です。同じ偶奇なので \(c^2-a^2\) は4の倍数となり、\(b\) は偶数です。</p>
+<p>さらに \(a,c\) が偶数なら、\((c/2)^2-(a/2)^2=2(b/2)^2\) に同じ議論を適用できます。よって \(b/2\) も偶数、つまり \(b\) は4の倍数です。</p>
+</section>
+<section class="panel" id="l3"><h2>文系等 第3問　垂直な線分と円</h2>
+<h3>(1) 内積で垂直条件を表す</h3><p>\(\overrightarrow{AE}=t\vec b-\vec a\)、\(\overrightarrow{BD}=s\vec a-\vec b\) です。内積を0とおくと \(st-5t-2s+1=0\)。\(0&lt;s&lt;1\) では分母が正なので、\(0&lt;t&lt;1\) となる範囲は次のとおりです。</p>
+<div class="scroll">\[\boxed{t=\frac{1-2s}{5-s}},\qquad \boxed{0&lt;s&lt;\frac12}.\]</div>
+<h3>(2) 交点の位置ベクトル</h3><p>\(\overrightarrow{OF}=u\vec a+v\vec b\) とおきます。直線 \(AE\) 上では \(u+v/t=1\)、直線 \(BD\) 上では \(u/s+v=1\) です。両式を解き、(1)を代入します。</p>
+<div class="scroll">\[\overrightarrow{OF}=\frac{s(1-t)\vec a+t(1-s)\vec b}{1-st}
+=\boxed{\frac{s(s+4)\vec a+(1-s)(1-2s)\vec b}{2s^2-2s+5}}.\]</div>
+<h3>(3) 円の半径</h3><p>\(\vec p=\overrightarrow{OP}\)、\(\vec f=\overrightarrow{OF}\)、\(\vec v=\vec b-\vec a\) とおきます。平方完成すると \(|\vec p+\vec v|^2=4+|\vec v|^2+2\vec f\cdot\vec v=9+2\vec f\cdot\vec v\) です。したがって半径が3であるための必要十分条件は \(\boxed{\overrightarrow{OF}\cdot(\vec b-\vec a)=0}\) です。</p>
+<p>\(\vec a\cdot\vec v=-1\)、\(\vec b\cdot\vec v=4\) より、分子を0とおくと \(-s(s+4)+4(1-s)(1-2s)=(s-2)(7s-2)=0\)。範囲に入るのは \(\boxed{s=\frac27}\) です。</p>
+</section>
+<section class="panel" id="l4"><h2>文系等 第4問　4次関数と面積比</h2>
+<h3>(1) 極値とグラフ</h3><p>\(f'(x)=2x(2x^2-1)\) です。\(r=\frac1{\sqrt2}\) とおくと、増減は次のようになります。グラフは \(y\) 軸対称で、\(x=-1,0,1\) で \(x\) 軸と共有点をもちます。</p>
+<table><caption>増減の向きと極値</caption><thead><tr><th scope="col">区間</th><th scope="col">増減</th><th scope="col">右端の値</th></tr></thead><tbody>
+<tr><td>\(x&lt;-r\)</td><td>減少</td><td>極小値 \(-\frac14\)</td></tr>
+<tr><td>\(-r&lt;x&lt;0\)</td><td>増加</td><td>極大値 \(0\)</td></tr>
+<tr><td>\(0&lt;x&lt;r\)</td><td>減少</td><td>極小値 \(-\frac14\)</td></tr>
+<tr><td>\(r&lt;x\)</td><td>増加</td><td>—</td></tr></tbody></table>
+<figure><canvas id="quartic" width="640" height="320" role="img" aria-label="左右対称のW字形の4次関数と、2つの極小点を通る水平接線">極小点は \(x=\pm 1/\sqrt2\) にあり、中心の極大点は原点です。</canvas><figcaption>青が \(y=x^4-x^2\)、橙が水平接線です。</figcaption></figure>
+<h3>(2) 2点で接する水平線</h3><p>傾きが0で高さが一致するのは左右の極小点なので、\(\boxed{y=-\frac14}\) です。</p>
+<h3>(3) 面積の比較</h3><p>水平線の高さを \(h\) とします。\(-\frac14&lt;h&lt;0\) では交点が4個、\(h=0\) では3個なので、条件を満たすには \(h&gt;0\) が必要です。面積 \(T\) は、少なくとも \([-1,1]\) で曲線と高さ \(h\) の水平線に挟まれる部分を含みます。</p>
+<div class="scroll">\[T&gt;\int_{-1}^1(x^2-x^4)\,\mathrm{d}x=\frac4{15},\qquad
+S=\int_{-r}^{r}\left(x^2-\frac12\right)^2\mathrm{d}x=\frac{4}{15\sqrt2}.\]</div>
+<p>よって \(\boxed{T/S&gt;\sqrt2}\) です。</p>
+</section>
+<section class="panel" id="s3"><h2>理系 第3問　つなぎ目で微分可能な関数</h2>
+<h3>(1) 係数の決定</h3><p>内側の式を \(F(x)\)、外側の式を \(G(x)\) とします。\(x=\pm1\) で値と導関数がそれぞれ一致するため、\(G-F\) は \(1,-1\) を重解にもちます。最高次係数が3なので \(G-F=3(x^2-1)^2\) です。係数を比べると \(\boxed{(a,b,c,d)=(8,-12,0,5)}\) です。</p>
+<h3>(2) 最小値</h3><p>内側では \(F'(x)=12x(2x-1)\) より、候補は \(-1,\frac12,1\)。それぞれの値は \(-12,\frac32,4\) です。外側では \(G'(x)=12x(x^2+2x-2)\) なので、左側は \(x=-1-\sqrt3\) まで減少し、その後 \(-1\) まで増加します。右側 \(x&gt;1\) では増加します。</p>
+<p>特に左側の極小値は \(f(-1)\) より小さいので、全体の最小値は \(\boxed{-39-24\sqrt3}\)、そのとき \(\boxed{x=-1-\sqrt3}\) です。</p>
+</section>
+<section class="panel" id="s4"><h2>理系 第4問　格子上のランダムウォーク</h2>
+<h3>(1) 座標を取り替えて数える</h3><p>\(u=x+y,\ v=x-y\) とおくと、1歩は \((u,v)\) の符号付きの変化 \((1,1),(1,-1),(-1,1),(-1,-1)\) のどれかです。2座標それぞれの \(+1\) を置く時刻を独立に選べるので、8歩で \((u,v)\) に着く経路の数は \(\binom{8}{(8+u)/2}\binom{8}{(8+v)/2}\) です。\((x,y)=(4,0)\) では \((u,v)=(4,4)\) より \(\boxed{784/4^8=49/4096}\) です。</p>
+<h3>(2) 双曲線上の終点</h3><p>条件は \(uv=16\) です。\(u,v\) は偶数で絶対値が8以下なので、次の表で尽くされます。</p>
+<table><caption>終点の候補と経路数</caption><thead><tr><th scope="col">\((u,v)\) の正の組</th><th scope="col">各組の経路数</th><th scope="col">両方負の組を含む合計</th></tr></thead><tbody><tr><td>\((4,4)\)</td><td>784</td><td>1568</td></tr><tr><td>\((2,8),(8,2)\)</td><td>各56</td><td>224</td></tr></tbody></table>
+<p>確率は \(\boxed{1792/4^8=7/256}\) です。</p>
+<h3>(3) 条件付き確率</h3><p>\((4,2)\) へは最低6歩必要で、座標の和の偶奇から候補時刻は6だけです。そこまでは右4歩と上2歩を並べる15通り。残り2歩で双曲線上に到達するには、\((4,0)\) へ下に2歩の1通り、または \((5,3)\) へ右と上を1歩ずつの2通りです。よって求める確率は \(\boxed{45/1792}\) です。</p>
+</section>
+<section class="panel" id="s5"><h2>理系 第5問　媒介変数表示と回転体</h2>
+<h3>(1) 垂直接線</h3><p>\(x'=e^t(\cos t-\sin t)\) は \(t=\frac\pi4\) で0、同時に \(y'=e^t(\sin t+\cos t)&gt;0\) です。よって \(\boxed{x=e^{\pi/4}/\sqrt2}\) です。</p>
+<h3>(2) 三角関数と指数関数の積の積分</h3><p>部分積分より定数項を除いて \(\alpha I=e^{\alpha t}\cos\beta t+\beta J\)、\(\alpha J=e^{\alpha t}\sin\beta t-\beta I\)。連立して解きます。</p>
+<div class="scroll">\[I=\frac{e^{\alpha t}(\alpha\cos\beta t+\beta\sin\beta t)}{\alpha^2+\beta^2}+C_1,\qquad
+J=\frac{e^{\alpha t}(\alpha\sin\beta t-\beta\cos\beta t)}{\alpha^2+\beta^2}+C_2.\]</div>
+<h3>(3) 断面積を積分する</h3><p>領域を囲む曲線の枝は \(0\leqq t\leqq\frac\pi4\) です。この区間では \(x\) が増加し、回転体の断面は半径 \(y(t)\) の円になります。</p>
+<div class="scroll">\[V=\pi\int_0^{\pi/4}e^{3t}\sin^2t(\cos t-\sin t)\,\mathrm{d}t.\]</div>
+<p>積の部分は \((\cos t-\cos3t-3\sin t+\sin3t)/4\) です。(2)を用いて積分すると、原始関数は次の式です。</p>
+<div class="scroll">\[\frac{e^{3t}}{60}(9\cos t-12\sin t-5\cos3t).\]</div>
+<p>両端を代入して \(\boxed{V=\frac{\pi}{60}(\sqrt2\,e^{3\pi/4}-4)}\) です。</p>
+</section>
+<section class="panel" id="s6"><h2>理系 第6問　球面と方べき</h2>
+<h3>(1) 同じ平面上にあること</h3><p>\(O,A,P\) は同一直線上、\(O,B,Q\) も同一直線上です。直線 \(AP\) は球面と \(A,P\) の2点で交わるので、球面上の別の点 \(B\) はその直線上にありません。したがって平面 \(ABP\) は直線 \(AP\) と直線 \(OB\) を含み、\(Q\) も含みます。</p>
+<h3>(2) 球面上にあること</h3><p>球の中心の位置ベクトルを \(\vec m\)、半径を \(R\)、\(k=|\vec m|^2-R^2\) とします。球面条件は \(|\vec x|^2-2\vec m\cdot\vec x+k=0\) です。\(\vec x=t\overrightarrow{OA}\) を代入した2次方程式の解は \(1,a\) なので、解の積から \(k=a|\overrightarrow{OA}|^2\) です。同様に \(\vec x=t\overrightarrow{OB}\) を代入すると、一方の解が1で他方が \(k/|\overrightarrow{OB}|^2=b\) です。ゆえに \(Q\) は球面上にあります。</p>
+<p>直線 \(CD\) と球面の交点は \(C,D\) で尽くされるので、\(\boxed{Q=C\ \text{または}\ Q=D}\) です。</p>
+</section>
+</main>
+<footer><div class="wrap"><div class="site-parent-link"><a href="tohoku_university_exams.html">東北大学の入試一覧に戻る</a></div>みんなの数学データベース</div></footer>
+<script defer src="tohoku_2026_exam_graphs.js"></script>
+</body></html>

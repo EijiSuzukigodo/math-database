@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ja"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>東北大学 2026年度 後期試験｜みんなの数学データベース</title>
+<style>*{box-sizing:border-box}body{margin:0;background:#f4f7fb;color:#1d2939;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.8}header{background:linear-gradient(110deg,#17365d,#245b91);color:white;padding:28px 0}a{color:#176cae}.wrap{width:min(960px,calc(100% - 32px));margin:auto}header a{color:white}h1{font-size:clamp(24px,4vw,34px);margin:12px 0 4px}main{padding:28px 0 60px}.panel{background:white;border:1px solid #d9e5f1;border-radius:16px;padding:22px;margin-bottom:18px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:14px}.card{border:1px solid #dde6f0;border-radius:12px;padding:16px;background:#fff}h2{color:#17365d}h3{color:#17365d;margin:0 0 6px}.muted{color:#596b7e}.notice{background:#fff7e9;border-left:4px solid #cc8a20;padding:12px 16px;border-radius:8px}.btn{display:inline-block;background:#176cae;color:white;padding:9px 16px;border-radius:9px;text-decoration:none;font-weight:bold}footer{background:#132c4a;color:#e5eaf1;padding:20px 0;font-size:13px}
+h2{margin-top:0}h3{margin-top:1.15rem}.panel{padding:clamp(14px,3vw,22px)}
+.panel p{margin:.65rem 0}.scroll{overflow-x:auto;max-width:100%}
+table{border-collapse:collapse;width:100%;margin:1rem 0;text-align:left}
+th,td{padding:.5rem;border:1px solid #d9e5f1}th{background:#eef5fc}
+caption{text-align:left;font-weight:700;color:#17365d}
+figure{margin:1rem 0 0;border:1px solid #d9e5f1;border-radius:12px;padding:clamp(10px,2vw,16px)}
+canvas{display:block;width:100%;max-width:680px;height:auto;margin:.5rem auto}
+input[type=range]{display:block;width:100%;max-width:420px;accent-color:#176cae}
+output{font-weight:700;color:#17365d}section[id]{scroll-margin-top:1rem}
+</style><link rel="stylesheet" href="lesson_common_style.css">
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head><body>
+<header><div class="wrap"><div class="site-parent-link"><a href="tohoku_university_exams.html">東北大学の入試一覧に戻る</a></div><h1>東北大学 2026年度 後期試験</h1></div></header>
+<main class="wrap">
+<section class="panel" aria-labelledby="official">
+<h2 id="official">東北大学の公式問題</h2>
+<ul>
+<li><a href="https://admissions.tohoku.ac.jp/ja/adcms/wp-content/uploads/2026/05/lq_2026mathematics_l.pdf">後期 数学（文系）の問題（PDF）</a></li>
+<li><a href="https://admissions.tohoku.ac.jp/ja/adcms/wp-content/uploads/2026/05/lq_2026mathematics_s.pdf">後期 数学（理系）の問題（PDF）</a></li>
+<li><a href="https://admissions.tohoku.ac.jp/ja/materials/ito/">東北大学の過去問公開ページ</a></li>
+</ul>
+<p>以下は「みんなの数学データベース」の独自解答です。第1問と第2問は共通解説にまとめています。</p>
+</section>
+<nav class="panel" aria-label="解答の目次"><h2>解答の目次</h2>
+<p>文系 ｜ <a href="#c1">第1問</a>　<a href="#c2">第2問</a>　<a href="#l3">第3問</a>　<a href="#l4">第4問</a></p>
+<p>理系 ｜ <a href="#c1">第1問</a>　<a href="#c2">第2問</a>　<a href="#s3">第3問</a>　<a href="#s4">第4問</a>　<a href="#s5">第5問</a>　<a href="#s6">第6問</a></p>
+</nav>
+<section class="panel" id="c1"><h2>文系・理系 第1問　球面を平面で切った円</h2>
+<h3>理系 (1)　内積の和の最大・最小</h3><p>\(P=(x,y,z)\) とおき、\(\overrightarrow{AP}=\overrightarrow{OP}-\overrightarrow{OA}\) などを展開します。\(|\overrightarrow{OP}|^2=1\) で、\(\overrightarrow{OA},\overrightarrow{OB},\overrightarrow{OC}\) は互いに垂直なので \(w=3-2(x+y+z)\) です。</p>
+<p>\(x+y+z\) は \((1,1,1)\) との内積なので、絶対値は \(\sqrt3\) 以下です。\(w\) の最大値は \(\boxed{3+2\sqrt3}\) で \(P=-\frac1{\sqrt3}(1,1,1)\)、最小値は \(\boxed{3-2\sqrt3}\) で \(P=\frac1{\sqrt3}(1,1,1)\) です。</p>
+<h3>文系 (1)・理系 (2)　円の中心と半径</h3><p>\(w=1\) なら \(x+y+z=1\)。原点からこの平面に下ろした垂線の足は \(H=(\frac13,\frac13,\frac13)\) です。\(OH^2=1/3\) なので、三平方の定理から円の中心は \(\boxed{H}\)、半径は \(\boxed{\sqrt{2/3}}\) です。</p>
+<h3>文系 (2)・理系 (3)　円周上の点と \(D\) の距離</h3><p>\(\vec u=\overrightarrow{HP}\) とおくと、\(u_x+u_y+u_z=0\) です。よって \(\vec u\cdot\overrightarrow{OD}=\vec u\cdot(-1,0,1)\) で、絶対値は \(\sqrt{2/3}\sqrt2=2/\sqrt3\) 以下です。</p>
+<div class="scroll">\[PD^2=|\overrightarrow{OP}|^2+|\overrightarrow{OD}|^2-2\overrightarrow{OP}\cdot\overrightarrow{OD}
+=11-2\vec u\cdot(-1,0,1).\]</div>
+<p>したがって最大値は \(\boxed{11+4/\sqrt3}\) で \(P=H-\frac1{\sqrt3}(-1,0,1)\)、最小値は \(\boxed{11-4/\sqrt3}\) で \(P=H+\frac1{\sqrt3}(-1,0,1)\) です。</p>
+</section>
+<section class="panel" id="c2"><h2>文系・理系 第2問　二項定理と小数の桁</h2>
+<h3>(1) 最初の2項に注目</h3><p>\((1+\frac1{1000})^{1000}\) を展開すると、最初の2項の和は \(1+1000\cdot\frac1{1000}=2\) です。残りの項はすべて正なので、全体は2より大きくなります。</p>
+<h3>(2) 小数第3000位</h3><p>元の数を \(1000^{1000}=10^{3000}\) 倍し、整数部分の一の位を調べます。展開の第 \(k\) 項を指数 \(k\) で数えると、\(0\leqq k\leqq999\) の項は \(\binom{1002}{k}\,1000^{1000-k}\) で、すべて1000の倍数です。残る3項は</p>
+<div class="scroll">\[\binom{1002}{2}+\frac{1002}{1000}+\frac{1}{1000^2}=501502.002001.\]</div>
+<p>よって小数第3000位は \(\boxed{2}\) です。</p>
+</section>
+<section class="panel" id="l3"><h2>文系 第3問　4次方程式の実数解</h2>
+<p>\(1,-1\) が解なので、左辺は \((x^2-1)(x^2+ax+k)\) と因数分解できます。係数を比べると \(b=k-1,\ c=-a,\ d=-k\) です。条件 (ii) は \((k-1)^2=2-2k\)、つまり \(k^2=1\) となります。</p>
+<h3>\(k=1\) の場合</h3><p>\(b=0,\ d=-1\) より条件 (iii) は \(a^2=3a\)。\(a=0\) なら2次因子 \(x^2+1\) に実数解はなく、適します。\(a=3\) なら判別式が正で、その2つの実数解は \(1,-1\) のどちらでもないので除きます。</p>
+<h3>\(k=-1\) の場合</h3><p>2次因子は \(x^2+ax-1\)。判別式は正なので、条件 (i) を満たすためにはその2根が \(1,-1\) である必要があります。よって \(a=0\) ですが、\((a,b,c,d)=(0,-2,0,1)\) では条件 (iii) の右辺が \(-6\) となり不適です。</p>
+<p>以上より \(\boxed{(a,b,c,d)=(0,0,0,-1)}\) です。</p>
+</section>
+<section class="panel" id="l4"><h2>文系 第4問　接線と2つの曲線に囲まれる領域</h2>
+<h3>(1) 接線と交点</h3><p>\(f'(0)=8,\ f(0)=-15\) より接線は \(L(x)=8x-15\) です。\(f-L=3x^2(2x-5)\)、\(g-L=-(4x-3)(4x+5)\) なので \(\boxed{(a,b,p,q)=(8,-15,\frac52,\frac34)}\) です。</p>
+<h3>(2) 曲線どうしの交点</h3><p>\(f-g=(x-1)(6x^2+7x+15)\) です。2次因子は判別式 \(49-360&lt;0\) なので常に正です。共有点は \(\boxed{(1,-16)}\) のみです。</p>
+<h3>(3) 面積</h3><p>下側は \(f\)、上側は \(L,g\) の低い方です。\(0\leqq x\leqq\frac34\) では \(L\)、\(\frac34\leqq x\leqq1\) では \(g\) が上端です。\(x&gt;1\) では \(f&gt;g\) なので領域はありません。</p>
+<div class="scroll">\[S=\int_0^{3/4}(L-f)\,\mathrm{d}x+\int_{3/4}^{1}(g-f)\,\mathrm{d}x
+=\frac{837}{512}+\frac{1201}{1536}=\boxed{\frac{29}{12}}.\]</div>
+</section>
+<section class="panel" id="s3"><h2>理系 第3問　三角関数の極限</h2>
+<p>有限な極限をもつには、分子の定数項 \(\sin a+\cos b\) が0でなければなりません。\(\cos b=\cos(a+\frac\pi2)\) なので、\(b\) は \(a+\frac\pi2\) または \(-a-\frac\pi2\) と \(2\pi\) の整数倍だけ異なります。</p>
+<p>定数項が消えれば、微分係数の定義から極限は \(\cos a-\sin b\) です。第1の場合は0です。第2の場合は \(2\cos a\) なので、正の整数となるのは1または2です。\(\cos a=\frac12\) または1を解き、それぞれ \(b\) を指定範囲に戻します。</p>
+<div class="scroll">\[\boxed{(a,b)=\left(0,\frac{3\pi}{2}\right),\quad
+\left(\frac\pi3,\frac{7\pi}{6}\right),\quad
+\left(\frac{5\pi}{3},\frac{11\pi}{6}\right)}.\]</div>
+</section>
+<section class="panel" id="s4"><h2>理系 第4問　有理数の平方と素因数</h2>
+<h3>(1) 平方が整数なら整数</h3><p>\(r=u/v\) を既約分数とし、\(v&gt;0\) とします。\(r^2\) が整数なら \(v^2\) は \(u^2\) を割り切ります。\(v&gt;1\) なら公約数となる素数が生じるので、\(v=1\) です。</p>
+<h3>(2) 指数の偶奇</h3><p>第2式は \((x^2-n)^2=0\) なので \(n=x^2\)、第1式は \(y^2=2x^3\) となります。(1)をそれぞれに適用すると \(x,y\) は整数です。\(x=0\) なら \(n=0\) が立方数で割り切れ、\(x&lt;0\) なら \(y^2&lt;0\) なので、\(x&gt;0\) です。</p>
+<p>\(x\) が素数の平方で割り切れると \(n=x^2\) はその素数の立方で割り切れます。したがって \(x\) に現れる素因数はすべて指数1です。\(2x^3\) が平方数になるには、奇素数が現れず、2の指数が \(1+3=4\) となる必要があります。よって \(x=2\) です。</p>
+<p>実際に条件を満たし、\(\boxed{n=4,\quad (x,y)=(2,4),(2,-4)}\) です。</p>
+</section>
+<section class="panel" id="s5"><h2>理系 第5問　さいころと独立な移動</h2>
+<p>点 \(A\) の移動方向は \(X\) の偶奇、点 \(B\) の移動方向は3の倍数かどうかで決まります。各列で \(A\) の正負が半々なので、\(A,B\) の方向も独立です。\(C\) は別のさいころで決まります。</p>
+<table><caption>大きいさいころの目と移動方向</caption><thead><tr><th scope="col">点 \(A\)</th><th scope="col">点 \(B\) が正</th><th scope="col">点 \(B\) が負</th></tr></thead><tbody><tr><th scope="row">正</th><td>6</td><td>2, 4</td></tr><tr><th scope="row">負</th><td>3</td><td>1, 5</td></tr></tbody></table>
+<h3>(1) 2回後の座標</h3><p>\(-2,0,2\) の順で、\(A,C\) の確率は各 \((\frac14,\frac12,\frac14)\)、\(B\) の確率は \((\frac49,\frac49,\frac19)\) です。同じ座標になる確率は、座標別に積をとって足します。</p>
+<div class="scroll">\[P(a_2=b_2)=\frac14\frac49+\frac12\frac49+\frac14\frac19=\boxed{\frac{13}{36}},\]</div>
+<div class="scroll">\[P(a_2=b_2=c_2)=\left(\frac14\right)^2\frac49+\left(\frac12\right)^2\frac49+\left(\frac14\right)^2\frac19=\boxed{\frac7{48}}.\]</div>
+<h3>(2) 負の方向へ1回だけ</h3><p>\(n-2\) に着くのは負の移動が1回だけのときです。\(A,C\) はいずれも正負が半々なので、確率はともに \(\boxed{n/2^n}\) です。</p>
+<h3>(3) 同じ座標になる確率の比</h3><p>\(B\) については負の移動の確率が \(2/3\)、正の移動の確率が \(1/3\) です。独立性により \(p/q\) では \(A\) の確率が約分されます。</p>
+<div class="scroll">\[\frac pq=\frac{n\cdot\frac23(\frac13)^{n-1}}{n(\frac12)^n}
+=\boxed{2\left(\frac23\right)^n}.\]</div>
+</section>
+<section class="panel" id="s6"><h2>理系 第6問　動く楕円が通る領域</h2>
+<h3>(1) 断面の上下の端</h3><p>対称性から \(u=|x|\) とします。\(0&lt;u&lt;1\) のとき、上半分の高さは \(u\leqq a\leqq1\) に対して \(h(a)=(1-a)\sqrt{1-u^2/a^2}\) です。両端で0となり、途中では連続です。</p>
+<div class="scroll">\[h'(a)=\frac{u^2-a^3}{a^3\sqrt{1-u^2/a^2}}\quad(u&lt;a&lt;1).\]</div>
+<p>よって \(a=u^{2/3}\) のとき最大で、高さは \((1-u^{2/3})^{3/2}\)。中間値の定理により0からこの高さまでのすべてを通ります。\(u=0\) では \(C_0\) が高さ1までを含み、\(u=1\) では \(C_1\) の端点だけです。対称性も合わせると、</p>
+<div class="scroll">\[\boxed{-(1-|x|^{2/3})^{3/2}\leqq y\leqq(1-|x|^{2/3})^{3/2}}.\]</div>
+<figure>
+<label for="ellipse-a">楕円の横の半径 \(a\)</label> <output id="ellipse-value" for="ellipse-a">0.55</output>
+<input id="ellipse-a" type="range" min="0" max="1" step="0.01" value="0.55">
+<canvas id="ellipse-graph" width="640" height="350" role="img" aria-label="薄青の通過領域と、スライダーで形が変わる橙色の楕円">横の半径が増えると縦の半径が減ります。両端では楕円は線分になります。</canvas>
+<figcaption>薄青が通過領域 \(D\)、橙が現在の \(C_a\) です。黒点で、楕円と領域の境界が接します。</figcaption>
+</figure>
+<h3>(2) 面積</h3><p>第1象限の面積を4倍します。\(x=\sin^3\theta\) とおくと \(y=\cos^3\theta\) なので、</p>
+<div class="scroll">\[S=12\int_0^{\pi/2}\sin^2\theta\cos^4\theta\,\mathrm{d}\theta
+=\frac34\int_0^{\pi/2}(1-\cos4\theta)(1+\cos2\theta)\,\mathrm{d}\theta
+=\boxed{\frac{3\pi}{8}}.\]</div>
+<h3>(3) 回転体の体積</h3><p>円の断面積は \(\pi(1-|x|^{2/3})^3\) です。対称性を利用し、3乗を展開して項ごとに積分します。</p>
+<div class="scroll">\[V=2\pi\int_0^1(1-x^{2/3})^3\,\mathrm{d}x
+=2\pi\left(1-\frac95+\frac97-\frac13\right)=\boxed{\frac{32\pi}{105}}.\]</div>
+</section>
+</main>
+<footer><div class="wrap"><div class="site-parent-link"><a href="tohoku_university_exams.html">東北大学の入試一覧に戻る</a></div>みんなの数学データベース</div></footer>
+<script defer src="tohoku_2026_exam_graphs.js"></script>
+</body></html>
