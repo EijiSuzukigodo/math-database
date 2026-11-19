@@ -71,10 +71,17 @@ window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},opt
 </script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <link rel="stylesheet" href="lesson_common_style.css">
+<link rel="stylesheet" href="high_school_lesson_reading.css">
 </head><body>
-<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_c.html">数学Cの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学C</div><h1>楕円</h1><p class="lesson-standard-bottom">数学C ／ 式と曲線</p></div></header><main class="lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>楕円の基本を理解し、問題に活用できるようになる</h2><p>2つの焦点からの距離と楕円の方程式を学びます。</p></section>
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_c.html">数学Cの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学C</div><h1>楕円</h1><p class="lesson-standard-bottom">数学C ／ 式と曲線</p></div></header><main class="lesson-standard-main" id="md-standard-main" data-hs-lesson=""><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>楕円の基本を理解し、問題に活用できるようになる</h2><p>2つの焦点からの距離と楕円の方程式を学びます。</p><p class="hs-outcome"><strong>この授業でできるようになること</strong><br>二つの焦点までの距離の和が一定であることを使い、楕円の頂点や焦点を求める。</p></section>
+<nav class="hs-study-nav" aria-label="授業の進め方">
+<a href="#hs-explanation">説明</a>
+<a href="#hs-examples">例題と解説</a>
+<a href="#hs-practice">練習問題</a>
+<a href="#hs-summary">まとめ</a></nav>
+
 <section class="card toc" hidden="" style="display:none!important"><p class="small">※ 数式の整形にはMathJaxを利用しています。数式の表示にはインターネット接続が必要です。</p><span class="pill">学習の道順</span><p>① 楕円の定義　→　② 方程式の導出　→　③ 縦長の楕円　→　④ 円の伸縮　→　⑤ 内分点の軌跡　→　⑥ 練習問題</p><a href="#definition">定義と動く図</a><a href="#proof">方程式の導出</a><a href="#vertical">縦長の楕円</a><a href="#scaling">円の伸縮</a><a href="#locus">軌跡</a><a href="#practice">練習問題</a></section>
-<section class="card" id="definition"><span class="pill">1　楕円の定義</span><h2>2つの焦点からの距離の和が一定</h2><p>異なる2点 <strong>F₁, F₂</strong> からの距離の和が一定 <strong>2a</strong> となる点 P の軌跡を、<strong>楕円</strong>といいます。焦点を F₁(−c, 0), F₂(c, 0) として考えます。</p>
+<section class="card" id="definition"><span class="pill">1　楕円の定義</span><h2 id="hs-explanation">2つの焦点からの距離の和が一定</h2><p>異なる2点 <strong>F₁, F₂</strong> からの距離の和が一定 <strong>2a</strong> となる点 P の軌跡を、<strong>楕円</strong>といいます。焦点を F₁(−c, 0), F₂(c, 0) として考えます。</p>
 <div class="formula eq">\[PF_1+PF_2=2a\qquad(a&gt;c&gt;0)\]</div>
 <div class="controls"><div class="control"><label for="a">長半径 a = <output id="aOut">4.0</output></label><input id="a" type="range" min="2.5" max="6" step="0.1" value="4"></div><div class="control"><label for="ratio">焦点の位置 c/a = <output id="ratioOut">0.65</output></label><input id="ratio" type="range" min="0.10" max="0.92" step="0.01" value="0.65"></div><div class="control"><label for="t">楕円上の点 P の位置 = <output id="tOut">50</output>°</label><input id="t" type="range" min="0" max="360" step="1" value="50"></div></div>
 <div class="btns"><button id="play" class="primary" type="button">▶ 点Pを動かす</button><button id="reset" type="button">初期位置に戻す</button></div>
@@ -95,7 +102,7 @@ window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},opt
 <div class="twocol"><div class="mini"><h3>長軸と短軸</h3><p>横長の楕円では長軸は x 軸方向で長さ <strong>2a</strong>、短軸は y 軸方向で長さ <strong>2b</strong> です。</p></div><div class="mini"><h3>中心・頂点・対称性</h3><p>中心は原点。頂点は (±a, 0) と (0, ±b)。x 軸、y 軸、原点について対称です。</p></div></div>
 <div class="btns"><button hidden="" aria-hidden="true" tabindex="-1" style="display:none!important" type="button" class="speak" data-speak="楕円の標準形を導きます。焦点からの距離をそれぞれ r1、r2 とすると、和は2aです。平方の差を使うと、差は2cx割るaです。これを距離の式に代入し、bの2乗をaの2乗引くcの2乗とおけば、xの2乗割るaの2乗、足す、yの2乗割るbの2乗、イコール1、が得られます。">▶ 導出を読み上げる</button><button hidden="" aria-hidden="true" tabindex="-1" style="display:none!important" class="ghost stopSpeech" type="button">■ 読み上げ停止</button></div></section>
 <section class="card" id="vertical"><span class="pill">3　縦長の楕円</span><h2>長軸が y 軸上にある場合</h2><p>長半径が b、短半径が a（b &gt; a &gt; 0）の場合も同じ考え方です。焦点は <strong>(0, ±c)</strong>、ただし <strong>\(c^2=b^2-a^2\)</strong> です。</p><div class="formula eq">\[\boxed{\frac{x^2}{a^2}+\frac{y^2}{b^2}=1}\qquad(b&gt;a&gt;0)\]</div>
-<div class="twocol"><div class="mini"><h3>例題1：横長</h3><p>\(\dfrac{x^2}{9}+\dfrac{y^2}{4}=1\)</p><p>a=3、b=2、c=√(9−4)=√5</p><p><strong>焦点：(±√5, 0)</strong>、長軸 6、短軸 4。</p></div><div class="mini"><h3>例題2：縦長</h3><p>\(\dfrac{x^2}{9}+\dfrac{y^2}{16}=1\)</p><p>長半径 4、短半径 3、c=√(16−9)=√7</p><p><strong>焦点：(0, ±√7)</strong>、長軸 8、短軸 6。</p></div></div>
+<div class="twocol"><div class="mini"><h3 id="hs-examples">例題1：横長</h3><p>\(\dfrac{x^2}{9}+\dfrac{y^2}{4}=1\)</p><p>a=3、b=2、c=√(9−4)=√5</p><p><strong>焦点：(±√5, 0)</strong>、長軸 6、短軸 4。</p></div><div class="mini"><h3>例題2：縦長</h3><p>\(\dfrac{x^2}{9}+\dfrac{y^2}{16}=1\)</p><p>長半径 4、短半径 3、c=√(16−9)=√7</p><p><strong>焦点：(0, ±√7)</strong>、長軸 8、短軸 6。</p></div></div>
 <div class="btns"><button hidden="" aria-hidden="true" tabindex="-1" style="display:none!important" type="button" class="speak" data-speak="楕円には横長と縦長があります。分母が大きいほうが長軸の方向です。例えば、xの2乗割る9、足すyの2乗割る16、イコール1なら、縦長です。焦点は、0、プラスマイナスルート7です。">▶ 例題を読み上げる</button><button hidden="" aria-hidden="true" tabindex="-1" style="display:none!important" class="ghost stopSpeech" type="button">■ 読み上げ停止</button></div></section>
 <section class="card" id="scaling"><span class="pill">4　円と楕円</span><h2>円を縮小・拡大すると楕円になる</h2><p>円 \(x^2+y^2=9\) の各点の <strong>y 座標を k 倍</strong>してみましょう。新しい点を (X,Y) とすると X=x、Y=ky より、</p>
 <div class="formula eq">\[\boxed{\frac{X^2}{9}+\frac{Y^2}{(3k)^2}=1}\]</div>
@@ -109,13 +116,13 @@ window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},opt
 <canvas id="locusGraph" class="graph" width="860" height="450" role="img" aria-label="両端が座標軸上を動く線分ABと、その内分点Pが描く楕円"></canvas>
 <p class="hint">点Pの軌跡は、半径 3 と 2 の楕円です。内分点の位置を座標で表し、端点の条件を代入するのがポイントです。</p>
 <div class="btns"><button hidden="" aria-hidden="true" tabindex="-1" style="display:none!important" type="button" class="speak" data-speak="両端が座標軸上を動く、長さ5の線分を考えます。点Pが線分を2対3に内分するとき、Pのx座標はAのx座標の5分の3、y座標はBのy座標の5分の2です。AとBの座標の2乗の和が25であることを使うと、Pの軌跡は横半径3、縦半径2の楕円になることが分かります。">▶ 軌跡の解説を読み上げる</button><button hidden="" aria-hidden="true" tabindex="-1" style="display:none!important" class="ghost stopSpeech" type="button">■ 読み上げ停止</button></div></section>
-<section class="card" id="practice"><span class="pill">6　例題・確認問題</span><h2>解いて理解を確かめよう</h2>
-<div class="mini"><h3>問題1　焦点と軸の長さ</h3><p>\(\dfrac{x^2}{25}+\dfrac{y^2}{9}=1\) の焦点、長軸・短軸の長さを求めましょう。</p><details class="answer"><summary>解答と考え方を表示</summary><p>a=5、b=3。c²=25−9=16 より c=4。焦点は <strong>(±4,0)</strong>、長軸は <strong>10</strong>、短軸は <strong>6</strong> です。</p></details></div>
-<div class="mini" style="margin-top:12px"><h3>問題2　定義から方程式</h3><p>焦点が (±3,0)、2つの焦点からの距離の和が10の楕円の方程式を求めましょう。</p><details class="answer"><summary>解答と考え方を表示</summary><p>2a=10 より a=5。c=3 なので b²=25−9=16。答えは <strong>\(\dfrac{x^2}{25}+\dfrac{y^2}{16}=1\)</strong> です。</p></details></div>
-<div class="mini" style="margin-top:12px"><h3>問題3　縦長の楕円</h3><p>\(9x^2+4y^2=36\) の焦点を求めましょう。</p><details class="answer"><summary>解答と考え方を表示</summary><p>\(\dfrac{x^2}{4}+\dfrac{y^2}{9}=1\) だから長半径は3、短半径は2。c²=9−4=5。焦点は <strong>(0,±√5)</strong> です。</p></details></div>
+<section class="card" id="practice"><span class="pill">6　例題・確認問題</span><h2 id="hs-practice">解いて理解を確かめよう</h2>
+<div class="mini"><h3>問題1　焦点と軸の長さ</h3><p>\(\dfrac{x^2}{25}+\dfrac{y^2}{9}=1\) の焦点、長軸・短軸の長さを求めましょう。</p><details class="answer"><summary>解答・解説を表示</summary><p>a=5、b=3。c²=25−9=16 より c=4。焦点は <strong>(±4,0)</strong>、長軸は <strong>10</strong>、短軸は <strong>6</strong> です。</p></details></div>
+<div class="mini" style="margin-top:12px"><h3>問題2　定義から方程式</h3><p>焦点が (±3,0)、2つの焦点からの距離の和が10の楕円の方程式を求めましょう。</p><details class="answer"><summary>解答・解説を表示</summary><p>2a=10 より a=5。c=3 なので b²=25−9=16。答えは <strong>\(\dfrac{x^2}{25}+\dfrac{y^2}{16}=1\)</strong> です。</p></details></div>
+<div class="mini" style="margin-top:12px"><h3>問題3　縦長の楕円</h3><p>\(9x^2+4y^2=36\) の焦点を求めましょう。</p><details class="answer"><summary>解答・解説を表示</summary><p>\(\dfrac{x^2}{4}+\dfrac{y^2}{9}=1\) だから長半径は3、短半径は2。c²=9−4=5。焦点は <strong>(0,±√5)</strong> です。</p></details></div>
 <p class="note">※図の数値は学習用に四捨五入して表示しています。楕円が円になる場合など、特別な場合もスライダーで試してみましょう。</p>
 <div class="btns"><button hidden="" aria-hidden="true" tabindex="-1" style="display:none!important" class="ghost stopSpeech" type="button">■ 読み上げ停止</button></div></section>
-<section class="card"><h2>学習のまとめ</h2><p>楕円は<strong>2焦点からの距離の和が一定</strong>の点の集まり。標準形と焦点、長軸・短軸の関係を押さえ、円の伸縮や内分点の軌跡とも結び付けましょう。</p><p></p></section>
+<section class="card"><h2 id="hs-summary">学習のまとめ</h2><p>楕円は<strong>2焦点からの距離の和が一定</strong>の点の集まり。標準形と焦点、長軸・短軸の関係を押さえ、円の伸縮や内分点の軌跡とも結び付けましょう。</p><p></p></section>
 <nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav></main><script>
 (()=>{'use strict';const $=id=>document.getElementById(id);let animation=null;const PI=Math.PI;
 const fmt=v=>(Math.round(v*100)/100).toFixed(2);const xray=(ctx,W,H,S,x,y,ox=W/2,oy=H/2)=>[ox+x*S,oy-y*S];

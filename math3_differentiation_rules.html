@@ -49,11 +49,18 @@ html,body{margin:0}body{background:#f2f7fc;color:#19334e;line-height:1.8;font-fa
 mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;max-width:100%}
 @media(max-width:640px){#md3-goal{padding:17px 15px!important}#md3-goal .md3-goal-title{font-size:20px!important}}
 </style><link rel="stylesheet" href="lesson_common_style.css">
+<link rel="stylesheet" href="high_school_lesson_reading.css">
 </head>
 <body>
 <header id="md3-header"><div class="md3-common-width"><div class="site-parent-link"><a href="math_subject_3.html">数学Ⅲの授業一覧に戻る</a></div><div class="md3-common-top">みんなの数学データベース ／ 高校数学 ／ 数学Ⅲ</div><h1>導関数の計算</h1><p class="md3-common-bottom">数学Ⅲ ／ </p></div></header>
-<main id="md3-main"><section class="md3-standard-goal" id="md3-goal"><span class="md3-goal-tag">授業のねらい</span><h2 class="md3-goal-title">積・商・合成関数の微分を使いこなす</h2><p>積の微分法・商の微分法・合成関数の微分法が成り立つ理由を理解し、複数の公式を組み合わせた関数も、途中式を整理して正確に微分できるようになる。</p></section>
-<section><span class="pill">基本事項</span><h2>1．導関数の計算の基本</h2><p>微分の記号は \(f'(x)\)、\(\dfrac{dy}{dx}\) などと表します。まず定数倍と和・差の公式を確認しましょう。</p>
+<main id="md3-main" data-hs-lesson=""><section class="md3-standard-goal" id="md3-goal"><span class="md3-goal-tag">授業のねらい</span><h2 class="md3-goal-title">積・商・合成関数の微分を使いこなす</h2><p>積の微分法・商の微分法・合成関数の微分法が成り立つ理由を理解し、複数の公式を組み合わせた関数も、途中式を整理して正確に微分できるようになる。</p></section>
+<nav class="hs-study-nav" aria-label="授業の進め方">
+<a href="#hs-explanation">説明</a>
+<a href="#hs-examples">例題と解説</a>
+<a href="#hs-practice">練習問題</a>
+<a href="#hs-summary">まとめ</a></nav>
+
+<section><span class="pill">基本事項</span><h2 id="hs-explanation">1．導関数の計算の基本</h2><p>微分の記号は \(f'(x)\)、\(\dfrac{dy}{dx}\) などと表します。まず定数倍と和・差の公式を確認しましょう。</p>
 <div class="formula">\[\begin{aligned}(cf)'&amp;=cf'\\(f\pm g)'&amp;=f'\pm g'\\(x^n)'&amp;=nx^{n-1}\quad(n\text{ は整数})\end{aligned}\]</div>
 <p>積・商・合成関数では、これらに加えて次の3種類の公式を使います。</p>
 <h3>2．積の微分法</h3><div class="formula">\[\boxed{\{f(x)g(x)\}'=f'(x)g(x)+f(x)g'(x)}\]</div>
@@ -80,8 +87,8 @@ mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;max-width:100%}
 <g fill="#18314c" font-size="19" text-anchor="middle"><text x="250" y="245">fg</text><text x="425" y="245">gΔf</text><text x="250" y="111">fΔg</text><text font-size="15" x="425" y="111">ΔfΔg</text><text x="250" y="376">f</text><text x="425" y="376">Δf</text><text x="68" y="247">g</text><text x="56" y="115">Δg</text></g><text fill="#174c7b" font-size="22" font-weight="700" x="110" y="45">長方形の面積の増加</text></svg>
 <p class="legend">青：もとの面積　橙・緑：微分公式に残る2つの部分　桃：\(\Delta x\to0\) で無視できる小さな部分</p><p aria-live="polite" class="note" id="areaout">変化量を動かすと、それぞれの面積が変化します。</p></div>
 <p>例えば \(f(x)=x+2\)、\(g(x)=x+1\)、\(x=1\) とすると、\(f=3\)、\(g=2\)、\(\Delta f=\Delta g=\Delta x\) です。このとき面積の増分を \(\Delta x\) で割ると \(5+\Delta x\) となり、\(\Delta x\to0\) で \(5\) に近づきます。</p></section>
-<section><span class="pill">例題</span><h2>4．計算を順番に練習する</h2>
-<div class="example"><strong>例題1　積の微分法</strong><p>\(y=(x^2+1)(x^3-2x)\) を微分しなさい。</p><div class="answer"><strong>解説</strong><div class="formula">\[\begin{aligned}y'&amp;=2x(x^3-2x)+(x^2+1)(3x^2-2)\\&amp;=5x^4-3x^2-2.\end{aligned}\]</div>2つの積をそれぞれ1回ずつ微分します。</div></div>
+<section><span class="pill">例題</span><h2 id="hs-practice">4．計算を順番に練習する</h2>
+<div class="example"><strong id="hs-examples">例題1　積の微分法</strong><p>\(y=(x^2+1)(x^3-2x)\) を微分しなさい。</p><div class="answer"><strong>解説</strong><div class="formula">\[\begin{aligned}y'&amp;=2x(x^3-2x)+(x^2+1)(3x^2-2)\\&amp;=5x^4-3x^2-2.\end{aligned}\]</div>2つの積をそれぞれ1回ずつ微分します。</div></div>
 <div class="example"><strong>例題2　商の微分法</strong><p>\(y=\dfrac{x^2+1}{x-1}\) を微分しなさい（\(x\ne1\)）。</p><div class="answer"><strong>解説</strong><div class="formula">\[\begin{aligned}y'&amp;=\frac{2x(x-1)-(x^2+1)}{(x-1)^2}\\&amp;=\frac{x^2-2x-1}{(x-1)^2}.\end{aligned}\]</div>分子の引き算で符号を間違えないようにします。</div></div>
 <div class="example"><strong>例題3　合成関数の微分法</strong><p>\(y=(3x^2-1)^5\) を微分しなさい。</p><div class="answer"><strong>解説</strong><p>\(u=3x^2-1\) とおくと \(y=u^5\) です。</p><div class="formula">\[y'=5(3x^2-1)^4\cdot6x=30x(3x^2-1)^4.\]</div></div></div>
 <div class="example"><strong>例題4　商と合成関数の組合せ</strong><p>\(y=\dfrac{1}{(x^2+1)^2}\) を微分しなさい。</p><div class="answer"><strong>解説</strong><p>まず負の指数を使って \(y=(x^2+1)^{-2}\) と書きます。</p><div class="formula">\[y'=-2(x^2+1)^{-3}\cdot2x=-\frac{4x}{(x^2+1)^3}.\]</div></div></div>
@@ -95,7 +102,7 @@ mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;max-width:100%}
 <div class="exercise"><strong>問題6</strong>　\(y=\dfrac{(x^2+1)^3}{x}\) を微分しなさい（\(x\ne0\)）。<details><summary>解答・解説を表示</summary><div class="formula">\[\begin{aligned}y'&amp;=\frac{6x(x^2+1)^2\cdot x-(x^2+1)^3}{x^2}\\&amp;=\frac{(x^2+1)^2(5x^2-1)}{x^2}.\end{aligned}\]</div></details></div></section>
 <section><span class="pill">発展</span><h2>6．複数の公式を組み合わせる</h2><p><strong>発展例題</strong>　\(y=\left(\dfrac{x+1}{x-1}\right)^3\) を微分しなさい（\(x\ne1\)）。</p><div class="note">外側の3乗を先に微分し、次に内側の商を微分します。</div>
 <div class="formula">\[\begin{aligned}y'&amp;=3\left(\frac{x+1}{x-1}\right)^2\cdot\frac{(x-1)-(x+1)}{(x-1)^2}\\&amp;=-\frac{6(x+1)^2}{(x-1)^4}.\end{aligned}\]</div>
-<h3>この授業のまとめ</h3><p>関数の形を見て、積・商・合成のどの公式が必要かを判断し、公式を組み合わせて使えることが目標です。導関数を求めた後は、因数分解や約分で整理しましょう。</p></section>
+<h3 id="hs-summary">この授業のまとめ</h3><p>関数の形を見て、積・商・合成のどの公式が必要かを判断し、公式を組み合わせて使えることが目標です。導関数を求めた後は、因数分解や約分で整理しましょう。</p></section>
 <nav id="md3-bottom-return"></nav></main>
 <script>
 (function(){

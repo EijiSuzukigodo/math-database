@@ -68,14 +68,21 @@ body>footer.lesson-standard-footer>div{max-width:970px!important;margin:auto!imp
 mjx-container svg{width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;display:inline-block!important}
 @media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
 </style><link rel="stylesheet" href="lesson_common_style.css">
+<link rel="stylesheet" href="high_school_lesson_reading.css">
 </head>
 <body>
-<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_c.html">数学Cの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学C</div><h1>平面の方程式</h1><p class="lesson-standard-bottom">数学C</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>平面の方程式</h2><p>法線ベクトル、3点を通る平面、直線と平面の交点、点と平面の距離を動く立体図で学びます。 平面は、1つの点と平面に垂直な 法線ベクトル によって決まります。基本公式から、3点を通る平面、直線との交点、距離の求め方まで学習しましょう。</p></section>
-<section class="chapter"><h2>1．法線ベクトルと平面の方程式</h2>
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_c.html">数学Cの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学C</div><h1>平面の方程式</h1><p class="lesson-standard-bottom">数学C</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main" data-hs-lesson=""><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>平面の方程式</h2><p>法線ベクトル、3点を通る平面、直線と平面の交点、点と平面の距離を動く立体図で学びます。 平面は、1つの点と平面に垂直な 法線ベクトル によって決まります。基本公式から、3点を通る平面、直線との交点、距離の求め方まで学習しましょう。</p><p class="hs-outcome"><strong>この授業でできるようになること</strong><br>平面上の点と法線ベクトルから、平面の方程式を作る。</p></section>
+<nav class="hs-study-nav" aria-label="授業の進め方">
+<a href="#hs-explanation">説明</a>
+<a href="#hs-examples">例題と解説</a>
+<a href="#hs-practice">練習問題</a>
+<a href="#hs-summary">まとめ</a></nav>
+
+<section class="chapter"><h2 id="hs-explanation">1．法線ベクトルと平面の方程式</h2>
 <p>平面上の点を \(P(x,y,z)\)、平面上の定点を \(P_0(x_0,y_0,z_0)\)、0でない法線ベクトルを \(\vec n=(a,b,c)\) とします。平面上では \(\overrightarrow{P_0P}\perp\vec n\) です。</p>
 <div class="formula">\[\vec n\cdot\overrightarrow{P_0P}=0\]</div><div class="formula">\[\boxed{a(x-x_0)+b(y-y_0)+c(z-z_0)=0}\]</div><p>展開すると、平面の一般形 \(\boxed{ax+by+cz+d=0}\) が得られます。ただし \((a,b,c)\ne(0,0,0)\) です。</p>
-<h3>例題1</h3><p>点 \(P_0(1,2,-1)\) を通り、法線ベクトルが \(\vec n=(2,-1,3)\) の平面を求めなさい。</p>
-<details open=""><summary>解答・解説</summary><div class="formula">\[2(x-1)-(y-2)+3(z+1)=0\]</div><div class="formula">\[\boxed{2x-y+3z+3=0}\]</div><p>法線ベクトルの成分が、そのまま \(x,y,z\) の係数になります。</p></details>
+<h3 id="hs-examples">例題1</h3><p>点 \(P_0(1,2,-1)\) を通り、法線ベクトルが \(\vec n=(2,-1,3)\) の平面を求めなさい。</p>
+<details open=""><summary>解答・解説を表示</summary><div class="formula">\[2(x-1)-(y-2)+3(z+1)=0\]</div><div class="formula">\[\boxed{2x-y+3z+3=0}\]</div><p>法線ベクトルの成分が、そのまま \(x,y,z\) の係数になります。</p></details>
 <div class="grid"><svg aria-label="法線ベクトルと平面の傾き、位置を変えられる立体図" class="diagram" id="planeSvg" role="img" viewbox="0 0 480 355"></svg>
 <div class="panel"><h3>動く立体図</h3><p>平面 \(ax+by+2z=d\) の \(a,b,d\) を変えます。青い面が平面、赤い矢印が法線ベクトルです。</p>
 <label for="coefA">\(a\)：<span class="value" id="valA">1</span></label><input id="coefA" max="3" min="-3" step="0.5" type="range" value="1"/>
@@ -83,22 +90,22 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <label for="coefD">\(d\)：<span class="value" id="valD">2</span></label><input id="coefD" max="4" min="-4" step="0.5" type="range" value="2"/>
 <div aria-live="polite" class="readout" id="planeInfo"></div><p class="hint">一定の見方で立体的に投影した模式図です。回転表示ではありません。</p></div></div></section>
 <section class="chapter"><h2>2．3点を通る平面の方程式</h2><p>同一直線上にない3点 \(A,B,C\) が与えられたら、平面内の2本のベクトル \(\overrightarrow{AB},\overrightarrow{AC}\) に垂直な法線 \(\vec n\) を求めます。</p><h3>例題2</h3><p>3点 \(A(1,0,0), B(0,1,0), C(0,0,1)\) を通る平面の方程式を求めなさい。</p>
-<details open=""><summary>解答・解説</summary><p>\(\overrightarrow{AB}=(-1,1,0),\ \overrightarrow{AC}=(-1,0,1)\) です。\(\vec n=(a,b,c)\) とすると</p><div class="formula">\[-a+b=0,\quad -a+c=0\]</div><p>したがって \(a=b=c\) となるため、法線ベクトルとして \((1,1,1)\) を選べます。点 \(A\) を代入すると</p><div class="formula">\[\boxed{x+y+z=1}\]</div></details>
+<details open=""><summary>解答・解説を表示</summary><p>\(\overrightarrow{AB}=(-1,1,0),\ \overrightarrow{AC}=(-1,0,1)\) です。\(\vec n=(a,b,c)\) とすると</p><div class="formula">\[-a+b=0,\quad -a+c=0\]</div><p>したがって \(a=b=c\) となるため、法線ベクトルとして \((1,1,1)\) を選べます。点 \(A\) を代入すると</p><div class="formula">\[\boxed{x+y+z=1}\]</div></details>
 <p class="hint">3点が同一直線上にある場合は、平面がただ1つに定まらないので注意しましょう。</p></section>
 <section class="chapter"><h2>3．直線と平面の交点</h2><p>直線を媒介変数 \(t\) で表し、その座標を平面の方程式に代入して \(t\) を決めます。</p><h3>例題3</h3><p>直線 \(\,(x,y,z)=(1,0,0)+t(1,1,1)\,\) と平面 \(x+y+z=4\) の交点を求めなさい。</p>
-<details open=""><summary>解答・解説</summary><p>直線上では \(x=1+t,\ y=t,\ z=t\) なので</p><div class="formula">\[1+t+t+t=4\Longrightarrow t=1\]</div><p>したがって交点は \(\boxed{(2,1,1)}\) です。</p></details>
+<details open=""><summary>解答・解説を表示</summary><p>直線上では \(x=1+t,\ y=t,\ z=t\) なので</p><div class="formula">\[1+t+t+t=4\Longrightarrow t=1\]</div><p>したがって交点は \(\boxed{(2,1,1)}\) です。</p></details>
 <div class="grid"><svg aria-label="平面と直線の交点を点を動かしながら調べる図" class="diagram" id="lineSvg" role="img" viewbox="0 0 480 325"></svg><div class="panel"><h3>直線上の点を動かす</h3><p>直線 \((x,y,z)=(1+t,t,t)\) 上の点を動かします。</p><label for="lineT">\(t\)：<span class="value" id="valT">1</span></label><input id="lineT" max="3" min="-1" step="0.1" type="range" value="1"/><div aria-live="polite" class="readout" id="lineInfo"></div><p class="hint">緑の点が交点 \(Q(2,1,1)\)、赤の点が移動する点です。</p></div></div>
 <p>一般には、分母に当たる \(\vec n\cdot\vec v\) が0なら直線と平面は平行です。その場合は、直線が平面に含まれるか、共有点がないかを調べます。</p></section>
 <section class="chapter"><h2>4．点と平面の距離公式の証明</h2><p>平面 \(ax+by+cz+d=0\) と点 \(P(x_0,y_0,z_0)\) を考えます。平面の法線は \(\vec n=(a,b,c)\) です。</p><p>平面上の点 \(Q\) をとり、\(\overrightarrow{QP}\) を法線方向へ射影した長さが距離となります。</p>
 <div class="formula">\[\boxed{D=\frac{|ax_0+by_0+cz_0+d|}{\sqrt{a^2+b^2+c^2}}}\]</div>
 <details><summary>公式の証明を読む</summary><p>\(\overrightarrow{QP}=(x_0-x_Q,y_0-y_Q,z_0-z_Q)\) と置くと、平面上の \(Q\) に対して \(ax_Q+by_Q+cz_Q+d=0\) です。したがって</p><div class="formula">\[\vec n\cdot\overrightarrow{QP}=ax_0+by_0+cz_0+d\]</div><p>内積を法線の長さ \(\lVert\vec n\rVert\) で割り、絶対値を取れば垂線の長さになります。</p></details>
-<h3>例題4</h3><p>点 \(P(1,2,3)\) から平面 \(2x-y+2z-4=0\) までの距離を求めなさい。</p><details open=""><summary>解答・解説</summary><div class="formula">\[D=\frac{|2-2+6-4|}{\sqrt{2^2+(-1)^2+2^2}}=\boxed{\frac23}\]</div></details></section>
-<section class="chapter"><h2>5．練習問題</h2>
+<h3>例題4</h3><p>点 \(P(1,2,3)\) から平面 \(2x-y+2z-4=0\) までの距離を求めなさい。</p><details open=""><summary>解答・解説を表示</summary><div class="formula">\[D=\frac{|2-2+6-4|}{\sqrt{2^2+(-1)^2+2^2}}=\boxed{\frac23}\]</div></details></section>
+<section class="chapter"><h2 id="hs-practice">5．練習問題</h2>
 <div class="question"><strong>問題1：</strong>点 \((0,0,2)\) を通り、法線が \((1,2,3)\) の平面を \(x+2y+3z=k\) とする。\(k\) は？<label for="q1">数値で入力</label><input id="q1" inputmode="decimal"/><button onclick="check(1,6)">答え合わせ</button><p aria-live="polite" class="result" id="a1"></p><details><summary>解説</summary>\(1\cdot0+2\cdot0+3\cdot2=6\) です。</details></div>
 <div class="question"><strong>問題2：</strong>3点 \((2,0,0),(0,2,0),(0,0,2)\) を通る平面を \(x+y+z=k\) とする。\(k\) は？<label for="q2">数値で入力</label><input id="q2" inputmode="decimal"/><button onclick="check(2,2)">答え合わせ</button><p aria-live="polite" class="result" id="a2"></p><details><summary>解説</summary>いずれの点も \(x+y+z=2\) を満たします。</details></div>
 <div class="question"><strong>問題3：</strong>直線 \((x,y,z)=(0,0,0)+t(1,1,1)\) と平面 \(x+y+z=9\) の交点の \(t\) は？<label for="q3">数値で入力</label><input id="q3" inputmode="decimal"/><button onclick="check(3,3)">答え合わせ</button><p aria-live="polite" class="result" id="a3"></p><details><summary>解説</summary>\(3t=9\) より \(t=3\) です。</details></div>
 <div class="question"><strong>問題4：</strong>点 \((0,0,5)\) と平面 \(z=1\) の距離は？<label for="q4">数値で入力</label><input id="q4" inputmode="decimal"/><button onclick="check(4,4)">答え合わせ</button><p aria-live="polite" class="result" id="a4"></p><details><summary>解説</summary>\(|5-1|=4\) です。</details></div></section>
-<section class="chapter"><h2>まとめ</h2><p>平面の係数 \((a,b,c)\) は法線ベクトルです。平面の上の点と法線がわかれば方程式を決められ、直線との交点や点からの距離も計算できます。</p></section><nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav></main>
+<section class="chapter"><h2 id="hs-summary">まとめ</h2><p>平面の係数 \((a,b,c)\) は法線ベクトルです。平面の上の点と法線がわかれば方程式を決められ、直線との交点や点からの距離も計算できます。</p></section><nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav></main>
 <script>
 'use strict';const $=id=>document.getElementById(id),ns='http://www.w3.org/2000/svg';
 function E(tag,attrs={},value){const e=document.createElementNS(ns,tag);for(const [k,v] of Object.entries(attrs))e.setAttribute(k,String(v));if(value!==undefined)e.textContent=value;return e}

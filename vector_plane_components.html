@@ -67,10 +67,17 @@ body>footer.lesson-standard-footer>div{max-width:970px!important;margin:auto!imp
 mjx-container svg{width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;display:inline-block!important}
 @media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
 </style><link rel="stylesheet" href="lesson_common_style.css">
+<link rel="stylesheet" href="high_school_lesson_reading.css">
 </head><body>
-<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_c.html">数学Cの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学C</div><h1>ベクトルの成分</h1><p class="lesson-standard-bottom">数学C</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>ベクトルの成分</h2><p>成分表示とベクトルの大きさ、成分による計算を学びます。</p></section><article>
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_c.html">数学Cの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学C</div><h1>ベクトルの成分</h1><p class="lesson-standard-bottom">数学C</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main" data-hs-lesson=""><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>ベクトルの成分</h2><p>成分表示とベクトルの大きさ、成分による計算を学びます。</p><p class="hs-outcome"><strong>この授業でできるようになること</strong><br>ベクトルを横と縦の成分で表し、和・差・実数倍と大きさを求める。</p></section>
+<nav class="hs-study-nav" aria-label="授業の進め方">
+<a href="#hs-explanation">説明</a>
+<a href="#hs-examples">例題と解説</a>
+<a href="#hs-practice">練習問題</a>
+<a href="#hs-summary">まとめ</a></nav>
+<article>
 <p>ベクトルは「向き」と「大きさ」を持ちます。座標軸を決めると、横方向と縦方向の移動量（成分）を使って表せます。図を操作し、数値と形を結びつけて理解しましょう。</p>
-<h2>1　ベクトルの成分表示</h2>
+<h2 id="hs-explanation">1　ベクトルの成分表示</h2>
 <div class="theorem"><span class="tag">定義</span><p>右へ3、上へ2の移動を表すベクトルは \(\vec a=(3,2)\) と書きます。一般に</p><div class="math">\[\boxed{\vec a=(a_1,a_2)}\]</div><p>横方向が \(a_1\)、縦方向が \(a_2\) です。負の成分はそれぞれ左向き・下向きを表します。</p></div>
 <h3>2点の座標から成分を求める</h3>
 <p>始点 \(A(x_1,y_1)\)、終点 \(B(x_2,y_2)\) なら、終点から始点を引いて</p><div class="theorem math">\[\boxed{\overrightarrow{AB}=(x_2-x_1,\ y_2-y_1)}\]</div>
@@ -95,17 +102,23 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <h2>5　成分と向きについての発展</h2>
 <div class="example"><span class="tag">例題5：平行なベクトル</span><p>\(\vec a=(2,3)\) と同じ向きで、大きさが \(2\sqrt{13}\) のベクトルを求めよ。</p><p>\(|\vec a|=\sqrt{13}\) なので、同じ向きで長さを2倍にすればよい。</p><div class="math">\[\boxed{2\vec a=(4,6)}\]</div></div>
 <div class="example"><span class="tag">例題6：成分が等しい条件</span><p>\((2x-1,\ y+3)=(5,7)\) のとき、\(x,y\) を求めよ。</p><p>対応する成分が等しいので、\(2x-1=5,\ y+3=7\)。よって \(\boxed{x=3,\ y=4}\)。</p></div>
-<h2>6　練習問題（解答・解説付き）</h2>
-<section class="exercise"><b>問題1（元の教材の練習問題）</b><p>\(A(2,-1),B(-2,2)\) のとき、\(\overrightarrow{AB}\) とその大きさを求めよ。</p><details><summary>解答と解説を表示</summary><div class="math">\[\overrightarrow{AB}=\boxed{(-4,3)},\quad|\overrightarrow{AB}|=\sqrt{16+9}=\boxed{5}\]</div></details></section>
-<section class="exercise"><b>問題2</b><p>\(A(-3,4),B(2,-2)\) とする。\(\overrightarrow{AB}\) を求めよ。</p><details><summary>解答と解説</summary><div class="math">\[\overrightarrow{AB}=(2+3,-2-4)=\boxed{(5,-6)}\]</div></details></section>
-<section class="exercise"><b>問題3</b><p>\(\vec a=(5,12)\) の大きさを求めよ。</p><details><summary>解答と解説</summary><div class="math">\[|\vec a|=\sqrt{5^2+12^2}=\boxed{13}\]</div></details></section>
-<section class="exercise"><b>問題4</b><p>\(\vec a=(-8,6)\) と同方向の単位ベクトルを求めよ。</p><details><summary>解答と解説</summary><div class="math">\[|\vec a|=10,\quad \boxed{\left(-\frac45,\frac35\right)}\]</div></details></section>
-<section class="exercise"><b>問題5</b><p>\(\vec a=(1,3),\vec b=(4,-2)\) のとき、\(3\vec a-2\vec b\) を求めよ。</p><details><summary>解答と解説</summary><div class="math">\[3\vec a-2\vec b=(3,9)-(8,-4)=\boxed{(-5,13)}\]</div></details></section>
-<section class="exercise"><b>問題6</b><p>\(\vec a=(t,4)\) の大きさが5のとき、\(t\) を求めよ。</p><details><summary>解答と解説</summary><div class="math">\[t^2+16=25\Rightarrow t^2=9\Rightarrow\boxed{t=\pm3}\]</div></details></section>
-<section class="exercise"><b>問題7（応用）</b><p>\(A(1,2),B(5,5)\) と同方向の単位ベクトルを求めよ。</p><details><summary>解答と解説</summary><div class="math">\[\overrightarrow{AB}=(4,3),\quad |\overrightarrow{AB}|=5,\quad\boxed{\left(\frac45,\frac35\right)}\]</div></details></section>
-<section class="exercise"><b>問題8（応用）</b><p>\(\vec a=(2x+1,3),\ \vec b=(7,y-2)\) が等しいとき、\(x,y\) を求めよ。</p><details><summary>解答と解説</summary><div class="math">\[2x+1=7,\quad 3=y-2\Rightarrow\boxed{x=3,\ y=5}\]</div></details></section>
-<h2>7　まとめ</h2><div class="notes"><p>・終点の座標から始点の座標を引けば、ベクトルの成分が求まります。</p><p>・ベクトルの大きさは、成分を2乗して足したものの平方根です。</p><p>・同方向の単位ベクトルは、零でないベクトルをその大きさで割って作ります。</p><p>・ベクトルの和・差・実数倍は、成分ごとに計算できます。</p></div>
-</article><nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav></main>
+<h2 id="hs-practice">6　練習問題（解答・解説付き）</h2>
+<section class="exercise"><b>問題1（元の教材の練習問題）</b><p>\(A(2,-1),B(-2,2)\) のとき、\(\overrightarrow{AB}\) とその大きさを求めよ。</p><details><summary>解答・解説を表示</summary><div class="math">\[\overrightarrow{AB}=\boxed{(-4,3)},\quad|\overrightarrow{AB}|=\sqrt{16+9}=\boxed{5}\]</div></details></section>
+<section class="exercise"><b>問題2</b><p>\(A(-3,4),B(2,-2)\) とする。\(\overrightarrow{AB}\) を求めよ。</p><details><summary>解答・解説を表示</summary><div class="math">\[\overrightarrow{AB}=(2+3,-2-4)=\boxed{(5,-6)}\]</div></details></section>
+<section class="exercise"><b>問題3</b><p>\(\vec a=(5,12)\) の大きさを求めよ。</p><details><summary>解答・解説を表示</summary><div class="math">\[|\vec a|=\sqrt{5^2+12^2}=\boxed{13}\]</div></details></section>
+<section class="exercise"><b>問題4</b><p>\(\vec a=(-8,6)\) と同方向の単位ベクトルを求めよ。</p><details><summary>解答・解説を表示</summary><div class="math">\[|\vec a|=10,\quad \boxed{\left(-\frac45,\frac35\right)}\]</div></details></section>
+<section class="exercise"><b>問題5</b><p>\(\vec a=(1,3),\vec b=(4,-2)\) のとき、\(3\vec a-2\vec b\) を求めよ。</p><details><summary>解答・解説を表示</summary><div class="math">\[3\vec a-2\vec b=(3,9)-(8,-4)=\boxed{(-5,13)}\]</div></details></section>
+<section class="exercise"><b>問題6</b><p>\(\vec a=(t,4)\) の大きさが5のとき、\(t\) を求めよ。</p><details><summary>解答・解説を表示</summary><div class="math">\[t^2+16=25\Rightarrow t^2=9\Rightarrow\boxed{t=\pm3}\]</div></details></section>
+<section class="exercise"><b>問題7（応用）</b><p>\(A(1,2),B(5,5)\) と同方向の単位ベクトルを求めよ。</p><details><summary>解答・解説を表示</summary><div class="math">\[\overrightarrow{AB}=(4,3),\quad |\overrightarrow{AB}|=5,\quad\boxed{\left(\frac45,\frac35\right)}\]</div></details></section>
+<section class="exercise"><b>問題8（応用）</b><p>\(\vec a=(2x+1,3),\ \vec b=(7,y-2)\) が等しいとき、\(x,y\) を求めよ。</p><details><summary>解答・解説を表示</summary><div class="math">\[2x+1=7,\quad 3=y-2\Rightarrow\boxed{x=3,\ y=5}\]</div></details></section>
+<h2 id="hs-summary">7　まとめ</h2><div class="notes"><p>・終点の座標から始点の座標を引けば、ベクトルの成分が求まります。</p><p>・ベクトルの大きさは、成分を2乗して足したものの平方根です。</p><p>・同方向の単位ベクトルは、零でないベクトルをその大きさで割って作ります。</p><p>・ベクトルの和・差・実数倍は、成分ごとに計算できます。</p></div>
+</article><nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav>
+<section class="hs-study-panel" id="hs-examples">
+<h2>例題と解説</h2>
+<p>\(A(-1,2),B(3,5)\) について \(\overrightarrow{AB}\) の成分と大きさを求めます。</p>
+<p><strong>解き方</strong> 終点の座標から始点の座標を引いて \((4,3)\) です。大きさは \(\sqrt{4^2+3^2}=5\) です。</p>
+</section>
+</main>
 <script>
 (()=>{const NS='http://www.w3.org/2000/svg';const make=(t,a,tx)=>{let e=document.createElementNS(NS,t);for(let k in a)e.setAttribute(k,a[k]);if(tx!==undefined)e.textContent=tx;return e};const append=(svg,t,a,tx)=>{let e=make(t,a,tx);svg.appendChild(e);return e};const scale=30,cx=290,cy=208;
 function frame(svg){svg.textContent='';append(svg,'rect',{x:0,y:0,width:580,height:420,fill:'#fff'});for(let i=-8;i<=8;i++){append(svg,'line',{x1:cx+i*scale,y1:8,x2:cx+i*scale,y2:412,stroke:'#edf2f6','stroke-width':1});append(svg,'line',{x1:10,y1:cy+i*scale,x2:570,y2:cy+i*scale,stroke:'#edf2f6','stroke-width':1})}append(svg,'line',{x1:10,y1:cy,x2:570,y2:cy,stroke:'#8096a6','stroke-width':1.6});append(svg,'line',{x1:cx,y1:8,x2:cx,y2:412,stroke:'#8096a6','stroke-width':1.6});append(svg,'text',{x:560,y:cy-7,fill:'#5d768b','font-size':15},'x');append(svg,'text',{x:cx+8,y:20,fill:'#5d768b','font-size':15},'y')}

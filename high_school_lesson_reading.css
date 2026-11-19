@@ -1,0 +1,112 @@
+/* Reading and navigation styles for the six high-school subject collections. */
+main[data-hs-lesson] {
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+body main[data-hs-lesson] :is(p, li, dt, dd, summary, th, td):not(
+  .small, .note, .muted, .caption, .label, .tag, .badge, .formula, .math, .equation
+) {
+  font-size: 1rem !important;
+}
+
+body main[data-hs-lesson] :is(p, li, dt, dd, summary) {
+  line-height: 1.8;
+}
+
+main[data-hs-lesson] .hs-study-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin: 0 0 1.25rem;
+  padding: .75rem;
+  border: 1px solid #d7e5f1;
+  border-radius: .75rem;
+  background: #f0f6fc;
+}
+
+main[data-hs-lesson] .hs-study-nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: .35rem .8rem;
+  border-radius: .5rem;
+  background: #fff;
+  color: #174b78;
+  font-size: 1rem;
+  font-weight: 700;
+  text-underline-offset: .15em;
+}
+
+main[data-hs-lesson] :is(.hs-study-nav a, summary):focus-visible {
+  outline: 2px solid #174b78;
+  outline-offset: 3px;
+}
+
+main[data-hs-lesson] :is(h2, h3, h4, section)[id] {
+  scroll-margin-top: 1rem;
+}
+
+main[data-hs-lesson] .hs-study-panel {
+  box-sizing: border-box;
+  margin: 1rem 0;
+  padding: clamp(1rem, 3vw, 1.5rem);
+  border: 1px solid #d7e5f1;
+  border-radius: .875rem;
+  background: #fff;
+  color: #1f354b;
+}
+
+main[data-hs-lesson] .hs-study-panel h2 {
+  margin-top: 0;
+  color: #174b78;
+}
+
+main[data-hs-lesson] .hs-outcome {
+  margin-top: .75rem !important;
+}
+
+main[data-hs-lesson] summary {
+  min-height: 44px;
+  box-sizing: border-box;
+  padding: .45rem .55rem;
+  cursor: pointer;
+  color: #174b78;
+  font-weight: 700;
+}
+
+main[data-hs-lesson] .hs-table {
+  max-width: 100%;
+  overflow-x: auto;
+  margin: .8rem 0;
+}
+
+main[data-hs-lesson] .hs-table table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+main[data-hs-lesson] .hs-table caption {
+  text-align: left;
+  font-weight: 700;
+}
+
+main[data-hs-lesson] .hs-table :is(th, td) {
+  border: 1px solid #d7e5f1;
+  padding: .45rem .6rem;
+  vertical-align: top;
+}
+
+main[data-hs-lesson] .hs-table th {
+  background: #eef5fb;
+}
+
+main[data-hs-lesson] .hs-notation {
+  margin: 0 0 .75rem;
+  padding: .55rem .8rem;
+  border-left: .25rem solid #3976a5;
+  background: #f0f6fc;
+}

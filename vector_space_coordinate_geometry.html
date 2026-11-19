@@ -81,14 +81,21 @@ body>footer.lesson-standard-footer>div{max-width:970px!important;margin:auto!imp
 mjx-container svg{width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;display:inline-block!important}
 @media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
 </style><link rel="stylesheet" href="lesson_common_style.css">
+<link rel="stylesheet" href="high_school_lesson_reading.css">
 </head><body>
-<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_c.html">数学Cの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学C</div><h1>座標空間における図形</h1><p class="lesson-standard-bottom">数学C</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>座標空間における図形</h2><p>球面の方程式、平面・直線との位置関係、距離や共有点を動く立体図と例題で学びます。 座標空間で点の集まりを方程式として捉えます。球面の中心と半径、平面との交わり、直線との共有点を、図を動かして確かめましょう。</p></section>
-<section class="chapter"><h2>1．球面の方程式</h2>
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_c.html">数学Cの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学C</div><h1>座標空間における図形</h1><p class="lesson-standard-bottom">数学C</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main" data-hs-lesson=""><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>座標空間における図形</h2><p>球面の方程式、平面・直線との位置関係、距離や共有点を動く立体図と例題で学びます。 座標空間で点の集まりを方程式として捉えます。球面の中心と半径、平面との交わり、直線との共有点を、図を動かして確かめましょう。</p><p class="hs-outcome"><strong>この授業でできるようになること</strong><br>空間内の点や図形の条件を座標で表し、距離や位置関係を調べる。</p></section>
+<nav class="hs-study-nav" aria-label="授業の進め方">
+<a href="#hs-explanation">説明</a>
+<a href="#hs-examples">例題と解説</a>
+<a href="#hs-practice">練習問題</a>
+<a href="#hs-summary">まとめ</a></nav>
+
+<section class="chapter"><h2 id="hs-explanation">1．球面の方程式</h2>
 <p>中心が \(C(a,b,c)\)、半径が \(r&gt;0\) の球面は、中心からの距離が \(r\) である点 \(P(x,y,z)\) の集まりです。</p>
 <div class="formula">\[\boxed{(x-a)^2+(y-b)^2+(z-c)^2=r^2}\]</div>
 <p><strong>球面</strong>は表面だけです。内部まで含めた球体は \((x-a)^2+(y-b)^2+(z-c)^2\leqq r^2\) で表します。</p>
-<h3>例題1</h3><p>中心 \(C(1,-2,3)\)、半径 \(4\) の球面の方程式を求めなさい。</p>
-<details open=""><summary>解答・解説</summary><div class="formula">\[\boxed{(x-1)^2+(y+2)^2+(z-3)^2=16}\]</div><p>中心の座標の符号と、半径の2乗に注意します。</p></details>
+<h3 id="hs-examples">例題1</h3><p>中心 \(C(1,-2,3)\)、半径 \(4\) の球面の方程式を求めなさい。</p>
+<details open=""><summary>解答・解説を表示</summary><div class="formula">\[\boxed{(x-1)^2+(y+2)^2+(z-3)^2=16}\]</div><p>中心の座標の符号と、半径の2乗に注意します。</p></details>
 <div class="grid"><svg aria-label="半径を変えられる球面の立体的な図" class="diagram" role="img" viewbox="0 0 480 350"><g id="sphereG"></g></svg>
 <div class="panel"><h3>球面を動かす</h3><p>中心は \(C(1,-2,3)\) に固定して、半径を変えてみましょう。</p><label for="radius">半径 \(r\)：<span class="value" id="radiusV">3</span></label><input id="radius" max="4.5" min="1" step="0.5" type="range" value="3"/><div aria-live="polite" class="readout" id="sphereInfo"></div><p class="hint">球面の輪郭と緯線・経線を立体的に描いた模式図です。見る向きは固定しています。</p></div></div>
 </section>
@@ -120,13 +127,13 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <details open=""><summary>解法を読む</summary><div class="formula">\[D=\frac{|2-2+6-4|}{\sqrt{4+1+4}}=\boxed{\frac23}\]</div><p>分母は平面の法線ベクトル \((2,-1,2)\) の大きさです。</p></details>
 <p class="hint">平面の一般形と距離公式の証明は、次の「平面の方程式」で詳しく扱います。</p>
 </section>
-<section class="chapter"><h2>6．練習問題</h2><p>数字を入力して答え合わせができます。解説も開けます。</p>
+<section class="chapter"><h2 id="hs-practice">6．練習問題</h2><p>数字を入力して答え合わせができます。解説も開けます。</p>
 <div class="question"><strong>問題1：</strong>中心 \(C(0,1,-1)\)、半径3の球面の方程式の右辺は？<div><label for="q1">右辺の数</label><input id="q1" inputmode="decimal"/></div><button onclick="check(1,9)">答え合わせ</button><p aria-live="polite" class="result" id="a1"></p><details><summary>解説</summary>\(x^2+(y-1)^2+(z+1)^2=9\) です。</details></div>
 <div class="question"><strong>問題2：</strong>球面 \(x^2+y^2+z^2=49\) と平面 \(z=4\) の交わりの円の半径は？<div><label for="q2">半径</label><input id="q2" inputmode="decimal"/></div><button onclick="check(2,Math.sqrt(33))">答え合わせ</button><p aria-live="polite" class="result" id="a2"></p><details><summary>解説</summary>円の半径は \(\sqrt{49-16}=\sqrt{33}\) です。入力欄では小数でも判定します（例：5.74456）。</details></div>
 <div class="question"><strong>問題3：</strong>球面 \(x^2+y^2+z^2=4\) と直線 \(x=t,y=0,z=0\) の共有点はいくつ？<div><label for="q3">個数</label><input id="q3" inputmode="decimal"/></div><button onclick="check(3,2)">答え合わせ</button><p aria-live="polite" class="result" id="a3"></p><details><summary>解説</summary>\(t^2=4\) に実数解が2つあるので共有点は2個です。</details></div>
 <div class="question"><strong>問題4：</strong>点 \(P(2,0,0)\) から平面 \(x=0\) までの距離は？<div><label for="q4">距離</label><input id="q4" inputmode="decimal"/></div><button onclick="check(4,2)">答え合わせ</button><p aria-live="polite" class="result" id="a4"></p><details><summary>解説</summary>\(|2|/\sqrt1=2\) です。</details></div>
 </section>
-<section class="chapter"><h2>まとめ</h2><p>球面は「中心からの距離が一定」の点の集まりです。平面との交わりは中心からの距離で、直線との共有点は2次方程式の解で判断できます。</p></section><nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav></main>
+<section class="chapter"><h2 id="hs-summary">まとめ</h2><p>球面は「中心からの距離が一定」の点の集まりです。平面との交わりは中心からの距離で、直線との共有点は2次方程式の解で判断できます。</p></section><nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav></main>
 <script>
 'use strict';const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
 function E(tag,attrs={},val){let n=document.createElementNS(NS,tag);for(let [k,v] of Object.entries(attrs))n.setAttribute(k,String(v));if(val!==undefined)n.textContent=val;return n}

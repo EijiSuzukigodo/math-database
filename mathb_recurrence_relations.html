@@ -70,10 +70,17 @@ body>footer.lesson-standard-footer>div{max-width:970px!important;margin:auto!imp
 mjx-container svg{width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;display:inline-block!important}
 @media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
 </style><link rel="stylesheet" href="lesson_common_style.css">
+<link rel="stylesheet" href="high_school_lesson_reading.css">
 </head>
 <body>
-<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>漸化式と数列</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>漸化式と数列</h2><p>漸化式は前の項から次の項を定める関係式です。</p></section>
-<article class="paper"><h2>1．この授業の内容</h2>
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>漸化式と数列</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main" data-hs-lesson=""><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>漸化式と数列</h2><p>漸化式は前の項から次の項を定める関係式です。</p><p class="hs-outcome"><strong>この授業でできるようになること</strong><br>初項と漸化式から項を順に求め、式を変形して一般項を見つける。</p></section>
+<nav class="hs-study-nav" aria-label="授業の進め方">
+<a href="#hs-explanation">説明</a>
+<a href="#examples">例題と解説</a>
+<a href="#practice">練習問題</a>
+<a href="#summary">まとめ</a></nav>
+
+<article class="paper"><h2 id="hs-explanation">1．この授業の内容</h2>
 <h2 id="basic">1．基本事項</h2><p>漸化式とは、数列の隣り合う項などの関係を表した式です。例えば、公差 \(d\) の等差数列は次の式を満たします。</p><div class="formula">\[a_{n+1}=a_n+d\]</div><p>一般項を求めるときは、<strong>どの型に当たるか</strong> を見分け、等差・等比などの既知の数列に直すことが重要です。求めた一般項を \(a_1\) と漸化式に代入して確認しましょう。</p>
 <h2 id="viz">2．動くグラフで理解する</h2><p>漸化式 \(a_{n+1}=pa_n+q\) の値を変え、項がどのように増減するかを確かめましょう。\(p=1\) なら等差型、\(q=0\) なら等比型です。</p>
 <div class="controls"><div class="control"><label for="a1">初項 \(a_1\)：<output id="a1out">2</output></label><input id="a1" max="8" min="-5" step="1" type="range" value="2"/></div><div class="control"><label for="p">係数 \(p\)：<output id="pout">1</output></label><input id="p" max="2" min="-2" step="0.5" type="range" value="1"/></div><div class="control"><label for="q">定数 \(q\)：<output id="qout">3</output></label><input id="q" max="5" min="-5" step="1" type="range" value="3"/></div><div class="control"><label for="count">表示項数：<output id="countout">8</output></label><input id="count" max="12" min="3" step="1" type="range" value="8"/></div></div>
@@ -98,16 +105,16 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <div class="example"><strong>例題6（隣接3項間）</strong><p>\(a_1=1,\ a_2=3,\ a_{n+2}=3a_{n+1}-2a_n\) の一般項を求める。</p></div><div class="answer"><p>特性方程式 \(\lambda^2-3\lambda+2=(\lambda-1)(\lambda-2)=0\)。\(a_n=A+B2^{n-1}\) と置くと \(A+B=1,\ A+2B=3\)。ゆえに \(A=-1,B=2\)。</p><div class="formula">\[a_n=2^n-1\]</div></div>
 <div class="example"><strong>例題7（連立型）</strong><p>\(a_1=2,b_1=0\)、\(a_{n+1}=2a_n+b_n,\ b_{n+1}=a_n+2b_n\) を解く。</p></div><div class="answer"><p>\(u_n=a_n+b_n\) は初項2、公比3、\(v_n=a_n-b_n\) は常に2。よって</p><div class="formula">\[a_n=3^{n-1}+1,\quad b_n=3^{n-1}-1\]</div></div>
 <h2 id="practice">5．練習問題（解答を開いて確認）</h2>
-<div class="exercise"><strong>問題1（元の教材の問題）</strong><p>\(a_1=1,\ a_{n+1}=2a_n\) の一般項。</p><details><summary>解答を見る</summary><p>初項1、公比2より \(a_n=2^{n-1}\)。</p></details></div>
-<div class="exercise"><strong>問題2</strong><p>\(a_1=5,\ a_{n+1}=a_n-2\)</p><details><summary>解答を見る</summary><p>\(a_n=5-2(n-1)=7-2n\)。</p></details></div>
-<div class="exercise"><strong>問題3</strong><p>\(a_1=1,\ a_{n+1}=3a_n+2\)</p><details><summary>解答を見る</summary><p>\(a_n+1\) が初項2、公比3の等比数列。\(a_n=2\cdot3^{n-1}-1\)。</p></details></div>
-<div class="exercise"><strong>問題4</strong><p>\(a_1=2,\ a_{n+1}=a_n+3n^2\)</p><details><summary>解答を見る</summary><p>\(a_n=2+3\sum_{k=1}^{n-1}k^2=2+\dfrac{(n-1)n(2n-1)}2\)。\(n=1\) でも成立。</p></details></div>
-<div class="exercise"><strong>問題5</strong><p>\(a_1=2,\ a_{n+1}=\dfrac{a_n}{1+a_n}\)</p><details><summary>解答を見る</summary><p>\(1/a_n=1/2+n-1=n-1/2\) なので \(a_n=\dfrac2{2n-1}\)。</p></details></div>
-<div class="exercise"><strong>問題6</strong><p>\(a_1=1,a_2=2,\ a_{n+2}=2a_{n+1}-a_n\)</p><details><summary>解答を見る</summary><p>差 \(a_{n+1}-a_n\) が常に1なので \(a_n=n\)。</p></details></div>
-<div class="exercise"><strong>問題7</strong><p>\(a_1=0,a_2=1,\ a_{n+2}=3a_{n+1}-2a_n\)</p><details><summary>解答を見る</summary><p>\(a_n=A+B2^{n-1}\)、\(A+B=0,A+2B=1\) より \(a_n=2^{n-1}-1\)。</p></details></div>
-<div class="exercise"><strong>問題8</strong><p>\(a_1=2,\ a_{n+1}=\dfrac{n+1}{n}a_n\)</p><details><summary>解答を見る</summary><p>\(a_n/n\) が一定で初項は2。\(a_n=2n\)。</p></details></div>
-<div class="exercise"><strong>問題9</strong><p>\(a_1=1,\ a_{n+1}=2a_n+2^n\)</p><details><summary>解答を見る</summary><p>\(b_n=a_n/2^{n-1}\) とすると \(b_{n+1}=b_n+1\)、\(b_1=1\)。したがって \(b_n=n\)、\(a_n=n2^{n-1}\)。</p></details></div>
-<div class="exercise"><strong>問題10（発展）</strong><p>\(a_1=1,a_2=3,\ a_{n+2}=4a_{n+1}-4a_n\)</p><details><summary>解答を見る</summary><p>特性方程式は \((\lambda-2)^2=0\)。\(a_n=(A+B(n-1))2^{n-1}\) とすると \(A=1\)、\(2(A+B)=3\) より \(B=1/2\)。\(a_n=(n+1)2^{n-2}\)。</p></details></div>
+<div class="exercise"><strong>問題1（元の教材の問題）</strong><p>\(a_1=1,\ a_{n+1}=2a_n\) の一般項。</p><details><summary>解答・解説を表示</summary><p>初項1、公比2より \(a_n=2^{n-1}\)。</p></details></div>
+<div class="exercise"><strong>問題2</strong><p>\(a_1=5,\ a_{n+1}=a_n-2\)</p><details><summary>解答・解説を表示</summary><p>\(a_n=5-2(n-1)=7-2n\)。</p></details></div>
+<div class="exercise"><strong>問題3</strong><p>\(a_1=1,\ a_{n+1}=3a_n+2\)</p><details><summary>解答・解説を表示</summary><p>\(a_n+1\) が初項2、公比3の等比数列。\(a_n=2\cdot3^{n-1}-1\)。</p></details></div>
+<div class="exercise"><strong>問題4</strong><p>\(a_1=2,\ a_{n+1}=a_n+3n^2\)</p><details><summary>解答・解説を表示</summary><p>\(a_n=2+3\sum_{k=1}^{n-1}k^2=2+\dfrac{(n-1)n(2n-1)}2\)。\(n=1\) でも成立。</p></details></div>
+<div class="exercise"><strong>問題5</strong><p>\(a_1=2,\ a_{n+1}=\dfrac{a_n}{1+a_n}\)</p><details><summary>解答・解説を表示</summary><p>\(1/a_n=1/2+n-1=n-1/2\) なので \(a_n=\dfrac2{2n-1}\)。</p></details></div>
+<div class="exercise"><strong>問題6</strong><p>\(a_1=1,a_2=2,\ a_{n+2}=2a_{n+1}-a_n\)</p><details><summary>解答・解説を表示</summary><p>差 \(a_{n+1}-a_n\) が常に1なので \(a_n=n\)。</p></details></div>
+<div class="exercise"><strong>問題7</strong><p>\(a_1=0,a_2=1,\ a_{n+2}=3a_{n+1}-2a_n\)</p><details><summary>解答・解説を表示</summary><p>\(a_n=A+B2^{n-1}\)、\(A+B=0,A+2B=1\) より \(a_n=2^{n-1}-1\)。</p></details></div>
+<div class="exercise"><strong>問題8</strong><p>\(a_1=2,\ a_{n+1}=\dfrac{n+1}{n}a_n\)</p><details><summary>解答・解説を表示</summary><p>\(a_n/n\) が一定で初項は2。\(a_n=2n\)。</p></details></div>
+<div class="exercise"><strong>問題9</strong><p>\(a_1=1,\ a_{n+1}=2a_n+2^n\)</p><details><summary>解答・解説を表示</summary><p>\(b_n=a_n/2^{n-1}\) とすると \(b_{n+1}=b_n+1\)、\(b_1=1\)。したがって \(b_n=n\)、\(a_n=n2^{n-1}\)。</p></details></div>
+<div class="exercise"><strong>問題10（発展）</strong><p>\(a_1=1,a_2=3,\ a_{n+2}=4a_{n+1}-4a_n\)</p><details><summary>解答・解説を表示</summary><p>特性方程式は \((\lambda-2)^2=0\)。\(a_n=(A+B(n-1))2^{n-1}\) とすると \(A=1\)、\(2(A+B)=3\) より \(B=1/2\)。\(a_n=(n+1)2^{n-2}\)。</p></details></div>
 <h2 id="summary">6．まとめ</h2><p>漸化式は前の項から次の項を定める関係式です。最初に等差型・等比型かどうかを確認し、必要に応じて<strong>定数を引く・逆数をとる・差をとる・和を考える</strong>などの変形を試しましょう。答えを求めたら初項と元の漸化式への代入で確かめます。</p>
 </article><nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav></main>
 <script>

@@ -114,18 +114,36 @@ body>footer.lesson-standard-footer>div{max-width:970px!important;margin:auto!imp
 mjx-container svg{width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;display:inline-block!important}
 @media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
 </style><link rel="stylesheet" href="lesson_common_style.css">
+<link rel="stylesheet" href="high_school_lesson_reading.css">
 </head><body>
-<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_2.html">数学Ⅱの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学Ⅱ</div><h1>複素数の導入</h1><p class="lesson-standard-bottom">数学Ⅱ</p></div></header><main class="lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>複素数の意味と計算方法を理解する</h2><p>「複素数」の基本事項を理解し、複素数とはを例題や図を通して確かめ、練習問題に活用できるようになる。</p></section>
-<section><h2>1．複素数とは</h2><p>実数の範囲では、方程式 \(x^2=-1\) を満たす数はありません。そこで、2乗すると \(-1\) になる新しい数を考えます。これを<strong>虚数単位</strong>といい、\(i\) で表します。</p><div class="formula">\[i^2=-1\]</div><p>実数 \(a,b\) を用いて \(a+bi\) の形で表される数を<strong>複素数</strong>といいます。\(a\) を<strong>実部</strong>、\(b\) を<strong>虚部</strong>といいます。</p><div class="formula">\[z=a+bi\qquad(a,b\text{ は実数})\]</div><p>\(b=0\) なら実数、\(b\ne0\) なら虚数です。特に \(a=0,\ b\ne0\) のとき<strong>純虚数</strong>といいます。</p><div class="example"><strong>例題1</strong>　次の複素数の実部と虚部を答えよ。<p>① \(3+2i\)　② \(-4\)　③ \(5i\)</p><p><strong>解答</strong>　① 実部 \(3\)、虚部 \(2\)　② 実部 \(-4\)、虚部 \(0\)　③ 実部 \(0\)、虚部 \(5\)</p></div></section>
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_2.html">数学Ⅱの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学Ⅱ</div><h1>複素数の導入</h1><p class="lesson-standard-bottom">数学Ⅱ</p></div></header><main class="lesson-standard-main" id="md-standard-main" data-hs-lesson=""><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>複素数の意味と計算方法を理解する</h2><p>「複素数」の基本事項を理解し、複素数とはを例題や図を通して確かめ、練習問題に活用できるようになる。</p></section>
+<nav class="hs-study-nav" aria-label="授業の進め方">
+<a href="#hs-explanation">説明</a>
+<a href="#hs-examples">例題と解説</a>
+<a href="#hs-practice">練習問題</a>
+<a href="#hs-summary">まとめ</a></nav>
+
+<section><h2 id="hs-explanation">1．複素数とは</h2><div class="hs-table"><table><caption>複素数の2つの成分</caption>
+<thead><tr><th scope="col">成分</th><th scope="col">\(3-2i\) の例</th></tr></thead>
+<tbody>
+<tr><th scope="row">実部</th><td>3</td></tr>
+<tr><th scope="row">虚部</th><td>\(-2\)</td></tr>
+</tbody></table></div>
+<p>実数の範囲では、方程式 \(x^2=-1\) を満たす数はありません。そこで、2乗すると \(-1\) になる新しい数を考えます。これを<strong>虚数単位</strong>といい、\(i\) で表します。</p><div class="formula">\[i^2=-1\]</div><p>実数 \(a,b\) を用いて \(a+bi\) の形で表される数を<strong>複素数</strong>といいます。\(a\) を<strong>実部</strong>、\(b\) を<strong>虚部</strong>といいます。</p><div class="formula">\[z=a+bi\qquad(a,b\text{ は実数})\]</div><p>\(b=0\) なら実数、\(b\ne0\) なら虚数です。特に \(a=0,\ b\ne0\) のとき<strong>純虚数</strong>といいます。</p><div class="example"><strong id="hs-examples">例題1</strong>　次の複素数の実部と虚部を答えよ。<p>① \(3+2i\)　② \(-4\)　③ \(5i\)</p><p><strong>解答</strong>　① 実部 \(3\)、虚部 \(2\)　② 実部 \(-4\)、虚部 \(0\)　③ 実部 \(0\)、虚部 \(5\)</p></div></section>
 <section><h2>2．複素数の相等</h2><p>2つの複素数が等しいのは、<strong>実部どうし、虚部どうしがそれぞれ等しいとき</strong>です。</p><div class="formula">\[a+bi=c+di\iff a=c\ \text{かつ}\ b=d\]</div><div class="example"><strong>例題2</strong>　実数 \(x,y\) について、\(3x+(2x-3y)i=6+i\) のとき、\(x,y\) を求めよ。<p><strong>解答</strong>　実部と虚部を比較すると</p><div class="formula">\[3x=6,\qquad 2x-3y=1\]</div><p>したがって \(x=2\)。これを代入して \(4-3y=1\) より \(y=1\)。</p></div></section>
 <section><h2>3．複素数の加法・減法</h2><p>文字式と同じように、実部どうし、虚部どうしをまとめます。</p><div class="formula">\[\begin{aligned}(a+bi)+(c+di)&amp;=(a+c)+(b+d)i\(a+bi)-(c+di)&amp;=(a-c)+(b-d)i\end{aligned}\]</div><div class="example"><strong>例題3</strong><div class="formula">\[\begin{aligned}(5-2i)+(4+3i)&amp;=9+i\(-3+4i)-(5-7i)&amp;=-8+11i\end{aligned}\]</div></div></section>
 <section><h2>4．複素数の乗法</h2><p>分配法則で展開し、\(i^2=-1\) を用いて整理します。</p><div class="formula">\[(a+bi)(c+di)=(ac-bd)+(ad+bc)i\]</div><div class="example"><strong>例題4</strong>　\((3+2i)(4-5i)\) を計算せよ。<div class="formula">\[\begin{aligned}(3+2i)(4-5i)&amp;=12-15i+8i-10i^2\&amp;=12-7i+10\&amp;=22-7i\end{aligned}\]</div></div><p>また、\(i\) の累乗は \(i^2=-1,\ i^3=-i,\ i^4=1\) となり、4乗ごとに繰り返します。</p></section>
 <section><h2>5．共役複素数と除法</h2><p>複素数 \(a+bi\) に対し、\(a-bi\) を<strong>共役複素数</strong>といい、\(\overline z\) と表します。</p><div class="formula">\[z=a+bi,\quad \overline z=a-bi\]</div><p>共役複素数の積は実数になります。</p><div class="formula">\[(a+bi)(a-bi)=a^2+b^2\]</div><p>複素数で割るときは、分母と分子に分母の共役複素数を掛けます。</p><div class="formula">\[\frac{a+bi}{c+di}=\frac{(a+bi)(c-di)}{c^2+d^2}\quad(c+di\ne0)\]</div><div class="example"><strong>例題5</strong>　\(\dfrac{3+i}{1+2i}\) を計算せよ。<div class="formula">\[\begin{aligned}\frac{3+i}{1+2i}&amp;=\frac{(3+i)(1-2i)}{(1+2i)(1-2i)}\&amp;=\frac{5-5i}{5}=1-i\end{aligned}\]</div></div></section>
 <section><h2>6．負の数の平方根</h2><p>正の実数 \(a\) に対して、\(-a\) の平方根は \(\pm\sqrt a\,i\) です。</p><div class="formula">\[\sqrt{-a}=\sqrt a\,i\quad(a&gt;0)\]</div><div class="example"><strong>例題6</strong><div class="formula">\[\sqrt{-5}=\sqrt5\,i,\qquad \sqrt{-12}=2\sqrt3\,i\]</div></div><div class="note"><strong>注意</strong>　実数の平方根で成り立つ \(\sqrt a\sqrt b=\sqrt{ab}\) は、負の数にそのまま使えません。例えば \(\sqrt{-2}\sqrt{-3}=(\sqrt2 i)(\sqrt3 i)=-\sqrt6\) です。</div></section>
-<section><h2>7．練習問題</h2>
+<section><h2 id="hs-practice">7．練習問題</h2>
 <div class="exercise"><strong>問題1</strong>　\((2-3i)+(5+4i)\) を計算せよ。<details><summary>解答・解説を表示</summary>\[7+i\]実部どうし、虚部どうしを加えます。</details></div>
 <div class="exercise"><strong>問題2</strong>　\((1+2i)(3-i)\) を計算せよ。<details><summary>解答・解説を表示</summary>\[3-i+6i-2i^2=5+5i\]</details></div>
 <div class="exercise"><strong>問題3</strong>　\(\dfrac{2+i}{1-i}\) を計算せよ。<details><summary>解答・解説を表示</summary>\[\frac{(2+i)(1+i)}{(1-i)(1+i)}=\frac{1+3i}{2}\]</details></div>
 <div class="exercise"><strong>問題4</strong>　\(\sqrt{-18}\) を求めよ。<details><summary>解答・解説を表示</summary>\[\sqrt{-18}=3\sqrt2\,i\]</details></div>
 <div class="exercise"><strong>問題5</strong>　実数 \(x,y\) が \((x+1)+(2y-3)i=4+5i\) を満たすとき、\(x,y\) を求めよ。<details><summary>解答・解説を表示</summary>\[x+1=4,\quad 2y-3=5\]よって \(x=3,\ y=4\)。</details></div>
-</section><section class="review-practice"><h2>8．追加の練習問題（基本・標準）</h2><p>途中式をノートに書いてから、解答を開いて確認しましょう。</p><div class="review-question"><p><strong>問題 1：</strong>\((2+3i)+(1-5i)\) を計算せよ。</p><details><summary>解答・考え方を確認</summary><p>実部・虚部をまとめて \(3-2i\)。</p></details></div><div class="review-question"><p><strong>問題 2：</strong>\((1+i)(1-i)\) を計算せよ。</p><details><summary>解答・考え方を確認</summary><p>\(1-i^2=2\)。</p></details></div></section><nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav></main><footer class="lesson-standard-footer"><div><div class="site-parent-link"><a href="math_subject_2.html">数学Ⅱの授業一覧に戻る</a></div>みんなの数学データベース｜高校生のための授業</div></footer></body></html>
+</section><section class="review-practice"><h2>8．追加の練習問題（基本・標準）</h2><p>途中式をノートに書いてから、解答を開いて確認しましょう。</p><div class="review-question"><p><strong>問題 1：</strong>\((2+3i)+(1-5i)\) を計算せよ。</p><details><summary>解答・解説を表示</summary><p>実部・虚部をまとめて \(3-2i\)。</p></details></div><div class="review-question"><p><strong>問題 2：</strong>\((1+i)(1-i)\) を計算せよ。</p><details><summary>解答・解説を表示</summary><p>\(1-i^2=2\)。</p></details></div></section><nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav>
+<section class="hs-study-panel" id="hs-summary">
+<h2>まとめ</h2>
+<p>虚数単位は \(i^2=-1\) を満たします。計算後は実部と虚部をまとめ、\(a+bi\) の形で答えます。</p>
+</section>
+</main><footer class="lesson-standard-footer"><div><div class="site-parent-link"><a href="math_subject_2.html">数学Ⅱの授業一覧に戻る</a></div>みんなの数学データベース｜高校生のための授業</div></footer></body></html>

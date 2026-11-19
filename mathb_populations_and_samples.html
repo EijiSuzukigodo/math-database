@@ -70,11 +70,18 @@ body>footer.lesson-standard-footer>div{max-width:970px!important;margin:auto!imp
 mjx-container svg{width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;display:inline-block!important}
 @media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
 </style><link rel="stylesheet" href="lesson_common_style.css">
+<link rel="stylesheet" href="high_school_lesson_reading.css">
 </head><body>
-<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>母集団と標本</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>母集団と標本</h2><p>全体を母集団、そこから選んだ一部を標本といいます。</p></section><article class="paper">
-<h2>1．母集団と標本</h2>
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>母集団と標本</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main" data-hs-lesson=""><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>母集団と標本</h2><p>全体を母集団、そこから選んだ一部を標本といいます。</p><p class="hs-outcome"><strong>この授業でできるようになること</strong><br>母集団と標本を区別し、無作為に抽出した標本から標本平均を求める。</p></section>
+<nav class="hs-study-nav" aria-label="授業の進め方">
+<a href="#hs-explanation">説明</a>
+<a href="#hs-examples">例題と解説</a>
+<a href="#hs-practice">練習問題</a>
+<a href="#hs-summary">まとめ</a></nav>
+<article class="paper">
+<h2 id="hs-explanation">1．母集団と標本</h2>
 <p>ある集団全体の性質を調べたいとき、その<strong>調査対象全体を母集団</strong>、母集団から実際に選んだ一部分を<strong>標本</strong>といいます。母集団に属する個体の数を<strong>母集団の大きさ</strong>、選んだ個体の数を<strong>標本の大きさ</strong>といいます。</p>
-<div class="note"><strong>例：</strong>ある学校の生徒800人の身長を調べるとき、800人全員が母集団です。その中から選んだ40人は標本で、標本の大きさは40です。</div>
+<div class="note"><strong id="hs-examples">例：</strong>ある学校の生徒800人の身長を調べるとき、800人全員が母集団です。その中から選んだ40人は標本で、標本の大きさは40です。</div>
 <p>標本から計算した値は、選ばれる人によって変わります。母集団全体の値と、標本から求めた値を区別することが重要です。</p>
 <table class="data-table"><thead><tr><th>母集団の性質</th><th>標本から計算する値</th></tr></thead><tbody>
 <tr><td>母平均 \(\mu\)</td><td>標本平均 \(\bar X\)</td></tr>
@@ -116,17 +123,17 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <div class="example"><strong>例題4：標本の大きさ</strong><p>母標準偏差が20のとき、独立な標本の標本平均の標準偏差を2以下にしたい。標本の大きさは最低いくつ必要か。</p></div><div class="answer"><strong>解答</strong><div class="formula">\[\frac{20}{\sqrt n}\leqq2\iff\sqrt n\geqq10\iff n\geqq100\]</div><p>したがって最低 \(\boxed{100}\) 個です。</p></div>
 <div class="example"><strong>例題5：非復元抽出</strong><p>母集団が100個、母分散が25である。非復元で10個を単純無作為抽出するとき、標本平均の分散を求めよ。</p></div><div class="answer"><strong>解答</strong><div class="formula">\[V(\bar X)=\frac{25}{10}\cdot\frac{100-10}{100-1}=\boxed{\frac{25}{11}}\]</div></div>
 <div class="example"><strong>例題6：抽出の偏り</strong><p>学校全体の平均通学時間を調べたい。朝早く登校する生徒だけを選ぶ方法に問題はあるか。</p></div><div class="answer"><strong>解答</strong><p>早く登校する生徒は通学時間などの特徴が全校と異なるおそれがあります。標本の大きさにかかわらず偏りが生じる可能性があります。</p></div>
-<h2>8．練習問題</h2>
-<div class="exercise"><strong>元の練習問題</strong><p>標本 2, 4, 6, 8 の平均を求めよ。</p><details><summary>解答と解説</summary><div class="formula">\[\bar X=\frac{2+4+6+8}{4}=\boxed5\]</div></details></div>
-<div class="exercise"><strong>練習1</strong><p>標本 4, 9, 5, 10, 7 の平均を求めよ。</p><details><summary>解答と解説</summary><p>和は35、標本の大きさは5だから平均は \(\boxed7\)。</p></details></div>
-<div class="exercise"><strong>練習2</strong><p>母標準偏差15の母集団から独立に25個を抽出する。標本平均の標準偏差は？</p><details><summary>解答と解説</summary><div class="formula">\[\sigma_{\bar X}=\frac{15}{\sqrt{25}}=\boxed3\]</div></details></div>
-<div class="exercise"><strong>練習3</strong><p>母分散64の母集団から独立に16個抽出する。標本平均の分散は？</p><details><summary>解答と解説</summary><div class="formula">\[V(\bar X)=\frac{64}{16}=\boxed4\]</div></details></div>
-<div class="exercise"><strong>練習4</strong><p>標本の大きさを9倍にしたら標本平均の標準偏差は何倍？（独立な抽出）</p><details><summary>解答と解説</summary><p>\(1/\sqrt9=\boxed{1/3}\) 倍。</p></details></div>
-<div class="exercise"><strong>練習5</strong><p>母平均80、母分散100の母集団から独立に25個を抽出する。\(E(\bar X)\) は？</p><details><summary>解答と解説</summary><p>標本平均の期待値は母平均なので \(\boxed{80}\)。</p></details></div>
-<div class="exercise"><strong>練習6</strong><p>母集団200個から重複なしで標本を選ぶ方法を何という？</p><details><summary>解答と解説</summary><p>非復元抽出。無作為に重複なく選べば非復元の単純無作為抽出です。</p></details></div>
-<div class="exercise"><strong>練習7</strong><p>母集団100個、母分散36から10個を非復元で単純無作為抽出する。標本平均の分散は？</p><details><summary>解答と解説</summary><div class="formula">\[V(\bar X)=\frac{36}{10}\frac{90}{99}=\boxed{\frac{36}{11}}\]</div></details></div>
-<div class="exercise"><strong>練習8</strong><p>昼休みに食堂を利用する生徒だけにアンケートして「全校生徒」の昼食を推測することの問題点を説明せよ。</p><details><summary>解答と解説</summary><p>食堂を使わない生徒が調査対象から外れるため、抽出に偏りが生じる可能性があります。</p></details></div>
-<h2>9．まとめ</h2><ul><li>母集団は調べたい全体、標本はその一部。</li><li>標本平均は標本ごとに変わり、無作為抽出では確率変数となる。</li><li>独立な抽出では \(E(\bar X)=\mu\)、\(V(\bar X)=\sigma^2/n\)。</li><li>標本数が多いほど標本平均は安定しやすい。ただし、偏った抽出には注意する。</li></ul>
+<h2 id="hs-practice">8．練習問題</h2>
+<div class="exercise"><strong>元の練習問題</strong><p>標本 2, 4, 6, 8 の平均を求めよ。</p><details><summary>解答・解説を表示</summary><div class="formula">\[\bar X=\frac{2+4+6+8}{4}=\boxed5\]</div></details></div>
+<div class="exercise"><strong>練習1</strong><p>標本 4, 9, 5, 10, 7 の平均を求めよ。</p><details><summary>解答・解説を表示</summary><p>和は35、標本の大きさは5だから平均は \(\boxed7\)。</p></details></div>
+<div class="exercise"><strong>練習2</strong><p>母標準偏差15の母集団から独立に25個を抽出する。標本平均の標準偏差は？</p><details><summary>解答・解説を表示</summary><div class="formula">\[\sigma_{\bar X}=\frac{15}{\sqrt{25}}=\boxed3\]</div></details></div>
+<div class="exercise"><strong>練習3</strong><p>母分散64の母集団から独立に16個抽出する。標本平均の分散は？</p><details><summary>解答・解説を表示</summary><div class="formula">\[V(\bar X)=\frac{64}{16}=\boxed4\]</div></details></div>
+<div class="exercise"><strong>練習4</strong><p>標本の大きさを9倍にしたら標本平均の標準偏差は何倍？（独立な抽出）</p><details><summary>解答・解説を表示</summary><p>\(1/\sqrt9=\boxed{1/3}\) 倍。</p></details></div>
+<div class="exercise"><strong>練習5</strong><p>母平均80、母分散100の母集団から独立に25個を抽出する。\(E(\bar X)\) は？</p><details><summary>解答・解説を表示</summary><p>標本平均の期待値は母平均なので \(\boxed{80}\)。</p></details></div>
+<div class="exercise"><strong>練習6</strong><p>母集団200個から重複なしで標本を選ぶ方法を何という？</p><details><summary>解答・解説を表示</summary><p>非復元抽出。無作為に重複なく選べば非復元の単純無作為抽出です。</p></details></div>
+<div class="exercise"><strong>練習7</strong><p>母集団100個、母分散36から10個を非復元で単純無作為抽出する。標本平均の分散は？</p><details><summary>解答・解説を表示</summary><div class="formula">\[V(\bar X)=\frac{36}{10}\frac{90}{99}=\boxed{\frac{36}{11}}\]</div></details></div>
+<div class="exercise"><strong>練習8</strong><p>昼休みに食堂を利用する生徒だけにアンケートして「全校生徒」の昼食を推測することの問題点を説明せよ。</p><details><summary>解答・解説を表示</summary><p>食堂を使わない生徒が調査対象から外れるため、抽出に偏りが生じる可能性があります。</p></details></div>
+<h2 id="hs-summary">9．まとめ</h2><ul><li>母集団は調べたい全体、標本はその一部。</li><li>標本平均は標本ごとに変わり、無作為抽出では確率変数となる。</li><li>独立な抽出では \(E(\bar X)=\mu\)、\(V(\bar X)=\sigma^2/n\)。</li><li>標本数が多いほど標本平均は安定しやすい。ただし、偏った抽出には注意する。</li></ul>
 </article><nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav></main>
 <script>
 (function(){'use strict';const $=id=>document.getElementById(id);const NS='http://www.w3.org/2000/svg';function E(name,atts,parent){const n=document.createElementNS(NS,name);for(const [k,v] of Object.entries(atts||{}))n.setAttribute(k,v);if(parent)parent.appendChild(n);return n;}function T(x,y,text,parent,extra){const n=E('text',{x,y,'font-size':13,fill:'#4b6177',...extra},parent);n.textContent=text;return n;}
