@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>位置ベクトルで交点と線分の比を求める｜数学Cの重要例題</title>
+<link rel="stylesheet" href="lesson_common_style.css">
+<link rel="stylesheet" href="important_math1_quadratic_extrema.css?v=3">
+<link rel="stylesheet" href="important_example_style.css">
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<style>
+.intersection-controls{display:flex;flex-wrap:wrap;align-items:end;gap:12px 20px}
+.intersection-controls label{display:block}
+.intersection-controls input{display:block;width:min(100%,180px)}
+.intersection-figure{margin:0}
+.intersection-readings dl{margin:0}
+.intersection-readings dd{margin:0 0 8px;font-weight:700;font-variant-numeric:tabular-nums}
+</style>
+</head>
+<body class="extrema-lesson important-example">
+<header><div class="wrap">
+  <div class="site-parent-link"><a href="important_examples_mathc.html#plane-vectors">数学Cの重要例題に戻る</a></div>
+  <p>数学C ／ 平面上のベクトル</p>
+  <h1>位置ベクトルで交点と線分の比を求める</h1>
+</div></header>
+<main class="wrap">
+<section class="example-goal">
+  <span class="goal-label">例題のねらい</span>
+  <h2>同じ交点を2通りに表して線分の比を求める</h2>
+  <p>交点を2本の線分上の点として表し、位置ベクトルの係数から比を求められるようになる。チェバの定理と面積比を用いる別解も理解する。</p>
+</section>
+<section class="panel">
+  <h2>例題</h2>
+  <p>三角形 \(ABC\) の辺 \(AB\) 上に \(AD:DB=2:1\) となる点 \(D\)、辺 \(AC\) 上に \(AE:EC=1:2\) となる点 \(E\) をとる。線分 \(CD\) と \(BE\) の交点を \(P\) とする。</p>
+  <p>\(CP:PD\) と \(BP:PE\) を求めよ。</p>
+</section>
+<section class="panel">
+  <h2>解説</h2>
+  <h3>位置ベクトルで点 \(P\) を2通りに表す</h3>
+  <p>\(\vec b=\overrightarrow{AB}\)、\(\vec c=\overrightarrow{AC}\) とおく。\(D\)、\(E\) の位置ベクトルは、それぞれ \(\overrightarrow{AD}=\frac23\vec b\)、\(\overrightarrow{AE}=\frac13\vec c\) である。</p>
+  <p>\(\overrightarrow{CP}=s\overrightarrow{CD}\)、\(\overrightarrow{BP}=t\overrightarrow{BE}\) とおく。求める比は \(CP:PD=s:(1-s)\)、\(BP:PE=t:(1-t)\) である。</p>
+  <div class="scroll equation">\[\begin{aligned}
+  \overrightarrow{AP}
+    &=(1-s)\overrightarrow{AC}+s\overrightarrow{AD}
+     =\frac{2s}{3}\vec b+(1-s)\vec c,\\
+  \overrightarrow{AP}
+    &=(1-t)\overrightarrow{AB}+t\overrightarrow{AE}
+     =(1-t)\vec b+\frac{t}{3}\vec c.
+  \end{aligned}\]</div>
+  <p>\(\vec b\) と \(\vec c\) は平行でないので、対応する係数を比較できる。</p>
+  <div class="scroll equation">\[
+  \frac{2s}{3}=1-t,\qquad 1-s=\frac{t}{3}
+  \quad\Longrightarrow\quad s=\frac67,\quad t=\frac37.
+  \]</div>
+  <div class="scroll equation">\[\boxed{CP:PD=6:1,\qquad BP:PE=3:4}\]</div>
+
+  <h3>別解　チェバの定理と面積比を使う</h3>
+  <p>直線 \(AP\) と辺 \(BC\) の交点を \(F\) とする。\(AF\)、\(BE\)、\(CD\) は点 \(P\) で交わるので、チェバの定理より、</p>
+  <div class="scroll equation">\[
+  \frac{AD}{DB}\cdot\frac{BF}{FC}\cdot\frac{CE}{EA}=1
+  \quad\Longrightarrow\quad BF:FC=1:4.
+  \]</div>
+  <p>\([XYZ]\) を三角形 \(XYZ\) の面積とする。三角形 \(APB\) と \(APC\) は底辺 \(AP\) を共有し、\(B\)、\(C\) から直線 \(AP\) までの高さの比は \(BF:FC=1:4\) になる。ここで \([APB]=S\) とおくと、</p>
+  <div class="scroll equation">\[
+  [APC]=4S,\qquad
+  [APD]=\frac{AD}{AB}[APB]=\frac23 S,\qquad
+  [APE]=\frac{AE}{AC}[APC]=\frac43 S.
+  \]</div>
+  <p>今度は \(CD\) または \(BE\) 上の線分を底辺と見れば、どちらの比較でも頂点 \(A\) からの高さが等しい。よって、</p>
+  <div class="scroll equation">\[\begin{aligned}
+  CP:PD&=[APC]:[APD]=4S:\frac23S=6:1,\\
+  BP:PE&=[APB]:[APE]=S:\frac43S=3:4.
+  \end{aligned}\]</div>
+
+  <h3>動く図で確かめる</h3>
+  <div class="intersection-controls">
+    <label for="d-ratio">\(AD:DB\) <output id="d-value" for="d-ratio">2:1</output>
+      <input id="d-ratio" type="range" min="1" max="6" step="1" value="2">
+    </label>
+    <label for="e-ratio">\(AE:EC\) <output id="e-value" for="e-ratio">1:2</output>
+      <input id="e-ratio" type="range" min="1" max="6" step="1" value="2">
+    </label>
+    <button type="button" id="reset">例題の比に戻す</button>
+  </div>
+  <div class="example-graph-layout">
+    <figure class="example-diagram intersection-figure">
+      <svg id="triangle" viewBox="0 0 360 265" role="img" aria-label="三角形ABCの辺上の点DとEを動かし、3本の線分の交点Pを確かめる図">
+        <path d="M95 28 L30 224 L327 224 Z" fill="#eef6ff" stroke="#17365d" stroke-width="2"/>
+        <line id="cd" x1="327" y1="224" stroke="#176cae" stroke-width="2.5"/>
+        <line id="be" x1="30" y1="224" stroke="#087a62" stroke-width="2.5"/>
+        <line id="af" x1="95" y1="28" stroke="#a45a19" stroke-width="2" stroke-dasharray="6 4"/>
+        <g fill="#17365d" font-size="18">
+          <text x="87" y="19">A</text><text x="14" y="248">B</text><text x="332" y="248">C</text>
+          <circle id="dot-d" r="4"/><text id="label-d">D</text>
+          <circle id="dot-e" r="4"/><text id="label-e">E</text>
+          <circle id="dot-f" r="4"/><text id="label-f">F</text>
+          <circle id="dot-p" r="6" fill="#a45a19" stroke="white" stroke-width="1.5"/><text id="label-p">P</text>
+        </g>
+      </svg>
+      <figcaption class="legend">青：\(CD\)　緑：\(BE\)　橙の破線：\(AF\)</figcaption>
+    </figure>
+    <div class="example-readings intersection-readings">
+      <dl>
+        <div><dt>\(CP:PD\)</dt><dd><output id="cp-pd" for="d-ratio e-ratio">6:1</output></dd></div>
+        <div><dt>\(BP:PE\)</dt><dd><output id="bp-pe" for="d-ratio e-ratio">3:4</output></dd></div>
+        <div><dt>\(BF:FC\)</dt><dd><output id="bf-fc" for="d-ratio e-ratio">1:4</output></dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+<section class="panel">
+  <h2>類題</h2>
+  <p>例題で \(AD:DB\) を \(3:1\)、\(AE:EC\) を \(1:2\) とする。\(CP:PD\) と \(BP:PE\) を求めよ。さらに、直線 \(AP\) と辺 \(BC\) の交点を \(F\) として、\(BF:FC\) を求めよ。</p>
+  <details>
+    <summary>解答・解説を見る</summary>
+    <p>例題と同じように係数を比較すると、\(\frac{3s}{4}=1-t\)、\(1-s=\frac{t}{3}\)。これを解くと \(s=\frac89\)、\(t=\frac13\) となる。</p>
+    <p>チェバの定理より \(3\cdot\frac{BF}{FC}\cdot2=1\)。したがって、</p>
+    <div class="scroll equation">\[\boxed{CP:PD=8:1,\qquad BP:PE=1:2,\qquad BF:FC=1:6}\]</div>
+  </details>
+</section>
+</main>
+<footer><div class="wrap"><div class="site-parent-link"><a href="important_examples_mathc.html#plane-vectors">数学Cの重要例題に戻る</a></div>みんなの数学データベース</div></footer>
+<script>
+(() => {
+  const get = id => document.getElementById(id);
+  const dSlider = get('d-ratio');
+  const eSlider = get('e-ratio');
+  const a = [95, 28], b = [30, 224], c = [327, 224];
+  const interpolate = (from, to, fraction) =>
+    from.map((coordinate, axis) => coordinate + fraction * (to[axis] - coordinate));
+
+  function ratio(left, right) {
+    let x = left, y = right;
+    while (y) [x, y] = [y, x % y];
+    return String(left / x) + ':' + String(right / x);
+  }
+  function plot(id, point, dx, dy) {
+    get('dot-' + id).setAttribute('cx', point[0]);
+    get('dot-' + id).setAttribute('cy', point[1]);
+    get('label-' + id).setAttribute('x', point[0] + dx);
+    get('label-' + id).setAttribute('y', point[1] + dy);
+  }
+  function endpoint(id, point) {
+    get(id).setAttribute('x2', point[0]);
+    get(id).setAttribute('y2', point[1]);
+  }
+  function draw() {
+    const m = Number(dSlider.value), n = Number(eSlider.value);
+    const d = interpolate(a, b, m / (m + 1));
+    const e = interpolate(a, c, 1 / (n + 1));
+    const f = interpolate(b, c, 1 / (1 + m * n));
+    const cp = n * (m + 1);
+    const p = interpolate(c, d, cp / (cp + 1));
+    endpoint('cd', d); endpoint('be', e); endpoint('af', f);
+    plot('d', d, -20, 2); plot('e', e, 7, -5); plot('f', f, -3, 25); plot('p', p, 7, -9);
+    get('d-value').textContent = m + ':1';
+    get('e-value').textContent = '1:' + n;
+    get('cp-pd').textContent = ratio(cp, 1);
+    get('bp-pe').textContent = ratio(n + 1, m * n);
+    get('bf-fc').textContent = ratio(1, m * n);
+  }
+  dSlider.addEventListener('input', draw);
+  eSlider.addEventListener('input', draw);
+  get('reset').addEventListener('click', () => {
+    dSlider.value = dSlider.defaultValue;
+    eSlider.value = eSlider.defaultValue;
+    draw();
+  });
+  draw();
+})();
+</script>
+</body></html>
