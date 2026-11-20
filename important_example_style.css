@@ -1,0 +1,129 @@
+/* Shared typography and interactive layout for the important examples. */
+:where(body.important-example, body.important-example-index) {
+  --example-ink: #17365d;
+  --example-border: #d9e5f1;
+  --example-serif: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "Noto Serif CJK JP", "Noto Serif JP", serif;
+}
+
+body.important-example,
+body.important-example-index {
+  font-family: var(--example-serif) !important;
+  line-height: 1.85;
+}
+
+.important-example main {
+  min-width: 0;
+}
+
+.important-example main > section:not(.example-goal) {
+  padding: clamp(14px, 3vw, 22px);
+  border-radius: 16px;
+  border-color: var(--example-border);
+}
+
+.important-example main > section > h2 {
+  margin-top: 0;
+  color: var(--example-ink);
+}
+
+.important-example .example-goal {
+  background: #eaf4ff;
+  border: 0;
+  border-left: 5px solid #2585bd;
+  border-radius: 10px;
+  padding: 15px 18px;
+  margin: 0 0 22px;
+}
+
+.important-example .goal-label {
+  display: inline-block;
+  background: #174a77;
+  color: white;
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.important-example .example-goal h2 {
+  margin: 0 0 5px;
+  line-height: 1.4;
+  color: var(--example-ink);
+}
+
+.important-example .example-goal p {
+  margin: 0;
+  font-size: .9rem;
+}
+
+.important-example :is(.formula, .eq, .mathbox, math) {
+  font-family: "STIX Two Math", "Cambria Math", "Times New Roman", var(--example-serif);
+}
+
+.important-example .example-graph-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(8px, 2vw, 18px);
+  max-width: 54rem;
+  margin: 14px 0;
+}
+
+.important-example .example-diagram {
+  min-width: 0;
+  max-width: 31rem;
+}
+
+.important-example .example-diagram :is(svg, canvas) {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.important-example .example-readings {
+  min-width: 0;
+  padding: clamp(6px, 1.5vw, 12px);
+  border: 1px solid var(--example-border);
+  border-radius: 12px;
+  background: #f3f8fd;
+  overflow-wrap: anywhere;
+  font-variant-numeric: tabular-nums;
+}
+
+.important-example .example-readings > :first-child {
+  margin-top: 0;
+}
+
+.important-example .example-readings > :last-child {
+  margin-bottom: 0;
+}
+
+.important-example .example-readings .stats {
+  min-width: 0;
+}
+
+.important-example .example-graph-layout mjx-container {
+  max-width: 100%;
+}
+
+.important-example-index main .unit h3 {
+  line-height: 1.45;
+}
+
+@media (max-width: 650px) and (min-width: 381px) {
+  body.important-example-reference .graph-layout {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    gap: 8px;
+  }
+  body.important-example-reference .graph-layout .results {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 380px) {
+  .important-example .example-graph-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
