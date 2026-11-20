@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="important_example_style.css">
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <style>
+.extrema-lesson .panel h3.solution-break{margin-block-start:1.85rem}
 .intersection-controls{display:flex;flex-wrap:wrap;align-items:end;gap:12px 20px}
 .intersection-controls label{display:block}
 .intersection-controls input{display:block;width:min(100%,180px)}
@@ -70,7 +71,7 @@
   \]</div>
   <p>\(\overrightarrow{BF}=\overrightarrow{AF}-\overrightarrow{AB}=\frac15(\vec c-\vec b)=\frac15\overrightarrow{BC}\) なので、\(\boxed{BF:FC=1:4}\)。</p>
 
-  <h3>別解　チェバの定理と面積比を使う</h3>
+  <h3 class="solution-break">別解　チェバの定理と面積比を使う</h3>
   <p>直線 \(AP\) と辺 \(BC\) の交点を \(F\) とする。\(AF\)、\(BE\)、\(CD\) は点 \(P\) で交わるので、チェバの定理より、</p>
   <div class="scroll equation">\[
   \frac{AD}{DB}\cdot\frac{BF}{FC}\cdot\frac{CE}{EA}=1
@@ -91,7 +92,7 @@
   <p>（1）の \(\overrightarrow{AP}\) は、\(CP:PD=6:1\) と \(\overrightarrow{AD}=\frac23\vec b\) を使い、内分点の公式から \(\overrightarrow{AP}=\frac{6\overrightarrow{AD}+\overrightarrow{AC}}7=\frac{4\vec b+\vec c}{7}\) と求められる。</p>
   <p>（2）は、チェバの定理で得た \(BF:FC=1:4\) を用い、\(\overrightarrow{AF}=\frac{4\vec b+\vec c}{5}\) と求められる。</p>
 
-  <h3>動く図で確かめる</h3>
+  <h3 class="solution-break">動く図で確かめる</h3>
   <div class="intersection-controls">
     <label for="d-ratio">\(AD:DB\) <output id="d-value" for="d-ratio">2:1</output>
       <input id="d-ratio" type="range" min="1" max="6" step="1" value="2">
