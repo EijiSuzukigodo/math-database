@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>球を平面で切ったときの円の中心と半径｜数学Cの重要例題</title>
+<link rel="stylesheet" href="lesson_common_style.css">
+<link rel="stylesheet" href="important_math1_quadratic_extrema.css?v=3">
+<link rel="stylesheet" href="important_example_style.css">
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<style>
+.extrema-lesson .panel h3.solution-break{margin-block-start:1.85rem}
+.spatial-plot,.spatial-readings dl{margin:0}
+.spatial-readings dd{margin:0 0 .7rem;font-weight:700}
+.spatial-controls input{display:block;width:min(100%,420px)}
+#spatial-plot text{paint-order:stroke;stroke:white;stroke-width:3px;stroke-linejoin:round}
+</style></head>
+<body class="extrema-lesson important-example">
+<header><div class="wrap">
+<div class="site-parent-link"><a href="important_examples_mathc.html#space-vectors">数学Cの重要例題に戻る</a></div>
+<p>数学C ／ 空間のベクトル</p><h1>球を平面で切ったときの円の中心と半径</h1>
+</div></header>
+<main class="wrap">
+<section class="example-goal"><span class="goal-label">例題のねらい</span>
+<h2>球の中心から下ろした垂線を使い、断面の半径を求める</h2>
+<p>垂線の足が断面の円の中心になる理由を説明し、三平方の定理から断面の半径と面積を求められるようになる。</p></section>
+<section class="panel"><h2>例題</h2>
+<p>原点 \(O\) を中心とする半径 \(3\) の球を、平面 \(x+2y+2z=6\) で切る。</p>
+<p>（1）断面の円の中心の座標と半径を求めよ。</p>
+<p>（2）平面を \(x+2y+2z=t\) として平行に動かす。断面積が \(4\pi\) になる \(t\) の値をすべて求めよ。</p></section>
+<section class="panel"><h2>解説</h2>
+<h3>（1）垂線の足を求める</h3>
+<p>原点 \(O\) から平面に下ろした垂線の足を \(H\) とする。平面に垂直なベクトルの一つは \(\left(1,2,2\right)\) なので、\(H=(k,2k,2k)\) とおける。</p>
+<div class="scroll equation">\[ k+2(2k)+2(2k)=6\quad\Longrightarrow\quad k=\frac23. \]</div>
+<p>よって \(H=\left(\frac23,\frac43,\frac43\right)\) で、\(OH=2\) である。</p>
+<p>球の表面と切断面が交わるところに点 \(P\) を取ると、\(OP=3\) である。\(OH\) は切断面に垂直なので、\(\triangle OHP\) は \(H\) を直角とする直角三角形になる。</p>
+<div class="scroll equation">\[ HP^2=OP^2-OH^2=3^2-2^2=5. \]</div>
+<p>切断面上では、\(OP=3\) を満たすことと \(HP=\sqrt5\) を満たすことは同じである。したがって断面は、<strong>\(H\) を中心とする半径 \(\sqrt5\) の円</strong>である。</p>
+<h3>（2）面積が等しくなる二つの位置を求める</h3>
+<p>平面 \(x+2y+2z=t\) に対しては \(9k=t\) となるので、垂線の足と原点からの距離は次のようになる。</p>
+<div class="scroll equation">\[ H=\left(\frac{t}{9},\frac{2t}{9},\frac{2t}{9}\right),\qquad OH=\frac{|t|}{3}. \]</div>
+<p>円の断面ができる \(|t|&lt;9\) の範囲で、半径を \(r\)、断面積を \(S\) とすると、</p>
+<div class="scroll equation">\[ r^2=9-\frac{t^2}{9},\qquad S=\pi\left(9-\frac{t^2}{9}\right). \]</div>
+<p>\(S=4\pi\) を代入すると \(t^2=45\) なので、\(\boxed{t=\pm3\sqrt5}\) である。二つの平面は原点の反対側にあり、原点からの距離はどちらも \(\sqrt5\) である。</p>
+<h3 class="solution-break">動く図で確かめる</h3>
+<p>平面を動かし、原点 \(O\) から円の中心 \(H\) が遠ざかると、断面の半径 \(HP\) がどう変わるかを図の横の数値で確かめよう。球の端では平面が球に接し、断面は1点になる。</p>
+<div class="example-graph-layout">
+<figure class="example-diagram spatial-plot">
+<svg id="spatial-plot" viewBox="0 0 360 285" role="img" aria-label="球、切断面の円、垂線の足Hと半径HP">
+<circle cx="180" cy="142" r="105" fill="#edf5fb" stroke="#6988a2" stroke-width="2"/>
+<g id="axes" fill="#526980" font-family="Times New Roman, serif" font-style="italic" font-size="17"></g>
+<polygon id="disc" fill="#80cfbe" fill-opacity=".68" stroke="#18675c" stroke-width="2"/>
+<g id="triangle" fill="#17365d" font-family="Times New Roman, serif" font-style="italic" font-size="18"></g>
+</svg>
+<figcaption class="legend">緑は断面、橙は球の中心 \(O\) から平面への垂線 \(OH\)。</figcaption></figure>
+<div class="example-readings spatial-readings"><dl>
+<div><dt>平面の位置</dt><dd>\(t=\) <span id="t-value"></span></dd></div>
+<div><dt>平面までの距離 \(OH\)</dt><dd id="distance"></dd></div>
+<div><dt>断面の半径 \(HP\)</dt><dd id="radius"></dd></div>
+<div><dt>断面積 \(S\)</dt><dd id="area"></dd></div>
+</dl><p id="section-state" hidden></p></div></div>
+<div class="spatial-controls">
+<label for="cut">平面を動かす</label><input id="cut" type="range" min="-9" max="9" step="0.1" value="6">
+<label for="angle">視点を回す</label><input id="angle" type="range" min="-180" max="180" value="15">
+<button id="reset-cut" type="button">例題（1）の位置に戻す</button>
+</div></section>
+<section class="panel"><h2>類題</h2>
+<p>例題と同じ球を平面 \(x+2y+2z=t\) で切る。断面積が \(8\pi\) になる \(t\) の値をすべて求めよ。また、\(t>0\) の場合の断面の円の中心の座標を求めよ。</p>
+<details><summary>解答・解説を見る</summary>
+<p>\(9-\frac{t^2}{9}=8\) より \(t^2=9\) で、\(t=\pm3\) である。\(t=3\) のとき、円の中心は \(\left(\frac13,\frac23,\frac23\right)\) である。</p>
+</details></section>
+</main><footer><div class="wrap"><div class="site-parent-link"><a href="important_examples_mathc.html#space-vectors">数学Cの重要例題に戻る</a></div>みんなの数学データベース</div></footer>
+<script>
+(() => {
+  const get = id => document.getElementById(id);
+  const cut = get('cut');
+  const angle = get('angle');
+  const ns = 'http://www.w3.org/2000/svg';
+  const basisA = [0,1/Math.sqrt(2),-1/Math.sqrt(2)];
+  const basisB = [-4,1,1].map(value => value/Math.sqrt(18));
+
+  function draw(parent, tag, attrs, label) {
+    const element = document.createElementNS(ns, tag);
+    for (const [key,value] of Object.entries(attrs)) element.setAttribute(key,value);
+    if (label) element.textContent = label;
+    parent.append(element);
+  }
+
+  function render() {
+    const t = Number(cut.value);
+    const radians = Number(angle.value)*Math.PI/180;
+    const project = ([x,y,z]) => {
+      const horizontal = x*Math.cos(radians)-y*Math.sin(radians);
+      const depth = x*Math.sin(radians)+y*Math.cos(radians);
+      return [180+35*horizontal,142+35*(depth*.5-z*Math.sqrt(3)/2)];
+    };
+    const center = [t/9,2*t/9,2*t/9];
+    const origin = [0,0,0];
+    const distance = Math.abs(t)/3;
+    const radiusSquared = Math.max(0,9-distance*distance);
+    const radius = Math.sqrt(radiusSquared);
+    const circlePoint = theta => center.map((value,index) =>
+      value+radius*(basisA[index]*Math.cos(theta)+basisB[index]*Math.sin(theta)));
+    const point = circlePoint(Math.PI/4);
+    const axes = get('axes');
+    const diagram = get('triangle');
+    axes.replaceChildren();
+    diagram.replaceChildren();
+
+    function line(parent, from, to, attrs) {
+      const [x1,y1] = project(from);
+      const [x2,y2] = project(to);
+      draw(parent,'line',{x1,y1,x2,y2,...attrs});
+    }
+    for (const [label, endpoint] of [['x',[3.32,0,0]],['y',[0,3.32,0]],['z',[0,0,3.32]]]) {
+      line(axes,origin,endpoint,{stroke:'#6988a2','stroke-dasharray':'4 4'});
+      const [x,y] = project(endpoint.map(value => value*1.08));
+      draw(axes,'text',{x,y,'text-anchor':'middle','dominant-baseline':'central'},label);
+    }
+
+    const outline = Array.from({length:72},(_,i) => project(circlePoint(i*Math.PI/36)).join(','));
+    get('disc').setAttribute('points',outline.join(' '));
+    if (t !== 0) line(diagram,origin,center,{stroke:'#b45e19','stroke-width':3});
+    if (radius > 0) {
+      line(diagram,center,point,{stroke:'#18675c','stroke-width':2.5});
+      if (t !== 0) line(diagram,origin,point,{stroke:'#526980','stroke-width':1.6});
+    }
+    const labels = t === 0 ? [['O = H',origin,-9,18],['P',point,9,-8]]
+      : [['O',origin,-10,16],[radius === 0 ? 'H = P' : 'H',center,10,-9]];
+    if (t !== 0 && radius > 0) labels.push(['P',point,10,16]);
+    for (const [label,location,dx,dy] of labels) {
+      const [cx,cy] = project(location);
+      draw(diagram,'circle',{cx,cy,r:3.7,fill:'#17365d'});
+      draw(diagram,'text',{x:cx+dx,y:cy+dy,'text-anchor':dx < 0 ? 'end' : 'start'},label);
+    }
+
+    get('t-value').textContent = t.toFixed(1);
+    const format = value => Number(value.toFixed(3)).toString();
+    const display = value => (Number(value.toFixed(3)) === value ? '' : '約 ')+format(value);
+    get('distance').textContent = display(distance);
+    get('radius').textContent = display(radius);
+    get('area').textContent = display(Math.PI*radiusSquared);
+    get('section-state').hidden = radius !== 0;
+    get('section-state').textContent = radius === 0 ? '接点のみ' : '';
+  }
+
+  cut.addEventListener('input',render);
+  angle.addEventListener('input',render);
+  get('reset-cut').addEventListener('click',() => {
+    cut.value = '6';
+    render();
+  });
+  render();
+})();
+</script></body></html>
