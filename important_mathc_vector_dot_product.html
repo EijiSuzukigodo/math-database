@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>内積と垂直条件｜数学Cの重要例題</title>
+<link rel="stylesheet" href="lesson_common_style.css">
+<link rel="stylesheet" href="important_math1_quadratic_extrema.css?v=3">
+<link rel="stylesheet" href="important_example_style.css">
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<style>
+.vector-controls .controls{margin-top:6px}
+.vector-controls .controls input{flex:1 1 140px;min-width:0}
+.vector-readings dl{margin:0}
+.vector-readings div+div{margin-top:8px}
+.vector-readings dt{color:#415a70;font-size:.9rem}
+.vector-readings dd{margin:0;font-weight:700;font-variant-numeric:tabular-nums}
+.vector-diagram{margin:0}
+.vector-diagram figcaption{margin-top:5px}
+</style>
+</head>
+<body class="extrema-lesson important-example">
+<header><div class="wrap">
+  <div class="site-parent-link"><a href="important_examples_mathc.html#plane-vectors">数学Cの重要例題に戻る</a></div>
+  <p>数学C ／ 平面上のベクトル</p>
+  <h1>内積と垂直条件</h1>
+</div></header>
+<main class="wrap">
+<section class="panel">
+  <h2>例題</h2>
+  <p>座標平面上に4点 \(A(0,0)\)、\(B(4,0)\)、\(C(0,4)\)、\(D(3,0)\) がある。点 \(P\) が線分 \(BC\) 上を動くとき、</p>
+  <div class="scroll equation">\[AP^2+2DP^2\]</div>
+  <p>の最小値と、そのときの \(P\) の座標を求めよ。</p>
+</section>
+
+<section class="panel">
+  <h2>解説</h2>
+  <div class="example-goal">
+    <span class="goal-label">例題のねらい</span>
+    <h3>距離の2乗の和をまとめ、垂直条件で最小値を求める</h3>
+    <p>重みをつけた内分点を選び、距離の式を内積で整理する。最小となる点を垂線の足として求められるようになる。</p>
+  </div>
+
+  <h3>内分点を基準に距離の式をまとめる</h3>
+  <p>線分 \(AD\) を \(2:1\) に内分する点を \(W(2,0)\) とする。このとき、\(\overrightarrow{WA}+2\overrightarrow{WD}=\vec 0\) となる。各ベクトルを \(W\) を経由して表し、内積で展開すると、</p>
+  <div class="scroll equation">\[\begin{aligned}
+  AP^2+2DP^2
+    &=|\overrightarrow{WP}-\overrightarrow{WA}|^2
+      +2|\overrightarrow{WP}-\overrightarrow{WD}|^2\\
+    &=3WP^2-2\overrightarrow{WP}\cdot
+      (\overrightarrow{WA}+2\overrightarrow{WD})+WA^2+2WD^2\\
+    &=3WP^2+6.
+  \end{aligned}\]</div>
+  <p>したがって、線分 \(BC\) 上で \(W\) からの距離が最も短い点を求めればよい。</p>
+
+  <h3>内積が0になる点を求める</h3>
+  <p>\(P=(4-4t,4t)\)、\(0\leqq t\leqq1\) とおく。垂線の足では次が成り立つ。</p>
+  <div class="scroll equation">\[
+    \overrightarrow{WP}\cdot\overrightarrow{BC}
+     =(2-4t,4t)\cdot(-4,4)=32t-8=0.
+  \]</div>
+  <p>よって \(t=\frac14\)。この点は線分上にあり、\(P=(3,1)\)、\(WP^2=2\) なので、求める最小値は \(3\cdot2+6=12\) である。</p>
+  <div class="scroll equation">\[\boxed{P=(3,1),\qquad \text{最小値}\ 12}\]</div>
+
+  <h3>動く図で確かめる</h3>
+  <p>点 \(P\) を動かし、内積の符号と距離の2乗の和がどう変わるかを比べる。</p>
+  <div class="graph-panel vector-controls">
+    <label for="position">線分 \(BC\) 上の点 \(P\) の位置</label>
+    <div class="controls">
+      <input id="position" type="range" min="0" max="100" step="1" value="55">
+      <button type="button" id="show-foot">垂線の足に移動</button>
+    </div>
+    <div class="example-graph-layout">
+      <figure class="example-diagram vector-diagram">
+        <svg id="diagram" viewBox="0 0 330 295" role="img" aria-label="線分BC上を動く点Pと、固定点WからPへの線分">
+          <path d="M46 246H290M46 246V20" fill="none" stroke="#8798a9"/>
+          <path d="M258 246L46 34" fill="none" stroke="#176cae" stroke-width="4"/>
+          <line id="distance" x1="152" y1="246" x2="141.4" y2="129.4" stroke="#b46618" stroke-width="3"/>
+          <g fill="#17365d" font-size="16">
+            <circle cx="46" cy="246" r="4"/><text x="32" y="267">A</text>
+            <circle cx="258" cy="246" r="4"/><text x="260" y="267">B</text>
+            <circle cx="46" cy="34" r="4"/><text x="24" y="32">C</text>
+            <circle cx="205" cy="246" r="4"/><text x="199" y="267">D</text>
+            <circle cx="152" cy="246" r="5"/><text x="145" y="267">W</text>
+          </g>
+          <circle id="point" cx="141.4" cy="129.4" r="6" fill="#087a62" stroke="white" stroke-width="2"/>
+          <text id="point-label" x="151.4" y="119.4" font-size="17" fill="#087a62">P</text>
+        </svg>
+        <figcaption class="legend">青：線分 \(BC\)　緑：点 \(P\)　橙：線分 \(WP\)</figcaption>
+      </figure>
+      <div class="example-readings vector-readings">
+        <dl>
+          <div><dt>点 \(P\) の座標</dt><dd><output id="coordinates" for="position">（1.8，2.2）</output></dd></div>
+          <div><dt>内積 \(\overrightarrow{WP}\cdot\overrightarrow{BC}\)</dt><dd><output id="product" for="position">9.6</output></dd></div>
+          <div><dt>\(AP^2+2DP^2\)</dt><dd><output id="total" for="position">20.64</output></dd></div>
+        </dl>
+        <p id="geometry">内積が0になる位置を探す。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="panel">
+  <h2>類題</h2>
+  <p>\(A(0,0)\)、\(B(4,0)\)、\(C(0,4)\)、\(D(2,3)\) とする。点 \(P\) が線分 \(BC\) 上を動くとき、\(AP^2+DP^2\) の最小値と、そのときの \(P\) の座標を求めよ。</p>
+  <details>
+    <summary>解答・解説を見る</summary>
+    <p>線分 \(AD\) の中点を \(W\left(1,\frac32\right)\) とすると、\(\overrightarrow{WA}+\overrightarrow{WD}=\vec 0\) だから、</p>
+    <div class="scroll equation">\[AP^2+DP^2=2WP^2+\frac{13}{2}.\]</div>
+    <p>\(P=(4-4t,4t)\) とおくと、\(\overrightarrow{WP}\cdot\overrightarrow{BC}=32t-18\)。これが0になる \(t=\frac9{16}\) は \(0\) と \(1\) の間にある。よって \(P=\left(\frac74,\frac94\right)\)、\(WP^2=\frac98\) となる。</p>
+    <div class="scroll equation">\[\boxed{P=\left(\frac74,\frac94\right),\qquad\text{最小値}\ \frac{35}{4}}\]</div>
+  </details>
+</section>
+</main>
+<footer><div class="wrap"><div class="site-parent-link"><a href="important_examples_mathc.html#plane-vectors">数学Cの重要例題に戻る</a></div>みんなの数学データベース</div></footer>
+<script>
+(() => {
+  const get = id => document.getElementById(id);
+  const slider = get('position');
+  const format = value => String(Number(value.toFixed(4)));
+
+  function draw() {
+    const t = Number(slider.value) / 100;
+    const x = 4 - 4 * t;
+    const y = 4 * t;
+    const product = 32 * t - 8;
+    const total = x * x + y * y + 2 * ((x - 3) ** 2 + y * y);
+    const screenX = 46 + 53 * x;
+    const screenY = 246 - 53 * y;
+    get('distance').setAttribute('x2', screenX);
+    get('distance').setAttribute('y2', screenY);
+    get('point').setAttribute('cx', screenX);
+    get('point').setAttribute('cy', screenY);
+    get('point-label').setAttribute('x', screenX + 10);
+    get('point-label').setAttribute('y', screenY - 10);
+    get('coordinates').textContent = '（' + format(x) + '，' + format(y) + '）';
+    get('product').textContent = format(product);
+    get('total').textContent = format(total);
+    get('geometry').textContent = product === 0
+      ? 'ここで直角になり、距離の2乗の和は最小になる。'
+      : '内積が0になる位置を探す。';
+  }
+
+  slider.addEventListener('input', draw);
+  get('show-foot').addEventListener('click', () => { slider.value = '25'; draw(); });
+  draw();
+})();
+</script>
+</body>
+</html>
