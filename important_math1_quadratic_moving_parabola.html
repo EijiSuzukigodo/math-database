@@ -1,27 +1,28 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>2次関数の最大値・最小値｜放物線が動く場合</title><link rel="stylesheet" href="important_math1_quadratic_extrema.css"><link rel="stylesheet" href="lesson_common_style.css">
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>2次関数の最大値・最小値｜放物線が動く場合</title><link rel="stylesheet" href="important_math1_quadratic_extrema.css?v=2"><link rel="stylesheet" href="lesson_common_style.css">
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head><body class="extrema-lesson">
 <header><div class="wrap"><div class="site-parent-link"><a href="important_examples_math1.html">数学Ⅰに戻る</a></div><p>数学Ⅰ ／ 2次関数</p><h1>2次関数の最大値・最小値</h1><p>区間を固定して放物線を動かす場合</p></div></header><main class="wrap">
 <section class="example-goal"><span class="goal-label">例題のねらい</span><h2>動く放物線の最大値・最小値を求める</h2><p>区間を固定し、放物線の軸が端点や区間の真ん中を通るときの変化を理解しましょう。</p></section>
 <nav class="example-nav" aria-label="関連する例題"><ul><li><a href="important_math1_quadratic_domain.html">例題１　放物線を固定して区間を動かす</a></li></ul></nav>
 <section class="panel" id="moving-parabola">
   <h2>例題２　区間を固定して放物線を動かす</h2>
-  <p>実数 <i>a</i> に対し、2次関数
-    <span class="formula"><math><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><msup><mrow><mo>(</mo><mi>x</mi><mo>−</mo><mi>a</mi><mo>)</mo></mrow><mn>2</mn></msup><mo>+</mo><mn>1</mn></math></span>
+  <p>実数 \(a\) に対し、2次関数
+    \(f(x)=(x-a)^2+1\)
     の、定義域
-    <span class="formula"><math><mn>0</mn><mo>≦</mo><mi>x</mi><mo>≦</mo><mn>2</mn></math></span>
+    \(0\leqq x\leqq2\)
     における最大値と最小値を求めよ。</p>
   <h3>着眼点</h3>
-  <p>頂点は <span class="formula">(<i>a</i>, 1)</span>、軸は <span class="formula"><i>x</i> = <i>a</i></span> です。区間の両端はいつも <i>x</i> = 0 と <i>x</i> = 2 です。軸が区間に入るときと、左右の端から等しい距離にあるときに注目しましょう。</p>
+  <p>頂点は \((a,1)\)、軸は \(x=a\) です。区間の両端はいつも \(x=0\) と \(x=2\) です。軸が区間に入るときと、左右の端から等しい距離にあるときに注目しましょう。</p>
 </section>
 <section class="panel graph-panel" id="moving-parabola-graph-panel" data-example="moving-parabola">
   <h2>動くグラフで考える</h2>
-  <label for="moving-parabola-slider">放物線の軸 <i>a</i> = <strong data-slider-value>1</strong></label>
+  <label for="moving-parabola-slider">放物線の軸 \(a\) = <strong data-slider-value>\(1\)</strong></label>
   <div class="controls">
     <input id="moving-parabola-slider" type="range" min="-1" max="3" step="0.1" value="1">
     <button type="button" data-play>自動移動</button>
     <button type="button" data-reset>リセット</button>
   </div>
-  <p class="formula current-formula" data-current-formula>0 ≦ x ≦ 2　／　軸 x = 1</p>
+  <p class="formula current-formula" data-current-formula>\(0\leqq x\leqq2\)　／　軸 \(x=1\)</p>
   <div class="graph-layout">
     <figure>
       <svg data-graph viewBox="0 0 440 300" role="img" aria-label="固定した区間と左右に動く放物線"></svg>
@@ -29,39 +30,39 @@
     </figure>
     <div class="graph-summary">
       <div class="results">
-        <div class="result min"><strong>最小値</strong><output data-minimum for="moving-parabola-slider"></output></div>
-        <div class="result max"><strong>最大値</strong><output data-maximum for="moving-parabola-slider"></output></div>
+        <div class="result min"><strong>最小値</strong><output data-minimum for="moving-parabola-slider">\(1\)</output></div>
+        <div class="result max"><strong>最大値</strong><output data-maximum for="moving-parabola-slider">\(2\)</output></div>
       </div>
       <p data-reason></p>
     </div>
   </div>
   <div class="boundary-buttons"><span>境界の値</span>
-    <button type="button" data-boundary="0">a = 0</button>
-    <button type="button" data-boundary="1">a = 1</button>
-    <button type="button" data-boundary="2">a = 2</button>
+    <button type="button" data-boundary="0">\(a=0\)</button>
+    <button type="button" data-boundary="1">\(a=1\)</button>
+    <button type="button" data-boundary="2">\(a=2\)</button>
   </div>
 </section>
 <section class="panel">
   <h2>段階的な解説</h2>
   <div class="step">
     <h3>① 最小値は軸に最も近い点でとる</h3>
-    <p>軸が区間の左にあれば左端、区間内にあれば頂点、右にあれば右端で最小になります。<i>a</i> = 0 と <i>a</i> = 2 では、頂点と端点が一致します。</p>
-    <div class="scroll"><table><thead><tr><th scope="col"><i>a</i> の範囲</th><th scope="col">最小となる <i>x</i></th><th scope="col">最小値</th></tr></thead>
-      <tbody><tr id="moving-parabola-min-0"><td><i>a</i> &lt; 0</td><td>0</td><td><i>a</i>² + 1</td></tr>
-      <tr id="moving-parabola-min-1"><td>0 ≦ <i>a</i> ≦ 2</td><td><i>a</i></td><td>1</td></tr>
-      <tr id="moving-parabola-min-2"><td>2 &lt; <i>a</i></td><td>2</td><td>(<i>a</i> − 2)² + 1</td></tr></tbody>
+    <p>軸が区間の左にあれば左端、区間内にあれば頂点、右にあれば右端で最小になります。\(a=0\) と \(a=2\) では、頂点と端点が一致します。</p>
+    <div class="scroll"><table><caption>最小値の場合分け</caption><thead><tr><th scope="col">\(a\) の範囲</th><th scope="col">最小となる \(x\)</th><th scope="col">最小値</th></tr></thead>
+      <tbody><tr id="moving-parabola-min-0"><td>\(a&lt;0\)</td><td>\(0\)</td><td>\(a^2+1\)</td></tr>
+      <tr id="moving-parabola-min-1"><td>\(0\leqq a\leqq2\)</td><td>\(a\)</td><td>\(1\)</td></tr>
+      <tr id="moving-parabola-min-2"><td>\(2&lt;a\)</td><td>\(2\)</td><td>\((a-2)^2+1\)</td></tr></tbody>
     </table></div>
   </div>
   <div class="step">
     <h3>② 最大値は軸から最も遠い端点でとる</h3>
     <p>左右の端で関数の値を比べます。</p>
-    <p class="formula"><math><mi>f</mi><mo>(</mo><mn>2</mn><mo>)</mo><mo>−</mo><mi>f</mi><mo>(</mo><mn>0</mn><mo>)</mo><mo>=</mo><msup><mrow><mo>(</mo><mn>2</mn><mo>−</mo><mi>a</mi><mo>)</mo></mrow><mn>2</mn></msup><mo>−</mo><msup><mi>a</mi><mn>2</mn></msup><mo>=</mo><mn>4</mn><mo>(</mo><mn>1</mn><mo>−</mo><mi>a</mi><mo>)</mo></math></p>
-    <p>軸が区間の真ん中の <i>x</i> = 1 を通ると、両端から軸までの距離が等しくなります。ここが、最大値をとる端が入れ替わる境目です。</p>
-    <div class="scroll"><table><thead><tr><th scope="col"><i>a</i> の範囲</th><th scope="col">最大となる <i>x</i></th><th scope="col">最大値</th></tr></thead>
-      <tbody><tr id="moving-parabola-max-0"><td><i>a</i> &lt; 1</td><td>2</td><td>(<i>a</i> − 2)² + 1</td></tr>
-      <tr id="moving-parabola-max-1"><td><i>a</i> = 1</td><td>0, 2</td><td>2</td></tr>
-      <tr id="moving-parabola-max-2"><td>1 &lt; <i>a</i></td><td>0</td><td><i>a</i>² + 1</td></tr></tbody>
+    <div class="scroll equation">\[f(2)-f(0)=(2-a)^2-a^2=4(1-a)\]</div>
+    <p>軸が区間の真ん中の \(x=1\) を通ると、両端から軸までの距離が等しくなります。ここが、最大値をとる端が入れ替わる境目です。</p>
+    <div class="scroll"><table><caption>最大値の場合分け</caption><thead><tr><th scope="col">\(a\) の範囲</th><th scope="col">最大となる \(x\)</th><th scope="col">最大値</th></tr></thead>
+      <tbody><tr id="moving-parabola-max-0"><td>\(a&lt;1\)</td><td>\(2\)</td><td>\((a-2)^2+1\)</td></tr>
+      <tr id="moving-parabola-max-1"><td>\(a=1\)</td><td>\(0,2\)</td><td>\(2\)</td></tr>
+      <tr id="moving-parabola-max-2"><td>\(1&lt;a\)</td><td>\(0\)</td><td>\(a^2+1\)</td></tr></tbody>
     </table></div>
   </div>
-  <p>グラフと表を見比べて、最小値の境界は <i>a</i> = 0, 2、最大値の境界は <i>a</i> = 1 になることを確かめましょう。</p>
-</section></main><footer><div class="wrap"><div class="site-parent-link"><a href="important_examples_math1.html">数学Ⅰに戻る</a></div>みんなの数学データベース</div></footer><script src="important_math1_quadratic_extrema_demo.js"></script></body></html>
+  <p>グラフと表を見比べて、最小値の境界は \(a=0,2\)、最大値の境界は \(a=1\) になることを確かめましょう。</p>
+</section></main><footer><div class="wrap"><div class="site-parent-link"><a href="important_examples_math1.html">数学Ⅰに戻る</a></div>みんなの数学データベース</div></footer><script defer src="important_math1_quadratic_extrema_demo.js?v=2"></script></body></html>
