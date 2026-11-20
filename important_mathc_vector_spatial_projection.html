@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>原点から三角形に下ろした垂線｜数学Cの重要例題</title>
+<link rel="stylesheet" href="lesson_common_style.css">
+<link rel="stylesheet" href="important_math1_quadratic_extrema.css?v=3">
+<link rel="stylesheet" href="important_example_style.css">
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<style>
+.extrema-lesson .panel h3.solution-break{margin-block-start:1.85rem}
+.spatial-plot,.spatial-readings dl{margin:0}
+.spatial-readings dd{margin:0 0 .7rem;font-weight:700}
+.spatial-controls input{display:block;width:min(100%,420px)}
+#spatial-plot text{paint-order:stroke;stroke:white;stroke-width:3px;stroke-linejoin:round}
+</style></head>
+<body class="extrema-lesson important-example">
+<header><div class="wrap">
+<div class="site-parent-link"><a href="important_examples_mathc.html#space-vectors">数学Cの重要例題に戻る</a></div>
+<p>数学C ／ 空間のベクトル</p><h1>原点から三角形に下ろした垂線</h1>
+</div></header>
+<main class="wrap">
+<section class="example-goal"><span class="goal-label">例題のねらい</span>
+<h2>平面に垂直な条件から、最も近い点を求める</h2>
+<p>平面に垂直な条件を二つの内積で表し、垂線の足が三角形の内部にあることを位置ベクトルの係数で確かめられるようになる。</p>
+</section>
+<section class="panel"><h2>例題</h2>
+<p>空間内に \(A(2,0,0)\)、\(B(0,3,0)\)、\(C(0,0,6)\) をとる。原点 \(O\) から平面 \(ABC\) に下ろした垂線の足を \(H\) とする。</p>
+<p>（1）点 \(H\) の座標を求めよ。</p>
+<p>（2）\(H\) が三角形 \(ABC\) の内部にあることを示し、原点 \(O\) と三角形 \(ABC\) の内部または周上の点との距離の最小値を求めよ。</p>
+</section>
+<section class="panel"><h2>解説</h2>
+<h3>（1）二つの内積から垂線の足を求める</h3>
+<p>\(H=(x,y,z)\) とおく。平面 \(ABC\) 上の平行でない二つのベクトル \(\overrightarrow{AB}=(-2,3,0)\)、\(\overrightarrow{AC}=(-2,0,6)\) に対し、\(\overrightarrow{OH}\) との内積はどちらも \(0\) になる。</p>
+<div class="scroll equation">\[
+-2x+3y=0,\qquad -2x+6z=0
+\quad\Longrightarrow\quad (x,y,z)=t(3,2,1).
+\]</div>
+<p>平面上の点は \(3x+2y+z=6\) を満たす。この式は \(A,B,C\) のすべてで成り立ち、3点は一直線上にない。これに \(H=(3t,2t,t)\) を代入すると \(14t=6\)。したがって、</p>
+<div class="scroll equation">\[\boxed{H=\left(\frac97,\frac67,\frac37\right)}.\]</div>
+
+<h3>（2）三角形の内部にあることを確かめる</h3>
+<p>\(\overrightarrow{OH}\) を3頂点の位置ベクトルで表すと、</p>
+<div class="scroll equation">\[
+\overrightarrow{OH}=\frac9{14}\overrightarrow{OA}
++\frac27\overrightarrow{OB}+\frac1{14}\overrightarrow{OC}.
+\]</div>
+<p>三つの係数はすべて正で、和は \(1\) である。実際、\(BC\) を \(1:4\) に内分する点を \(T\) とすると、\(H\) は線分 \(AT\) の内部にあるので、三角形 \(ABC\) の内部にある。</p>
+<p>三角形の内部または周上の点 \(P\) について、\(P\ne H\) なら平面内の \(HP\) は \(OH\) に垂直である。よって \(OP^2=OH^2+HP^2\) となり、\(P=H\) で距離は最小になる。</p>
+<div class="scroll equation">\[\boxed{OH=\frac{6}{\sqrt{14}}=\frac{3\sqrt{14}}7}.\]</div>
+
+<h3 class="solution-break">別解　平面の方程式から垂線の方向を求める</h3>
+<p>平面 \(3x+2y+z=6\) の法線ベクトルは \((3,2,1)\) なので、原点を通る垂線は \((x,y,z)=t(3,2,1)\) と表せる。平面との交点から \(t=\frac37\) が得られる。</p>
+
+<h3 class="solution-break">動く図で確かめる</h3>
+<p>視点を回して、原点 \(O\) から平面 \(ABC\) に下ろした垂線が、三角形の内部の \(H\) に届いていることを確かめる。</p>
+<div class="spatial-controls"><label for="angle">視点を回す <output id="angle-value" for="angle">35°</output></label>
+<input id="angle" type="range" min="-180" max="180" value="35" step="1"></div>
+<div class="example-graph-layout">
+<figure class="example-diagram spatial-plot">
+<svg id="spatial-plot" viewBox="0 0 360 285" role="img" aria-label="回転できる三角形ABCと原点Oから垂線の足Hへの線分">
+  <line id="edge-a" stroke="#9aacbe" stroke-dasharray="5 4"/>
+  <line id="edge-b" stroke="#9aacbe" stroke-dasharray="5 4"/>
+  <line id="edge-c" stroke="#9aacbe" stroke-dasharray="5 4"/>
+  <polygon id="plane" fill="#dbeafe" fill-opacity=".65" stroke="#176cae" stroke-width="2.5"/>
+  <line id="perpendicular" stroke="#b45e19" stroke-width="3.5"/>
+  <g id="spatial-labels" fill="#17365d" font-size="18"></g>
+</svg>
+<figcaption class="legend">青：三角形 \(ABC\)　橙：垂線 \(OH\)</figcaption>
+</figure>
+<div class="example-readings spatial-readings"><dl>
+<div><dt>垂線の足</dt><dd>\(H\left(\frac97,\frac67,\frac37\right)\)</dd></div>
+<div><dt>距離の最小値</dt><dd>\(OH=\frac{3\sqrt{14}}7\)</dd></div>
+<div><dt>垂直条件</dt><dd>\(\overrightarrow{OH}\cdot\overrightarrow{AB}=0\)<br>\(\overrightarrow{OH}\cdot\overrightarrow{AC}=0\)</dd></div>
+</dl></div>
+</div>
+</section>
+
+<section class="panel"><h2>類題</h2>
+<p>\(A(4,0,0)\)、\(B(0,4,0)\)、\(C(0,0,2)\) に変える。垂線の足 \(H\) の座標を求め、\(H\) が三角形 \(ABC\) の内部にあることを示せ。また、原点から三角形までの距離の最小値を求めよ。</p>
+<details><summary>解答・解説を見る</summary>
+<p>平面は \(x+y+2z=4\)、原点を通る垂線の式は \((x,y,z)=t(1,1,2)\)。代入すると \(6t=4\) なので \(H=\left(\frac23,\frac23,\frac43\right)\)。</p>
+<p>\(\overrightarrow{OH}=\frac16\overrightarrow{OA}+\frac16\overrightarrow{OB}+\frac23\overrightarrow{OC}\)。係数はすべて正で和は \(1\) なので \(H\) は三角形の内部にあり、距離の最小値は \(OH=\frac{2\sqrt6}{3}\) である。</p>
+</details></section>
+</main>
+<footer><div class="wrap"><div class="site-parent-link"><a href="important_examples_mathc.html#space-vectors">数学Cの重要例題に戻る</a></div>みんなの数学データベース</div></footer>
+<script>
+(() => {
+  const get = id => document.getElementById(id);
+  const slider = get('angle');
+  const points = { O:[0,0,0], A:[2,0,0], B:[0,3,0], C:[0,0,6], H:[9/7,6/7,3/7] };
+  const offsets = { O:[-15,18], A:[10,12], B:[-19,13], C:[9,-6], H:[10,-9] };
+  const elevation = Math.PI / 6;
+  function setLine(id, first, second) {
+    const line = get(id);
+    line.setAttribute('x1', first[0]); line.setAttribute('y1', first[1]);
+    line.setAttribute('x2', second[0]); line.setAttribute('y2', second[1]);
+  }
+  function draw() {
+    const degrees = Number(slider.value);
+    const angle = degrees * Math.PI / 180;
+    const cos = Math.cos(angle), sin = Math.sin(angle);
+    function project([x,y,z]) {
+      const horizontal = cos * x - sin * y;
+      const depth = sin * x + cos * y;
+      return [180 + 39 * horizontal, 229 - 39 * (Math.cos(elevation)*z - Math.sin(elevation)*depth)];
+    }
+    const projected = Object.fromEntries(Object.entries(points).map(([name, point]) => [name, project(point)]));
+    const {O,A,B,C,H} = projected;
+    get('angle-value').textContent = degrees + '°';
+    get('plane').setAttribute('points', [A,B,C].map(p => p.join(',')).join(' '));
+    setLine('edge-a',O,A); setLine('edge-b',O,B); setLine('edge-c',O,C);
+    setLine('perpendicular',O,H);
+    get('spatial-labels').innerHTML = Object.entries(projected).map(([name,[x,y]]) => {
+      const [dx,dy] = offsets[name];
+      const fill = name === 'H' ? '#b45e19' : '#17365d';
+      return '<circle cx="'+x+'" cy="'+y+'" r="4" fill="'+fill+'"/>'+
+        '<text x="'+(x+dx)+'" y="'+(y+dy)+'" fill="'+fill+'">'+name+'</text>';
+    }).join('');
+  }
+  slider.addEventListener('input', draw);
+  draw();
+})();
+</script></body></html>
