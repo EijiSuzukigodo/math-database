@@ -1,25 +1,124 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>2次方程式の解の配置</title><style>
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f3f7fa;color:#17314c;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.7}a{color:#176cae}.wrap{max-width:1050px;margin:0 auto;padding:0 18px}header{background:linear-gradient(112deg,#17365d,#236a8a);color:white;padding:24px 0 32px}header a{color:#fff}header h1{font-size:clamp(25px,4vw,36px);margin:12px 0 4px}header p{margin:0;color:#e6f1fa}main{padding:28px 18px 60px}.intro{border-left:5px solid #21886d;background:#e8f6f0;padding:16px 19px;border-radius:10px;margin:0 0 25px}h2{color:#174a72}h3{margin:0 0 5px;color:#17365d}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,275px),1fr));gap:14px}.card{display:block;border:1px solid #d9e7ef;background:#fff;text-decoration:none;color:inherit;border-radius:14px;padding:20px;box-shadow:0 4px 14px rgba(23,54,93,.06)}.card p{color:#617487;font-size:14px;margin:5px 0 12px}.card span,.unit a{font-weight:700;color:#176cae}.subject-section{scroll-margin-top:16px;border:1px solid #d9e7ef;background:#fff;border-radius:16px;padding:22px;margin-top:18px}.subject-section h2{margin:0 0 10px}.unit-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:12px}.unit{border:1px solid #dce7ef;border-radius:13px;padding:18px;background:#fbfdff}.unit.focus{border-color:#a8d6c5;background:#f4fbf7}.unit p,.muted{font-size:14px;color:#53687d}.status{display:inline-block;background:#e8f1f8;color:#326382;padding:5px 10px;border-radius:999px;font-size:12px;font-weight:700}.pending{padding:15px;border-radius:10px;background:#f4f8fc;color:#526b80;font-size:14px}.back{display:inline-block;margin:24px 0;font-weight:700}footer{background:#142f4b;color:#e3eefa;padding:18px 0;font-size:13px}a:focus-visible{outline:3px solid #e5a13c;outline-offset:3px}@media(max-width:600px){.subject-section{padding:16px}main{padding-top:20px}}
-
-/* compact exercise cards and one shared learning guide */
-#math1 .unit,#math2 .unit,#math3 .unit{padding:14px 16px;min-height:0}
-#math1 .unit h3,#math2 .unit h3,#math3 .unit h3{margin:0 0 8px;font-size:17px}
-#math1 .unit p,#math2 .unit p,#math3 .unit p{margin:0;line-height:1.5}
-.practice-points-title{font-size:19px;margin:4px 0 6px;color:#174a72}
-.practice-points{background:#eef6fb;border-left:4px solid #2e7ca4;padding:13px 16px;border-radius:9px;margin:0 0 18px;font-size:15px;line-height:1.75}
-
-html,body{min-height:100%}body{min-height:100vh;display:flex;flex-direction:column}main.wrap{width:100%;flex:1}footer{margin-top:auto}.example-link{display:block;text-decoration:none;font-weight:700}.example-link:hover{text-decoration:underline}.unit h3{font-size:17px}.subject-section{margin-bottom:20px}.card:focus-visible,.example-link:focus-visible{outline:3px solid #e5a13c;outline-offset:3px}
-.panel{background:white;border:1px solid #d9e7ef;border-radius:14px;padding:20px;margin:18px 0}.formula{font-family:Georgia,"Times New Roman",serif;font-size:1.2em}.controls{display:flex;flex-wrap:wrap;align-items:center;gap:12px}input[type=range]{width:min(100%,420px);accent-color:#167c79;touch-action:pan-y}button{font:inherit;background:#175b83;color:white;border:none;border-radius:8px;padding:10px 16px;cursor:pointer}button:focus-visible{outline:3px solid orange}svg{width:100%;height:auto;display:block;background:#fbfdff;border:1px solid #dce7ef;border-radius:10px}.results{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:14px 0}.result{padding:12px;background:#eef6fb;border-radius:9px}.min{color:#087a62}.max{color:#9b5315}table{border-collapse:collapse;width:100%;font-size:15px}td,th{border:1px solid #d9e7ef;padding:9px;text-align:left}th{background:#edf4fa}details{padding:12px;background:#f1f7fb;border-radius:8px;margin-top:10px}summary{cursor:pointer;font-weight:bold;color:#175b83}.scroll{overflow-x:auto}.active{background:#e1f3e8} .legend{font-size:14px} .step{border-left:4px solid #21886d;padding-left:13px;margin:16px 0}
-svg{display:block;width:100%;height:auto;background:#fff;border:1px solid #d9e7ef;border-radius:10px}select{font:inherit;max-width:100%;padding:10px;border:1px solid #a9bfce;border-radius:8px;background:white;color:#17314c}.check{padding:8px 12px;margin:6px 0;border-radius:8px;background:#f0f4f8}.yes{background:#e4f5eb;color:#17643d}.no{background:#fff1e6;color:#874516}details{padding:12px;border:1px solid #d9e7ef;border-radius:8px;margin:10px 0}summary{cursor:pointer;font-weight:bold}button{margin:4px 0}button.alt{background:#526b80}.formula{overflow-wrap:anywhere}input[type=range]{width:100%;max-width:600px}.legend{font-size:14px} .result{font-weight:bold;padding:12px;border-radius:8px} .mathbox{padding:12px;background:#f3f8fc;border-radius:8px} </style><link rel="stylesheet" href="lesson_common_style.css">
-</head><body>
-<header><div class="wrap"><div class="site-parent-link"><a href="important_examples_math1.html">数学Ⅰに戻る</a></div><p>数学Ⅰ／2次関数</p><h1>2次方程式の解の配置</h1><p>重要例題のわかりやすい解説</p></div></header><main class="wrap"><section class="intro"><h2>学習のねらい</h2>判別式・軸・指定した点の関数値をグラフと結び付け、解の位置を判断できるようにする。</section><section class="panel"><h2>重要例題</h2><p>2次方程式 <span class="formula"><math><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>2</mn><mi>a</mi><mi>x</mi><mo>+</mo><mi>a</mi><mo>+</mo><mn>2</mn><mo>=</mo><mn>0</mn></mrow></math></span> の解が、選んだ条件を満たすような定数 <i>a</i> の範囲を求めよ。</p><label for="mode">解の配置を選ぶ：</label><select id="mode"><option value="0">異なる2つの正の解</option><option value="1">異なる2つの負の解</option><option value="2">正の解と負の解</option><option value="3">異なる2つの解が 0 と 4 の間</option><option value="4">1 の両側に異なる2つの解</option></select><h3 style="margin-top:18px">動くグラフ</h3><svg id="plot" viewBox="0 0 680 430" role="img" aria-label="2次関数と解の配置を表すグラフ"></svg><p class="legend">青：放物線　緑：実数解　橙：頂点　紫：判定に使う点　青い帯：対象区間</p><label for="a">定数 a = <strong id="av"></strong></label><br><input id="a" type="range" min="-4" max="5" step="0.05" value="3"><div class="controls"><button id="play">自動再生</button><button id="reset" class="alt">初期値に戻す</button><span id="examples"></span></div><p id="values" class="mathbox"></p><h3>条件をグラフで確認する</h3><div id="checks"></div><p id="result" class="result" aria-live="polite"></p><p id="reason"></p></section><section class="panel"><h2>解法の着眼点と段階的な解説</h2><div class="mathbox">f(x) = x² − 2ax + a + 2 = (x − a)² − (a − 2)(a + 1)<br>軸：x = a　　D/4 = (a − 2)(a + 1)<br>異なる2実数解の条件：a &lt; −1 または a &gt; 2</div><div id="steps"></div></section><section class="panel"><h2>類題</h2><p>次の方程式について、指定された配置となる a の範囲を求めよ。</p><p>1. x² − 2ax + a + 2 = 0 が異なる2つの解をもち、両方とも 1 より大きい。</p><details><summary>解答・解説</summary><p>D &gt; 0、a &gt; 1、f(1) &gt; 0 が必要十分。f(1) = 3 − a より a &lt; 3。したがって <b>2 &lt; a &lt; 3</b>。</p></details><p>2. x² − 2ax + a + 2 = 0 の2つの解が −1 の両側にある。</p><details><summary>解答・解説</summary><p>上に開く放物線なので f(−1) &lt; 0 が必要十分。f(−1) = 3a + 3 より <b>a &lt; −1</b>。</p></details></section></main><footer><div class="wrap"><div class="site-parent-link"><a href="important_examples_math1.html">数学Ⅰに戻る</a></div>みんなの数学データベース｜重要例題のわかりやすい解説</div></footer><script>
+<!doctype html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2次方程式の解の配置</title>
+<link rel="stylesheet" href="important_math1_quadratic_extrema.css?v=3">
+<link rel="stylesheet" href="lesson_common_style.css">
+<style>.roots-layout{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);max-width:820px;gap:14px}
+.roots-controls label{display:block}
+.roots-controls select{font:inherit;max-width:100%;padding:7px 10px;border:1px solid #a9bfce;border-radius:8px;background:white;color:#17314c}
+.roots-controls select:focus-visible{outline:3px solid #e5a13c;outline-offset:2px}
+.roots-controls .parameter-label{margin-top:12px}
+.roots-controls .boundary-buttons{margin-top:0}
+.roots-controls .controls{gap:8px}
+.roots-layout .graph-summary h3{margin-bottom:4px}
+#plot text{font-size:20px}
+@media(max-width:650px){#plot text{font-size:26px}}
+.roots-values{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;margin:0}
+.roots-values div{background:#eef6fb;border-radius:7px;padding:3px 8px;min-width:0}
+.roots-values dt{font-size:.84rem;color:#415a70}
+.roots-values dd{font-family:"MJX-TEX-N","Hiragino Mincho ProN","Yu Mincho",serif;margin:0;font-weight:700;font-variant-numeric:tabular-nums}
+.roots-values .root-values{grid-column:1 / -1}
+.roots-checks{display:flex;flex-wrap:wrap;gap:4px}
+.check{padding:3px 7px;border-radius:6px;background:#f0f4f8;font-size:.88rem}
+.yes{background:#e4f5eb;color:#17643d}
+.no{background:#fff1e6;color:#874516}
+.roots-layout .graph-summary p{margin:7px 0}
+.practice details{margin-bottom:14px}
+@media(max-width:650px){.roots-layout{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:8px}.roots-layout figure{padding:4px}.roots-values div{padding-inline:4px}}
+@media(max-width:380px){.roots-layout{grid-template-columns:minmax(0,1fr)}}</style>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head><body class="extrema-lesson">
+<header><div class="wrap"><div class="site-parent-link"><a href="important_examples_math1.html">数学Ⅰに戻る</a></div><p>数学Ⅰ／2次関数</p><h1>2次方程式の解の配置</h1><p>重要例題のわかりやすい解説</p></div></header>
+<main class="wrap">
+  <section class="example-goal">
+    <span class="goal-label">例題のねらい</span>
+    <h2>判別式・軸・関数値から解の位置を判断する</h2>
+    <p>判別式・軸・指定した点の関数値がグラフのどこに対応するかを理解し、解の位置を判断できるようになる。</p>
+  </section>
+  <section class="panel">
+    <h2>重要例題</h2>
+    <p>2次方程式 \[x^2-2ax+a+2=0\] の解が、選んだ条件を満たすような定数 \(a\) の範囲を求めよ。</p>
+  </section>
+  <section class="panel graph-panel">
+    <h2>動くグラフで考える</h2>
+    <div class="roots-controls">
+      <label for="mode">解の配置を選ぶ</label>
+      <select id="mode"><option value="0">異なる2つの正の解</option><option value="1">異なる2つの負の解</option><option value="2">正の解と負の解</option><option value="3">異なる2つの解が 0 と 4 の間</option><option value="4">1 の両側に異なる2つの解</option></select>
+      <label for="a" class="parameter-label">定数 \(a=\) <strong id="av">3</strong></label>
+      <div class="controls">
+        <input id="a" type="range" min="-4" max="5" step="0.05" value="3">
+        <button type="button" id="play">自動再生</button>
+        <button type="button" id="reset">初期値に戻す</button>
+      </div>
+      <div class="boundary-buttons" id="examples"></div>
+    </div>
+    <div class="graph-layout roots-layout">
+      <figure>
+        <svg id="plot" viewBox="0 0 680 430" role="img" aria-label="2次関数と解の配置を表すグラフ"></svg>
+        <figcaption class="legend">青：放物線　緑：実数解　橙：頂点　紫：判定に使う点　青い帯：対象区間</figcaption>
+      </figure>
+      <div class="graph-summary">
+        <h3>グラフの数値</h3>
+        <dl class="roots-values">
+          <div><dt>判別式 \(D/4\)</dt><dd id="discriminant"></dd></div>
+          <div><dt>軸 \(x\)</dt><dd id="axis"></dd></div>
+          <div><dt>\(f(0)\)</dt><dd id="f0"></dd></div>
+          <div><dt>\(f(1)\)</dt><dd id="f1"></dd></div>
+          <div><dt>\(f(4)\)</dt><dd id="f4"></dd></div>
+          <div class="root-values"><dt>実数解</dt><dd id="root-values"></dd></div>
+        </dl>
+        <h3>条件の判定</h3>
+        <div id="checks" class="roots-checks"></div>
+        <p id="result" class="result" aria-live="polite"></p>
+        <p id="reason"></p>
+      </div>
+    </div>
+  </section>
+  <section class="panel">
+    <h2>解法の着眼点と段階的な解説</h2>
+    <div class="scroll equation">\[f(x)=x^2-2ax+a+2=(x-a)^2-(a-2)(a+1)\]</div>
+    <p>軸は \(x=a\)、判別式は \(D/4=(a-2)(a+1)\)。異なる2つの実数解をもつ条件は \(a&lt;-1\) または \(2&lt;a\)。</p>
+    <div id="steps"></div>
+  </section>
+  <section class="panel practice">
+    <h2>類題</h2>
+    <p>次の方程式について、指定された配置となる \(a\) の範囲を求めよ。</p>
+    <p>\(x^2-2ax+a+2=0\) が異なる2つの解をもち、両方とも \(1\) より大きい。</p>
+    <details><summary>解答・解説</summary><p>\(D&gt;0\)、\(a&gt;1\)、\(f(1)&gt;0\) が必要十分。\(f(1)=3-a\) より \(a&lt;3\)。したがって \(\boxed{2&lt;a&lt;3}\)。</p></details>
+    <p>\(x^2-2ax+a+2=0\) の2つの解が \(-1\) の両側にある。</p>
+    <details><summary>解答・解説</summary><p>上に開く放物線なので \(f(-1)&lt;0\) が必要十分。\(f(-1)=3a+3\) より \(\boxed{a&lt;-1}\)。</p></details>
+  </section>
+</main>
+<footer><div class="wrap"><div class="site-parent-link"><a href="important_examples_math1.html">数学Ⅰに戻る</a></div>みんなの数学データベース｜重要例題のわかりやすい解説</div></footer>
+<script>
 const $=id=>document.getElementById(id), sl=$('a'), mode=$('mode');
-const modes=[
-{init:3,ex:[-1,2,2.5],steps:['異なる2実数解：D > 0 より a < −1 または a > 2。','軸が正の側：a > 0。','原点でグラフが x 軸より上：f(0)=a+2 > 0。','3条件の共通範囲は a > 2。'],answer:'a > 2'},
-{init:-1.5,ex:[-2,-1.5,-1],steps:['異なる2実数解：a < −1 または a > 2。','軸が負の側：a < 0。','原点でグラフが x 軸より上：a+2 > 0、つまり a > −2。','共通範囲は −2 < a < −1。'],answer:'−2 < a < −1'},
-{init:-3,ex:[-3,-2,-1],steps:['0 が2つの解の間にあるとき、上に開く放物線は原点で x 軸より下にある。','f(0)=a+2 < 0 が必要十分。この条件だけで異なる2実数解が保証される。','a < −2。'],answer:'a < −2'},
-{init:2.3,ex:[2,2.3,2.6],steps:['異なる2実数解：a < −1 または a > 2。','軸が区間内：0 < a < 4。','両端で正：f(0)=a+2 > 0、f(4)=18−7a > 0。','共通範囲は 2 < a < 18/7。'],answer:'2 < a < 18/7'},
-{init:4,ex:[2,3,4],steps:['1 が2つの解の間にあるとき f(1) < 0。','f(1)=3−a < 0。この条件だけで異なる2実数解が保証される。','a > 3。'],answer:'a > 3'}];
+const modes = [
+  {init:3,ex:[-1,2,2.5], names:['実数解の個数','軸の位置','原点での値','条件の共通範囲'], steps:[
+      '異なる2つの実数解をもつには \\(D>0\\)、すなわち \\(a<-1\\) または \\(2<a\\)。',
+      '軸が原点の右側にあるので \\(a>0\\)。',
+      '原点でグラフが \\(x\\) 軸より上にあるので \\(f(0)=a+2>0\\)。',
+      '3つの条件の共通範囲をとる。'],answer:'2<a'},
+  {init:-1.5,ex:[-2,-1.5,-1], names:['実数解の個数','軸の位置','原点での値','条件の共通範囲'], steps:[
+      '異なる2つの実数解をもつには \\(a<-1\\) または \\(2<a\\)。',
+      '軸が原点の左側にあるので \\(a<0\\)。',
+      '原点でグラフが \\(x\\) 軸より上にあるので \\(f(0)=a+2>0\\)、つまり \\(-2<a\\)。',
+      '3つの条件の共通範囲をとる。'],answer:'-2<a<-1'},
+  {init:-3,ex:[-3,-2,-1], names:['原点と解の位置','原点での値','定数の範囲'], steps:[
+      '\\(0\\) が2つの解の間にあるとき、下に凸の放物線は原点で \\(x\\) 軸より下にある。',
+      '\\(f(0)=a+2<0\\) が必要十分。この条件だけで異なる2つの実数解があると分かる。',
+      '\\(a+2<0\\) を \\(a\\) について解く。'],answer:'a<-2'},
+  {init:2.3,ex:[2,2.3,2.6], names:['実数解の個数','軸の位置','両端での値','条件の共通範囲'], steps:[
+      '異なる2つの実数解をもつには \\(a<-1\\) または \\(2<a\\)。',
+      '軸が区間内にあるので \\(0<a<4\\)。',
+      '両端で正になるので \\(f(0)=a+2>0\\)、\\(f(4)=18-7a>0\\)。',
+      '4つの条件の共通範囲をとる。'],answer:'2<a<\\frac{18}{7}'},
+  {init:4,ex:[2,3,4], names:['基準点と解の位置','基準点での値','定数の範囲'], steps:[
+      '\\(1\\) が2つの解の間にあるとき \\(f(1)<0\\)。',
+      '\\(f(1)=3-a<0\\)。この条件だけで異なる2つの実数解があると分かる。',
+      '\\(3-a<0\\) を \\(a\\) について解く。'],answer:'3<a'}
+];
 const fmt=n=>Number(n.toFixed(3)).toString(), eps=1e-9, pos=n=>n>eps, neg=n=>n< -eps;
 let timer=null,dir=1;
 function stop(){if(timer!==null){clearInterval(timer);timer=null;}$('play').textContent='自動再生';}
@@ -28,7 +127,80 @@ for(let x=-10;x<=12;x+=2)s+=`<path d="M${X(x)} 20V385" stroke="#dce5ed"/><text x
 s+=`<path d="M52 ${Y(0)}H652 M${X(0)} 20V385" stroke="#43586c" stroke-width="1.6"/><text x="660" y="${Y(0)-7}">x</text><text x="${X(0)+8}" y="16">y</text><g clip-path="url(#plotclip)"><path d="M${X(a)} 20V385" stroke="#dc8b2e" stroke-dasharray="6 5"/>`;
 let path='';for(let j=0;j<=440;j++){let x=-10+j*.05;path+=(j?'L':'M')+X(x)+' '+Y(f(x))+' ';}s+=`<path d="${path}" stroke="#176cae" stroke-width="3" fill="none"/>`;
 const dot=(x,y,c)=>`<circle cx="${X(x)}" cy="${Y(y)}" r="6" fill="${c}" stroke="white" stroke-width="1.5"/>`;s+=dot(a,-d,'#dc8b2e');for(const x of (i===3?[0,4]:i===4?[1]:[0])){s+=`<path d="M${X(x)} 20V385" stroke="#8664ad" stroke-dasharray="4 5"/>`+dot(x,f(x),'#8664ad');}if(d>=-eps){const q=Math.sqrt(Math.max(0,d));s+=dot(a-q,0,'#21886d');if(q>eps)s+=dot(a+q,0,'#21886d');}s+='</g>';$('plot').innerHTML=s;
-let c=i===0?[["D > 0",pos(d)],["軸 a > 0",pos(a)],["f(0) > 0",pos(f(0))]]:i===1?[["D > 0",pos(d)],["軸 a < 0",neg(a)],["f(0) > 0",pos(f(0))]]:i===2?[["f(0) < 0",neg(f(0))]]:i===3?[["D > 0",pos(d)],["0 < a < 4",pos(a)&&a<4],["f(0) > 0",pos(f(0))],["f(4) > 0",pos(f(4))]]:[["f(1) < 0",neg(f(1))]];let ok=c.every(v=>v[1]);$('av').textContent=fmt(a);$('values').textContent=`D/4 = ${fmt(d)}　軸 x = ${fmt(a)}　f(0) = ${fmt(f(0))}　f(1) = ${fmt(f(1))}　f(4) = ${fmt(f(4))}　`+(d < -eps?'実数解なし':Math.abs(d)<=eps?`重解 x = ${fmt(a)}`:`解 x = ${fmt(a-Math.sqrt(d))}，${fmt(a+Math.sqrt(d))}`);$('checks').innerHTML=c.map(v=>`<div class="check ${v[1]?'yes':'no'}">${v[1]?'✓':'×'} ${v[0]}</div>`).join('');$('result').className='result '+(ok?'yes':'no');$('result').textContent=ok?'すべての条件を満たしています。':'条件を満たしていません。';$('reason').textContent=ok?'グラフ上の緑の点が指定された位置にあります。':'× の条件とグラフの位置関係を比べてみましょう。';}
-function configure(){stop();let m=modes[+mode.value];sl.value=m.init;$('examples').replaceChildren();for(const a of m.ex){const b=document.createElement('button');b.textContent='a = '+a;b.className='alt';b.onclick=()=>{stop();sl.value=a;draw();};$('examples').appendChild(b);}$('steps').replaceChildren();m.steps.forEach((t,i)=>{let d=document.createElement('details'),s=document.createElement('summary'),p=document.createElement('p');s.textContent='ステップ '+(i+1);p.textContent=t;d.append(s,p);$('steps').appendChild(d);});let d=document.createElement('details');d.innerHTML='<summary>最終解答</summary>';let p=document.createElement('p');p.textContent=m.answer;d.appendChild(p);$('steps').appendChild(d);draw();}
+let c=i===0?[["D > 0",pos(d)],["軸 a > 0",pos(a)],["f(0) > 0",pos(f(0))]]:i===1?[["D > 0",pos(d)],["軸 a < 0",neg(a)],["f(0) > 0",pos(f(0))]]:i===2?[["f(0) < 0",neg(f(0))]]:i===3?[["D > 0",pos(d)],["0 < a < 4",pos(a)&&a<4],["f(0) > 0",pos(f(0))],["f(4) > 0",pos(f(4))]]:[["f(1) < 0",neg(f(1))]];const ok = c.every(([, satisfied]) => satisfied);
+$('av').textContent = fmt(a);
+for (const [id, value] of [['discriminant', d], ['axis', a], ['f0', f(0)], ['f1', f(1)], ['f4', f(4)]]) {
+  $(id).textContent = fmt(value);
+}
+$('root-values').textContent = d < -eps ? 'なし' : Math.abs(d) <= eps
+  ? fmt(a) + '（重解）'
+  : fmt(a - Math.sqrt(d)) + '，' + fmt(a + Math.sqrt(d));
+const checks = $('checks');
+if (checks.dataset.mode !== mode.value) {
+  checks.dataset.mode = mode.value;
+  checks.replaceChildren(...c.map(([label]) => {
+    const item = document.createElement('div');
+    const marker = document.createElement('span');
+    const expression = document.createElement('span');
+    const math = label.startsWith('軸 ') ? label.slice(2) : label;
+    expression.textContent = '\\(' + math + '\\)';
+    item.append(marker, expression);
+    return item;
+  }));
+  typeset(checks);
+}
+c.forEach(([, satisfied], index) => {
+  const item = checks.children[index];
+  item.className = 'check ' + (satisfied ? 'yes' : 'no');
+  item.firstElementChild.textContent = satisfied ? '✓ ' : '× ';
+});
+const result = $('result');
+result.className = 'result ' + (ok ? 'yes' : 'no');
+const status = ok ? 'すべての条件を満たしています。' : '条件を満たしていません。';
+if (result.textContent !== status) result.textContent = status;
+$('reason').textContent = ok ? 'グラフ上の緑の点が指定された位置にあります。' : '× の条件とグラフの位置関係を比べてみましょう。';
+}
+
+let pendingTypesetting = Promise.resolve();
+function typeset(...sections) {
+  const mathJax = window.MathJax;
+  if (!mathJax?.startup?.promise) return;
+  pendingTypesetting = pendingTypesetting
+    .then(() => mathJax.startup.promise)
+    .then(() => mathJax.typesetPromise(sections))
+    .catch(() => {});
+}
+
+function configure() {
+  stop();
+  const selected = modes[Number(mode.value)];
+  sl.value = selected.init;
+  const examples = $('examples');
+  const steps = $('steps');
+  window.MathJax?.typesetClear?.([examples, steps, $('checks')]);
+  examples.replaceChildren();
+  for (const a of selected.ex) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.textContent = '\\(a=' + a + '\\)';
+    button.onclick = () => { stop(); sl.value = a; draw(); };
+    examples.appendChild(button);
+  }
+  steps.replaceChildren();
+  function addStep(title, text) {
+    const details = document.createElement('details');
+    const summary = document.createElement('summary');
+    const paragraph = document.createElement('p');
+    summary.textContent = title;
+    paragraph.textContent = text;
+    details.append(summary, paragraph);
+    steps.appendChild(details);
+  }
+  selected.steps.forEach((text, index) => addStep(selected.names[index], text));
+  addStep('最終解答', '\\(\\boxed{' + selected.answer + '}\\)');
+  draw();
+  typeset(examples, steps);
+}
+
 sl.addEventListener('input',()=>{stop();draw();});mode.addEventListener('change',configure);$('reset').onclick=()=>{stop();sl.value=modes[+mode.value].init;draw();};$('play').onclick=()=>{if(timer!==null){stop();return;}$('play').textContent='停止';timer=setInterval(()=>{let a=+sl.value;if(a>=5)dir=-1;if(a<=-4)dir=1;sl.value=Math.max(-4,Math.min(5,a+dir*.05));draw();},80);};configure();
 </script></body></html>
