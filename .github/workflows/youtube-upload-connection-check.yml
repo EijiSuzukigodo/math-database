@@ -22,6 +22,13 @@ jobs:
           missing = [name for name, value in fields.items() if not value]
           if missing:
               raise SystemExit("Missing GitHub secrets: " + ", ".join(missing))
+          import re
+          if not re.fullmatch(r"1025855656331-[A-Za-z0-9_-]{32}\.apps\.googleusercontent\.com", fields["client_id"]):
+              raise SystemExit("The saved client ID is incomplete or belongs to another Google Cloud project.")
+          if fields["client_id"].split("-", 1)[1].startswith("2cvcf7524e11"):
+              raise SystemExit("The saved client ID is from the original web client, not the test client.")
+          if not re.fullmatch(r"GOCSPX-[A-Za-z0-9_-]{20,}", fields["client_secret"]):
+              raise SystemExit("The saved client secret is incomplete or has the wrong format.")
           fields["grant_type"] = "refresh_token"
           try:
               with urllib.request.urlopen("https://oauth2.googleapis.com/token",
