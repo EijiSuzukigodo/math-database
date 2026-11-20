@@ -32,8 +32,11 @@ jobs:
               fields["client_secret"] = original[1:-1]
           if not fields["client_secret"].startswith("GOCSPX-"):
               raise SystemExit("The saved client secret does not start with the Google client secret prefix.")
-          if not re.fullmatch(r"GOCSPX-[A-Za-z0-9_-]{20,}", fields["client_secret"]):
-              raise SystemExit("The saved client secret is incomplete or has the wrong format.")
+          candidate = re.match(r"GOCSPX-[A-Za-z0-9_-]+", fields["client_secret"])
+          if len(candidate[0]) < 27:
+              raise SystemExit("The saved client secret begins correctly but its visible token text is truncated.")
+          if re.fullmatch(r'[\s"',}\]]*', fields["client_secret"][candidate.end():]):
+              fields["client_secret"] = candidate[0]
           fields["grant_type"] = "refresh_token"
           try:
               with urllib.request.urlopen("https://oauth2.googleapis.com/token",
