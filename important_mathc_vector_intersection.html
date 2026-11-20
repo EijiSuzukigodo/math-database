@@ -32,10 +32,8 @@
 <section class="panel">
   <h2>例題</h2>
   <p>三角形 \(ABC\) の辺 \(AB\) 上に \(AD:DB=2:1\) となる点 \(D\)、辺 \(AC\) 上に \(AE:EC=1:2\) となる点 \(E\) をとる。線分 \(CD\) と \(BE\) の交点を \(P\) とする。</p>
-  <ol>
-    <li>\(CP:PD\) と \(BP:PE\) を求めよ。</li>
-    <li>直線 \(AP\) と辺 \(BC\) の交点を \(F\) とする。位置ベクトル \(\overrightarrow{AF}\) を求めよ。</li>
-  </ol>
+  <p>（1）\(\overrightarrow{AP}\) を求め、\(CP:PD\) と \(BP:PE\) を求めよ。</p>
+  <p>（2）直線 \(AP\) と辺 \(BC\) の交点を \(F\) とする。\(\overrightarrow{AF}\) と \(BF:FC\) を求めよ。</p>
 </section>
 <section class="panel">
   <h2>解説</h2>
@@ -55,10 +53,13 @@
   \frac{2s}{3}=1-t,\qquad 1-s=\frac{t}{3}
   \quad\Longrightarrow\quad s=\frac67,\quad t=\frac37.
   \]</div>
-  <div class="scroll equation">\[\boxed{CP:PD=6:1,\qquad BP:PE=3:4}\]</div>
+  <p>\(s=\frac67\) を点 \(P\) の式に代入すると、\(\overrightarrow{AP}=\frac47\vec b+\frac17\vec c\) となる。</p>
+  <div class="scroll equation">\[\begin{aligned}
+  \boxed{\overrightarrow{AP}=\frac47\overrightarrow{AB}+\frac17\overrightarrow{AC}}\\[3pt]
+  \boxed{CP:PD=6:1,\qquad BP:PE=3:4}
+  \end{aligned}\]</div>
 
-  <h3>（2）交点 \(F\) の位置ベクトルを求める</h3>
-  <p>（1）で求めた \(s=\frac67\) を代入すると、\(\overrightarrow{AP}=\frac47\vec b+\frac17\vec c\) である。</p>
+  <h3>（2）交点 \(F\) の位置ベクトルと \(BF:FC\) を求める</h3>
   <p>\(F\) は直線 \(AP\) 上にあるので、\(\overrightarrow{AF}=k\overrightarrow{AP}\) とおく。さらに、\(F\) は辺 \(BC\) 上にあるので、\(\vec b,\vec c\) の係数の和は \(1\) となる。</p>
   <div class="scroll equation">\[
   \frac{4k}{7}+\frac{k}{7}=1,\qquad k=\frac75.
@@ -67,6 +68,7 @@
   \boxed{\overrightarrow{AF}=\frac45\vec b+\frac15\vec c
   =\frac45\overrightarrow{AB}+\frac15\overrightarrow{AC}}\;.
   \]</div>
+  <p>\(\overrightarrow{BF}=\overrightarrow{AF}-\overrightarrow{AB}=\frac15(\vec c-\vec b)=\frac15\overrightarrow{BC}\) なので、\(\boxed{BF:FC=1:4}\)。</p>
 
   <h3>別解　チェバの定理と面積比を使う</h3>
   <p>直線 \(AP\) と辺 \(BC\) の交点を \(F\) とする。\(AF\)、\(BE\)、\(CD\) は点 \(P\) で交わるので、チェバの定理より、</p>
@@ -86,7 +88,8 @@
   BP:PE&=\triangle APB:\triangle APE=S:\frac43S=3:4.
   \end{aligned}\]</div>
 
-  <p>（2）は、すでに求めた \(BF:FC=1:4\) を使えば、内分点の公式から \(\overrightarrow{AF}=\frac{4\vec b+\vec c}{5}\) と求められる。</p>
+  <p>（1）の \(\overrightarrow{AP}\) は、\(CP:PD=6:1\) と \(\overrightarrow{AD}=\frac23\vec b\) を使い、内分点の公式から \(\overrightarrow{AP}=\frac{6\overrightarrow{AD}+\overrightarrow{AC}}7=\frac{4\vec b+\vec c}{7}\) と求められる。</p>
+  <p>（2）は、チェバの定理で得た \(BF:FC=1:4\) を用い、\(\overrightarrow{AF}=\frac{4\vec b+\vec c}{5}\) と求められる。</p>
 
   <h3>動く図で確かめる</h3>
   <div class="intersection-controls">
