@@ -35,7 +35,7 @@ jobs:
           candidate = re.match(r"GOCSPX-[A-Za-z0-9_-]+", fields["client_secret"])
           if len(candidate[0]) < 27:
               raise SystemExit("The saved client secret begins correctly but its visible token text is truncated.")
-          if re.fullmatch(r'[\s"',}\]]*', fields["client_secret"][candidate.end():]):
+          if not fields["client_secret"][candidate.end():].strip(" \t\r\n\",}]"):
               fields["client_secret"] = candidate[0]
           fields["grant_type"] = "refresh_token"
           try:
