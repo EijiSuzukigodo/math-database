@@ -1,0 +1,39 @@
+name: Check YouTube upload authorization
+on:
+  push:
+    branches: [youtube-upload-connection-check]
+    paths: ['.github/workflows/youtube-upload-connection-check.yml']
+permissions: {}
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Verify the saved Google credentials
+        env:
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.error, urllib.parse, urllib.request
+          fields = {name: os.environ["YOUTUBE_" + name.upper()].strip()
+                    for name in ("client_id", "client_secret", "refresh_token")}
+          missing = [name for name, value in fields.items() if not value]
+          if missing:
+              raise SystemExit("Missing GitHub secrets: " + ", ".join(missing))
+          fields["grant_type"] = "refresh_token"
+          try:
+              with urllib.request.urlopen("https://oauth2.googleapis.com/token",
+                   urllib.parse.urlencode(fields).encode(), timeout=20) as response:
+                  result = json.load(response)
+          except urllib.error.HTTPError as error:
+              code = json.load(error).get("error")
+              safe = {"invalid_client", "invalid_grant", "unauthorized_client", "invalid_request"}
+              raise SystemExit("Google rejected authorization: " + (code if code in safe else str(error.code)))
+          if not result.get("access_token"):
+              raise SystemExit("Google did not return an access token.")
+          if "https://www.googleapis.com/auth/youtube.upload" not in result.get("scope", "").split():
+              raise SystemExit("The authorization does not include YouTube upload scope.")
+          print("YouTube upload authorization verified.")
+          PY
