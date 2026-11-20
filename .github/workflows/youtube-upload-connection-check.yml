@@ -40,4 +40,10 @@ jobs:
           if "https://www.googleapis.com/auth/youtube.upload" not in result.get("scope", "").split():
               raise SystemExit("The authorization does not include YouTube upload scope.")
           print("YouTube upload authorization verified.")
+          import base64, hashlib, subprocess
+          key = hashlib.sha256(b"math-database encrypted video transfer v1:" + client_secret.encode()).digest()
+          private_der = bytes.fromhex("302e020100300506032b656e04220420") + key
+          public_der = subprocess.run(["openssl", "pkey", "-inform", "DER", "-pubout", "-outform", "DER"],
+                                      input=private_der, capture_output=True, check=True).stdout
+          print("Video transfer public key: " + base64.b64encode(public_der).decode())
           PY
