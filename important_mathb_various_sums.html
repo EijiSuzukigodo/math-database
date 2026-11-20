@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="important_math1_quadratic_extrema.css?v=3">
 <link rel="stylesheet" href="important_example_style.css">
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-<style>.cancel-view{margin:1rem 0}.cancel-view input{display:block;width:min(100%,26rem)}.cancel-view table{border-collapse:collapse;width:min(100%,35rem);text-align:center}.cancel-view td,.cancel-view th{border:1px solid #bdced8;padding:.25em}.cancel-view th{background:#eff5fa}.cancel-view s{color:#516171}.cancel-view strong{color:#075841}.solution-break{margin-top:2rem}</style></head>
+<style>.cancel-view{margin:1rem 0}.cancel-view input{display:block;width:min(100%,26rem)}.cancel-view table{border-collapse:collapse;width:min(100%,35rem);text-align:center}.cancel-view td,.cancel-view th{border:1px solid #bdced8;padding:.25em}.cancel-view th{background:#eff5fa}.cancel-view s{color:#516171}.cancel-view strong{color:#075841}.solution-break{margin-top:2rem}.cancel-view .signed-frac{position:relative;display:inline-flex;align-items:center;gap:.16em;font-family:Georgia,serif;text-decoration:none}.cancel-view .stack-frac{display:inline-grid;text-align:center;line-height:1.2}.stack-frac>span{padding:.1em .2em}.stack-frac>span:first-child{border-bottom:1px solid currentColor}.cancel-view s.signed-frac::after{content:"";position:absolute;left:0;right:0;top:50%;border-top:1px solid currentColor;transform:rotate(-20deg)}</style></head>
 <body class="extrema-lesson important-example">
 <header><div class="wrap">
 <div class="site-parent-link"><a href="important_examples_mathb.html">数学Bの重要例題に戻る</a></div>
@@ -86,7 +86,20 @@ for (const view of document.querySelectorAll('.cancel-view')) {
         const j = radical ? k + (positive ? 2 : 0) : k + (positive ? 0 : 1);
         const cancels = radical ? (positive ? j <= n : j >= 3) : (positive ? k > 1 : k < n);
         const term = document.createElement(cancels ? 's' : 'strong');
-        term.textContent = (positive ? '+' : '−') + (radical ? '√' + j : '1/(' + j + ' × ' + (j+1) + ')');
+        const sign = positive ? '+' : '−';
+        if (radical) {
+          term.textContent = sign + '√' + j;
+        } else {
+          term.className = 'signed-frac';
+          const fraction = document.createElement('span');
+          fraction.className = 'stack-frac';
+          const numerator = document.createElement('span');
+          numerator.textContent = '1';
+          const denominator = document.createElement('span');
+          denominator.textContent = j + ' × ' + (j + 1);
+          fraction.append(numerator, denominator);
+          term.append(sign, fraction);
+        }
         tr.insertCell().append(term);
       }
     }
