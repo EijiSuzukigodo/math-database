@@ -71,7 +71,7 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 @media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
 </style><link rel="stylesheet" href="lesson_common_style.css">
 <link rel="stylesheet" href="high_school_lesson_reading.css">
-</head><body>
+<style>.research-table{overflow-x:auto;margin:1em 0}.research-table table{width:100%;border-collapse:collapse}.research-table th,.research-table td{padding:.4em .55em;border:1px solid #b7ccdc;text-align:center}.research-table th{background:#edf5fb}.research-table caption{text-align:left;font-weight:bold;margin-bottom:.3em}</style></head><body>
 <header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>等比数列とその和</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main" data-hs-lesson=""><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>等比数列とその和</h2><p>隣り合う項の比が一定の数列を等比数列といいます。</p><p class="hs-outcome"><strong>この授業でできるようになること</strong><br>初項と公比を見つけ、一般項と和を求める。公比が1のときも扱う。</p></section>
 <nav class="hs-study-nav" aria-label="授業の進め方">
 <a href="#hs-explanation">説明</a>
@@ -116,6 +116,32 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <p>\(|r|&lt;1\) なら、項数を増やすにつれて \(r^n\to0\) となります。そのため部分和 \(S_n\) は次の値に近づきます。</p><div class="formula">\[\lim_{n\to\infty}S_n=\frac{a_1}{1-r}\quad (|r|&lt;1)\]</div>
 <p>例えば、\(1+\frac12+\frac14+\cdots\) は \(2\) に近づきます。高校数学IIIで学ぶ極限につながる話です。</p>
 <div class="warning">注意：\(\displaystyle \frac{a_1}{1-r}\) を無限に続く和として使えるのは \(|r|&lt;1\) のときです。有限個の和の公式とは条件が異なります。</div>
+<section id="hs-research" aria-labelledby="research-title">
+<h2 id="research-title">研究　等比数列の和の利用</h2>
+<h3>1．正の約数の総和</h3>
+<p>\(72=2^3\times3^2\) の正の約数をすべて足すといくらになるか。まず数学Aで学んだ約数の作り方を思い出そう。2の累乗を \(1,2,4,8\) から一つ、3の累乗を \(1,3,9\) から一つ選んで掛けると、72の正の約数が一つできる。</p>
+<div class="research-table"><table><caption>72の正の約数と各行の和</caption><thead><tr><th scope="col">掛ける数</th><th scope="col">1</th><th scope="col">2</th><th scope="col">4</th><th scope="col">8</th><th scope="col">行の和</th></tr></thead><tbody>
+<tr><th scope="row">1</th><td>1</td><td>2</td><td>4</td><td>8</td><td>15</td></tr>
+<tr><th scope="row">3</th><td>3</td><td>6</td><td>12</td><td>24</td><td>45</td></tr>
+<tr><th scope="row">9</th><td>9</td><td>18</td><td>36</td><td>72</td><td>135</td></tr></tbody></table></div>
+<p>素因数分解の一意性により、\(4\times3=12\) 個の約数が表に一度ずつ現れる。2行目の和は1行目の3倍、3行目の和は1行目の9倍である。したがって全体の和は \((1+2+4+8)(1+3+9)\) と書ける。</p>
+<p>一つ目の括弧は公比2の4項の和、二つ目は公比3の3項の和である。それぞれに等比数列の和の公式を使うと、約数を一つずつ書き出さずに総和が求まる。</p>
+<div class="formula">\[\frac{2^4-1}{2-1}\times\frac{3^3-1}{3-1}=15\times13=195\]</div>
+<p>一般に、異なる素数 \(p,q\) に対し、\(p^a q^b\) の正の約数の総和は次の式で表せる。指数が0から始まるため、二つの和の項数はそれぞれ \(a+1,\ b+1\) である。</p>
+<div class="formula">\[\frac{p^{a+1}-1}{p-1}\times\frac{q^{b+1}-1}{q-1}\]</div>
+<h3>2．複利計算と積み立て</h3>
+<p>年末に利息を元金に加え、翌年はその合計額に利息がつく計算を<strong>複利計算</strong>という。年利率を \(r\) とすると、1年ごとに金額は \(1+r\) 倍になる。初めに \(P\) 円を一度預けた場合、\(n\) 年後の元利合計は \(P(1+r)^n\) 円である。</p>
+<div class="example">毎年初めに4万円ずつ、3年間積み立てる。年利率を5％とし、毎年末に利息を加えると、3年目の年末の元利合計はいくらになるか。ただし、税金と手数料は考えない。</div>
+<p>1年目の初めに預けた4万円には3回、3年目の初めに預けた4万円にも1回、利息がつく。各回の積立金を同じ時点まで増やしてから合計する。</p>
+<div class="research-table"><table><caption>3年目の年末から見た各積立金の内訳</caption><thead><tr><th scope="col">預けた時期</th><th scope="col">利息の回数</th><th scope="col">3年目の年末の金額（円）</th></tr></thead><tbody>
+<tr><th scope="row">1年目の初め</th><td>3回</td><td>\(40000\times1.05^3=46305\)</td></tr>
+<tr><th scope="row">2年目の初め</th><td>2回</td><td>\(40000\times1.05^2=44100\)</td></tr>
+<tr><th scope="row">3年目の初め</th><td>1回</td><td>\(40000\times1.05=42000\)</td></tr></tbody></table></div>
+<p>表を下から読むと、初項 \(42000\)、公比 \(1.05\) の等比数列になる。3項の和を求めると、元利合計は<strong>132,405円</strong>である。</p>
+<div class="formula">\[42000\times\frac{1.05^3-1}{1.05-1}=132405\]</div>
+<p>一般に、毎年初めに \(A\) 円ずつ \(n\) 年間積み立てると、\(n\) 年目の年末には、最後の積立金が \(A(1+r)\) 円、最初の積立金が \(A(1+r)^n\) 円になる。年利率 \(r>0\) が一定のとき、この \(n\) 項の和は次のようになる。</p>
+<div class="formula">\[A(1+r)+\cdots+A(1+r)^n=A(1+r)\frac{(1+r)^n-1}{r}\]</div>
+</section>
 <h2 id="hs-practice">練習問題</h2>
 <div class="exercise"><strong>問題1（元の教材の練習問題）</strong><p>初項2、公比3の第4項を求めなさい。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(a_4=2\cdot3^3=\boxed{54}\)。</p></details></div>
 <div class="exercise"><strong>問題2</strong><p>初項5、公比2の第6項を求めなさい。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(a_6=5\cdot2^5=\boxed{160}\)。</p></details></div>
