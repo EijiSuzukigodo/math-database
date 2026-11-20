@@ -49,8 +49,8 @@
 <p>平面 \(x+y+z=t\) を動かし、どの辺に交点ができるかを見よう。\(t=3\) に戻すと、例題の6頂点 \(A\) から \(F\) が表示される。</p>
 <div class="example-graph-layout">
 <figure class="example-diagram spatial-plot">
-<svg id="spatial-plot" viewBox="0 0 360 285" role="img" aria-label="立方体と切断面"><g id="cube-edges"></g><polygon id="section" fill="#80cfbe" fill-opacity=".7" stroke="#18675c" stroke-width="2.5"/><g id="section-points"></g></svg>
-<figcaption class="legend">緑色の部分が切断面。</figcaption></figure>
+<svg id="spatial-plot" viewBox="0 0 360 285" role="img" aria-label="座標軸と原点のある立方体と切断面"><defs><marker id="axis-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#263b53"/></marker></defs><g id="cube-edges"></g><polygon id="section" fill="#80cfbe" fill-opacity=".7" stroke="#18675c" stroke-width="2.5"/><g id="section-points"></g><g id="coordinate-axes" fill="#263b53" font-size="17"></g></svg>
+<figcaption class="legend">緑色の部分が切断面。矢印は各座標軸の正の向き。</figcaption></figure>
 <div class="example-readings spatial-readings"><dl>
 <div><dt>平面の位置</dt><dd id="plane-value"></dd></div>
 <div><dt>断面の形</dt><dd id="shape"></dd></div>
@@ -139,6 +139,22 @@
         draw(markers,'text',{x:cx+14*dx/size,y:cy+14*dy/size,'text-anchor':'middle','dominant-baseline':'central',fill:'#17365d'},letters[point.join(',')]);
       }
     });
+
+    const axes = get('coordinate-axes');
+    axes.replaceChildren();
+    const [x1,y1] = project([0,0,0]);
+    for (const [label, endpoint, labelPoint] of [
+      ['x',[2.55,0,0],[2.77,0,0]],
+      ['y',[0,2.55,0],[0,2.77,0]],
+      ['z',[0,0,2.55],[0,0,2.77]]
+    ]) {
+      const [x2,y2] = project(endpoint);
+      const [x,y] = project(labelPoint);
+      draw(axes, 'line', {x1,y1,x2,y2,stroke:'#263b53','stroke-width':1.6,'marker-end':'url(#axis-arrow)'});
+      draw(axes, 'text', {x,y,'text-anchor':'middle','dominant-baseline':'central','font-style':'italic'},label);
+    }
+    draw(axes, 'circle', {cx:x1,cy:y1,r:3});
+    draw(axes, 'text', {x:x1-10,y:y1+15,'text-anchor':'middle','font-style':'italic'},'O');
 
     get('plane-value').textContent = 't = '+t.toFixed(1);
     get('shape').textContent = points.length === 3 ? '正三角形' : t === 3 ? '正六角形' : '六角形';
