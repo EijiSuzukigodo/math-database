@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>立方体を平面で切ったときの断面｜数学Cの重要例題</title>
+<link rel="stylesheet" href="lesson_common_style.css">
+<link rel="stylesheet" href="important_math1_quadratic_extrema.css?v=3">
+<link rel="stylesheet" href="important_example_style.css">
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<style>
+.extrema-lesson .panel h3.solution-break{margin-block-start:1.85rem}
+.spatial-plot,.spatial-readings dl{margin:0}
+.spatial-readings dd{margin:0 0 .7rem;font-weight:700}
+.spatial-controls input{display:block;width:min(100%,420px)}
+#spatial-plot text{paint-order:stroke;stroke:white;stroke-width:3px;stroke-linejoin:round}
+</style></head>
+<body class="extrema-lesson important-example">
+<header><div class="wrap">
+<div class="site-parent-link"><a href="important_examples_mathc.html#space-vectors">数学Cの重要例題に戻る</a></div>
+<p>数学C ／ 空間のベクトル</p><h1>立方体を平面で切ったときの断面</h1>
+</div></header>
+<main class="wrap">
+<section class="example-goal"><span class="goal-label">例題のねらい</span>
+<h2>辺と平面の交点から、断面の形と面積を求める</h2>
+<p>辺上の点を座標で表し、隣り合う頂点を結ぶベクトルから断面の形を判断できるようになる。</p></section>
+<section class="panel"><h2>例題</h2>
+<p>一辺の長さが \(2\) の立方体を考える。一つの頂点を原点とし、そこから出る3本の辺を \(x\) 軸、\(y\) 軸、\(z\) 軸の正の向きに取る。この立方体を平面 \(x+y+z=3\) で切る。</p>
+<p>（1）断面の頂点の座標をすべて求めよ。</p>
+<p>（2）断面が正六角形であることを示し、その面積を求めよ。</p></section>
+<section class="panel"><h2>解説</h2>
+<h3>（1）まず1本の辺との交点を求める</h3>
+<p>断面の頂点は、平面が立方体の辺と交わるところにできる。たとえば \(y=2,\ z=0\) の辺では、\(x\) だけが \(0\) から \(2\) まで動く。</p>
+<div class="scroll equation">\[ x+2+0=3\quad\Longrightarrow\quad x=1. \]</div>
+<p>したがって、この辺との交点は \((1,2,0)\) である。どの辺でも、二つの座標はそれぞれ \(0\) または \(2\) に固定される。固定した二つの座標がともに \(0\) なら残りは \(3\)、ともに \(2\) なら残りは \(-1\) となり、どちらも辺の範囲 \(0\leqq x\leqq 2\)（\(y,z\) も同様）を外れる。</p>
+<p>固定した二つの座標が \(0\) と \(2\) のときだけ交点ができる。よって頂点は \(0,1,2\) を並べ替えた次の6点である。立方体の同じ面にある交点どうしをつなぐと、断面を一周する順に \(A,B,C,D,E,F\) と並ぶ。</p>
+<div class="scroll equation">\[\begin{aligned}
+ A(1,2,0),\quad B(0,2,1),\quad C(0,1,2),\\
+ D(1,0,2),\quad E(2,0,1),\quad F(2,1,0).
+\end{aligned}\]</div>
+<h3>（2）中心から頂点に引いた線で面積を求める</h3>
+<p>\(M(1,1,1)\) は立方体の中心で、切断面上にもある。\(M\) から各頂点へのベクトルは、成分 \(-1,0,1\) を並べ替えたものである。したがって \(MA=MB=\cdots=MF=\sqrt2\) である。</p>
+<p>続いて、隣り合う頂点 \(A,B\) を結ぶベクトルを調べる。</p>
+<div class="scroll equation">\[\overrightarrow{AB}=(-1,0,1),\qquad AB=\sqrt2.\]</div>
+<p>他の5辺も、座標の一つがそのままで、残り二つのうち一方が \(1\) 増え、もう一方が \(1\) 減る。したがって6辺の長さはすべて \(\sqrt2\) である。</p>
+<p>よって \(\triangle MAB,\triangle MBC,\ldots,\triangle MFA\) はすべて正三角形である。断面の各内角は \(60^\circ+60^\circ=120^\circ\) で、辺の長さも等しいので、断面は正六角形である。</p>
+<p>正三角形6つの面積を足すと、断面積 \(S\) は</p>
+<div class="scroll equation">\[\boxed{S=6\cdot\frac{\sqrt3}{4}(\sqrt2)^2=3\sqrt3}.\]</div>
+<h3 class="solution-break">別解　内積で中心角を確かめる</h3>
+<p>\(\overrightarrow{MA}=(0,1,-1)\)、\(\overrightarrow{MB}=(-1,1,0)\) の内積は \(1\) だから、\(\cos\angle AMB=\frac{1}{\sqrt2\cdot\sqrt2}=\frac12\)。他の隣り合う頂点へのベクトルの内積も \(1\) なので、中心角はすべて \(60^\circ\) である。すべての頂点は \(M\) から等距離にあるため、断面は正六角形になる。</p>
+<h3 class="solution-break">動く図で確かめる</h3>
+<p>平面 \(x+y+z=t\) を動かし、どの辺に交点ができるかを見よう。\(t=3\) に戻すと、例題の6頂点 \(A\) から \(F\) が表示される。</p>
+<div class="example-graph-layout">
+<figure class="example-diagram spatial-plot">
+<svg id="spatial-plot" viewBox="0 0 360 285" role="img" aria-label="立方体と切断面"><g id="cube-edges"></g><polygon id="section" fill="#80cfbe" fill-opacity=".7" stroke="#18675c" stroke-width="2.5"/><g id="section-points"></g></svg>
+<figcaption class="legend">緑色の部分が切断面。</figcaption></figure>
+<div class="example-readings spatial-readings"><dl>
+<div><dt>平面の位置</dt><dd id="plane-value"></dd></div>
+<div><dt>断面の形</dt><dd id="shape"></dd></div>
+<div><dt>断面の頂点数</dt><dd id="count"></dd></div>
+<div><dt>断面積</dt><dd id="area"></dd></div>
+</dl><p id="exact-area">\(t=3\) のとき、断面積は \(3\sqrt3\)。</p></div></div>
+<div class="spatial-controls">
+<label for="cut">平面を動かす</label><input id="cut" type="range" min="1" max="59" value="30">
+<label for="angle">視点を回す</label><input id="angle" type="range" min="-180" max="180" value="30">
+<button id="reset-cut" type="button">例題の位置に戻す</button>
+</div></section>
+<section class="panel"><h2>類題</h2>
+<p>例題と同じ立方体を平面 \(x+y+z=1\) で切る。断面の頂点の座標をすべて求め、断面の形と面積を求めよ。</p>
+<details><summary>解答・解説を見る</summary>
+<p>辺上では二つの座標が \(0\) または \(2\) である。固定した座標の一方でも \(2\) なら、残りの座標は負になる。したがって交点は \((1,0,0),(0,1,0),(0,0,1)\) の3点である。</p>
+<p>どの2点を結ぶ辺の長さも \(\sqrt2\) なので、断面は正三角形で、面積は \(\frac{\sqrt3}{4}(\sqrt2)^2=\frac{\sqrt3}{2}\) である。</p>
+</details></section>
+</main><footer><div class="wrap"><div class="site-parent-link"><a href="important_examples_mathc.html#space-vectors">数学Cの重要例題に戻る</a></div>みんなの数学データベース</div></footer>
+<script>
+(() => {
+  const get = id => document.getElementById(id);
+  const cut = get('cut');
+  const angle = get('angle');
+  const ns = 'http://www.w3.org/2000/svg';
+  const edges = [];
+  for (let axis = 0; axis < 3; axis++) {
+    for (const a of [0, 2]) {
+      for (const b of [0, 2]) {
+        const start = [a,b];
+        const end = [a,b];
+        start.splice(axis, 0, 0);
+        end.splice(axis, 0, 2);
+        edges.push({start, end, axis, sum:a+b});
+      }
+    }
+  }
+  const letters = {'1,2,0':'A','0,2,1':'B','0,1,2':'C','1,0,2':'D','2,0,1':'E','2,1,0':'F'};
+
+  function draw(parent, tag, attrs, label) {
+    const element = document.createElementNS(ns, tag);
+    for (const [key, value] of Object.entries(attrs)) element.setAttribute(key, value);
+    if (label) element.textContent = label;
+    parent.append(element);
+  }
+
+  function render() {
+    const t = Number(cut.value)/10;
+    const radians = Number(angle.value)*Math.PI/180;
+    const project = ([x,y,z]) => {
+      const horizontal = (x-1)*Math.cos(radians)-(y-1)*Math.sin(radians);
+      const depth = (x-1)*Math.sin(radians)+(y-1)*Math.cos(radians);
+      return [180+66*horizontal, 142+35*depth-62*(z-1)];
+    };
+    const wire = get('cube-edges');
+    wire.replaceChildren();
+    const vertices = new Map();
+    for (const {start,end,axis,sum} of edges) {
+      const [x1,y1] = project(start);
+      const [x2,y2] = project(end);
+      draw(wire, 'line', {x1,y1,x2,y2,stroke:'#566f87','stroke-width':2});
+      const coordinate = t-sum;
+      if (coordinate >= 0 && coordinate <= 2) {
+        const point = start.slice();
+        point[axis] = coordinate;
+        vertices.set(point.join(','), point);
+      }
+    }
+
+    const center = t/3;
+    const azimuth = ([x,y]) => Math.atan2(y-center,x-center);
+    const points = [...vertices.values()].sort((a,b) => azimuth(a)-azimuth(b));
+    get('section').setAttribute('points', points.map(point => project(point).join(',')).join(' '));
+    const markers = get('section-points');
+    markers.replaceChildren();
+    let twiceProjectedArea = 0;
+    points.forEach((point, index) => {
+      const next = points[(index+1)%points.length];
+      twiceProjectedArea += point[0]*next[1]-point[1]*next[0];
+      const [cx,cy] = project(point);
+      draw(markers, 'circle', {cx,cy,r:4,fill:'#18675c'});
+      if (t === 3) {
+        const [mx,my] = project([1,1,1]);
+        const dx = cx-mx;
+        const dy = cy-my;
+        const size = Math.hypot(dx,dy);
+        draw(markers,'text',{x:cx+14*dx/size,y:cy+14*dy/size,'text-anchor':'middle','dominant-baseline':'central',fill:'#17365d'},letters[point.join(',')]);
+      }
+    });
+
+    get('plane-value').textContent = 't = '+t.toFixed(1);
+    get('shape').textContent = points.length === 3 ? '正三角形' : t === 3 ? '正六角形' : '六角形';
+    get('count').textContent = points.length+'個';
+    // Projecting onto the xy-plane scales the area by 1/sqrt(3).
+    get('area').textContent = '約 '+(Math.abs(twiceProjectedArea)*Math.sqrt(3)/2).toFixed(3);
+    get('exact-area').hidden = t !== 3;
+  }
+
+  cut.addEventListener('input', render);
+  angle.addEventListener('input', render);
+  get('reset-cut').addEventListener('click', () => {
+    cut.value = '30';
+    render();
+  });
+  render();
+})();
+</script></body></html>
