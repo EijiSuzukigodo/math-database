@@ -1,7 +1,30 @@
 <!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>等差数列・等比数列の和</title><style>*{box-sizing:border-box}body{margin:0;background:#f3f7fa;color:#17314c;font-family:-apple-system,BlinkMacSystemFont,Meiryo,sans-serif;line-height:1.8}header,footer{background:#17365d;color:white;padding:22px}header h1{margin:5px 0;font-size:clamp(24px,4vw,36px)}header p{margin:0}main{max-width:960px;margin:auto;padding:18px}section{background:white;border:1px solid #d9e7ef;border-radius:14px;padding:20px;margin:0 0 18px}h2{color:#174a72;font-size:1.3rem}h3{color:#174a72} .aim{border-left:5px solid #208085}.note{background:#edf6fc;padding:14px;border-radius:10px}.example{background:#fff8e9;padding:14px;border-radius:10px}button{font:inherit;background:#176cae;color:white;border:0;border-radius:8px;padding:9px 14px;margin:4px;cursor:pointer}input,select{font:inherit}input[type=range]{width:100%;max-width:450px}svg{width:100%;height:auto;display:block}summary{color:#176cae;font-weight:bold;cursor:pointer;padding:8px 0}a{color:#176cae;font-weight:bold}.stats{font-weight:bold;font-variant-numeric:tabular-nums}footer{text-align:center}.legend{font-size:.9rem}.orange{color:#a64b09}.blue{color:#176cae} body{min-height:100vh;display:flex;flex-direction:column}main{width:100%;flex:1}.eq{text-align:center;background:#edf6fc;padding:12px;border-radius:8px;font-size:1.12rem;overflow-wrap:anywhere}label{display:block;margin:12px 0}svg{background:#fff;border:1px solid #d9e7ef;border-radius:8px}button:focus-visible,input:focus-visible{outline:3px solid #e5a13c} .green{color:#087e63}.purple{color:#7b42a8}.frac{display:inline-flex;vertical-align:middle;flex-direction:column;align-items:stretch;text-align:center;line-height:1.15;margin:0 .14em;white-space:nowrap;font-family:"Times New Roman",serif;font-size:1.05em}.frac>span:first-child{border-bottom:1px solid currentColor;padding:0 .21em .08em}.frac>span:last-child{padding:.08em .21em 0}sub .frac{font-size:1em} .mathselect{display:inline-flex;align-items:center;gap:.6em} table{width:100%;border-collapse:collapse;text-align:center;table-layout:fixed}th,td{border:1px solid #b9cddc;padding:10px 2px}th{background:#edf6fc}.controls{background:#f4f9fc;padding:12px;border-radius:10px}.scroll{overflow-x:auto}.stats{background:#edf6fc;padding:12px;border-radius:8px}button:disabled{opacity:.5}</style><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]}};</script><script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link rel="stylesheet" href="lesson_common_style.css">
 <link rel="stylesheet" href="important_example_style.css">
-</head><body class="important-example">
-<header><div class="site-parent-link"><a href="important_examples_mathb.html">数学Bに戻る</a></div><p>数学B ／ 数列</p><h1>等差数列・等比数列の和</h1><p>重要例題のわかりやすい解説</p></header><main>
+<style>#shiftGrid th:first-child{width:7em}.eq{overflow-x:auto}#shiftSize{min-height:44px}</style></head><body class="important-example">
+<header><div class="site-parent-link"><a href="important_examples_mathb.html">数学Bに戻る</a></div><p>数学B ／ 数列</p><h1>等差数列・等比数列の和</h1><p>重要例題のわかりやすい解説</p></header><main><section class="aim"><h2>重要例題　公比を掛けて差をとる</h2>
+<p>正の整数 \(n\) に対して、次の和を \(n\) の式で表せ。</p>
+<div class="eq">\[ S_n=1+2\cdot2+3\cdot2^2+\cdots+n\cdot2^{n-1} \]</div>
+<details><summary>着眼点を見る</summary><p>第 \(k\) 項は \(k\cdot2^{k-1}\)。一方の因子は1ずつ増え、もう一方は2倍ずつ増える。和全体を2倍すると、隣り合う項の「2の累乗」がそろう。そのとき係数の差はいくつになるだろうか。</p></details></section>
+<section><h2>同じ指数の項を縦にそろえる</h2><p>表の各列には、次数 \(j\) に対応する \(2^j\) の<strong>係数だけ</strong>を示した。空欄はその項がないことを表す。</p>
+<label>項数 <i>n</i> ＝ <output id="shiftCount">4</output><br><input id="shiftSize" type="range" min="2" max="7" value="4"></label>
+<div class="scroll"><table id="shiftGrid" aria-label="同じ指数で並べた係数"></table></div>
+<p>中央の列では、下の行から上の行を引くとすべての係数が −1 になる。両端には相手の項がないため、左には −1、右には \(n\cdot2^n\) が残る。</p></section>
+<section><h2>解答　両端と中央を分ける</h2>
+<p>\(2S_n-S_n=S_n\) だから、表の差に各列の \(2^j\) を掛けて足せばよい。左端と中央の負の項をまとめると、初項1、公比2、項数 \(n\) の等比数列の和になる。</p>
+<div class="eq">\[\begin{aligned}
+S_n &= n\cdot2^n-(1+2+\cdots+2^{n-1})\\
+&= n\cdot2^n-(2^n-1)\\
+&=\boxed{(n-1)2^n+1}.
+\end{aligned}\]</div>
+<p>\(n=1\) ではこの式は1となり、初項とも一致する。</p></section>
+<section><h2>発展　公比が文字のとき</h2><p>実数 \(r\) に対し、\(T_n=1+2r+3r^2+\cdots+nr^{n-1}\) を求めよ。初項は \(r=0\) のときも1とする。</p>
+<details><summary>解答・解説</summary><p>\(r=1\) のときは指数の部分がすべて1になるので、等差数列の和から \(T_n=\dfrac{n(n+1)}2\)。</p>
+<p>\(r\ne1\) のときは \(T_n-rT_n\) を作ると、中央の係数の差が今度は1になる。</p>
+<div class="eq">\[\begin{aligned}(1-r)T_n &=1+r+\cdots+r^{n-1}-nr^n\\
+&=\frac{1-r^n}{1-r}-nr^n.\end{aligned}\]</div>
+<p>もう一度 \(1-r\) で割って整理すると、</p><div class="eq">\[T_n=\frac{1-(n+1)r^n+nr^{n+1}}{(1-r)^2}.\]</div>
+<p>\(r=2\) を代入すると、最初の例題の \((n-1)2^n+1\) に戻る。</p></details></section>
+<details><summary>基本の復習　等差数列・等比数列の和の公式と図</summary>
 <section class="example-goal">
   <span class="goal-label">例題のねらい</span>
   <h2>数列の和の公式を図と式で理解する</h2>
@@ -19,9 +42,35 @@
   <div class="example-readings"><p class="stats" id="ginfo"></p></div>
 </div>
 <p><span class="blue">青：各項</span>　<span class="orange">橙：部分和</span>。公比が負の場合は各項の符号が交互に変化します。</p><div class="example"><b>重要例題2</b>　初項8、公比 \(\frac12\) の等比数列の初項から第5項までの和を求めよ。</div><div class="eq">\[S_5=\frac{8\{1-(\frac12)^5\}}{1-\frac12}=\frac{31}{2}\]</div></section>
-<section><h2>類題</h2><p>問1　初項7、公差3の等差数列の第15項までの和を求めよ。</p><details><summary>解答・解説</summary><p>末項は49。\(S_{15}=\frac{15(7+49)}2=420\)。</p></details><p>問2　初項3、公比−2の等比数列の第6項までの和を求めよ。</p><details><summary>解答・解説</summary><p>\(S_6=\frac{3\{1-(-2)^6\}}{1-(-2)}=-63\)。</p></details><p>問3　初項2、公差3の等差数列の和が155となる項数を求めよ。</p><details><summary>解答・解説</summary><p>\(\frac{n(3n+1)}2=155\) より \((n-10)(3n+31)=0\)。項数は正の整数だから \(n=10\)。</p></details></section><p></p></main><footer><div class="site-parent-link"><a href="important_examples_mathb.html">数学Bに戻る</a></div>みんなの数学データベース｜数学B</footer>
+<section><h2>類題</h2><p>問1　初項7、公差3の等差数列の第15項までの和を求めよ。</p><details><summary>解答・解説</summary><p>末項は49。\(S_{15}=\frac{15(7+49)}2=420\)。</p></details><p>問2　初項3、公比−2の等比数列の第6項までの和を求めよ。</p><details><summary>解答・解説</summary><p>\(S_6=\frac{3\{1-(-2)^6\}}{1-(-2)}=-63\)。</p></details><p>問3　初項2、公差3の等差数列の和が155となる項数を求めよ。</p><details><summary>解答・解説</summary><p>\(\frac{n(3n+1)}2=155\) より \((n-10)(3n+31)=0\)。項数は正の整数だから \(n=10\)。</p></details></section><p></p></details></main><footer><div class="site-parent-link"><a href="important_examples_mathb.html">数学Bに戻る</a></div>みんなの数学データベース｜数学B</footer>
 <script>
 const $=id=>document.getElementById(id), fmt=v=>Number(v.toPrecision(7)).toString();let reverse=true,t=null,g=null;
 function ar(){let a=+$('a').value,d=+$('d').value,n=+$('n').value,l=a+(n-1)*d; $('av').textContent=a;$('dv').textContent=d;$('nv').textContent=n;let w=520/n,h=245/(a+l),s='<line x1="50" x2="570" y1="290" y2="290" stroke="#607080"/>';for(let i=0;i<n;i++){let v=a+i*d,u=l-i*d,x=50+i*w;s+=`<rect x="${x+1}" y="${290-v*h}" width="${w-2}" height="${v*h}" fill="#176cae" opacity=".85"/><text x="${x+w/2}" y="${290-v*h/2+4}" text-anchor="middle" fill="white" font-size="12">${v}</text><text x="${x+w/2}" y="312" text-anchor="middle" font-size="12">${i+1}</text>`;if(reverse)s+=`<rect x="${x+1}" y="${290-(v+u)*h}" width="${w-2}" height="${u*h}" fill="#d97725" opacity=".85"/><text x="${x+w/2}" y="${290-(v+u/2)*h+4}" text-anchor="middle" fill="white" font-size="12">${u}</text>`;} $('plot').innerHTML=s;$('info').textContent=`末項：${l}　｜　各列の合計：${a+l}　｜　数列の和：${n*(a+l)/2}`;}
 function ge(){let a=+$('ga').value,r=+$('r').value,n=+$('gn').value;let vs=[],ss=[],sum=0;for(let i=0;i<n;i++){vs.push(a*r**i);sum+=vs[i];ss.push(sum)}$('gav').textContent=a;$('rv').innerHTML=r===.5?'<span class="frac"><span>1</span><span>2</span></span>':r===-.5?'−<span class="frac"><span>1</span><span>2</span></span>':fmt(r);$('gnv').textContent=n;let lo=Math.min(0,...vs,...ss),hi=Math.max(0,...vs,...ss),pad=(hi-lo)*.12||1;lo-=pad;hi+=pad;let X=i=>65+i*530/11,Y=v=>300-(v-lo)*260/(hi-lo),s='';for(let j=0;j<=5;j++){let v=lo+(hi-lo)*j/5;s+=`<line x1="65" x2="595" y1="${Y(v)}" y2="${Y(v)}" stroke="#d9e7ef"/><text x="59" y="${Y(v)+4}" text-anchor="end" font-size="10">${fmt(v)}</text>`}s+=`<line x1="65" x2="595" y1="${Y(0)}" y2="${Y(0)}" stroke="#607080"/>`;for(let i=0;i<12;i++)s+=`<text x="${X(i)}" y="325" text-anchor="middle" font-size="12">${i+1}</text>`;vs.forEach((v,i)=>{s+=`<circle cx="${X(i)-4}" cy="${Y(v)}" r="5" fill="#176cae"/><circle cx="${X(i)+4}" cy="${Y(ss[i])}" r="5" fill="#d97725"/>`});$('gplot').innerHTML=s;$('ginfo').textContent=`第${n}項：${fmt(vs[n-1])}　｜　部分和：${fmt(sum)}`;}
-['a','d','n'].forEach(id=>$(id).oninput=ar);['ga','r','gn'].forEach(id=>$(id).oninput=ge);$('flip').onclick=()=>{reverse=!reverse;ar()};function stop(){clearInterval(t);t=null}function gs(){clearInterval(g);g=null}$('stop').onclick=stop;$('gstop').onclick=gs;$('play').onclick=()=>{stop();$('n').value=1;ar();t=setInterval(()=>{if(+$('n').value>=12)return stop();$('n').value=+$('n').value+1;ar()},500)};$('gplay').onclick=()=>{gs();$('gn').value=1;ge();g=setInterval(()=>{if(+$('gn').value>=12)return gs();$('gn').value=+$('gn').value+1;ge()},500)};$('reset').onclick=()=>{stop();$('a').value=2;$('d').value=2;$('n').value=5;reverse=true;ar()};$('greset').onclick=()=>{gs();$('ga').value=2;$('r').value=.5;$('gn').value=6;ge()};ar();ge();</script></body></html>
+['a','d','n'].forEach(id=>$(id).oninput=ar);['ga','r','gn'].forEach(id=>$(id).oninput=ge);$('flip').onclick=()=>{reverse=!reverse;ar()};function stop(){clearInterval(t);t=null}function gs(){clearInterval(g);g=null}$('stop').onclick=stop;$('gstop').onclick=gs;$('play').onclick=()=>{stop();$('n').value=1;ar();t=setInterval(()=>{if(+$('n').value>=12)return stop();$('n').value=+$('n').value+1;ar()},500)};$('gplay').onclick=()=>{gs();$('gn').value=1;ge();g=setInterval(()=>{if(+$('gn').value>=12)return gs();$('gn').value=+$('gn').value+1;ge()},500)};$('reset').onclick=()=>{stop();$('a').value=2;$('d').value=2;$('n').value=5;reverse=true;ar()};$('greset').onclick=()=>{gs();$('ga').value=2;$('r').value=.5;$('gn').value=6;ge()};ar();ge();</script><script>(() => {
+  const slider = document.getElementById('shiftSize');
+  const table = document.getElementById('shiftGrid');
+  function update() {
+    const n = Number(slider.value);
+    const columns = Array.from({length:n+1}, (_, j) => j);
+    const rows = [
+      ['次数 j', ...columns],
+      ['Sₙ', ...columns.map(j => j === n ? '' : j+1)],
+      ['2Sₙ', ...columns.map(j => j === 0 ? '' : j)],
+      ['差（2Sₙ − Sₙ）', ...columns.map(j => j === n ? n : '−1')]
+    ];
+    table.replaceChildren();
+    for (const [i, values] of rows.entries()) {
+      const tr = table.insertRow();
+      for (const [j, value] of values.entries()) {
+        const cell = document.createElement(i === 0 || j === 0 ? 'th' : 'td');
+        cell.textContent = value;
+        tr.appendChild(cell);
+      }
+    }
+    document.getElementById('shiftCount').textContent = n;
+  }
+  slider.addEventListener('input', update);
+  update();
+})();
+</script></body></html>
