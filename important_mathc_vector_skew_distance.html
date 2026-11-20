@@ -27,12 +27,12 @@
 <p>（2）このときの \(PQ\) が2直線間の距離の最小値になることを示し、その値を求めよ。</p></section>
 <section class="panel"><h2>解説</h2>
 <h3>（1）二つの内積から点 \(P,Q\) を求める</h3>
-<p>直線 \(AB,CD\) の方向ベクトルをそれぞれ \(\mathbf u=(2,2,0)\)、\(\mathbf v=(2,-2,1)\) とする。直線上の点は、実数 \(s,t\) を使って表せる。</p>
+<p>直線 \(AB,CD\) の方向ベクトルをそれぞれ \(\overrightarrow{AB}=(2,2,0)\)、\(\overrightarrow{CD}=(2,-2,1)\) とする。直線上の点は、実数 \(s,t\) を使って表せる。</p>
 <div class="scroll equation">\[ P=(2s,2s,0),\qquad Q=(2t,2-2t,1+t). \]</div>
 <p>両方の直線に垂直になる条件は、\(\overrightarrow{PQ}\) と二つの方向ベクトルの内積がともに \(0\) になることである。</p>
 <div class="scroll equation">\[\begin{aligned}
-\overrightarrow{PQ}\cdot\mathbf u&=4-8s=0,\\
-\overrightarrow{PQ}\cdot\mathbf v&=9t-3=0.
+\overrightarrow{PQ}\cdot\overrightarrow{AB}&=4-8s=0,\\
+\overrightarrow{PQ}\cdot\overrightarrow{CD}&=9t-3=0.
 \end{aligned}\]</div>
 <p>よって \(s=\frac12\)、\(t=\frac13\) であり、</p>
 <div class="scroll equation">\[\boxed{P=(1,1,0),\qquad Q=\left(\frac23,\frac43,\frac43\right)}.\]</div>
@@ -40,7 +40,7 @@
 <p>直線 \(AB,CD\) 上に任意の点 \(X,Y\) をとる。\(\overrightarrow{XP}\) は直線 \(AB\) の方向、\(\overrightarrow{QY}\) は直線 \(CD\) の方向に沿うので、その和も \(\overrightarrow{PQ}\) に垂直である。</p>
 <div class="scroll equation">\[\begin{aligned}
 \overrightarrow{XY}&=\overrightarrow{PQ}+\bigl(\overrightarrow{XP}+\overrightarrow{QY}\bigr),\\
-XY^2&=PQ^2+\left|\overrightarrow{XP}+\overrightarrow{QY}\right|^2\ge PQ^2.
+XY^2&=PQ^2+\left|\overrightarrow{XP}+\overrightarrow{QY}\right|^2\geqslant PQ^2.
 \end{aligned}\]</div>
 <p>\(X=P,\ Y=Q\) で等号が成り立つ。したがって2直線の距離は、</p>
 <div class="scroll equation">\[\boxed{PQ=\sqrt{\left(-\frac13\right)^2+\left(\frac13\right)^2+\left(\frac43\right)^2}=\sqrt2}.\]</div>
@@ -64,8 +64,8 @@ PQ^2=(2t-2s)^2+(2-2t-2s)^2+(1+t)^2
 </figure>
 <div class="example-readings spatial-readings"><dl>
 <div><dt>\(PQ\) の長さ</dt><dd id="length"></dd></div>
-<div><dt>\(\overrightarrow{PQ}\cdot\mathbf u\)</dt><dd id="dot-u"></dd></div>
-<div><dt>\(\overrightarrow{PQ}\cdot\mathbf v\)</dt><dd id="dot-v"></dd></div>
+<div><dt>\(\overrightarrow{PQ}\cdot\overrightarrow{AB}\)</dt><dd id="dot-u"></dd></div>
+<div><dt>\(\overrightarrow{PQ}\cdot\overrightarrow{CD}\)</dt><dd id="dot-v"></dd></div>
 </dl><p id="shortest" hidden>最短距離は \(\sqrt2\)</p></div>
 </div>
 <div class="spatial-controls">
