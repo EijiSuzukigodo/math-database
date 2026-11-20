@@ -1,0 +1,111 @@
+name: Upload polynomial lesson privately
+on:
+  push:
+    branches: [youtube-upload-connection-check]
+    paths: ['.github/transfer/polynomial-operations.enc']
+permissions: {}
+jobs:
+  upload:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - name: Install authenticated encryption dependency
+        run: |
+          python3 -m venv "$RUNNER_TEMP/youtube-upload"
+          "$RUNNER_TEMP/youtube-upload/bin/python" -m pip install --disable-pip-version-check cryptography==50.0.0
+      - name: Upload the verified MP4 to YouTube with private visibility
+        env:
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+        run: |
+          "$RUNNER_TEMP/youtube-upload/bin/python" - <<'PY'
+          import base64
+          import hashlib
+          import json
+          import os
+          import re
+          import secrets
+          import urllib.error
+          import urllib.parse
+          import urllib.request
+          
+          from cryptography.hazmat.primitives.asymmetric.x25519 import X25519PrivateKey, X25519PublicKey
+          from cryptography.hazmat.primitives.ciphers.aead import AESGCM
+          
+          EXPECTED_HASH = "2eb76592c112606f2249ed82b2f5350483824f9c378991323a492c7b4d1e668a"
+          RESPONSE_KEY = "ddi65B0+V8XEqS9lqSFf6Uy43PmcvwKXFPm78uusaUE="
+          
+          def request(req, failure, timeout=35):
+              try:
+                  with urllib.request.urlopen(req, timeout=timeout) as response:
+                      return response.read()
+              except urllib.error.HTTPError as exc:
+                  raise SystemExit(f"{failure} (HTTP {exc.code}).") from None
+              except (OSError, TimeoutError):
+                  raise SystemExit(f"{failure} (network error).") from None
+          
+          client = json.loads(os.environ["YOUTUBE_CLIENT_SECRET"])["web"]
+          secret = client["client_secret"].strip()
+          commit = os.environ["GITHUB_SHA"]
+          payload_url = f"https://raw.githubusercontent.com/EijiSuzukigodo/math-database/{commit}/.github/transfer/polynomial-operations.enc"
+          payload = request(payload_url, "Could not retrieve the encrypted video")
+          header, nonce, ciphertext = payload[:32], payload[32:44], payload[44:]
+          private_seed = hashlib.sha256(b"math-database encrypted video transfer v1:" + secret.encode()).digest()
+          private = X25519PrivateKey.from_private_bytes(private_seed)
+          shared = private.exchange(X25519PublicKey.from_public_bytes(header))
+          key = hashlib.sha256(b"math-database YouTube video AES-GCM v1:" + shared).digest()
+          video = AESGCM(key).decrypt(nonce, ciphertext, header)
+          if hashlib.sha256(video).hexdigest() != EXPECTED_HASH:
+              raise SystemExit("Video checksum mismatch.")
+          
+          grant = urllib.parse.urlencode({
+              "client_id": client["client_id"].strip(),
+              "client_secret": secret,
+              "refresh_token": os.environ["YOUTUBE_REFRESH_TOKEN"].strip(),
+              "grant_type": "refresh_token",
+          }).encode()
+          auth = json.loads(request(urllib.request.Request("https://oauth2.googleapis.com/token", data=grant),
+                                    "Google rejected the upload authorization"))
+          scope = "https://www.googleapis.com/auth/youtube.upload"
+          if scope not in auth.get("scope", "").split():
+              raise SystemExit("Missing YouTube upload scope.")
+          metadata = json.dumps({
+              "snippet": {
+                  "title": "数学Ⅰ 多項式の加法・減法・乗法",
+                  "description": "同類項の整理、減法での符号の扱い、分配法則による展開を例題と練習問題で学びます。\n授業ページ https://eijisuzukigodo.github.io/math-database/math1_polynomial_operations.html",
+                  "categoryId": "27",
+                  "defaultLanguage": "ja",
+              },
+              "status": {"privacyStatus": "private"},
+          }, ensure_ascii=False).encode()
+          boundary = secrets.token_hex(24)
+          separator = ("--" + boundary).encode()
+          body = b"\r\n".join([
+              separator, b"Content-Type: application/json; charset=UTF-8", b"", metadata,
+              separator, b"Content-Type: video/mp4", b"", video, separator + b"--", b"",
+          ])
+          upload_url = ("https://www.googleapis.com/upload/youtube/v3/videos"
+                        "?part=snippet,status&uploadType=multipart&notifySubscribers=false")
+          upload = urllib.request.Request(upload_url, data=body, headers={
+              "Authorization": "Bearer " + auth["access_token"],
+              "Content-Type": f"multipart/related; boundary={boundary}",
+          })
+          result = json.loads(request(upload, "YouTube did not confirm the upload", timeout=100))
+          video_id = result.get("id", "")
+          status = result.get("status", {}).get("privacyStatus")
+          if not re.fullmatch(r"[A-Za-z0-9_-]{11}", video_id):
+              raise SystemExit("YouTube did not return a recognizable video ID.")
+          recipient = X25519PublicKey.from_public_bytes(base64.b64decode(RESPONSE_KEY))
+          reply_key = X25519PrivateKey.generate()
+          reply_header = reply_key.public_key().public_bytes_raw()
+          reply_nonce = os.urandom(12)
+          shared = reply_key.exchange(recipient)
+          reply_aes = hashlib.sha256(b"math-database YouTube receipt AES-GCM v1:" + shared).digest()
+          receipt = json.dumps({"video_id": video_id, "privacy": status}).encode()
+          encrypted = AESGCM(reply_aes).encrypt(reply_nonce, receipt, reply_header)
+          print("Encrypted upload receipt: " + base64.b64encode(reply_header + reply_nonce + encrypted).decode())
+          if status != "private":
+              raise SystemExit("Upload received, but YouTube did not confirm private visibility.")
+          print("YouTube accepted the private video.")
+          PY
