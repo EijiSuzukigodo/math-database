@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>内積で表された点の軌跡と直線との交点｜数学Cの重要例題</title>
+<link rel="stylesheet" href="lesson_common_style.css">
+<link rel="stylesheet" href="important_math1_quadratic_extrema.css?v=3">
+<link rel="stylesheet" href="important_example_style.css">
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<style>
+.extrema-lesson .panel h3.solution-break{margin-block-start:1.85rem}
+.circle-plot,.circle-readings dl{margin:0}
+.circle-readings dd{margin:0 0 .7rem;font-weight:700}
+</style></head>
+<body class="extrema-lesson important-example">
+<header><div class="wrap"><div class="site-parent-link"><a href="important_examples_mathc.html#plane-vectors">数学Cの重要例題に戻る</a></div><p>数学C ／ 平面上のベクトル</p><h1>内積で表された点の軌跡と直線との交点</h1></div></header>
+<main class="wrap">
+<section class="example-goal"><span class="goal-label">例題のねらい</span>
+<h2>内積の条件を円の方程式に置き換える</h2><p>円の半径と直線までの距離を比較し、定数によって軌跡や共有点の個数が変わる理由を理解する。</p></section>
+<section class="panel"><h2>例題</h2>
+<p>座標平面上で \(A(-2,0)\)、\(B(2,0)\) とする。実数 \(k\) に対し、点 \(P\) は \(\overrightarrow{PA}\cdot\overrightarrow{PB}=k\) を満たすとする。</p>
+<p>（1）\(k\) の値によって、点 \(P\) の軌跡を分類せよ。</p>
+<p>（2）点 \(P\) の軌跡と直線 \(y=x+1\) との共有点の個数を、\(k\) の値によって分類せよ。</p>
+</section>
+<section class="panel"><h2>解説</h2>
+<h3>（1）内積から軌跡の方程式を求める</h3>
+<p>\(P=(x,y)\) とおくと、\(\overrightarrow{PA}=(-2-x,-y)\)、\(\overrightarrow{PB}=(2-x,-y)\) だから、</p>
+<div class="scroll equation">\[
+\overrightarrow{PA}\cdot\overrightarrow{PB}
+=(-2-x)(2-x)+y^2=x^2+y^2-4.
+\]</div>
+<p>したがって、\(x^2+y^2=k+4\) である。</p>
+<ul>
+<li>\(k&lt;-4\) のとき、条件を満たす点はない。</li>
+<li>\(k=-4\) のとき、軌跡は原点 \(O\) だけである。</li>
+<li>\(k&gt;-4\) のとき、軌跡は原点を中心とする半径 \(\sqrt{k+4}\) の円である。</li>
+</ul>
+<h3>（2）円の半径と直線までの距離を比べる</h3>
+<p>直線は \(x-y+1=0\) と表せる。原点からの距離は \(\frac1{\sqrt2}\) なので、円が接するのは \(k+4=\frac12\)、すなわち \(k=-\frac72\) のときである。\(k=-4\) のときの原点も、この直線上にない。</p>
+<div class="scroll"><table><thead><tr><th scope="col">\(k\) の範囲</th><th scope="col">共有点の個数</th></tr></thead><tbody>
+<tr><td>\(k&lt;-\frac72\)</td><td>0個</td></tr>
+<tr><td>\(k=-\frac72\)</td><td>1個（接する）</td></tr>
+<tr><td>\(k&gt;-\frac72\)</td><td>2個</td></tr>
+</tbody></table></div>
+
+<h3 class="solution-break">別解　判別式で共有点の個数を求める</h3>
+<p>\(y=x+1\) を \(x^2+y^2=k+4\) に代入すると、\(2x^2+2x-k-3=0\) となる。判別式は \(D=8k+28\)。その符号を調べると、同じ結果が得られる。</p>
+
+<h3 class="solution-break">動く図で確かめる</h3>
+<label for="k">定数 \(k\) の値 <output id="k-value" for="k">−3.5</output></label>
+<div class="controls">
+<input id="k" type="range" min="-5" max="4" step="0.1" value="-3.5">
+<button type="button" data-k="-4">原点だけ</button>
+<button type="button" data-k="-3.5">接する</button>
+<button type="button" data-k="0">2点で交わる</button>
+</div>
+<div class="example-graph-layout">
+<figure class="example-diagram circle-plot">
+<svg viewBox="0 0 330 330" role="img" aria-label="原点を中心とする軌跡と、直線y=x+1との共有点">
+<path d="M18 165H312 M165 18V312" fill="none" stroke="#8193a4"/>
+<circle id="circle" cx="165" cy="165" r="31.11" fill="#dbeafe" fill-opacity=".55" stroke="#176cae" stroke-width="2.5"/>
+<path d="M18 268L268 18" stroke="#a35913" stroke-width="2.5"/>
+<path d="M165 165L143 143" stroke="#71849a" stroke-dasharray="4 3"/>
+<g fill="#17365d" font-size="15">
+<text x="309" y="182">x</text><text x="174" y="23">y</text><text x="173" y="182">O</text>
+<circle cx="77" cy="165" r="3"/><text x="71" y="185">A</text>
+<circle cx="253" cy="165" r="3"/><text x="250" y="185">B</text>
+</g>
+<circle id="origin" cx="165" cy="165" r="5" fill="#176cae" style="display:none"/>
+<circle id="hit-left" cx="143" cy="143" r="5" fill="#087a62" stroke="white" stroke-width="1.5"/>
+<circle id="hit-right" cx="143" cy="143" r="5" fill="#087a62" stroke="white" stroke-width="1.5" style="display:none"/>
+</svg>
+<figcaption class="legend">青：軌跡　橙：直線　緑：共有点</figcaption>
+</figure>
+<div class="example-readings circle-readings">
+<dl>
+<div><dt>点 \(P\) の軌跡</dt><dd><output id="locus" for="k">円</output></dd></div>
+<div><dt>半径（近似値）</dt><dd><output id="radius" for="k">0.707</output></dd></div>
+<div><dt>直線までの距離（近似値）</dt><dd>0.707</dd></div>
+<div><dt>共有点の個数</dt><dd><output id="hits" for="k">1個（接する）</output></dd></div>
+</dl>
+</div>
+</div>
+</section>
+<section class="panel"><h2>類題</h2>
+<p>\(A(-3,0)\)、\(B(3,0)\) とする。\(\overrightarrow{PA}\cdot\overrightarrow{PB}=k\) を満たす点 \(P\) の軌跡と、直線 \(y=2\) との共有点の個数を分類せよ。</p>
+<details><summary>解答・解説を見る</summary>
+<p>軌跡の式は \(x^2+y^2=k+9\)。\(k&lt;-9\) なら点は存在せず、\(k=-9\) なら原点だけ、\(k&gt;-9\) なら半径 \(\sqrt{k+9}\) の円となる。</p>
+<p>原点から直線 \(y=2\) までの距離は \(2\) なので、接する境目は \(k+9=4\)、すなわち \(k=-5\) である。共有点は \(k&lt;-5\) なら0個、\(k=-5\) なら1個、\(k&gt;-5\) なら2個となる。</p>
+</details></section>
+</main>
+<footer><div class="wrap"><div class="site-parent-link"><a href="important_examples_mathc.html#plane-vectors">数学Cの重要例題に戻る</a></div>みんなの数学データベース</div></footer>
+<script>
+(() => {
+  const get = id => document.getElementById(id);
+  const slider = get('k');
+  const show = (id, visible) => { get(id).style.display = visible ? '' : 'none'; };
+  function place(id, x) {
+    get(id).setAttribute('cx', 165 + 44 * x);
+    get(id).setAttribute('cy', 165 - 44 * (x + 1));
+  }
+  function draw() {
+    const k = Number(slider.value);
+    const radiusSquared = k + 4;
+    const count = k < -3.5 ? 0 : k === -3.5 ? 1 : 2;
+    get('k-value').textContent = String(k).replace('-', '−');
+    get('locus').textContent = radiusSquared < 0 ? '点なし' : radiusSquared === 0 ? '原点だけ' : '円';
+    get('radius').textContent = radiusSquared > 0 ? Math.sqrt(radiusSquared).toFixed(3) : '―';
+    get('hits').textContent = count + (count === 1 ? '個（接する）' : '個');
+    show('circle', radiusSquared > 0);
+    show('origin', radiusSquared === 0);
+    if (radiusSquared > 0) get('circle').setAttribute('r', 44 * Math.sqrt(radiusSquared));
+    show('hit-left', count > 0);
+    show('hit-right', count === 2);
+    if (count > 0) {
+      const offset = Math.sqrt((k + 3.5) / 2);
+      place('hit-left', -0.5 - offset);
+      place('hit-right', -0.5 + offset);
+    }
+  }
+  slider.addEventListener('input', draw);
+  for (const button of document.querySelectorAll('[data-k]')) {
+    button.addEventListener('click', () => { slider.value = button.dataset.k; draw(); });
+  }
+  draw();
+})();
+</script></body></html>
