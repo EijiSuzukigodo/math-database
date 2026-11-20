@@ -52,7 +52,7 @@
 <svg id="spatial-plot" viewBox="0 0 360 285" role="img" aria-label="座標軸と原点のある立方体と切断面"><defs><marker id="axis-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#263b53"/></marker></defs><g id="cube-edges"></g><polygon id="section" fill="#80cfbe" fill-opacity=".7" stroke="#18675c" stroke-width="2.5"/><g id="section-points"></g><g id="coordinate-axes" fill="#263b53" font-size="17"></g></svg>
 <figcaption class="legend">緑色の部分が切断面。矢印は各座標軸の正の向き。</figcaption></figure>
 <div class="example-readings spatial-readings"><dl>
-<div><dt>平面の位置</dt><dd id="plane-value"></dd></div>
+<div><dt>平面の位置</dt><dd>\(t=\) <span id="plane-value"></span></dd></div>
 <div><dt>断面の形</dt><dd id="shape"></dd></div>
 <div><dt>断面の頂点数</dt><dd id="count"></dd></div>
 <div><dt>断面積</dt><dd id="area"></dd></div>
@@ -151,12 +151,12 @@
       const [x2,y2] = project(endpoint);
       const [x,y] = project(labelPoint);
       draw(axes, 'line', {x1,y1,x2,y2,stroke:'#263b53','stroke-width':1.6,'marker-end':'url(#axis-arrow)'});
-      draw(axes, 'text', {x,y,'text-anchor':'middle','dominant-baseline':'central','font-style':'italic'},label);
+      draw(axes, 'text', {x,y,'text-anchor':'middle','dominant-baseline':'central','font-style':'italic','font-family':'Times New Roman, serif'},label);
     }
     draw(axes, 'circle', {cx:x1,cy:y1,r:3});
     draw(axes, 'text', {x:x1-10,y:y1+15,'text-anchor':'middle','font-style':'italic'},'O');
 
-    get('plane-value').textContent = 't = '+t.toFixed(1);
+    get('plane-value').textContent = t.toFixed(1);
     get('shape').textContent = points.length === 3 ? '正三角形' : t === 3 ? '正六角形' : '六角形';
     get('count').textContent = points.length+'個';
     // Projecting onto the xy-plane scales the area by 1/sqrt(3).
