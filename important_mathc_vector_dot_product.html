@@ -28,8 +28,8 @@
 <main class="wrap">
 <section class="example-goal">
     <span class="goal-label">例題のねらい</span>
-    <h2>距離の2乗の和をまとめ、垂直条件で最小値を求める</h2>
-    <p>重みをつけた内分点を選び、距離の式を内積で整理する。最小となる点を垂線の足として求められるようになる。</p>
+    <h2>距離の2乗の和の最小値を求める</h2>
+    <p>座標を代入し、平方完成で最小値を求める。重みをつけた内分点を用いる別解から、最小となる点が垂線の足である理由を理解する。</p>
   </section>
 <section class="panel">
   <h2>例題</h2>
@@ -40,7 +40,18 @@
 
 <section class="panel">
   <h2>解説</h2>
-  <h3>内分点を基準に距離の式をまとめる</h3>
+  <h3>座標を代入して平方完成する</h3>
+  <p>線分 \(BC\) 上では \(x+y=4\) なので、\(P=(x,4-x)\)、\(0\leqq x\leqq4\) とおく。</p>
+  <div class="scroll equation">\[\begin{aligned}
+  AP^2+2DP^2
+    &=x^2+(4-x)^2+2\bigl((x-3)^2+(4-x)^2\bigr)\\
+    &=6x^2-36x+66\\
+    &=6(x-3)^2+12.
+  \end{aligned}\]</div>
+  <p>\(x=3\) は範囲内にあるので、最小値は \(12\)、そのとき \(P=(3,1)\) である。</p>
+
+  <h3>別解　内積と垂直条件を使う</h3>
+  <h4>内分点を基準に距離の式をまとめる</h4>
   <p>線分 \(AD\) を \(2:1\) に内分する点を \(W(2,0)\) とする。このとき、\(\overrightarrow{WA}+2\overrightarrow{WD}=\vec 0\) となる。各ベクトルを \(W\) を経由して表し、内積で展開すると、</p>
   <div class="scroll equation">\[\begin{aligned}
   AP^2+2DP^2
@@ -52,7 +63,7 @@
   \end{aligned}\]</div>
   <p>したがって、線分 \(BC\) 上で \(W\) からの距離が最も短い点を求めればよい。</p>
 
-  <h3>内積が0になる点を求める</h3>
+  <h4>内積が0になる点を求める</h4>
   <p>\(P=(4-4t,4t)\)、\(0\leqq t\leqq1\) とおく。垂線の足では次が成り立つ。</p>
   <div class="scroll equation">\[
     \overrightarrow{WP}\cdot\overrightarrow{BC}
