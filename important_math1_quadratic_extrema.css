@@ -8,7 +8,7 @@
 .practice-points{background:#eef6fb;border-left:4px solid #2e7ca4;padding:13px 16px;border-radius:9px;margin:0 0 18px;font-size:15px;line-height:1.75}
 
 html,body{min-height:100%}body{min-height:100vh;display:flex;flex-direction:column}main.wrap{width:100%;flex:1}footer{margin-top:auto}.example-link{display:block;text-decoration:none;font-weight:700}.example-link:hover{text-decoration:underline}.unit h3{font-size:17px}.subject-section{margin-bottom:20px}.card:focus-visible,.example-link:focus-visible{outline:3px solid #e5a13c;outline-offset:3px}
-.panel{background:white;border:1px solid #d9e7ef;border-radius:14px;padding:20px;margin:18px 0}.formula{font-family:Georgia,"Times New Roman",serif;font-size:1.2em}.controls{display:flex;flex-wrap:wrap;align-items:center;gap:12px}input[type=range]{width:min(100%,420px);accent-color:#167c79;touch-action:pan-y}button{font:inherit;background:#175b83;color:white;border:none;border-radius:8px;padding:10px 16px;cursor:pointer}button:focus-visible{outline:3px solid orange}svg{width:100%;height:auto;display:block;background:#fbfdff;border:1px solid #dce7ef;border-radius:10px}.results{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:14px 0}.result{padding:12px;background:#eef6fb;border-radius:9px}.min{color:#087a62}.max{color:#9b5315}table{border-collapse:collapse;width:100%;font-size:15px}td,th{border:1px solid #d9e7ef;padding:9px;text-align:left}th{background:#edf4fa}details{padding:12px;background:#f1f7fb;border-radius:8px;margin-top:10px}summary{cursor:pointer;font-weight:bold;color:#175b83}.scroll{overflow-x:auto}.active{background:#e1f3e8} .legend{font-size:14px} .step{border-left:4px solid #21886d;padding-left:13px;margin:16px 0}
+.panel{background:white;border:1px solid #d9e7ef;border-radius:14px;padding:20px;margin:18px 0}.controls{display:flex;flex-wrap:wrap;align-items:center;gap:12px}input[type=range]{width:min(100%,420px);accent-color:#167c79;touch-action:pan-y}button{font:inherit;background:#175b83;color:white;border:none;border-radius:8px;padding:10px 16px;cursor:pointer}button:focus-visible{outline:3px solid orange}svg{width:100%;height:auto;display:block;background:#fbfdff;border:1px solid #dce7ef;border-radius:10px}.results{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:14px 0}.result{padding:12px;background:#eef6fb;border-radius:9px}.min{color:#087a62}.max{color:#9b5315}table{border-collapse:collapse;width:100%;font-size:15px}td,th{border:1px solid #d9e7ef;padding:9px;text-align:left}th{background:#edf4fa}details{padding:12px;background:#f1f7fb;border-radius:8px;margin-top:10px}summary{cursor:pointer;font-weight:bold;color:#175b83}.scroll{overflow-x:auto}.active{background:#e1f3e8} .legend{font-size:14px} .step{border-left:4px solid #21886d;padding-left:13px;margin:16px 0}
 /* Textbook typography and the graph reading layout */
 body.extrema-lesson{font-family:"Hiragino Mincho ProN","Yu Mincho","YuMincho","Noto Serif CJK JP","Noto Serif JP",serif!important;line-height:1.85}
 .extrema-lesson .example-goal{background:#eaf4ff;border:0;border-left:5px solid #2585bd;border-radius:10px;padding:15px 18px;margin:0 0 22px}
@@ -39,3 +39,16 @@ tbody tr[aria-current="true"]>td:first-child{border-left:4px solid #21886d}
 @media(max-width:650px){.graph-layout{grid-template-columns:minmax(0,1fr)}.graph-layout figure{max-width:440px}.graph-layout .results{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:360px){.graph-layout .results{grid-template-columns:minmax(0,1fr)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Match the exam solutions' spacing and MathJax equation treatment. */
+.extrema-lesson .panel{padding:clamp(14px,3vw,22px);border-color:#d9e5f1;border-radius:16px}
+.extrema-lesson .panel h2{margin-top:0}
+.extrema-lesson .panel p{margin-block:.65rem}
+.extrema-lesson .scroll{max-width:100%}
+.extrema-lesson .equation mjx-container[display="true"]{margin:.75em 0}
+.extrema-lesson table{font-size:1rem;margin:.6rem 0}
+.extrema-lesson th{background:#eef5fc}
+.extrema-lesson caption{text-align:left;font-weight:700;color:#17365d}
+.extrema-lesson .step{border-left:0;padding-left:0;margin:1.25rem 0}
+.extrema-lesson .step h3{margin:.9rem 0 .35rem}
+.extrema-lesson .graph-layout figure{border:1px solid #d9e5f1;border-radius:12px;padding:8px}
