@@ -11,33 +11,22 @@ jobs:
     steps:
       - name: Verify the saved Google credentials
         env:
-          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
           YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
           YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
         run: |
           python3 - <<'PY'
           import json, os, urllib.error, urllib.parse, urllib.request
-          fields = {name: os.environ["YOUTUBE_" + name.upper()].strip()
-                    for name in ("client_id", "client_secret", "refresh_token")}
-          missing = [name for name, value in fields.items() if not value]
-          if missing:
-              raise SystemExit("Missing GitHub secrets: " + ", ".join(missing))
-          import re
-          if not re.fullmatch(r"1025855656331-[A-Za-z0-9_-]{32}\.apps\.googleusercontent\.com", fields["client_id"]):
-              raise SystemExit("The saved client ID is incomplete or belongs to another Google Cloud project.")
-          if fields["client_id"].split("-", 1)[1].startswith("2cvcf7524e11"):
-              raise SystemExit("The saved client ID is from the original web client, not the test client.")
-          original = fields["client_secret"]
-          if original.startswith('"') and original.endswith('"'):
-              fields["client_secret"] = original[1:-1]
-          if not fields["client_secret"].startswith("GOCSPX-"):
-              raise SystemExit("The saved client secret does not start with the Google client secret prefix.")
-          candidate = re.match(r"GOCSPX-[A-Za-z0-9_-]+", fields["client_secret"])
-          if len(candidate[0]) < 27:
-              raise SystemExit("The saved client secret begins correctly but its visible token text is truncated.")
-          if not fields["client_secret"][candidate.end():].strip(" \t\r\n\",}]"):
-              fields["client_secret"] = candidate[0]
-          fields["grant_type"] = "refresh_token"
+          try:
+              client = json.loads(os.environ["YOUTUBE_CLIENT_SECRET"])["web"]
+              client_id = client["client_id"].strip()
+              client_secret = client["client_secret"].strip()
+          except (ValueError, KeyError, TypeError, AttributeError):
+              raise SystemExit("The GitHub secret does not contain a complete Google web client JSON.")
+          refresh_token = os.environ["YOUTUBE_REFRESH_TOKEN"].strip()
+          if not all((client_id, client_secret, refresh_token)):
+              raise SystemExit("A required credential is empty.")
+          fields = dict(client_id=client_id, client_secret=client_secret,
+                        refresh_token=refresh_token, grant_type="refresh_token")
           try:
               with urllib.request.urlopen("https://oauth2.googleapis.com/token",
                    urllib.parse.urlencode(fields).encode(), timeout=20) as response:
