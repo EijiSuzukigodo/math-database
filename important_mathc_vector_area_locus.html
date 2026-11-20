@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>面積の条件を満たす点の軌跡｜数学Cの重要例題</title>
+<link rel="stylesheet" href="lesson_common_style.css">
+<link rel="stylesheet" href="important_math1_quadratic_extrema.css?v=3">
+<link rel="stylesheet" href="important_example_style.css">
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<style>
+.extrema-lesson .panel h3.solution-break{margin-block-start:1.85rem}
+.locus-controls input{display:block;width:min(100%,420px);margin-top:8px}
+.locus-figure,.locus-readings dl{margin:0}
+.locus-readings dd{margin:0 0 8px;font-weight:700;font-variant-numeric:tabular-nums}
+</style>
+</head>
+<body class="extrema-lesson important-example">
+<header><div class="wrap">
+  <div class="site-parent-link"><a href="important_examples_mathc.html#plane-vectors">数学Cの重要例題に戻る</a></div>
+  <p>数学C ／ 平面上のベクトル</p>
+  <h1>面積の条件を満たす点の軌跡</h1>
+</div></header>
+<main class="wrap">
+<section class="example-goal">
+  <span class="goal-label">例題のねらい</span>
+  <h2>面積の条件を位置ベクトルの係数に置き換える</h2>
+  <p>三角形の面積比を位置ベクトルの係数で表し、条件を満たす点の軌跡とその両端を求められるようになる。</p>
+</section>
+
+<section class="panel">
+  <h2>例題</h2>
+  <p>三角形 \(ABC\) の内部または周上に点 \(P\) をとる。次の等式が成り立つとする。ただし、3点が一直線上にある場合、その三角形の面積は \(0\) とする。</p>
+  <div class="scroll equation">\[\triangle PAB+2\triangle PAC=\triangle PBC.\]</div>
+  <p>（1）点 \(P\) の軌跡を求めよ。</p>
+  <p>（2）軌跡の端点を \(D,E\) とするとき、\(\triangle ADE:\triangle ABC\) を求めよ。</p>
+</section>
+
+<section class="panel">
+  <h2>解説</h2>
+  <h3>（1）面積比から点の条件を表す</h3>
+  <p>\(\overrightarrow{AP}=s\overrightarrow{AB}+t\overrightarrow{AC}\) とおく。\(P\) は三角形の内部または周上にあるから、\(s\geqq0\)、\(t\geqq0\)、\(s+t\leqq1\) である。底辺を \(AB\) とすると、\(P\) から直線 \(AB\) までの高さは \(C\) からの高さの \(t\) 倍になる。底辺を \(AC\) としたときも同じように比べると、</p>
+  <div class="scroll equation">\[
+  \frac{\triangle PAB}{\triangle ABC}=t,\qquad
+  \frac{\triangle PAC}{\triangle ABC}=s,\qquad
+  \frac{\triangle PBC}{\triangle ABC}=1-s-t.
+  \]</div>
+  <p>したがって、面積の条件は \(t+2s=1-s-t\)、すなわち \(3s+2t=1\) に等しい。\(t=0\) のとき \(s=\frac13\)、\(s=0\) のとき \(t=\frac12\)。</p>
+  <p>\(AB\) 上に \(AD:DB=1:2\) となる点 \(D\)、\(AC\) 上に \(AE:EC=1:1\) となる点 \(E\) をとると、\(3s+2t=1\) を満たす点は直線 \(DE\) 上にある。そのうち \(s,t\geqq0\) となるのは線分 \(DE\) 上であり、この線分上では \(s+t\leqq1\) も成り立つ。よって、<strong>軌跡は両端を含む線分 \(DE\)</strong> である。</p>
+
+  <h3>（2）端点を結んだ三角形の面積比を求める</h3>
+  <p>三角形 \(ADE\) と \(ABC\) は角 \(A\) を共有するので、面積比は、角をはさむ辺の長さの比の積になる。</p>
+  <div class="scroll equation">\[
+    \frac{\triangle ADE}{\triangle ABC}
+    =\frac{AD}{AB}\cdot\frac{AE}{AC}
+    =\frac13\cdot\frac12=\frac16.
+    \qquad \boxed{\triangle ADE:\triangle ABC=1:6}
+  \]</div>
+
+  <h3 class="solution-break">動く図で確かめる</h3>
+  <p>点 \(P\) を線分 \(DE\) に沿って動かす。図の横には、\(\triangle ABC\) を \(1\) としたときの面積を表示する。</p>
+  <div class="locus-controls">
+    <label for="position">点 \(P\) の位置</label>
+    <input id="position" type="range" min="0" max="12" step="1" value="6">
+  </div>
+  <div class="example-graph-layout">
+    <figure class="example-diagram locus-figure">
+      <svg viewBox="0 0 360 260" role="img" aria-label="三角形ABCの中で、点Pが線分DEを動く図">
+        <polygon id="pab" points="109.25,172.5 48,220 330,220" fill="#dbeafe"/>
+        <polygon id="pac" points="109.25,172.5 48,220 105,30" fill="#d1fae5"/>
+        <polygon id="pbc" points="109.25,172.5 330,220 105,30" fill="#fef3c7"/>
+        <path d="M48 220 L330 220 L105 30 Z" fill="none" stroke="#17365d" stroke-width="2"/>
+        <path d="M142 220 L76.5 125" fill="none" stroke="#9a4917" stroke-width="3"/>
+        <g fill="#17365d" font-size="17">
+          <text x="29" y="243">A</text><text x="332" y="243">B</text><text x="102" y="23">C</text>
+          <text x="136" y="243">D</text><text x="55" y="124">E</text>
+        </g>
+        <circle id="point" cx="109.25" cy="172.5" r="6" fill="#9a4917" stroke="#fff" stroke-width="2"/>
+        <text id="point-label" x="120" y="165" font-size="17" fill="#773814">P</text>
+      </svg>
+      <figcaption class="legend">橙の線分：点 \(P\) の軌跡</figcaption>
+    </figure>
+    <div class="example-readings locus-readings">
+      <dl>
+        <div><dt>\(\triangle PAB\)</dt><dd><output id="ab-value" for="position">1/4</output></dd></div>
+        <div><dt>\(\triangle PAC\)</dt><dd><output id="ac-value" for="position">1/6</output></dd></div>
+        <div><dt>\(\triangle PAB+2\triangle PAC\)</dt><dd><output id="left-value" for="position">7/12</output></dd></div>
+        <div><dt>\(\triangle PBC\)</dt><dd><output id="right-value" for="position">7/12</output></dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="panel">
+  <h2>類題</h2>
+  <p>例題の面積の条件を \(\triangle PAB+3\triangle PAC=2\triangle PBC\) に変える。点 \(P\) の軌跡を求めよ。また、その端点を \(D,E\) とするとき、\(\triangle ADE:\triangle ABC\) を求めよ。</p>
+  <details>
+    <summary>解答・解説を見る</summary>
+    <p>例題と同じ \(s,t\) を用いると、\(t+3s=2(1-s-t)\) だから \(5s+3t=2\)。</p>
+    <p>軌跡は、辺 \(AB\) 上の \(AD:DB=2:3\) となる点 \(D\) と、辺 \(AC\) 上の \(AE:EC=2:1\) となる点 \(E\) を結んだ線分である。面積比は、</p>
+    <div class="scroll equation">\[
+      \frac{\triangle ADE}{\triangle ABC}=\frac25\cdot\frac23=\frac4{15}
+      \qquad\Rightarrow\qquad \boxed{\triangle ADE:\triangle ABC=4:15}.
+    \]</div>
+  </details>
+</section>
+</main>
+<footer><div class="wrap"><div class="site-parent-link"><a href="important_examples_mathc.html#plane-vectors">数学Cの重要例題に戻る</a></div>みんなの数学データベース</div></footer>
+<script>
+(() => {
+  const get = id => document.getElementById(id);
+  const slider = get('position');
+  function fraction(numerator) {
+    let a = 72, b = numerator;
+    while (b) [a, b] = [b, a % b];
+    return a === 72 ? String(numerator / a) : numerator / a + '/' + 72 / a;
+  }
+  function draw() {
+    const value = Number(slider.value);
+    const progress = value / 12;
+    const x = 142 + (76.5 - 142) * progress;
+    const y = 220 + (125 - 220) * progress;
+    const point = x + ',' + y;
+    get('pab').setAttribute('points', point + ' 48,220 330,220');
+    get('pac').setAttribute('points', point + ' 48,220 105,30');
+    get('pbc').setAttribute('points', point + ' 330,220 105,30');
+    get('point').setAttribute('cx', x);
+    get('point').setAttribute('cy', y);
+    get('point-label').setAttribute('x', x + 10);
+    get('point-label').setAttribute('y', y - 8);
+
+    const pab = 3 * value;
+    const pac = 2 * (12 - value);
+    get('ab-value').textContent = fraction(pab);
+    get('ac-value').textContent = fraction(pac);
+    get('left-value').textContent = fraction(pab + 2 * pac);
+    get('right-value').textContent = fraction(72 - pab - pac);
+  }
+  slider.addEventListener('input', draw);
+  draw();
+})();
+</script>
+</body>
+</html>
