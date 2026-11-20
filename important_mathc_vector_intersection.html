@@ -32,11 +32,14 @@
 <section class="panel">
   <h2>例題</h2>
   <p>三角形 \(ABC\) の辺 \(AB\) 上に \(AD:DB=2:1\) となる点 \(D\)、辺 \(AC\) 上に \(AE:EC=1:2\) となる点 \(E\) をとる。線分 \(CD\) と \(BE\) の交点を \(P\) とする。</p>
-  <p>\(CP:PD\) と \(BP:PE\) を求めよ。</p>
+  <ol>
+    <li>\(CP:PD\) と \(BP:PE\) を求めよ。</li>
+    <li>直線 \(AP\) と辺 \(BC\) の交点を \(F\) とする。位置ベクトル \(\overrightarrow{AF}\) を求めよ。</li>
+  </ol>
 </section>
 <section class="panel">
   <h2>解説</h2>
-  <h3>位置ベクトルで点 \(P\) を2通りに表す</h3>
+  <h3>（1）位置ベクトルで点 \(P\) を2通りに表す</h3>
   <p>\(\vec b=\overrightarrow{AB}\)、\(\vec c=\overrightarrow{AC}\) とおく。\(D\)、\(E\) の位置ベクトルは、それぞれ \(\overrightarrow{AD}=\frac23\vec b\)、\(\overrightarrow{AE}=\frac13\vec c\) である。</p>
   <p>\(\overrightarrow{CP}=s\overrightarrow{CD}\)、\(\overrightarrow{BP}=t\overrightarrow{BE}\) とおく。求める比は \(CP:PD=s:(1-s)\)、\(BP:PE=t:(1-t)\) である。</p>
   <div class="scroll equation">\[\begin{aligned}
@@ -53,6 +56,17 @@
   \quad\Longrightarrow\quad s=\frac67,\quad t=\frac37.
   \]</div>
   <div class="scroll equation">\[\boxed{CP:PD=6:1,\qquad BP:PE=3:4}\]</div>
+
+  <h3>（2）交点 \(F\) の位置ベクトルを求める</h3>
+  <p>（1）で求めた \(s=\frac67\) を代入すると、\(\overrightarrow{AP}=\frac47\vec b+\frac17\vec c\) である。</p>
+  <p>\(F\) は直線 \(AP\) 上にあるので、\(\overrightarrow{AF}=k\overrightarrow{AP}\) とおく。さらに、\(F\) は辺 \(BC\) 上にあるので、\(\vec b,\vec c\) の係数の和は \(1\) となる。</p>
+  <div class="scroll equation">\[
+  \frac{4k}{7}+\frac{k}{7}=1,\qquad k=\frac75.
+  \]</div>
+  <div class="scroll equation">\[
+  \boxed{\overrightarrow{AF}=\frac45\vec b+\frac15\vec c
+  =\frac45\overrightarrow{AB}+\frac15\overrightarrow{AC}}\;.
+  \]</div>
 
   <h3>別解　チェバの定理と面積比を使う</h3>
   <p>直線 \(AP\) と辺 \(BC\) の交点を \(F\) とする。\(AF\)、\(BE\)、\(CD\) は点 \(P\) で交わるので、チェバの定理より、</p>
@@ -71,6 +85,8 @@
   CP:PD&=\triangle APC:\triangle APD=4S:\frac23S=6:1,\\
   BP:PE&=\triangle APB:\triangle APE=S:\frac43S=3:4.
   \end{aligned}\]</div>
+
+  <p>（2）は、すでに求めた \(BF:FC=1:4\) を使えば、内分点の公式から \(\overrightarrow{AF}=\frac{4\vec b+\vec c}{5}\) と求められる。</p>
 
   <h3>動く図で確かめる</h3>
   <div class="intersection-controls">
