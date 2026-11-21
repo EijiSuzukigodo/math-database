@@ -70,7 +70,16 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 @media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
 </style><link href="lesson_common_style.css" rel="stylesheet"/>
 <link href="high_school_lesson_reading.css" rel="stylesheet"/>
-<style>.sample-lesson{border-bottom:2px solid #d8e5f0;padding-bottom:22px}.draw-control{background:#f1f7fc;padding:12px;border-radius:10px;margin:14px 0}.draw-choice{font:inherit;font-weight:700;border:1px solid #7faac5;border-radius:8px;background:white;color:#174d70;padding:9px 14px;margin:3px;cursor:pointer}.draw-choice.active{background:#1b638b;color:white}.draw-two{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}.draw-table{width:100%;max-width:none;table-layout:auto}.draw-table td,.draw-table th{padding:8px 4px;font-size:15px}.draw-table mjx-container{font-size:100%!important}.draw-steps{background:#eff8f2;border-radius:8px;padding:10px;line-height:2;overflow-x:auto;font-size:15px}.draw-steps p{margin:6px 0}.sample-lesson .answer{font-size:15px;overflow-x:auto}.sample-lesson mjx-container[display="true"]{font-size:95%!important}@media(max-width:640px){.draw-two{grid-template-columns:1fr}.draw-table td,.draw-table th{padding:7px 3px}}</style></head>
+<style>.sample-lesson{border-bottom:2px solid #d8e5f0;padding-bottom:22px}.draw-control{background:#f1f7fc;padding:12px;border-radius:10px;margin:14px 0}.draw-choice{font:inherit;font-weight:700;border:1px solid #7faac5;border-radius:8px;background:white;color:#174d70;padding:9px 14px;margin:3px;cursor:pointer}.draw-choice.active{background:#1b638b;color:white}.draw-two{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}.draw-table{width:100%;max-width:none;table-layout:auto}.draw-table td,.draw-table th{padding:8px 4px;font-size:15px}.draw-table mjx-container{font-size:100%!important}.draw-steps{background:#eff8f2;border-radius:8px;padding:10px;line-height:2;overflow-x:auto;font-size:15px}.draw-steps p{margin:6px 0}.sample-lesson .answer{font-size:15px;overflow-x:auto}.sample-lesson mjx-container[display="true"]{font-size:95%!important}@media(max-width:640px){.draw-two{grid-template-columns:1fr}.draw-table td,.draw-table th{padding:7px 3px}}</style><style>
+/* 仕上げ：解答の背景と教科書表記 */
+.sample-lesson .answer, .paper .answer{background:#f1f9df!important;border-left-color:#83ad4d!important}
+.sample-lesson .draw-table mjx-container{font-size:106%!important}
+.paper .table-wrap table mjx-container{font-size:108%!important}
+.proof-compact mjx-container[display="true"]{font-size:84%!important}
+.proof-compact{overflow-x:auto}
+.formula.no-frame{background:transparent!important;border:0!important;border-radius:0!important;padding:3px 0!important;box-shadow:none!important}
+.answer.no-frame{border:0!important;border-radius:0!important;box-shadow:none!important;padding:8px 0!important}
+</style></head>
 <body>
 <header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>独立な確率変数と期待値・分散</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" data-hs-lesson="" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>独立な確率変数と期待値・分散</h2><p>復元抽出と非復元抽出を比較し、同時分布・周辺分布・和の分布から独立性と分散の関係を理解する。</p><p class="hs-outcome">同時分布表と確率分布表を作り、独立な場合の分散の公式を具体例から確かめる。</p></section>
 <nav aria-label="授業の進め方" class="hs-study-nav">
@@ -95,57 +104,62 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <div class="formula">\[P(X=x,\,Y=y)=P(X=x)P(Y=y)\]</div>
 <p>が成り立つとき、\(X\) と \(Y\) は<strong>互いに独立</strong>といいます。つまり、一方の値を知っても、もう一方の値の確率が変わりません。</p>
 <div class="example"><strong id="hs-examples">例題1：2枚の硬貨</strong><p>2枚の公平な硬貨を別々に投げ、表なら1、裏なら0とします。1枚目を \(X\)、2枚目を \(Y\) として同時分布表を作り、独立性を確かめましょう。</p></div>
-<div class="table-wrap"><table><caption>2枚の硬貨の同時確率分布</caption><tr><th>\(X\backslash Y\)</th><th>0</th><th>1</th><th>合計</th></tr><tr><th>0</th><td>\(\tfrac14\)</td><td>\(\tfrac14\)</td><td>\(\tfrac12\)</td></tr><tr><th>1</th><td>\(\tfrac14\)</td><td>\(\tfrac14\)</td><td>\(\tfrac12\)</td></tr><tr><th>合計</th><td>\(\tfrac12\)</td><td>\(\tfrac12\)</td><td>1</td></tr></table></div>
-<div class="answer"><strong>解説</strong><p>どの組でも同時確率は \(\tfrac14\) です。また、それぞれの周辺確率は \(\tfrac12\) なので、\(\tfrac12\times\tfrac12=\tfrac14\)。すべての組について一致するから独立です。</p></div>
+<div class="table-wrap"><table><caption>2枚の硬貨の同時確率分布</caption><tr><th>\(X\backslash Y\)</th><th>0</th><th>1</th><th>合計</th></tr><tr><th>0</th><td>\(\dfrac14\)</td><td>\(\dfrac14\)</td><td>\(\dfrac12\)</td></tr><tr><th>1</th><td>\(\dfrac14\)</td><td>\(\dfrac14\)</td><td>\(\dfrac12\)</td></tr><tr><th>合計</th><td>\(\dfrac12\)</td><td>\(\dfrac12\)</td><td>1</td></tr></table></div>
+<div class="answer"><strong>解説</strong><p>どの組でも同時確率は \(\dfrac14\) です。また、それぞれの周辺確率は \(\dfrac12\) なので、\(\dfrac12\times\dfrac12=\dfrac14\)。すべての組について一致するから独立です。</p></div>
 <h3>独立でない場合</h3><p>1枚の硬貨で表が出れば \(X=1\)、裏なら \(X=0\) とし、\(Y=X\) とします。このとき \(P(X=1,Y=1)=\tfrac12\) に対し、\(P(X=1)P(Y=1)=\tfrac14\) となり、一致しません。したがって独立ではありません。</p>
 <div class="notice"><strong>注意：</strong>「相関がない」ことと「独立」は一般には同じ意味ではありません。また、独立かどうかは同時分布全体で調べます。</div>
 <h2>3．独立なときの積の期待値</h2>
 <div class="formula">\[E(XY)=E(X)E(Y)\qquad(\text{独立な場合})\]</div>
 <p>独立なら同時確率が積に分かれるので、次のように計算できます。</p>
-<div class="formula">\[\begin{aligned}E(XY)&amp;=\sum_x\sum_y xyP(X=x,Y=y)\\&amp;=\left(\sum_x xP(X=x)\right)\left(\sum_y yP(Y=y)\right)\\&amp;=E(X)E(Y).\end{aligned}\]</div>
+<div class="formula proof-compact">\[\begin{aligned}
+E(XY)&amp;=\sum_{i=1}^{n}\sum_{j=1}^{m}x_i y_j P(X=x_i,Y=y_j)\\
+&amp;=\sum_{i=1}^{n}\sum_{j=1}^{m}x_i y_j P(X=x_i)P(Y=y_j)\\
+&amp;=\left(\sum_{i=1}^{n}x_i P(X=x_i)\right)\left(\sum_{j=1}^{m}y_j P(Y=y_j)\right)\\
+&amp;=E(X)E(Y).
+\end{aligned}\]</div>
 <div class="example"><strong>例題2：2個のサイコロ</strong><p>独立に振る2個の公平なサイコロの出目を \(X,Y\) とするとき \(E(XY)\) を求めましょう。</p></div>
 <div class="answer"><p>それぞれ \(E(X)=E(Y)=\tfrac72\) より、</p><div class="formula">\[E(XY)=\frac72\cdot\frac72=\frac{49}{4}.\]</div></div>
 <h2>4．和の期待値と分散</h2>
-<h3>期待値の公式</h3><div class="formula">\[E(X+Y)=E(X)+E(Y)\]</div><p>この公式は <strong>独立でなくても成り立ちます</strong>。同様に \(E(X-Y)=E(X)-E(Y)\) です。</p>
-<h3>分散の公式</h3><p>一般には、共分散を用いて</p><div class="formula">\[V(X+Y)=V(X)+V(Y)+2\operatorname{Cov}(X,Y)\]</div>
-<p>と表されます。独立であれば共分散は0になるため、</p><div class="formula">\[\boxed{V(X+Y)=V(X)+V(Y)}\quad(\text{独立})\]</div>
-<p>差についても、独立であれば</p><div class="formula">\[\boxed{V(X-Y)=V(X)+V(Y)}\quad(\text{独立})\]</div>
+<h3>期待値の公式</h3><div class="formula no-frame">\[E(X+Y)=E(X)+E(Y)\]</div><p>この公式は <strong>独立でなくても成り立ちます</strong>。同様に \(E(X-Y)=E(X)-E(Y)\) です。</p>
+<h3>分散の公式</h3><p>一般には、共分散を用いて</p><div class="formula no-frame">\[V(X+Y)=V(X)+V(Y)+2\operatorname{Cov}(X,Y)\]</div>
+<p>と表されます。独立であれば共分散は0になるため、</p><div class="formula no-frame">\[\mathord{V(X+Y)=V(X)+V(Y)}\quad(\text{独立})\]</div>
+<p>差についても、独立であれば</p><div class="formula no-frame">\[\mathord{V(X-Y)=V(X)+V(Y)}\quad(\text{独立})\]</div>
 <p>となります。差でも分散を引くわけではない点に注意しましょう。</p>
 <h3>なぜ分散が足し算になるのか</h3>
-<div class="formula">\[\begin{aligned}V(X+Y)&amp;=E((X+Y)^2)-\{E(X+Y)\}^2\\&amp;=V(X)+V(Y)+2\{E(XY)-E(X)E(Y)\}.\end{aligned}\]</div>
+<div class="formula no-frame">\[\begin{aligned}V(X+Y)&amp;=E((X+Y)^2)-\{E(X+Y)\}^2\\&amp;=V(X)+V(Y)+2\{E(XY)-E(X)E(Y)\}.\end{aligned}\]</div>
 <p>独立なら \(E(XY)=E(X)E(Y)\) なので最後の項が0になり、分散の和になります。</p>
-<div class="example"><strong>例題3（元ページの例題）</strong><p>独立な \(X,Y\) の分散が、それぞれ2と5であるとき、\(V(X+Y)\) を求めましょう。</p></div><div class="answer"><p>独立なので、\(V(X+Y)=2+5=\boxed{7}\) です。</p></div>
-<div class="example"><strong>例題4：差の分散</strong><p>独立な \(X,Y\) の分散が3と4なら、\(V(X-Y)\) を求めましょう。</p></div><div class="answer"><p>\(V(X-Y)=3+4=\boxed{7}\) です。これも元の教材にあった問題です。</p></div>
+<div class="example"><strong>例題3（元ページの例題）</strong><p>独立な \(X,Y\) の分散が、それぞれ2と5であるとき、\(V(X+Y)\) を求めましょう。</p></div><div class="answer no-frame"><p>独立なので、\(V(X+Y)=2+5=\boxed{7}\) です。</p></div>
+<div class="example"><strong>例題4：差の分散</strong><p>独立な \(X,Y\) の分散が3と4なら、\(V(X-Y)\) を求めましょう。</p></div><div class="answer no-frame"><p>\(V(X-Y)=3+4=\boxed{7}\) です。これも元の教材にあった問題です。</p></div>
 <h2>5．公式まとめ：期待値（平均）と分散</h2>
 <p>ここまでの公式を、試験前にも確認しやすいようにまとめます。\(a,b,c\) は定数です。</p>
 <h3>① 2つの確率変数の期待値（平均）</h3>
-<div class="formula">\[
-\boxed{E(aX+bY+c)=aE(X)+bE(Y)+c}
+<div class="formula no-frame">\[
+\mathord{E(aX+bY+c)=aE(X)+bE(Y)+c}
 \]</div>
 <p><strong>期待値の公式には、独立性は必要ありません。</strong></p>
 <h3>② 2つの独立な確率変数の分散</h3>
-<div class="formula">\[
-\boxed{V(aX+bY)=a^2V(X)+b^2V(Y)}
+<div class="formula no-frame">\[
+\mathord{V(aX+bY)=a^2V(X)+b^2V(Y)}
 \quad (X,Y\text{ が独立})
 \]</div>
 <p>さらに、定数を加えても分散は変わらないので \(V(aX+bY+c)=V(aX+bY)\) です。係数は<strong>2乗</strong>します。</p>
 <h3>③ 3つの確率変数の期待値（平均）</h3>
-<div class="formula">\[
-\boxed{E(X+Y+Z)=E(X)+E(Y)+E(Z)}
+<div class="formula no-frame">\[
+\mathord{E(X+Y+Z)=E(X)+E(Y)+E(Z)}
 \]</div>
 <p>これも<strong>独立である必要はありません</strong>。</p>
 <h3>④ 3つの独立な確率変数の分散</h3>
-<div class="formula">\[
-\boxed{V(X+Y+Z)=V(X)+V(Y)+V(Z)}
+<div class="formula no-frame">\[
+\mathord{V(X+Y+Z)=V(X)+V(Y)+V(Z)}
 \quad (\text{互いに独立})
 \]</div>
 <p>より一般に、互いに独立なら</p>
-<div class="formula">\[
-\boxed{V(aX+bY+cZ)=a^2V(X)+b^2V(Y)+c^2V(Z)}
+<div class="formula no-frame">\[
+\mathord{V(aX+bY+cZ)=a^2V(X)+b^2V(Y)+c^2V(Z)}
 \]</div>
 <h3>⑤ 独立とは限らない場合（発展）</h3>
 <p>独立でない場合、分散には共分散の項が入ります。</p>
-<div class="formula">\[
+<div class="formula no-frame">\[
 V(aX+bY)=a^2V(X)+b^2V(Y)+2ab\operatorname{Cov}(X,Y)
 \]</div>
 <p>この式で共分散が0なら加法公式になります。独立なら共分散は0ですが、逆は一般には成り立ちません。</p>
@@ -201,9 +215,9 @@ V(X+Y+Z)=2+3+5=\boxed{10}.
 (function(){'use strict';const $=id=>document.getElementById(id),px=$('probX'),py=$('probY'),svg=$('sumPlot');const ns='http://www.w3.org/2000/svg';function add(tag,attrs,txt){const el=document.createElementNS(ns,tag);Object.entries(attrs).forEach(([k,v])=>el.setAttribute(k,String(v)));if(txt!==undefined)el.textContent=txt;svg.appendChild(el);return el;}function fmt(v){return v.toFixed(3);}function render(){const p=Number(px.value)/100,q=Number(py.value)/100;const c00=(1-p)*(1-q),c01=(1-p)*q,c10=p*(1-q),c11=p*q;for(const [id,v] of Object.entries({pv:p,qv:q,c00,c01,c10,c11,r0:1-p,r1:p,s0:1-q,s1:q,eSum:p+q,vSum:p*(1-p)+q*(1-q),eProd:p*q}))$(id).textContent=fmt(v);const vals=[c00,c01+c10,c11];svg.replaceChildren();add('line',{x1:55,y1:215,x2:565,y2:215,stroke:'#819bb3','stroke-width':2});for(let j=0;j<=4;j++){const val=j/4,y=215-val*170;add('line',{x1:55,y1:y,x2:565,y2:y,stroke:'#e1edf6'});add('text',{x:47,y:y+5,'text-anchor':'end',fill:'#586d82','font-size':14},val.toFixed(2));}vals.forEach((v,i)=>{const x=103+i*165,h=v*170;add('rect',{x,y:215-h,width:96,height:Math.max(0,h),rx:4,fill:['#367fa9','#4e9c86','#ce9455'][i]});add('text',{x:x+48,y:207-h,'text-anchor':'middle',fill:'#1f4660','font-size':17,'font-weight':'bold'},v.toFixed(3));add('text',{x:x+48,y:242,'text-anchor':'middle',fill:'#233f57','font-size':16},'X+Y='+i);});$('plotDesc').textContent='P(X+Y=0)='+fmt(vals[0])+'、P(X+Y=1)='+fmt(vals[1])+'、P(X+Y=2)='+fmt(vals[2]);}px.addEventListener('input',render);py.addEventListener('input',render);render();})();
 </script><footer class="lesson-standard-footer"><div><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div>みんなの数学データベース｜高校生のための授業</div></footer><script>
 (function(){
-const R={replace:{p:['\\dfrac14','\\dfrac14','\\dfrac14','\\dfrac14'],z:['\\dfrac14','\\dfrac12','\\dfrac14'],note:'1回目の玉を戻すので、2回目も赤・白の確率はそれぞれ1/2。',calc:['P(X=0,Y=0)=\\dfrac24\\times\\dfrac24=\\dfrac14','P(X=0,Y=1)=\\dfrac24\\times\\dfrac24=\\dfrac14','P(X=1,Y=0)=\\dfrac24\\times\\dfrac24=\\dfrac14','P(X=1,Y=1)=\\dfrac24\\times\\dfrac24=\\dfrac14'],var:'\\begin{aligned}E(X)&=E(Y)=\\dfrac12,\\quad V(X)=V(Y)=\\dfrac14\\\\E(Z)&=1,\\quad E(Z^2)=0^2\\cdot\\dfrac14+1^2\\cdot\\dfrac12+2^2\\cdot\\dfrac14=\\dfrac32\\\\V(Z)&=E(Z^2)-\\{E(Z)\\}^2=\\dfrac32-1=\\dfrac12\\\\V(X)+V(Y)&=\\dfrac14+\\dfrac14=\\dfrac12=V(X+Y)\\end{aligned}',ind:'P(X=1,Y=1)=\\dfrac14=P(X=1)P(Y=1)=\\dfrac12\\times\\dfrac12'},without:{p:['\\dfrac16','\\dfrac13','\\dfrac13','\\dfrac16'],z:['\\dfrac16','\\dfrac23','\\dfrac16'],note:'玉を戻さないので、2回目の確率は1回目の結果によって変わる。',calc:['P(X=0,Y=0)=\\dfrac24\\times\\dfrac13=\\dfrac16','P(X=0,Y=1)=\\dfrac24\\times\\dfrac23=\\dfrac13','P(X=1,Y=0)=\\dfrac24\\times\\dfrac23=\\dfrac13','P(X=1,Y=1)=\\dfrac24\\times\\dfrac13=\\dfrac16'],var:'\\begin{aligned}E(X)&=E(Y)=\\dfrac12,\\quad V(X)=V(Y)=\\dfrac14\\\\E(Z)&=1,\\quad E(Z^2)=0^2\\cdot\\dfrac16+1^2\\cdot\\dfrac23+2^2\\cdot\\dfrac16=\\dfrac43\\\\V(Z)&=E(Z^2)-\\{E(Z)\\}^2=\\dfrac43-1=\\dfrac13\\\\V(X)+V(Y)&=\\dfrac12\\ne\\dfrac13=V(X+Y)\\end{aligned}',ind:'P(X=1,Y=1)=\\dfrac16\\ne P(X=1)P(Y=1)=\\dfrac12\\times\\dfrac12=\\dfrac14'}};
+const R={replace:{p:['\\dfrac14','\\dfrac14','\\dfrac14','\\dfrac14'],z:['\\dfrac14','\\dfrac12','\\dfrac14'],note:'1回目の玉を戻すので、2回目も赤・白の確率はそれぞれ\\(\\dfrac{1}{2}\\)。',calc:['P(X=0,Y=0)=\\dfrac24\\times\\dfrac24=\\dfrac14','P(X=0,Y=1)=\\dfrac24\\times\\dfrac24=\\dfrac14','P(X=1,Y=0)=\\dfrac24\\times\\dfrac24=\\dfrac14','P(X=1,Y=1)=\\dfrac24\\times\\dfrac24=\\dfrac14'],var:'\\begin{aligned}E(X)&=E(Y)=\\dfrac12,\\quad V(X)=V(Y)=\\dfrac14\\\\E(Z)&=1,\\quad E(Z^2)=0^2\\cdot\\dfrac14+1^2\\cdot\\dfrac12+2^2\\cdot\\dfrac14=\\dfrac32\\\\V(Z)&=E(Z^2)-\\{E(Z)\\}^2=\\dfrac32-1=\\dfrac12\\\\V(X)+V(Y)&=\\dfrac14+\\dfrac14=\\dfrac12=V(X+Y)\\end{aligned}',ind:'P(X=1,Y=1)=\\dfrac14=P(X=1)P(Y=1)=\\dfrac12\\times\\dfrac12'},without:{p:['\\dfrac16','\\dfrac13','\\dfrac13','\\dfrac16'],z:['\\dfrac16','\\dfrac23','\\dfrac16'],note:'玉を戻さないので、2回目の確率は1回目の結果によって変わる。',calc:['P(X=0,Y=0)=\\dfrac24\\times\\dfrac13=\\dfrac16','P(X=0,Y=1)=\\dfrac24\\times\\dfrac23=\\dfrac13','P(X=1,Y=0)=\\dfrac24\\times\\dfrac23=\\dfrac13','P(X=1,Y=1)=\\dfrac24\\times\\dfrac13=\\dfrac16'],var:'\\begin{aligned}E(X)&=E(Y)=\\dfrac12,\\quad V(X)=V(Y)=\\dfrac14\\\\E(Z)&=1,\\quad E(Z^2)=0^2\\cdot\\dfrac16+1^2\\cdot\\dfrac23+2^2\\cdot\\dfrac16=\\dfrac43\\\\V(Z)&=E(Z^2)-\\{E(Z)\\}^2=\\dfrac43-1=\\dfrac13\\\\V(X)+V(Y)&=\\dfrac12\\ne\\dfrac13=V(X+Y)\\end{aligned}',ind:'P(X=1,Y=1)=\\dfrac16\\ne P(X=1)P(Y=1)=\\dfrac12\\times\\dfrac12=\\dfrac14'}};
 function math(s){return '\\('+s+'\\)'}
-function show(mode){let d=R[mode];document.querySelectorAll('.draw-choice').forEach(b=>{let a=b.dataset.mode===mode;b.classList.toggle('active',a);b.setAttribute('aria-pressed',a)});document.getElementById('draw-note').textContent=d.note;['d00','d01','d10','d11'].forEach((id,i)=>document.getElementById(id).textContent=math(d.p[i]));['dz0','dz1','dz2'].forEach((id,i)=>document.getElementById(id).textContent=math(d.z[i]));document.getElementById('draw-calcs').innerHTML=d.calc.map(x=>'<p>'+math(x)+'</p>').join('');document.getElementById('draw-z-calc').innerHTML='<p>'+math('P(Z=0)=P(X=0,Y=0)='+d.z[0])+'</p><p>'+math('P(Z=1)=P(X=0,Y=1)+P(X=1,Y=0)='+d.z[1])+'</p><p>'+math('P(Z=2)=P(X=1,Y=1)='+d.z[2])+'</p>';document.getElementById('draw-variance').innerHTML='<strong>解答と解説</strong><div class="formula">\\['+d.var+'\\]</div>';document.getElementById('draw-independent').innerHTML='<strong>独立性の判定</strong><div class="formula">\\['+d.ind+'\\]</div><p>'+(mode==='replace'?'すべての組で同時確率が周辺確率の積に一致するため、独立である。':'この1組で一致しないため、独立ではない。')+'</p>';if(window.MathJax&&MathJax.typesetPromise)MathJax.typesetPromise([document.getElementById('sample-draws')]).catch(()=>{});}
+function show(mode){let d=R[mode];document.querySelectorAll('.draw-choice').forEach(b=>{let a=b.dataset.mode===mode;b.classList.toggle('active',a);b.setAttribute('aria-pressed',a)});document.getElementById('draw-note').innerHTML=d.note;['d00','d01','d10','d11'].forEach((id,i)=>document.getElementById(id).textContent=math(d.p[i]));['dz0','dz1','dz2'].forEach((id,i)=>document.getElementById(id).textContent=math(d.z[i]));document.getElementById('draw-calcs').innerHTML=d.calc.map(x=>'<p>'+math(x)+'</p>').join('');document.getElementById('draw-z-calc').innerHTML='<p>'+math('P(Z=0)=P(X=0,Y=0)='+d.z[0])+'</p><p>'+math('P(Z=1)=P(X=0,Y=1)+P(X=1,Y=0)='+d.z[1])+'</p><p>'+math('P(Z=2)=P(X=1,Y=1)='+d.z[2])+'</p>';document.getElementById('draw-variance').innerHTML='<strong>解答と解説</strong><div class="formula">\\['+d.var+'\\]</div>';document.getElementById('draw-independent').innerHTML='<strong>独立性の判定</strong><div class="formula">\\['+d.ind+'\\]</div><p>'+(mode==='replace'?'すべての組で同時確率が周辺確率の積に一致するため、独立である。':'この1組で一致しないため、独立ではない。')+'</p>';if(window.MathJax&&MathJax.typesetPromise)MathJax.typesetPromise([document.getElementById('sample-draws')]).catch(()=>{});}
 document.querySelectorAll('.draw-choice').forEach(b=>b.addEventListener('click',()=>show(b.dataset.mode)));show('replace');
 })();
 </script></body></html>
