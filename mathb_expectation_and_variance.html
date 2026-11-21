@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>確率変数の期待値と分散｜みんなの数学データベース</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f2f6fc;color:#1c3148;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;font-size:16px;line-height:1.85}a{color:#186da8}.wrap{max-width:1020px;margin:auto;padding:0 16px}header{background:linear-gradient(110deg,#17365d,#246ca3);color:#fff;padding:24px 0}header a{color:white}header h1{font-size:clamp(24px,3.5vw,32px);line-height:1.4;margin:8px 0}header p{margin:0}main{padding:22px 0 55px}.nav{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:16px}.nav a{background:#e2effb;border-radius:8px;padding:6px 11px;text-decoration:none;font-weight:700}.intro{background:#e4f1ff;border-left:5px solid #2585bd;padding:14px;border-radius:8px}.paper{background:#fff;border:1px solid #d6e3f0;border-radius:14px;padding:clamp(16px,3vw,28px);margin:18px 0}h2{font-size:1.35rem;color:#174c7b;border-bottom:2px solid #bcd3e8;padding-bottom:6px;margin:27px 0 12px}h3{font-size:1.08rem;color:#123e65;margin:17px 0 8px}.formula{background:#f3f8ff;border:1px solid #d6e5fa;border-radius:10px;padding:10px 8px;margin:12px 0;overflow-x:auto;text-align:center}.formula mjx-container[display="true"]{margin:.3em 0!important}.formula mjx-container{font-size:100%!important}.example{border-left:5px solid #e6a345;background:#fffaf0;border-radius:9px;padding:12px 14px;margin:12px 0}.answer{border-left:5px solid #3ca07b;background:#f0faf5;border-radius:9px;padding:12px 14px;margin:9px 0}.exercise{background:#f8faff;border:1px solid #d6e3f0;border-radius:10px;padding:12px 14px;margin:12px 0}summary{cursor:pointer;color:#145e95;font-weight:700;min-height:30px}details{margin-top:8px}table{border-collapse:collapse;width:100%;max-width:620px;margin:10px auto}th,td{border:1px solid #ccdceb;padding:7px;text-align:center}th{background:#e9f3ff}.scroll{overflow-x:auto}.muted{color:#526c82}.badge{display:inline-block;border-radius:20px;background:#e5f3fe;color:#246a96;padding:2px 9px;font-size:12px;font-weight:700}footer{background:#142f4d;color:#e6f2ff;padding:20px 0;font-size:13px}.sim{border:1px solid #c6daeb;background:#f6fbff;border-radius:12px;padding:14px;margin:16px 0}.control{display:grid;grid-template-columns:minmax(95px,1fr) 2fr 60px;gap:10px;align-items:center;margin:10px 0}.control input{width:100%;accent-color:#246ca3}.stats{display:flex;gap:9px;flex-wrap:wrap}.stat{flex:1;min-width:120px;background:white;border:1px solid #d8e4f2;border-radius:9px;text-align:center;padding:8px}.stat strong{display:block;font-size:1.1rem;color:#174c7b}.plot{display:block;width:100%;max-width:650px;height:265px;margin:8px auto;background:white;border:1px solid #d9e4f0;border-radius:8px}.note{background:#fff7e6;border-left:4px solid #eda83d;padding:10px 12px;margin:12px 0}button{border:0;border-radius:8px;background:#246ca3;color:#fff;padding:8px 13px;font-size:15px;cursor:pointer}button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid #ed9b00;outline-offset:3px}@media(max-width:500px){.wrap{padding:0 12px}.paper{padding:14px}.control{grid-template-columns:1fr 1.5fr 40px;gap:6px;font-size:14px}.plot{height:230px}h2{font-size:1.23rem}}
@@ -75,9 +76,16 @@ mjx-container:not([display="true"]){font-size:92%!important}
 .scroll table mjx-container{font-size:100%!important}
 .scroll td,.scroll th{padding:11px 9px;vertical-align:middle}
 .example mjx-container,.answer mjx-container,.exercise mjx-container{vertical-align:middle}
-</style></head>
+</style><style>/* 実験から確率への橋渡し */
+.frequency-to-probability{margin:22px 0;padding:16px;background:#f7fbff;border:1px solid #d9e7f3;border-radius:12px}
+.frequency-to-probability h3{margin-top:0}
+.frequency-to-probability table{max-width:800px;min-width:570px}
+.frequency-to-probability th,.frequency-to-probability td{padding:6px 8px}
+.frequency-to-probability .formula{overflow-x:auto}
+.frequency-to-probability .note{font-weight:400}
+@media(max-width:600px){.frequency-to-probability{padding:12px}.frequency-to-probability table{min-width:550px}}</style></head>
 <body>
-<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>確率変数の期待値と分散</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" data-hs-lesson="" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>期待値・分散・標準偏差の意味を理解し、確率分布表から求める力を身につける</h2><p>確率分布表を読み取り、期待値（平均）・分散・標準偏差を順に求め、それぞれが表す意味を理解します。</p></section>
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>確率変数の期待値と分散</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" data-hs-lesson="" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>期待値・分散・標準偏差の意味を理解し、確率分布表から求める力を身につける</h2><p>確率分布表を読み取り、期待値（平均）・分散・標準偏差を順に求め、それぞれが表す意味を理解する。サイコロの実験結果から数学的な確率へ考え方を広げる。</p></section>
 <nav aria-label="授業の進め方" class="hs-study-nav">
 <a href="#hs-explanation">説明</a>
 <a href="#hs-examples">例題と解説</a>
@@ -85,7 +93,38 @@ mjx-container:not([display="true"]){font-size:92%!important}
 <a href="#hs-summary">まとめ</a></nav>
 <article class="paper">
 <h2 id="hs-explanation">1. 期待値・分散・標準偏差</h2><p>確率変数 \(X\) が値をとる確率を、次の表で表します。</p><div class="scroll"><table class="distribution-general"><caption>一般の確率分布表</caption><tbody><tr><th>\(X\)</th><td>\(x_1\)</td><td>\(x_2\)</td><td>\(\cdots\)</td><td>\(x_n\)</td><th>計</th></tr><tr><th>確率</th><td>\(p_1\)</td><td>\(p_2\)</td><td>\(\cdots\)</td><td>\(p_n\)</td><td>1</td></tr></tbody></table></div><p>各確率は0以上で、その合計は1です。</p><div class="formula">\[\sum_{i=1}^{n}p_i=1\]</div><h3>期待値（平均）</h3><p>それぞれの値に、その値をとる確率をかけて足します。期待値は、試行を何度も繰り返したときの平均を表します。</p>
-<div class="formula">\[E(X)=x_1p_1+x_2p_2+\cdots+x_np_n=\sum_{i=1}^{n}x_ip_i\]</div><h3>分散</h3><p>期待値を \(\mu=E(X)\) とおきます。分散は、各値が期待値からどれだけ離れているかを2乗し、その確率をかけて足したものです。</p><div class="formula">\[V(X)=\sum_{i=1}^{n}(x_i-\mu)^2p_i\]</div><h3>標準偏差</h3><p>分散の平方根を<strong>標準偏差</strong>といい、\(\sigma(X)=\sqrt{V(X)}\) と表します。標準偏差は元の値と同じ単位です。</p><details><summary>分散の公式の導出を見る</summary><div class="answer"><p>\(\mu=E(X)\) とすると、</p><div class="formula">\[\begin{aligned}V(X)&amp;=E\{(X-\mu)^2\}\\&amp;=E(X^2)-2\mu E(X)+\mu^2\\&amp;=E(X^2)-\mu^2.\end{aligned}\]</div></div></details>
+<div class="formula">\[E(X)=x_1p_1+x_2p_2+\cdots+x_np_n=\sum_{i=1}^{n}x_ip_i\]</div><h3>分散</h3><p>期待値を \(\mu=E(X)\) とおきます。分散は、各値が期待値からどれだけ離れているかを2乗し、その確率をかけて足したものです。</p><div class="formula">\[V(X)=\sum_{i=1}^{n}(x_i-\mu)^2p_i\]</div><h3>標準偏差</h3><p>分散の平方根を<strong>標準偏差</strong>といい、\(\sigma(X)=\sqrt{V(X)}\) と表します。標準偏差は元の値と同じ単位です。</p><section aria-label="度数から確率へ：サイコロ100回の実験" class="frequency-to-probability">
+<h3>実験の平均・分散から、期待値・分散へ</h3>
+<p>公平なサイコロを100回投げたとする。例えば、次のような結果が得られたとする。まず、実際に出た回数を表す<strong>度数</strong>から平均・分散を求める。</p>
+<div class="scroll"><table><caption>サイコロ100回の度数分布表</caption><tbody>
+<tr><th>出た目 \(x\)</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><th>計</th></tr>
+<tr><th>度数 \(f\)</th><td>15</td><td>18</td><td>17</td><td>16</td><td>18</td><td>16</td><th>100</th></tr>
+</tbody></table></div>
+<p><strong>① 度数を使って計算する。</strong>各目の値に、その目が出た回数をかけ、全体の100回で割る。</p>
+<div class="formula">\[\begin{aligned}\bar x&amp;=\frac{1\cdot15+2\cdot18+3\cdot17+4\cdot16+5\cdot18+6\cdot16}{100}\\&amp;=\frac{352}{100}=3.52\end{aligned}\]</div>
+<p>分散は、各目と平均3.52との差を2乗し、度数をかけて100で割った値の和である。</p>
+<div class="formula">\[\begin{aligned}s^2&amp;=\frac{15(1-3.52)^2+18(2-3.52)^2+17(3-3.52)^2}{100}\\&amp;\quad+\frac{16(4-3.52)^2+18(5-3.52)^2+16(6-3.52)^2}{100}\\&amp;=2.8296\end{aligned}\]</div>
+<div class="formula">\[\text{標準偏差}=\sqrt{2.8296}\fallingdotseq1.682\]</div>
+<p><strong>② 相対度数に置き換える。</strong>各度数を100で割った<strong>相対度数</strong>を使うと、同じ計算を別の形で書ける。</p>
+<div class="scroll"><table><caption>同じ100回の相対度数分布表</caption><tbody>
+<tr><th>出た目 \(x\)</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><th>計</th></tr>
+<tr><th>相対度数</th><td>0.15</td><td>0.18</td><td>0.17</td><td>0.16</td><td>0.18</td><td>0.16</td><th>1</th></tr>
+</tbody></table></div>
+<div class="formula">\[\bar x=1\cdot0.15+2\cdot0.18+3\cdot0.17+4\cdot0.16+5\cdot0.18+6\cdot0.16=3.52\]</div>
+<div class="formula">\[s^2=\sum_{i=1}^{6}(i-3.52)^2\times(\text{出た目 }i\text{ の相対度数})=2.8296\]</div>
+<p>相対度数は「100回の実験で、その目が出た割合」である。度数で計算しても相対度数で計算しても、平均・分散は一致する。</p>
+<p><strong>③ 実験の割合から、数学的な確率へ進む。</strong>公平なサイコロでは、どの目が出る確率も理論上は \(\dfrac16\) である。実験の相対度数は毎回変わるが、数学的な確率は \(\dfrac16\) と定められる。</p>
+<div class="scroll"><table><caption>公平なサイコロの確率分布表</caption><tbody>
+<tr><th>出た目 \(X\)</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><th>計</th></tr>
+<tr><th>確率</th><td>\(\dfrac16\)</td><td>\(\dfrac16\)</td><td>\(\dfrac16\)</td><td>\(\dfrac16\)</td><td>\(\dfrac16\)</td><td>\(\dfrac16\)</td><th>1</th></tr>
+</tbody></table></div>
+<p>相対度数の代わりに確率を使って平均を求めたものが<strong>期待値</strong>である。</p>
+<div class="formula">\[E(X)=1\cdot\frac16+2\cdot\frac16+3\cdot\frac16+4\cdot\frac16+5\cdot\frac16+6\cdot\frac16=\frac72=3.5\]</div>
+<p>同様に、期待値3.5からのずれを2乗して、確率をかけて足す。</p>
+<div class="formula">\[\begin{aligned}V(X)&amp;=\frac{(1-3.5)^2+(2-3.5)^2+(3-3.5)^2}{6}\\&amp;\quad+\frac{(4-3.5)^2+(5-3.5)^2+(6-3.5)^2}{6}\\&amp;=\frac{35}{12}\fallingdotseq2.917\end{aligned}\]</div>
+<div class="formula">\[\sigma(X)=\sqrt{\frac{35}{12}}\fallingdotseq1.708\]</div>
+<p class="note"><strong>大切な違い：</strong>100回の実験で求めた平均3.52、分散2.8296は、実際の結果による値である。一方、期待値3.5、分散 \(\dfrac{35}{12}\) は、公平なサイコロの数学的な確率から求めた理論上の値である。実験回数を増やすと、相対度数は一般に理論上の確率に近づく傾向がある。</p>
+</section><details><summary>分散の公式の導出を見る</summary><div class="answer"><p>\(\mu=E(X)\) とすると、</p><div class="formula">\[\begin{aligned}V(X)&amp;=E\{(X-\mu)^2\}\\&amp;=E(X^2)-2\mu E(X)+\mu^2\\&amp;=E(X^2)-\mu^2.\end{aligned}\]</div></div></details>
 <h2>2. 確率分布表から計算する</h2><p>例として、\(X\) が0, 1, 3を、それぞれ確率 \(\dfrac12,\dfrac13,\dfrac16\) で取る場合を考えます。</p><div class="scroll"><table><tr><th>\(X\)</th><td>0</td><td>1</td><td>3</td><th>合計</th></tr><tr><th>確率</th><td>\(\dfrac12\)</td><td>\(\dfrac13\)</td><td>\(\dfrac16\)</td><td>1</td></tr></table></div><div class="formula">\[E(X)=0\cdot\dfrac12+1\cdot\dfrac13+3\cdot\dfrac16=\dfrac56\]</div><div class="formula">\[E(X^2)=0+\dfrac13+\dfrac9{6}=\dfrac{11}6\]</div><div class="formula">\[V(X)=\dfrac{11}6-\left(\dfrac56\right)^2=\dfrac{41}{36},\quad\sigma(X)=\frac{\sqrt{41}}6\]</div><p class="muted">計算の順序：確率の合計が1であることを確認 → \(E(X)\) → \(E(X^2)\) → \(V(X)\)。</p>
 <h2>3. 動く図：期待値と分散の違い</h2><p>確率変数 \(X\) が \(c-d\) と \(c+d\) を、それぞれ確率 \(\dfrac12\) で取ります。中心 \(c\) と広がり \(d\) を動かしましょう。</p><div class="sim"><div class="control"><label for="center">中心 \(c\)</label><input id="center" max="6" min="-3" step="1" type="range" value="2"/><output id="cv">2</output></div><div class="control"><label for="spread">広がり \(d\)</label><input id="spread" max="6" min="0" step="1" type="range" value="2"/><output id="dv">2</output></div><svg aria-label="2点分布の確率棒グラフと期待値を示す図" class="plot" id="probplot" role="img" viewbox="0 0 640 265"></svg><div class="stats"><div class="stat">期待値<strong id="ev">2</strong></div><div class="stat">分散<strong id="vv">4</strong></div><div class="stat">標準偏差<strong id="sv">2</strong></div></div><p aria-live="polite" class="muted" id="simdesc"></p></div><p>左右の値が同じ確率なら、期待値はちょうど中央です。値を左右へ離すほど分散が大きくなります。<strong>中心を変えても、左右の距離が同じなら分散は変わりません。</strong></p><div class="formula">\[E(X)=c,\qquad V(X)=d^2,\qquad\sigma(X)=d\quad(d\geqq0)\]</div>
 <h2 id="hs-examples">4. 解説付き例題</h2>
