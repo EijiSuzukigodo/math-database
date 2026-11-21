@@ -118,6 +118,19 @@ mjx-container {font-size: 92% !important;}
 .general-joint th,.general-joint td{padding:8px 6px;white-space:nowrap;text-align:center}
 .general-joint mjx-container{font-size:88% !important}
 @media(max-width:720px){.general-joint-layout{grid-template-columns:1fr}}
+</style><style>
+.z-distribution-layout{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(240px,1fr);gap:16px;align-items:center;margin:12px 0 20px}
+.z-distribution-layout .formula{margin:0;min-width:0}
+.z-distribution-table{min-width:0}
+.z-distribution-table table{width:100%}
+.general-joint-layout{display:block!important;margin:10px 0 18px!important}
+.general-joint-table{width:100%}
+.general-joint-table .table-wrap{width:100%}
+.general-joint .ellipsis-row th,.general-joint .ellipsis-row td{height:56px;min-height:56px;vertical-align:middle}
+.general-joint .ellipsis-row mjx-container{font-size:120%!important}
+.graph-explain{font-size:14px;color:#334d63;margin:14px 0 5px}
+#jointGraph{max-width:780px}
+@media(max-width:720px){.z-distribution-layout{grid-template-columns:1fr;gap:10px}}
 </style></head>
 <body>
 <header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>確率変数の和と期待値</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" data-hs-lesson="" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>同時分布から3つの確率分布を作り、期待値の加法性を理解する</h2><p>くじの具体例を通して周辺分布と和の分布を求め、期待値の加法性を確認する。</p><p class="hs-outcome">同時分布表から X・Y・X+Y の確率分布表を作り、それぞれの期待値を計算する力を身につける。</p></section>
@@ -137,21 +150,20 @@ mjx-container {font-size: 92% !important;}
 <div class="distribution-two-columns"><section class="distribution-panel"><h3>① \(X\) の確率分布表</h3><p>同時分布表の<strong>各行を横に足す</strong>と、\(X\) の確率分布が得られる。</p><div class="table-wrap"><table><tr><th>\(X\)</th><th>\(0\)</th><th>\(1\)</th><th>計</th></tr><tr><th>\(P\)</th><td>\(\dfrac45\)</td><td>\(\dfrac15\)</td><td>\(1\)</td></tr></table></div></section><section class="distribution-panel"><h3>② \(Y\) の確率分布表</h3><p>同時分布表の<strong>各列を縦に足す</strong>と、\(Y\) の確率分布が得られる。</p><div class="table-wrap"><table><tr><th>\(Y\)</th><th>\(0\)</th><th>\(1\)</th><th>\(2\)</th><th>計</th></tr><tr><th>\(P\)</th><td>\(\dfrac{28}{45}\)</td><td>\(\dfrac{16}{45}\)</td><td>\(\dfrac{1}{45}\)</td><td>\(1\)</td></tr></table></div></section></div>
 <h3>③ \(X+Y\) の確率分布表</h3>
 <p>\(Z=X+Y\) とおく。同時分布表のうち、\(x+y\) が等しい組の確率を足す。</p>
-<div class="formula">\[\begin{aligned}P(Z=0)&amp;=P(X=0,\,Y=0)=\dfrac{7}{15},\\[6pt]P(Z=1)&amp;=P(X=0,\,Y=1)+P(X=1,\,Y=0)\\&amp;=\dfrac{14}{45}+\dfrac{7}{45}=\dfrac{7}{15},\\[6pt]P(Z=2)&amp;=P(X=0,\,Y=2)+P(X=1,\,Y=1)\\&amp;=\dfrac{1}{45}+\dfrac{2}{45}=\dfrac{1}{15}.\end{aligned}\]</div>
-<div class="table-wrap"><table><tr><th>\(Z=X+Y\)</th><th>\(0\)</th><th>\(1\)</th><th>\(2\)</th><th>計</th></tr><tr><th>\(P\)</th><td>\(\dfrac7{15}\)</td><td>\(\dfrac7{15}\)</td><td>\(\dfrac1{15}\)</td><td>\(1\)</td></tr></table></div>
+<div class="z-distribution-layout"><div class="z-calculation"><div class="formula">\[\begin{aligned}P(Z=0)&amp;=P(X=0,\,Y=0)=\dfrac{7}{15},\\[6pt]P(Z=1)&amp;=P(X=0,\,Y=1)+P(X=1,\,Y=0)\\&amp;=\dfrac{14}{45}+\dfrac{7}{45}=\dfrac{7}{15},\\[6pt]P(Z=2)&amp;=P(X=0,\,Y=2)+P(X=1,\,Y=1)\\&amp;=\dfrac{1}{45}+\dfrac{2}{45}=\dfrac{1}{15}.\end{aligned}\]</div></div><div class="z-distribution-table"><div class="table-wrap"><table><tr><th>\(Z=X+Y\)</th><th>\(0\)</th><th>\(1\)</th><th>\(2\)</th><th>計</th></tr><tr><th>\(P\)</th><td>\(\dfrac7{15}\)</td><td>\(\dfrac7{15}\)</td><td>\(\dfrac1{15}\)</td><td>\(1\)</td></tr></table></div></div></div>
+
 <h3>④ それぞれの期待値を計算する</h3>
 <p>それぞれの値に確率を掛けて足す。</p>
 <div class="answer"><strong>解答と解説</strong><div class="formula">\[\begin{aligned}E(X)&amp;=0\times\frac45+1\times\frac15=\frac15,\\[5pt]E(Y)&amp;=0\times\frac{28}{45}+1\times\frac{16}{45}+2\times\frac1{45}=\frac25,\\[5pt]E(X+Y)&amp;=0\times\frac7{15}+1\times\frac7{15}+2\times\frac1{15}=\frac35.\end{aligned}\]</div>
 <p>\(\displaystyle \frac15+\frac25=\frac35\) より、\(E(X+Y)=E(X)+E(Y)\) が成り立つことが分かる。一般の場合も後でΣを使って証明する。</p></div>
-<h2>2. 同時分布と周辺分布の一般的な表し方</h2><div class="general-joint-layout"><div class="general-joint-explanation"><p>\(X=x_i\) かつ \(Y=y_j\) となる確率を \(p_{ij}=P(X=x_i,Y=y_j)\) と表す。組の確率を並べた表が同時分布表である。</p></div><div class="general-joint-table"><div class="table-wrap"><table class="general-joint"><thead><tr><th>\(X\backslash Y\)</th><th>\(y_1\)</th><th>\(y_2\)</th><th>\(\cdots\)</th><th>\(y_m\)</th><th>計</th></tr></thead><tbody><tr><th>\(x_1\)</th><td>\(p_{11}\)</td><td>\(p_{12}\)</td><td>\(\cdots\)</td><td>\(p_{1m}\)</td><td>\(P(X=x_1)\)</td></tr><tr><th>\(x_2\)</th><td>\(p_{21}\)</td><td>\(p_{22}\)</td><td>\(\cdots\)</td><td>\(p_{2m}\)</td><td>\(P(X=x_2)\)</td></tr><tr><th>\(\vdots\)</th><td>\(\vdots\)</td><td>\(\vdots\)</td><td>\(\ddots\)</td><td>\(\vdots\)</td><td>\(\vdots\)</td></tr><tr><th>\(x_n\)</th><td>\(p_{n1}\)</td><td>\(p_{n2}\)</td><td>\(\cdots\)</td><td>\(p_{nm}\)</td><td>\(P(X=x_n)\)</td></tr><tr><th>計</th><td>\(P(Y=y_1)\)</td><td>\(P(Y=y_2)\)</td><td>\(\cdots\)</td><td>\(P(Y=y_m)\)</td><td>\(1\)</td></tr></tbody></table></div></div></div>
-
+<h2>2. 同時分布と周辺分布の一般的な表し方</h2><p>\(X=x_i\) かつ \(Y=y_j\) となる確率を \(p_{ij}=P(X=x_i,Y=y_j)\) と表す。組の確率を並べた表が同時分布表である。</p><div class="general-joint-layout"><div class="general-joint-explanation"></div><div class="general-joint-table"><div class="table-wrap"><table class="general-joint"><thead><tr><th>\(X\backslash Y\)</th><th>\(y_1\)</th><th>\(y_2\)</th><th>\(\cdots\)</th><th>\(y_m\)</th><th>計</th></tr></thead><tbody><tr><th>\(x_1\)</th><td>\(p_{11}\)</td><td>\(p_{12}\)</td><td>\(\cdots\)</td><td>\(p_{1m}\)</td><td>\(P(X=x_1)\)</td></tr><tr><th>\(x_2\)</th><td>\(p_{21}\)</td><td>\(p_{22}\)</td><td>\(\cdots\)</td><td>\(p_{2m}\)</td><td>\(P(X=x_2)\)</td></tr><tr class="ellipsis-row"><th>\(\vdots\)</th><td>\(\vdots\)</td><td>\(\vdots\)</td><td>\(\ddots\)</td><td>\(\vdots\)</td><td>\(\vdots\)</td></tr><tr><th>\(x_n\)</th><td>\(p_{n1}\)</td><td>\(p_{n2}\)</td><td>\(\cdots\)</td><td>\(p_{nm}\)</td><td>\(P(X=x_n)\)</td></tr><tr><th>計</th><td>\(P(Y=y_1)\)</td><td>\(P(Y=y_2)\)</td><td>\(\cdots\)</td><td>\(P(Y=y_m)\)</td><td>\(1\)</td></tr></tbody></table></div></div></div>
 <div class="formula">\[\sum_{i=1}^{n}\sum_{j=1}^{m}p_{ij}=1\]</div>
 <p>同時分布表の行・列の合計から求める確率分布を<strong>周辺分布</strong>という。</p>
 <div class="formula">\[P(X=x_i)=\sum_{j=1}^{m}p_{ij},\qquad P(Y=y_j)=\sum_{i=1}^{n}p_{ij}\]</div>
-<h2>3. 動く同時分布表</h2><p>2つの事象の起こりやすさの関係を変えてみましょう。下の例では、\(P(X=1)=P(Y=1)=\frac12\) を保ったまま、\(P(X=1,Y=1)=t\) を変化させます。</p>
+<h2>3. 動く同時分布表</h2><p>2つの事象の起こりやすさの関係を変えてみましょう。下の例では、\(P(X=1)=P(Y=1)=\dfrac{1}{2}\) を保ったまま、\(P(X=1,Y=1)=t\) を変化させます。</p>
 <div class="controls"><label for="t">同時確率 \(t=P(X=1,Y=1)\)：<strong id="tv">0.25</strong></label><input id="t" max="50" min="0" step="1" type="range" value="25"/><p class="muted" id="comment"></p></div>
 <div class="table-wrap"><table><thead><tr><th>\(X\backslash Y\)</th><th>\(Y=0\)</th><th>\(Y=1\)</th><th>計</th></tr></thead><tbody><tr><th>\(X=0\)</th><td id="p00"></td><td id="p01"></td><td>0.50</td></tr><tr><th>\(X=1\)</th><td id="p10"></td><td id="p11"></td><td>0.50</td></tr><tr><th>計</th><td>0.50</td><td>0.50</td><td>1.00</td></tr></tbody></table></div>
-<svg aria-label="4種類の組み合わせの同時確率を表示する棒グラフ" id="jointGraph" role="img" viewbox="0 0 620 218"></svg>
+<p class="graph-explain">青色：同時確率（XとYの組）／緑色：Xだけの確率／橙色：Yだけの確率。XとYの周辺確率は、スライダーを動かしてもそれぞれ0.50のままです。</p><svg aria-label="同時確率4種類とXだけ、Yだけの周辺確率を比較する棒グラフ" id="jointGraph" role="img" viewbox="0 0 780 260"></svg>
 <p>周辺分布が同じでも同時分布が異なることがあります。<strong>独立</strong>なら \(P(X=x,Y=y)=P(X=x)P(Y=y)\) がすべての組で成立します。この例では \(t=0.25\) の場合に独立です。</p>
 <h2>4. 同時分布から期待値を求める</h2><p>同時分布表が与えられれば、\(X\)、\(Y\)だけでなく、\(X+Y\) の期待値も直接求められます。</p><div class="formula">\[E(X+Y)=\sum_{i=1}^{n}\sum_{j=1}^{m}(x_i+y_j)p_{ij}\]</div>
 <div class="example"><strong>例題1（同時分布・周辺分布）</strong><p>\(X,Y\) がそれぞれ0,1をとり、\(P(0,0)=\dfrac12\)、\(P(0,1)=\dfrac14\)、\(P(1,0)=\dfrac14\)、\(P(1,1)=0\) とする。\(X,Y\) の周辺分布と \(E(X+Y)\) を求めよ。</p></div>
@@ -169,6 +181,28 @@ mjx-container {font-size: 92% !important;}
 <div class="exercise"><strong>応用（元の問題）</strong><p>1回のさいころの出目を \(X\) とし、\(Y=7-X\) とします。\(E(X+Y)\) を求めましょう。\(X,Y\) は独立ですか。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(X+Y=7\) が常に成立するため、\(E(X+Y)=7\) です。\(Y\) は \(X\) から一意に決まるので独立ではありません。それでも期待値の加法性は成り立ちます。</p></details></div>
 <h2 id="hs-summary">9. まとめ</h2><p>同時分布は2変数の値の組の確率を示します。行と列の合計から周辺分布を求められます。期待値の和の公式は独立性がなくても成り立ちます。一方、分散の和の公式には独立性などの条件が必要です。次の「独立な確率変数と期待値・分散」で確認しましょう。</p>
 </article><nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav></main>
-<script>
-(function(){const input=document.getElementById('t'),svg=document.getElementById('jointGraph');function redraw(){const t=Number(input.value)/100,v=[t,.5-t,.5-t,t];document.getElementById('tv').textContent=t.toFixed(2);['p00','p01','p10','p11'].forEach((id,i)=>document.getElementById(id).textContent=v[i].toFixed(2));document.getElementById('comment').textContent=Math.abs(t-.25)<.00001?'XとYは独立です。': '周辺分布は変わりませんが、XとYは独立ではありません。';let s='<text x="15" y="20" font-size="15" fill="#1c3148">同時確率の棒グラフ</text>';let labels=['(0,0)','(0,1)','(1,0)','(1,1)'];for(let i=0;i<4;i++){let x=50+i*145,h=v[i]*250;s+=`<rect x="${x}" y="${173-h}" width="70" height="${h}" fill="#3d8bc6" rx="3"/><text x="${x+35}" y="${165-h}" font-size="14" text-anchor="middle" fill="#1c3148">${v[i].toFixed(2)}</text><text x="${x+35}" y="197" font-size="14" text-anchor="middle" fill="#1c3148">${labels[i]}</text>`;}s+='<line x1="20" y1="173" x2="605" y2="173" stroke="#778ba1"/>';svg.innerHTML=s;}input.addEventListener('input',redraw);redraw();})();
-</script><footer class="lesson-standard-footer"><div><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div>みんなの数学データベース｜高校生のための授業</div></footer></body></html>
+<script>(function(){
+const input=document.getElementById('t'),svg=document.getElementById('jointGraph');
+function redraw(){
+ const t=Number(input.value)/100;
+ const joint=[t,0.5-t,0.5-t,t];
+ document.getElementById('tv').textContent=t.toFixed(2);
+ ['p00','p01','p10','p11'].forEach((id,i)=>document.getElementById(id).textContent=joint[i].toFixed(2));
+ document.getElementById('comment').textContent=Math.abs(t-0.25)<0.00001?'XとYは独立です。':'周辺分布は変わりませんが、XとYは独立ではありません。';
+ const values=[...joint,0.5,0.5,0.5,0.5];
+ const labels=['(0,0)','(0,1)','(1,0)','(1,1)','X=0','X=1','Y=0','Y=1'];
+ let out='<text x="15" y="22" font-size="16" fill="#1c3148">同時確率と周辺確率の比較</text>';
+ out+='<line x1="20" y1="201" x2="765" y2="201" stroke="#778ba1"/>';
+ values.forEach((v,i)=>{
+   const x=35+i*94,h=v*260,color=i<4?'#3d8bc6':i<6?'#27976a':'#e49a35';
+   out+=`<rect x="${x}" y="${201-h}" width="57" height="${h}" fill="${color}" rx="3"/>`;
+   out+=`<text x="${x+28.5}" y="${194-h}" font-size="13" text-anchor="middle" fill="#1c3148">${v.toFixed(2)}</text>`;
+   out+=`<text x="${x+28.5}" y="223" font-size="13" text-anchor="middle" fill="#1c3148">${labels[i]}</text>`;
+ });
+ out+='<text x="165" y="248" text-anchor="middle" font-size="13" fill="#236b9b">同時確率</text>';
+ out+='<text x="555" y="248" text-anchor="middle" font-size="13" fill="#21805b">Xだけ</text>';
+ out+='<text x="735" y="248" text-anchor="middle" font-size="13" fill="#aa6b1b">Yだけ</text>';
+ svg.innerHTML=out;
+}
+input.addEventListener('input',redraw);redraw();
+})();</script><footer class="lesson-standard-footer"><div><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div>みんなの数学データベース｜高校生のための授業</div></footer></body></html>
