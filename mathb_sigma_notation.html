@@ -72,7 +72,11 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 @media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
 </style><link rel="stylesheet" href="lesson_common_style.css">
 <link rel="stylesheet" href="high_school_lesson_reading.css">
-</head><body>
+<style>
+html body{font-family:"Times New Roman","Hiragino Mincho ProN","Yu Mincho","Noto Serif CJK JP",serif!important}
+body :is(header,main,footer,h1,h2,h3,p,span,div,button,input,select,option,output,summary,strong,a,label){font-family:inherit!important}
+#bars{padding:.4rem;color:#19334e}.sum-row{display:grid;grid-template-columns:3.1em minmax(0,1fr) 7.4em;gap:.4em;align-items:center;line-height:1.5;margin:.3em 0}.sum-track{display:flex;background:#f1f5f8;height:1.05em}.sum-old{background:#376e95}.sum-added{background:#cf7926}.sum-eq{text-align:right}.sum-row:last-child{font-weight:bold}.sum-key i{display:inline-block;width:1em;height:.75em;margin:0 .25em 0 .65em}
+</style></head><body>
 <header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>和の記号Σ</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main" data-hs-lesson=""><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>Σで和を表し、規則を使って計算する</h2><p>どの数からどの数まで、何を足すのかを読み取り、足し算とΣの式を行き来する。平方数・立方数の和の公式が成り立つ理由を確かめ、複数の公式を組み合わせて和を求める。</p></section>
 <nav class="hs-study-nav" aria-label="授業の進め方">
 <a href="#hs-explanation">説明</a>
@@ -90,11 +94,11 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <div class="formula">\[4+7+10+13+16=\sum\limits_{k=1}^{5}(3k+1)\]</div>
 <p>番号に使う文字は変えてよい。例えば \(\sum\limits_{j=1}^{5}(3j+1)\) も同じ和である。ただし、番号を0から始めるなら各項の式も変わり、\(\sum\limits_{j=0}^{4}(3j+4)\) になる。</p>
 <h2>3．動く図でΣを理解する</h2>
-<div class="sim"><h3>項数を動かして、棒の高さと合計を確認</h3>
-<p class="small">各項の式を選んで、項数を一つ増やしてみよう。右端の棒の値だけ合計が増える。</p>
+<div class="sim"><h3>横棒で、項を足していく様子を確かめる</h3>
+<p class="small">上の段の棒全体が、次の段の青い部分になる。その右に今回の項を足すと、新しい合計になる。最後の段の右端が、選んだ項数までの総和である。</p>
 <div class="controls"><label for="kind">各項の式</label><select id="kind"><option value="k">k（自然数）</option><option value="odd">2k−1（奇数）</option><option value="square">k²（平方数）</option><option value="linear">2k＋1</option></select></div>
 <div class="controls"><label for="count">項数 n：<output for="count" id="nval">5</output></label><input id="count" max="12" min="1" step="1" type="range" value="5"/></div>
-<div class="chartwrap"><svg aria-label="選択した数列の各項を表す棒グラフ" id="bars" role="img" viewbox="0 0 680 260" xmlns="http://www.w3.org/2000/svg"></svg></div>
+<p class="sum-key"><i class="sum-old" aria-hidden="true"></i>前の段までの合計　<i class="sum-added" aria-hidden="true"></i>今回足す項</p><div class="chartwrap" id="bars" role="list" aria-label="各項を順に足した横棒グラフ"></div>
 <div aria-live="polite" class="result" id="summation"></div><p class="small muted" id="expansion"></p>
 </div>
 <h2>4．Σの性質と和の公式</h2>
@@ -157,7 +161,7 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <p>例えば \(\sum\limits_{k=5}^{10}k\) は、1から10の和から1から4の和を引く。</p>
 <h3>② 添字をずらす場合</h3>
 <div class="formula">\[\sum\limits_{k=2}^{n+1}(k-1)^2=\sum\limits_{j=1}^{n}j^2\]</div>
-<p>j＝k−1 と置くと、<strong>上下の範囲も一緒に変更</strong>する。</p>
+<p>\(j=k-1\) とおく。\(k=2\) のとき \(j=1\)、\(k=n+1\) のとき \(j=n\) である。したがって、新しい添字 \(j\) は1から \(n\) まで動く。</p>
 <h3>③ 隣り合う差の和</h3>
 <div class="formula">\[\sum\limits_{k=1}^{n}\{(k+1)^2-k^2\}=(n+1)^2-1\]</div>
 <p>途中の項が打ち消し合う「望遠鏡型（階差の和）」は、次の階差数列にもつながる。</p>
@@ -176,17 +180,17 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
  &=\frac{8\cdot9\cdot17}{6}-\frac{3\cdot4\cdot7}{6}\\
  &=204-14=190.
 \end{aligned}\]</div><p>途中から始まるので最初の3項を引く。</p></div>
-<div class="example"><strong>例題4</strong><p>\(\sum\limits_{k=1}^{n}(2k-1)\) を n で表す。</p></div>
-<div class="answer"><strong>解答と解説</strong><div class="formula">\[2\cdot\frac{n(n+1)}2-n=n^2\]</div><p>最初の n 個の奇数の和は n² になる。</p></div>
+<div class="example"><strong>例題4</strong><p>\(\sum\limits_{k=1}^{n}(2k-1)\) を \(n\) の式で表せ。</p></div>
+<div class="answer"><strong>解答と解説</strong><div class="formula">\[2\cdot\frac{n(n+1)}2-n=n^2\]</div><p>最初の \(n\) 個の正の奇数の和は \(n^2\) である。</p></div>
 <div class="example"><strong>例題5</strong><p>\(\sum\limits_{k=0}^{5}2^k\) を求めよ。</p></div>
 <div class="answer"><strong>解答と解説</strong><div class="formula">\[\frac{2^6-1}{2-1}=63\]</div><p>k は0から5までの6項である。</p></div>
 <div class="example"><strong>例題6　積を展開して和を求める</strong><p>\(\sum\limits_{k=1}^n k(k+2)\) を求めよ。</p></div>
 <div class="answer"><strong>解答と解説</strong><p>各項を \(k^2+2k\) と書くと、平方数の和と自然数の和に分けられる。</p><div class="formula">\[\sum\limits_{k=1}^n k(k+2)=\frac{n(n+1)(2n+1)}6+n(n+1)=\frac{n(n+1)(2n+7)}6\]</div></div>
-<div class="example"><strong>例題7　和でできた数列をもう一度足す</strong><p>第 \(k\) 項が最初の \(k\) 個の偶数の和である数列について、初項から第 \(n\) 項までの和を求めよ。</p></div>
+<div class="example"><strong>例題7　和でできた数列をもう一度足す</strong><p>数列 \(2,\ 6,\ 12,\ 20,\ 30,\ldots\) を考える。各項は順に \(2,\ 2+4,\ 2+4+6,\ 2+4+6+8,\ldots\) と、正の偶数を一つずつ多く足して作る。この数列の初項から第 \(n\) 項までの和 \(2+6+12+\cdots+a_n\) を求めよ。</p></div>
 <div class="answer"><strong>解答と解説</strong><p>この数列の初めの3項は \(2,\ 2+4,\ 2+4+6\)、すなわち \(2,6,12\) である。まず、第 \(k\) 項の中で動く番号を \(j\) として、1項分の値を求める。</p><div class="formula">\[a_k=\sum\limits_{j=1}^k 2j=k(k+1)\]</div><p>次に、こうして求めた項を \(k=1\) から \(n\) まで足す。</p><div class="formula">\[\sum\limits_{k=1}^n a_k=\sum\limits_{k=1}^n(k^2+k)=\frac{n(n+1)(n+2)}3\]</div><p>\(n=3\) を代入すると20となり、\(2+6+12=20\) と一致する。</p></div>
 <p class="note">部分分数分解の発展例題は、<a href="mathb_sums_of_sequences.html">「いろいろな数列の和」</a> のページに掲載している。</p><div class="example"><strong>例題8　立方数の和を利用する</strong><p>\(\sum\limits_{k=1}^n (2k^3-k)\) を求めよ。</p></div>
 <div class="answer"><strong>解答と解説</strong><p>自然数の和を \(T=\frac{n(n+1)}2\) とおくと、立方数の和は \(T^2\) である。</p><div class="formula">\[\sum\limits_{k=1}^n(2k^3-k)=2T^2-T=T(2T-1)=\frac{n(n+1)}2\{n(n+1)-1\}\]</div></div>
-<h2 id="hs-practice">7．練習問題（解答・解説付き）</h2><div class="exercise"><strong>応用　ずらして引く</strong><p>\(\displaystyle\sum\limits_{k=1}^{n}k2^{k-1}\)</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>和を \(S\) とすると、\(2S-S=n2^n-(1+2+\cdots+2^{n-1})\) となる。括弧内は \(2^n-1\) なので、答えは  \((n-1)2^n+1\)。</p></details></div><div class="exercise"><strong>確認　式を分ける</strong><p>\(\displaystyle\sum\limits_{k=1}^{n}(3k^2-2k)\)</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(3\frac{n(n+1)(2n+1)}6-2\frac{n(n+1)}2=\frac{n(n+1)(2n-1)}2\)。</p></details></div><div class="exercise"><strong>確認　公式を使う</strong><p>\(\displaystyle\sum\limits_{k=1}^{20}k^2\)</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(\frac{20\cdot21\cdot41}{6}=2870\)。</p></details></div><div class="exercise"><strong>確認　直接足す</strong><p>\(1^2+2^2+3^2+4^2+5^2\)</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(1+4+9+16+25=55\)。</p></details></div>
+<h2 id="hs-practice">7．練習問題（解答・解説付き）</h2><div class="exercise"><strong>確認　式を分ける</strong><p>\(\displaystyle\sum\limits_{k=1}^{n}(3k^2-2k)\)</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(3\frac{n(n+1)(2n+1)}6-2\frac{n(n+1)}2=\frac{n(n+1)(2n-1)}2\)。</p></details></div><div class="exercise"><strong>確認　公式を使う</strong><p>\(\displaystyle\sum\limits_{k=1}^{20}k^2\)</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(\frac{20\cdot21\cdot41}{6}=2870\)。</p></details></div><div class="exercise"><strong>確認　直接足す</strong><p>\(1^2+2^2+3^2+4^2+5^2\)</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(1+4+9+16+25=55\)。</p></details></div>
 <div class="exercise"><strong>問題1</strong><p>1から30までの和を求める。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(\dfrac{30\cdot31}{2}=\boxed{465}\)</p></details></div>
 <div class="exercise"><strong>問題2</strong><p>\(\sum\limits_{k=1}^{12}(2k+3)\) を計算せよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(2\cdot\dfrac{12\cdot13}{2}+3\cdot12=156+36=\boxed{192}\)</p></details></div>
 <div class="exercise"><strong>問題3</strong><p>\(\sum\limits_{k=1}^{6}k^2\) を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(\dfrac{6\cdot7\cdot13}{6}=\boxed{91}\)</p></details></div>
@@ -200,11 +204,34 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <script>
 (function(){'use strict';
 const kind=document.getElementById('kind'), count=document.getElementById('count'), nval=document.getElementById('nval'), bars=document.getElementById('bars'), sum=document.getElementById('summation'), expansion=document.getElementById('expansion');
-const svgNS='http://www.w3.org/2000/svg';
-function node(tag,attrs,content){const v=document.createElementNS(svgNS,tag);Object.keys(attrs).forEach(k=>v.setAttribute(k,String(attrs[k])));if(content!==undefined)v.textContent=String(content);bars.appendChild(v);return v;}
-function render(){const n=Number(count.value), t=kind.value, fn=t==='odd'?k=>2*k-1:t==='square'?k=>k*k:t==='linear'?k=>2*k+1:k=>k;const vals=Array.from({length:n},(_,i)=>fn(i+1)), total=vals.reduce((a,b)=>a+b,0), top=Math.max(...vals,1);nval.textContent=n;bars.replaceChildren();
-node('line',{x1:34,y1:215,x2:658,y2:215,stroke:'#8aa6bb','stroke-width':2}); const width=590/n; vals.forEach((v,i)=>{const h=Math.round(v/top*165), x=43+i*width, w=Math.max(8,width-9);node('rect',{x,y:215-h,width:w,height:h,rx:3,fill:i===n-1?'#e59a39':'#428ac6'});node('text',{x:x+w/2,y:205-h,'text-anchor':'middle','font-size':Math.max(10,Math.min(16,width*.3)),fill:'#143f62'},v);node('text',{x:x+w/2,y:235,'text-anchor':'middle','font-size':Math.max(10,Math.min(15,width*.3)),fill:'#3e5c74'},i+1);});
-node('text',{x:38,y:252,'font-size':12,fill:'#506b82'},'横軸：k（項の番号）／棒の高さ：各項の値');
+function barPart(className, fraction) {
+  const part = document.createElement('span');
+  part.className = className;
+  part.style.width = (100 * fraction) + '%';
+  return part;
+}
+function render(){const n=Number(count.value), t=kind.value, fn=t==='odd'?k=>2*k-1:t==='square'?k=>k*k:t==='linear'?k=>2*k+1:k=>k;const vals=Array.from({length:n},(_,i)=>fn(i+1)), total=vals.reduce((a,b)=>a+b,0);
+nval.textContent=n;
+bars.replaceChildren();
+let previous = 0;
+vals.forEach((value, index) => {
+  const subtotal = previous + value;
+  const row = document.createElement('div');
+  row.className = 'sum-row';
+  row.setAttribute('role','listitem');
+  const term = document.createElement('span');
+  term.textContent = '第' + (index + 1) + '項';
+  const track = document.createElement('span');
+  track.className = 'sum-track';
+  track.setAttribute('aria-hidden','true');
+  track.append(barPart('sum-old',previous/total),barPart('sum-added',value/total));
+  const equation = document.createElement('span');
+  equation.className = 'sum-eq';
+  equation.textContent = previous + '＋' + value + '＝' + subtotal;
+  row.append(term,track,equation);
+  bars.appendChild(row);
+  previous = subtotal;
+});
 const ns='http://www.w3.org/1998/Math/MathML';
 function math(name, value){const item=document.createElementNS(ns,name);if(value!==undefined)item.textContent=value;if(name==='mo' && (value==='(' || value===')'))item.setAttribute('stretchy','false');return item;}
 const expression=math('math');expression.setAttribute('display','block');
