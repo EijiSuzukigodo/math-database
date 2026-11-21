@@ -141,49 +141,19 @@ body .formula math,body .answer math,body .example math {font-size:16px!importan
  body .formula,body .equation,body .result,body .step,
  body .math-display,body .math-box,body .paper .formula {font-size:16px!important;}
 }
-</style><style id="mathb-formula-only-unified-20261121">
-/* 数学B 数列9教材：数式だけを「数学的帰納法」の大きめの表示へ統一。
-   本文の日本語、見出し、図、スライダーの文字サイズには触れない。 */
-:root { --mathb-math-size: 22px; }
-/* Native MathML (数列・等差数列・等比数列) */
-body math,
-body math[display="inline"],
-body math[display="block"],
-body .formula math,
-body .answer math,
-body .example math {
-  font-size:var(--mathb-math-size)!important;
-  font-weight:normal;
-}
-/* MathJax SVG and CHTML (Σ・階差数列・漸化式・数学的帰納法) */
-body mjx-container,
-body mjx-container[jax="SVG"],
-body mjx-container[jax="CHTML"],
-body .formula mjx-container,
-body .answer mjx-container,
-body .example mjx-container,
-body .step mjx-container,
-body .result mjx-container,
-body mjx-container[display="true"] {
-  font-size:var(--mathb-math-size)!important;
-  font-weight:normal;
-}
-/* MathJax svg width/height are computed in ex units; don't force 100% width */
-body mjx-container[jax="SVG"] > svg {
-  max-width:none!important;
-  width:auto;
-}
-body mjx-container[display="true"] {
-  max-width:100%;
-  overflow-x:auto;
-  overflow-y:hidden;
-}
-/* 数式が長い場合は折り潰さず横スクロール */
-body .formula,body .equation,body .math-scroll {
-  max-width:100%;
-  overflow-x:auto;
-}
-</style></head><body>
+</style>
+<style id="mathb-sigma-approved-math-size">
+/* 数式だけを調整。日本語・操作部・図のサイズは変更しない。 */
+body mjx-container[jax="CHTML"],body mjx-container[jax="SVG"],
+body .paper mjx-container,body .formula mjx-container,
+body .answer mjx-container,body .example mjx-container,
+body .step mjx-container,body mjx-container[display="true"] {font-size:113%!important;}
+body math[display="inline"],body math[display="block"],
+body .formula math,body .answer math,body .example math {font-size:18.08px!important;}
+/* 数式が横に長い場合は横スクロールで読めるようにする。 */
+body mjx-container[display="true"] {max-width:100%;overflow-x:auto;overflow-y:hidden;}
+</style>
+</head><body>
 <header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>和の記号Σ</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" data-hs-lesson="" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>Σで和を表し、規則を使って計算する</h2><p>どの数からどの数まで、何を足すのかを読み取り、足し算とΣの式を行き来する。平方数・立方数の和の公式が成り立つ理由を確かめ、複数の公式を組み合わせて和を求める。</p></section>
 <nav aria-label="授業の進め方" class="hs-study-nav">
 <a href="#hs-explanation">説明</a>
