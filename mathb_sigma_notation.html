@@ -83,12 +83,12 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <article class="paper">
 <h2 id="hs-explanation">1．Σから足し算へ</h2>
 <p>ある展示室には、2番から5番までの棚に順に5冊、7冊、9冊、11冊の本がある。棚番号を \(k\) とすれば、その棚の冊数は \(2k+1\) である。これらの棚の合計を、一つの式で表してみよう。</p>
-<div class="formula">\[\sum_{k=2}^{5}(2k+1)=5+7+9+11=32\]</div>
+<div class="formula">\[\sum\limits_{k=2}^{5}(2k+1)=5+7+9+11=32\]</div>
 <p>Σ（シグマ）の<strong>下</strong>の \(k=2\) は最初の番号、<strong>上</strong>の5は最後の番号、<strong>右</strong>の \(2k+1\) は各回に足す数である。2から5まで両端を含めて数えるので、項数は \(5-2+1=4\) である。</p>
-<div class="formula">\[\sum_{k=p}^{q}a_k=a_p+a_{p+1}+\cdots+a_q\qquad(p\le q)\]</div>
+<div class="formula">\[\sum\limits_{k=p}^{q}a_k=a_p+a_{p+1}+\cdots+a_q\qquad(p\leqq q)\]</div>
 <h2>2．足し算からΣへ</h2><p>逆に、\(4+7+10+13+16\) をΣで表すには、まず左から順に \(k=1,2,3,4,5\) と番号をつける。第 \(k\) 項は \(4+3(k-1)=3k+1\) である。</p>
-<div class="formula">\[4+7+10+13+16=\sum_{k=1}^{5}(3k+1)\]</div>
-<p>番号に使う文字は変えてよい。例えば \(\sum_{j=1}^{5}(3j+1)\) も同じ和である。ただし、番号を0から始めるなら各項の式も変わり、\(\sum_{j=0}^{4}(3j+4)\) になる。</p>
+<div class="formula">\[4+7+10+13+16=\sum\limits_{k=1}^{5}(3k+1)\]</div>
+<p>番号に使う文字は変えてよい。例えば \(\sum\limits_{j=1}^{5}(3j+1)\) も同じ和である。ただし、番号を0から始めるなら各項の式も変わり、\(\sum\limits_{j=0}^{4}(3j+4)\) になる。</p>
 <h2>3．動く図でΣを理解する</h2>
 <div class="sim"><h3>項数を動かして、棒の高さと合計を確認</h3>
 <p class="small">各項の式を選んで、項数を一つ増やしてみよう。右端の棒の値だけ合計が増える。</p>
@@ -98,56 +98,102 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <div aria-live="polite" class="result" id="summation"></div><p class="small muted" id="expansion"></p>
 </div>
 <h2>4．Σの性質と和の公式</h2>
-<h3>和を分ける・定数をくくる</h3><p>同じ範囲の項を足すとき、足し算の順序を変えて、同じ種類の項をまとめることができる。例えば \((2a_1+b_1)+(2a_2+b_2)=2(a_1+a_2)+(b_1+b_2)\) である。項がいくつあっても同様である。</p>
-<div class="formula">\[\sum_{k=1}^{n}(ca_k+db_k)=c\sum_{k=1}^{n}a_k+d\sum_{k=1}^{n}b_k\]</div>
-<p>ここで \(c,d\) は \(k\) によらない定数である。定数だけを足す場合にも項数を数える。例えば \(\sum_{k=3}^{7}4=4\times5=20\) である。</p>
+<h3>① 和の公式</h3>
+<div class="formula">\[\sum\limits_{k=1}^n(a_k+b_k)=\sum\limits_{k=1}^n a_k+\sum\limits_{k=1}^n b_k\]</div>
+<p><strong>証明</strong>　左辺を開き、足す順序を変えて、同じ数列の項を集める。</p>
+<div class="formula">\[\begin{aligned}
+ &(a_1+b_1)+\cdots+(a_n+b_n)\\
+ &=(a_1+\cdots+a_n)+(b_1+\cdots+b_n).
+\end{aligned}\]</div>
+<h3>② 差の公式</h3>
+<div class="formula">\[\sum\limits_{k=1}^n(a_k-b_k)=\sum\limits_{k=1}^n a_k-\sum\limits_{k=1}^n b_k\]</div>
+<p><strong>証明</strong>　各括弧を開くと、どの \(b_k\) にも負の符号がつく。それらを一つの括弧にまとめる。</p>
+<div class="formula">\[\begin{aligned}
+ &(a_1-b_1)+\cdots+(a_n-b_n)\\
+ &=(a_1+\cdots+a_n)-(b_1+\cdots+b_n).
+\end{aligned}\]</div>
+<h3>③ 実数倍の公式</h3><p>\(c\) を項番号 \(k\) によらない実数とする。</p>
+<div class="formula">\[\sum\limits_{k=1}^n ca_k=c\sum\limits_{k=1}^n a_k\]</div>
+<p><strong>証明</strong>　\(ca_1+ca_2+\cdots+ca_n=c(a_1+a_2+\cdots+a_n)\) と、すべての項に共通な \(c\) をくくればよい。</p>
+<h3>④ 和と実数倍を組み合わせた公式</h3><p>\(c,d\) を項番号によらない実数とする。①で和を二つに分け、③でそれぞれの係数を外に出すと、次の公式が得られる。</p>
+<div class="formula">\[\begin{aligned}
+ \sum\limits_{k=1}^n(ca_k+db_k)
+ &=\sum\limits_{k=1}^n ca_k+\sum\limits_{k=1}^n db_k\\
+ &=c\sum\limits_{k=1}^n a_k+d\sum\limits_{k=1}^n b_k.
+\end{aligned}\]</div>
+<h3>注意　積や商をそのまま分けることはできない</h3><p>2組の数 \((a_1,b_1)=(6,2),\ (a_2,b_2)=(12,3)\) で確かめる。</p>
+<div class="formula">\[\underbrace{6\times2+12\times3}_{\text{各項の積を足す}}=48\ne90=\underbrace{(6+12)(2+3)}_{\text{二つの和を掛ける}}\]</div>
+<div class="formula">\[\underbrace{\frac62+\frac{12}3}_{\text{各項の商を足す}}=7\ne\frac{18}{5}=\underbrace{\frac{6+12}{2+3}}_{\text{二つの和を割る}}\]</div>
+<p>したがって、この例ではΣで書いても、次の二つはそれぞれ不等である。</p>
+<div class="formula">\[\sum\limits_{k=1}^2 a_k b_k\ne \left(\sum\limits_{k=1}^2 a_k\right)\left(\sum\limits_{k=1}^2 b_k\right)\]</div>
+<div class="formula">\[\sum\limits_{k=1}^2\frac{a_k}{b_k}\ne\frac{\displaystyle\sum\limits_{k=1}^2 a_k}{\displaystyle\sum\limits_{k=1}^2 b_k}\]</div>
+<p>例えば積では、右辺を展開すると \(6\times3\) と \(12\times2\) まで現れる。左辺は同じ番号どうしの積だけを足している。</p>
 <h3>基本公式の一覧</h3>
-<div class="formula">\[\sum_{k=1}^n c=nc,\qquad\sum_{k=1}^n k=\frac{n(n+1)}2\]</div>
-<div class="formula">\[\sum_{k=1}^n k^2=\frac{n(n+1)(2n+1)}6\]</div>
-<div class="formula">\[\sum_{k=1}^n k^3=\left(\frac{n(n+1)}2\right)^2\]</div>
-<p>自然数の和は、初項1、末項 \(n\)、項数 \(n\) の等差数列の和である。例えば平方数の和は \(\sum_{k=1}^4 k^2=30\)、立方数の和は \(\sum_{k=1}^4 k^3=10^2=100\) となる。</p>
-<h3>平方数の和が求まる理由</h3><p>\((k+1)^3-k^3=3k^2+3k+1\) の両辺を \(k=1\) から \(n\) まで足す。左辺では \(2^3-1^3,\ 3^3-2^3,\ldots\) のように、前の項の加える立方数と次の項で引く立方数が打ち消し合う。</p>
-<div class="formula">\[(n+1)^3-1=3\sum_{k=1}^n k^2+3\frac{n(n+1)}2+n\]</div>
-<p>求めたい和だけを残して整理すると、\(3\sum_{k=1}^n k^2=\frac{n(n+1)(2n+1)}2\) となる。両辺を3で割れば平方数の和の公式を得る。</p>
+<div class="formula">\[\sum\limits_{k=1}^n c=nc,\qquad\sum\limits_{k=1}^n k=\frac{n(n+1)}2\]</div>
+<div class="formula">\[\sum\limits_{k=1}^n k^2=\frac{n(n+1)(2n+1)}6\]</div>
+<div class="formula">\[\sum\limits_{k=1}^n k^3=\left\{\frac{n(n+1)}2\right\}^2\]</div>
+<p>自然数の和は、初項1、末項 \(n\)、項数 \(n\) の等差数列の和である。例えば平方数の和は \(\sum\limits_{k=1}^4 k^2=30\)、立方数の和は \(\sum\limits_{k=1}^4 k^3=10^2=100\) となる。</p>
+<h3>平方数の和の証明</h3><p>\(S=\sum\limits_{k=1}^n k^2\) とおく。恒等式 \((k+1)^3-k^3=3k^2+3k+1\) に \(k=1,2,\ldots,n\) を代入し、等号をそろえて縦に足す。</p>
+<div class="formula">\[\begin{array}{r@{\;}r@{\;}c@{\;}l}
+ &2^3-1^3 &=&3\cdot1^2+3\cdot1+1\\
+ &3^3-2^3 &=&3\cdot2^2+3\cdot2+1\\
+ &\vdots &&\quad\vdots\\
+ +\;&(n+1)^3-n^3 &=&3n^2+3n+1\\ \hline
+ &(n+1)^3-1 &=&3S+3\displaystyle\sum\limits_{k=1}^n k+n
+\end{array}\]</div>
+<p>左辺では、上の行の \(+2^3\) と次の行の \(-2^3\) が消える。同様に途中の立方が消え、両端だけが残る。右辺の最後の \(n\) は、各行の1を \(n\) 個足した値である。</p>
+<div class="formula">\[\begin{aligned}
+ 3S&=(n+1)^3-1-\frac{3n(n+1)}2-n\\
+ &=\frac{n(n+1)(2n+1)}2,\\
+ S&=\frac{n(n+1)(2n+1)}6.
+\end{aligned}\]</div>
 <h3>立方数の和が平方になる理由</h3><p>\(T_k=1+2+\cdots+k\)、\(T_0=0\) とおく。\(T_k-T_{k-1}=k\) であり、\(T_k+T_{k-1}=\frac{k(k+1)+k(k-1)}2=k^2\) である。したがって、平方の差をとると次の式になる。</p>
 <div class="formula">\[T_k^2-T_{k-1}^2=(T_k-T_{k-1})(T_k+T_{k-1})=k^3\]</div>
 <p>この式を \(k=1\) から \(n\) まで足すと途中の平方が消え、\(1^3+2^3+\cdots+n^3=T_n^2\) となる。</p>
-<h3>等比数列の和をΣで表す</h3><p>\(\sum_{k=0}^{n-1}ar^k\) は \(a\) から始まる \(n\) 項の和である。\(r\ne1\) のときは \(\frac{a(1-r^n)}{1-r}\)、\(r=1\) のときは \(na\) である。</p>
+<h3>等比数列の和をΣで表す</h3><p>\(\sum\limits_{k=0}^{n-1}ar^k\) は \(a\) から始まる \(n\) 項の和である。\(r\ne1\) のときは \(\frac{a(1-r^n)}{1-r}\)、\(r=1\) のときは \(na\) である。</p>
 <h2>5．計算の工夫</h2>
 <h3>① 区間の途中から始まる場合</h3>
-<div class="formula">\[\sum_{k=p}^{q}a_k=\sum_{k=1}^{q}a_k-\sum_{k=1}^{p-1}a_k\quad(1\leqq p\leqq q)\]</div>
-<p>例えば \(\sum_{k=5}^{10}k\) は、1から10の和から1から4の和を引く。</p>
+<div class="formula">\[\sum\limits_{k=p}^{q}a_k=\sum\limits_{k=1}^{q}a_k-\sum\limits_{k=1}^{p-1}a_k\quad(1\leqq p\leqq q)\]</div>
+<p>例えば \(\sum\limits_{k=5}^{10}k\) は、1から10の和から1から4の和を引く。</p>
 <h3>② 添字をずらす場合</h3>
-<div class="formula">\[\sum_{k=2}^{n+1}(k-1)^2=\sum_{j=1}^{n}j^2\]</div>
+<div class="formula">\[\sum\limits_{k=2}^{n+1}(k-1)^2=\sum\limits_{j=1}^{n}j^2\]</div>
 <p>j＝k−1 と置くと、<strong>上下の範囲も一緒に変更</strong>する。</p>
 <h3>③ 隣り合う差の和</h3>
-<div class="formula">\[\sum_{k=1}^{n}\{(k+1)^2-k^2\}=(n+1)^2-1\]</div>
+<div class="formula">\[\sum\limits_{k=1}^{n}\{(k+1)^2-k^2\}=(n+1)^2-1\]</div>
 <p>途中の項が打ち消し合う「望遠鏡型（階差の和）」は、次の階差数列にもつながる。</p>
 <h2 id="hs-examples">6．解説付き例題</h2>
 <div class="example"><strong>例題1</strong><p>1から20までの和を求めよ。</p></div>
-<div class="answer"><strong>解答と解説</strong><div class="formula">\[\sum_{k=1}^{20}k=\frac{20\cdot21}{2}=210\]</div><p>20を n に代入する。</p></div>
-<div class="example"><strong>例題2</strong><p>\(\sum_{k=1}^{10}(3k-2)\) を求めよ。</p></div>
-<div class="answer"><strong>解答と解説</strong><div class="formula">\[3\sum_{k=1}^{10}k-2\sum_{k=1}^{10}1=3\cdot55-2\cdot10=145\]</div><p>Σを2つに分け、定数部分の項数を忘れずに数える。</p></div>
-<div class="example"><strong>例題3</strong><p>\(\sum_{k=4}^{8}k^2\) を求めよ。</p></div>
-<div class="answer"><strong>解答と解説</strong><div class="formula">\[\sum_{k=1}^{8}k^2-\sum_{k=1}^{3}k^2=204-14=190\]</div><p>途中から始まるので最初の3項を引く。</p></div>
-<div class="example"><strong>例題4</strong><p>\(\sum_{k=1}^{n}(2k-1)\) を n で表す。</p></div>
+<div class="answer"><strong>解答と解説</strong><div class="formula">\[\sum\limits_{k=1}^{20}k=\frac{20\cdot21}{2}=210\]</div><p>20を n に代入する。</p></div>
+<div class="example"><strong>例題2</strong><p>\(\sum\limits_{k=1}^{10}(3k-2)\) を求めよ。</p></div>
+<div class="answer"><strong>解答と解説</strong><div class="formula">\[3\sum\limits_{k=1}^{10}k-2\sum\limits_{k=1}^{10}1=3\cdot55-2\cdot10=145\]</div><p>Σを2つに分け、定数部分の項数を忘れずに数える。</p></div>
+<div class="example"><strong>例題3</strong><p>\(\sum\limits_{k=4}^{8}k^2\) を求めよ。</p></div>
+<div class="answer"><strong>解答と解説</strong><p>第1項から第8項までの和から、第1項から第3項までの和を引く。上と下の同じ項が消える。</p><div class="formula">\[\begin{array}{r|rrrrrrrr}
+ &1^2&+2^2&+3^2&+4^2&+5^2&+6^2&+7^2&+8^2\\
+ -&1^2&+2^2&+3^2&&&&&\\ \hline
+ &&&&4^2&+5^2&+6^2&+7^2&+8^2
+\end{array}\]</div><div class="formula">\[\begin{aligned}\sum\limits_{k=4}^8 k^2
+ &=\sum\limits_{k=1}^8 k^2-\sum\limits_{k=1}^3 k^2\\
+ &=\frac{8\cdot9\cdot17}{6}-\frac{3\cdot4\cdot7}{6}\\
+ &=204-14=190.
+\end{aligned}\]</div><p>途中から始まるので最初の3項を引く。</p></div>
+<div class="example"><strong>例題4</strong><p>\(\sum\limits_{k=1}^{n}(2k-1)\) を n で表す。</p></div>
 <div class="answer"><strong>解答と解説</strong><div class="formula">\[2\cdot\frac{n(n+1)}2-n=n^2\]</div><p>最初の n 個の奇数の和は n² になる。</p></div>
-<div class="example"><strong>例題5</strong><p>\(\sum_{k=0}^{5}2^k\) を求めよ。</p></div>
+<div class="example"><strong>例題5</strong><p>\(\sum\limits_{k=0}^{5}2^k\) を求めよ。</p></div>
 <div class="answer"><strong>解答と解説</strong><div class="formula">\[\frac{2^6-1}{2-1}=63\]</div><p>k は0から5までの6項である。</p></div>
-<div class="example"><strong>例題6　積を展開して和を求める</strong><p>\(\sum_{k=1}^n k(k+2)\) を求めよ。</p></div>
-<div class="answer"><strong>解答と解説</strong><p>各項を \(k^2+2k\) と書くと、平方数の和と自然数の和に分けられる。</p><div class="formula">\[\sum_{k=1}^n k(k+2)=\frac{n(n+1)(2n+1)}6+n(n+1)=\frac{n(n+1)(2n+7)}6\]</div></div>
+<div class="example"><strong>例題6　積を展開して和を求める</strong><p>\(\sum\limits_{k=1}^n k(k+2)\) を求めよ。</p></div>
+<div class="answer"><strong>解答と解説</strong><p>各項を \(k^2+2k\) と書くと、平方数の和と自然数の和に分けられる。</p><div class="formula">\[\sum\limits_{k=1}^n k(k+2)=\frac{n(n+1)(2n+1)}6+n(n+1)=\frac{n(n+1)(2n+7)}6\]</div></div>
 <div class="example"><strong>例題7　和でできた数列をもう一度足す</strong><p>第 \(k\) 項が最初の \(k\) 個の偶数の和である数列について、初項から第 \(n\) 項までの和を求めよ。</p></div>
-<div class="answer"><strong>解答と解説</strong><p>この数列の初めの3項は \(2,\ 2+4,\ 2+4+6\)、すなわち \(2,6,12\) である。まず、第 \(k\) 項の中で動く番号を \(j\) として、1項分の値を求める。</p><div class="formula">\[a_k=\sum_{j=1}^k 2j=k(k+1)\]</div><p>次に、こうして求めた項を \(k=1\) から \(n\) まで足す。</p><div class="formula">\[\sum_{k=1}^n a_k=\sum_{k=1}^n(k^2+k)=\frac{n(n+1)(n+2)}3\]</div><p>\(n=3\) を代入すると20となり、\(2+6+12=20\) と一致する。</p></div>
-<p class="note">部分分数分解の発展例題は、<a href="mathb_sums_of_sequences.html">「いろいろな数列の和」</a> のページに掲載している。</p><div class="example"><strong>例題8　立方数の和を利用する</strong><p>\(\sum_{k=1}^n (2k^3-k)\) を求めよ。</p></div>
-<div class="answer"><strong>解答と解説</strong><p>自然数の和を \(T=\frac{n(n+1)}2\) とおくと、立方数の和は \(T^2\) である。</p><div class="formula">\[\sum_{k=1}^n(2k^3-k)=2T^2-T=T(2T-1)=\frac{n(n+1)}2\{n(n+1)-1\}\]</div></div>
-<h2 id="hs-practice">7．練習問題（解答・解説付き）</h2><div class="exercise"><strong>応用　ずらして引く</strong><p>\(\displaystyle\sum_{k=1}^{n}k2^{k-1}\)</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>和を \(S\) とすると、\(2S-S=n2^n-(1+2+\cdots+2^{n-1})\) となる。括弧内は \(2^n-1\) なので、答えは  \((n-1)2^n+1\)。</p></details></div><div class="exercise"><strong>確認　式を分ける</strong><p>\(\displaystyle\sum_{k=1}^{n}(3k^2-2k)\)</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(3\frac{n(n+1)(2n+1)}6-2\frac{n(n+1)}2=\frac{n(n+1)(2n-1)}2\)。</p></details></div><div class="exercise"><strong>確認　公式を使う</strong><p>\(\displaystyle\sum_{k=1}^{20}k^2\)</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(\frac{20\cdot21\cdot41}{6}=2870\)。</p></details></div><div class="exercise"><strong>確認　直接足す</strong><p>\(1^2+2^2+3^2+4^2+5^2\)</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(1+4+9+16+25=55\)。</p></details></div>
+<div class="answer"><strong>解答と解説</strong><p>この数列の初めの3項は \(2,\ 2+4,\ 2+4+6\)、すなわち \(2,6,12\) である。まず、第 \(k\) 項の中で動く番号を \(j\) として、1項分の値を求める。</p><div class="formula">\[a_k=\sum\limits_{j=1}^k 2j=k(k+1)\]</div><p>次に、こうして求めた項を \(k=1\) から \(n\) まで足す。</p><div class="formula">\[\sum\limits_{k=1}^n a_k=\sum\limits_{k=1}^n(k^2+k)=\frac{n(n+1)(n+2)}3\]</div><p>\(n=3\) を代入すると20となり、\(2+6+12=20\) と一致する。</p></div>
+<p class="note">部分分数分解の発展例題は、<a href="mathb_sums_of_sequences.html">「いろいろな数列の和」</a> のページに掲載している。</p><div class="example"><strong>例題8　立方数の和を利用する</strong><p>\(\sum\limits_{k=1}^n (2k^3-k)\) を求めよ。</p></div>
+<div class="answer"><strong>解答と解説</strong><p>自然数の和を \(T=\frac{n(n+1)}2\) とおくと、立方数の和は \(T^2\) である。</p><div class="formula">\[\sum\limits_{k=1}^n(2k^3-k)=2T^2-T=T(2T-1)=\frac{n(n+1)}2\{n(n+1)-1\}\]</div></div>
+<h2 id="hs-practice">7．練習問題（解答・解説付き）</h2><div class="exercise"><strong>応用　ずらして引く</strong><p>\(\displaystyle\sum\limits_{k=1}^{n}k2^{k-1}\)</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>和を \(S\) とすると、\(2S-S=n2^n-(1+2+\cdots+2^{n-1})\) となる。括弧内は \(2^n-1\) なので、答えは  \((n-1)2^n+1\)。</p></details></div><div class="exercise"><strong>確認　式を分ける</strong><p>\(\displaystyle\sum\limits_{k=1}^{n}(3k^2-2k)\)</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(3\frac{n(n+1)(2n+1)}6-2\frac{n(n+1)}2=\frac{n(n+1)(2n-1)}2\)。</p></details></div><div class="exercise"><strong>確認　公式を使う</strong><p>\(\displaystyle\sum\limits_{k=1}^{20}k^2\)</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(\frac{20\cdot21\cdot41}{6}=2870\)。</p></details></div><div class="exercise"><strong>確認　直接足す</strong><p>\(1^2+2^2+3^2+4^2+5^2\)</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(1+4+9+16+25=55\)。</p></details></div>
 <div class="exercise"><strong>問題1</strong><p>1から30までの和を求める。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(\dfrac{30\cdot31}{2}=\boxed{465}\)</p></details></div>
-<div class="exercise"><strong>問題2</strong><p>\(\sum_{k=1}^{12}(2k+3)\) を計算せよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(2\cdot\dfrac{12\cdot13}{2}+3\cdot12=156+36=\boxed{192}\)</p></details></div>
-<div class="exercise"><strong>問題3</strong><p>\(\sum_{k=1}^{6}k^2\) を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(\dfrac{6\cdot7\cdot13}{6}=\boxed{91}\)</p></details></div>
-<div class="exercise"><strong>問題4</strong><p>\(\sum_{k=3}^{9}(2k-1)\) を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>初項5、末項17、7項なので、\(\dfrac{(5+17)\cdot7}{2}=\boxed{77}\)</p></details></div>
-<div class="exercise"><strong>問題5</strong><p>\(\sum_{k=1}^{n}(k^2+k)\) を n で表せ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(\dfrac{n(n+1)(2n+1)}6+\dfrac{n(n+1)}2=\boxed{\dfrac{n(n+1)(n+2)}3}\)</p></details></div>
-<div class="exercise"><strong>問題6</strong><p>\(\sum_{k=1}^{7}3^{k-1}\) を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>初項1、公比3、7項なので、\(\dfrac{3^7-1}{3-1}=\boxed{1093}\)</p></details></div>
-<div class="exercise"><strong>問題7（発展）</strong><p>\(\sum_{k=1}^{n}\bigl((k+1)^3-k^3\bigr)\) を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>中間の項が相殺され、\(\boxed{(n+1)^3-1}\) である。</p></details></div>
+<div class="exercise"><strong>問題2</strong><p>\(\sum\limits_{k=1}^{12}(2k+3)\) を計算せよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(2\cdot\dfrac{12\cdot13}{2}+3\cdot12=156+36=\boxed{192}\)</p></details></div>
+<div class="exercise"><strong>問題3</strong><p>\(\sum\limits_{k=1}^{6}k^2\) を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(\dfrac{6\cdot7\cdot13}{6}=\boxed{91}\)</p></details></div>
+<div class="exercise"><strong>問題4</strong><p>\(\sum\limits_{k=3}^{9}(2k-1)\) を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>初項5、末項17、7項なので、\(\dfrac{(5+17)\cdot7}{2}=\boxed{77}\)</p></details></div>
+<div class="exercise"><strong>問題5</strong><p>\(\sum\limits_{k=1}^{n}(k^2+k)\) を n で表せ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(\dfrac{n(n+1)(2n+1)}6+\dfrac{n(n+1)}2=\boxed{\dfrac{n(n+1)(n+2)}3}\)</p></details></div>
+<div class="exercise"><strong>問題6</strong><p>\(\sum\limits_{k=1}^{7}3^{k-1}\) を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>初項1、公比3、7項なので、\(\dfrac{3^7-1}{3-1}=\boxed{1093}\)</p></details></div>
+<div class="exercise"><strong>問題7（発展）</strong><p>\(\sum\limits_{k=1}^{n}\bigl((k+1)^3-k^3\bigr)\) を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>中間の項が相殺され、\(\boxed{(n+1)^3-1}\) である。</p></details></div>
 <h2 id="hs-summary">8．まとめ</h2>
 <p>Σは項を指定した範囲で足し合わせる記号である。まず上下の範囲を読み、各項を2〜3個展開して意味を確かめる。自然数・平方数・立方数・等比数列の和を使い分け、定数の個数や添字のずれを確認すると計算ミスが減る。</p>
 </article><nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav></main>
@@ -160,7 +206,7 @@ function render(){const n=Number(count.value), t=kind.value, fn=t==='odd'?k=>2*k
 node('line',{x1:34,y1:215,x2:658,y2:215,stroke:'#8aa6bb','stroke-width':2}); const width=590/n; vals.forEach((v,i)=>{const h=Math.round(v/top*165), x=43+i*width, w=Math.max(8,width-9);node('rect',{x,y:215-h,width:w,height:h,rx:3,fill:i===n-1?'#e59a39':'#428ac6'});node('text',{x:x+w/2,y:205-h,'text-anchor':'middle','font-size':Math.max(10,Math.min(16,width*.3)),fill:'#143f62'},v);node('text',{x:x+w/2,y:235,'text-anchor':'middle','font-size':Math.max(10,Math.min(15,width*.3)),fill:'#3e5c74'},i+1);});
 node('text',{x:38,y:252,'font-size':12,fill:'#506b82'},'横軸：k（項の番号）／棒の高さ：各項の値');
 const ns='http://www.w3.org/1998/Math/MathML';
-function math(name, value){const item=document.createElementNS(ns,name);if(value!==undefined)item.textContent=value;return item;}
+function math(name, value){const item=document.createElementNS(ns,name);if(value!==undefined)item.textContent=value;if(name==='mo' && (value==='(' || value===')'))item.setAttribute('stretchy','false');return item;}
 const expression=math('math');expression.setAttribute('display','block');
 const sigma=math('munderover'), lower=math('mrow');lower.append(math('mi','k'),math('mo','='),math('mn',1));sigma.append(math('mo','∑'),lower,math('mn',n));
 expression.append(sigma);
