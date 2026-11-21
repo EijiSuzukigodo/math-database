@@ -70,8 +70,8 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 @media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
 </style><link rel="stylesheet" href="lesson_common_style.css">
 <link rel="stylesheet" href="high_school_lesson_reading.css">
-</head><body>
-<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>階差数列</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main" data-hs-lesson=""><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>階差数列</h2><p>隣り合う項の差を取ると規則が見えることがあります。</p><p class="hs-outcome"><strong>この授業でできるようになること</strong><br>隣り合う項の差を求め、階差の和から元の数列の一般項を求める。</p></section>
+<style>html body{font-family:"Times New Roman","Hiragino Mincho ProN","Yu Mincho","Noto Serif CJK JP",serif!important}.diff-strip{overflow-x:auto}.diff-strip table{border-collapse:collapse;width:100%;text-align:center}.diff-strip caption{text-align:left;font-weight:bold}.diff-strip td,.diff-strip th{padding:.3em;border-bottom:1px solid #c5d8e6;white-space:nowrap}.diff-strip tr:last-child{background:#edf7f1;color:#215e44}.control output{font:inherit}.answer{margin:7px 0 19px}</style></head><body>
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>階差数列</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main" data-hs-lesson=""><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>階差の規則を見つけ、元の数列の一般項を求める</h2><p>隣り合う項の間に差を書き込み、初項から何回進めば目的の項に届くかを調べる。さらに、前の項までの和と今回の和を比べ、最後に加えた1項を取り出す。</p></section>
 <nav class="hs-study-nav" aria-label="授業の進め方">
 <a href="#hs-explanation">説明</a>
 <a href="#hs-examples">例題と解説</a>
@@ -79,22 +79,26 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <a href="#hs-summary">まとめ</a></nav>
 
 <article class="paper">
-<h2 id="hs-explanation">1．基本事項</h2>
-<p>隣り合う項の差を取ると規則が見えることがあります。数列 \(\{a_n\}\) から作る \(\{b_n\}\) を<strong>階差数列</strong>といいます。</p>
-<div class="formula">\[\boxed{b_n=a_{n+1}-a_n}\quad(n=1,2,3,\ldots)\]</div>
-<p>例えば \(2,5,10,17,26,\ldots\) なら、隣り合う項の差は \(3,5,7,9,\ldots\) です。元の数列が複雑でも、階差は簡単な等差数列になることがあります。</p>
-<div class="note">項数の関係に注意：元の数列を最初から \(N\) 項並べると、その間の差は <strong>\(N-1\) 個</strong>です。</div>
-<h2>考え方</h2>
-<p>まず条件と求める量を明確にし、上の関係式を使える形に整理します。等号変形や定義域などの条件も確かめましょう。</p>
-<h3>差を足すと途中の項が消える（望遠鏡和）</h3>
-<div class="formula">\[\begin{aligned}b_1&amp;=a_2-a_1\\b_2&amp;=a_3-a_2\\&amp;\ \vdots\\b_{n-1}&amp;=a_n-a_{n-1}\end{aligned}\]</div>
-<p>これらをすべて足すと途中の項が打ち消し合います。</p>
-<div class="formula">\[b_1+b_2+\cdots+b_{n-1}=a_n-a_1\]</div>
-<div class="formula">\[\boxed{a_n=a_1+\sum_{k=1}^{n-1}b_k}\quad(n\geqq 2)\]</div>
-<p>したがって「最初の項」と「階差数列」が分かれば、元の数列を求められます。</p>
-<div class="warning"><strong>重要：</strong> 和の上端は \(n\) ではなく \(n-1\) です。また、式を \(n\geqq2\) で求めた場合は、\(n=1\) にも成り立つか別に確かめます。</div>
-<h2>動く教材：階差数列を作ってみよう</h2>
-<p>初項 \(a_1\) と階差の形 \(b_n=pn+q\)、表示する項数を変えてください。青が元の数列、緑が隣り合う差です。</p>
+<h2 id="hs-explanation">1．隣り合う項の差を読む</h2>
+<p>数列 \(2,\ 5,\ 10,\ 17,\ 26,\ldots\) を見ると、増え方は一定ではない。そこで、次の項へ進むたびに「いくつ増えたか」を、項と項の間に書いてみよう。</p>
+<div class="diff-strip"><table><caption>5個の項の間には、4個の差がある</caption><tbody><tr><th scope="row">元の項</th><td>2</td><td></td><td>5</td><td></td><td>10</td><td></td><td>17</td><td></td><td>26</td></tr><tr><th scope="row">次の項への差</th><td></td><td>+3</td><td></td><td>+5</td><td></td><td>+7</td><td></td><td>+9</td><td></td></tr></tbody></table></div>
+<p>例えば、第2項から第3項への差は \(10-5=5\) である。このように、後ろの項からすぐ前の項を引いた値を順に並べた数列を<strong>階差数列</strong>という。元の数列を \(\{a_n\}\)、階差数列を \(\{b_n\}\) とすると、</p>
+<div class="formula">\[b_n=a_{n+1}-a_n\qquad(n=1,2,3,\ldots)\]</div>
+<p>\(b_2\) の添字2は、<strong>第2項から出発する差</strong>であることを表す。階差が負ならば、その分だけ次の項は小さくなる。</p>
+<h2>2．階差を足して元の項に戻す</h2><p>上の表を逆向きに読んでみよう。第4項にたどり着くには、初項2に最初の3個の階差を足せばよい。</p>
+<div class="formula">\[a_4=2+3+5+7=17\]</div>
+<p>一般に \(n\geqq2\) として、初項から第 \(n\) 項までの差を縦に並べて足す。</p>
+<div class="formula">\[\begin{array}{r@{\quad}rcl}
+ &amp;a_2-a_1&amp;=&amp;b_1\\
+ &amp;a_3-a_2&amp;=&amp;b_2\\
+ &amp;\vdots&amp;&amp;\vdots\\
+ +&amp;a_n-a_{n-1}&amp;=&amp;b_{n-1}\\ \hline
+ &amp;a_n-a_1&amp;=&amp;b_1+\cdots+b_{n-1}
+\end{array}\]</div>
+<p>左辺の \(+a_2\) と \(-a_2\) のように途中の項が消え、最初と最後の項だけが残る。両辺に \(a_1\) を足すと、次の公式になる。</p>
+<div class="formula">\[a_n=a_1+\sum\limits_{k=1}^{n-1}b_k\qquad(n\geqq2)\]</div>
+<p>第 \(n\) 項に着くまでに進むのは \(n-1\) 回である。したがってΣの上端は \(n-1\) である。一般項を求めたら、最後に \(n=1\) を代入し、初項と一致するかを確かめる。</p><h2>3．グラフで階差を確かめる</h2>
+<p>初項 \(a_1\) と階差の形 \(b_n=pn+q\)、表示する項数を変えて確かめよう。まず初項だけを変えると、青の数列全体が上下に動き、緑の階差は同じ値を保つ。</p>
 <div class="viz" id="viz">
 <div class="controls">
 <div class="control"><label for="a1">初項 \(a_1\) <output id="a1v">2</output></label><input id="a1" max="12" min="-8" step="1" type="range" value="2"/></div>
@@ -106,37 +110,52 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <div class="labelrow">階差数列（緑）</div><div class="chips" id="differences"></div>
 <svg aria-label="元の数列と階差を表すグラフ" id="plot" role="img" viewbox="0 0 700 270"><text x="20" y="35">グラフを準備しています</text></svg>
 <div aria-live="polite" class="result" id="calc"></div>
-<p class="legend">青い丸は \((n,a_n)\) です。数列の値が負になっても表示できます。</p>
+<p class="legend">青い丸は \((n,a_n)\) である。数列の値が負になっても表示できる。</p>
 </div>
 <h3>階差が1次式の場合の一般項</h3>
 <p>\(b_n=pn+q\) なら、\(n\geqq2\) において</p>
-<div class="formula">\[\begin{aligned}a_n&amp;=a_1+\sum_{k=1}^{n-1}(pk+q)\\&amp;=a_1+\frac{p(n-1)n}{2}+q(n-1).\end{aligned}\]</div>
-<p>この式は \(n=1\) を代入しても \(a_1\) となるので、\(n=1\) にも成り立ちます。</p>
-<h2 id="hs-examples">解説付き例題</h2>
-<div class="example"><strong>例題1（元の教材の例題）</strong><p>\(a_n=n^2\) の階差数列を求める。</p></div>
-<h3>解答と解説</h3><div class="answer"><p>定義式に \(a_{n+1}\) と \(a_n\) を代入します。</p><div class="formula">\[b_n=(n+1)^2-n^2=2n+1\]</div><p>よって階差数列は \(3,5,7,\ldots\) です。</p></div>
-<div class="example"><strong>例題2（階差から一般項へ）</strong><p>\(a_1=2\)、階差数列が \(b_n=2n+1\) のとき、\(a_n\) を求める。</p></div>
-<div class="answer"><div class="formula">\[\begin{aligned}a_n&amp;=2+\sum_{k=1}^{n-1}(2k+1)\\&amp;=2+n(n-1)+(n-1)\\&amp;=n^2+1.\end{aligned}\]</div><p>\(n=1\) でも \(1^2+1=2=a_1\) なので、すべての自然数 \(n\) で成り立ちます。</p></div>
-<div class="example"><strong>例題3（階差が等比数列）</strong><p>\(a_1=3\)、\(b_n=2^n\) のとき \(a_n\) を求める。</p></div>
-<div class="answer"><div class="formula">\[\begin{aligned}a_n&amp;=3+\sum_{k=1}^{n-1}2^k\\&amp;=3+(2^n-2)\\&amp;=2^n+1.\end{aligned}\]</div><p>\(n=1\) を代入すると \(3\) で、初項とも一致します。</p></div>
-<div class="example"><strong>例題4（階差が2次式）</strong><p>\(a_1=1\)、\(b_n=3n^2+3n+1\) のとき \(a_n\) を求める。</p></div>
-<div class="answer"><p>\(3k^2+3k+1=(k+1)^3-k^3\) に注目すると、</p><div class="formula">\[\begin{aligned}a_n&amp;=1+\sum_{k=1}^{n-1}\big((k+1)^3-k^3\big)\\&amp;=1+(n^3-1)=n^3.\end{aligned}\]</div><p>これは3乗の差を利用した望遠鏡和です。</p></div>
-<div class="example"><strong>例題5（奇数列を階差にもつ数列）</strong><p>\(a_1=4\)、\(b_n=2n-1\) のとき \(a_n\) を求める。</p></div>
-<div class="answer"><div class="formula">\[\begin{aligned}a_n&amp;=4+\sum_{k=1}^{n-1}(2k-1)\\&amp;=4+(n-1)^2.\end{aligned}\]</div><p>最初の数項は \(4,5,8,13,\ldots\) です。</p></div>
-<h2 id="hs-practice">練習問題</h2>
-<div class="exercise"><strong>問題1（元の教材の練習問題）</strong><p>\(a_n=n^2+n\) の階差数列を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(b_n=((n+1)^2+(n+1))-(n^2+n)=2n+2\) です。</p></details></div>
-<div class="exercise"><strong>問題2</strong><p>数列 \(1,4,9,16,25,\ldots\) の階差数列の最初の4項を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(3,5,7,9\) です。</p></details></div>
+<div class="formula">\[\begin{aligned}a_n&amp;=a_1+\sum\limits_{k=1}^{n-1}(pk+q)\\&amp;=a_1+\frac{p(n-1)n}{2}+q(n-1).\end{aligned}\]</div>
+<p>この式は \(n=1\) を代入しても \(a_1\) となるので、\(n=1\) にも成り立つ。</p>
+<h2 id="hs-examples">4．例題と解説</h2>
+<div class="example"><strong>例題1（一般項から階差へ）</strong><p>\(a_n=n^2\) の階差数列を求めよ。</p></div>
+<div class="answer"><strong>解答と解説</strong><p>定義式に \(a_{n+1}\) と \(a_n\) を代入する。</p><div class="formula">\[b_n=(n+1)^2-n^2=2n+1\]</div><p>よって階差数列は \(3,5,7,\ldots\) である。</p></div>
+<div class="example"><strong>例題2（階差から一般項へ）</strong><p>\(a_1=2\)、階差数列が \(b_n=2n+1\) のとき、\(a_n\) を求めよ。</p></div>
+<div class="answer"><strong>解答と解説</strong><div class="formula">\[\begin{aligned}a_n&amp;=2+\sum\limits_{k=1}^{n-1}(2k+1)\\&amp;=2+n(n-1)+(n-1)\\&amp;=n^2+1.\end{aligned}\]</div><p>\(n=1\) でも \(1^2+1=2=a_1\) なので、すべての自然数 \(n\) で成り立つ。</p></div>
+<div class="example"><strong>例題3（階差が等比数列）</strong><p>\(a_1=3\)、\(b_n=2^n\) のとき \(a_n\) を求めよ。</p></div>
+<div class="answer"><strong>解答と解説</strong><div class="formula">\[\begin{aligned}a_n&amp;=3+\sum\limits_{k=1}^{n-1}2^k\\&amp;=3+(2^n-2)\\&amp;=2^n+1.\end{aligned}\]</div><p>\(n=1\) を代入すると \(3\) で、初項とも一致する。</p></div>
+<div class="example"><strong>例題4（階差が2次式）</strong><p>\(a_1=1\)、\(b_n=3n^2+3n+1\) のとき \(a_n\) を求めよ。</p></div>
+<div class="answer"><strong>解答と解説</strong><p>\(3k^2+3k+1=(k+1)^3-k^3\) に注目すると、</p><div class="formula">\[\begin{aligned}a_n&amp;=1+\sum\limits_{k=1}^{n-1}\big((k+1)^3-k^3\big)\\&amp;=1+(n^3-1)=n^3.\end{aligned}\]</div><p>これは3乗の差を利用した望遠鏡和である。</p></div>
+<div class="example"><strong>例題5（奇数列を階差にもつ数列）</strong><p>\(a_1=4\)、\(b_n=2n-1\) のとき \(a_n\) を求めよ。</p></div>
+<div class="answer"><strong>解答と解説</strong><div class="formula">\[\begin{aligned}a_n&amp;=4+\sum\limits_{k=1}^{n-1}(2k-1)\\&amp;=4+(n-1)^2.\end{aligned}\]</div><p>最初の数項は \(4,5,8,13,\ldots\) である。</p></div>
+<h2 id="sum-to-term">5．和から一般項を求める</h2>
+<p>ここまでは、階差を足して元の項に戻した。今度は、初項から第 \(n\) 項までの和 \(S_n\) が分かっているとする。最後に加えた1項は、隣り合う二つの和の差である。</p>
+<div class="formula">\[\begin{aligned}
+ S_n&amp;=(a_1+\cdots+a_{n-1})+a_n,\\
+ S_{n-1}&amp;=\phantom{(}a_1+\cdots+a_{n-1}.
+\end{aligned}\]</div>
+<div class="formula">\[a_1=S_1,\qquad a_n=S_n-S_{n-1}\quad(n\geqq2)\]</div>
+<p>第1項までの和には第1項しか含まれないので、初項は \(S_1\) から直接求める。</p>
+<div class="example"><strong>例題6　初項も同じ式で表せる場合</strong><p>\(S_n=2n^2+n\) のとき、一般項を求めよ。</p></div>
+<div class="answer"><strong>解答と解説</strong><p>初項は \(a_1=S_1=3\) である。\(n\geqq2\) のときは次のように引く。</p>
+<div class="formula">\[\begin{aligned}a_n&amp;=(2n^2+n)-\{2(n-1)^2+(n-1)\}\\&amp;=4n-1.\end{aligned}\]</div>
+<p>\(n=1\) を代入しても3になる。よってすべての自然数 \(n\) について \(a_n=4n-1\) である。</p></div>
+<div class="example"><strong>例題7　初項だけを分ける場合</strong><p>例題6の和に5を加え、\(S_n=2n^2+n+5\) とする。各項も5ずつ増えるだろうか。</p></div>
+<div class="answer"><strong>解答と解説</strong><p>初めの三つの和は \(8,15,26\) である。元の項を取り出すと \(8,\ 15-8=7,\ 26-15=11\) となる。第2項以降では、二つの和の両方にある \(+5\) が引き算で消える。</p>
+<div class="formula">\[a_1=8,\qquad a_n=4n-1\quad(n\geqq2)\]</div><p>増えたのは初項だけである。初項が5増えれば、それを含むすべての和が5増える。</p></div>
+<h2 id="hs-practice">6．練習問題</h2>
+<div class="exercise"><strong>問題1</strong><p>\(a_n=n^2+n\) の階差数列を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(b_n=((n+1)^2+(n+1))-(n^2+n)=2n+2\) である。</p></details></div>
+<div class="exercise"><strong>問題2</strong><p>数列 \(1,4,9,16,25,\ldots\) の階差数列の最初の4項を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(3,5,7,9\) である。</p></details></div>
 <div class="exercise"><strong>問題3</strong><p>\(a_1=5\)、\(b_n=3n+1\) のとき、\(a_n\) を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><div class="formula">\[a_n=5+\frac{3n(n-1)}2+(n-1)=\frac{3n^2-n+8}{2}.\]</div></details></div>
 <div class="exercise"><strong>問題4</strong><p>\(a_1=2\)、\(b_n=3^n\) のとき、\(a_n\) を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><div class="formula">\[a_n=2+\frac{3^n-3}{2}=\frac{3^n+1}{2}.\]</div></details></div>
 <div class="exercise"><strong>問題5</strong><p>\(a_n=n^3\) の階差数列 \(b_n\) を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><div class="formula">\[b_n=(n+1)^3-n^3=3n^2+3n+1.\]</div></details></div>
-<div class="exercise"><strong>問題6</strong><p>\(a_1=1\)、\(b_n=n(n+1)\) のとき、\(a_n\) を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><div class="formula">\[\begin{aligned}a_n&amp;=1+\sum_{k=1}^{n-1}(k^2+k)\\&amp;=1+\frac{(n-1)n(2n-1)}6+\frac{(n-1)n}2\\&amp;=1+\frac{(n-1)n(n+1)}3.\end{aligned}\]</div></details></div>
-<div class="exercise"><strong>問題7（発展）</strong><p>\(a_1=2\)、\(b_n=\frac{1}{n(n+1)}\) のとき、\(a_n\) を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(\frac{1}{k(k+1)}=\frac1k-\frac1{k+1}\) と分解します。</p><div class="formula">\[\begin{aligned}a_n&amp;=2+\sum_{k=1}^{n-1}\left(\frac1k-\frac1{k+1}\right)\\&amp;=2+1-\frac1n=3-\frac1n.\end{aligned}\]</div></details></div>
-<h2>間違えやすいポイント</h2>
-<p>① 差は必ず「後ろの項 − 前の項」です。② 元の数列の初項が必要です。③ 一般項を復元するときの和は \(n-1\) までです。④ 求めた一般項が \(n=1\) で正しいか検算します。</p>
-<h2 id="hs-summary">まとめ</h2>
-<p>隣り合う項の差を取ると規則が見えることがあります。例題で使った考え方を練習問題でも確かめましょう。</p>
-<div class="formula">\[\boxed{b_n=a_{n+1}-a_n}\qquad\boxed{a_n=a_1+\sum_{k=1}^{n-1}b_k\ (n\geqq 2)}\]</div>
-<p>「差をとる → 差の規則を調べる → 和をとって元の数列へ戻す」という流れを身につけましょう。</p>
+<div class="exercise"><strong>問題6</strong><p>\(a_1=1\)、\(b_n=n(n+1)\) のとき、\(a_n\) を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><div class="formula">\[\begin{aligned}a_n&amp;=1+\sum\limits_{k=1}^{n-1}(k^2+k)\\&amp;=1+\frac{(n-1)n(2n-1)}6+\frac{(n-1)n}2\\&amp;=1+\frac{(n-1)n(n+1)}3.\end{aligned}\]</div></details></div>
+<div class="exercise"><strong>問題7（発展）</strong><p>\(a_1=2\)、\(b_n=\frac{1}{n(n+1)}\) のとき、\(a_n\) を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(\frac{1}{k(k+1)}=\frac1k-\frac1{k+1}\) と分解する。</p><div class="formula">\[\begin{aligned}a_n&amp;=2+\sum\limits_{k=1}^{n-1}\left(\frac1k-\frac1{k+1}\right)\\&amp;=2+1-\frac1n=3-\frac1n.\end{aligned}\]</div></details></div>
+<div class="exercise"><strong>問題8　和から項を取り出す</strong><p>\(S_n=2^n+3\) のとき、初項と第2項以降の一般項を求めよ。</p><details><summary>解答・解説を表示</summary><p>\(a_1=S_1=5\) である。\(n\geqq2\) のときは \(a_n=(2^n+3)-(2^{n-1}+3)=2^{n-1}\) である。この式に \(n=1\) を代入すると1になるので、初項5を別に示す。</p></details></div><h3>間違えやすいポイント</h3>
+<p>① 差は必ず「後ろの項 − 前の項」である。② 元の数列の初項が必要である。③ 一般項を復元するときの和は \(n-1\) までである。④ 求めた一般項が \(n=1\) で正しいか検算する。</p>
+<h2 id="hs-summary">7．まとめ</h2>
+<p>隣り合う項の差を並べると階差数列になる。初項に階差を順に足すと、元の数列に戻る。</p>
+<div class="formula">\[\boxed{b_n=a_{n+1}-a_n}\qquad\boxed{a_n=a_1+\sum\limits_{k=1}^{n-1}b_k\ (n\geqq 2)}\]</div>
+<p>和 \(S_n\) から項を求めるときは、\(a_1=S_1\) を先に求め、\(n\geqq2\) で \(a_n=S_n-S_{n-1}\) を用いる。</p>
 </article><nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav></main>
 <script>
 (function(){
