@@ -138,7 +138,12 @@ mjx-container {font-size: 92% !important;}
 .independence-check{background:#f0faf5;border:1px solid #cfe7d8;border-radius:9px;padding:12px 16px;margin:12px 0}
 .independence-check p{margin:7px 0;font-size:15px;overflow-wrap:anywhere}
 @media(max-width:560px){.independence-check p{font-size:13px}}
-</style></head>
+</style><style>/* 第6節の証明に限り、数式全体を周囲の本文に合わせて縮小 */
+.proof-small-sigma .formula mjx-container[display="true"]{font-size:78%!important}
+.proof-small-sigma p mjx-container{font-size:88%!important}
+@media(max-width:600px){.proof-small-sigma .formula mjx-container[display="true"]{font-size:72%!important}}
+</style>
+</head>
 <body>
 <header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>確率変数の和と期待値</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" data-hs-lesson="" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>同時分布から3つの確率分布を作り、期待値の加法性を理解する</h2><p>くじの具体例を通して周辺分布と和の分布を求め、期待値の加法性を確認する。</p><p class="hs-outcome">同時分布表から X・Y・X+Y の確率分布表を作り、それぞれの期待値を計算する力を身につける。</p></section>
 <nav aria-label="授業の進め方" class="hs-study-nav">
@@ -177,7 +182,7 @@ mjx-container {font-size: 92% !important;}
 <div class="example"><strong>確認例（同時分布・周辺分布）</strong><p>\(X,Y\) がそれぞれ0,1をとり、\(P(X=0,Y=0)=\dfrac12\)、\(P(X=0,Y=1)=\dfrac14\)、\(P(X=1,Y=0)=\dfrac14\)、\(P(X=1,Y=1)=0\) とする。\(X,Y\) の周辺分布と \(E(X+Y)\) を求めよ。</p></div>
 <div class="answer"><strong>解答と解説</strong><p>行と列を足すと、\(P(X=0)=P(Y=0)=\dfrac34\)、\(P(X=1)=P(Y=1)=\dfrac14\) です。</p><div class="formula">\[E(X)=\dfrac14,\quad E(Y)=\dfrac14,\quad E(X+Y)=\dfrac12\]</div><p>直接計算しても \(0\cdot\dfrac12+1\cdot\dfrac14+1\cdot\dfrac14+2\cdot0=\dfrac12\) となります。なお、\(P(X=1,Y=1)=0\ne\dfrac1{16}\) なので独立ではありません。</p></div>
 </div><h2>5. 確率変数の和と期待値の基本公式</h2><p>確率変数 \(X,Y\) の和 \(X+Y\) も確率変数です。期待値には次の性質があります。</p><div class="formula">\[E(X+Y)=E(X)+E(Y)\]</div><p>この公式は、<strong>\(X,Y\) が独立でなくても成立</strong>します。定数 \(a,b,c\) に対して、</p><div class="formula">\[E(aX+bY+c)=aE(X)+bE(Y)+c\]</div>
-<h2>6. なぜそうなるのか（同時分布を使った証明）</h2>
+<div class="proof-small-sigma"><h2>6. なぜそうなるのか（同時分布を使った証明）</h2>
 <p>\(X\) が \(x_1,x_2,\ldots,x_n\)、\(Y\) が \(y_1,y_2,\ldots,y_m\) をとり、\(p_{ij}=P(X=x_i,Y=y_j)\) とする。</p>
 <p>同時分布から期待値を計算し、和を2つに分ける。</p>
 <div class="formula">\[\begin{aligned}
@@ -192,7 +197,7 @@ E(X+Y)
 &=E(X)+E(Y).
 \end{aligned}\]</div>
 <p>ここで、\(\displaystyle\sum_{j=1}^{m}p_{ij}=P(X=x_i)\)、\(\displaystyle\sum_{i=1}^{n}p_{ij}=P(Y=y_j)\) はそれぞれ周辺確率である。この証明では独立性を仮定していない。</p>
-<h2>7. 解説付き例題</h2>
+</div><h2>7. 解説付き例題</h2>
 <div class="example"><strong>例題1</strong><p>\(E(X)=3,\ E(Y)=5\) のとき、\(E(X+Y)\) を求めましょう。</p></div><div class="answer"><strong>解答・解説</strong><p>期待値の加法性より、\(E(X+Y)=3+5=8\) です。</p></div>
 <div class="example"><strong>例題2</strong><p>\(E(X)=2,\ E(Y)=-1\) のとき、\(E(3X-2Y+4)\) を求めましょう。</p></div><div class="answer"><strong>解答・解説</strong><div class="formula">\[3E(X)-2E(Y)+4=3\cdot2-2(-1)+4=12\]</div></div>
 <h2 id="hs-practice">8. 練習問題</h2>
