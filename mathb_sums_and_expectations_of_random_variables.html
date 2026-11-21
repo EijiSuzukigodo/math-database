@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <!DOCTYPE html>
 
 <html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>確率変数の和と期待値｜みんなの数学データベース</title>
@@ -67,27 +68,52 @@ body>footer.lesson-standard-footer>div{max-width:970px!important;margin:auto!imp
 /* MathJax SVG may not inherit broad responsive SVG sizing */
 mjx-container svg{width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;display:inline-block!important}
 @media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
-</style><link rel="stylesheet" href="lesson_common_style.css">
-<link rel="stylesheet" href="high_school_lesson_reading.css">
-</head>
+</style><link href="lesson_common_style.css" rel="stylesheet"/>
+<link href="high_school_lesson_reading.css" rel="stylesheet"/>
+<style>/* 数学的帰納法に合わせた数式と日本語のバランス */
+mjx-container {font-size: 92% !important;}
+.formula mjx-container[display="true"] {font-size: 100% !important;}
+.joint-teaching td,.joint-teaching th {padding: 10px 12px;}
+.table-wrap td mjx-container,.table-wrap th mjx-container {font-size: 106% !important;}
+.answer .formula {background:transparent;border:0;padding:4px 0;}
+@media(max-width:600px){.joint-teaching td,.joint-teaching th{padding:7px 9px}.table-wrap table{min-width:0}}
+</style></head>
 <body>
-<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>確率変数の和と期待値</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main" data-hs-lesson=""><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>同時分布から、確率変数の和の期待値まで理解する</h2><p>2つの確率変数が同時にとる値を表に整理し、周辺分布を求め、独立でない場合にも期待値の加法性が成立することを学びます。</p><p class="hs-outcome"><strong>この授業でできるようになること</strong><br>同時分布表を読み、二つの確率変数の和の期待値を求める。</p></section>
-<nav class="hs-study-nav" aria-label="授業の進め方">
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>確率変数の和と期待値</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" data-hs-lesson="" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>同時分布から3つの確率分布を作り、期待値の加法性を理解する</h2><p>くじの具体例を通して周辺分布と和の分布を求め、期待値の加法性を確認する。</p><p class="hs-outcome">同時分布表から X・Y・X+Y の確率分布表を作り、それぞれの期待値を計算する力を身につける。</p></section>
+<nav aria-label="授業の進め方" class="hs-study-nav">
 <a href="#hs-explanation">説明</a>
 <a href="#hs-examples">例題と解説</a>
 <a href="#hs-practice">練習問題</a>
 <a href="#hs-summary">まとめ</a></nav>
-
 <article class="paper">
-<h2 id="hs-explanation">1. 同時分布とは</h2><p>2つの確率変数 \(X,Y\) について、「\(X=x_i\) かつ \(Y=y_j\)」となる確率を <strong>同時確率</strong> といい、\(P(X=x_i,Y=y_j)\) と書きます。すべての組の同時確率を並べたものを <strong>同時分布（同時確率分布）</strong> といいます。</p>
-<div class="formula">\[p_{ij}=P(X=x_i,Y=y_j),\qquad \sum_i\sum_jp_{ij}=1\]</div>
-<h3 id="hs-examples">例：2枚の硬貨</h3><p>硬貨Aと硬貨Bを1枚ずつ投げ、表が出たら1、裏なら0とします。\(X\) を硬貨Aの値、\(Y\) を硬貨Bの値とすると、4通りの結果はいずれも確率 \(\frac14\) です。</p>
-<div class="table-wrap"><table><caption>同時分布表（行：X、列：Y）</caption><thead><tr><th>\(X\backslash Y\)</th><th>\(Y=0\)</th><th>\(Y=1\)</th><th>行の合計</th></tr></thead><tbody><tr><th>\(X=0\)</th><td>\(\frac14\)</td><td>\(\frac14\)</td><td class="total">\(\frac12\)</td></tr><tr><th>\(X=1\)</th><td>\(\frac14\)</td><td>\(\frac14\)</td><td class="total">\(\frac12\)</td></tr><tr><th>列の合計</th><td class="total">\(\frac12\)</td><td class="total">\(\frac12\)</td><td class="total">\(1\)</td></tr></tbody></table></div>
-<p>表の中央の4つが同時確率で、すべて足すと1になります。</p>
-<h2>2. 周辺分布の求め方</h2><p>同時分布表を横に足すと\(X\)の確率分布、縦に足すと\(Y\)の確率分布が得られます。このように一方の確率変数だけについてまとめたものを<strong>周辺分布</strong>といいます。</p>
-<div class="formula">\[P(X=x_i)=\sum_j p_{ij},\qquad P(Y=y_j)=\sum_i p_{ij}\]</div>
-<p>上の例では、\(P(X=0)=\frac14+\frac14=\frac12\)、\(P(Y=1)=\frac14+\frac14=\frac12\)です。</p>
-<h2>3. 動く同時分布表</h2><p>2つの事象の起こりやすさの関係を変えてみましょう。下の例では、\(P(X=1)=P(Y=1)=\frac12\) を保ったまま、\(P(X=1,Y=1)=t\) を変化させます。</p>
+<div class="formula">\[P(X=x_i)=\sum_{j=1}^{m}p_{ij},\qquad P(Y=y_j)=\sum_{i=1}^{n}p_{ij}\]</div>
+<p>各行の和が \(X\) の確率分布、各列の和が \(Y\) の確率分布になる。これを<strong>周辺分布</strong>という。</p>
+<div class="formula">\[\sum_{i=1}^{n}\sum_{j=1}^{m}p_{ij}=1\]</div>
+<p>\(X=x_i\) かつ \(Y=y_j\) となる確率を \(p_{ij}=P(X=x_i,Y=y_j)\) と表す。すべての組の確率を並べた表を<strong>同時分布表</strong>という。</p>
+<h2>2. 同時分布と周辺分布の一般的な表し方</h2>
+<div class="answer"><strong>解答と解説</strong>
+<div class="formula">\[\begin{aligned}E(X)&amp;=0\times\frac45+1\times\frac15=\frac15,\\[5pt]E(Y)&amp;=0\times\frac{28}{45}+1\times\frac{16}{45}+2\times\frac1{45}=\frac25,\\[5pt]E(X+Y)&amp;=0\times\frac7{15}+1\times\frac7{15}+2\times\frac1{15}=\frac35.\end{aligned}\]</div>
+<p>ここで、\(\displaystyle\frac15+\frac25=\frac35\) となり、次の関係が確かめられた。</p>
+<div class="formula">\[\boxed{E(X+Y)=E(X)+E(Y)}\]</div>
+<p>この例では、Aさんの結果によってBさんの当たりやすさが変わる。それでも期待値の和の公式は成り立つ。後でΣを用いて一般の場合を証明する。</p></div>
+<p>各値に、その値をとる確率を掛けて足す。</p><h3>⑤ それぞれの期待値を計算する</h3>
+<div class="table-wrap"><table><tr><th>\(Z=X+Y\)</th><th>\(0\)</th><th>\(1\)</th><th>\(2\)</th><th>計</th></tr><tr><th>\(P\)</th><td>\(\dfrac{7}{15}\)</td><td>\(\dfrac{7}{15}\)</td><td>\(\dfrac{1}{15}\)</td><td>\(1\)</td></tr></table></div>
+<div class="formula">\[P(Z=1)=\frac{14}{45}+\frac{7}{45}=\frac{7}{15}\]</div>
+<p>\(Z=X+Y\) とおく。\(Z=1\) となるのは \((X,Y)=(0,1),(1,0)\) の2通りである。したがって</p><h3>④ \(X+Y\) の確率分布表</h3>
+<div class="table-wrap"><table><tr><th>\(Y\)</th><th>\(0\)</th><th>\(1\)</th><th>\(2\)</th><th>計</th></tr><tr><th>\(P\)</th><td>\(\dfrac{28}{45}\)</td><td>\(\dfrac{16}{45}\)</td><td>\(\dfrac{1}{45}\)</td><td>\(1\)</td></tr></table></div>
+<p>同時分布表の<strong>各列を縦に足す</strong>と、\(Y\) の確率分布が得られる。</p><h3>③ \(Y\) の確率分布表</h3>
+<div class="table-wrap"><table><tr><th>\(X\)</th><th>\(0\)</th><th>\(1\)</th><th>計</th></tr><tr><th>\(P\)</th><td>\(\dfrac45\)</td><td>\(\dfrac15\)</td><td>\(1\)</td></tr></table></div>
+<p>同時分布表の<strong>各行を横に足す</strong>と、\(X\) の確率分布が得られる。</p><h3>② \(X\) の確率分布表</h3>
+<div class="table-wrap"><table class="joint-teaching"><thead><tr><th>\(X\backslash Y\)</th><th>\(0\)</th><th>\(1\)</th><th>\(2\)</th><th>計</th></tr></thead><tbody>
+<tr><th>\(0\)</th><td>\(\dfrac{7}{15}\)</td><td>\(\dfrac{14}{45}\)</td><td>\(\dfrac{1}{45}\)</td><td class="total">\(\dfrac45\)</td></tr>
+<tr><th>\(1\)</th><td>\(\dfrac{7}{45}\)</td><td>\(\dfrac{2}{45}\)</td><td>\(0\)</td><td class="total">\(\dfrac15\)</td></tr>
+<tr><th>計</th><td class="total">\(\dfrac{28}{45}\)</td><td class="total">\(\dfrac{16}{45}\)</td><td class="total">\(\dfrac{1}{45}\)</td><td class="total">\(1\)</td></tr></tbody></table></div>
+<p>同様にして、次の同時分布表が得られる。行は \(X\)、列は \(Y\) を表す。</p>
+<div class="formula">\[P(X=0,Y=1)=\frac{8}{10}\times\frac{\binom{2}{1}\binom{7}{1}}{\binom{9}{2}}=\frac{14}{45}\]</div>
+<p>\(X=0\) の確率は \(\frac{8}{10}\)、\(X=1\) の確率は \(\frac{2}{10}\) である。例えば、Aさんが外れを引き、Bさんが1本当たる確率は</p>
+<h3>① \(X\) と \(Y\) の同時分布表</h3>
+<p>10本のくじの中に当たりくじが2本ある。Aさんが先に1本引き、残り9本からBさんが2本引く（引いたくじは戻さない）。Aさんの当たり本数を \(X\)、Bさんの当たり本数を \(Y\) とする。教科書の例題を使い、同時分布から3種類の確率分布を求めよう。</p>
+<h2>1. 具体例から同時分布を考える</h2><h2>3. 動く同時分布表</h2><p>2つの事象の起こりやすさの関係を変えてみましょう。下の例では、\(P(X=1)=P(Y=1)=\frac12\) を保ったまま、\(P(X=1,Y=1)=t\) を変化させます。</p>
 <div class="controls"><label for="t">同時確率 \(t=P(X=1,Y=1)\)：<strong id="tv">0.25</strong></label><input id="t" max="50" min="0" step="1" type="range" value="25"/><p class="muted" id="comment"></p></div>
 <div class="table-wrap"><table><thead><tr><th>\(X\backslash Y\)</th><th>\(Y=0\)</th><th>\(Y=1\)</th><th>計</th></tr></thead><tbody><tr><th>\(X=0\)</th><td id="p00"></td><td id="p01"></td><td>0.50</td></tr><tr><th>\(X=1\)</th><td id="p10"></td><td id="p11"></td><td>0.50</td></tr><tr><th>計</th><td>0.50</td><td>0.50</td><td>1.00</td></tr></tbody></table></div>
 <svg aria-label="4種類の組み合わせの同時確率を表示する棒グラフ" id="jointGraph" role="img" viewbox="0 0 620 218"></svg>
