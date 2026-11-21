@@ -73,7 +73,10 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <style>.research-table{overflow-x:auto;margin:1em 0}.research-table table{width:100%;border-collapse:collapse}.research-table th,.research-table td{padding:.4em .55em;border:1px solid #b7ccdc;text-align:center}.research-table th{background:#edf5fb}.research-table caption{text-align:left;font-weight:bold;margin-bottom:.3em}</style><style>@font-face{font-family:LessonDigits;src:local("Times New Roman"),local("Liberation Serif"),local("DejaVu Serif");unicode-range:U+0030-0039}
 body main,body main :is(h2,h3,p,strong,td,th,output,summary,div,span,label,figcaption){font-family:LessonDigits,-apple-system,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif!important}
 math mn{font-family:LessonDigits,"Times New Roman",serif!important}
-.control{padding:5px 10px}.controls .control .value,.panel .result{font-size:1em;font-weight:400}.control input[type=range]{display:block;min-height:26px;margin:0}.shift-proof tr:last-child{background:#e5f1fa;font-weight:bold}.scroll caption{text-align:left;font-weight:bold}.scroll td,.scroll th{text-align:center}</style><style>.graph-and-table{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(0,1fr);align-items:start;gap:14px;margin-top:12px}.graph-and-table .plot,.graph-and-table table{margin-top:0}.graph-and-table>div{min-width:0}@media(max-width:600px){.graph-and-table{grid-template-columns:minmax(0,1fr)}}</style></head><body>
+.control{padding:5px 10px}.controls .control .value,.panel .result{font-size:1em;font-weight:400}.control input[type=range]{display:block;min-height:26px;margin:0}.shift-proof tr:last-child{background:#e5f1fa;font-weight:bold}.scroll caption{text-align:left;font-weight:bold}.scroll td,.scroll th{text-align:center}</style><style>.graph-and-table{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(0,1fr);align-items:start;gap:14px;margin-top:12px}.graph-and-table .plot,.graph-and-table table{margin-top:0}.graph-and-table>div{min-width:0}@media(max-width:600px){.graph-and-table{grid-template-columns:minmax(0,1fr)}}</style><style>
+.graph-and-table table :is(th,td){height:2em;padding:2px 5px;line-height:1.35}
+.graph-and-table .plot{height:309px}
+</style></head><body>
 <header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>等比数列とその和</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main" data-hs-lesson=""><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>等比数列の規則を見つけ、和の公式を導く</h2><p>紙を半分に折るたびに層の数がどう変わるかを考え、初項と公比から各項を求める。次に、和に公比を掛けて項を一つずらし、引き算でどの項が消えるかを表で確かめる。</p></section>
 <nav class="hs-study-nav" aria-label="授業の進め方">
 <a href="#hs-explanation">説明</a>
@@ -97,7 +100,7 @@ math mn{font-family:LessonDigits,"Times New Roman",serif!important}
 <div class="formula"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mi>n</mi></msub><mo>=</mo><mi>a</mi><mo>+</mo><mi>a</mi><mi>r</mi><mo>+</mo><mi>⋯</mi><mo>+</mo><mi>a</mi><msup><mi>r</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">S_n=a+ar+\cdots+ar^{n-1}</annotation></semantics></math></div><div class="formula"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><msub><mi>S</mi><mi>n</mi></msub><mo>=</mo><mi>a</mi><mi>r</mi><mo>+</mo><mi>a</mi><msup><mi>r</mi><mn>2</mn></msup><mo>+</mo><mi>⋯</mi><mo>+</mo><mi>a</mi><msup><mi>r</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">rS_n=ar+ar^2+\cdots+ar^n</annotation></semantics></math></div>
 <p>後の式から前の式を引くと、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>r</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>S</mi><mi>n</mi></msub><mo>=</mo><mi>a</mi><msup><mi>r</mi><mi>n</mi></msup><mo>−</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">(r-1)S_n=ar^n-a</annotation></semantics></math> となる。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>≠</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">r\ne1</annotation></semantics></math> のときは <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">r-1</annotation></semantics></math> で割ることができ、次の公式を得る。</p>
 <div class="formula"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mi>n</mi></msub><mo>=</mo><mfrac><mrow><mi>a</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>r</mi><mi>n</mi></msup><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mi>r</mi><mo>−</mo><mn>1</mn></mrow></mfrac><mo>=</mo><mfrac><mrow><mi>a</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msup><mi>r</mi><mi>n</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mn>1</mn><mo>−</mo><mi>r</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">S_n=\frac{a(r^n-1)}{r-1}=\frac{a(1-r^n)}{1-r}</annotation></semantics></math></div>
-<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">r=1</annotation></semantics></math> のときはすべての項が <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math> である。同じ数を <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math> 個足すので <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mi>n</mi></msub><mo>=</mo><mi>n</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">S_n=na</annotation></semantics></math> である。</p><h2>3．棒グラフで各項と和を確かめる</h2>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">r=1</annotation></semantics></math> のときはすべての項が <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math> である。同じ数を <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math> 個足すので <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mi>n</mi></msub><mo>=</mo><mi>n</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">S_n=na</annotation></semantics></math> である。</p><h2 id="term-graph">3．棒グラフで各項と和を確かめる</h2>
 <p>棒の長さは項の絶対値を、表の部分和はその項まで足した値を表す。初項を2にして、公比を2、1、−1と変え、棒の並びを比べよ。</p>
 <section class="panel"><div class="controls">
 <div class="control"><label for="first">初項 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>a</mi><mn>1</mn></msub><annotation encoding="application/x-tex">a_1</annotation></semantics></math>：<span class="value" id="firstVal">2</span></label><input id="first" max="5" min="-5" step="1" type="range" value="2"/></div>
@@ -162,35 +165,34 @@ function render(){let a=Number(inputs[0].value),r=Number(inputs[1].value),n=Numb
 const terms=Array.from({length:n},(_,i)=>a*r**i);const sums=[];terms.reduce((acc,v,i)=>{sums[i]=acc+v;return acc+v;},0);const total=sums[n-1];const formula=r===1?'Sₙ = n × a₁':'Sₙ = a₁(1 − rⁿ)/(1 − r)';document.getElementById('sumResult').textContent=`第${n}項：${fmt(terms[n-1])}　／　初項から第${n}項までの和：${fmt(total)}　（${formula}）`;
 const svg = document.getElementById('bars');
 svg.replaceChildren();
-const width = 760, height = 390, left = 72, right = 18, top = 28;
-const axisY = height - 54;
-const low = Math.min(0, ...terms);
-const high = Math.max(0, ...terms) || (low === 0 ? 1 : 0);
-const scale = (axisY - top) / (high - low);
-const yAt = value => top + (high - value) * scale;
-const zero = yAt(0);
+const width = svg.clientWidth || 480, height = svg.clientHeight || 309;
+svg.setAttribute('viewBox', '0 0 ' + width + ' ' + height);
+const left = 43, right = 12, zero = height / 2;
+const limit = Math.max(...terms.map(Math.abs)) || 1;
+const yAt = value => zero - (value / limit) * (zero - 29);
 function horizontal(y, color) {
   svg.appendChild(elt('line', {x1:left, x2:width-right, y1:y, y2:y, stroke:color}));
 }
-for (const tick of [...new Set([low,low/2,0,high/2,high])]) {
+for (const tick of [-limit,-limit/2,0,limit/2,limit]) {
   const y = yAt(tick);
   if (tick !== 0 && Math.abs(y - zero) < 17) continue;
   horizontal(y, tick === 0 ? '#526f87' : '#d8e4ed');
   svg.appendChild(elt('text', {x:left-7,y:y+5,'text-anchor':'end','font-size':14,fill:'#36546b'}, fmt(tick)));
 }
-horizontal(axisY, '#6988a5');
+
 const slot = (width-left-right)/n;
 const barWidth = Math.min(56,slot*.64);
 terms.forEach((v,i) => {
   const x = left + (i+.5)*slot;
   const end = yAt(v);
   svg.appendChild(elt('rect',{x:x-barWidth/2,y:Math.min(zero,end),width:barWidth,height:Math.abs(end-zero),fill:v>=0?'#267fb7':'#e6a345',rx:2}));
-  svg.appendChild(elt('text',{x,y:axisY+30,'text-anchor':'middle','font-size':15,fill:'#1e3d56'},String(i+1)));
-  if(n<=8) svg.appendChild(elt('text',{x,y:v>=0?end-6:end+14,'text-anchor':'middle','font-size':14,fill:'#36546b'},fmt(v)));
+  svg.appendChild(elt('text',{x,y:v<0?zero-6:zero+14,'text-anchor':'middle','font-size':12,fill:'#1e3d56'},String(i+1)));
+  if(n<=8 && (width/n > 65 || Number.isInteger(v))) svg.appendChild(elt('text',{x,y:v>=0?end-6:end+14,'text-anchor':'middle','font-size':14,fill:'#36546b'},fmt(v)));
 });
 svg.appendChild(elt('text',{x:width/2,y:height-4,'text-anchor':'middle','font-size':15,fill:'#36546b'},'項番号 k'));
 const tbody=document.getElementById('terms');tbody.replaceChildren();terms.forEach((v,i)=>{const tr=document.createElement('tr');[String(i+1),fmt(v),fmt(sums[i])].forEach(t=>{const td=document.createElement('td');td.textContent=t;tr.appendChild(td)});tbody.appendChild(tr)});
 }
 inputs.forEach(e=>e.addEventListener('input',render));document.getElementById('reset').addEventListener('click',()=>{inputs[0].value=2;inputs[1].value=.5;inputs[2].value=6;render();});render();
+if (typeof ResizeObserver !== 'undefined') new ResizeObserver(render).observe(document.getElementById('bars'));
 })();
 </script><footer class="lesson-standard-footer"><div><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div>みんなの数学データベース｜高校生のための授業</div></footer></body></html>
