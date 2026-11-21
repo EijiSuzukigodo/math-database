@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>いろいろな数列の和｜みんなの数学データベース</title>
 <style>
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f2f6fc;color:#1c3148;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.8;font-size:16px}a{color:#186da8}.wrap{max-width:1040px;margin:auto;padding:0 17px}header{background:linear-gradient(110deg,#17365d,#246ca3);color:white;padding:25px 0}header a{color:white}header h1{font-size:clamp(24px,4vw,34px);margin:9px 0 3px}header p{margin:0;color:#e4f0fa}main{padding:24px 0 55px}h2{font-size:1.4rem;color:#174c7b;border-bottom:2px solid #bcd3e8;padding-bottom:6px;margin:30px 0 16px}h3{font-size:1.12rem;color:#123e65;margin:22px 0 9px}p{overflow-wrap:anywhere}.nav{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:17px}.nav a{padding:7px 12px;background:#e2effb;border-radius:8px;text-decoration:none;font-weight:700}.intro{background:#e4f1ff;border-left:5px solid #2585bd;padding:16px;border-radius:9px;margin:0 0 20px}.paper{background:#fff;border:1px solid #d6e3f0;border-radius:14px;padding:clamp(15px,3vw,32px);margin:18px 0}.formula{background:#f3f8ff;border:1px solid #d6e5fa;border-radius:10px;padding:12px 9px;margin:14px 0;overflow-x:auto;text-align:center}.example{border-left:5px solid #e6a345;background:#fffaf0;border-radius:9px;padding:14px 16px;margin:13px 0}.answer{border-left:5px solid #3ca07b;background:#f0faf5;border-radius:9px;padding:14px 16px;margin:12px 0}.exercise{background:#f8faff;border:1px solid #d6e3f0;border-radius:10px;padding:13px 16px;margin-top:13px}summary{cursor:pointer;color:#145e95;font-weight:700}details{margin-top:9px}details[open] summary{margin-bottom:12px}footer{background:#142f4d;color:#e6f2ff;padding:20px 0;font-size:13px}.muted{color:#526c82}.chip{display:inline-block;border-radius:25px;background:#e5f3fe;color:#246a96;padding:3px 10px;font-size:12px;font-weight:700}.note{background:#fff6e8;border-left:4px solid #d28b23;padding:11px 14px;border-radius:7px}.good{background:#e9f7ef;border-left:4px solid #329976;padding:11px 14px;border-radius:7px}.contents{display:flex;flex-wrap:wrap;gap:8px}.contents a{display:inline-block;background:#edf5ff;border-radius:7px;padding:5px 10px;text-decoration:none;font-weight:600}.lab{border:1px solid #bdd6e8;background:#f7fbff;border-radius:12px;padding:16px;margin:18px 0}.controls{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.controls label{font-weight:700}.controls input[type=range]{width:min(420px,100%);accent-color:#206b9e;min-height:30px}.value{font-variant-numeric:tabular-nums;font-weight:700;color:#174c7b}.diagram{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:14px 0;min-height:54px}.term{background:#dceafa;border:1px solid #8db1d2;border-radius:7px;padding:7px 9px;font-size:.94rem;white-space:nowrap}.term.cancel{background:#f4e2e3;color:#a13e49;text-decoration:line-through}.term.keep{background:#dff3e6;border-color:#7eb99c;font-weight:bold}.diagram .arrow{color:#6685a5}.small{font-size:.9rem}.math-scroll{overflow-x:auto;overflow-y:hidden}.mjx-container{max-width:100%}.formula mjx-container[display="true"]{font-size:100%!important;margin:.5em 0!important}.paper mjx-container{font-size:100%!important}button,a,summary{touch-action:manipulation}button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid orange;outline-offset:3px}button{border:0;border-radius:9px;background:#226c9f;color:white;padding:9px 15px;font-weight:700;font-size:1rem}button:active{transform:translateY(1px)}
@@ -91,8 +92,8 @@ body>footer.lesson-standard-footer>div{max-width:970px!important;margin:auto!imp
 /* MathJax SVG may not inherit broad responsive SVG sizing */
 mjx-container svg{width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;display:inline-block!important}
 @media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
-</style><link rel="stylesheet" href="lesson_common_style.css">
-<link rel="stylesheet" href="high_school_lesson_reading.css">
+</style><link href="lesson_common_style.css" rel="stylesheet"/>
+<link href="high_school_lesson_reading.css" rel="stylesheet"/>
 <style>html body,body main{font-family:"Times New Roman","Hiragino Mincho ProN","Yu Mincho",serif!important}.answer .formula{background:transparent;border:0}.answer{border-left:5px solid #3ca07b;background:#f0faf5;padding:14px 16px;border-radius:9px}.formula{overflow-x:auto}.value{font:inherit}</style><style id="sums-typography-fix">
 /* 本文は16px、見出しは18px、分数は本文と釣り合う教科書サイズ */
 body>main.lesson-standard-main article.paper p,
@@ -146,15 +147,23 @@ main.lesson-standard-main article.paper .example p{font-size:16px!important;line
 .group-number-formulas>div>span{font-size:16px!important;font-weight:400}
 .group-number-formulas mjx-container{font-size:100%!important}
 @media(max-width:600px){.group-number-formulas>div{justify-content:flex-start;gap:5px}}
+</style><style>
+/* 数学B・数列9教材の共通書式（既存教材の内容を保持） */
+.example {background:#fff8eb!important;border-left:5px solid #dfa23b!important}
+.answer, .exercise details.answer {background:#f0f9f0!important;border-left:5px solid #75b68b!important;color:#21364a!important}
+.answer .formula,.answer .result,.answer .step,.answer .math-box,
+.answer .equation,.answer .calculation,
+.exercise details.answer .formula {background:transparent!important;border-color:transparent!important;box-shadow:none!important;color:inherit!important}
+.answer-heading {font-weight:700;color:#21364a;margin:0 0 .7em}
+.example mjx-container,.answer mjx-container,.formula mjx-container {font-size:100%!important}
+mjx-container[display="true"] {max-width:100%;overflow-x:auto;overflow-y:hidden}
 </style></head><body>
-<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>いろいろな数列の和</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main" data-hs-lesson=""><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>項の形に注目して、和の求め方を選ぶ</h2><p>隣り合う項が消えるように分数を差に直したり、公比を掛けた式と元の式を縦に並べたりして、何が残るかを確かめる。群に区切られた数列では、先に項数を数え、目的の群の初項・末項・和を求める。</p></section>
-<nav class="hs-study-nav" aria-label="授業の進め方">
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>いろいろな数列の和</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" data-hs-lesson="" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>項の形に注目して、和の求め方を選ぶ</h2><p>隣り合う項が消えるように分数を差に直したり、公比を掛けた式と元の式を縦に並べたりして、何が残るかを確かめる。群に区切られた数列では、先に項数を数え、目的の群の初項・末項・和を求める。</p></section>
+<nav aria-label="授業の進め方" class="hs-study-nav">
 <a href="#hs-explanation">説明</a>
 <a href="#hs-examples">例題と解説</a>
 <a href="#hs-practice">練習問題</a>
 <a href="#hs-summary">まとめ</a></nav>
-
-
 <article class="paper"><section id="basic"><h2 id="hs-explanation">和を求める最初の一手</h2><div class="hs-table"><table><thead><tr><th>項や並びの特徴</th><th>最初に確かめること</th></tr></thead><tbody><tr><td>分母が二つの数の積</td><td>二つの分数の差に直し、最初の3項を書く。</td></tr><tr><td>分母が平方根の和</td><td>平方根の差を掛けて有理化する。</td></tr><tr><td>等差数列の項と等比数列の項の積</td><td>和に公比を掛け、同じ累乗が縦に並ぶように書く。</td></tr><tr><td>数列が群に分かれている</td><td>目的の群の直前までに、何項あるかを数える。</td></tr></tbody></table></div><p>基本公式は<a href="mathb_sigma_notation.html">「和の記号Σ」</a>を参照。</p></section>
 <section id="fraction"><h2>1．部分分数分解を利用する和</h2><p>まず \(\frac1{2\cdot3}+\frac1{3\cdot4}+\frac1{4\cdot5}\) を考える。各項を差に直すと、後ろの分数が次の項の先頭にも現れる。</p><div class="formula">\[\left(\frac12-\frac13\right)+\left(\frac13-\frac14\right)+\left(\frac14-\frac15\right)=\frac12-\frac15=\frac3{10}\]</div><p>分母に2つの因数があるとき、<strong>差の形</strong>にすると途中の項が相殺されることがある。これを「望遠鏡型の和（テレスコーピング）」という。</p><h3>基本公式の導出</h3><div class="formula">\[\frac{1}{k(k+1)}=\frac1k-\frac1{k+1}\]</div><p>右辺を通分すると \(\dfrac{(k+1)-k}{k(k+1)}\) となり、左辺と一致する。</p>
 <div class="example"><strong id="hs-examples">例題1　部分分数分解</strong><p>\(\displaystyle\sum\limits_{k=1}^{n}\frac1{k(k+1)}\) を求めよ。</p></div><div class="answer"><strong>解答と解説</strong><p>公式を使うと、</p><div class="formula">\[\begin{aligned}\sum\limits_{k=1}^{n}\frac1{k(k+1)}&amp;=\sum\limits_{k=1}^{n}\left(\frac1k-\frac1{k+1}\right)\\&amp;=\left(1-\frac12\right)+\left(\frac12-\frac13\right)+\cdots+\left(\frac1n-\frac1{n+1}\right)\\&amp;=1-\frac1{n+1}=\frac{n}{n+1}\end{aligned}\]</div><p>最初の \(1\) と最後の \(-\frac1{n+1}\) だけが残る。</p></div>
@@ -169,14 +178,14 @@ main.lesson-standard-main article.paper .example p{font-size:16px!important;line
 <div class="formula">\[\frac{1}{(3k-1)(3k+2)}=\frac13\left(\frac{1}{3k-1}-\frac{1}{3k+2}\right)\]</div>
 <p>初めの3項を書き出す。</p>
 <div class="formula">\[\begin{aligned}
-&\frac13\left\{\left(\frac12-\frac15\right)+\left(\frac15-\frac18\right)+\left(\frac18-\frac1{11}\right)\right\}\\
-&=\frac13\left(\frac12-\frac1{11}\right)
+&amp;\frac13\left\{\left(\frac12-\frac15\right)+\left(\frac15-\frac18\right)+\left(\frac18-\frac1{11}\right)\right\}\\
+&amp;=\frac13\left(\frac12-\frac1{11}\right)
 \end{aligned}\]</div>
 <p>一般に、途中の項が打ち消し合い、最初の \(\dfrac12\) と最後の \(-\dfrac1{3n+2}\) が残る。</p>
 <div class="formula">\[\begin{aligned}
 \sum_{k=1}^{n}\frac{1}{(3k-1)(3k+2)}
-&=\frac13\left(\frac12-\frac1{3n+2}\right)\\
-&=\boxed{\frac{n}{2(3n+2)}}
+&amp;=\frac13\left(\frac12-\frac1{3n+2}\right)\\
+&amp;=\boxed{\frac{n}{2(3n+2)}}
 \end{aligned}\]</div>
 </div>
 <h3>例題3　間隔が2の分母</h3><div class="example">\(\displaystyle\sum\limits_{k=1}^n\frac1{k(k+2)}\) を求めよ。</div><div class="answer"><strong>解答と解説</strong><p>差の形を作るために、係数 \(\frac12\) を付ける。</p><div class="formula">\[\frac1{k(k+2)}=\frac12\left(\frac1k-\frac1{k+2}\right)\]</div><div class="formula">\[\begin{aligned}\sum\limits_{k=1}^n\frac1{k(k+2)}&amp;=\frac12\left(1+\frac12-\frac1{n+1}-\frac1{n+2}\right)\end{aligned}\]</div><p>この例題では因数の差が2である。こちらでは \(k\) が1ずつ進むため、\(-\frac1{k+2}\) は<strong>二つ先の括弧</strong>の先頭と打ち消し合う。\(n\geqq2\) では初めの二つと最後の二つの分数が残る。</p></div>
@@ -206,7 +215,7 @@ main.lesson-standard-main article.paper .example p{font-size:16px!important;line
 <p>第1群には1項、第2群には2項、…、第 \(n\) 群には \(n\) 項がある。第 \(n\) 群までの項数は、</p>
 <div class="formula">\[1+2+\cdots+n=\frac{n(n+1)}2\]</div>
 <p>したがって、第 \(n\) 群の<strong>初項・末項</strong>は次のようになる。</p>
-<div class="group-position-visual" role="group" aria-label="群の境界と各群の初項末項">
+<div aria-label="群の境界と各群の初項末項" class="group-position-visual" role="group">
 <div class="group-position-title">第 \(n\) 群の位置を確認する</div>
 <div class="group-position-sequence">… ○ ○ <strong>○</strong> │ <strong>○</strong> ○ … ○ <strong>○</strong> │ ○ …</div>
 <div class="group-position-labels">
@@ -216,7 +225,7 @@ main.lesson-standard-main article.paper .example p{font-size:16px!important;line
 </div>
 </div>
 <p>第 \(n-1\) 群の末項は、全体の第 \(\dfrac{n(n-1)}2\) 項である。したがって、その次が第 \(n\) 群の初項になる。第 \(n\) 群には \(n\) 項あるので、末項の番号は次のとおり。</p>
-<div class="group-number-formulas" aria-label="各群の項番号">
+<div aria-label="各群の項番号" class="group-number-formulas">
 <div><span>第 \(n-1\) 群の末項の番号</span><span>\(=\dfrac{n(n-1)}{2}\)</span></div>
 <div><span>第 \(n\) 群の初項の番号</span><span>\(=\dfrac{n(n-1)}{2}+1\)</span></div>
 <div><span>第 \(n\) 群の末項の番号</span><span>\(=\dfrac{n(n+1)}{2}\)</span></div>
@@ -234,7 +243,7 @@ main.lesson-standard-main article.paper .example p{font-size:16px!important;line
 <div class="answer"><strong>解答と解説</strong><p>第5群までの項数は \(5\cdot6/2=15\)、第6群まででは \(6\cdot7/2=21\)。したがって20は第6群にあり、\(20-15=5\) なので第5番目の項である。</p></div>
 <div class="note">群数列の問題では、「群の番号」と「数列全体の何番目か」を混同しないようにしよう。</div>
 </section>
-<section id="practice"><h2 id="hs-practice">練習問題</h2><p>まず自分で考え、必要なときだけ「解答と解説を見る」を開く。</p>
+<section id="practice"><h2 id="hs-practice">5．練習問題</h2><p>まず自分で考え、必要なときだけ「解答と解説を見る」を開く。</p>
 <div class="exercise"><strong>問題1（部分分数分解）</strong><p>\(\displaystyle\sum\limits_{k=1}^{9}\frac1{k(k+1)}\)</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(1-\frac1{10}=\frac9{10}\)。</p></details></div>
 <div class="exercise"><strong>問題2（部分分数分解）</strong><p>\(\displaystyle\sum\limits_{k=1}^{n}\frac1{(2k-1)(2k+1)}\)</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(\frac1{(2k-1)(2k+1)}=\frac12(\frac1{2k-1}-\frac1{2k+1})\)。したがって \(\frac12(1-\frac1{2n+1})=\dfrac{n}{2n+1}\)。</p></details></div>
 <div class="exercise"><strong>問題3（ルート）</strong><p>\(\displaystyle\sum\limits_{k=1}^{8}(\sqrt{k+1}-\sqrt{k})\)</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(\sqrt9-\sqrt1=3-1=2\)。</p></details></div>
@@ -245,7 +254,7 @@ main.lesson-standard-main article.paper .example p{font-size:16px!important;line
 <div class="exercise"><strong>問題8（群数列）</strong><p>自然数を1項、2項、3項、…と区切るとき、自然数50は何群目の何番目か。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>第9群まで45項、第10群まで55項なので、第10群の \(50-45=5\) 番目である。</p></details></div>
 <div class="exercise"><strong>問題9（奇数の群数列）</strong><p>\(1\mid3,5\mid7,9,11\mid\cdots\) の第6群の和を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>第 \(n\) 群の和は \(n^3\)。したがって \(6^3=216\)。</p></details></div>
 <div class="exercise"><strong>問題10（ずらして引く）</strong><p>\(1+2\cdot3+3\cdot3^2+4\cdot3^3\) を、和を3倍する方法で求めよ。</p><details><summary>解答・解説を表示</summary><p>和を \(S\) とする。\(3S-S\) では最後の \(4\cdot3^4\) から \(1,3,9,27\) を引くことになる。よって \(2S=324-40=284\) であり、\(S=142\) である。</p></details></div></section>
-<section id="summary"><h2 id="hs-summary">まとめ</h2><p>最初の数項を書き、消える項と残る項を確かめる。群数列では、群の中の順番と数列全体での順番を区別する。</p><div class="good"><strong>解法の選び方</strong><ol><li>群に区切られている → 各群の項数・初項・末項を求める</li><li>\(\frac1{k(k+1)}\) のような積が分母 → 部分分数分解</li><li>\(\sqrt{k+1}+\sqrt{k}\) が分母 → 有理化</li><li>\(k\cdot r^k\) → 和を \(r\) 倍して引く</li><li>符号が交互 → 2項ずつ組にする</li></ol></div><p class="muted">計算後は \(n=1\) や \(n=2\) を代入して、元の和と一致するか確認しよう。</p></section>
+<section id="summary"><h2 id="hs-summary">6．まとめ</h2><p>最初の数項を書き、消える項と残る項を確かめる。群数列では、群の中の順番と数列全体での順番を区別する。</p><div class="good"><strong>解法の選び方</strong><ol><li>群に区切られている → 各群の項数・初項・末項を求める</li><li>\(\frac1{k(k+1)}\) のような積が分母 → 部分分数分解</li><li>\(\sqrt{k+1}+\sqrt{k}\) が分母 → 有理化</li><li>\(k\cdot r^k\) → 和を \(r\) 倍して引く</li><li>符号が交互 → 2項ずつ組にする</li></ol></div><p class="muted">計算後は \(n=1\) や \(n=2\) を代入して、元の和と一致するか確認しよう。</p></section>
 </article><nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav></main>
 <script>
 (function(){

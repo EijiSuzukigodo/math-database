@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <!DOCTYPE html>
 
 <html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><title>階差数列｜みんなの数学データベース</title>
@@ -68,8 +69,8 @@ body>footer.lesson-standard-footer>div{max-width:970px!important;margin:auto!imp
 /* MathJax SVG may not inherit broad responsive SVG sizing */
 
 @media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
-</style><link rel="stylesheet" href="lesson_common_style.css">
-<link rel="stylesheet" href="high_school_lesson_reading.css">
+</style><link href="lesson_common_style.css" rel="stylesheet"/>
+<link href="high_school_lesson_reading.css" rel="stylesheet"/>
 <style>html body{font-family:"Times New Roman","Hiragino Mincho ProN","Yu Mincho","Noto Serif CJK JP",serif!important}.diff-strip{overflow-x:auto}.diff-strip table{border-collapse:collapse;width:100%;text-align:center}.diff-strip caption{text-align:left;font-weight:bold}.diff-strip td,.diff-strip th{padding:.3em;border-bottom:1px solid #c5d8e6;white-space:nowrap}.diff-strip tr:last-child{background:#edf7f1;color:#215e44}.control output{font:inherit}.answer{margin:7px 0 19px}</style><style>
 #viz .control{display:grid;grid-template-columns:auto minmax(3rem,1fr) 2em;gap:.5em;align-items:center;padding:.35em .65em}
 #viz .control input{width:100%;margin:0}#viz .control output{text-align:right;font:inherit}
@@ -83,14 +84,23 @@ html body main.lesson-standard-main,main.lesson-standard-main :is(h2,h3,p,div,sp
 .diff-compare :is(th,td){height:var(--row-height);padding:1px .3em;line-height:1.25}
 #viz #plot{width:100%;height:calc(15.5rem + 1px)}
 #calc sub{font-size:.72em}
+</style><style>
+/* 数学B・数列9教材の共通書式（既存教材の内容を保持） */
+.example {background:#fff8eb!important;border-left:5px solid #dfa23b!important}
+.answer, .exercise details.answer {background:#f0f9f0!important;border-left:5px solid #75b68b!important;color:#21364a!important}
+.answer .formula,.answer .result,.answer .step,.answer .math-box,
+.answer .equation,.answer .calculation,
+.exercise details.answer .formula {background:transparent!important;border-color:transparent!important;box-shadow:none!important;color:inherit!important}
+.answer-heading {font-weight:700;color:#21364a;margin:0 0 .7em}
+.example mjx-container,.answer mjx-container,.formula mjx-container {font-size:100%!important}
+mjx-container[display="true"] {max-width:100%;overflow-x:auto;overflow-y:hidden}
 </style></head><body>
-<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>階差数列</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main" data-hs-lesson=""><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>階差の規則を見つけ、元の数列の一般項を求める</h2><p>隣り合う項の間に差を書き込み、初項から何回進めば目的の項に届くかを調べる。さらに、前の項までの和と今回の和を比べ、最後に加えた1項を取り出す。</p></section>
-<nav class="hs-study-nav" aria-label="授業の進め方">
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>階差数列</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" data-hs-lesson="" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>階差の規則を見つけ、元の数列の一般項を求める</h2><p>隣り合う項の間に差を書き込み、初項から何回進めば目的の項に届くかを調べる。さらに、前の項までの和と今回の和を比べ、最後に加えた1項を取り出す。</p></section>
+<nav aria-label="授業の進め方" class="hs-study-nav">
 <a href="#hs-explanation">説明</a>
 <a href="#hs-examples">例題と解説</a>
 <a href="#hs-practice">練習問題</a>
 <a href="#hs-summary">まとめ</a></nav>
-
 <article class="paper">
 <h2 id="hs-explanation">1．隣り合う項の差を読む</h2>
 <p>数列 \(2,\ 5,\ 10,\ 17,\ 26,\ldots\) を見ると、増え方は一定ではない。そこで、次の項へ進むたびに「いくつ増えたか」を、項と項の間に書いてみよう。</p>
