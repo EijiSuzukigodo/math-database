@@ -8,25 +8,28 @@
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f2f6fc;color:#1c3148;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.8;font-size:16px}a{color:#186da8}.wrap{max-width:1040px;margin:auto;padding:0 17px}header{background:linear-gradient(110deg,#17365d,#246ca3);color:white;padding:25px 0}header a{color:white}header h1{font-size:clamp(24px,4vw,34px);margin:9px 0 3px}header p{margin:0;color:#e4f0fa}main{padding:24px 0 55px}h2{font-size:1.4rem;color:#174c7b;border-bottom:2px solid #bcd3e8;padding-bottom:6px;margin:30px 0 16px}h3{font-size:1.12rem;color:#123e65;margin:22px 0 9px}p{overflow-wrap:anywhere}.nav{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:17px}.nav a{padding:7px 12px;background:#e2effb;border-radius:8px;text-decoration:none;font-weight:700}.intro{background:#e4f1ff;border-left:5px solid #2585bd;padding:16px;border-radius:9px;margin:0 0 20px}.paper{background:#fff;border:1px solid #d6e3f0;border-radius:14px;padding:clamp(15px,3vw,32px);margin:18px 0}.formula{background:#f3f8ff;border:1px solid #d6e5fa;border-radius:10px;padding:12px 9px;margin:14px 0;overflow-x:auto;text-align:center}.example{border-left:5px solid #e6a345;background:#fffaf0;border-radius:9px;padding:14px 16px;margin:13px 0}.answer{border-left:5px solid #3ca07b;background:#f0faf5;border-radius:9px;padding:14px 16px;margin:12px 0}.exercise{background:#f8faff;border:1px solid #d6e3f0;border-radius:10px;padding:13px 16px;margin-top:13px}summary{cursor:pointer;color:#145e95;font-weight:700}details{margin-top:9px}details[open] summary{margin-bottom:12px}footer{background:#142f4d;color:#e6f2ff;padding:20px 0;font-size:13px}.muted{color:#526c82}.chip{display:inline-block;border-radius:25px;background:#e5f3fe;color:#246a96;padding:3px 10px;font-size:12px;font-weight:700}.note{background:#fff6e8;border-left:4px solid #d28b23;padding:11px 14px;border-radius:7px}.good{background:#e9f7ef;border-left:4px solid #329976;padding:11px 14px;border-radius:7px}.contents{display:flex;flex-wrap:wrap;gap:8px}.contents a{display:inline-block;background:#edf5ff;border-radius:7px;padding:5px 10px;text-decoration:none;font-weight:600}.lab{border:1px solid #bdd6e8;background:#f7fbff;border-radius:12px;padding:16px;margin:18px 0}.controls{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.controls label{font-weight:700}.controls input[type=range]{width:min(420px,100%);accent-color:#206b9e;min-height:30px}.value{font-variant-numeric:tabular-nums;font-weight:700;color:#174c7b}.diagram{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:14px 0;min-height:54px}.term{background:#dceafa;border:1px solid #8db1d2;border-radius:7px;padding:7px 9px;font-size:.94rem;white-space:nowrap}.term.cancel{background:#f4e2e3;color:#a13e49;text-decoration:line-through}.term.keep{background:#dff3e6;border-color:#7eb99c;font-weight:bold}.diagram .arrow{color:#6685a5}.small{font-size:.9rem}.math-scroll{overflow-x:auto;overflow-y:hidden}.mjx-container{max-width:100%}.formula mjx-container[display="true"]{font-size:100%!important;margin:.5em 0!important}.paper mjx-container{font-size:100%!important}button,a,summary{touch-action:manipulation}button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid orange;outline-offset:3px}button{border:0;border-radius:9px;background:#226c9f;color:white;padding:9px 15px;font-weight:700;font-size:1rem}button:active{transform:translateY(1px)}
 @media(max-width:600px){body{font-size:15px}.wrap{padding:0 12px}.formula{font-size:.96rem}.paper{padding:15px}.diagram{gap:4px}.term{font-size:.86rem;padding:6px}}
 .groups-diagram{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.group-box{border:2px solid #bfd7e8;border-radius:10px;padding:8px;background:white;min-width:84px}.group-box.active{border-color:#45966e;background:#eaf8ef}.group-title{font-size:.86rem;font-weight:bold;margin-bottom:5px}.group-items{display:flex;gap:5px;flex-wrap:wrap}.group-item{background:#e3effc;border-radius:5px;padding:3px 6px;font-size:.88rem}.group-box.active .group-item{background:#d0ecd9}
-/* この教材の本文・数式のサイズを統一 */
-body>main.lesson-standard-main section p,
-body>main.lesson-standard-main section li,
-body>main.lesson-standard-main .example,
-body>main.lesson-standard-main .answer,
-body>main.lesson-standard-main .note {font-size:16px;line-height:1.8}
-body>main.lesson-standard-main section h3 {font-size:19px}
-body>main.lesson-standard-main .formula {font-size:1.06rem;line-height:1.7}
-body>main.lesson-standard-main mjx-container {font-size:108%!important}
-body>main.lesson-standard-main .formula mjx-container {font-size:108%!important}
+/* 教科書表示：本文・例題・解説・数式の文字サイズを揃える */
+body>main.lesson-standard-main .paper p,
+body>main.lesson-standard-main .paper li,
+body>main.lesson-standard-main .paper .example,
+body>main.lesson-standard-main .paper .answer,
+body>main.lesson-standard-main .paper .note{font-size:16px;line-height:1.8}
+body>main.lesson-standard-main .paper h3{font-size:18px;line-height:1.5}
+body>main.lesson-standard-main .paper .formula{font-size:16px;line-height:1.7}
+body>main.lesson-standard-main .paper mjx-container{font-size:100%!important}
+body>main.lesson-standard-main .paper .formula mjx-container[display="true"]{font-size:100%!important}
 .group-position-visual{border:1px solid #b8d2e8;background:#f6fbff;border-radius:12px;padding:14px;margin:14px 0;overflow-x:auto}
-.group-position-title{font-weight:700;color:#174b78;margin-bottom:8px}
-.group-position-line{display:flex;align-items:flex-start;gap:9px;white-space:nowrap;min-width:max-content;font-size:19px;line-height:1.7}
-.group-position-line>span{padding:5px 2px}
-.group-position-line small{display:block;font-size:13px;line-height:1.5;white-space:normal}
-.group-position-line .group-prev{color:#355b78}
-.group-position-line .group-current{color:#126f52;background:#e9f8ee;border-radius:8px;padding:5px 9px}
-.group-position-line .group-divider{font-weight:700;color:#476d8d;font-size:25px}
-@media(max-width:640px){.group-position-visual{padding:10px}.group-position-line{font-size:17px}}
+.group-position-title{font-size:16px;font-weight:700;color:#174b78;margin-bottom:10px}
+.group-position-row{display:flex;align-items:flex-start;justify-content:center;gap:0;min-width:660px;font-size:16px}
+.group-position-block{display:flex;align-items:flex-start;justify-content:center;gap:8px}
+.group-position-marker{display:flex;flex-direction:column;align-items:center;text-align:center;min-width:165px;gap:5px}
+.group-position-marker .circle{font-size:22px;line-height:1.2;font-weight:700;color:#126f52}
+.group-position-marker.prev .circle{color:#355b78}
+.group-position-marker .marker-label{font-size:14px;font-weight:700;line-height:1.5}
+.group-position-marker .marker-formula{font-size:15px;line-height:1.6}
+.group-position-dots{font-size:22px;line-height:1.2;white-space:nowrap;color:#355b78}
+.group-position-bar{font-size:24px;line-height:1.2;padding:0 10px;color:#476d8d}
+@media(max-width:640px){.group-position-visual{padding:10px}.group-position-row{justify-content:flex-start}}
 </style>
 <script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"]]},svg:{fontCache:"global"},options:{skipHtmlTags:["script","noscript","style","textarea","pre","code"]}};</script>
 <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
@@ -150,13 +153,28 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <p>第1群には1項、第2群には2項、…、第 \(n\) 群には \(n\) 項がある。第 \(n\) 群までの項数は、</p>
 <div class="formula">\[1+2+\cdots+n=\frac{n(n+1)}2\]</div>
 <p>したがって、第 \(n\) 群の<strong>初項・末項</strong>は次のようになる。</p>
-<div class="group-position-visual" role="group" aria-label="第n-1群の末項と第n群の初項・末項の番号">
+<div class="group-position-visual" role="group" aria-label="第n-1群の末項、第n群の初項と末項をそれぞれ丸印の真下に示す">
 <div class="group-position-title">第 \(n\) 群の位置を確認する</div>
-<div class="group-position-line">
-<span class="group-prev">… ○ ○ ○ <b>○</b><small>第 \(n-1\) 群の末項</small><small>全体の第 \(\frac{n(n-1)}2\) 項</small></span>
-<span class="group-divider">│</span>
-<span class="group-current"><b>○</b> ○ ○ … ○ <b>○</b><small>第 \(n\) 群の初項 → 末項</small><small>第 \(\frac{n(n-1)}2+1\) 項 → 第 \(\frac{n(n+1)}2\) 項</small></span>
-<span class="group-divider">│</span><span>○ ○ …</span>
+<div class="group-position-row">
+  <span class="group-position-dots">… ○ ○</span>
+  <div class="group-position-marker prev">
+    <span class="circle">○</span>
+    <span class="marker-label">第 \(n-1\) 群の末項</span>
+    <span class="marker-formula">\(\displaystyle \frac{n(n-1)}{2}\) 番目</span>
+  </div>
+  <span class="group-position-bar">│</span>
+  <div class="group-position-marker">
+    <span class="circle">○</span>
+    <span class="marker-label">第 \(n\) 群の初項</span>
+    <span class="marker-formula">\(\displaystyle \frac{n(n-1)}{2}+1\) 番目</span>
+  </div>
+  <span class="group-position-dots">○ … ○</span>
+  <div class="group-position-marker">
+    <span class="circle">○</span>
+    <span class="marker-label">第 \(n\) 群の末項</span>
+    <span class="marker-formula">\(\displaystyle \frac{n(n+1)}{2}\) 番目</span>
+  </div>
+  <span class="group-position-bar">│</span><span class="group-position-dots">○ ○ …</span>
 </div></div>
 <p>第 \(n-1\) 群の末項は、全体の第 \(\frac{n(n-1)}2\) 項である。したがって、その次が第 \(n\) 群の初項になる。第 \(n\) 群には \(n\) 項あるので、末項の番号は次のとおり。</p>
 <div class="formula">\[\begin{aligned}
