@@ -78,6 +78,13 @@ mjx-container {font-size: 92% !important;}
 .answer .formula {background:transparent;border:0;padding:4px 0;}
 @media(max-width:600px){.joint-teaching td,.joint-teaching th{padding:7px 9px}.table-wrap table{min-width:0}}
 .table-wrap td mjx-container,.table-wrap th mjx-container{vertical-align:middle!important}.joint-teaching td,.joint-teaching th{line-height:1.5}
+</style><style id="joint-table-textbook-fractions">
+/* 同時分布・周辺分布の表では分数を上下に明瞭に表示する */
+.joint-teaching td,.joint-teaching th,.joint-teaching ~ table td{vertical-align:middle!important}
+.table-wrap table td mjx-container,.table-wrap table th mjx-container{font-size:100%!important}
+.table-wrap table td,.table-wrap table th{padding:10px 12px!important;line-height:1.65!important}
+.joint-probability mjx-container[display="true"]{font-size:100%!important}
+@media(max-width:600px){.table-wrap table td,.table-wrap table th{padding:9px 8px!important}}
 </style></head>
 <body>
 <header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>確率変数の和と期待値</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" data-hs-lesson="" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>同時分布から3つの確率分布を作り、期待値の加法性を理解する</h2><p>くじの具体例を通して周辺分布と和の分布を求め、期待値の加法性を確認する。</p><p class="hs-outcome">同時分布表から X・Y・X+Y の確率分布表を作り、それぞれの期待値を計算する力を身につける。</p></section>
@@ -89,25 +96,27 @@ mjx-container {font-size: 92% !important;}
 <article class="paper">
 <h2>1. 具体例から同時分布を考える</h2>
 <p>10本のくじの中に当たりくじが2本ある。Aさんが先に1本引き、残り9本からBさんが2本引く（引いたくじは戻さない）。Aさんの当たり本数を \(X\)、Bさんの当たり本数を \(Y\) とする。</p>
-<p>まず、\(X\) と \(Y\) の組ごとの確率を求めて<strong>同時分布表</strong>を作る。Bさんの当たり本数は、残り9本から2本を選ぶ組合せ \(\binom{9}{2}\) を分母として計算する。</p>
-<div class="formula">\[P(X=0,Y=j)=\frac{\binom{8}{1}}{\binom{10}{1}}\cdot\frac{\binom{2}{j}\binom{7}{2-j}}{\binom{9}{2}}\quad(j=0,1,2)\]</div>
-<div class="formula">\[P(X=1,Y=j)=\frac{\binom{2}{1}}{\binom{10}{1}}\cdot\frac{\binom{1}{j}\binom{8}{2-j}}{\binom{9}{2}}\quad(j=0,1,2)\]</div>
-<p>例えば、Aさんが外れ、Bさんが1本当たる確率は</p>
-<div class="formula">\[P(X=0,Y=1)=\frac{8}{10}\cdot\frac{\binom{2}{1}\binom{7}{1}}{\binom{9}{2}}=\frac{14}{45}\]</div>
+<p>まず、\(X\) と \(Y\) の組ごとの確率を求める。組合せは高校数学で用いる \({}_{n}\mathrm{C}_{r}\) の形で表す。Aさんが外れた場合と当たった場合に分け、6通りをそれぞれ計算する。</p>
+<div class="formula joint-probability">\[P(X=0,\,Y=0)=\frac{{}_{8}\mathrm{C}_{1}}{{}_{10}\mathrm{C}_{1}}\times\frac{{}_{7}\mathrm{C}_{2}}{{}_{9}\mathrm{C}_{2}}=\frac{7}{15}\]</div>
+<div class="formula joint-probability">\[P(X=0,\,Y=1)=\frac{{}_{8}\mathrm{C}_{1}}{{}_{10}\mathrm{C}_{1}}\times\frac{{}_{2}\mathrm{C}_{1}\,{}_{7}\mathrm{C}_{1}}{{}_{9}\mathrm{C}_{2}}=\frac{14}{45}\]</div>
+<div class="formula joint-probability">\[P(X=0,\,Y=2)=\frac{{}_{8}\mathrm{C}_{1}}{{}_{10}\mathrm{C}_{1}}\times\frac{{}_{2}\mathrm{C}_{2}}{{}_{9}\mathrm{C}_{2}}=\frac{1}{45}\]</div>
+<div class="formula joint-probability">\[P(X=1,\,Y=0)=\frac{{}_{2}\mathrm{C}_{1}}{{}_{10}\mathrm{C}_{1}}\times\frac{{}_{8}\mathrm{C}_{2}}{{}_{9}\mathrm{C}_{2}}=\frac{7}{45}\]</div>
+<div class="formula joint-probability">\[P(X=1,\,Y=1)=\frac{{}_{2}\mathrm{C}_{1}}{{}_{10}\mathrm{C}_{1}}\times\frac{{}_{1}\mathrm{C}_{1}\,{}_{8}\mathrm{C}_{1}}{{}_{9}\mathrm{C}_{2}}=\frac{2}{45}\]</div>
+<div class="formula joint-probability">\[P(X=1,\,Y=2)=\frac{{}_{2}\mathrm{C}_{1}}{{}_{10}\mathrm{C}_{1}}\times\frac{{}_{1}\mathrm{C}_{2}}{{}_{9}\mathrm{C}_{2}}=0\]</div>
 <p>同様にして求めた同時分布表は次のとおりである。行が \(X\)、列が \(Y\) を表す。</p>
 <div class="table-wrap"><table class="joint-teaching"><thead><tr><th>\(X\backslash Y\)</th><th>\(0\)</th><th>\(1\)</th><th>\(2\)</th><th>計</th></tr></thead><tbody>
-<tr><th>\(0\)</th><td>\(\frac{7}{15}\)</td><td>\(\frac{14}{45}\)</td><td>\(\frac{1}{45}\)</td><td>\(\frac45\)</td></tr>
-<tr><th>\(1\)</th><td>\(\frac{7}{45}\)</td><td>\(\frac{2}{45}\)</td><td>\(0\)</td><td>\(\frac15\)</td></tr>
-<tr><th>計</th><td>\(\frac{28}{45}\)</td><td>\(\frac{16}{45}\)</td><td>\(\frac{1}{45}\)</td><td>\(1\)</td></tr></tbody></table></div>
+<tr><th>\(0\)</th><td>\(\dfrac{7}{15}\)</td><td>\(\dfrac{14}{45}\)</td><td>\(\dfrac{1}{45}\)</td><td>\(\frac45\)</td></tr>
+<tr><th>\(1\)</th><td>\(\dfrac{7}{45}\)</td><td>\(\dfrac{2}{45}\)</td><td>\(0\)</td><td>\(\frac15\)</td></tr>
+<tr><th>計</th><td>\(\dfrac{28}{45}\)</td><td>\(\dfrac{16}{45}\)</td><td>\(\dfrac{1}{45}\)</td><td>\(1\)</td></tr></tbody></table></div>
 <h3>① \(X\) の確率分布表</h3>
 <p>同時分布表の<strong>各行を横に足す</strong>と、\(X\) の確率分布が得られる。</p>
 <div class="table-wrap"><table><tr><th>\(X\)</th><th>\(0\)</th><th>\(1\)</th><th>計</th></tr><tr><th>\(P\)</th><td>\(\frac45\)</td><td>\(\frac15\)</td><td>\(1\)</td></tr></table></div>
 <h3>② \(Y\) の確率分布表</h3>
 <p>同時分布表の<strong>各列を縦に足す</strong>と、\(Y\) の確率分布が得られる。</p>
-<div class="table-wrap"><table><tr><th>\(Y\)</th><th>\(0\)</th><th>\(1\)</th><th>\(2\)</th><th>計</th></tr><tr><th>\(P\)</th><td>\(\frac{28}{45}\)</td><td>\(\frac{16}{45}\)</td><td>\(\frac{1}{45}\)</td><td>\(1\)</td></tr></table></div>
+<div class="table-wrap"><table><tr><th>\(Y\)</th><th>\(0\)</th><th>\(1\)</th><th>\(2\)</th><th>計</th></tr><tr><th>\(P\)</th><td>\(\dfrac{28}{45}\)</td><td>\(\dfrac{16}{45}\)</td><td>\(\dfrac{1}{45}\)</td><td>\(1\)</td></tr></table></div>
 <h3>③ \(X+Y\) の確率分布表</h3>
 <p>\(Z=X+Y\) とおく。同時分布表のうち、\(x+y\) が等しい組の確率を足す。</p>
-<div class="formula">\[\begin{aligned}P(Z=0)&=P(0,0)=\frac7{15},\\P(Z=1)&=P(0,1)+P(1,0)=\frac{14}{45}+\frac7{45}=\frac7{15},\\P(Z=2)&=P(0,2)+P(1,1)=\frac1{45}+\frac2{45}=\frac1{15}.\end{aligned}\]</div>
+<div class="formula">\[\begin{aligned}P(Z=0)&=P(0,0)=\frac7{15},\\P(Z=1)&=P(0,1)+P(1,0)=\dfrac{14}{45}+\frac7{45}=\frac7{15},\\P(Z=2)&=P(0,2)+P(1,1)=\frac1{45}+\frac2{45}=\frac1{15}.\end{aligned}\]</div>
 <div class="table-wrap"><table><tr><th>\(Z=X+Y\)</th><th>\(0\)</th><th>\(1\)</th><th>\(2\)</th><th>計</th></tr><tr><th>\(P\)</th><td>\(\frac7{15}\)</td><td>\(\frac7{15}\)</td><td>\(\frac1{15}\)</td><td>\(1\)</td></tr></table></div>
 <h3>④ それぞれの期待値を計算する</h3>
 <p>それぞれの値に確率を掛けて足す。</p>
