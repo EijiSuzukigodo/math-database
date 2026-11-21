@@ -139,6 +139,13 @@ main.lesson-standard-main article.paper li mjx-container:not([display="true"]){f
 main.lesson-standard-main article.paper .formula mjx-container[display="true"]{font-size:100%!important}
 main.lesson-standard-main article.paper .answer p,
 main.lesson-standard-main article.paper .example p{font-size:16px!important;line-height:1.85!important}
+</style><style id="group-number-formulas-size">
+/* この3行のみ本文と同じ大きさにする */
+.group-number-formulas{background:#eff7fd;border:1px solid #d7e6f3;border-radius:10px;padding:14px 10px;font-size:16px!important;line-height:1.9}
+.group-number-formulas>div{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin:4px 0;font-size:16px!important;font-weight:400}
+.group-number-formulas>div>span{font-size:16px!important;font-weight:400}
+.group-number-formulas mjx-container{font-size:100%!important}
+@media(max-width:600px){.group-number-formulas>div{justify-content:flex-start;gap:5px}}
 </style></head><body>
 <header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>いろいろな数列の和</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main" data-hs-lesson=""><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>項の形に注目して、和の求め方を選ぶ</h2><p>隣り合う項が消えるように分数を差に直したり、公比を掛けた式と元の式を縦に並べたりして、何が残るかを確かめる。群に区切られた数列では、先に項数を数え、目的の群の初項・末項・和を求める。</p></section>
 <nav class="hs-study-nav" aria-label="授業の進め方">
@@ -209,11 +216,11 @@ main.lesson-standard-main article.paper .example p{font-size:16px!important;line
 </div>
 </div>
 <p>第 \(n-1\) 群の末項は、全体の第 \(\dfrac{n(n-1)}2\) 項である。したがって、その次が第 \(n\) 群の初項になる。第 \(n\) 群には \(n\) 項あるので、末項の番号は次のとおり。</p>
-<div class="formula">\[\begin{aligned}
-\text{第 }(n-1)\text{ 群の末項の番号}&=\frac{n(n-1)}2\\
-\text{第 }n\text{ 群の初項の番号}&=\frac{n(n-1)}2+1\\
-\text{第 }n\text{ 群の末項の番号}&=\frac{n(n+1)}2
-\end{aligned}\]</div>
+<div class="group-number-formulas" aria-label="各群の項番号">
+<div><span>第 \(n-1\) 群の末項の番号</span><span>\(=\dfrac{n(n-1)}{2}\)</span></div>
+<div><span>第 \(n\) 群の初項の番号</span><span>\(=\dfrac{n(n-1)}{2}+1\)</span></div>
+<div><span>第 \(n\) 群の末項の番号</span><span>\(=\dfrac{n(n+1)}{2}\)</span></div>
+</div>
 <p>この例は自然数を順に並べているので、全体での項の番号と、その項の値が一致する。</p>
 <div class="example"><strong>例題9　第5群の初項、末項、和</strong><p>自然数を1項、2項、3項、…と区切った群数列の第5群を求めよ。</p></div>
 <div class="answer"><strong>解答と解説</strong><p>第4群までに \(1+2+3+4=10\) 項あるので、次の11が第5群の初項である。</p><p>第5群は \(11,12,13,14,15\)。末項は15、和は \(\dfrac{(11+15)\cdot5}{2}=65\) である。</p><div class="formula">\[{S_n=\frac{n(n^2+1)}2}\]</div><p>一般に初項と末項の和は \(n^2+1\)、項数が \(n\) なので、上の公式が導かれる。</p></div>
