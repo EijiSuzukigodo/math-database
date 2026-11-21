@@ -155,6 +155,13 @@ main.lesson-standard-main article.paper .formula mjx-container[display="true"],
 main.lesson-standard-main article.paper li mjx-container:not([display="true"]),
 main.lesson-standard-main article.paper .group-number-formulas mjx-container {font-size:113%!important;}
 </style>
+<style id="sums-specific-typography-adjustments">
+/* Adjust only fractions in the live cancellation diagram and its result. */
+#fracResult math {font-size:1.23em;vertical-align:middle;}
+#fracDiagram math {font-size:1.18em;vertical-align:middle;}
+#rootResult math {font-size:1.12em;vertical-align:middle;}
+.group-position-sequence strong {letter-spacing:0;font-weight:750;}
+</style>
 </head><body>
 <header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>いろいろな数列の和</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main" data-hs-lesson=""><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>項の形に注目して、和の求め方を選ぶ</h2><p>隣り合う項が消えるように分数を差に直したり、公比を掛けた式と元の式を縦に並べたりして、何が残るかを確かめる。群に区切られた数列では、先に項数を数え、目的の群の初項・末項・和を求める。</p></section>
 <nav class="hs-study-nav" aria-label="授業の進め方">
@@ -165,8 +172,8 @@ main.lesson-standard-main article.paper .group-number-formulas mjx-container {fo
 
 
 <article class="paper"><section id="basic"><h2 id="hs-explanation">和を求める最初の一手</h2><div class="hs-table"><table><thead><tr><th>項や並びの特徴</th><th>最初に確かめること</th></tr></thead><tbody><tr><td>分母が二つの数の積</td><td>二つの分数の差に直し、最初の3項を書く。</td></tr><tr><td>分母が平方根の和</td><td>平方根の差を掛けて有理化する。</td></tr><tr><td>等差数列の項と等比数列の項の積</td><td>和に公比を掛け、同じ累乗が縦に並ぶように書く。</td></tr><tr><td>数列が群に分かれている</td><td>目的の群の直前までに、何項あるかを数える。</td></tr></tbody></table></div><p>基本公式は<a href="mathb_sigma_notation.html">「和の記号Σ」</a>を参照。</p></section>
-<section id="fraction"><h2>1．部分分数分解を利用する和</h2><p>まず \(\frac1{2\cdot3}+\frac1{3\cdot4}+\frac1{4\cdot5}\) を考える。各項を差に直すと、後ろの分数が次の項の先頭にも現れる。</p><div class="formula">\[\left(\frac12-\frac13\right)+\left(\frac13-\frac14\right)+\left(\frac14-\frac15\right)=\frac12-\frac15=\frac3{10}\]</div><p>分母に2つの因数があるとき、<strong>差の形</strong>にすると途中の項が相殺されることがある。これを「望遠鏡型の和（テレスコーピング）」という。</p><h3>基本公式の導出</h3><div class="formula">\[\frac{1}{k(k+1)}=\frac1k-\frac1{k+1}\]</div><p>右辺を通分すると \(\dfrac{(k+1)-k}{k(k+1)}\) となり、左辺と一致する。</p>
-<div class="example"><strong id="hs-examples">例題1　部分分数分解</strong><p>\(\displaystyle\sum\limits_{k=1}^{n}\frac1{k(k+1)}\) を求めよ。</p></div><div class="answer"><strong>解答と解説</strong><p>公式を使うと、</p><div class="formula">\[\begin{aligned}\sum\limits_{k=1}^{n}\frac1{k(k+1)}&amp;=\sum\limits_{k=1}^{n}\left(\frac1k-\frac1{k+1}\right)\\&amp;=\left(1-\frac12\right)+\left(\frac12-\frac13\right)+\cdots+\left(\frac1n-\frac1{n+1}\right)\\&amp;=1-\frac1{n+1}=\frac{n}{n+1}\end{aligned}\]</div><p>最初の \(1\) と最後の \(-\frac1{n+1}\) だけが残る。</p></div>
+<section id="fraction"><h2>1．部分分数分解を利用する和</h2><p>まず \(\displaystyle\frac1{2\cdot3}+\frac1{3\cdot4}+\frac1{4\cdot5}\) を考える。各項を差に直すと、後ろの分数が次の項の先頭にも現れる。</p><div class="formula">\[\left(\frac12-\frac13\right)+\left(\frac13-\frac14\right)+\left(\frac14-\frac15\right)=\frac12-\frac15=\frac3{10}\]</div><p>分母に2つの因数があるとき、<strong>差の形</strong>にすると途中の項が相殺されることがある。これを「望遠鏡型の和（テレスコーピング）」という。</p><h3>基本公式の導出</h3><div class="formula">\[\frac{1}{k(k+1)}=\frac1k-\frac1{k+1}\]</div><p>右辺を通分すると \(\dfrac{(k+1)-k}{k(k+1)}\) となり、左辺と一致する。</p>
+<div class="example"><strong id="hs-examples">例題1　部分分数分解</strong><p>\(\displaystyle\sum\limits_{k=1}^{n}\frac1{k(k+1)}\) を求めよ。</p></div><div class="answer"><strong>解答と解説</strong><p>公式を使うと、</p><div class="formula">\[\begin{aligned}\sum\limits_{k=1}^{n}\frac1{k(k+1)}&amp;=\sum\limits_{k=1}^{n}\left(\frac1k-\frac1{k+1}\right)\\&amp;=\left(1-\frac12\right)+\left(\frac12-\frac13\right)+\cdots+\left(\frac1n-\frac1{n+1}\right)\\&amp;=1-\frac1{n+1}=\frac{n}{n+1}\end{aligned}\]</div><p>最初の \(1\) と最後の \(-\dfrac1{n+1}\) だけが残る。</p></div>
 <div class="lab"><h3>動く図①：途中の項が消える仕組み</h3><div class="controls"><label for="fracN">項数 \(n\)　<output class="value" id="fracOut">5</output></label><input aria-label="部分分数分解の項数" id="fracN" max="10" min="2" step="1" type="range" value="5"/></div><p class="small">緑は最後に残る項、赤の取り消し線は互いに打ち消し合う項を示す。</p><div aria-live="polite" class="diagram" id="fracDiagram"></div><p class="good" id="fracResult"></p></div>
 <h3>例題2　因数の差が3の部分分数分解</h3>
 <div class="example">
@@ -185,11 +192,11 @@ main.lesson-standard-main article.paper .group-number-formulas mjx-container {fo
 <div class="formula">\[\begin{aligned}
 \sum_{k=1}^{n}\frac{1}{(3k-1)(3k+2)}
 &=\frac13\left(\frac12-\frac1{3n+2}\right)\\
-&=\boxed{\frac{n}{2(3n+2)}}
+&=\frac{n}{2(3n+2)}
 \end{aligned}\]</div>
 </div>
-<h3>例題3　間隔が2の分母</h3><div class="example">\(\displaystyle\sum\limits_{k=1}^n\frac1{k(k+2)}\) を求めよ。</div><div class="answer"><strong>解答と解説</strong><p>差の形を作るために、係数 \(\frac12\) を付ける。</p><div class="formula">\[\frac1{k(k+2)}=\frac12\left(\frac1k-\frac1{k+2}\right)\]</div><div class="formula">\[\begin{aligned}\sum\limits_{k=1}^n\frac1{k(k+2)}&amp;=\frac12\left(1+\frac12-\frac1{n+1}-\frac1{n+2}\right)\end{aligned}\]</div><p>この例題では因数の差が2である。こちらでは \(k\) が1ずつ進むため、\(-\frac1{k+2}\) は<strong>二つ先の括弧</strong>の先頭と打ち消し合う。\(n\geqq2\) では初めの二つと最後の二つの分数が残る。</p></div>
-<div class="note"><strong>注意</strong>：\(\frac1{k(k+2)}=\frac1k-\frac1{k+2}\) とはならない。右辺は \(\dfrac{2}{k(k+2)}\) になるため、\(\frac12\) が必要である。</div></section>
+<h3>例題3　間隔が2の分母</h3><div class="example">\(\displaystyle\sum\limits_{k=1}^n\frac1{k(k+2)}\) を求めよ。</div><div class="answer"><strong>解答と解説</strong><p>差の形を作るために、係数 \(\dfrac12\) を付ける。</p><div class="formula">\[\frac1{k(k+2)}=\frac12\left(\frac1k-\frac1{k+2}\right)\]</div><div class="formula">\[\begin{aligned}\sum\limits_{k=1}^n\frac1{k(k+2)}&amp;=\frac12\left(1+\frac12-\frac1{n+1}-\frac1{n+2}\right)\end{aligned}\]</div><p>この例題では因数の差が2である。こちらでは \(k\) が1ずつ進むため、\(-\dfrac1{k+2}\) は<strong>二つ先の括弧</strong>の先頭と打ち消し合う。\(n\geqq2\) では初めの二つと最後の二つの分数が残る。</p></div>
+<div class="note"><strong>注意</strong>：\(\displaystyle\frac1{k(k+2)}=\frac1k-\frac1{k+2}\) とはならない。右辺は \(\dfrac{2}{k(k+2)}\) になるため、\(\dfrac12\) が必要である。</div></section>
 <section id="root"><h2>2．平方根の入った数列の和</h2><p>平方根がある場合、前後の平方根の差に直すと計算が簡単になる。分母のルートは<strong>有理化</strong>が手掛かりになる。</p>
 <h3>例題4　ルートの差を足す</h3><div class="example">\(\displaystyle\sum\limits_{k=1}^n(\sqrt{k+1}-\sqrt{k})\) を求めよ。</div><div class="answer"><strong>解答と解説</strong><p>各項を \(\sqrt{k+1}-\sqrt{k}=-(\sqrt{k}-\sqrt{k+1})\) と書く。全部の項に共通するマイナスを和の外に出すと、平方根を小さい順に並べられる。</p>
 <p>例えば初めの3項では、次のようになる。</p>
@@ -217,11 +224,11 @@ main.lesson-standard-main article.paper .group-number-formulas mjx-container {fo
 <p>したがって、第 \(n\) 群の<strong>初項・末項</strong>は次のようになる。</p>
 <div class="group-position-visual" role="group" aria-label="群の境界と各群の初項末項">
 <div class="group-position-title">第 \(n\) 群の位置を確認する</div>
-<div class="group-position-sequence">… ○ ○ <strong>○</strong> │ <strong>○</strong> ○ … ○ <strong>○</strong> │ ○ …</div>
+<div class="group-position-sequence">… ○ ○ <strong>①</strong> │ <strong>②</strong> ○ … ○ <strong>③</strong> │ ○ …</div>
 <div class="group-position-labels">
-<div><span class="dot">○</span><strong>第 \(n-1\) 群の末項</strong><span>\(\displaystyle \frac{n(n-1)}2\) 番目</span></div>
-<div><span class="dot">○</span><strong>第 \(n\) 群の初項</strong><span>\(\displaystyle \frac{n(n-1)}2+1\) 番目</span></div>
-<div><span class="dot">○</span><strong>第 \(n\) 群の末項</strong><span>\(\displaystyle \frac{n(n+1)}2\) 番目</span></div>
+<div><span class="dot">①</span><strong>第 \(n-1\) 群の末項</strong><span>\(\displaystyle \frac{n(n-1)}2\) 番目</span></div>
+<div><span class="dot">②</span><strong>第 \(n\) 群の初項</strong><span>\(\displaystyle \frac{n(n-1)}2+1\) 番目</span></div>
+<div><span class="dot">③</span><strong>第 \(n\) 群の末項</strong><span>\(\displaystyle \frac{n(n+1)}2\) 番目</span></div>
 </div>
 </div>
 <p>第 \(n-1\) 群の末項は、全体の第 \(\dfrac{n(n-1)}2\) 項である。したがって、その次が第 \(n\) 群の初項になる。第 \(n\) 群には \(n\) 項あるので、末項の番号は次のとおり。</p>
@@ -267,7 +274,7 @@ main.lesson-standard-main article.paper .group-number-formulas mjx-container {fo
    return '<span class="term '+(keep?'keep':'cancel')+'">'+(negative?'−':'')+(k===1&&!negative?'1':fraction(1,negative?k+1:k))+'</span>';
  }
  function updateF(){let n=Number(f.value);document.getElementById('fracOut').textContent=n;let html='';for(let k=1;k<=n;k++){if(k>1)html+='<span class="arrow">+</span>';html+=fractionTerm(k,n,false)+fractionTerm(k,n,true)}document.getElementById('fracDiagram').innerHTML=html;document.getElementById('fracResult').innerHTML='残るのは　1 − '+fraction(1,n+1)+' ＝ '+fraction(n,n+1);}
- function updateR(){let n=Number(r.value);document.getElementById('rootOut').textContent=n;let html='';for(let k=1;k<=n;k++){if(k>1)html+='<span class="arrow">+</span>';html+=piece(k===1?'1':'√'+k,k===1?'keep':'cancel')+piece('−√'+(k+1),k===n?'keep':'cancel')}document.getElementById('rootDiagram').innerHTML='<span>−｛</span>'+html+'<span>｝</span>';document.getElementById('rootResult').textContent='残るのは √'+(n+1)+' − 1 （約 '+(Math.sqrt(n+1)-1).toFixed(4)+'）';}
+ function updateR(){let n=Number(r.value);document.getElementById('rootOut').textContent=n;let html='';for(let k=1;k<=n;k++){if(k>1)html+='<span class="arrow">+</span>';html+=piece(k===1?'1':'√'+k,k===1?'keep':'cancel')+piece('−√'+(k+1),k===n?'keep':'cancel')}document.getElementById('rootDiagram').innerHTML='<span>−｛</span>'+html+'<span>｝</span>';document.getElementById('rootResult').innerHTML='残るのは <math><msqrt><mn>'+(n+1)+'</mn></msqrt><mo>−</mo><mn>1</mn></math> （約 '+(Math.sqrt(n+1)-1).toFixed(4)+'）';}
  f.addEventListener('input',updateF);r.addEventListener('input',updateR);updateF();updateR();
 })();
 </script><script>(function(){const s=document.getElementById('groupN'),diagram=document.getElementById('groupDiagram'),result=document.getElementById('groupResult'),out=document.getElementById('groupOut');if(!s)return;function show(){const n=Number(s.value);out.textContent=n;diagram.replaceChildren();let start=1;for(let k=1;k<=n;k++){const box=document.createElement('div');box.className='group-box'+(k===n?' active':'');const title=document.createElement('div');title.className='group-title';title.textContent='第'+k+'群';box.appendChild(title);const items=document.createElement('div');items.className='group-items';for(let j=0;j<k;j++){const item=document.createElement('span');item.className='group-item';item.textContent=start+j;items.appendChild(item)}box.appendChild(items);diagram.appendChild(box);start+=k}const first=1+n*(n-1)/2,last=n*(n+1)/2;result.textContent='第'+n+'群：初項 '+first+'、末項 '+last+'、項数 '+n+'、和 '+(n*(n*n+1)/2)}s.addEventListener('input',show);show()})();</script>
