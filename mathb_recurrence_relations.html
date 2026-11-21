@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>漸化式と数列｜みんなの数学データベース</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f2f6fc;color:#1c3148;font-family:-apple-system,BlinkMacSystemFont,'Hiragino Kaku Gothic ProN',Meiryo,sans-serif;line-height:1.85}a{color:#186da8}.wrap{max-width:1050px;margin:auto;padding:0 16px}header{background:linear-gradient(110deg,#17365d,#246ca3);color:#fff;padding:24px 0}header a{color:#fff}header h1{font-size:clamp(25px,4vw,34px);margin:8px 0}main{padding:20px 0 55px}.nav{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:17px}.nav a{padding:7px 12px;background:#e2effb;border-radius:8px;text-decoration:none;font-weight:bold}.intro{background:#e4f1ff;border-left:5px solid #2585bd;padding:15px;border-radius:9px}.paper{background:#fff;border:1px solid #d6e3f0;border-radius:14px;padding:clamp(16px,3vw,30px);margin:17px 0}h2{color:#174c7b;border-bottom:2px solid #bcd3e8;padding-bottom:7px;margin-top:29px}h3{color:#123e65;margin-top:22px}.formula{background:#f3f8ff;border:1px solid #d6e5fa;border-radius:10px;padding:10px 7px;margin:12px 0;overflow-x:auto;text-align:center;font-size:0.98rem}.example{border-left:5px solid #e6a345;background:#fffaf0;border-radius:9px;padding:12px 15px;margin:14px 0}.answer{border-left:5px solid #3ca07b;background:#f0faf5;border-radius:9px;padding:12px 15px;margin:10px 0}.exercise{background:#f8faff;border:1px solid #d6e3f0;border-radius:9px;padding:13px 15px;margin:11px 0}.note{background:#f4f7fb;border-left:4px solid #7b97ad;padding:10px 14px;border-radius:7px}.tag{font-size:.8rem;background:#e5f3fe;border-radius:18px;padding:3px 9px;color:#21597c}summary{cursor:pointer;color:#145e95;font-weight:bold;padding:5px 0}details{margin-top:6px}.toc{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}.toc a{background:#eef5fd;padding:5px 10px;border-radius:6px;text-decoration:none;font-size:.91rem}.controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:12px 0}.control{border:1px solid #d6e3f0;border-radius:8px;padding:9px;background:white}.control label{display:block;font-weight:bold}.control output{font-variant-numeric:tabular-nums;color:#145e95}.control input,.control select{width:100%;min-height:32px;accent-color:#226b9f}#plot{width:100%;height:auto;display:block;background:#fff;border:1px solid #d8e2ec;border-radius:10px}#terms{overflow-x:auto;font-variant-numeric:tabular-nums;white-space:nowrap;background:#f2f6ff;padding:9px;border-radius:8px}footer{background:#142f4d;color:#e6f2ff;padding:20px 0;font-size:13px}.mjx-container[jax="SVG"][display="true"]{margin:.55em 0!important}.formula mjx-container{font-size:100%!important}button,a,summary{touch-action:manipulation}@media(max-width:500px){.wrap{padding:0 12px}.formula{font-size:.94rem}.paper{padding:15px}h2{font-size:1.23rem}}
@@ -65,8 +66,8 @@ body>footer.lesson-standard-footer>div{max-width:970px!important;margin:auto!imp
 /* MathJax SVG may not inherit broad responsive SVG sizing */
 mjx-container svg{width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;display:inline-block!important}
 @media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
-</style><link rel="stylesheet" href="lesson_common_style.css">
-<link rel="stylesheet" href="high_school_lesson_reading.css">
+</style><link href="lesson_common_style.css" rel="stylesheet"/>
+<link href="high_school_lesson_reading.css" rel="stylesheet"/>
 <style id="recurrence-2026-unified">
 /* 教科書形式の本文と見出し */
 .lesson-standard-main .paper p,.lesson-standard-main .paper li,.lesson-standard-main .paper .example,.lesson-standard-main .paper .answer{font-size:16px;line-height:1.85}
@@ -103,69 +104,73 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 .lesson-standard-goal h2{font-size:clamp(21px,3.2vw,27px)!important;line-height:1.4!important}
 .lesson-standard-goal p{font-size:14px!important;line-height:1.65!important}
 .lesson-standard-main .paper>h2{font-size:clamp(19px,2.7vw,23px)!important;line-height:1.5}
+</style><style id="recurrence-graph-height-final">/* グラフの縦幅を操作欄（現在の漸化式を含む）とそろえる */
+@media(min-width:681px){.recurrence-visual-row{align-items:stretch!important}.recurrence-visual-row .recurrence-chart{align-self:stretch!important;min-height:345px!important}.recurrence-visual-row #plot{height:100%!important;min-height:345px!important;max-height:none!important;aspect-ratio:auto!important}}
+@media(max-width:680px){.recurrence-visual-row #plot{height:auto!important;min-height:0!important;max-height:none!important;aspect-ratio:760/390!important}}
 </style></head>
 <body>
-<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>漸化式と数列</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main" data-hs-lesson=""><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>漸化式の形を見分け、数列の一般項を求める</h2><p>初項と漸化式から項を順に求め、等差型・等比型・特性方程式を使う型に整理する。さらに、隣接3項間の漸化式や2つの数列の漸化式も、解きやすい数列に変形して考える。</p></section>
-<nav class="hs-study-nav" aria-label="授業の進め方">
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>漸化式と数列</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" data-hs-lesson="" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>漸化式の形を見分け、数列の一般項を求める</h2><p>初項と漸化式から項を順に求め、等差型・等比型・特性方程式を使う型に整理する。さらに、隣接3項間の漸化式や2つの数列の漸化式も、解きやすい数列に変形して考える。</p></section>
+<nav aria-label="授業の進め方" class="hs-study-nav">
 <a href="#hs-explanation">説明</a>
 <a href="#examples">例題と解説</a>
 <a href="#practice">練習問題</a>
 <a href="#summary">まとめ</a></nav>
-
 <article class="paper">
 <h2 id="basic">1．基本事項</h2><p>漸化式とは、数列の隣り合う項などの関係を表した式です。例えば、公差 \(d\) の等差数列は次の式を満たします。</p><div class="formula">\[a_{n+1}=a_n+d\]</div><p>一般項を求めるときは、<strong>どの型に当たるか</strong> を見分け、等差・等比などの既知の数列に直すことが重要です。求めた一般項を \(a_1\) と漸化式に代入して確認しましょう。</p>
 <h2 id="viz">2．動くグラフで理解する</h2><p>漸化式 \(a_{n+1}=pa_n+q\) の値を変え、項がどのように増減するかを確かめましょう。\(p=1\) なら等差型、\(q=0\) なら等比型です。</p>
-<div class="recurrence-visual-row"><div class="recurrence-chart"><svg aria-label="数列の各項を表す折れ線グラフ" id="plot" role="img" viewBox="0 0 760 300"><text fill="#4e6376" font-size="15" x="25" y="28">横軸：項番号 n ／ 縦軸：aₙ</text></svg></div><div class="recurrence-sliders"><div class="controls"><div class="control"><label for="a1">初項 \(a_1\)：<output id="a1out">2</output></label><input id="a1" max="8" min="-5" step="1" type="range" value="2"/></div><div class="control"><label for="p">係数 \(p\)：<output id="pout">1</output></label><input id="p" max="2" min="-2" step="0.5" type="range" value="1"/></div><div class="control"><label for="q">定数 \(q\)：<output id="qout">3</output></label><input id="q" max="5" min="-5" step="1" type="range" value="3"/></div><div class="control"><label for="count">表示項数：<output id="countout">8</output></label><input id="count" max="12" min="3" step="1" type="range" value="8"/></div><div class="recurrence-current-equation" aria-live="polite"><span class="recurrence-equation-label">現在の漸化式</span><div id="recurrence-equation" class="recurrence-equation-value">aₙ₊₁ = aₙ + 3（初項 a₁ = 2）</div></div></div>
+<div class="recurrence-visual-row"><div class="recurrence-chart"><svg aria-label="数列の各項を表す折れ線グラフ" id="plot" role="img" viewbox="0 0 760 300"><text fill="#4e6376" font-size="15" x="25" y="28">横軸：項番号 n ／ 縦軸：aₙ</text></svg></div><div class="recurrence-sliders"><div class="controls"><div class="control"><label for="a1">初項 \(a_1\)：<output id="a1out">2</output></label><input id="a1" max="8" min="-5" step="1" type="range" value="2"/></div><div class="control"><label for="p">係数 \(p\)：<output id="pout">1</output></label><input id="p" max="2" min="-2" step="0.5" type="range" value="1"/></div><div class="control"><label for="q">定数 \(q\)：<output id="qout">3</output></label><input id="q" max="5" min="-5" step="1" type="range" value="3"/></div><div class="control"><label for="count">表示項数：<output id="countout">8</output></label><input id="count" max="12" min="3" step="1" type="range" value="8"/></div><div aria-live="polite" class="recurrence-current-equation"><span class="recurrence-equation-label">現在の漸化式</span><div class="recurrence-equation-value" id="recurrence-equation">aₙ₊₁ = aₙ + 3（初項 a₁ = 2）</div></div></div>
 </div></div>
 <p aria-live="polite" id="terms"></p><p class="note">グラフ上の点は各項 \((n,a_n)\) を表します。値が大きすぎる場合も全ての点が入るように縦軸を自動調整します。</p>
-<h2 id="types">3．代表的な漸化式の解き方</h2>
-<h3>① 等差型</h3><div class="formula">\[a_{n+1}=a_n+d\quad\Longrightarrow\quad a_n=a_1+(n-1)d\]</div><p>隣り合う項の差が一定です。</p>
-<h3>② 等比型</h3><div class="formula">\[a_{n+1}=ra_n\quad\Longrightarrow\quad a_n=a_1r^{n-1}\]</div><p>隣り合う項が一定の倍率で変化します。</p>
-<h3>③ 定数項のある一次型（特性方程式）</h3><p>\(a_{n+1}=pa_n+q\) に対し、\(p\neq1\) なら定数 \(\alpha\) を \(\alpha=p\alpha+q\) で定めます。\(b_n=a_n-\alpha\) とおくと等比数列になります。</p><div class="formula">\[\alpha=\frac{q}{1-p},\quad a_n=\alpha+(a_1-\alpha)p^{n-1}\quad(p\ne1)\]</div><p>\(p=1\) の場合は等差型です。</p>
-<h3>④ \(n\) を含む差の型</h3><p>\(a_{n+1}-a_n=f(n)\) なら、初項から足し合わせます。</p><div class="formula">\[a_n=a_1+\sum_{k=1}^{n-1}f(k)\quad(n\geqq2)\]</div><p>右辺を計算した後、\(n=1\) も成り立つか確かめます。</p>
+<h2 id="types">3．代表的な漸化式の解き方と解説付き例題</h2>
+<h3>① 等差型</h3><div class="formula">\[a_{n+1}=a_n+d\quad\Longrightarrow\quad a_n=a_1+(n-1)d\]</div><p>隣り合う項の差が一定です。</p><div class="example"><strong>例題1　等差型</strong><p>\(a_1=2,\ a_{n+1}=a_n+3\) の一般項を求めよ。</p></div><div class="answer"><strong>解答と解説</strong><p>両辺の差をとると \(a_{n+1}-a_n=3\) で一定なので、初項2、公差3の等差数列である。</p><div class="formula">\[a_n=a_1+(n-1)d=2+3(n-1)=\boxed{3n-1}\]</div><p>確認：\(n=1\) で2となり、\(a_{n+1}-a_n=3\) も満たす。</p></div>
+<h3>② 等比型</h3><div class="formula">\[a_{n+1}=ra_n\quad\Longrightarrow\quad a_n=a_1r^{n-1}\]</div><p>隣り合う項が一定の倍率で変化します。</p><div class="example"><strong>例題2　等比型</strong><p>\(a_1=3,\ a_{n+1}=2a_n\) の一般項を求めよ。</p></div><div class="answer"><strong>解答と解説</strong><p>次の項が前の項の2倍なので、初項3、公比2の等比数列である。</p><div class="formula">\[a_n=a_1r^{n-1}=\boxed{3\cdot2^{n-1}}\]</div><p>確認：初項は3であり、\(a_{n+1}=3\cdot2^n=2a_n\) となる。</p></div>
+<h3>③ 定数項のある一次型（特性方程式）</h3><p>\(a_{n+1}=pa_n+q\) に対し、\(p\neq1\) なら定数 \(\alpha\) を \(\alpha=p\alpha+q\) で定めます。\(b_n=a_n-\alpha\) とおくと等比数列になります。</p><div class="formula">\[\alpha=\frac{q}{1-p},\quad a_n=\alpha+(a_1-\alpha)p^{n-1}\quad(p\ne1)\]</div><p>\(p=1\) の場合は等差型です。</p><div class="example"><strong>例題3　定数項のある一次型</strong><p>\(a_1=1,\ a_{n+1}=2a_n+3\) の一般項を求めよ。</p></div><div class="answer"><strong>解答と解説</strong><p>まず定数 \(\alpha\) が \(\alpha=2\alpha+3\) を満たすと考える。これを解くと \(\alpha=-3\) である。</p><p>両辺に3を加えると</p><div class="formula">\[a_{n+1}+3=2(a_n+3)\]</div><p>そこで \(b_n=a_n+3\) とおくと、\(b_{n+1}=2b_n\)、\(b_1=1+3=4\)。よって \(\{b_n\}\) は初項4、公比2の等比数列である。</p><div class="formula">\[b_n=4\cdot2^{n-1},\qquad \boxed{a_n=4\cdot2^{n-1}-3}\]</div><p>確認：\(n=1\) で1となり、漸化式にも代入して確かめられる。</p></div>
+<h3>④ \(n\) を含む差の型</h3><p>\(a_{n+1}-a_n=f(n)\) なら、初項から足し合わせます。</p><div class="formula">\[a_n=a_1+\sum_{k=1}^{n-1}f(k)\quad(n\geqq2)\]</div><p>右辺を計算した後、\(n=1\) も成り立つか確かめます。</p><div class="example"><strong>例題4　階差の和を利用する型</strong><p>\(a_1=1,\ a_{n+1}=a_n+2n\) の一般項を求めよ。</p></div><div class="answer"><strong>解答と解説</strong><p>漸化式を \(a_{n+1}-a_n=2n\) と変形する。\(n\ge2\) では \(k=1\) から \(n-1\) まで足し合わせると、左辺の途中の項が消える。</p><div class="formula">\[\begin{aligned}a_n-a_1&amp;=\sum_{k=1}^{n-1}2k\\&amp;=2\cdot\frac{(n-1)n}{2}=n(n-1)\end{aligned}\]</div><p>\(a_1=1\) より</p><div class="formula">\[\boxed{a_n=n^2-n+1}\]</div><p>\(n=1\) でも成り立つ。また \(a_{n+1}-a_n=2n\) となる。</p></div>
 <h3>⑤ \(a_{n+1}=pa_n+r^n\) の型</h3><p>\(p\ne0\) のとき \(b_n=a_n/p^{n-1}\) とすると</p><div class="formula">\[b_{n+1}-b_n=\left(\frac rp\right)^n\]</div><p>等比数列の和を利用できます。\(p=0\) のときは元の式から直接求めます。</p>
-<h3>⑥ 分数型</h3><p>\(a_{n+1}=\dfrac{a_n}{1+ca_n}\) では、項が0でなく分母も0でない範囲で \(b_n=1/a_n\) とおきます。</p><div class="formula">\[\frac1{a_{n+1}}=\frac1{a_n}+c\]</div><p>逆数が等差数列になります。値が0になる場合や分母が0になる場合は別に確認します。</p>
+<h3>⑥ 分数型</h3><p>\(a_{n+1}=\dfrac{a_n}{1+ca_n}\) では、項が0でなく分母も0でない範囲で \(b_n=1/a_n\) とおきます。</p><div class="formula">\[\frac1{a_{n+1}}=\frac1{a_n}+c\]</div><p>逆数が等差数列になります。値が0になる場合や分母が0になる場合は別に確認します。</p><div class="example"><strong>例題5　分数型</strong><p>\(a_1=1,\ a_{n+1}=\dfrac{a_n}{1+2a_n}\) の一般項を求めよ。</p></div><div class="answer"><strong>解答と解説</strong><p>この例では各項が正なので逆数をとれる。両辺の逆数をとると</p><div class="formula">\[\frac1{a_{n+1}}=\frac{1+2a_n}{a_n}=\frac1{a_n}+2\]</div><p>\(b_n=\dfrac1{a_n}\) とおくと、\(b_{n+1}=b_n+2\)、\(b_1=1\)。したがって初項1、公差2の等差数列である。</p><div class="formula">\[b_n=1+2(n-1)=2n-1\]</div><p>逆数に戻して</p><div class="formula">\[\boxed{a_n=\frac1{2n-1}}\]</div><p>分母 \(2n-1\) は \(n\ge1\) で0にならない。</p></div>
 <h3>⑦ 隣接3項間の漸化式（差をとる型）</h3><p>\(a_{n+2}-2a_{n+1}+a_n=0\) の場合、\(d_n=a_{n+1}-a_n\) が一定です。</p><div class="formula">\[a_n=a_1+(n-1)(a_2-a_1)\]</div>
 <h3>⑧ 隣接3項間の漸化式（特性方程式）</h3><p>\(a_{n+2}=sa_{n+1}+ta_n\) は、特性方程式 \(\lambda^2-s\lambda-t=0\) を考えます。異なる2根 \(\alpha,\beta\) があれば</p><div class="formula">\[a_n=A\alpha^{n-1}+B\beta^{n-1}\]</div><p>初期条件 \(a_1,a_2\) から \(A,B\) を求めます。重根なら \(a_n=(A+B(n-1))\alpha^{n-1}\) （重根が0の場合は初期項の扱いに注意）という形を用います。</p>
 <h3>⑨ 連立漸化式</h3><p>\(a_{n+1}=2a_n+b_n,\ b_{n+1}=a_n+2b_n\) のような場合は、\(u_n=a_n+b_n,\ v_n=a_n-b_n\) とおくと</p><div class="formula">\[u_{n+1}=3u_n,\quad v_{n+1}=v_n\]</div><p>別々の等比数列にできます。最後に \(a_n=(u_n+v_n)/2,\ b_n=(u_n-v_n)/2\) で戻します。</p>
 <h3>⑩ 積を利用する型</h3><p>\(a_{n+1}=\dfrac{n+1}{n}a_n\) のとき（\(n\geqq1\)）</p><div class="formula">\[\frac{a_{n+1}}{n+1}=\frac{a_n}{n}\]</div><p>\(a_n/n\) が一定なので \(a_n=na_1\) です。</p>
-<h2 id="examples">4．解説付き例題</h2>
-<p>代表的な漸化式を、<strong>型の判定 → 変形 → 一般項 → 確認</strong>の順に解きます。</p>
-<div class="example"><strong>例題1　等差型</strong><p>\(a_1=2,\ a_{n+1}=a_n+3\) の一般項を求めよ。</p></div>
-<div class="answer"><strong>解答と解説</strong><p>両辺の差をとると \(a_{n+1}-a_n=3\) で一定なので、初項2、公差3の等差数列である。</p><div class="formula">\[a_n=a_1+(n-1)d=2+3(n-1)=\boxed{3n-1}\]</div><p>確認：\(n=1\) で2となり、\(a_{n+1}-a_n=3\) も満たす。</p></div>
-<div class="example"><strong>例題2　等比型</strong><p>\(a_1=3,\ a_{n+1}=2a_n\) の一般項を求めよ。</p></div>
-<div class="answer"><strong>解答と解説</strong><p>次の項が前の項の2倍なので、初項3、公比2の等比数列である。</p><div class="formula">\[a_n=a_1r^{n-1}=\boxed{3\cdot2^{n-1}}\]</div><p>確認：初項は3であり、\(a_{n+1}=3\cdot2^n=2a_n\) となる。</p></div>
-<div class="example"><strong>例題3　定数項のある一次型</strong><p>\(a_1=1,\ a_{n+1}=2a_n+3\) の一般項を求めよ。</p></div>
-<div class="answer"><strong>解答と解説</strong><p>まず定数 \(\alpha\) が \(\alpha=2\alpha+3\) を満たすと考える。これを解くと \(\alpha=-3\) である。</p><p>両辺に3を加えると</p><div class="formula">\[a_{n+1}+3=2(a_n+3)\]</div><p>そこで \(b_n=a_n+3\) とおくと、\(b_{n+1}=2b_n\)、\(b_1=1+3=4\)。よって \(\{b_n\}\) は初項4、公比2の等比数列である。</p><div class="formula">\[b_n=4\cdot2^{n-1},\qquad \boxed{a_n=4\cdot2^{n-1}-3}\]</div><p>確認：\(n=1\) で1となり、漸化式にも代入して確かめられる。</p></div>
-<div class="example"><strong>例題4　階差の和を利用する型</strong><p>\(a_1=1,\ a_{n+1}=a_n+2n\) の一般項を求めよ。</p></div>
-<div class="answer"><strong>解答と解説</strong><p>漸化式を \(a_{n+1}-a_n=2n\) と変形する。\(n\ge2\) では \(k=1\) から \(n-1\) まで足し合わせると、左辺の途中の項が消える。</p><div class="formula">\[\begin{aligned}a_n-a_1&=\sum_{k=1}^{n-1}2k\\&=2\cdot\frac{(n-1)n}{2}=n(n-1)\end{aligned}\]</div><p>\(a_1=1\) より</p><div class="formula">\[\boxed{a_n=n^2-n+1}\]</div><p>\(n=1\) でも成り立つ。また \(a_{n+1}-a_n=2n\) となる。</p></div>
-<div class="example"><strong>例題5　分数型</strong><p>\(a_1=1,\ a_{n+1}=\dfrac{a_n}{1+2a_n}\) の一般項を求めよ。</p></div>
-<div class="answer"><strong>解答と解説</strong><p>この例では各項が正なので逆数をとれる。両辺の逆数をとると</p><div class="formula">\[\frac1{a_{n+1}}=\frac{1+2a_n}{a_n}=\frac1{a_n}+2\]</div><p>\(b_n=\dfrac1{a_n}\) とおくと、\(b_{n+1}=b_n+2\)、\(b_1=1\)。したがって初項1、公差2の等差数列である。</p><div class="formula">\[b_n=1+2(n-1)=2n-1\]</div><p>逆数に戻して</p><div class="formula">\[\boxed{a_n=\frac1{2n-1}}\]</div><p>分母 \(2n-1\) は \(n\ge1\) で0にならない。</p></div>
-<div class="example"><strong>例題6　隣接3項間の漸化式</strong><p>\(a_1=1,\ a_2=3,\ a_{n+2}=3a_{n+1}-2a_n\) の一般項を求めよ。</p></div>
-<div class="answer"><strong>解答と解説</strong><p>特性方程式は \(x^2-3x+2=0\) で、因数分解すると \((x-1)(x-2)=0\)。異なる2根1、2をもつため、一般項を \(a_n=A+B2^{n-1}\) の形で考える。</p><p>初期条件を代入すると</p><div class="formula">\[\begin{cases}A+B=1\\A+2B=3\end{cases}\]</div><p>下の式から上の式を引くと \(B=2\)。これを \(A+B=1\) に代入して \(A=-1\)。よって</p><div class="formula">\[\boxed{a_n=2^n-1}\]</div><p>確認：\(a_1=1,\ a_2=3\)。さらに \(3a_{n+1}-2a_n=3(2^{n+1}-1)-2(2^n-1)=2^{n+2}-1=a_{n+2}\)。</p></div>
-<div class="example"><strong>例題7　2つの数列の漸化式</strong><p>\(a_1=2,\ b_1=0\)、\(a_{n+1}=2a_n+b_n,\ b_{n+1}=a_n+2b_n\) の一般項を求めよ。</p></div>
-<div class="answer"><strong>解答と解説</strong><p>2式を加えると</p><div class="formula">\[a_{n+1}+b_{n+1}=3(a_n+b_n)\]</div><p>\(u_n=a_n+b_n\) とおけば初項2、公比3の等比数列なので \(u_n=2\cdot3^{n-1}\)。</p><p>一方、2式を引くと</p><div class="formula">\[a_{n+1}-b_{n+1}=a_n-b_n\]</div><p>\(v_n=a_n-b_n\) は初項2、公比1の等比数列なので \(v_n=2\)。和と差から</p><div class="formula">\[\begin{aligned}a_n&=\frac{u_n+v_n}{2}=\boxed{3^{n-1}+1}\\b_n&=\frac{u_n-v_n}{2}=\boxed{3^{n-1}-1}\end{aligned}\]</div><p>確認：\(n=1\) で \((a_1,b_1)=(2,0)\) に一致する。</p></div>
-<h2 id="three-term-textbook">5．隣接3項間の漸化式</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="three-term-textbook">4．隣接3項間の漸化式</h2>
 <p>写真の教科書と同じように、まず特性方程式をつくり、2つの等比数列に分ける方法を学びます。</p>
 <h3>例題　特性方程式で解く</h3>
 <div class="example">\(a_1=0,\ a_2=1,\ a_{n+2}-5a_{n+1}+6a_n=0\) で定められる数列 \(\{a_n\}\) の一般項を求めよ。</div>
 <div class="answer"><strong>解答と解説</strong><p>特性方程式 \(x^2-5x+6=0\) の2解は \(2,3\) である。</p>
 <div class="formula">\[a_{n+2}-2a_{n+1}=3(a_{n+1}-2a_n)\]</div>
 <p>\(b_n=a_{n+1}-2a_n\) とおくと、\(b_{n+1}=3b_n\)、\(b_1=1\) だから \(b_n=3^{n-1}\)。同様に \(c_n=a_{n+1}-3a_n\) とおけば、\(c_n=2^{n-1}\)。</p>
-<div class="formula">\[\begin{aligned}a_{n+1}-2a_n&=3^{n-1}\\a_{n+1}-3a_n&=2^{n-1}\end{aligned}\]</div>
+<div class="formula">\[\begin{aligned}a_{n+1}-2a_n&amp;=3^{n-1}\\a_{n+1}-3a_n&amp;=2^{n-1}\end{aligned}\]</div>
 <p>上の2式を引くと、\(a_n=3^{n-1}-2^{n-1}\)。初項と漸化式にも一致する。</p>
 <div class="formula">\[\boxed{a_n=3^{n-1}-2^{n-1}}\]</div></div>
-<h2 id="two-sequences-textbook">6．2つの数列の漸化式</h2>
+<h2 id="two-sequences-textbook">5．2つの数列の漸化式</h2>
 <p>2つの数列が互いに関係しているときは、<strong>和と差</strong>を考えると解きやすくなります。</p>
 <h3>例題　和と差を利用する</h3>
 <div class="example">\(a_1=2,\ b_1=1\) とし、\(a_{n+1}=3a_n+b_n,\ b_{n+1}=a_n+3b_n\) とする。\(a_n,b_n\) を求めよ。</div>
 <div class="answer"><strong>解答と解説</strong><p>2式を加えると和が公比4の等比数列、引くと差が公比2の等比数列になる。</p>
-<div class="formula">\[\begin{aligned}a_{n+1}+b_{n+1}&=4(a_n+b_n)\\a_{n+1}-b_{n+1}&=2(a_n-b_n)\end{aligned}\]</div>
+<div class="formula">\[\begin{aligned}a_{n+1}+b_{n+1}&amp;=4(a_n+b_n)\\a_{n+1}-b_{n+1}&amp;=2(a_n-b_n)\end{aligned}\]</div>
 <p>初項は \(a_1+b_1=3,\ a_1-b_1=1\) だから</p>
 <div class="formula">\[a_n+b_n=3\cdot4^{n-1},\qquad a_n-b_n=2^{n-1}\]</div>
-<div class="formula">\[\boxed{a_n=\frac{3\cdot4^{n-1}+2^{n-1}}2},\qquad\boxed{b_n=\frac{3\cdot4^{n-1}-2^{n-1}}2}\]</div></div>
+<div class="formula">\[\boxed{a_n=\frac{3\cdot4^{n-1}+2^{n-1}}2},\qquad\boxed{b_n=\frac{3\cdot4^{n-1}-2^{n-1}}2}\]</div></div><h3>例題　和と差だけでは解けない連立漸化式</h3>
+<div class="example"><strong>問題</strong><p>初項が \(a_1=2,\ b_1=2\) で、\(a_{n+1}=2a_n+b_n,\ b_{n+1}=4b_n\) を満たす数列 \(\{a_n\},\{b_n\}\) の一般項を求めよ。</p></div>
+<div class="answer"><strong>解答と解説</strong><p>この2式は、単純に加えたり引いたりしても、和または差だけの漸化式にはなりません。そこで、まず \(b_n\) の式に注目します。</p><p>\(b_{n+1}=4b_n\) であり、\(b_1=2\) なので、\(\{b_n\}\) は初項2、公比4の等比数列です。</p><div class="formula">\[b_n=2\cdot4^{n-1}\]</div><p>これを \(a_n\) の式に代入すると</p><div class="formula">\[a_{n+1}=2a_n+2\cdot4^{n-1}\]</div><p>ここで \(c_n=a_n-\dfrac12 b_n\) とおくと、</p><div class="formula">\[\begin{aligned}c_{n+1}&amp;=a_{n+1}-\frac12 b_{n+1}\\&amp;=(2a_n+b_n)-2b_n\\&amp;=2\left(a_n-\frac12b_n\right)=2c_n\end{aligned}\]</div><p>また \(c_1=a_1-\dfrac12b_1=1\) です。したがって \(c_n=2^{n-1}\) となります。</p><div class="formula">\[\begin{aligned}a_n&amp;=c_n+\frac12b_n=2^{n-1}+4^{n-1}\\b_n&amp;=2\cdot4^{n-1}\end{aligned}\]</div><p>確認：\(n=1\) で \(a_1=2,b_1=2\)。\(n=2\) では \(a_2=6,b_2=8\) となり、もとの漸化式と一致します。</p><p>このように、和と差で直接分離できないときは、<strong>先に一方の数列を求める</strong>、または<strong>適切な係数をつけた組合せを考える</strong>方法が役立ちます。</p></div>
 <div class="exercise"><strong>練習</strong>　上の例題で \(a_2,b_2\) を漸化式と一般項の両方から計算し、答えが一致することを確かめよう。<details><summary>解答を確認</summary>\(a_2=7,\ b_2=5\)。</details></div>
-<h2 id="practice">8．練習問題（解答を開いて確認）</h2>
+<h2 id="practice">6．練習問題（解答を開いて確認）</h2>
 <div class="exercise"><strong>問題1（元の教材の問題）</strong><p>\(a_1=1,\ a_{n+1}=2a_n\) の一般項。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>初項1、公比2より \(a_n=2^{n-1}\)。</p></details></div>
 <div class="exercise"><strong>問題2</strong><p>\(a_1=5,\ a_{n+1}=a_n-2\)</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(a_n=5-2(n-1)=7-2n\)。</p></details></div>
 <div class="exercise"><strong>問題3</strong><p>\(a_1=1,\ a_{n+1}=3a_n+2\)</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(a_n+1\) が初項2、公比3の等比数列。\(a_n=2\cdot3^{n-1}-1\)。</p></details></div>
