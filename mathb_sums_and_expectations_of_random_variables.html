@@ -177,7 +177,21 @@ mjx-container {font-size: 92% !important;}
 <div class="example"><strong>確認例（同時分布・周辺分布）</strong><p>\(X,Y\) がそれぞれ0,1をとり、\(P(X=0,Y=0)=\dfrac12\)、\(P(X=0,Y=1)=\dfrac14\)、\(P(X=1,Y=0)=\dfrac14\)、\(P(X=1,Y=1)=0\) とする。\(X,Y\) の周辺分布と \(E(X+Y)\) を求めよ。</p></div>
 <div class="answer"><strong>解答と解説</strong><p>行と列を足すと、\(P(X=0)=P(Y=0)=\dfrac34\)、\(P(X=1)=P(Y=1)=\dfrac14\) です。</p><div class="formula">\[E(X)=\dfrac14,\quad E(Y)=\dfrac14,\quad E(X+Y)=\dfrac12\]</div><p>直接計算しても \(0\cdot\dfrac12+1\cdot\dfrac14+1\cdot\dfrac14+2\cdot0=\dfrac12\) となります。なお、\(P(X=1,Y=1)=0\ne\dfrac1{16}\) なので独立ではありません。</p></div>
 </div><h2>5. 確率変数の和と期待値の基本公式</h2><p>確率変数 \(X,Y\) の和 \(X+Y\) も確率変数です。期待値には次の性質があります。</p><div class="formula">\[E(X+Y)=E(X)+E(Y)\]</div><p>この公式は、<strong>\(X,Y\) が独立でなくても成立</strong>します。定数 \(a,b,c\) に対して、</p><div class="formula">\[E(aX+bY+c)=aE(X)+bE(Y)+c\]</div>
-<h2>6. なぜそうなるのか（同時分布を使った証明）</h2><p>\(X=x_i\)、\(Y=y_j\) となる同時確率を \(p_{ij}\) とすると、</p><div class="formula">\[\begin{aligned}E(X+Y)&amp;=\sum_i\sum_j(x_i+y_j)p_{ij}\\&amp;=\sum_i x_i\sum_j p_{ij}+\sum_j y_j\sum_i p_{ij}\\&amp;=E(X)+E(Y).\end{aligned}\]</div><p>それぞれの周辺確率の和に分けられるため、独立性を仮定する必要はありません。</p>
+<h2>6. なぜそうなるのか（同時分布を使った証明）</h2>
+<p>\(X\) が \(x_1,x_2,\ldots,x_n\)、\(Y\) が \(y_1,y_2,\ldots,y_m\) をとり、\(p_{ij}=P(X=x_i,Y=y_j)\) とする。</p>
+<p>同時分布から期待値を計算し、和を2つに分ける。</p>
+<div class="formula">\[\begin{aligned}
+E(X+Y)
+&=\sum_{i=1}^{n}\sum_{j=1}^{m}(x_i+y_j)p_{ij}\\[5pt]
+&=\sum_{i=1}^{n}\sum_{j=1}^{m}x_ip_{ij}
+ +\sum_{i=1}^{n}\sum_{j=1}^{m}y_jp_{ij}\\[5pt]
+&=\sum_{i=1}^{n}x_i\left(\sum_{j=1}^{m}p_{ij}\right)
+ +\sum_{j=1}^{m}y_j\left(\sum_{i=1}^{n}p_{ij}\right)\\[5pt]
+&=\sum_{i=1}^{n}x_iP(X=x_i)
+ +\sum_{j=1}^{m}y_jP(Y=y_j)\\[5pt]
+&=E(X)+E(Y).
+\end{aligned}\]</div>
+<p>ここで、\(\displaystyle\sum_{j=1}^{m}p_{ij}=P(X=x_i)\)、\(\displaystyle\sum_{i=1}^{n}p_{ij}=P(Y=y_j)\) はそれぞれ周辺確率である。この証明では独立性を仮定していない。</p>
 <h2>7. 解説付き例題</h2>
 <div class="example"><strong>例題1</strong><p>\(E(X)=3,\ E(Y)=5\) のとき、\(E(X+Y)\) を求めましょう。</p></div><div class="answer"><strong>解答・解説</strong><p>期待値の加法性より、\(E(X+Y)=3+5=8\) です。</p></div>
 <div class="example"><strong>例題2</strong><p>\(E(X)=2,\ E(Y)=-1\) のとき、\(E(3X-2Y+4)\) を求めましょう。</p></div><div class="answer"><strong>解答・解説</strong><div class="formula">\[3E(X)-2E(Y)+4=3\cdot2-2(-1)+4=12\]</div></div>
