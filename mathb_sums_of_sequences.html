@@ -147,49 +147,112 @@ main.lesson-standard-main article.paper .example p{font-size:16px!important;line
 .group-number-formulas>div>span{font-size:16px!important;font-weight:400}
 .group-number-formulas mjx-container{font-size:100%!important}
 @media(max-width:600px){.group-number-formulas>div{justify-content:flex-start;gap:5px}}
-</style><style id="mathb-unified-math-20261121">
-/* 数列を基準にした数式表示：本文・公式・例題・解答に共通 */
-:root { --mathb-formula-size: 16px; }
-body {font-size:16px;}
-body .formula,body .equation,body .math-display,body .math-box,
-body .result,body .step,body .calculation {
-  font-size:var(--mathb-formula-size)!important;
-  line-height:1.8!important;
+</style><style>
+/* 数学B・数列9教材の共通書式（既存教材の内容を保持） */
+.example {background:#fff8eb!important;border-left:5px solid #dfa23b!important}
+.answer, .exercise details.answer {background:#f0f9f0!important;border-left:5px solid #75b68b!important;color:#21364a!important}
+.answer .formula,.answer .result,.answer .step,.answer .math-box,
+.answer .equation,.answer .calculation,
+.exercise details.answer .formula {background:transparent!important;border-color:transparent!important;box-shadow:none!important;color:inherit!important}
+.answer-heading {font-weight:700;color:#21364a;margin:0 0 .7em}
+.example mjx-container,.answer mjx-container,.formula mjx-container {font-size:100%!important}
+mjx-container[display="true"] {max-width:100%;overflow-x:auto;overflow-y:hidden}
+</style><style id="mathb-nine-typography-20261121">
+/* 数列9教材・教科書表示の最終調整 */
+.example, .paper .example {
+  background:#fff8eb!important;
+  border-left:5px solid #dfa23b!important;
 }
-body mjx-container[jax="CHTML"], body mjx-container[jax="SVG"] {
-  font-size:100%!important;
-}
-body .formula mjx-container,body .example mjx-container,
-body .answer mjx-container,body .step mjx-container {
-  font-size:100%!important;
-}
-body mjx-container[display="true"] {
-  font-size:100%!important;
-  max-width:100%;
-  overflow-x:auto;
-  overflow-y:hidden;
-}
-body math {
-  font-size:1em!important;
-  font-weight:400;
-}
-body .formula math,body .answer math,body .example math {font-size:1em!important;}
-/* 分数は教科書風の上下表示。分子分母を別々に縮小しない */
-body math mfrac {math-style:normal;}
-body .example {background:#fff8eb!important;border-left:5px solid #dfa23b!important;}
-body .answer,body details.answer {
+.answer, .paper .answer, details.answer, .application-solution {
   background:#eff8e9!important;
   border-left:5px solid #76ae73!important;
   border-radius:9px!important;
+  padding:14px 17px!important;
   color:#22352b!important;
 }
-body .answer .formula,body .answer .result,body .answer .step,
-body .answer .math-box,body .answer .equation,body .answer .calculation {
+.answer-heading, .answer h4:first-child, .answer h3:first-child {
+  font-weight:700!important;
+  color:#23583a!important;
+}
+.answer .formula, .answer .result, .answer .math-box,
+.answer .equation, .answer .calculation, .answer .step,
+.answer .formula-box, .answer .boxed,
+.application-solution .formula {
   background:transparent!important;
   border-color:transparent!important;
   box-shadow:none!important;
 }
-body .answer-heading {font-weight:700;color:#23583a;}
+.paper math[display="inline"] {font-size:1.08em!important;vertical-align:middle}
+.paper math[display="block"] {font-size:1em!important;max-width:100%}
+.paper math mfrac {math-style:normal}
+.paper mjx-container {font-size:100%!important;max-width:100%}
+.paper mjx-container[display="true"] {overflow-x:auto;overflow-y:hidden}
+.paper .formula, .paper .equation {font-size:1em!important;max-width:100%;overflow-x:auto}
+@media(max-width:700px) {
+  .paper .formula,.paper .equation {font-size:1em!important}
+  .answer,.paper .answer {padding:12px 13px!important}
+}
+</style><style id="mathb-uniform-formula-font-20261121">
+/* 数列ページを基準とした数学B数列9ページ共通の数式文字サイズ */
+html body {font-size:16px!important;}
+body .formula,body .equation,body .result,body .step,body .math-box,
+body .math-display,body .math,body .answer .formula,body .example .formula,
+body .paper .formula,body .paper .equation {
+ font-size:16px!important;line-height:1.8!important;
+}
+body mjx-container[jax="CHTML"],body mjx-container[jax="SVG"],
+body .formula mjx-container,body .answer mjx-container,
+body .example mjx-container,body .step mjx-container,
+body mjx-container[display="true"] {font-size:100%!important;}
+body mjx-container[display="true"] {max-width:100%;overflow-x:auto;overflow-y:hidden;}
+body math[display="block"],body math[display="inline"] {font-size:16px!important;}
+body .formula math,body .answer math,body .example math {font-size:16px!important;}
+@media(max-width:700px){
+ body .formula,body .equation,body .result,body .step,
+ body .math-display,body .math-box,body .paper .formula {font-size:16px!important;}
+}
+</style><style id="mathb-formula-only-unified-20261121">
+/* 数学B 数列9教材：数式だけを「数学的帰納法」の大きめの表示へ統一。
+   本文の日本語、見出し、図、スライダーの文字サイズには触れない。 */
+:root { --mathb-math-size: 22px; }
+/* Native MathML (数列・等差数列・等比数列) */
+body math,
+body math[display="inline"],
+body math[display="block"],
+body .formula math,
+body .answer math,
+body .example math {
+  font-size:var(--mathb-math-size)!important;
+  font-weight:normal;
+}
+/* MathJax SVG and CHTML (Σ・階差数列・漸化式・数学的帰納法) */
+body mjx-container,
+body mjx-container[jax="SVG"],
+body mjx-container[jax="CHTML"],
+body .formula mjx-container,
+body .answer mjx-container,
+body .example mjx-container,
+body .step mjx-container,
+body .result mjx-container,
+body mjx-container[display="true"] {
+  font-size:var(--mathb-math-size)!important;
+  font-weight:normal;
+}
+/* MathJax svg width/height are computed in ex units; don't force 100% width */
+body mjx-container[jax="SVG"] > svg {
+  max-width:none!important;
+  width:auto;
+}
+body mjx-container[display="true"] {
+  max-width:100%;
+  overflow-x:auto;
+  overflow-y:hidden;
+}
+/* 数式が長い場合は折り潰さず横スクロール */
+body .formula,body .equation,body .math-scroll {
+  max-width:100%;
+  overflow-x:auto;
+}
 </style></head><body>
 <header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>いろいろな数列の和</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" data-hs-lesson="" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>項の形に注目して、和の求め方を選ぶ</h2><p>隣り合う項が消えるように分数を差に直したり、公比を掛けた式と元の式を縦に並べたりして、何が残るかを確かめる。群に区切られた数列では、先に項数を数え、目的の群の初項・末項・和を求める。</p></section>
 <nav aria-label="授業の進め方" class="hs-study-nav">
