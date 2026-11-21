@@ -131,6 +131,13 @@ mjx-container {font-size: 92% !important;}
 .graph-explain{font-size:14px;color:#334d63;margin:14px 0 5px}
 #jointGraph{max-width:780px}
 @media(max-width:720px){.z-distribution-layout{grid-template-columns:1fr;gap:10px}}
+</style><style id="joint-lesson-nov22-revision">
+/* 本文・表の分数サイズは保ち、一般式のシグマのみ縮小 */
+.compact-sigma .formula mjx-container[display="true"]{font-size:86%!important}
+#jointGraph{width:100%;height:auto;max-width:780px;display:block;margin:12px auto}
+.independence-check{background:#f0faf5;border:1px solid #cfe7d8;border-radius:9px;padding:12px 16px;margin:12px 0}
+.independence-check p{margin:7px 0;font-size:15px;overflow-wrap:anywhere}
+@media(max-width:560px){.independence-check p{font-size:13px}}
 </style></head>
 <body>
 <header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>確率変数の和と期待値</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" data-hs-lesson="" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>同時分布から3つの確率分布を作り、期待値の加法性を理解する</h2><p>くじの具体例を通して周辺分布と和の分布を求め、期待値の加法性を確認する。</p><p class="hs-outcome">同時分布表から X・Y・X+Y の確率分布表を作り、それぞれの期待値を計算する力を身につける。</p></section>
@@ -156,25 +163,26 @@ mjx-container {font-size: 92% !important;}
 <p>それぞれの値に確率を掛けて足す。</p>
 <div class="answer"><strong>解答と解説</strong><div class="formula">\[\begin{aligned}E(X)&amp;=0\times\frac45+1\times\frac15=\frac15,\\[5pt]E(Y)&amp;=0\times\frac{28}{45}+1\times\frac{16}{45}+2\times\frac1{45}=\frac25,\\[5pt]E(X+Y)&amp;=0\times\frac7{15}+1\times\frac7{15}+2\times\frac1{15}=\frac35.\end{aligned}\]</div>
 <p>\(\displaystyle \frac15+\frac25=\frac35\) より、\(E(X+Y)=E(X)+E(Y)\) が成り立つことが分かる。一般の場合も後でΣを使って証明する。</p></div>
-<h2>2. 同時分布と周辺分布の一般的な表し方</h2><p>\(X=x_i\) かつ \(Y=y_j\) となる確率を \(p_{ij}=P(X=x_i,Y=y_j)\) と表す。組の確率を並べた表が同時分布表である。</p><div class="general-joint-layout"><div class="general-joint-explanation"></div><div class="general-joint-table"><div class="table-wrap"><table class="general-joint"><thead><tr><th>\(X\backslash Y\)</th><th>\(y_1\)</th><th>\(y_2\)</th><th>\(\cdots\)</th><th>\(y_m\)</th><th>計</th></tr></thead><tbody><tr><th>\(x_1\)</th><td>\(p_{11}\)</td><td>\(p_{12}\)</td><td>\(\cdots\)</td><td>\(p_{1m}\)</td><td>\(P(X=x_1)\)</td></tr><tr><th>\(x_2\)</th><td>\(p_{21}\)</td><td>\(p_{22}\)</td><td>\(\cdots\)</td><td>\(p_{2m}\)</td><td>\(P(X=x_2)\)</td></tr><tr class="ellipsis-row"><th>\(\vdots\)</th><td>\(\vdots\)</td><td>\(\vdots\)</td><td>\(\ddots\)</td><td>\(\vdots\)</td><td>\(\vdots\)</td></tr><tr><th>\(x_n\)</th><td>\(p_{n1}\)</td><td>\(p_{n2}\)</td><td>\(\cdots\)</td><td>\(p_{nm}\)</td><td>\(P(X=x_n)\)</td></tr><tr><th>計</th><td>\(P(Y=y_1)\)</td><td>\(P(Y=y_2)\)</td><td>\(\cdots\)</td><td>\(P(Y=y_m)\)</td><td>\(1\)</td></tr></tbody></table></div></div></div>
+<div class="compact-sigma"><h2>2. 同時分布と周辺分布の一般的な表し方</h2><p>\(X=x_i\) かつ \(Y=y_j\) となる確率を \(p_{ij}=P(X=x_i,Y=y_j)\) と表す。組の確率を並べた表が同時分布表である。</p><div class="general-joint-layout"><div class="general-joint-explanation"></div><div class="general-joint-table"><div class="table-wrap"><table class="general-joint"><thead><tr><th>\(X\backslash Y\)</th><th>\(y_1\)</th><th>\(y_2\)</th><th>\(\cdots\)</th><th>\(y_m\)</th><th>計</th></tr></thead><tbody><tr><th>\(x_1\)</th><td>\(p_{11}\)</td><td>\(p_{12}\)</td><td>\(\cdots\)</td><td>\(p_{1m}\)</td><td>\(P(X=x_1)\)</td></tr><tr><th>\(x_2\)</th><td>\(p_{21}\)</td><td>\(p_{22}\)</td><td>\(\cdots\)</td><td>\(p_{2m}\)</td><td>\(P(X=x_2)\)</td></tr><tr class="ellipsis-row"><th>\(\vdots\)</th><td>\(\vdots\)</td><td>\(\vdots\)</td><td>\(\ddots\)</td><td>\(\vdots\)</td><td>\(\vdots\)</td></tr><tr><th>\(x_n\)</th><td>\(p_{n1}\)</td><td>\(p_{n2}\)</td><td>\(\cdots\)</td><td>\(p_{nm}\)</td><td>\(P(X=x_n)\)</td></tr><tr><th>計</th><td>\(P(Y=y_1)\)</td><td>\(P(Y=y_2)\)</td><td>\(\cdots\)</td><td>\(P(Y=y_m)\)</td><td>\(1\)</td></tr></tbody></table></div></div></div>
 <div class="formula">\[\sum_{i=1}^{n}\sum_{j=1}^{m}p_{ij}=1\]</div>
 <p>同時分布表の行・列の合計から求める確率分布を<strong>周辺分布</strong>という。</p>
 <div class="formula">\[P(X=x_i)=\sum_{j=1}^{m}p_{ij},\qquad P(Y=y_j)=\sum_{i=1}^{n}p_{ij}\]</div>
-<h2>3. 動く同時分布表</h2><p>2つの事象の起こりやすさの関係を変えてみましょう。下の例では、\(P(X=1)=P(Y=1)=\dfrac{1}{2}\) を保ったまま、\(P(X=1,Y=1)=t\) を変化させます。</p>
+</div><h2>3. 動く同時分布表</h2><p>2つの事象の起こりやすさの関係を変えてみましょう。下の例では、\(P(X=1)=P(Y=1)=\dfrac{1}{2}\) を保ったまま、\(P(X=1,Y=1)=t\) を変化させます。</p>
 <div class="controls"><label for="t">同時確率 \(t=P(X=1,Y=1)\)：<strong id="tv">0.25</strong></label><input id="t" max="50" min="0" step="1" type="range" value="25"/><p class="muted" id="comment"></p></div>
 <div class="table-wrap"><table><thead><tr><th>\(X\backslash Y\)</th><th>\(Y=0\)</th><th>\(Y=1\)</th><th>計</th></tr></thead><tbody><tr><th>\(X=0\)</th><td id="p00"></td><td id="p01"></td><td>0.50</td></tr><tr><th>\(X=1\)</th><td id="p10"></td><td id="p11"></td><td>0.50</td></tr><tr><th>計</th><td>0.50</td><td>0.50</td><td>1.00</td></tr></tbody></table></div>
-<p class="graph-explain">青色：同時確率（XとYの組）／緑色：Xだけの確率／橙色：Yだけの確率。XとYの周辺確率は、スライダーを動かしてもそれぞれ0.50のままです。</p><svg aria-label="同時確率4種類とXだけ、Yだけの周辺確率を比較する棒グラフ" id="jointGraph" role="img" viewbox="0 0 780 260"></svg>
+<p class="graph-explain">緑色の棒は X の周辺確率、橙色の棒は Y の周辺確率を表す。各棒の高さは 0.50 のまま、内部を2つの同時確率に分けて示す。スライダーで分かれ方が変わる。</p><svg aria-label="同時確率4種類とXだけ、Yだけの周辺確率を比較する棒グラフ" id="jointGraph" role="img" viewbox="0 0 780 260"></svg>
+<div class="independence-check" aria-live="polite"><strong>独立性の確認</strong><p id="independenceFormula"></p><p id="independenceVerdict"></p></div>
 <p>周辺分布が同じでも同時分布が異なることがあります。<strong>独立</strong>なら \(P(X=x,Y=y)=P(X=x)P(Y=y)\) がすべての組で成立します。この例では \(t=0.25\) の場合に独立です。</p>
-<h2>4. 同時分布から期待値を求める</h2><p>同時分布表が与えられれば、\(X\)、\(Y\)だけでなく、\(X+Y\) の期待値も直接求められます。</p><div class="formula">\[E(X+Y)=\sum_{i=1}^{n}\sum_{j=1}^{m}(x_i+y_j)p_{ij}\]</div>
-<div class="example"><strong>例題1（同時分布・周辺分布）</strong><p>\(X,Y\) がそれぞれ0,1をとり、\(P(0,0)=\dfrac12\)、\(P(0,1)=\dfrac14\)、\(P(1,0)=\dfrac14\)、\(P(1,1)=0\) とする。\(X,Y\) の周辺分布と \(E(X+Y)\) を求めよ。</p></div>
+<div class="compact-sigma"><h2>4. 同時分布から期待値を求める</h2><p>同時分布表が与えられれば、\(X\)、\(Y\)だけでなく、\(X+Y\) の期待値も直接求められます。</p><div class="formula">\[E(X+Y)=\sum_{i=1}^{n}\sum_{j=1}^{m}(x_i+y_j)p_{ij}\]</div>
+<div class="example"><strong>確認例（同時分布・周辺分布）</strong><p>\(X,Y\) がそれぞれ0,1をとり、\(P(X=0,Y=0)=\dfrac12\)、\(P(X=0,Y=1)=\dfrac14\)、\(P(X=1,Y=0)=\dfrac14\)、\(P(X=1,Y=1)=0\) とする。\(X,Y\) の周辺分布と \(E(X+Y)\) を求めよ。</p></div>
 <div class="answer"><strong>解答と解説</strong><p>行と列を足すと、\(P(X=0)=P(Y=0)=\dfrac34\)、\(P(X=1)=P(Y=1)=\dfrac14\) です。</p><div class="formula">\[E(X)=\dfrac14,\quad E(Y)=\dfrac14,\quad E(X+Y)=\dfrac12\]</div><p>直接計算しても \(0\cdot\dfrac12+1\cdot\dfrac14+1\cdot\dfrac14+2\cdot0=\dfrac12\) となります。なお、\(P(X=1,Y=1)=0\ne\dfrac1{16}\) なので独立ではありません。</p></div>
-<h2>5. 確率変数の和と期待値の基本公式</h2><p>確率変数 \(X,Y\) の和 \(X+Y\) も確率変数です。期待値には次の性質があります。</p><div class="formula">\[E(X+Y)=E(X)+E(Y)\]</div><p>この公式は、<strong>\(X,Y\) が独立でなくても成立</strong>します。定数 \(a,b,c\) に対して、</p><div class="formula">\[E(aX+bY+c)=aE(X)+bE(Y)+c\]</div>
+</div><h2>5. 確率変数の和と期待値の基本公式</h2><p>確率変数 \(X,Y\) の和 \(X+Y\) も確率変数です。期待値には次の性質があります。</p><div class="formula">\[E(X+Y)=E(X)+E(Y)\]</div><p>この公式は、<strong>\(X,Y\) が独立でなくても成立</strong>します。定数 \(a,b,c\) に対して、</p><div class="formula">\[E(aX+bY+c)=aE(X)+bE(Y)+c\]</div>
 <h2>6. なぜそうなるのか（同時分布を使った証明）</h2><p>\(X=x_i\)、\(Y=y_j\) となる同時確率を \(p_{ij}\) とすると、</p><div class="formula">\[\begin{aligned}E(X+Y)&amp;=\sum_i\sum_j(x_i+y_j)p_{ij}\\&amp;=\sum_i x_i\sum_j p_{ij}+\sum_j y_j\sum_i p_{ij}\\&amp;=E(X)+E(Y).\end{aligned}\]</div><p>それぞれの周辺確率の和に分けられるため、独立性を仮定する必要はありません。</p>
 <h2>7. 解説付き例題</h2>
-<div class="example"><strong>例題2（元の例題1）</strong><p>\(E(X)=3,\ E(Y)=5\) のとき、\(E(X+Y)\) を求めましょう。</p></div><div class="answer"><strong>解答・解説</strong><p>期待値の加法性より、\(E(X+Y)=3+5=8\) です。</p></div>
-<div class="example"><strong>例題3（元の例題2）</strong><p>\(E(X)=2,\ E(Y)=-1\) のとき、\(E(3X-2Y+4)\) を求めましょう。</p></div><div class="answer"><strong>解答・解説</strong><div class="formula">\[3E(X)-2E(Y)+4=3\cdot2-2(-1)+4=12\]</div></div>
+<div class="example"><strong>例題1</strong><p>\(E(X)=3,\ E(Y)=5\) のとき、\(E(X+Y)\) を求めましょう。</p></div><div class="answer"><strong>解答・解説</strong><p>期待値の加法性より、\(E(X+Y)=3+5=8\) です。</p></div>
+<div class="example"><strong>例題2</strong><p>\(E(X)=2,\ E(Y)=-1\) のとき、\(E(3X-2Y+4)\) を求めましょう。</p></div><div class="answer"><strong>解答・解説</strong><div class="formula">\[3E(X)-2E(Y)+4=3\cdot2-2(-1)+4=12\]</div></div>
 <h2 id="hs-practice">8. 練習問題</h2>
-<div class="exercise"><strong>問題1：同時分布</strong><p>\(P(0,0)=0.2,\ P(0,1)=0.3,\ P(1,0)=0.1,\ P(1,1)=0.4\) のとき、\(P(X=1),P(Y=1),E(X+Y)\) を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(P(X=1)=0.1+0.4=0.5\)、\(P(Y=1)=0.3+0.4=0.7\)。よって \(E(X+Y)=0.5+0.7=1.2\)。</p></details></div>
+<div class="exercise"><strong>問題1：同時分布</strong><p>\(P(X=0,Y=0)=0.2,\ P(X=0,Y=1)=0.3,\ P(X=1,Y=0)=0.1,\ P(X=1,Y=1)=0.4\) のとき、\(P(X=1),P(Y=1),E(X+Y)\) を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(P(X=1)=0.1+0.4=0.5\)、\(P(Y=1)=0.3+0.4=0.7\)。よって \(E(X+Y)=0.5+0.7=1.2\)。</p></details></div>
 <div class="exercise"><strong>問題2：独立性の確認</strong><p>問題1の \(X,Y\) は独立ですか。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>独立ではありません。例えば \(P(X=1,Y=1)=0.4\) ですが、\(P(X=1)P(Y=1)=0.5\times0.7=0.35\) です。</p></details></div>
 <div class="exercise"><strong>基本（元の問題）</strong><p>\(E(X)=4,\ E(Y)=7\) のとき、\(E(X+Y)\) を求めましょう。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(4+7=11\)。和の期待値は期待値の和です。</p></details></div>
 <div class="exercise"><strong>標準（元の問題）</strong><p>\(E(X)=3,\ E(Y)=2\) のとき、\(E(2X-Y+5)\) を求めましょう。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(2\cdot3-2+5=9\)。係数をそれぞれの期待値に掛けます。</p></details></div>
@@ -189,19 +197,30 @@ function redraw(){
  document.getElementById('tv').textContent=t.toFixed(2);
  ['p00','p01','p10','p11'].forEach((id,i)=>document.getElementById(id).textContent=joint[i].toFixed(2));
  document.getElementById('comment').textContent=Math.abs(t-0.25)<0.00001?'XとYは独立です。':'周辺分布は変わりませんが、XとYは独立ではありません。';
- const values=[...joint,0.5,0.5,0.5,0.5];
- const labels=['(0,0)','(0,1)','(1,0)','(1,1)','X=0','X=1','Y=0','Y=1'];
- let out='<text x="15" y="22" font-size="16" fill="#1c3148">同時確率と周辺確率の比較</text>';
- out+='<line x1="20" y1="201" x2="765" y2="201" stroke="#778ba1"/>';
- values.forEach((v,i)=>{
-   const x=35+i*94,h=v*260,color=i<4?'#3d8bc6':i<6?'#27976a':'#e49a35';
-   out+=`<rect x="${x}" y="${201-h}" width="57" height="${h}" fill="${color}" rx="3"/>`;
-   out+=`<text x="${x+28.5}" y="${194-h}" font-size="13" text-anchor="middle" fill="#1c3148">${v.toFixed(2)}</text>`;
-   out+=`<text x="${x+28.5}" y="223" font-size="13" text-anchor="middle" fill="#1c3148">${labels[i]}</text>`;
+ const rows=[
+   {label:'X=0',color:'#27976a',parts:[{v:t,label:'Y=0',shade:'#18734e'},{v:0.5-t,label:'Y=1',shade:'#8bd4ad'}]},
+   {label:'X=1',color:'#27976a',parts:[{v:0.5-t,label:'Y=0',shade:'#18734e'},{v:t,label:'Y=1',shade:'#8bd4ad'}]},
+   {label:'Y=0',color:'#e49a35',parts:[{v:t,label:'X=0',shade:'#b86b16'},{v:0.5-t,label:'X=1',shade:'#f4c780'}]},
+   {label:'Y=1',color:'#e49a35',parts:[{v:0.5-t,label:'X=0',shade:'#b86b16'},{v:t,label:'X=1',shade:'#f4c780'}]}
+ ];
+ const base=216,scale=300,barW=106;
+ let out='<text x="20" y="24" font-size="16" fill="#1c3148">周辺確率 0.50 が2つの同時確率に分かれる</text>';
+ out+='<line x1="30" y1="216" x2="750" y2="216" stroke="#778ba1"/>';
+ rows.forEach((row,i)=>{
+   const x=66+i*175;
+   let top=base;
+   row.parts.forEach((part,j)=>{
+     const h=part.v*scale;top-=h;
+     if(h>0.1)out+=`<rect x="${x}" y="${top}" width="${barW}" height="${h}" fill="${part.shade}" stroke="#ffffff" stroke-width="1"/>`;
+     if(h>22)out+=`<text x="${x+barW/2}" y="${top+h/2+4}" text-anchor="middle" font-size="13" fill="#132d38">${part.v.toFixed(2)}</text>`;
+   });
+   out+=`<text x="${x+barW/2}" y="${top-9}" text-anchor="middle" font-size="14" font-weight="bold" fill="${row.color}">合計 0.50</text>`;
+   out+=`<text x="${x+barW/2}" y="237" text-anchor="middle" font-size="15" fill="#1c3148">${row.label}</text>`;
+   out+=`<text x="${x+barW/2}" y="254" text-anchor="middle" font-size="11" fill="#52687c">濃色：${row.parts[0].label}／淡色：${row.parts[1].label}</text>`;
  });
- out+='<text x="165" y="248" text-anchor="middle" font-size="13" fill="#236b9b">同時確率</text>';
- out+='<text x="555" y="248" text-anchor="middle" font-size="13" fill="#21805b">Xだけ</text>';
- out+='<text x="735" y="248" text-anchor="middle" font-size="13" fill="#aa6b1b">Yだけ</text>';
+ const independent=Math.abs(t-0.25)<0.00001;
+ document.getElementById('independenceFormula').textContent=`P(X=1,Y=1) = ${t.toFixed(2)}　／　P(X=1)P(Y=1) = 0.50 × 0.50 = 0.25`;
+ document.getElementById('independenceVerdict').textContent=independent?'4つの組の同時確率がすべて積と一致するため、X と Y は独立です。':'この組の同時確率が積と一致しないため、X と Y は独立ではありません。';
  svg.innerHTML=out;
 }
 input.addEventListener('input',redraw);redraw();
