@@ -17,6 +17,15 @@
 .answer mjx-container,.example mjx-container{font-size:100%!important}
 .hs-outcome strong{display:none!important}
 @media(min-width:760px){.viz{max-width:100%}}
+
+/* 教科書の数式サイズを統一 */
+body{font-size:16px}
+.formula,.result,.step,.viz,.answer,.example{font-size:1rem!important}
+mjx-container[jax="SVG"],mjx-container[jax="CHTML"]{font-size:100%!important}
+mjx-container[display="true"]{font-size:100%!important;max-width:100%;overflow-x:auto;overflow-y:hidden}
+.formula mjx-container,.answer mjx-container,.example mjx-container,.step mjx-container{font-size:100%!important}
+.formula{line-height:1.6}
+@media(max-width:530px){body{font-size:16px}}
 </style>
 <script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']],processEscapes:true},svg:{fontCache:'global'},options:{skipHtmlTags:['script','noscript','style','textarea','pre']}};</script>
 <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
@@ -92,7 +101,7 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <a href="#exercise">練習問題</a>
 <a href="#end">まとめ</a></nav>
 <article class="paper">
-<h2 id="basic">1．基本事項：数学的帰納法のしくみ</h2><div class="hs-table"><table><caption>帰納法で示す二つの段階</caption>
+<h2 id="basic">1．数学的帰納法のしくみ</h2><div class="hs-table"><table><caption>帰納法で示す二つの段階</caption>
 <thead><tr><th scope="col">段階</th><th scope="col">確かめること</th></tr></thead>
 <tbody>
 <tr><th scope="row">最初</th><td>最初の自然数で命題が成り立つ</td></tr>
@@ -125,7 +134,7 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <div class="example"><strong>例題6　数学的帰納法による証明</strong><p>すべての自然数 \(n\) について、\(n(n+1)(n+2)\) は6の倍数であることを証明せよ。</p></div>
 <div class="answer"><div class="answer-heading">解答と解説</div><div class="step"><span class="tag">初期段階：</span> \(n=1\) では \(1\cdot2\cdot3=6\) で成立する。</div><div class="step"><span class="tag">帰納法の仮定：</span> \(k(k+1)(k+2)\) は6の倍数と仮定する。</div><div class="step"><span class="tag">次の段階：</span> \(n=k+1\) に対応する積を考える。<div class="formula">\[\begin{aligned}&amp;(k+1)(k+2)(k+3)\\&amp;\quad=k(k+1)(k+2)+3(k+1)(k+2).\end{aligned}\]</div><p>第1項は帰納法の仮定により6の倍数。第2項については、\(k+1\) と \(k+2\) は連続する2整数なので、どちらかが偶数であり、\((k+1)(k+2)\) は2の倍数。したがって \(3(k+1)(k+2)\) は6の倍数。</p><p>よって両者の和も6の倍数であり、\(k+1\) でも成立する。</p></div><p><strong>結論：</strong>数学的帰納法により、すべての自然数 \(n\) で成立する。</p></div>
 <div class="warn">補足：連続する3整数の中には必ず偶数と3の倍数が存在するので、直接証明することもできます。ただし、この例題では<strong>数学的帰納法による証明</strong>を学ぶため、上の方法で示しています。</div>
-<article class="paper">
+
 <h2>7．自然数・整数についての命題を証明する</h2>
 <p>数学的帰納法だけでなく、整数を余りで分類する方法も重要です。写真の教科書にある「自然数や整数に関わる命題のいろいろな証明」に対応します。</p>
 <div class="example"><strong>例題7　3の倍数の証明</strong><p>すべての整数 \(n\) に対して、\(n^3+2n\) が3の倍数であることを証明せよ。</p></div>
@@ -136,7 +145,7 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <p>③ \(n=3k+2\) のとき、\(n^3+2n=3(9k^3+18k^2+14k+4)\) である。</p>
 <p>いずれも3の整数倍なので、すべての整数 \(n\) について成立する。</p>
 <p><strong>別解：</strong>\(n^3+2n=n(n-1)(n+1)+3n\)。連続する3整数の積は3の倍数だから、こちらも3の倍数である。</p>
-</div></article><h2 id="exercise">8．練習問題</h2>
+</div><h2 id="exercise">8．練習問題</h2>
 <div class="exercise"><strong>問題1：平方数の和</strong><p>\(1^2+2^2+\cdots+n^2=\frac{n(n+1)(2n+1)}6\) を帰納法で示せ。</p><details class="answer"><summary class="hs-answer-toggle">解答・解説を表示</summary><div class="answer-heading">解答と解説</div><p>\(n=1\) では両辺は1。\(n=k\) で成立を仮定すると、</p><div class="formula">\[\begin{aligned}\sum_{j=1}^{k+1}j^2&amp;=\frac{k(k+1)(2k+1)}6+(k+1)^2\\&amp;=\frac{(k+1)(k+2)(2k+3)}6.\end{aligned}\]</div><p>よって成立する。</p></details></div>
 <div class="exercise"><strong>問題2：3の倍数</strong><p>\(7^n-1\) は3の倍数であることを帰納法で示せ。</p><details class="answer"><summary class="hs-answer-toggle">解答・解説を表示</summary><div class="answer-heading">解答と解説</div><p>\(n=1\) で \(7-1=6\)。\(7^k-1=3m\) と仮定すると、\(7^{k+1}-1=7(7^k-1)+6=3(7m+2)\)。よって成立する。</p></details></div>
 <div class="exercise"><strong>問題3：不等式</strong><p>\(n\geqq1\) に対し \(3^n\geqq2n+1\) を帰納法で示せ。</p><details class="answer"><summary class="hs-answer-toggle">解答・解説を表示</summary><div class="answer-heading">解答と解説</div><p>\(n=1\) で \(3=3\)。\(3^k\geqq2k+1\) とすると、\(3^{k+1}\geqq3(2k+1)=6k+3\geqq2k+3\)（\(k\geqq1\)）。これが目標。</p></details></div>
