@@ -152,6 +152,22 @@ body>footer.lesson-standard-footer>div{max-width:970px!important;margin:auto!imp
 .recurrence-visual-row .control label{font-size:14px!important;line-height:1.5!important;font-weight:700;}
 .recurrence-visual-row .control label i{font-family:Georgia,"Times New Roman",serif;font-size:1em;font-weight:400;}
 .recurrence-visual-row .control label sub{font-size:.72em;vertical-align:sub;}
+</style><style id="recurrence-graph-live-math-readable">
+/* Graph controls: fixed readable sizing independent of generic MathJax rules. */
+.recurrence-current-equation .recurrence-equation-value{font-size:15px!important;line-height:1.55!important;white-space:normal!important;overflow-wrap:normal!important;overflow-x:visible!important;}
+.recurrence-current-equation .recurrence-live-math{display:block;white-space:nowrap;overflow-x:auto;max-width:100%;}
+.recurrence-current-equation .recurrence-live-initial{display:block;font-size:14px;white-space:nowrap;}
+.recurrence-current-equation #recurrence-equation mjx-container[jax="SVG"],
+.recurrence-current-equation #recurrence-equation mjx-container[jax="CHTML"]{font-size:100%!important;max-width:100%;margin:0!important;vertical-align:middle;}
+#terms{font-size:15px!important;line-height:1.8!important;overflow-x:auto;white-space:nowrap;}
+#terms mjx-container[jax="SVG"],#terms mjx-container[jax="CHTML"]{font-size:100%!important;max-width:none;}
+</style>
+<style id="recurrence-native-card-final-fix">
+/* Compact equation card: independent of global mjx-container and SVG rules. */
+#recurrence-equation {font-size:16px!important;line-height:1.65!important;white-space:normal!important;overflow:visible!important;}
+#recurrence-equation .recurrence-native-equation {display:block;font-family:Georgia,"Times New Roman",serif;font-size:19px!important;font-weight:400!important;line-height:1.55!important;white-space:nowrap;letter-spacing:0;}
+#recurrence-equation .recurrence-native-initial {display:block;font-size:14px!important;line-height:1.6!important;font-weight:400!important;white-space:nowrap;}
+#recurrence-equation sub {font-size:65%!important;vertical-align:sub;line-height:0;}
 </style></head>
 <body>
 <header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>漸化式と数列</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" data-hs-lesson="" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>漸化式の形を見分け、数列の一般項を求める</h2><p>初項と漸化式から項を順に求め、等差型・等比型・特性方程式を使う型に整理する。さらに、隣接3項間の漸化式や2つの数列の漸化式も、解きやすい数列に変形して考える。</p></section>
@@ -163,7 +179,7 @@ body>footer.lesson-standard-footer>div{max-width:970px!important;margin:auto!imp
 <article class="paper">
 <h2 id="basic">1．基本事項</h2><p>漸化式とは、数列の隣り合う項などの関係を表した式です。例えば、公差 \(d\) の等差数列は次の式を満たします。</p><div class="formula">\[a_{n+1}=a_n+d\]</div><p>一般項を求めるときは、<strong>どの型に当たるか</strong> を見分け、等差・等比などの既知の数列に直すことが重要です。求めた一般項を \(a_1\) と漸化式に代入して確認しましょう。</p>
 <h2 id="viz">2．動くグラフで理解する</h2><p>漸化式 \(a_{n+1}=pa_n+q\) の値を変え、項がどのように増減するかを確かめましょう。\(p=1\) なら等差型、\(q=0\) なら等比型です。</p>
-<div class="recurrence-visual-row"><div class="recurrence-chart"><svg aria-label="数列の各項を表す折れ線グラフ" id="plot" role="img" viewbox="0 0 760 300"><text fill="#4e6376" font-size="15" x="25" y="28">横軸：項番号 n ／ 縦軸：aₙ</text></svg></div><div class="recurrence-sliders"><div class="controls"><div class="control"><label for="a1">初項 <i>a</i><sub>1</sub>：<output id="a1out">2</output></label><input id="a1" max="8" min="-5" step="1" type="range" value="2"/></div><div class="control"><label for="p">係数 <i>p</i>：<output id="pout">1</output></label><input id="p" max="2" min="-2" step="0.5" type="range" value="1"/></div><div class="control"><label for="q">定数 <i>q</i>：<output id="qout">3</output></label><input id="q" max="5" min="-5" step="1" type="range" value="3"/></div><div class="control"><label for="count">表示項数：<output id="countout">8</output></label><input id="count" max="12" min="3" step="1" type="range" value="8"/></div><div aria-live="polite" class="recurrence-current-equation"><span class="recurrence-equation-label">現在の漸化式</span><div class="recurrence-equation-value" id="recurrence-equation">aₙ₊₁ = aₙ + 3（初項 a₁ = 2）</div></div></div>
+<div class="recurrence-visual-row"><div class="recurrence-chart"><svg aria-label="数列の各項を表す折れ線グラフ" id="plot" role="img" viewbox="0 0 760 300"><text fill="#4e6376" font-size="15" x="25" y="28">横軸：項番号 n ／ 縦軸：aₙ</text></svg></div><div class="recurrence-sliders"><div class="controls"><div class="control"><label for="a1">初項 <i>a</i><sub>1</sub>：<output id="a1out">2</output></label><input id="a1" max="8" min="-5" step="1" type="range" value="2"/></div><div class="control"><label for="p">係数 <i>p</i>：<output id="pout">1</output></label><input id="p" max="2" min="-2" step="0.5" type="range" value="1"/></div><div class="control"><label for="q">定数 <i>q</i>：<output id="qout">3</output></label><input id="q" max="5" min="-5" step="1" type="range" value="3"/></div><div class="control"><label for="count">表示項数：<output id="countout">8</output></label><input id="count" max="12" min="3" step="1" type="range" value="8"/></div><div aria-live="polite" class="recurrence-current-equation"><span class="recurrence-equation-label">現在の漸化式</span><div class="recurrence-equation-value" id="recurrence-equation"><span class="recurrence-native-equation"><i>a</i><sub>n+1</sub> = <i>a</i><sub>n</sub> + 3</span><span class="recurrence-native-initial">（初項 <i>a</i><sub>1</sub> = 2）</span></div></div></div>
 </div></div>
 <p aria-live="polite" id="terms"></p><p class="note">グラフ上の点は各項 \((n,a_n)\) を表します。値が大きすぎる場合も全ての点が入るように縦軸を自動調整します。</p>
 <h2 id="types">3．代表的な漸化式の解き方と解説付き例題</h2>
@@ -246,11 +262,17 @@ const coeff=p===1?'a_n':p===-1?'-a_n':p===0?'0':`${p}a_n`;
 const eq=document.getElementById('recurrence-equation');
 const terms=document.getElementById('terms');
 // TeX values are numeric slider outputs, not arbitrary user text.
-if(window.MathJax&&MathJax.typesetClear) MathJax.typesetClear([eq,terms]);
-eq.textContent=`\\(a_{n+1}=${coeff}${signedQ}\\)　（初項 \\(a_1=${a}\\)）`;
+if(window.MathJax&&MathJax.typesetClear) MathJax.typesetClear([terms]);
+// The compact control card uses native HTML math, not MathJax SVG.
+// This prevents the global MathJax SVG scaling rules from enlarging a_1.
+const mathA = '<i>a</i><sub>n</sub>';
+const lhs = '<i>a</i><sub>n+1</sub>';
+const rhs = p===1 ? mathA : p===-1 ? '−'+mathA : p===0 ? '0' : `${p}${mathA}`;
+const tail = q<0 ? ` − ${Math.abs(q)}` : q>0 ? ` + ${q}` : '';
+eq.innerHTML=`<span class="recurrence-native-equation">${lhs} = ${rhs}${tail}</span><span class="recurrence-native-initial">（初項 <i>a</i><sub>1</sub> = ${a}）</span>`;
 terms.textContent=vals.map((v,i)=>`\\(a_{${i+1}}=${Number(v.toFixed(4))}\\)`).join('　／　');
 if(window.MathJax&&MathJax.typesetPromise){
- MathJax.typesetPromise([eq,terms]).catch(err=>console.warn('MathJax:',err));
+ MathJax.typesetPromise([terms]).catch(err=>console.warn('MathJax:',err));
 }
 while(svg.firstChild)svg.removeChild(svg.firstChild);let min=Math.min(0,...vals),max=Math.max(0,...vals);if(min===max){min--;max++;}let pad=(max-min)*.1;min-=pad;max+=pad;const left=72,right=728,top=36,bottom=259;let y=v=>bottom-(v-min)/(max-min)*(bottom-top),x=i=>left+i*(right-left)/(n-1);for(let j=0;j<=4;j++){let v=min+(max-min)*j/4;add('line',{x1:left,y1:y(v),x2:right,y2:y(v),stroke:'#e4eaf1'});add('text',{x:62,y:y(v)+4,'text-anchor':'end','font-size':12,fill:'#526c82'},svg,Number(v.toPrecision(3)).toString());}add('line',{x1:left,y1:top,x2:left,y2:bottom,stroke:'#6c879a'});add('line',{x1:left,y1:y(0),x2:right,y2:y(0),stroke:'#6c879a'});let poly=vals.map((v,i)=>`${x(i)},${y(v)}`).join(' ');add('polyline',{points:poly,fill:'none',stroke:'#17679c','stroke-width':3,'stroke-linejoin':'round'});vals.forEach((v,i)=>{add('circle',{cx:x(i),cy:y(v),r:5,fill:'#eb903a',stroke:'#fff','stroke-width':1.5});add('text',{x:x(i),y:283,'text-anchor':'middle','font-size':12,fill:'#526c82'},svg,String(i+1));});add('text',{x:20,y:26,'font-size':14,fill:'#47657c'},svg,'aₙ');}ids.forEach(id=>els[id].addEventListener('input',draw));draw();})();
 </script><footer class="lesson-standard-footer"><div><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div>みんなの数学データベース｜高校生のための授業</div></footer></body></html>
