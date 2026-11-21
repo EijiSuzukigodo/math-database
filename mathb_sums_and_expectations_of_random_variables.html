@@ -85,6 +85,31 @@ mjx-container {font-size: 92% !important;}
 .table-wrap table td,.table-wrap table th{padding:10px 12px!important;line-height:1.65!important}
 .joint-probability mjx-container[display="true"]{font-size:100%!important}
 @media(max-width:600px){.table-wrap table td,.table-wrap table th{padding:9px 8px!important}}
+</style><style id="joint-layout-fix-20261122">
+/* くじの具体例：同時確率の計算と同時分布表を横並びにする */
+.joint-calc-layout{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:16px;align-items:start;margin:16px 0 20px}
+.joint-calc-panel,.joint-table-panel,.distribution-panel{min-width:0}
+.joint-calc-panel{background:#f0faf5;border-radius:10px;padding:14px}
+.joint-calc-panel h3,.joint-table-panel h3{margin:0 0 10px;font-size:1.04rem}
+.joint-calc-panel .joint-probability{background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;margin:0!important;padding:8px 0!important;text-align:left;overflow-x:auto}
+.joint-calc-panel .joint-probability+.joint-probability{border-top:0!important}
+.joint-calc-panel .joint-probability mjx-container[display="true"]{font-size:88%!important;margin:0!important;overflow-x:visible!important}
+.joint-table-panel{background:#f4f8ff;border-radius:10px;padding:14px}
+.joint-table-panel .table-wrap{overflow-x:auto}
+.joint-table-panel table{width:100%;min-width:0;margin:0 auto}
+.joint-table-panel td,.joint-table-panel th{padding:9px 5px;font-size:14px;white-space:nowrap}
+.joint-table-panel td mjx-container,.distribution-panel td mjx-container,.distribution-panel th mjx-container,.joint-table-panel th mjx-container{font-size:103%!important}
+.distribution-two-columns{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin:12px 0 18px;align-items:start}
+.distribution-panel{background:#f5f9fe;border-radius:10px;padding:12px}
+.distribution-panel h3{font-size:1.04rem;margin:0 0 8px}
+.distribution-panel p{font-size:14px;margin:5px 0 8px}
+.distribution-panel .table-wrap{overflow-x:auto}
+.distribution-panel table{min-width:0;width:100%;margin:4px 0}
+.distribution-panel th,.distribution-panel td{padding:7px 4px;white-space:nowrap;font-size:14px}
+/* 分数は上下を読み取れる大きさに保ち、本文の数式は変更しない */
+.joint-table-panel td mjx-container,.distribution-panel td mjx-container,#hs-explanation table td mjx-container{vertical-align:middle}
+@media(max-width:720px){.joint-calc-layout{grid-template-columns:1fr}.distribution-two-columns{grid-template-columns:1fr 1fr;gap:8px}.distribution-panel{padding:8px}.distribution-panel th,.distribution-panel td{padding:6px 2px;font-size:12px}}
+@media(max-width:440px){.distribution-two-columns{grid-template-columns:1fr}.distribution-panel th,.distribution-panel td{font-size:14px}}
 </style></head>
 <body>
 <header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>確率変数の和と期待値</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" data-hs-lesson="" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>同時分布から3つの確率分布を作り、期待値の加法性を理解する</h2><p>くじの具体例を通して周辺分布と和の分布を求め、期待値の加法性を確認する。</p><p class="hs-outcome">同時分布表から X・Y・X+Y の確率分布表を作り、それぞれの期待値を計算する力を身につける。</p></section>
@@ -97,30 +122,30 @@ mjx-container {font-size: 92% !important;}
 <h2>1. 具体例から同時分布を考える</h2>
 <p>10本のくじの中に当たりくじが2本ある。Aさんが先に1本引き、残り9本からBさんが2本引く（引いたくじは戻さない）。Aさんの当たり本数を \(X\)、Bさんの当たり本数を \(Y\) とする。</p>
 <p>まず、\(X\) と \(Y\) の組ごとの確率を求める。組合せは高校数学で用いる \({}_{n}\mathrm{C}_{r}\) の形で表す。Aさんが外れた場合と当たった場合に分け、6通りをそれぞれ計算する。</p>
-<div class="formula joint-probability">\[P(X=0,\,Y=0)=\frac{{}_{8}\mathrm{C}_{1}}{{}_{10}\mathrm{C}_{1}}\times\frac{{}_{7}\mathrm{C}_{2}}{{}_{9}\mathrm{C}_{2}}=\frac{7}{15}\]</div>
-<div class="formula joint-probability">\[P(X=0,\,Y=1)=\frac{{}_{8}\mathrm{C}_{1}}{{}_{10}\mathrm{C}_{1}}\times\frac{{}_{2}\mathrm{C}_{1}\,{}_{7}\mathrm{C}_{1}}{{}_{9}\mathrm{C}_{2}}=\frac{14}{45}\]</div>
-<div class="formula joint-probability">\[P(X=0,\,Y=2)=\frac{{}_{8}\mathrm{C}_{1}}{{}_{10}\mathrm{C}_{1}}\times\frac{{}_{2}\mathrm{C}_{2}}{{}_{9}\mathrm{C}_{2}}=\frac{1}{45}\]</div>
-<div class="formula joint-probability">\[P(X=1,\,Y=0)=\frac{{}_{2}\mathrm{C}_{1}}{{}_{10}\mathrm{C}_{1}}\times\frac{{}_{8}\mathrm{C}_{2}}{{}_{9}\mathrm{C}_{2}}=\frac{7}{45}\]</div>
-<div class="formula joint-probability">\[P(X=1,\,Y=1)=\frac{{}_{2}\mathrm{C}_{1}}{{}_{10}\mathrm{C}_{1}}\times\frac{{}_{1}\mathrm{C}_{1}\,{}_{8}\mathrm{C}_{1}}{{}_{9}\mathrm{C}_{2}}=\frac{2}{45}\]</div>
-<div class="formula joint-probability">\[P(X=1,\,Y=2)=\frac{{}_{2}\mathrm{C}_{1}}{{}_{10}\mathrm{C}_{1}}\times\frac{{}_{1}\mathrm{C}_{2}}{{}_{9}\mathrm{C}_{2}}=0\]</div>
-<p>同様にして求めた同時分布表は次のとおりである。行が \(X\)、列が \(Y\) を表す。</p>
-<div class="table-wrap"><table class="joint-teaching"><thead><tr><th>\(X\backslash Y\)</th><th>\(0\)</th><th>\(1\)</th><th>\(2\)</th><th>計</th></tr></thead><tbody>
-<tr><th>\(0\)</th><td>\(\dfrac{7}{15}\)</td><td>\(\dfrac{14}{45}\)</td><td>\(\dfrac{1}{45}\)</td><td>\(\frac45\)</td></tr>
-<tr><th>\(1\)</th><td>\(\dfrac{7}{45}\)</td><td>\(\dfrac{2}{45}\)</td><td>\(0\)</td><td>\(\frac15\)</td></tr>
-<tr><th>計</th><td>\(\dfrac{28}{45}\)</td><td>\(\dfrac{16}{45}\)</td><td>\(\dfrac{1}{45}\)</td><td>\(1\)</td></tr></tbody></table></div>
-<h3>① \(X\) の確率分布表</h3>
-<p>同時分布表の<strong>各行を横に足す</strong>と、\(X\) の確率分布が得られる。</p>
-<div class="table-wrap"><table><tr><th>\(X\)</th><th>\(0\)</th><th>\(1\)</th><th>計</th></tr><tr><th>\(P\)</th><td>\(\frac45\)</td><td>\(\frac15\)</td><td>\(1\)</td></tr></table></div>
-<h3>② \(Y\) の確率分布表</h3>
-<p>同時分布表の<strong>各列を縦に足す</strong>と、\(Y\) の確率分布が得られる。</p>
-<div class="table-wrap"><table><tr><th>\(Y\)</th><th>\(0\)</th><th>\(1\)</th><th>\(2\)</th><th>計</th></tr><tr><th>\(P\)</th><td>\(\dfrac{28}{45}\)</td><td>\(\dfrac{16}{45}\)</td><td>\(\dfrac{1}{45}\)</td><td>\(1\)</td></tr></table></div>
+<div class="joint-calc-layout"><div class="joint-calc-panel"><h3>6通りの同時確率の計算</h3><div class="formula joint-probability">\[P(X=0,\,Y=0)=\frac{{}_{8}\mathrm{C}_{1}}{{}_{10}\mathrm{C}_{1}}\times\frac{{}_{7}\mathrm{C}_{2}}{{}_{9}\mathrm{C}_{2}}=\frac{7}{15}\]</div><div class="formula joint-probability">\[P(X=0,\,Y=1)=\frac{{}_{8}\mathrm{C}_{1}}{{}_{10}\mathrm{C}_{1}}\times\frac{{}_{2}\mathrm{C}_{1}\,{}_{7}\mathrm{C}_{1}}{{}_{9}\mathrm{C}_{2}}=\frac{14}{45}\]</div><div class="formula joint-probability">\[P(X=0,\,Y=2)=\frac{{}_{8}\mathrm{C}_{1}}{{}_{10}\mathrm{C}_{1}}\times\frac{{}_{2}\mathrm{C}_{2}}{{}_{9}\mathrm{C}_{2}}=\frac{1}{45}\]</div><div class="formula joint-probability">\[P(X=1,\,Y=0)=\frac{{}_{2}\mathrm{C}_{1}}{{}_{10}\mathrm{C}_{1}}\times\frac{{}_{8}\mathrm{C}_{2}}{{}_{9}\mathrm{C}_{2}}=\frac{7}{45}\]</div><div class="formula joint-probability">\[P(X=1,\,Y=1)=\frac{{}_{2}\mathrm{C}_{1}}{{}_{10}\mathrm{C}_{1}}\times\frac{{}_{1}\mathrm{C}_{1}\,{}_{8}\mathrm{C}_{1}}{{}_{9}\mathrm{C}_{2}}=\frac{2}{45}\]</div><div class="formula joint-probability">\[P(X=1,\,Y=2)=\frac{{}_{2}\mathrm{C}_{1}}{{}_{10}\mathrm{C}_{1}}\times\frac{{}_{1}\mathrm{C}_{2}}{{}_{9}\mathrm{C}_{2}}=0\]</div></div><div class="joint-table-panel"><h3>同時分布表</h3><div class="table-wrap"><table class="joint-teaching"><thead><tr><th>\(X\backslash Y\)</th><th>\(0\)</th><th>\(1\)</th><th>\(2\)</th><th>計</th></tr></thead><tbody>
+<tr><th>\(0\)</th><td>\(\dfrac{7}{15}\)</td><td>\(\dfrac{14}{45}\)</td><td>\(\dfrac{1}{45}\)</td><td>\(\dfrac45\)</td></tr>
+<tr><th>\(1\)</th><td>\(\dfrac{7}{45}\)</td><td>\(\dfrac{2}{45}\)</td><td>\(0\)</td><td>\(\dfrac15\)</td></tr>
+<tr><th>計</th><td>\(\dfrac{28}{45}\)</td><td>\(\dfrac{16}{45}\)</td><td>\(\dfrac{1}{45}\)</td><td>\(1\)</td></tr></tbody></table></div></div></div>
+
+
+
+
+
+
+
+<div class="distribution-two-columns"><section class="distribution-panel"><h3>① \(X\) の確率分布表</h3><p>同時分布表の<strong>各行を横に足す</strong>と、\(X\) の確率分布が得られる。</p><div class="table-wrap"><table><tr><th>\(X\)</th><th>\(0\)</th><th>\(1\)</th><th>計</th></tr><tr><th>\(P\)</th><td>\(\dfrac45\)</td><td>\(\dfrac15\)</td><td>\(1\)</td></tr></table></div></section><section class="distribution-panel"><h3>② \(Y\) の確率分布表</h3><p>同時分布表の<strong>各列を縦に足す</strong>と、\(Y\) の確率分布が得られる。</p><div class="table-wrap"><table><tr><th>\(Y\)</th><th>\(0\)</th><th>\(1\)</th><th>\(2\)</th><th>計</th></tr><tr><th>\(P\)</th><td>\(\dfrac{28}{45}\)</td><td>\(\dfrac{16}{45}\)</td><td>\(\dfrac{1}{45}\)</td><td>\(1\)</td></tr></table></div></section></div>
+
+
+
+
+
 <h3>③ \(X+Y\) の確率分布表</h3>
 <p>\(Z=X+Y\) とおく。同時分布表のうち、\(x+y\) が等しい組の確率を足す。</p>
-<div class="formula">\[\begin{aligned}P(Z=0)&=P(0,0)=\frac7{15},\\P(Z=1)&=P(0,1)+P(1,0)=\dfrac{14}{45}+\frac7{45}=\frac7{15},\\P(Z=2)&=P(0,2)+P(1,1)=\frac1{45}+\frac2{45}=\frac1{15}.\end{aligned}\]</div>
-<div class="table-wrap"><table><tr><th>\(Z=X+Y\)</th><th>\(0\)</th><th>\(1\)</th><th>\(2\)</th><th>計</th></tr><tr><th>\(P\)</th><td>\(\frac7{15}\)</td><td>\(\frac7{15}\)</td><td>\(\frac1{15}\)</td><td>\(1\)</td></tr></table></div>
+<div class="formula">\[\begin{aligned}P(Z=0)&amp;=P(0,0)=\frac7{15},\\P(Z=1)&amp;=P(0,1)+P(1,0)=\dfrac{14}{45}+\frac7{45}=\frac7{15},\\P(Z=2)&amp;=P(0,2)+P(1,1)=\frac1{45}+\frac2{45}=\frac1{15}.\end{aligned}\]</div>
+<div class="table-wrap"><table><tr><th>\(Z=X+Y\)</th><th>\(0\)</th><th>\(1\)</th><th>\(2\)</th><th>計</th></tr><tr><th>\(P\)</th><td>\(\dfrac7{15}\)</td><td>\(\dfrac7{15}\)</td><td>\(\dfrac1{15}\)</td><td>\(1\)</td></tr></table></div>
 <h3>④ それぞれの期待値を計算する</h3>
 <p>それぞれの値に確率を掛けて足す。</p>
-<div class="answer"><strong>解答と解説</strong><div class="formula">\[\begin{aligned}E(X)&=0\times\frac45+1\times\frac15=\frac15,\\[5pt]E(Y)&=0\times\frac{28}{45}+1\times\frac{16}{45}+2\times\frac1{45}=\frac25,\\[5pt]E(X+Y)&=0\times\frac7{15}+1\times\frac7{15}+2\times\frac1{15}=\frac35.\end{aligned}\]</div>
+<div class="answer"><strong>解答と解説</strong><div class="formula">\[\begin{aligned}E(X)&amp;=0\times\frac45+1\times\frac15=\frac15,\\[5pt]E(Y)&amp;=0\times\frac{28}{45}+1\times\frac{16}{45}+2\times\frac1{45}=\frac25,\\[5pt]E(X+Y)&amp;=0\times\frac7{15}+1\times\frac7{15}+2\times\frac1{15}=\frac35.\end{aligned}\]</div>
 <p>\(\displaystyle \frac15+\frac25=\frac35\) より、\(E(X+Y)=E(X)+E(Y)\) が成り立つことが分かる。一般の場合も後でΣを使って証明する。</p></div>
 <h2>2. 同時分布と周辺分布の一般的な表し方</h2>
 <p>\(X=x_i\) かつ \(Y=y_j\) となる確率を \(p_{ij}=P(X=x_i,Y=y_j)\) と表す。組の確率を並べた表が同時分布表である。</p>
