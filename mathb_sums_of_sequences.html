@@ -108,6 +108,28 @@ body>main.lesson-standard-main .group-position-marker .marker-label {font-size:1
 body>main.lesson-standard-main .group-position-marker .marker-formula {font-size:15px!important}
 body>main.lesson-standard-main .group-position-marker .circle {font-size:22px!important}
 body>main.lesson-standard-main .group-position-title {font-size:16px!important}
+</style><style id="textbook-typography-final">
+/* 本文・説明・例題は一定のサイズ、分数は教科書サイズ */
+main.lesson-standard-main article.paper p,
+main.lesson-standard-main article.paper li,
+main.lesson-standard-main article.paper .example,
+main.lesson-standard-main article.paper .answer,
+main.lesson-standard-main article.paper .exercise,
+main.lesson-standard-main article.paper .note {font-size:16px!important;line-height:1.9!important}
+main.lesson-standard-main article.paper h3{font-size:18px!important;line-height:1.5!important}
+main.lesson-standard-main article.paper .formula{font-size:17px!important;line-height:1.65!important}
+main.lesson-standard-main article.paper mjx-container:not([display="true"]){font-size:112%!important}
+main.lesson-standard-main article.paper .formula mjx-container[display="true"]{font-size:108%!important}
+.group-position-visual{overflow-x:auto;padding:14px 12px;background:#f6fbff;border:1px solid #b8d2e8;border-radius:12px}
+.group-position-title{font-size:16px!important}
+.group-position-sequence{text-align:center;font-size:21px;letter-spacing:3px;white-space:nowrap;margin:4px 0 13px;color:#356583}
+.group-position-labels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+.group-position-labels>div{display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;padding:7px 4px;background:#fff;border-radius:8px;min-width:0}
+.group-position-labels .dot{font-size:22px;color:#168160;line-height:1}
+.group-position-labels strong{font-size:14px;line-height:1.5}
+.group-position-labels>div>span:last-child{font-size:15px;line-height:1.6}
+.group-position-labels mjx-container{font-size:100%!important}
+@media(max-width:600px){.group-position-sequence{font-size:16px;letter-spacing:1px}.group-position-labels{gap:3px}.group-position-labels strong{font-size:12px}.group-position-labels>div>span:last-child{font-size:13px}}
 </style></head><body>
 <header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>いろいろな数列の和</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main" data-hs-lesson=""><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>項の形に注目して、和の求め方を選ぶ</h2><p>隣り合う項が消えるように分数を差に直したり、公比を掛けた式と元の式を縦に並べたりして、何が残るかを確かめる。群に区切られた数列では、先に項数を数え、目的の群の初項・末項・和を求める。</p></section>
 <nav class="hs-study-nav" aria-label="授業の進め方">
@@ -118,7 +140,7 @@ body>main.lesson-standard-main .group-position-title {font-size:16px!important}
 
 
 <article class="paper"><section id="basic"><h2 id="hs-explanation">和を求める最初の一手</h2><div class="hs-table"><table><thead><tr><th>項や並びの特徴</th><th>最初に確かめること</th></tr></thead><tbody><tr><td>分母が二つの数の積</td><td>二つの分数の差に直し、最初の3項を書く。</td></tr><tr><td>分母が平方根の和</td><td>平方根の差を掛けて有理化する。</td></tr><tr><td>等差数列の項と等比数列の項の積</td><td>和に公比を掛け、同じ累乗が縦に並ぶように書く。</td></tr><tr><td>数列が群に分かれている</td><td>目的の群の直前までに、何項あるかを数える。</td></tr></tbody></table></div><p>基本公式は<a href="mathb_sigma_notation.html">「和の記号Σ」</a>を参照。</p></section>
-<section id="fraction"><h2>1．部分分数分解を利用する和</h2><p>まず \(\frac1{2\cdot3}+\frac1{3\cdot4}+\frac1{4\cdot5}\) を考える。各項を差に直すと、後ろの分数が次の項の先頭にも現れる。</p><div class="formula">\[\left(\frac12-\frac13\right)+\left(\frac13-\frac14\right)+\left(\frac14-\frac15\right)=\frac12-\frac15=\frac3{10}\]</div><p>分母に2つの因数があるとき、<strong>差の形</strong>にすると途中の項が相殺されることがある。これを「望遠鏡型の和（テレスコーピング）」という。</p><h3>基本公式の導出</h3><div class="formula">\[\frac{1}{k(k+1)}=\frac1k-\frac1{k+1}\]</div><p>右辺を通分すると \(\frac{(k+1)-k}{k(k+1)}\) となり、左辺と一致する。</p>
+<section id="fraction"><h2>1．部分分数分解を利用する和</h2><p>まず \(\frac1{2\cdot3}+\frac1{3\cdot4}+\frac1{4\cdot5}\) を考える。各項を差に直すと、後ろの分数が次の項の先頭にも現れる。</p><div class="formula">\[\left(\frac12-\frac13\right)+\left(\frac13-\frac14\right)+\left(\frac14-\frac15\right)=\frac12-\frac15=\frac3{10}\]</div><p>分母に2つの因数があるとき、<strong>差の形</strong>にすると途中の項が相殺されることがある。これを「望遠鏡型の和（テレスコーピング）」という。</p><h3>基本公式の導出</h3><div class="formula">\[\frac{1}{k(k+1)}=\frac1k-\frac1{k+1}\]</div><p>右辺を通分すると \(\dfrac{(k+1)-k}{k(k+1)}\) となり、左辺と一致する。</p>
 <div class="example"><strong id="hs-examples">例題1　部分分数分解</strong><p>\(\displaystyle\sum\limits_{k=1}^{n}\frac1{k(k+1)}\) を求めよ。</p></div><div class="answer"><strong>解答と解説</strong><p>公式を使うと、</p><div class="formula">\[\begin{aligned}\sum\limits_{k=1}^{n}\frac1{k(k+1)}&amp;=\sum\limits_{k=1}^{n}\left(\frac1k-\frac1{k+1}\right)\\&amp;=\left(1-\frac12\right)+\left(\frac12-\frac13\right)+\cdots+\left(\frac1n-\frac1{n+1}\right)\\&amp;=1-\frac1{n+1}=\frac{n}{n+1}\end{aligned}\]</div><p>最初の \(1\) と最後の \(-\frac1{n+1}\) だけが残る。</p></div>
 <div class="lab"><h3>動く図①：途中の項が消える仕組み</h3><div class="controls"><label for="fracN">項数 \(n\)　<output class="value" id="fracOut">5</output></label><input aria-label="部分分数分解の項数" id="fracN" max="10" min="2" step="1" type="range" value="5"/></div><p class="small">緑は最後に残る項、赤の取り消し線は互いに打ち消し合う項を示す。</p><div aria-live="polite" class="diagram" id="fracDiagram"></div><p class="good" id="fracResult"></p></div>
 <h3>例題2　因数の差が3の部分分数分解</h3>
@@ -142,7 +164,7 @@ body>main.lesson-standard-main .group-position-title {font-size:16px!important}
 \end{aligned}\]</div>
 </div>
 <h3>例題3　間隔が2の分母</h3><div class="example">\(\displaystyle\sum\limits_{k=1}^n\frac1{k(k+2)}\) を求めよ。</div><div class="answer"><strong>解答と解説</strong><p>差の形を作るために、係数 \(\frac12\) を付ける。</p><div class="formula">\[\frac1{k(k+2)}=\frac12\left(\frac1k-\frac1{k+2}\right)\]</div><div class="formula">\[\begin{aligned}\sum\limits_{k=1}^n\frac1{k(k+2)}&amp;=\frac12\left(1+\frac12-\frac1{n+1}-\frac1{n+2}\right)\end{aligned}\]</div><p>この例題では因数の差が2である。こちらでは \(k\) が1ずつ進むため、\(-\frac1{k+2}\) は<strong>二つ先の括弧</strong>の先頭と打ち消し合う。\(n\geqq2\) では初めの二つと最後の二つの分数が残る。</p></div>
-<div class="note"><strong>注意</strong>：\(\frac1{k(k+2)}=\frac1k-\frac1{k+2}\) とはならない。右辺は \(\frac{2}{k(k+2)}\) になるため、\(\frac12\) が必要である。</div></section>
+<div class="note"><strong>注意</strong>：\(\frac1{k(k+2)}=\frac1k-\frac1{k+2}\) とはならない。右辺は \(\dfrac{2}{k(k+2)}\) になるため、\(\frac12\) が必要である。</div></section>
 <section id="root"><h2>2．平方根の入った数列の和</h2><p>平方根がある場合、前後の平方根の差に直すと計算が簡単になる。分母のルートは<strong>有理化</strong>が手掛かりになる。</p>
 <h3>例題4　ルートの差を足す</h3><div class="example">\(\displaystyle\sum\limits_{k=1}^n(\sqrt{k+1}-\sqrt{k})\) を求めよ。</div><div class="answer"><strong>解答と解説</strong><p>各項を \(\sqrt{k+1}-\sqrt{k}=-(\sqrt{k}-\sqrt{k+1})\) と書く。全部の項に共通するマイナスを和の外に出すと、平方根を小さい順に並べられる。</p>
 <p>例えば初めの3項では、次のようになる。</p>
@@ -161,37 +183,23 @@ body>main.lesson-standard-main .group-position-title {font-size:16px!important}
 -S &amp;-1&amp;-2\cdot2&amp;-3\cdot2^2&amp;-4\cdot2^3&amp;\\ \hline
  S &amp;-1&amp;-2&amp;-2^2&amp;-2^3&amp;+4\cdot2^4
 \end{array}\]</span>中央の列では係数の差がすべて \(-1\) になる。よって \(S=64-(1+2+4+8)=49\) である。一般の \(n\) でも同じように列をそろえる。</p><div class="formula">\[\begin{aligned}S_n&amp;=1+2\cdot2+3\cdot2^2+\cdots+n2^{n-1}\\2S_n&amp;=2+2\cdot2^2+\cdots+(n-1)2^{n-1}+n2^n\end{aligned}\]</div><p>両式の差を計算すると、</p><div class="formula">\[\begin{aligned}S_n&amp;=n2^n-(1+2+\cdots+2^{n-1})\\&amp;=n2^n-(2^n-1)\\&amp;=(n-1)2^n+1\end{aligned}\]</div></div>
-<details><summary>公比を文字 \(r\) にするとどうなるか</summary><p>\(S=1+2r+3r^2+\cdots+nr^{n-1}\) とする。\(r=1\) のときは自然数の和で、\(S=\frac{n(n+1)}2\) である。\(r\ne1\) のときは \(S-rS\) を作る。</p><div class="formula">\[\begin{aligned}(1-r)S&amp;=1+r+\cdots+r^{n-1}-nr^n\\&amp;=\frac{1-r^n}{1-r}-nr^n.\end{aligned}\]</div><p>両辺を \(1-r\) で割ると、\(S=\dfrac{1-(n+1)r^n+nr^{n+1}}{(1-r)^2}\) を得る。</p></details><h3>例題8　符号が交互に変わる和</h3><div class="example">\(1-2+3-4+\cdots+(2m-1)-2m\) を求めよ。</div><div class="answer"><strong>解答と解説</strong><p>2項ずつまとめると、</p><div class="formula">\[(1-2)+(3-4)+\cdots+\{(2m-1)-2m\}=\underbrace{(-1)+\cdots+(-1)}_{m\text{ 組}}=-m\]</div></div></section>
+<details><summary>公比を文字 \(r\) にするとどうなるか</summary><p>\(S=1+2r+3r^2+\cdots+nr^{n-1}\) とする。\(r=1\) のときは自然数の和で、\(S=\dfrac{n(n+1)}2\) である。\(r\ne1\) のときは \(S-rS\) を作る。</p><div class="formula">\[\begin{aligned}(1-r)S&amp;=1+r+\cdots+r^{n-1}-nr^n\\&amp;=\frac{1-r^n}{1-r}-nr^n.\end{aligned}\]</div><p>両辺を \(1-r\) で割ると、\(S=\dfrac{1-(n+1)r^n+nr^{n+1}}{(1-r)^2}\) を得る。</p></details><h3>例題8　符号が交互に変わる和</h3><div class="example">\(1-2+3-4+\cdots+(2m-1)-2m\) を求めよ。</div><div class="answer"><strong>解答と解説</strong><p>2項ずつまとめると、</p><div class="formula">\[(1-2)+(3-4)+\cdots+\{(2m-1)-2m\}=\underbrace{(-1)+\cdots+(-1)}_{m\text{ 組}}=-m\]</div></div></section>
 <section id="groups"><h2>4．群数列</h2>
 <p><strong>群数列</strong>とは、数列を一定の規則に従って、いくつかの「群」に区切ったものである。どの群に何項あるかを最初に調べると、群の初項・末項・和が求められる。</p>
 <div class="formula">\[1\ \big|\ 2,3\ \big|\ 4,5,6\ \big|\ 7,8,9,10\ \big|\ \cdots\]</div>
 <p>第1群には1項、第2群には2項、…、第 \(n\) 群には \(n\) 項がある。第 \(n\) 群までの項数は、</p>
 <div class="formula">\[1+2+\cdots+n=\frac{n(n+1)}2\]</div>
 <p>したがって、第 \(n\) 群の<strong>初項・末項</strong>は次のようになる。</p>
-<div class="group-position-visual" role="group" aria-label="第n-1群の末項、第n群の初項と末項をそれぞれ丸印の真下に示す">
+<div class="group-position-visual" role="group" aria-label="群の境界と各群の初項末項">
 <div class="group-position-title">第 \(n\) 群の位置を確認する</div>
-<div class="group-position-row">
-  <span class="group-position-dots">… ○ ○</span>
-  <div class="group-position-marker prev">
-    <span class="circle">○</span>
-    <span class="marker-label">第 \(n-1\) 群の末項</span>
-    <span class="marker-formula">\(\displaystyle \frac{n(n-1)}{2}\) 番目</span>
-  </div>
-  <span class="group-position-bar">│</span>
-  <div class="group-position-marker">
-    <span class="circle">○</span>
-    <span class="marker-label">第 \(n\) 群の初項</span>
-    <span class="marker-formula">\(\displaystyle \frac{n(n-1)}{2}+1\) 番目</span>
-  </div>
-  <span class="group-position-dots">○ … ○</span>
-  <div class="group-position-marker">
-    <span class="circle">○</span>
-    <span class="marker-label">第 \(n\) 群の末項</span>
-    <span class="marker-formula">\(\displaystyle \frac{n(n+1)}{2}\) 番目</span>
-  </div>
-  <span class="group-position-bar">│</span><span class="group-position-dots">○ ○ …</span>
-</div></div>
-<p>第 \(n-1\) 群の末項は、全体の第 \(\frac{n(n-1)}2\) 項である。したがって、その次が第 \(n\) 群の初項になる。第 \(n\) 群には \(n\) 項あるので、末項の番号は次のとおり。</p>
+<div class="group-position-sequence">… ○ ○ <strong>○</strong> │ <strong>○</strong> ○ … ○ <strong>○</strong> │ ○ …</div>
+<div class="group-position-labels">
+<div><span class="dot">○</span><strong>第 \(n-1\) 群の末項</strong><span>\(\displaystyle \frac{n(n-1)}2\) 番目</span></div>
+<div><span class="dot">○</span><strong>第 \(n\) 群の初項</strong><span>\(\displaystyle \frac{n(n-1)}2+1\) 番目</span></div>
+<div><span class="dot">○</span><strong>第 \(n\) 群の末項</strong><span>\(\displaystyle \frac{n(n+1)}2\) 番目</span></div>
+</div>
+</div>
+<p>第 \(n-1\) 群の末項は、全体の第 \(\dfrac{n(n-1)}2\) 項である。したがって、その次が第 \(n\) 群の初項になる。第 \(n\) 群には \(n\) 項あるので、末項の番号は次のとおり。</p>
 <div class="formula">\[\begin{aligned}
 \text{第 }(n-1)\text{ 群の末項の番号}&=\frac{n(n-1)}2\\
 \text{第 }n\text{ 群の初項の番号}&=\frac{n(n-1)}2+1\\
@@ -199,10 +207,10 @@ body>main.lesson-standard-main .group-position-title {font-size:16px!important}
 \end{aligned}\]</div>
 <p>この例は自然数を順に並べているので、全体での項の番号と、その項の値が一致する。</p>
 <div class="example"><strong>例題9　第5群の初項、末項、和</strong><p>自然数を1項、2項、3項、…と区切った群数列の第5群を求めよ。</p></div>
-<div class="answer"><strong>解答と解説</strong><p>第4群までに \(1+2+3+4=10\) 項あるので、次の11が第5群の初項である。</p><p>第5群は \(11,12,13,14,15\)。末項は15、和は \(\frac{(11+15)\cdot5}{2}=65\) である。</p><div class="formula">\[{S_n=\frac{n(n^2+1)}2}\]</div><p>一般に初項と末項の和は \(n^2+1\)、項数が \(n\) なので、上の公式が導かれる。</p></div>
+<div class="answer"><strong>解答と解説</strong><p>第4群までに \(1+2+3+4=10\) 項あるので、次の11が第5群の初項である。</p><p>第5群は \(11,12,13,14,15\)。末項は15、和は \(\dfrac{(11+15)\cdot5}{2}=65\) である。</p><div class="formula">\[{S_n=\frac{n(n^2+1)}2}\]</div><p>一般に初項と末項の和は \(n^2+1\)、項数が \(n\) なので、上の公式が導かれる。</p></div>
 <div class="lab"><h3>動く図③：群の区切りと和</h3><div class="controls"><label for="groupN">何群目まで表示するか：<output class="value" id="groupOut">5</output></label><input aria-label="表示する群の数" id="groupN" max="7" min="1" step="1" type="range" value="5"/></div><p class="small">各枠が一つの群である。青い数字が各群の項、最後の群を緑色で示す。</p><div aria-live="polite" class="groups-diagram" id="groupDiagram"></div><p class="good" id="groupResult"></p></div>
 <h3>奇数を群に分ける場合</h3><div class="formula">\[1\ \big|\ 3,5\ \big|\ 7,9,11\ \big|\ 13,15,17,19\ \big|\ \cdots\]</div>
-<p>例えば第4群の直前には \(1+2+3=6\) 個の奇数がある。したがって第4群の先頭は、奇数列の第7項 \(2\times7-1=13\) である。同様に第 \(n\) 群の先頭は、全体の第 \(\frac{n(n-1)}2+1\) 項である。この数列でも第 \(n\) 群は \(n\) 項である。第 \(n\) 群の初項は \(n(n-1)+1\)、末項は \(n(n+1)-1\)。平均は \(n^2\) なので、</p>
+<p>例えば第4群の直前には \(1+2+3=6\) 個の奇数がある。したがって第4群の先頭は、奇数列の第7項 \(2\times7-1=13\) である。同様に第 \(n\) 群の先頭は、全体の第 \(\dfrac{n(n-1)}2+1\) 項である。この数列でも第 \(n\) 群は \(n\) 項である。第 \(n\) 群の初項は \(n(n-1)+1\)、末項は \(n(n+1)-1\)。平均は \(n^2\) なので、</p>
 <div class="formula">\[{\text{第 }n\text{ 群の和}=n\cdot n^2=n^3}\]</div>
 <div class="example"><strong>例題10　奇数の群数列</strong><p>上の奇数の群数列の第4群の和を求めよ。</p></div>
 <div class="answer"><strong>解答と解説</strong><p>第4群は \(13,15,17,19\) の4項である。したがって、\(13+15+17+19=64\)。また一般式より \(4^3=64\) である。</p></div>
@@ -212,11 +220,11 @@ body>main.lesson-standard-main .group-position-title {font-size:16px!important}
 </section>
 <section id="practice"><h2 id="hs-practice">練習問題</h2><p>まず自分で考え、必要なときだけ「解答と解説を見る」を開く。</p>
 <div class="exercise"><strong>問題1（部分分数分解）</strong><p>\(\displaystyle\sum\limits_{k=1}^{9}\frac1{k(k+1)}\)</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(1-\frac1{10}=\frac9{10}\)。</p></details></div>
-<div class="exercise"><strong>問題2（部分分数分解）</strong><p>\(\displaystyle\sum\limits_{k=1}^{n}\frac1{(2k-1)(2k+1)}\)</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(\frac1{(2k-1)(2k+1)}=\frac12(\frac1{2k-1}-\frac1{2k+1})\)。したがって \(\frac12(1-\frac1{2n+1})=\frac{n}{2n+1}\)。</p></details></div>
+<div class="exercise"><strong>問題2（部分分数分解）</strong><p>\(\displaystyle\sum\limits_{k=1}^{n}\frac1{(2k-1)(2k+1)}\)</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(\frac1{(2k-1)(2k+1)}=\frac12(\frac1{2k-1}-\frac1{2k+1})\)。したがって \(\frac12(1-\frac1{2n+1})=\dfrac{n}{2n+1}\)。</p></details></div>
 <div class="exercise"><strong>問題3（ルート）</strong><p>\(\displaystyle\sum\limits_{k=1}^{8}(\sqrt{k+1}-\sqrt{k})\)</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(\sqrt9-\sqrt1=3-1=2\)。</p></details></div>
 <div class="exercise"><strong>問題4（ルートと有理化）</strong><p>\(\displaystyle\sum\limits_{k=1}^{15}\frac1{\sqrt{k+1}+\sqrt{k}}\)</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>有理化して \(\sqrt{k+1}-\sqrt{k}\) にする。和は \(\sqrt{16}-1=3\)。</p></details></div>
-<div class="exercise"><strong>問題5（ルートと係数）</strong><p>\(\displaystyle\sum\limits_{k=1}^{12}\frac1{\sqrt{2k+1}+\sqrt{2k-1}}\)</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>各項を有理化すると \(\frac12(\sqrt{2k+1}-\sqrt{2k-1})\)。答えは \(\frac{\sqrt{25}-1}{2}=2\)。</p></details></div>
-<div class="exercise"><strong>問題6（発展）</strong><p>\(\displaystyle\sum\limits_{k=1}^{n}\frac{1}{k(k+1)(k+2)}\)</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(\frac1{k(k+1)(k+2)}=\frac12\left\{\frac1{k(k+1)}-\frac1{(k+1)(k+2)}\right\}\)。よって \(\frac12\left(\frac12-\frac1{(n+1)(n+2)}\right)=\frac14-\frac1{2(n+1)(n+2)}\)。</p></details></div>
+<div class="exercise"><strong>問題5（ルートと係数）</strong><p>\(\displaystyle\sum\limits_{k=1}^{12}\frac1{\sqrt{2k+1}+\sqrt{2k-1}}\)</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>各項を有理化すると \(\frac12(\sqrt{2k+1}-\sqrt{2k-1})\)。答えは \(\dfrac{\sqrt{25}-1}{2}=2\)。</p></details></div>
+<div class="exercise"><strong>問題6（発展）</strong><p>\(\displaystyle\sum\limits_{k=1}^{n}\dfrac{1}{k(k+1)(k+2)}\)</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(\frac1{k(k+1)(k+2)}=\frac12\left\{\frac1{k(k+1)}-\frac1{(k+1)(k+2)}\right\}\)。よって \(\frac12\left(\frac12-\frac1{(n+1)(n+2)}\right)=\frac14-\frac1{2(n+1)(n+2)}\)。</p></details></div>
 <div class="exercise"><strong>問題7（群数列）</strong><p>\(1\mid2,3\mid4,5,6\mid\cdots\) の第6群の初項、末項、和を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>初項 \(1+6\cdot5/2=16\)、末項 \(6\cdot7/2=21\)、和 \((16+21)\cdot6/2=111\)。</p></details></div>
 <div class="exercise"><strong>問題8（群数列）</strong><p>自然数を1項、2項、3項、…と区切るとき、自然数50は何群目の何番目か。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>第9群まで45項、第10群まで55項なので、第10群の \(50-45=5\) 番目である。</p></details></div>
 <div class="exercise"><strong>問題9（奇数の群数列）</strong><p>\(1\mid3,5\mid7,9,11\mid\cdots\) の第6群の和を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>第 \(n\) 群の和は \(n^3\)。したがって \(6^3=216\)。</p></details></div>
