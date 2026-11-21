@@ -7,7 +7,27 @@
 <style>
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f2f6fc;color:#1c3148;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.8;font-size:16px}a{color:#186da8}.wrap{max-width:1040px;margin:auto;padding:0 17px}header{background:linear-gradient(110deg,#17365d,#246ca3);color:white;padding:25px 0}header a{color:white}header h1{font-size:clamp(24px,4vw,34px);margin:9px 0 3px}header p{margin:0;color:#e4f0fa}main{padding:24px 0 55px}h2{font-size:1.4rem;color:#174c7b;border-bottom:2px solid #bcd3e8;padding-bottom:6px;margin:30px 0 16px}h3{font-size:1.12rem;color:#123e65;margin:22px 0 9px}p{overflow-wrap:anywhere}.nav{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:17px}.nav a{padding:7px 12px;background:#e2effb;border-radius:8px;text-decoration:none;font-weight:700}.intro{background:#e4f1ff;border-left:5px solid #2585bd;padding:16px;border-radius:9px;margin:0 0 20px}.paper{background:#fff;border:1px solid #d6e3f0;border-radius:14px;padding:clamp(15px,3vw,32px);margin:18px 0}.formula{background:#f3f8ff;border:1px solid #d6e5fa;border-radius:10px;padding:12px 9px;margin:14px 0;overflow-x:auto;text-align:center}.example{border-left:5px solid #e6a345;background:#fffaf0;border-radius:9px;padding:14px 16px;margin:13px 0}.answer{border-left:5px solid #3ca07b;background:#f0faf5;border-radius:9px;padding:14px 16px;margin:12px 0}.exercise{background:#f8faff;border:1px solid #d6e3f0;border-radius:10px;padding:13px 16px;margin-top:13px}summary{cursor:pointer;color:#145e95;font-weight:700}details{margin-top:9px}details[open] summary{margin-bottom:12px}footer{background:#142f4d;color:#e6f2ff;padding:20px 0;font-size:13px}.muted{color:#526c82}.chip{display:inline-block;border-radius:25px;background:#e5f3fe;color:#246a96;padding:3px 10px;font-size:12px;font-weight:700}.note{background:#fff6e8;border-left:4px solid #d28b23;padding:11px 14px;border-radius:7px}.good{background:#e9f7ef;border-left:4px solid #329976;padding:11px 14px;border-radius:7px}.contents{display:flex;flex-wrap:wrap;gap:8px}.contents a{display:inline-block;background:#edf5ff;border-radius:7px;padding:5px 10px;text-decoration:none;font-weight:600}.lab{border:1px solid #bdd6e8;background:#f7fbff;border-radius:12px;padding:16px;margin:18px 0}.controls{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.controls label{font-weight:700}.controls input[type=range]{width:min(420px,100%);accent-color:#206b9e;min-height:30px}.value{font-variant-numeric:tabular-nums;font-weight:700;color:#174c7b}.diagram{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:14px 0;min-height:54px}.term{background:#dceafa;border:1px solid #8db1d2;border-radius:7px;padding:7px 9px;font-size:.94rem;white-space:nowrap}.term.cancel{background:#f4e2e3;color:#a13e49;text-decoration:line-through}.term.keep{background:#dff3e6;border-color:#7eb99c;font-weight:bold}.diagram .arrow{color:#6685a5}.small{font-size:.9rem}.math-scroll{overflow-x:auto;overflow-y:hidden}.mjx-container{max-width:100%}.formula mjx-container[display="true"]{font-size:100%!important;margin:.5em 0!important}.paper mjx-container{font-size:100%!important}button,a,summary{touch-action:manipulation}button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid orange;outline-offset:3px}button{border:0;border-radius:9px;background:#226c9f;color:white;padding:9px 15px;font-weight:700;font-size:1rem}button:active{transform:translateY(1px)}
 @media(max-width:600px){body{font-size:15px}.wrap{padding:0 12px}.formula{font-size:.96rem}.paper{padding:15px}.diagram{gap:4px}.term{font-size:.86rem;padding:6px}}
-.groups-diagram{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.group-box{border:2px solid #bfd7e8;border-radius:10px;padding:8px;background:white;min-width:84px}.group-box.active{border-color:#45966e;background:#eaf8ef}.group-title{font-size:.86rem;font-weight:bold;margin-bottom:5px}.group-items{display:flex;gap:5px;flex-wrap:wrap}.group-item{background:#e3effc;border-radius:5px;padding:3px 6px;font-size:.88rem}.group-box.active .group-item{background:#d0ecd9}</style>
+.groups-diagram{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.group-box{border:2px solid #bfd7e8;border-radius:10px;padding:8px;background:white;min-width:84px}.group-box.active{border-color:#45966e;background:#eaf8ef}.group-title{font-size:.86rem;font-weight:bold;margin-bottom:5px}.group-items{display:flex;gap:5px;flex-wrap:wrap}.group-item{background:#e3effc;border-radius:5px;padding:3px 6px;font-size:.88rem}.group-box.active .group-item{background:#d0ecd9}
+/* この教材の本文・数式のサイズを統一 */
+body>main.lesson-standard-main section p,
+body>main.lesson-standard-main section li,
+body>main.lesson-standard-main .example,
+body>main.lesson-standard-main .answer,
+body>main.lesson-standard-main .note {font-size:16px;line-height:1.8}
+body>main.lesson-standard-main section h3 {font-size:19px}
+body>main.lesson-standard-main .formula {font-size:1.06rem;line-height:1.7}
+body>main.lesson-standard-main mjx-container {font-size:108%!important}
+body>main.lesson-standard-main .formula mjx-container {font-size:108%!important}
+.group-position-visual{border:1px solid #b8d2e8;background:#f6fbff;border-radius:12px;padding:14px;margin:14px 0;overflow-x:auto}
+.group-position-title{font-weight:700;color:#174b78;margin-bottom:8px}
+.group-position-line{display:flex;align-items:flex-start;gap:9px;white-space:nowrap;min-width:max-content;font-size:19px;line-height:1.7}
+.group-position-line>span{padding:5px 2px}
+.group-position-line small{display:block;font-size:13px;line-height:1.5;white-space:normal}
+.group-position-line .group-prev{color:#355b78}
+.group-position-line .group-current{color:#126f52;background:#e9f8ee;border-radius:8px;padding:5px 9px}
+.group-position-line .group-divider{font-weight:700;color:#476d8d;font-size:25px}
+@media(max-width:640px){.group-position-visual{padding:10px}.group-position-line{font-size:17px}}
+</style>
 <script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"]]},svg:{fontCache:"global"},options:{skipHtmlTags:["script","noscript","style","textarea","pre","code"]}};</script>
 <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 <style id="six-subjects-unified">
@@ -87,14 +107,22 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <section id="fraction"><h2>1．部分分数分解を利用する和</h2><p>まず \(\frac1{2\cdot3}+\frac1{3\cdot4}+\frac1{4\cdot5}\) を考える。各項を差に直すと、後ろの分数が次の項の先頭にも現れる。</p><div class="formula">\[\left(\frac12-\frac13\right)+\left(\frac13-\frac14\right)+\left(\frac14-\frac15\right)=\frac12-\frac15=\frac3{10}\]</div><p>分母に2つの因数があるとき、<strong>差の形</strong>にすると途中の項が相殺されることがある。これを「望遠鏡型の和（テレスコーピング）」という。</p><h3>基本公式の導出</h3><div class="formula">\[\frac{1}{k(k+1)}=\frac1k-\frac1{k+1}\]</div><p>右辺を通分すると \(\frac{(k+1)-k}{k(k+1)}\) となり、左辺と一致する。</p>
 <div class="example"><strong id="hs-examples">例題1　部分分数分解</strong><p>\(\displaystyle\sum\limits_{k=1}^{n}\frac1{k(k+1)}\) を求めよ。</p></div><div class="answer"><strong>解答と解説</strong><p>公式を使うと、</p><div class="formula">\[\begin{aligned}\sum\limits_{k=1}^{n}\frac1{k(k+1)}&amp;=\sum\limits_{k=1}^{n}\left(\frac1k-\frac1{k+1}\right)\\&amp;=\left(1-\frac12\right)+\left(\frac12-\frac13\right)+\cdots+\left(\frac1n-\frac1{n+1}\right)\\&amp;=1-\frac1{n+1}=\frac{n}{n+1}\end{aligned}\]</div><p>最初の \(1\) と最後の \(-\frac1{n+1}\) だけが残る。</p></div>
 <div class="lab"><h3>動く図①：途中の項が消える仕組み</h3><div class="controls"><label for="fracN">項数 \(n\)　<output class="value" id="fracOut">5</output></label><input aria-label="部分分数分解の項数" id="fracN" max="10" min="2" step="1" type="range" value="5"/></div><p class="small">緑は最後に残る項、赤の取り消し線は互いに打ち消し合う項を示す。</p><div aria-live="polite" class="diagram" id="fracDiagram"></div><p class="good" id="fracResult"></p></div>
-<h3>例題2　因数の差が2で、隣の項とつながる場合</h3>
-<div class="example">\( \dfrac1{2\cdot4}+\dfrac1{4\cdot6}+\dfrac1{6\cdot8}+\cdots+\dfrac1{2n(2n+2)} \) を求めよ。</div>
-<div class="answer"><strong>解答と解説</strong><p>分母の二つの因数の差は2である。逆数の差を通分すると分子が2になるので、半分にして分子を1に戻す。</p>
-<div class="formula">\[\frac1{2k(2k+2)}=\frac12\left(\frac1{2k}-\frac1{2k+2}\right)\]</div>
-<p>まず3項で確かめる。下の式では、第1の括弧の終わりと第2の括弧の始まりで \(-\frac14+\frac14=0\)、次の境目で \(-\frac16+\frac16=0\) となる。</p>
-<div class="formula">\[\frac12\left\{\left(\frac12-\frac14\right)+\left(\frac14-\frac16\right)+\left(\frac16-\frac18\right)\right\}=\frac12\left(\frac12-\frac18\right)\]</div>
-<p>何項まで足しても、ある括弧の最後の分母が次の括弧の最初の分母になる。したがって、残るのは最初と最後の分数だけである。</p>
-<div class="formula">\[\sum\limits_{k=1}^{n}\frac1{2k(2k+2)}=\frac12\left(\frac12-\frac1{2n+2}\right)=\frac{n}{4(n+1)}\]</div></div>
+<h3>例題2　因数の差が3で、隣の項とつながる場合</h3>
+<div class="example">\(\displaystyle \frac1{3\cdot6}+\frac1{6\cdot9}+\frac1{9\cdot12}+\cdots+\frac1{3n(3n+3)}\) を求めよ。</div>
+<div class="answer"><strong>解答と解説</strong>
+<p>分母の二つの因数の差は3である。逆数の差を通分すると分子が3になるので、\(\frac13\) を掛ける。</p>
+<div class="formula">\[\frac1{3k(3k+3)}=\frac13\left(\frac1{3k}-\frac1{3k+3}\right)\]</div>
+<p>最初の3項を書き出すと、途中の分数が順に打ち消し合うことが分かる。</p>
+<div class="formula">\[\begin{aligned}
+&\frac13\left\{\left(\frac13-\frac16\right)+\left(\frac16-\frac19\right)+\left(\frac19-\frac1{12}\right)\right\}\\
+&=\frac13\left(\frac13-\frac1{12}\right)
+\end{aligned}\]</div>
+<p>一般に、最初の \(\frac13\) と最後の \(-\frac1{3n+3}\) だけが残る。</p>
+<div class="formula">\[\begin{aligned}
+\sum_{k=1}^{n}\frac1{3k(3k+3)}
+&=\frac13\left(\frac13-\frac1{3n+3}\right)\\
+&=\frac{n}{9(n+1)}
+\end{aligned}\]</div></div>
 <h3>例題3　間隔が2の分母</h3><div class="example">\(\displaystyle\sum\limits_{k=1}^n\frac1{k(k+2)}\) を求めよ。</div><div class="answer"><strong>解答と解説</strong><p>差の形を作るために、係数 \(\frac12\) を付ける。</p><div class="formula">\[\frac1{k(k+2)}=\frac12\left(\frac1k-\frac1{k+2}\right)\]</div><div class="formula">\[\begin{aligned}\sum\limits_{k=1}^n\frac1{k(k+2)}&amp;=\frac12\left(1+\frac12-\frac1{n+1}-\frac1{n+2}\right)\end{aligned}\]</div><p>例題2と同じく因数の差は2である。こちらでは \(k\) が1ずつ進むため、\(-\frac1{k+2}\) は<strong>二つ先の括弧</strong>の先頭と打ち消し合う。\(n\geqq2\) では初めの二つと最後の二つの分数が残る。</p></div>
 <div class="note"><strong>注意</strong>：\(\frac1{k(k+2)}=\frac1k-\frac1{k+2}\) とはならない。右辺は \(\frac{2}{k(k+2)}\) になるため、\(\frac12\) が必要である。</div></section>
 <section id="root"><h2>2．平方根の入った数列の和</h2><p>平方根がある場合、前後の平方根の差に直すと計算が簡単になる。分母のルートは<strong>有理化</strong>が手掛かりになる。</p>
@@ -122,7 +150,21 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <p>第1群には1項、第2群には2項、…、第 \(n\) 群には \(n\) 項がある。第 \(n\) 群までの項数は、</p>
 <div class="formula">\[1+2+\cdots+n=\frac{n(n+1)}2\]</div>
 <p>したがって、第 \(n\) 群の<strong>初項・末項</strong>は次のようになる。</p>
-<div class="formula">\[\begin{aligned}\text{初項}&amp;=1+\frac{n(n-1)}2\\\text{末項}&amp;=\frac{n(n+1)}2\end{aligned}\]</div>
+<div class="group-position-visual" role="group" aria-label="第n-1群の末項と第n群の初項・末項の番号">
+<div class="group-position-title">第 \(n\) 群の位置を確認する</div>
+<div class="group-position-line">
+<span class="group-prev">… ○ ○ ○ <b>○</b><small>第 \(n-1\) 群の末項</small><small>全体の第 \(\frac{n(n-1)}2\) 項</small></span>
+<span class="group-divider">│</span>
+<span class="group-current"><b>○</b> ○ ○ … ○ <b>○</b><small>第 \(n\) 群の初項 → 末項</small><small>第 \(\frac{n(n-1)}2+1\) 項 → 第 \(\frac{n(n+1)}2\) 項</small></span>
+<span class="group-divider">│</span><span>○ ○ …</span>
+</div></div>
+<p>第 \(n-1\) 群の末項は、全体の第 \(\frac{n(n-1)}2\) 項である。したがって、その次が第 \(n\) 群の初項になる。第 \(n\) 群には \(n\) 項あるので、末項の番号は次のとおり。</p>
+<div class="formula">\[\begin{aligned}
+\text{第 }(n-1)\text{ 群の末項の番号}&=\frac{n(n-1)}2\\
+\text{第 }n\text{ 群の初項の番号}&=\frac{n(n-1)}2+1\\
+\text{第 }n\text{ 群の末項の番号}&=\frac{n(n+1)}2
+\end{aligned}\]</div>
+<p>この例は自然数を順に並べているので、全体での項の番号と、その項の値が一致する。</p>
 <div class="example"><strong>例題9　第5群の初項、末項、和</strong><p>自然数を1項、2項、3項、…と区切った群数列の第5群を求めよ。</p></div>
 <div class="answer"><strong>解答と解説</strong><p>第4群までに \(1+2+3+4=10\) 項あるので、次の11が第5群の初項である。</p><p>第5群は \(11,12,13,14,15\)。末項は15、和は \(\frac{(11+15)\cdot5}{2}=65\) である。</p><div class="formula">\[{S_n=\frac{n(n^2+1)}2}\]</div><p>一般に初項と末項の和は \(n^2+1\)、項数が \(n\) なので、上の公式が導かれる。</p></div>
 <div class="lab"><h3>動く図③：群の区切りと和</h3><div class="controls"><label for="groupN">何群目まで表示するか：<output class="value" id="groupOut">5</output></label><input aria-label="表示する群の数" id="groupN" max="7" min="1" step="1" type="range" value="5"/></div><p class="small">各枠が一つの群である。青い数字が各群の項、最後の群を緑色で示す。</p><div aria-live="polite" class="groups-diagram" id="groupDiagram"></div><p class="good" id="groupResult"></p></div>
@@ -131,7 +173,7 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <div class="formula">\[{\text{第 }n\text{ 群の和}=n\cdot n^2=n^3}\]</div>
 <div class="example"><strong>例題10　奇数の群数列</strong><p>上の奇数の群数列の第4群の和を求めよ。</p></div>
 <div class="answer"><strong>解答と解説</strong><p>第4群は \(13,15,17,19\) の4項である。したがって、\(13+15+17+19=64\)。また一般式より \(4^3=64\) である。</p></div>
-<h3>どの群に入るかを求める</h3><div class="example"><strong>例題11　自然数20は何群目の何番目か</strong></div>
+<h3>どの群に入るかを求める</h3><div class="example"><strong>例題11　自然数20は何群目の何番目か</strong><p>自然数を次のように、第1群は1項、第2群は2項、第3群は3項、…と区切る。</p><div class="formula">\[1\ \big|\ 2,3\ \big|\ 4,5,6\ \big|\ 7,8,9,10\ \big|\ \cdots\]</div><p>このとき、自然数20は<strong>第何群の何番目の項</strong>にあたるか求めよ。</p></div>
 <div class="answer"><strong>解答と解説</strong><p>第5群までの項数は \(5\cdot6/2=15\)、第6群まででは \(6\cdot7/2=21\)。したがって20は第6群にあり、\(20-15=5\) なので第5番目の項である。</p></div>
 <div class="note">群数列の問題では、「群の番号」と「数列全体の何番目か」を混同しないようにしよう。</div>
 </section>
