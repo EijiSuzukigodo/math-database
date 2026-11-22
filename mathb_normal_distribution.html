@@ -160,6 +160,11 @@ body .paper mjx-container[display="true"] { overflow-x:auto; overflow-y:visible;
 .answer.example-one-answer .example-one-formula,
 .answer.example-one-answer mjx-container {background:#f0faf5 !important;box-shadow:none !important;}
 .answer.example-one-answer .formula{border:0 !important;border-radius:0 !important;}
+</style><style>
+/* 解答と解説：背景は全体を薄黄緑で統一 */
+.answer,.answer.example-one-answer{background:#eff8df !important;border:1px solid #d7e7bc !important;border-radius:9px !important;padding:15px 18px !important;box-shadow:none !important;}
+.answer .formula,.answer .example-one-formula,.answer.example-one-answer .formula,.answer mjx-container,.answer.example-one-answer mjx-container{background:transparent !important;border:0 !important;box-shadow:none !important;outline:0 !important;}
+.answer .formula{padding:4px 0 !important;}
 </style></head><body>
 <header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>正規分布</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" data-hs-lesson="" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>正規分布の特徴を理解し、標準化によって確率を求めることができる</h2><p>正規分布の形と平均・標準偏差の関係を学び、標準正規分布表を用いて確率を求める。</p></section>
 <article class="paper">
@@ -193,7 +198,7 @@ body .paper mjx-container[display="true"] { overflow-x:auto; overflow-y:visible;
 <p>このように、どのような平均・分散の正規分布でも、標準化によって共通の標準正規分布に直して考えることができます。</p>
 </div>
 <div class="example"><strong>例題1：標準化</strong><p>平均70、標準偏差10の値80を標準化する。</p></div><div class="answer example-one-answer"><strong>解答と解説</strong><div class="formula example-one-formula">\[Z=\frac{80-70}{10}=1\]</div><p>平均より標準偏差1つ分だけ大きい値です。</p></div>
-<h2>4．正規分布の確率と分布表</h2><p>標準正規分布に従う確率変数 \(Z\) について、<strong>\(P(0\leqq Z\leqq z)\)（\(z\geqq0\)）</strong> は、平均0から \(z\) までの曲線の下の面積です。</p>
+<p>このように、一般の正規分布を標準正規分布に直すことを標準化という。次に、標準正規分布を利用して確率を求める方法を学ぶ。</p><h2>4．正規分布の確率と分布表</h2><p>標準正規分布に従う確率変数 \(Z\) について、<strong>\(P(u)=P(0\leqq Z\leqq u)\)（\(u\geqq0\)）</strong> と定める。これは、平均0から \(u\) までの曲線の下の面積を表す。</p>
 <p>下のスライダーまたは数値入力で \(z\) を変えると、青く塗られた面積と確率が変わります。表の数値は小数第4位までの近似値です。</p>
 <div class="normal-z-demo">
 <div class="normal-z-controls"><label for="normalZRange">\(z\) の値：<output for="normalZRange normalZInput" id="normalZLabel">1.00</output></label><input aria-label="zの値を変更" id="normalZRange" max="3.5" min="0" step="0.01" type="range" value="1"/><label for="normalZInput">数値入力 <input id="normalZInput" max="3.5" min="0" step="0.01" type="number" value="1.00"/></label></div>
@@ -206,13 +211,13 @@ body .paper mjx-container[display="true"] { overflow-x:auto; overflow-y:visible;
 <div class="scroll normal-z-table-wrap"><table class="data-table normal-z-table"><thead><tr><th scope="col">\(z\)</th><th scope="col">0.00</th><th scope="col">0.01</th><th scope="col">0.02</th><th scope="col">0.03</th><th scope="col">0.04</th><th scope="col">0.05</th><th scope="col">0.06</th><th scope="col">0.07</th><th scope="col">0.08</th><th scope="col">0.09</th></tr></thead><tbody id="normalZTableBody"></tbody></table></div>
 <p class="normal-z-footnote">\(z\) が負のときは左右対称性を利用します。また、\(P(Z\leqq z)\) や \(P(Z\geqq z)\) なども、0.5と表の値を組み合わせて求められます。</p>
 <div class="formula">\[P(Z\leqq z)=0.5+P(0\leqq Z\leqq z)\quad(z\geqq0)\]</div>
-<h2 id="hs-examples">5．解説付き例題</h2>
-<div class="example"><strong>例題2：標準正規分布の片側確率</strong><p>\(Z\) が標準正規分布に従うとき、\(P(Z\leqq1)\) を求めよ。</p></div><div class="answer"><strong>解答</strong><p>標準正規分布表より \(P(0\leqq Z\leqq1)=0.3413\)。したがって、\(P(Z\leqq1)\approx0.5+0.3413=\boxed{0.8413}\)。</p></div>
-<div class="example"><strong>例題3：中央の確率</strong><p>\(P(-1\leqq Z\leqq1)\) を求めよ。</p></div><div class="answer"><strong>解答</strong><div class="formula">\[2P(0\leqq Z\leqq1)\approx2\times0.3413=\boxed{0.6826}\]</div><p>平均の前後1標準偏差に入る確率は約68％です。</p></div>
-<div class="example"><strong>例題4：一般の正規分布</strong><p>\(X\) が平均70、分散 \(10^2\) の正規分布に従うとき、\(P(X\leqq80)\) を求めよ。</p></div><div class="answer"><strong>解答</strong><p>標準化すると \(Z=(80-70)/10=1\)。表より \(P(0\leqq Z\leqq1)=0.3413\) なので、\(P(X\leqq80)\approx0.5+0.3413=\boxed{0.8413}\)。</p></div>
-<div class="example"><strong>例題5：区間の確率</strong><p>\(X\) が平均50、分散 \(5^2\) の正規分布に従うとき、\(P(45\leqq X\leqq60)\) を求めよ。</p></div><div class="answer"><strong>解答</strong><p>45と60を標準化するとそれぞれ \(-1,2\)。</p><div class="formula">\[P(0\leqq Z\leqq2)+P(0\leqq Z\leqq1)\approx0.4772+0.3413=\boxed{0.8185}\]</div></div>
-<div class="example"><strong>例題6：上側確率</strong><p>\(X\) が平均100、分散 \(15^2\) の正規分布に従うとき、\(P(X\geqq130)\) を求めよ。</p></div><div class="answer"><strong>解答</strong><p>\(Z=(130-100)/15=2\)。表より \(P(0\leqq Z\leqq2)=0.4772\) なので、\(P(X\geqq130)\approx0.5-0.4772=\boxed{0.0228}\)。</p></div>
-<div class="example"><strong>例題7：二項分布の正規近似（発展）</strong><p>\(X\sim B(100,0.5)\) のとき、\(P(X\leqq60)\) を連続補正を使って近似せよ。</p></div><div class="answer"><strong>解答</strong><p>平均は50、標準偏差は5。連続補正を行うと \(P(X\leqq60)\approx P(Y\leqq60.5)\)（\(Y\) は平均50、分散25の正規分布に従う）。</p><div class="formula">\[z=\frac{60.5-50}{5}=2.1,\qquad P(X\leqq60)\approx0.5+P(0\leqq Z\leqq2.1)\approx\boxed{0.9821}\]</div><p>二項分布は離散型なので、正規近似では連続補正が役立ちます。</p></div>
+<div class="example"><strong>例題2：標準正規分布の片側確率</strong><p>\(Z\) が標準正規分布に従うとき、\(P(Z\leqq1)\) を求めよ。</p></div><div class="answer"><strong>解答と解説</strong><p>標準正規分布表より \(P(0\leqq Z\leqq1)=0.3413\)。したがって、\(P(Z\leqq1)\fallingdotseq0.5+0.3413=0.8413\)。</p></div><div class="example"><strong>例題3：中央の確率</strong><p>\(P(-1\leqq Z\leqq1)\) を求めよ。</p></div><div class="answer"><strong>解答と解説</strong><div class="formula">\[2P(0\leqq Z\leqq1)\fallingdotseq2\times0.3413=0.6826\]</div><p>平均の前後1標準偏差に入る確率は約68％です。</p></div><h2 id="hs-examples">5．解説付き例題</h2>
+
+
+<div class="example"><strong>例題4：一般の正規分布</strong><p>\(X\) が平均70、分散 \(10^2\) の正規分布に従うとき、\(P(X\leqq80)\) を求めよ。</p></div><div class="answer"><strong>解答と解説</strong><p>標準化すると \(Z=(80-70)/10=1\)。表より \(P(0\leqq Z\leqq1)=0.3413\) なので、\(P(X\leqq80)\fallingdotseq0.5+0.3413=0.8413\)。</p></div>
+<div class="example"><strong>例題5：区間の確率</strong><p>\(X\) が平均50、分散 \(5^2\) の正規分布に従うとき、\(P(45\leqq X\leqq60)\) を求めよ。</p></div><div class="answer"><strong>解答と解説</strong><p>45と60を標準化するとそれぞれ \(-1,2\)。</p><div class="formula">\[P(0\leqq Z\leqq2)+P(0\leqq Z\leqq1)\fallingdotseq0.4772+0.3413=0.8185\]</div></div>
+<div class="example"><strong>例題6：上側確率</strong><p>\(X\) が平均100、分散 \(15^2\) の正規分布に従うとき、\(P(X\geqq130)\) を求めよ。</p></div><div class="answer"><strong>解答と解説</strong><p>\(Z=(130-100)/15=2\)。表より \(P(0\leqq Z\leqq2)=0.4772\) なので、\(P(X\geqq130)\fallingdotseq0.5-0.4772=0.0228\)。</p></div>
+<div class="example"><strong>例題7：二項分布の正規近似（発展）</strong><p>\(X\sim B(100,0.5)\) のとき、\(P(X\leqq60)\) を連続補正を使って近似せよ。</p></div><div class="answer"><strong>解答と解説</strong><p>平均は50、標準偏差は5。連続補正を行うと \(P(X\leqq60)\fallingdotseq P(Y\leqq60.5)\)（\(Y\) は平均50、分散25の正規分布に従う）。</p><div class="formula">\[z=\frac{60.5-50}{5}=2.1,\qquad P(X\leqq60)\fallingdotseq0.5+P(0\leqq Z\leqq2.1)\fallingdotseq0.9821\]</div><p>二項分布は離散型なので、正規近似では連続補正が役立ちます。</p></div>
 <h2 id="hs-practice">6．練習問題</h2>
 <div class="exercise"><strong>元の練習問題1</strong><p>平均50、標準偏差5の値40を標準化する。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><div class="formula">\[\frac{40-50}{5}=\boxed{-2}\]</div></details></div>
 <div class="exercise"><strong>練習問題2</strong><p>\(X\) は平均\(80\)、分散\(8^2\)の正規分布に従う。\(X=96\) を標準化せよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\((96-80)/8=\boxed{2}\)。</p></details></div>
