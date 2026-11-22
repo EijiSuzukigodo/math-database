@@ -7,7 +7,15 @@
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f2f6fc;color:#1c3148;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.85;font-size:16px}a{color:#186da8}.wrap{max-width:1040px;margin:auto;padding:0 15px}header{background:linear-gradient(110deg,#17365d,#246ca3);color:#fff;padding:24px 0}header a{color:#fff}h1{font-size:clamp(24px,4vw,34px);margin:9px 0 3px}header p{margin:0;color:#e4f0fa}main{padding:22px 0 55px}.nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}.nav a{padding:7px 12px;border-radius:8px;background:#e2effb;text-decoration:none;font-weight:700}.intro{background:#e4f1ff;border-left:5px solid #2585bd;padding:15px;border-radius:9px}.paper{background:white;border:1px solid #d6e3f0;border-radius:14px;padding:clamp(15px,3vw,32px);margin:18px 0}h2{color:#174c7b;border-bottom:2px solid #bcd3e8;padding-bottom:7px;margin:29px 0 14px;font-size:1.4rem}h3{color:#123e65;font-size:1.13rem;margin:20px 0 8px}p{overflow-wrap:anywhere}.formula{background:#f3f8ff;border:1px solid #d6e5fa;border-radius:10px;padding:11px 8px;margin:13px 0;overflow-x:auto;text-align:center;font-size:.98rem}.example{border-left:5px solid #e6a345;background:#fffaf0;border-radius:9px;padding:13px 16px;margin:16px 0 5px}.answer{border-left:5px solid #3ca07b;background:#f0faf5;border-radius:9px;padding:13px 16px;margin:6px 0 18px}.exercise{background:#f8faff;border:1px solid #d6e3f0;border-radius:10px;padding:13px 16px;margin:12px 0}details{margin-top:8px}summary{cursor:pointer;color:#145e95;font-weight:700}.note{border-left:4px solid #3c85b4;background:#edf7fd;border-radius:8px;padding:11px 15px;margin:13px 0}footer{background:#142f4d;color:#e6f2ff;padding:20px 0;font-size:13px}.demo{background:#fbfdff;border:1px solid #bed3e4;border-radius:12px;padding:15px;margin:19px 0}.controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:11px}.control{display:block;background:#f3f8fd;border-radius:9px;padding:9px 11px}.control input{width:100%;accent-color:#256ca3}.value{font-variant-numeric:tabular-nums;font-weight:bold;color:#134d7d}.chart{width:100%;height:auto;max-height:360px;border:1px solid #d7e4ef;background:#fff;border-radius:8px;display:block}.legend{font-size:.9rem;color:#465f79}.stats{font-weight:700;background:#e9f4ff;padding:10px;border-radius:8px}.math-inline{white-space:normal}mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden;padding:3px 0}mjx-container{font-size:100%!important}.scroll{overflow-x:auto}.data-table{border-collapse:collapse;width:100%;font-size:.94rem}.data-table td,.data-table th{border:1px solid #b7cde0;padding:7px;text-align:center}.data-table th{background:#e9f3fd}@media(max-width:430px){body{font-size:15px}.formula{font-size:.9rem}.paper{padding:15px}.wrap{padding:0 12px}h2{font-size:1.25rem}}
 
-#drawOnce,#drawMany,#clearHistory{padding:9px 12px;border-radius:8px;border:1px solid #91b0cc;background:#eaf4ff;color:#134d7d;font-size:14px;font-weight:700;cursor:pointer;margin:3px}#drawOnce:active,#drawMany:active{background:#d3e8ff}svg.chart{width:100%;height:auto;max-height:none}svg.chart text{font-family:-apple-system,BlinkMacSystemFont,Meiryo,sans-serif;font-size:13px}article .formula mjx-container{font-size:100%!important}@media(max-width:430px){svg.chart text{font-size:11px}}</style><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},chtml:{scale:1},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+#drawOnce,#drawMany,#clearHistory{padding:9px 12px;border-radius:8px;border:1px solid #91b0cc;background:#eaf4ff;color:#134d7d;font-size:14px;font-weight:700;cursor:pointer;margin:3px}#drawOnce:active,#drawMany:active{background:#d3e8ff}svg.chart{width:100%;height:auto;max-height:none}svg.chart text{font-family:-apple-system,BlinkMacSystemFont,Meiryo,sans-serif;font-size:13px}article .formula mjx-container{font-size:100%!important}@media(max-width:430px){svg.chart text{font-size:11px}}
+.sampling-distribution-explain{margin:.35rem 0 .8rem;line-height:1.75}
+.mean-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:12px 0 8px}
+.mean-summary>div{background:#eaf6ff;border:1px solid #b9dff5;border-radius:10px;padding:10px 12px;display:flex;flex-direction:column;gap:7px;min-width:0}
+.mean-summary span{font-size:.91rem;color:#244a62;line-height:1.5}
+.mean-summary strong{font-size:1.15rem;color:#153e59;overflow-wrap:anywhere}
+.mean-summary-note{font-size:.93rem;line-height:1.8;margin:6px 0 15px}
+@media(max-width:540px){.mean-summary{grid-template-columns:1fr;gap:7px}.mean-summary>div{flex-direction:row;justify-content:space-between;align-items:center;gap:12px}.mean-summary strong{font-size:1.05rem;text-align:right}}
+</style><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},chtml:{scale:1},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
 <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><style id="six-subjects-unified">
 /* 共通デザイン（数学 I/A/II/B/III/C）: 教材のプログラムや数式には非干渉 */
 :root{--course-navy:#17365d;--course-blue:#24689c;--course-paper:#ffffff;--course-muted:#526a80}
@@ -205,8 +213,9 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <svg aria-label="60個の母集団から標本を1個ずつ選ぶ様子" class="chart" id="populationChart" role="img" viewbox="0 0 760 236"></svg>
 <div class="sampling-sequence"><strong>今回選んだ個体（抽出順）</strong><div aria-live="polite" class="sampling-chips" id="samplingSequence">まだ選んでいません。</div></div>
 <p aria-live="polite" class="stats" id="sampleStats">10個そろうと標本平均が表示されます。</p>
-<h3>標本平均の記録</h3><svg aria-label="標本抽出を繰り返したときの標本平均の分布" class="chart" id="meanChart" role="img" viewbox="0 0 760 230"></svg>
+<h3>標本平均の分布</h3><p class="sampling-distribution-explain">標本抽出を繰り返して得られた標本平均を記録し、その平均とばらつきを調べる。</p><svg aria-label="標本抽出を繰り返したときの標本平均の分布" class="chart" id="meanChart" role="img" viewbox="0 0 760 230"></svg>
 <p class="legend">橙色の点1個が、完成した1組の標本から得た標本平均です。青い縦線は母平均です。100組の抽出では、毎組、母集団を最初の60個の状態から選び直します。</p>
+<div class="mean-summary" aria-live="polite"><div><span>母平均 \(m\)</span><strong id="meanPopulation">—</strong></div><div><span>記録した標本平均の平均</span><strong id="meanRecorded">—</strong></div><div><span>記録した標本平均の分散</span><strong id="varianceRecorded">—</strong></div></div><p class="mean-summary-note">記録した標本平均の平均・分散は、実際の抽出結果から計算した値です。理論上の \(E(\bar X)\)、\(V(\bar X)\) とは区別します。復元抽出では \(E(\bar X)=m\)、\(V(\bar X)=\dfrac{\sigma^2}{n}\) です。</p>
 <div class="sampling-instructions"><strong>考察のポイント</strong><p>復元抽出では同じ個体が1組の中に繰り返し現れることがあります。選ばれた回数によって色が変わることを確かめましょう。非復元抽出では現れません。次に、100組を抽出して標本平均のばらつきを比較しましょう。</p></div>
 </div>
 <div class="sampling-bridge">具体例で抽出方法の違いを学び、動く教材で1個ずつ選ぶ過程と標本平均の分布を確かめた。次に、各回が独立になる復元抽出の場合について、標本平均の期待値と分散の公式を証明する。</div><h2>5．標本平均の期待値とばらつき</h2>
@@ -312,8 +321,17 @@ function drawMeans(){const svg=$('meanChart');svg.replaceChildren();const min=24
  const bins={};history.forEach(v=>{const key=Math.round(v*2)/2;const count=bins[key]||0;bins[key]=count+1;svg.appendChild(el('circle',{cx:x(v),cy:bottom-7-Math.min(count,17)*9,r:3.5,fill:'#e28a31',opacity:.7}));});
  txt(svg,400,224,`青線：母平均 ${mu.toFixed(1)} ／ 記録 ${history.length} 組`);
 }
+function updateMeanSummary(){
+ const k=history.length;
+ $('meanPopulation').textContent=mu.toFixed(2);
+ if(!k){$('meanRecorded').textContent='記録なし';$('varianceRecorded').textContent='記録なし';return;}
+ const avg=history.reduce((sum,v)=>sum+v,0)/k;
+ const variance=history.reduce((sum,v)=>sum+(v-avg)**2,0)/k;
+ $('meanRecorded').textContent=avg.toFixed(2)+'（'+k+'組）';
+ $('varianceRecorded').textContent=variance.toFixed(2);
+}
 function render(){
- drawPopulation();drawMeans();$('nLabel').textContent=n();
+ drawPopulation();drawMeans();updateMeanSummary();$('nLabel').textContent=n();
  $('samplingProgress').textContent=`${selected.length} / ${n()} 個 ${selected.length===n()?'（1組完成）':''}`;
  $('drawStep').disabled=autoTimer!==null||selected.length>=n();
  $('drawStep').textContent=selected.length>=n()?'1組完成（'+n()+'／'+n()+'個）':'次の1個を抽出（'+selected.length+'／'+n()+'個）';
