@@ -229,6 +229,9 @@ body .paper mjx-container[display="true"] { overflow-x:auto; overflow-y:visible;
 <div class="formula">\[P(Z\leqq z)=0.5+P(0\leqq Z\leqq z)\quad(z\geqq0)\]</div>
 <div class="example"><strong>例題：標準正規分布の片側確率</strong><p>\(Z\) が標準正規分布に従うとき、\(P(Z\leqq1)\) を求めよ。</p></div><div class="answer answer-green-bar"><strong>解答と解説</strong><p>標準正規分布表より \(P(0\leqq Z\leqq1)=0.3413\)。したがって、\(P(Z\leqq1)\fallingdotseq0.5+0.3413=0.8413\)。</p></div><div class="example"><strong>例題：中央の確率</strong><p>\(P(-1\leqq Z\leqq1)\) を求めよ。</p></div><div class="answer answer-green-bar"><strong>解答と解説</strong><div class="formula">\[2P(0\leqq Z\leqq1)\fallingdotseq2\times0.3413=0.6826\]</div><p>平均の前後1標準偏差に入る確率は約68％です。</p></div><section aria-labelledby="binomial-normal-title" class="binomial-normal-section">
 <h2 id="binomial-normal-title">5．二項分布の正規分布による近似</h2>
+<p>二項分布 \(B(n,p)\) に従う確率変数 \(X\) について、\(X=r\) となる確率は、次の式で表されます。</p>
+<div class="formula">\[P(X=r)={}_n\mathrm{C}_r\,p^r(1-p)^{n-r}\qquad(r=0,1,\ldots,n)\]</div>
+<p>ここで、\(n\) は試行回数、\(p\) は1回の試行で起こる確率、\(r\) は起こった回数です。この式で求めた確率を下の確率分布表と棒グラフに表します。</p>
 <p>例えば、さいころを <strong>n 回</strong> 投げ、1の目が出る回数を <span>\(X\)</span> とします。1回で1の目が出る確率は <span>\(p=\frac16\)</span> なので、<span>\(X\)</span> は二項分布 <span>\(B(n,\frac16)\)</span> に従います。</p>
 <p>二項分布の平均は \(np\)、分散は \(np(1-p)\) です。次の近似が成り立ちます。</p>
 <p class="normal-approx-theorem">二項分布 \(B(n,p)\) に従う確率変数 \(X\) は、試行回数 \(n\) が十分大きいとき、近似的に平均 \(np\)、分散 \(np(1-p)\) の正規分布に従う。</p><p>ただし、\(np\) と \(n(1-p)\) がともに十分大きいことが、近似の精度を考える目安です。</p>
