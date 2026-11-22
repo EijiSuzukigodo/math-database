@@ -15,6 +15,9 @@
 .mean-summary strong{font-size:1.15rem;color:#153e59;overflow-wrap:anywhere}
 .mean-summary-note{font-size:.93rem;line-height:1.8;margin:6px 0 15px}
 @media(max-width:540px){.mean-summary{grid-template-columns:1fr;gap:7px}.mean-summary>div{flex-direction:row;justify-content:space-between;align-items:center;gap:12px}.mean-summary strong{font-size:1.05rem;text-align:right}}
+
+/* Section 7: answer without surrounding border */
+.section7-unboxed-answer{border:0!important;border-left:0!important;box-shadow:none!important;}
 </style><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},chtml:{scale:1},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
 <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><style id="six-subjects-unified">
 /* 共通デザイン（数学 I/A/II/B/III/C）: 教材のプログラムや数式には非干渉 */
@@ -248,12 +251,12 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <p>下の図では、2つの標本の大きさについて標本平均の標準偏差（独立な抽出を仮定した理論値）を比較します。</p>
 <div class="demo"><label class="control">標本の大きさ：<span class="value" id="theoryNLabel">4</span><input id="theoryN" max="100" min="1" type="range" value="4"/></label><svg aria-label="標本の大きさによる標本平均の標準偏差の比較" class="chart" id="theoryChart" role="img" viewbox="0 0 760 220"></svg><p class="stats" id="theoryStats"></p></div>
 <h2>7．解説付き例題</h2>
-<div class="example"><strong>例題1：母集団と標本</strong><p>ある市の中学生全員1万人のうち、無作為に300人を選んで通学時間を調べた。母集団と標本、標本の大きさを答えよ。</p></div><div class="answer"><strong>解答</strong><p>母集団は市の中学生1万人、標本は選ばれた300人、標本の大きさは300です。</p></div>
-<div class="example"><strong>例題2：標本平均</strong><p>標本 12, 15, 17, 16 の平均を求めよ。</p></div><div class="answer"><strong>解答</strong><div class="formula">\[\bar X=\frac{12+15+17+16}{4}=\boxed{15}\]</div></div>
-<div class="example"><strong>例題3：標本平均の分散</strong><p>母平均50、母標準偏差12の母集団から独立に36個を抽出するとき、標本平均の期待値・分散・標準偏差を求めよ。</p></div><div class="answer"><strong>解答</strong><div class="formula">\[E(\bar X)=50,\quad V(\bar X)=\frac{12^2}{36}=\boxed4,\quad\sigma_{\bar X}=\boxed2\]</div></div>
-<div class="example"><strong>例題4：標本の大きさ</strong><p>母標準偏差が20のとき、独立な標本の標本平均の標準偏差を2以下にしたい。標本の大きさは最低いくつ必要か。</p></div><div class="answer"><strong>解答</strong><div class="formula">\[\frac{20}{\sqrt n}\leqq2\iff\sqrt n\geqq10\iff n\geqq100\]</div><p>したがって最低 \(\boxed{100}\) 個です。</p></div>
-<div class="example"><strong>例題5：非復元抽出</strong><p>母集団が100個、母分散が25である。非復元で10個を単純無作為抽出するとき、標本平均の分散を求めよ。</p></div><div class="answer"><strong>解答</strong><div class="formula">\[V(\bar X)=\frac{25}{10}\cdot\frac{100-10}{100-1}=\boxed{\frac{25}{11}}\]</div></div>
-<div class="example"><strong>例題6：抽出の偏り</strong><p>学校全体の平均通学時間を調べたい。朝早く登校する生徒だけを選ぶ方法に問題はあるか。</p></div><div class="answer"><strong>解答</strong><p>早く登校する生徒は通学時間などの特徴が全校と異なるおそれがあります。標本の大きさにかかわらず偏りが生じる可能性があります。</p></div>
+<div class="example"><strong>例題1：母集団と標本</strong><p>ある市の中学生全員1万人のうち、無作為に300人を選んで通学時間を調べた。母集団と標本、標本の大きさを答えよ。</p></div><div class="answer section7-unboxed-answer"><strong>解答と解説</strong><p>母集団は市の中学生1万人、標本は選ばれた300人、標本の大きさは300です。</p></div>
+<div class="example"><strong>例題2：標本平均</strong><p>標本 12, 15, 17, 16 の平均を求めよ。</p></div><div class="answer section7-unboxed-answer"><strong>解答と解説</strong><div class="formula">\[\bar X=\frac{12+15+17+16}{4}=15\]</div></div>
+<div class="example"><strong>例題3：標本平均の分散</strong><p>母平均50、母標準偏差12の母集団から独立に36個を抽出するとき、標本平均の期待値・分散・標準偏差を求めよ。</p></div><div class="answer section7-unboxed-answer"><strong>解答と解説</strong><div class="formula">\[E(\bar X)=50,\quad V(\bar X)=\frac{12^2}{36}=4,\quad\sigma_{\bar X}=2\]</div></div>
+<div class="example"><strong>例題4：標本の大きさ</strong><p>母標準偏差が20のとき、独立な標本の標本平均の標準偏差を2以下にしたい。標本の大きさは最低いくつ必要か。</p></div><div class="answer section7-unboxed-answer"><strong>解答と解説</strong><div class="formula">\[\frac{20}{\sqrt n}\leqq2\iff\sqrt n\geqq10\iff n\geqq100\]</div><p>したがって最低 \(100\) 個です。</p></div>
+<div class="example"><strong>例題5：非復元抽出</strong><p>母集団が100個、母分散が25である。非復元で10個を単純無作為抽出するとき、標本平均の分散を求めよ。</p></div><div class="answer section7-unboxed-answer"><strong>解答と解説</strong><div class="formula">\[V(\bar X)=\frac{25}{10}\cdot\frac{100-10}{100-1}=\dfrac{25}{11}\]</div></div>
+<div class="example"><strong>例題6：抽出の偏り</strong><p>学校全体の平均通学時間を調べたい。朝早く登校する生徒だけを選ぶ方法に問題はあるか。</p></div><div class="answer section7-unboxed-answer"><strong>解答と解説</strong><p>早く登校する生徒は通学時間などの特徴が全校と異なるおそれがあります。標本の大きさにかかわらず偏りが生じる可能性があります。</p></div>
 <h2 id="hs-practice">8．練習問題</h2>
 <div class="exercise"><strong>元の練習問題</strong><p>標本 2, 4, 6, 8 の平均を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><div class="formula">\[\bar X=\frac{2+4+6+8}{4}=\boxed5\]</div></details></div>
 <div class="exercise"><strong>練習1</strong><p>標本 4, 9, 5, 10, 7 の平均を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>和は35、標本の大きさは5だから平均は \(\boxed7\)。</p></details></div>
