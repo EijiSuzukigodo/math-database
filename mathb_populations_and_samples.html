@@ -330,7 +330,7 @@ function render(){
 $('drawStep').addEventListener('click',()=>{pickOne();render();});
 $('newSample').addEventListener('click',()=>{resetSample();render();});
 $('drawOnce').addEventListener('click',autoDrawSet);
-$('drawMany').addEventListener('click',()=>{for(let i=0;i<100;i++)drawOneSet();render();const m=history.reduce((a,b)=>a+b,0)/history.length;$('sampleStats').textContent=`100組を抽出しました。母平均 ${mu.toFixed(2)} ／ 標本平均の平均 ${m.toFixed(2)} ／ 記録 ${history.length} 組（直近最大400組）。`;});
+$('drawMany').addEventListener('click',()=>{for(let i=0;i<100;i++)drawOneSet();resetSample();render();$('samplingSequence').textContent='記録なし（100組の一括抽出では個体の抽出順を表示しません）';const m=history.reduce((a,b)=>a+b,0)/history.length;$('sampleStats').textContent=`100組を抽出しました。母平均 ${mu.toFixed(2)} ／ 標本平均の平均 ${m.toFixed(2)} ／ 記録 ${history.length} 組（直近最大400組）。`;});
 $('clearHistory').addEventListener('click',()=>{stopAuto();setAutoState(false);$('drawOnce').textContent='1組を自動抽出';history=[];resetSample();render();});
 for(const id of ['sampleN','samplingMode'])$(id).addEventListener('change',()=>{history=[];resetSample();render();});
 $('sampleN').addEventListener('input',()=>{$('nLabel').textContent=n();});
