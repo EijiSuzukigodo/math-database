@@ -107,6 +107,21 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 #binomial-viz .binom-graph-table .chart-wrap,#binomial-viz .binom-graph-table .table-wrap{height:310px;max-height:310px}
 #binomial-viz .binom-graph-table .binom-chart{height:310px;max-height:310px;min-width:0}
 @media(max-width:700px){.binom-proof-two-col{grid-template-columns:1fr}}
+</style><style>
+/* 二項分布・表の罫線と数式サイズの最終統一 */
+#md-standard-main .paper table.binom-example-table{border-collapse:collapse!important;border-spacing:0!important;font-size:14px!important;width:100%}
+#md-standard-main .paper table.binom-example-table th,
+#md-standard-main .paper table.binom-example-table td{border:1px solid #b9cad9!important;padding:8px 7px!important;text-align:center!important;vertical-align:middle!important;background:#fff}
+#md-standard-main .paper table.binom-example-table th{background:#eef5fb!important;font-weight:700}
+#md-standard-main .paper table.binom-example-table mjx-container{font-size:96%!important}
+#md-standard-main .paper .general-binomial-table{font-size:14px!important}
+#md-standard-main .paper .binom-example-two-col .binom-prob-line{font-size:14px!important;line-height:2.1}
+#md-standard-main .paper .binom-proof-math{font-size:14px!important}
+#md-standard-main .paper .answer{background:#eff8e7!important;border:0!important;border-left:0!important;border-radius:9px!important;padding:14px 16px!important;margin:8px 0 20px!important;box-shadow:none!important}
+#md-standard-main .paper .answer .formula{background:transparent!important;border:0!important;box-shadow:none!important;padding:7px 2px!important;font-size:.92em!important}
+#md-standard-main .paper .answer mjx-container{font-size:100%!important}
+#md-standard-main .paper .binom-work{background:#eff8e7!important}
+@media(max-width:700px){#md-standard-main .paper table.binom-example-table{font-size:13px!important}}
 </style></head><body>
 <header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>二項分布</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" data-hs-lesson="" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>反復試行の確率を求め、二項分布の意味と性質を理解する</h2><p>確率分布表から平均・分散・標準偏差を計算し、公式の意味を理解する。</p></section>
 <nav aria-label="授業の進め方" class="hs-study-nav">
@@ -126,7 +141,7 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <h3>具体例：公平な硬貨を3回投げる</h3>
 <p>表が出た回数を \(X\) とします。表が出る確率は毎回 \(\dfrac12\) で、3回の試行は互いに独立です。</p>
 <p>表がちょうど \(k\) 回出る確率は \(P(X=k)={}_3\mathrm{C}_k\left(\dfrac12\right)^k\left(\dfrac12\right)^{3-k}={}_3\mathrm{C}_k\left(\dfrac12\right)^3\) です。</p>
-<div class="binom-example-two-col"><div class="binom-example-left"><h4>確率分布表</h4><div class="table-wrap"><table class="binom-example-table"><thead><tr><th>成功回数 \(k\)</th><th>0</th><th>1</th><th>2</th><th>3</th><th>合計</th></tr></thead><tbody><tr><th>\(P(X=k)\)</th><td>\(\dfrac18\)</td><td>\(\dfrac38\)</td><td>\(\dfrac38\)</td><td>\(\dfrac18\)</td><td>1</td></tr></tbody></table></div></div><div class="binom-example-right"><h4>確率の具体的な求め方</h4><div class="binom-prob-line">\(P(X=0)={}_3\mathrm{C}_0\left(\dfrac12\right)^3=\dfrac18\)</div><div class="binom-prob-line">\(P(X=1)={}_3\mathrm{C}_1\left(\dfrac12\right)^3=\dfrac38\)</div><div class="binom-prob-line">\(P(X=2)={}_3\mathrm{C}_2\left(\dfrac12\right)^3=\dfrac38\)</div><div class="binom-prob-line">\(P(X=3)={}_3\mathrm{C}_3\left(\dfrac12\right)^3=\dfrac18\)</div></div></div>
+<div class="binom-example-two-col"><div class="binom-example-left"><h4>確率分布表</h4><div class="table-wrap"><table class="binom-example-table"><thead><tr><th>成功回数 \(k\)</th><th>0</th><th>1</th><th>2</th><th>3</th><th>合計</th></tr></thead><tbody><tr><th>\(P\)</th><td>\(\dfrac18\)</td><td>\(\dfrac38\)</td><td>\(\dfrac38\)</td><td>\(\dfrac18\)</td><td>1</td></tr></tbody></table></div></div><div class="binom-example-right"><h4>確率の具体的な求め方</h4><div class="binom-prob-line">\(P(X=0)={}_3\mathrm{C}_0\left(\dfrac12\right)^3=\dfrac18\)</div><div class="binom-prob-line">\(P(X=1)={}_3\mathrm{C}_1\left(\dfrac12\right)^3=\dfrac38\)</div><div class="binom-prob-line">\(P(X=2)={}_3\mathrm{C}_2\left(\dfrac12\right)^3=\dfrac38\)</div><div class="binom-prob-line">\(P(X=3)={}_3\mathrm{C}_3\left(\dfrac12\right)^3=\dfrac18\)</div></div></div>
 <div class="binom-work"><strong>解答と解説：平均・分散・標準偏差を求める</strong>
 <p>平均は、値と確率の積を足して求めます。</p>
 <div class="formula">\[E(X)=0\cdot\frac18+1\cdot\frac38+2\cdot\frac38+3\cdot\frac18=\frac32\]</div>
@@ -143,12 +158,12 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <p class="muted">横軸：成功回数 \(k\)、縦軸：確率 \(P(X=k)\)。濃い棒が最も起こりやすい成功回数を表します。</p>
 <p class="muted">表は小数第5位まで表示します。端数処理により、表示した値の合計が1とわずかに異なる場合があります。</p></div>
 <h2>4．解説付き例題</h2>
-<div class="example"><strong>例題1（元の例題）</strong><p>成功確率0.3の独立な試行を10回行うときの成功回数 の期待値と分散を求めよ。</p></div><div class="answer"><strong>解答と解説</strong><div class="formula">\[E(X)=10\times0.3=\boxed{3},\qquad V(X)=10\times0.3\times0.7=\boxed{2.1}\]</div></div>
-<div class="example"><strong>例題2：ちょうど指定回数だけ成功</strong><p>公平な硬貨を5回投げる。表がちょうど2回出る確率を求めよ。</p></div><div class="answer"><strong>解答と解説</strong><div class="formula">\[P(X=2)={}_5C_2\left(\frac12\right)^2\left(\frac12\right)^3=\frac{10}{32}=\boxed{\frac5{16}}\]</div><p>5回のうち表が出る2か所を選びます。</p></div>
-<div class="example"><strong>例題3：少なくとも1回成功</strong><p>1回の成功確率が \(\tfrac15\) の独立な試行を4回行う。1回以上成功する確率を求めよ。</p></div><div class="answer"><strong>解答と解説</strong><p>余事象「一度も成功しない」を考えます。</p><div class="formula">\[1-P(X=0)=1-\left(\frac45\right)^4=\boxed{\frac{369}{625}}\]</div></div>
-<div class="example"><strong>例題4：少なくとも2回成功</strong><p>公平な硬貨を4回投げたときの表の回数 のとき、\(P(X\geqq2)\) を求めよ。</p></div><div class="answer"><strong>解答と解説</strong><div class="formula">\[\begin{aligned}P(X\geqq2)&amp;=1-P(X=0)-P(X=1)\\&amp;=1-\frac1{16}-\frac4{16}=\boxed{\frac{11}{16}}.\end{aligned}\]</div></div>
+<div class="example"><strong>例題1（元の例題）</strong><p>成功確率0.3の独立な試行を10回行うときの成功回数 の期待値と分散を求めよ。</p></div><div class="answer"><strong>解答と解説</strong><div class="formula">\[E(X)=10\times0.3=3,\qquad V(X)=10\times0.3\times0.7=2.1\]</div></div>
+<div class="example"><strong>例題2：ちょうど指定回数だけ成功</strong><p>公平な硬貨を5回投げる。表がちょうど2回出る確率を求めよ。</p></div><div class="answer"><strong>解答と解説</strong><div class="formula">\[P(X=2)={}_5C_2\left(\frac12\right)^2\left(\frac12\right)^3=\frac{10}{32}=\frac5{16}\]</div><p>5回のうち表が出る2か所を選びます。</p></div>
+<div class="example"><strong>例題3：少なくとも1回成功</strong><p>1回の成功確率が \(\tfrac15\) の独立な試行を4回行う。1回以上成功する確率を求めよ。</p></div><div class="answer"><strong>解答と解説</strong><p>余事象「一度も成功しない」を考えます。</p><div class="formula">\[1-P(X=0)=1-\left(\frac45\right)^4=\frac{369}{625}\]</div></div>
+<div class="example"><strong>例題4：少なくとも2回成功</strong><p>公平な硬貨を4回投げたときの表の回数 のとき、\(P(X\geqq2)\) を求めよ。</p></div><div class="answer"><strong>解答と解説</strong><div class="formula">\[\begin{aligned}P(X\geqq2)&amp;=1-P(X=0)-P(X=1)\\&amp;=1-\frac1{16}-\frac4{16}=\frac{11}{16}.\end{aligned}\]</div></div>
 <div class="example"><strong>例題5：成功回数の和</strong><p>同じ成功確率 \(p\) の独立な試行を、最初に3回、続けて5回行った。各区間の成功回数を \(X,Y\) とする。\(X+Y\) の分布を求めよ。</p></div><div class="answer"><strong>解答と解説</strong><p>全部で独立な8回の試行なので、</p><div class="formula">\[X+Y\text{ は成功確率 }p\text{ の独立な8回の試行の成功回数に従う}\]</div><p>成功確率が異なる場合などには、この結論は一般には使えません。</p></div>
-<div class="example"><strong>例題6：未知の成功確率</strong><p>成功確率\(p\)の独立な試行を12回行うときの成功回数 で \(E(X)=3\) と分かっている。\(p\) と \(V(X)\) を求めよ。</p></div><div class="answer"><strong>解答と解説</strong><div class="formula">\[12p=3\ \Rightarrow\ p=\boxed{\frac14},\qquad V(X)=12\cdot\frac14\cdot\frac34=\boxed{\frac94}\]</div></div>
+<div class="example"><strong>例題6：未知の成功確率</strong><p>成功確率\(p\)の独立な試行を12回行うときの成功回数 で \(E(X)=3\) と分かっている。\(p\) と \(V(X)\) を求めよ。</p></div><div class="answer"><strong>解答と解説</strong><div class="formula">\[12p=3\ \Rightarrow\ p=\frac14,\qquad V(X)=12\cdot\frac14\cdot\frac34=\frac94\]</div></div>
 <h2 id="hs-practice">5．練習問題</h2>
 <div class="exercise"><strong>問題1（元の問題）</strong><p>成功確率0.5の独立な試行を20回行うときの成功回数 の期待値を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(E(X)=20\times0.5=\boxed{10}\) です。</p></details></div>
 <div class="exercise"><strong>問題2</strong><p>成功確率\(\dfrac14\)の独立な試行を8回行うときの成功回数 の分散を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><div class="formula">\[V(X)=8\cdot\frac14\cdot\frac34=\boxed{\frac32}\]</div></details></div>
