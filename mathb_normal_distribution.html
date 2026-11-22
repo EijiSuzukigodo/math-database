@@ -117,6 +117,22 @@ body .paper mjx-container[display="true"] { overflow-x:auto; overflow-y:visible;
 .normal-explanation-text .normal-density-formula{margin-top:7px}
 .normal-explanation-layout #shapeChart{width:100%;height:275px;max-height:none}
 @media(max-width:760px){.normal-explanation-layout{grid-template-columns:1fr}.normal-explanation-layout #shapeChart{height:300px}}
+</style><style id="normal-compact-equal-height-20261122">
+/* 確率密度関数の見出し・本文・式の上下余白を整理 */
+.normal-explanation-text h3{margin:9px 0 4px}
+.normal-explanation-text .normal-density-formula{margin-top:4px;padding:8px 10px}
+.normal-density-formula>p:first-child{margin-bottom:4px}
+.normal-density-formula .formula{padding:5px 2px;margin:0}
+.normal-density-formula p{margin-top:5px;margin-bottom:6px;line-height:1.65}
+.normal-density-help{margin-top:5px}
+/* 左側の説明と右側のグラフを同じ高さの列として揃える */
+@media(min-width:761px){
+.normal-explanation-layout{align-items:stretch}
+.normal-explanation-layout .normal-density-graph{display:flex;align-self:stretch}
+.normal-explanation-layout .normal-density-graph .demo{display:flex;flex-direction:column;flex:1;min-height:100%;box-sizing:border-box}
+.normal-explanation-layout #shapeChart{flex:1 1 auto;height:auto;min-height:310px;max-height:none}
+}
+@media(max-width:760px){.normal-explanation-layout .normal-density-graph .demo{height:auto}}
 </style></head><body>
 <header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>正規分布</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" data-hs-lesson="" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>正規分布の特徴を理解し、標準化によって確率を求めることができる</h2><p>正規分布の形と平均・標準偏差の関係を学び、標準正規分布表を用いて確率を求める。</p></section>
 <article class="paper">
@@ -125,9 +141,9 @@ body .paper mjx-container[display="true"] { overflow-x:auto; overflow-y:visible;
 <p>例えば、ある学年の生徒の身長を調べ、身長の階級ごとに人数を数えてヒストグラムに表してみます。人数が増えれば増えるほど、ヒストグラムはある曲線に近づいていきます。どのような形になるでしょうか。</p>
 <div class="normal-sample-demo">
 <p class="normal-sample-note">下のスライダーで人数を変え、ヒストグラムの形がどのように変化するか観察してみましょう。</p>
-<label class="normal-sample-control" for="normalSampleCount">調べる人数：<output for="normalSampleCount" id="normalSampleCountValue">40</output>人</label>
-<input aria-label="ヒストグラムの標本数" id="normalSampleCount" max="2000" min="20" step="20" type="range" value="40"/>
-<div aria-label="人数の選択" class="normal-sample-presets"><button data-count="40" type="button">40人</button><button data-count="200" type="button">200人</button><button data-count="1000" type="button">1000人</button><button data-count="2000" type="button">2000人</button></div>
+<label class="normal-sample-control" for="normalSampleCount">調べる人数：<output for="normalSampleCount" id="normalSampleCountValue">20</output>人</label>
+<input aria-label="ヒストグラムの標本数" id="normalSampleCount" max="2000" min="20" step="20" type="range" value="20"/>
+<div aria-label="人数の選択" class="normal-sample-presets"><button data-count="20" type="button">20人</button><button data-count="40" type="button">40人</button><button data-count="200" type="button">200人</button><button data-count="1000" type="button">1000人</button><button data-count="2000" type="button">2000人</button></div>
 <svg aria-label="人数に応じて変化する身長のヒストグラムと正規分布曲線" id="normalSampleChart" role="img" viewbox="0 0 760 350"></svg>
 <p class="normal-sample-caption">青い棒：身長のヒストグラム（相対度数を階級幅で割った高さ）／ 赤い曲線：ヒストグラムの形を比べるための、なめらかな曲線</p>
 <p aria-live="polite" class="normal-sample-stats" id="normalSampleStats"></p>
