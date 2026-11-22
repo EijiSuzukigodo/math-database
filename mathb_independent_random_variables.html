@@ -130,7 +130,31 @@ mjx-container[jax="SVG"]{font-size:92%!important;max-width:100%;}
 /* 例題5の解答と問題5は分数を読みやすくする */
 .larger-frac-five mjx-container[jax="SVG"]{font-size:106%!important;}
 .larger-frac-five .formula mjx-container[jax="SVG"]{font-size:106%!important;}
-</style></head>
+</style>
+<style id="consistent-math-font-20261122">
+/* 既に正常表示が確認された版のHTMLとJavaScriptは変更しない。 */
+/* 教材全体の数式をやや小さく統一（本文の日本語16pxは維持）。 */
+.paper mjx-container[jax="SVG"],
+.paper mjx-container[jax="CHTML"] {font-size:92%!important;}
+/* 左右比較表：文字・分数・合計1を同じ基準に統一。 */
+.sample-lesson .compare-grid .draw-table th,
+.sample-lesson .compare-grid .draw-table td {font-size:14.5px!important;line-height:1.6!important;padding:7px 4px!important;}
+.sample-lesson .compare-grid .draw-table mjx-container[jax="SVG"],
+.sample-lesson .compare-grid .draw-table mjx-container[jax="CHTML"] {font-size:96%!important;}
+.sample-lesson .compare-grid .draw-table tr:last-child td:last-child {font-size:14.5px!important;font-weight:400!important;}
+/* 例題1の硬貨の分布表：数式・数字を控えめに。 */
+.paper .table-wrap table th,
+.paper .table-wrap table td {font-size:14px;line-height:1.6;}
+.paper .table-wrap table mjx-container[jax="SVG"],
+.paper .table-wrap table mjx-container[jax="CHTML"] {font-size:90%!important;}
+/* 比較表以外の数式・解答欄・公式も同一基準で扱う。 */
+.paper .formula mjx-container[jax="SVG"],
+.paper .formula mjx-container[jax="CHTML"],
+.paper .answer mjx-container[jax="SVG"],
+.paper .answer mjx-container[jax="CHTML"] {font-size:92%!important;}
+/* 分数の高さとMathJaxのSVG形状は変えない。 */
+</style>
+</head>
 <body>
 <header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>独立な確率変数と期待値・分散</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" data-hs-lesson="" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>独立な確率変数と期待値・分散</h2><p>復元抽出と非復元抽出を比較し、同時分布・周辺分布・和の分布から独立性と分散の関係を理解する。</p><p class="hs-outcome">同時分布表と確率分布表を作り、独立な場合の分散の公式を具体例から確かめる。</p></section>
 <nav aria-label="授業の進め方" class="hs-study-nav">
