@@ -93,18 +93,18 @@ body .paper mjx-container[display="true"] { overflow-x:auto; overflow-y:visible;
 <article class="paper">
 <section class="normal-introduction" aria-labelledby="normal-introduction-title">
 <h2 id="normal-introduction-title">1．身近なデータから正規分布を考えよう</h2>
-<p>例えば、ある学年の生徒の身長を調べ、身長の階級ごとに人数を数えてヒストグラムに表してみます。次の動く図は、平均165cm、標準偏差8cmの正規分布をもとに作った仮想的な身長データの例です。実際の生徒の測定結果ではありません。</p>
+<p>例えば、ある学年の生徒の身長を調べ、身長の階級ごとに人数を数えてヒストグラムに表してみます。人数が増えれば増えるほど、ヒストグラムはある曲線に近づいていきます。どのような形になるでしょうか。</p>
 <div class="normal-sample-demo">
-<p class="normal-sample-note">下のスライダーで調べる人数を変えてみましょう。人数が増えるにつれて、ヒストグラムの全体的な形が正規分布の曲線に近づく様子を観察できます。</p>
+<p class="normal-sample-note">下のスライダーで人数を変え、ヒストグラムの形がどのように変化するか観察してみましょう。</p>
 <label class="normal-sample-control" for="normalSampleCount">調べる人数：<output id="normalSampleCountValue" for="normalSampleCount">40</output>人</label>
 <input id="normalSampleCount" type="range" min="20" max="2000" step="20" value="40" aria-label="ヒストグラムの標本数" />
 <div class="normal-sample-presets" aria-label="人数の選択"><button type="button" data-count="40">40人</button><button type="button" data-count="200">200人</button><button type="button" data-count="1000">1000人</button><button type="button" data-count="2000">2000人</button></div>
 <svg id="normalSampleChart" viewBox="0 0 760 350" role="img" aria-label="人数に応じて変化する身長のヒストグラムと正規分布曲線"></svg>
-<p class="normal-sample-caption">青い棒：身長のヒストグラム（相対度数を階級幅で割った高さ）／ 赤い曲線：平均165cm・標準偏差8cmの正規分布の確率密度関数</p>
+<p class="normal-sample-caption">青い棒：身長のヒストグラム（相対度数を階級幅で割った高さ）／ 赤い曲線：ヒストグラムの形を比べるための、なめらかな曲線</p>
 <p class="normal-sample-stats" id="normalSampleStats" aria-live="polite"></p>
 </div>
-<p>平均に近い身長の生徒が多く、平均から大きく離れた身長の生徒は少なくなるような分布が見られることがあります。調べる人数を増やすと、全体としてなめらかな釣鐘型の曲線に近づく傾向があります。ただし、乱数によるばらつきがあるため、人数を増やすたびに必ず滑らかになるわけではありません。</p>
-<p>このような左右対称の釣鐘型の分布を表す代表的な確率分布が、<strong>正規分布</strong>です。ただし、実際の身長の分布が必ず正規分布に一致するわけではありません。</p>
+<p>人数が少ないと棒の高さは不規則ですが、人数を増やすと、中央が高く左右に向かって低くなる釣鐘型の形が見えてきます。ただし、人数を増やすたびに必ず滑らかになるわけではありません。</p>
+<p>このような左右対称の釣鐘型の分布を表す代表的な確率分布が、<strong>正規分布</strong>です。この図は平均165cm、標準偏差8cmの正規分布から作った仮想データを使っています。実際の生徒の身長が必ず正規分布に従うわけではありません。</p>
 </section>
 <h2 id="hs-explanation">2．正規分布とは</h2><p>平均 \(m\)、分散 \(\sigma^2\) の左右対称な釣鐘型の確率分布です。\(\sigma&gt;0\) とします。</p><p>確率変数 \(X\) が平均 \(m\)、分散 \(\sigma^2\) の正規分布に従うとき、「\(X\) は正規分布 \(N(m,\sigma^2)\) に従う」といいます。</p>
 <p>曲線の下全体の面積が1で、区間に入る確率はその区間の曲線下の面積です。連続型の確率変数なので、1点だけをとる確率は0です。</p>
