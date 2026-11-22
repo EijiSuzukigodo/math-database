@@ -168,7 +168,8 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 .sampling-sequence{margin:12px 0;padding:10px 12px;background:#f3f8fc;border-radius:8px}
 .sampling-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;font-size:.89em}
 .sampling-chip{background:#fff;border:1px solid #b4d4e8;border-radius:6px;padding:5px 8px}
-.sampling-chip.sampling-repeat{background:#fff1d8;border-color:#e6a953}
+.sampling-chip.sampling-repeat{background:#d9eafb;border-color:#3982bd}
+.sampling-chip.sampling-repeat-many{background:#e8d9f8;border-color:#8a5ac3}
 .sampling-interactive .chart{width:100%;height:auto}
 @media(max-width:540px){.sampling-buttons button{flex:1 1 44%}.sampling-chip{font-size:.88em}}
 </style></head><body>
@@ -193,20 +194,20 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <p>下の動く教材では、<strong>復元抽出と非復元抽出を切り替え</strong>、標本を1個ずつ選ぶ過程を確かめます。</p>
 <h2>4．動く教材：母集団から標本を選ぼう</h2>
 <div class="demo sampling-interactive">
-<div class="sampling-instructions"><strong>抽出の仕方を観察しよう</strong><p>「1個抽出」を押すと、標本を1個ずつ選びます。<strong>復元抽出</strong>では選んだ個体を次の抽出前に戻し、<strong>非復元抽出</strong>では選んだ個体を除いて次を選びます。標本が完成したら、標本平均を記録します。</p></div>
+<div class="sampling-instructions"><strong>抽出の仕方を観察しよう</strong><p>「次の1個を抽出」を押すたびに、1個目、2個目、3個目……と順に選びます。「1組を自動抽出」では、選んだ個体が約0.4秒ごとに順番に色づきます。途中まで手動で抽出した場合も、自動抽出は新しい1組の最初から始まります。<strong>復元抽出</strong>では選んだ個体を次の抽出前に戻し、<strong>非復元抽出</strong>では選んだ個体を除いて次を選びます。標本が完成したら、標本平均を記録します。</p></div>
 <div class="sampling-controls">
 <label class="control">抽出方法 <select id="samplingMode"><option value="replace">復元抽出</option><option value="noreplace">非復元抽出</option></select></label>
 <label class="control">標本の大きさ n：<span class="value" id="nLabel">10</span><input id="sampleN" max="40" min="1" step="1" type="range" value="10"/></label>
 </div>
-<div class="sampling-buttons"><button id="drawStep" type="button">1個抽出</button><button id="drawOnce" type="button">1組を自動抽出</button><button id="drawMany" type="button">100組をまとめて抽出</button><button id="clearHistory" type="button">記録を消す</button></div>
-<p aria-live="polite" class="stats" id="samplingProgress">0 / 10 個。抽出方法を選び、「1個抽出」を押してください。</p>
-<p class="legend" id="samplingLegend">青：まだ選ばれていない個体　橙：今回選ばれた個体（復元抽出では次の抽出前に戻す）</p>
+<div class="sampling-buttons"><button id="drawStep" type="button">次の1個を抽出（0／10個）</button><button id="newSample" type="button">次の1組を始める</button><button id="drawOnce" type="button">1組を自動抽出</button><button id="drawMany" type="button">100組をまとめて抽出</button><button id="clearHistory" type="button">記録を消す</button></div>
+<p aria-live="polite" class="stats" id="samplingProgress">0 / 10 個。抽出方法を選び、「次の1個を抽出」を押してください。</p>
+<p class="legend" id="samplingLegend">未抽出：水色 ／ 1回選択：オレンジ ／ 2回選択：青 ／ 3回以上：紫（復元抽出）</p>
 <svg aria-label="60個の母集団から標本を1個ずつ選ぶ様子" class="chart" id="populationChart" role="img" viewbox="0 0 760 236"></svg>
 <div class="sampling-sequence"><strong>今回選んだ個体（抽出順）</strong><div aria-live="polite" class="sampling-chips" id="samplingSequence">まだ選んでいません。</div></div>
 <p aria-live="polite" class="stats" id="sampleStats">10個そろうと標本平均が表示されます。</p>
 <h3>標本平均の記録</h3><svg aria-label="標本抽出を繰り返したときの標本平均の分布" class="chart" id="meanChart" role="img" viewbox="0 0 760 230"></svg>
 <p class="legend">橙色の点1個が、完成した1組の標本から得た標本平均です。青い縦線は母平均です。100組の抽出では、毎組、母集団を最初の60個の状態から選び直します。</p>
-<div class="sampling-instructions"><strong>考察のポイント</strong><p>復元抽出では同じ個体が1組の中に繰り返し現れることがあります。非復元抽出では現れません。次に、100組を抽出して標本平均のばらつきを比較しましょう。</p></div>
+<div class="sampling-instructions"><strong>考察のポイント</strong><p>復元抽出では同じ個体が1組の中に繰り返し現れることがあります。選ばれた回数によって色が変わることを確かめましょう。非復元抽出では現れません。次に、100組を抽出して標本平均のばらつきを比較しましょう。</p></div>
 </div>
 <div class="sampling-bridge">具体例で抽出方法の違いを学び、動く教材で1個ずつ選ぶ過程と標本平均の分布を確かめた。次に、各回が独立になる復元抽出の場合について、標本平均の期待値と分散の公式を証明する。</div><h2>5．標本平均の期待値とばらつき</h2>
 <p>母平均を \(m\)、母分散を \(\sigma^2\) とします。母集団から<strong>独立に同じ分布で抽出する場合（復元抽出など）</strong>、標本平均には次の性質があります。</p>
@@ -260,7 +261,7 @@ const N=60;
 const population=Array.from({length:N},(_,i)=>25+((i*17+9)%51));
 const mu=population.reduce((a,b)=>a+b,0)/N;
 const popVar=population.reduce((a,b)=>a+(b-mu)**2,0)/N;
-let selected=[],history=[],lastId=-1;
+let selected=[],history=[],lastId=-1,autoTimer=null;
 const $=id=>document.getElementById(id);
 const el=(name,attrs={},text)=>{const e=document.createElementNS('http://www.w3.org/2000/svg',name);for(const [k,v] of Object.entries(attrs))e.setAttribute(k,v);if(text!==undefined)e.textContent=text;return e;};
 function line(svg,x1,y1,x2,y2,color='#c8d8e5',width=1){svg.appendChild(el('line',{x1,y1,x2,y2,stroke:color,'stroke-width':width}));}
@@ -268,14 +269,18 @@ function txt(svg,x,y,t,color='#405b72'){const e=el('text',{x,y,fill:color,'text-
 const mode=()=>$('samplingMode').value;
 const n=()=>Number($('sampleN').value);
 function drawPopulation(){
- const svg=$('populationChart');svg.replaceChildren();const set=new Set(selected);
+ const svg=$('populationChart');svg.replaceChildren();
+ const counts=new Map();selected.forEach(id=>counts.set(id,(counts.get(id)||0)+1));
  for(let i=0;i<N;i++){
   const x=33+(i%12)*62,y=30+Math.floor(i/12)*39;
-  const chosen=mode()==='noreplace'&&set.has(i),recent=i===lastId;
-  svg.appendChild(el('circle',{cx:x,cy:y,r:recent?13:10,fill:recent?'#ef9b38':chosen?'#f6c889':'#bcd9ef',stroke:recent?'#a95908':chosen?'#bf812e':'#6798bf','stroke-width':recent?3:1.5}));
-  txt(svg,x,y+4,population[i],recent||chosen?'#4b2a00':'#173e5b');
+  const count=counts.get(i)||0,recent=i===lastId;
+  const fill=count>=3?'#a778d5':count===2?'#62a8e4':count===1?'#f4aa4b':'#bcd9ef';
+  const stroke=count>=3?'#68389d':count===2?'#206ca7':count===1?'#a96012':'#6798bf';
+  svg.appendChild(el('circle',{cx:x,cy:y,r:recent?13:10,fill,stroke:recent?'#253c56':stroke,'stroke-width':recent?3:1.5}));
+  txt(svg,x,y+4,population[i],count?'#172f4b':'#173e5b');
+  if(count>=2){const label=el('text',{x:x+11,y:y-9,'font-size':12,'font-weight':'bold',fill:'#593087','text-anchor':'middle'},'×'+count);svg.appendChild(label);}
  }
- txt(svg,380,225,`全${N}個　橙：直前に選んだ個体　薄橙：今回選択済み（非復元のみ）`);
+ txt(svg,380,225,`全${N}個　橙：1回　青：2回　紫：3回以上（同じ個体の抽出回数）`);
 }
 function pickOne(){
  if(selected.length>=n())return false;
@@ -289,6 +294,18 @@ function pickOne(){
 function finish(){const avg=selected.reduce((sum,id)=>sum+population[id],0)/selected.length;history.push(avg);if(history.length>400)history.shift();}
 function resetSample(){selected=[];lastId=-1;}
 function drawOneSet(){resetSample();while(selected.length<n())pickOne();}
+function stopAuto(){if(autoTimer!==null){clearInterval(autoTimer);autoTimer=null;} }
+function setAutoState(running){$('drawOnce').disabled=running;$('drawStep').disabled=running||selected.length>=n();$('newSample').disabled=running||selected.length===0;$('drawMany').disabled=running;$('sampleN').disabled=running;$('samplingMode').disabled=running;}
+function autoDrawSet(){
+ stopAuto();resetSample();render();setAutoState(true);
+ $('drawOnce').textContent='抽出中…';
+ autoTimer=setInterval(()=>{
+  pickOne();render();
+  if(selected.length>=n()){
+   stopAuto();setAutoState(false);$('drawOnce').textContent='1組を自動抽出';render();
+  }
+ },400);
+}
 function drawMeans(){const svg=$('meanChart');svg.replaceChildren();const min=24,max=77,left=38,right=726,top=12,bottom=190,x=v=>left+(v-min)/(max-min)*(right-left);
  line(svg,left,bottom,right,bottom,'#496981',2);for(let v=30;v<=70;v+=10){const t=x(v);line(svg,t,bottom,t,bottom+5);txt(svg,t,210,v);}
  line(svg,x(mu),top,x(mu),bottom,'#1870b5',2.5);
@@ -298,21 +315,23 @@ function drawMeans(){const svg=$('meanChart');svg.replaceChildren();const min=24
 function render(){
  drawPopulation();drawMeans();$('nLabel').textContent=n();
  $('samplingProgress').textContent=`${selected.length} / ${n()} 個 ${selected.length===n()?'（1組完成）':''}`;
- $('drawStep').disabled=selected.length>=n();
- $('drawStep').textContent=selected.length>=n()?'1組完成':'1個抽出';
- $('samplingLegend').textContent=mode()==='replace'?'復元抽出：直前の個体を橙色で表示。次の抽出では元に戻し、同じ個体も選択候補になります。':'非復元抽出：選んだ個体は薄橙色のまま残り、次の抽出候補から除かれます。';
+ $('drawStep').disabled=autoTimer!==null||selected.length>=n();
+ $('drawStep').textContent=selected.length>=n()?'1組完成（'+n()+'／'+n()+'個）':'次の1個を抽出（'+selected.length+'／'+n()+'個）';
+ $('newSample').disabled=autoTimer!==null||selected.length===0;
+ $('samplingLegend').textContent=mode()==='replace'?'復元抽出：水色＝未抽出、オレンジ＝1回、青＝2回、紫＝3回以上。同じ個体が再び選ばれることがあります。':'非復元抽出：水色＝未抽出、オレンジ＝選択済み。同じ個体は再び選ばれません。';
  const area=$('samplingSequence');area.replaceChildren();
  if(!selected.length)area.textContent='まだ選んでいません。';
- selected.forEach((id,i)=>{const span=document.createElement('span');span.className='sampling-chip';span.textContent=`${i+1}個目：No.${id+1}（値 ${population[id]}）`;if(selected.indexOf(id)!==i)span.classList.add('sampling-repeat');area.appendChild(span);});
+ selected.forEach((id,i)=>{const span=document.createElement('span');span.className='sampling-chip';span.textContent=`${i+1}個目：No.${id+1}（値 ${population[id]}）`;const repetitions=selected.slice(0,i+1).filter(v=>v===id).length;if(repetitions===2)span.classList.add('sampling-repeat');if(repetitions>=3)span.classList.add('sampling-repeat-many');area.appendChild(span);});
  if(selected.length===n()){
   const avg=selected.reduce((a,id)=>a+population[id],0)/n();
-  $('sampleStats').textContent=`今回の標本平均 ${avg.toFixed(2)} ／ 母平均 ${mu.toFixed(2)} ／ 差 ${(avg-mu).toFixed(2)} ／ 記録 ${history.length} 組。次は「1組を自動抽出」で新しい組を作れます。`;
+  $('sampleStats').textContent=`今回の標本平均 ${avg.toFixed(2)} ／ 母平均 ${mu.toFixed(2)} ／ 差 ${(avg-mu).toFixed(2)} ／ 記録 ${history.length} 組。「次の1組を始める」で手動抽出を続けられます。`;
  }else $('sampleStats').textContent=`現在 ${selected.length} 個選択。${n()-selected.length} 個選ぶと標本平均を計算します。`;
 }
 $('drawStep').addEventListener('click',()=>{pickOne();render();});
-$('drawOnce').addEventListener('click',()=>{drawOneSet();render();});
+$('newSample').addEventListener('click',()=>{resetSample();render();});
+$('drawOnce').addEventListener('click',autoDrawSet);
 $('drawMany').addEventListener('click',()=>{for(let i=0;i<100;i++)drawOneSet();render();const m=history.reduce((a,b)=>a+b,0)/history.length;$('sampleStats').textContent=`100組を抽出しました。母平均 ${mu.toFixed(2)} ／ 標本平均の平均 ${m.toFixed(2)} ／ 記録 ${history.length} 組（直近最大400組）。`;});
-$('clearHistory').addEventListener('click',()=>{history=[];resetSample();render();});
+$('clearHistory').addEventListener('click',()=>{stopAuto();setAutoState(false);$('drawOnce').textContent='1組を自動抽出';history=[];resetSample();render();});
 for(const id of ['sampleN','samplingMode'])$(id).addEventListener('change',()=>{history=[];resetSample();render();});
 $('sampleN').addEventListener('input',()=>{$('nLabel').textContent=n();});
 function theory(){let size=+$('theoryN').value,sd=Math.sqrt(popVar),value=sd/Math.sqrt(size);$('theoryNLabel').textContent=size;$('theoryStats').textContent=`母標準偏差を ${sd.toFixed(2)} とすると、独立な抽出で n=${size} の標本平均の標準偏差は ${value.toFixed(2)} です。`;
