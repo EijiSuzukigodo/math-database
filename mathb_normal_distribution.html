@@ -181,7 +181,7 @@ body .paper mjx-container[display="true"] { overflow-x:auto; overflow-y:visible;
 .binomial-normal-demo .binomial-panel-title{font-weight:700;font-size:16px;margin:12px 0 3px;color:#234761}
 #binomialDiscreteChart,#binomialContinuousChart{display:block;width:100%;height:auto;max-height:280px;background:#fff;border-radius:6px}
 .binomial-normal-demo{max-width:850px;margin-left:auto;margin-right:auto}
-</style><style>.normal-approx-theorem{background:#edf6fb;border-left:4px solid #5d94b7;padding:12px 14px;line-height:1.85;margin:12px 0}</style></head><body>
+</style><style>.normal-approx-theorem{background:#edf6fb;border-left:4px solid #5d94b7;padding:12px 14px;line-height:1.85;margin:12px 0}</style><style>.binomial-prob-table-wrap{margin:12px 0 18px}.binomial-table-title{font-weight:700;margin:5px 0 7px;color:#234761}.binomial-table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}.binomial-prob-table{border-collapse:collapse;width:100%;min-width:540px;background:white;text-align:center;font-variant-numeric:tabular-nums}.binomial-prob-table th,.binomial-prob-table td{border:1px solid #b9cfde;padding:7px 9px;white-space:nowrap;font-size:14px}.binomial-prob-table th{background:#e9f2f9;min-width:105px;text-align:left}.binomial-prob-table td{min-width:55px}.binomial-table-note{font-size:13px;color:#43566b;margin:6px 0 0}</style></head><body>
 <header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>正規分布</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" data-hs-lesson="" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>正規分布の特徴を理解し、標準化によって確率を求めることができる</h2><p>正規分布の形と平均・標準偏差の関係を学び、標準正規分布表を用いて確率を求める。</p></section>
 <article class="paper">
 <section aria-labelledby="normal-introduction-title" class="normal-introduction">
@@ -236,7 +236,7 @@ body .paper mjx-container[display="true"] { overflow-x:auto; overflow-y:visible;
 <p>上段は二項分布の確率を棒と折れ線で、下段は同じ平均・分散をもつ正規分布の曲線で表しています。ボタンを押すと上下のグラフが同時に変わります。横軸を共通にして、形の変化を比べましょう。</p>
 <div class="binomial-normal-demo">
 <div aria-label="硬貨を投げる回数" class="binomial-normal-buttons" role="group"><button data-binom-n="10" type="button">10回</button><button data-binom-n="20" type="button">20回</button><button data-binom-n="30" type="button">30回</button><button data-binom-n="50" type="button">50回</button></div>
-<div class="binomial-panel-title">上段：二項分布</div><svg aria-label="二項分布の確率を表す棒グラフ" id="binomialDiscreteChart" role="img" viewbox="0 0 760 250"></svg><div class="binomial-panel-title">下段：対応する正規分布</div><svg aria-label="同じ平均と分散の正規分布の曲線" id="binomialContinuousChart" role="img" viewbox="0 0 760 250"></svg><p aria-live="polite" class="binomial-normal-caption" id="binomialNormalCaption">n = 10：平均 1.67、分散 1.39</p></div>
+<div class="binomial-panel-title">上段：二項分布</div><svg aria-label="二項分布の確率を表す棒グラフ" id="binomialDiscreteChart" role="img" viewbox="0 0 760 250"></svg><div class="binomial-prob-table-wrap"><p class="binomial-table-title">二項分布の確率分布表（上段のグラフに対応）</p><div class="binomial-table-scroll"><table aria-label="二項分布の確率分布表" class="binomial-prob-table"><tbody><tr id="binomialTableK"><th scope="row">回数 \(r\)</th></tr><tr id="binomialTableP"><th scope="row">確率 \(P(X=r)\)</th></tr></tbody></table></div><p class="binomial-table-note">確率は小数第2位まで表示しています。… は途中の値の省略です。表示が 0.00 でも、確率が厳密に0とは限りません。</p></div><div class="binomial-panel-title">下段：対応する正規分布</div><svg aria-label="同じ平均と分散の正規分布の曲線" id="binomialContinuousChart" role="img" viewbox="0 0 760 250"></svg><p aria-live="polite" class="binomial-normal-caption" id="binomialNormalCaption">n = 10：平均 1.67、分散 1.39</p></div>
 <p>試行回数が増えると、二項分布の棒の並びが滑らかな山形になり、下段の正規分布の曲線と似た形になります。二項分布は整数値をとる離散型、正規分布は連続型です。なお、正規近似は一般に np と n(1-p) がともに十分大きいときに精度がよくなります。</p>
 <h3>具体例：100回投げたときの確率</h3>
 <p>硬貨を100回投げるとき、表が45回以上55回以下となる確率を求めてみます。</p>
@@ -251,9 +251,9 @@ body .paper mjx-container[display="true"] { overflow-x:auto; overflow-y:visible;
 <p>よって、求める確率は <strong>約0.7286</strong> です。</p>
 </div>
 </section><h2 id="hs-examples">6．解説付き例題</h2>
-<div class="example"><strong>例題1：一般の正規分布</strong><p>\(X\) が平均70、分散 \(10^2\) の正規分布に従うとき、\(P(X\leqq80)\) を求めよ。</p></div><div class="answer answer-green-bar"><strong>解答と解説</strong><p>標準化すると \(Z=(80-70)/10=1\)。表より \(P(0\leqq Z\leqq1)=0.3413\) なので、\(P(X\leqq80)\fallingdotseq0.5+0.3413=0.8413\)。</p></div>
+<div class="example"><strong>例題1：一般の正規分布</strong><p>\(X\) が平均70、分散 \(10^2\) の正規分布に従うとき、\(P(X\leqq80)\) を求めよ。</p></div><div class="answer answer-green-bar"><strong>解答と解説</strong><p>標準化すると \(Z=\frac{80-70}{10}=1\)。表より \(P(0\leqq Z\leqq1)=0.3413\) なので、\(P(X\leqq80)\fallingdotseq0.5+0.3413=0.8413\)。</p></div>
 <div class="example"><strong>例題2：区間の確率</strong><p>\(X\) が平均50、分散 \(5^2\) の正規分布に従うとき、\(P(45\leqq X\leqq60)\) を求めよ。</p></div><div class="answer answer-green-bar"><strong>解答と解説</strong><p>45と60を標準化するとそれぞれ \(-1,2\)。</p><div class="formula">\[P(0\leqq Z\leqq2)+P(0\leqq Z\leqq1)\fallingdotseq0.4772+0.3413=0.8185\]</div></div>
-<div class="example"><strong>例題3：上側確率</strong><p>\(X\) が平均100、分散 \(15^2\) の正規分布に従うとき、\(P(X\geqq130)\) を求めよ。</p></div><div class="answer answer-green-bar"><strong>解答と解説</strong><p>\(Z=(130-100)/15=2\)。表より \(P(0\leqq Z\leqq2)=0.4772\) なので、\(P(X\geqq130)\fallingdotseq0.5-0.4772=0.0228\)。</p></div>
+<div class="example"><strong>例題3：上側確率</strong><p>\(X\) が平均100、分散 \(15^2\) の正規分布に従うとき、\(P(X\geqq130)\) を求めよ。</p></div><div class="answer answer-green-bar"><strong>解答と解説</strong><p>\(Z=\frac{130-100}{15}=2\)。表より \(P(0\leqq Z\leqq2)=0.4772\) なので、\(P(X\geqq130)\fallingdotseq0.5-0.4772=0.0228\)。</p></div>
 <div class="example"><strong>例題4：二項分布の正規近似（発展）</strong><p>\(X\sim B(100,0.5)\) のとき、\(P(X\leqq60)\) を連続補正を使って近似せよ。</p></div><div class="answer answer-green-bar"><strong>解答と解説</strong><p>平均は50、標準偏差は5。連続補正を行うと \(P(X\leqq60)\fallingdotseq P(Y\leqq60.5)\)（\(Y\) は平均50、分散25の正規分布に従う）。</p><div class="formula">\[z=\frac{60.5-50}{5}=2.1,\qquad P(X\leqq60)\fallingdotseq0.5+P(0\leqq Z\leqq2.1)\fallingdotseq0.9821\]</div><p>二項分布は離散型なので、正規近似では連続補正が役立ちます。</p></div>
 <h2 id="hs-practice">7．練習問題</h2>
 <div class="exercise"><strong>元の練習問題1</strong><p>平均50、標準偏差5の値40を標準化する。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><div class="formula">\[\frac{40-50}{5}=\boxed{-2}\]</div></details></div>
@@ -351,6 +351,13 @@ function render(svg,n,discrete){svg.replaceChildren();const mu=n*p,variance=n*p*
  else {let d='';for(let i=0;i<=380;i++){let x=xmin+(xmax-xmin)*i/380,y=Math.exp(-.5*((x-mu)/sd)**2)/(sd*Math.sqrt(2*Math.PI));d+=(i?' L ':'M ')+X(x).toFixed(2)+' '+Y(y).toFixed(2);}node(svg,'path',{d,fill:'none',stroke:color,'stroke-width':3});}
  node(svg,'text',{x:W-R-6,y:T+15,'text-anchor':'end','font-size':16,'font-weight':700,fill:color},'n = '+n);
 }
-function draw(n){render(top,n,true);render(bottom,n,false);let m=n*p,v=n*p*(1-p);caption.textContent='n = '+n+'、p = 1/6 ／ 平均 '+m.toFixed(2)+'、分散 '+v.toFixed(2)+'、標準偏差 '+Math.sqrt(v).toFixed(2);buttons.forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.binomN)===n)));}
+function updateTable(n){
+ const rowK=document.getElementById('binomialTableK'),rowP=document.getElementById('binomialTableP');
+ rowK.querySelectorAll('td').forEach(e=>e.remove());rowP.querySelectorAll('td').forEach(e=>e.remove());
+ const ks=[0,1,2,3,4,5,'…',n-1,n];
+ function probability(k){let q=Math.pow(1-p,n);for(let i=0;i<k;i++)q*=((n-i)/(i+1))*(p/(1-p));return q;}
+ for(const k of ks){const a=document.createElement('td'),b=document.createElement('td');a.textContent=String(k);b.textContent=k==='…'?'…':probability(k).toFixed(2);rowK.appendChild(a);rowP.appendChild(b);}
+}
+function draw(n){render(top,n,true);render(bottom,n,false);updateTable(n);let m=n*p,v=n*p*(1-p);caption.textContent='n = '+n+'、p = 1/6 ／ 平均 '+m.toFixed(2)+'、分散 '+v.toFixed(2)+'、標準偏差 '+Math.sqrt(v).toFixed(2);buttons.forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.binomN)===n)));}
 buttons.forEach(b=>b.addEventListener('click',()=>draw(Number(b.dataset.binomN))));draw(10);
 })();</script></body></html>
