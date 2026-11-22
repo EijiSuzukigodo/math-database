@@ -180,6 +180,16 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 .sampling-chip.sampling-repeat-many{background:#e8d9f8;border-color:#8a5ac3}
 .sampling-interactive .chart{width:100%;height:auto}
 @media(max-width:540px){.sampling-buttons button{flex:1 1 44%}.sampling-chip{font-size:.88em}}
+</style><style>
+/* Section 5: textbook formulas and proof */
+.sampling-formula-trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:14px 0 18px;align-items:stretch}
+.sampling-formula-item{background:#eaf7ff;border:0;border-radius:9px;padding:12px 6px;text-align:center;min-width:0}
+.sampling-formula-item>strong{display:block;color:#1a526d;font-size:.96em;margin-bottom:4px}
+.sampling-formula-math{font-size:1.02em;overflow:visible}
+.sampling-formula-math .MathJax{max-width:100%}
+.sampling-proof-blue,.sampling-proof{background:#eaf7ff !important;border:0 !important;border-left:0 !important;box-shadow:none !important;border-radius:10px;padding:16px 18px;margin:16px 0}
+.sampling-proof-blue .formula{background:transparent !important;border:0 !important;box-shadow:none !important}
+@media(max-width:540px){.sampling-formula-trio{gap:4px}.sampling-formula-item{padding:10px 2px}.sampling-formula-item>strong{font-size:.84em}.sampling-formula-math{font-size:.79em}.sampling-proof-blue{padding:12px 10px}}
 </style></head><body>
 <header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>母集団と標本</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" data-hs-lesson="" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>母集団と標本の違いを理解し、無作為抽出と標本平均の意味を説明できるようになる</h2><p>母集団と標本を区別し、無作為抽出の方法を理解する。標本平均を計算し、標本の取り方による値の変化を説明できる。</p></section>
 <article class="paper">
@@ -215,13 +225,13 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <p aria-live="polite" class="stats" id="sampleStats">10個そろうと標本平均が表示されます。</p>
 <h3>標本平均の分布</h3><p class="sampling-distribution-explain">標本抽出を繰り返して得られた標本平均を記録し、その平均とばらつきを調べる。</p><svg aria-label="標本抽出を繰り返したときの標本平均の分布" class="chart" id="meanChart" role="img" viewbox="0 0 760 230"></svg>
 <p class="legend">橙色の点1個が、完成した1組の標本から得た標本平均です。青い縦線は母平均です。100組の抽出では、毎組、母集団を最初の60個の状態から選び直します。</p>
-<div class="mean-summary" aria-live="polite"><div><span>母平均 \(m\)</span><strong id="meanPopulation">—</strong></div><div><span>記録した標本平均の平均</span><strong id="meanRecorded">—</strong></div><div><span>記録した標本平均の分散</span><strong id="varianceRecorded">—</strong></div></div><p class="mean-summary-note">記録した標本平均の平均・分散は、実際の抽出結果から計算した値です。理論上の \(E(\bar X)\)、\(V(\bar X)\) とは区別します。復元抽出では \(E(\bar X)=m\)、\(V(\bar X)=\dfrac{\sigma^2}{n}\) です。</p>
+<div aria-live="polite" class="mean-summary"><div><span>母平均 \(m\)</span><strong id="meanPopulation">—</strong></div><div><span>記録した標本平均の平均</span><strong id="meanRecorded">—</strong></div><div><span>記録した標本平均の分散</span><strong id="varianceRecorded">—</strong></div></div><p class="mean-summary-note">記録した標本平均の平均・分散は、実際の抽出結果から計算した値です。理論上の \(E(\bar X)\)、\(V(\bar X)\) とは区別します。復元抽出では \(E(\bar X)=m\)、\(V(\bar X)=\dfrac{\sigma^2}{n}\) です。</p>
 <div class="sampling-instructions"><strong>考察のポイント</strong><p>復元抽出では同じ個体が1組の中に繰り返し現れることがあります。選ばれた回数によって色が変わることを確かめましょう。非復元抽出では現れません。次に、100組を抽出して標本平均のばらつきを比較しましょう。</p></div>
 </div>
 <div class="sampling-bridge">具体例で抽出方法の違いを学び、動く教材で1個ずつ選ぶ過程と標本平均の分布を確かめた。次に、各回が独立になる復元抽出の場合について、標本平均の期待値と分散の公式を証明する。</div><h2>5．標本平均の期待値とばらつき</h2>
 <p>母平均を \(m\)、母分散を \(\sigma^2\) とします。母集団から<strong>独立に同じ分布で抽出する場合（復元抽出など）</strong>、標本平均には次の性質があります。</p>
-<div class="formula">\[E(\bar X)=m\qquad V(\bar X)=\dfrac{\sigma^2}{n}\]</div>
-<div class="formula">\[\boxed{\sigma_{\bar X}=\frac{\sigma}{\sqrt n}}\]</div><section class="sampling-proof"><h3>復元抽出の場合の公式の証明</h3>
+<div class="sampling-formula-trio"><div class="sampling-formula-item"><strong>平均</strong><div class="sampling-formula-math">\[E(\bar X)=m\]</div></div><div class="sampling-formula-item"><strong>分散</strong><div class="sampling-formula-math">\[V(\bar X)=\dfrac{\sigma^2}{n}\]</div></div><div class="sampling-formula-item"><strong>標準偏差</strong><div class="sampling-formula-math">\[\sigma_{\bar X}=\dfrac{\sigma}{\sqrt n}\]</div></div></div>
+<section class="sampling-proof sampling-proof-blue"><h3>復元抽出の場合の公式の証明</h3>
 <p>母平均を \(m\)、母分散を \(\sigma^2\) とする。復元抽出で得られる \(X_1,X_2,\ldots,X_n\) は互いに独立で、いずれも同じ母集団の分布に従う。したがって、\(E(X_i)=m\)、\(V(X_i)=\sigma^2\) である。</p>
 <p>標本平均は次のように表される。</p>
 <div class="formula">\[\bar X=\dfrac{X_1+X_2+\cdots+X_n}{n}\]</div>
