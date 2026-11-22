@@ -143,14 +143,21 @@ function typesetDynamic(){
     MathJax.typesetPromise(nodes).catch(err=>console.warn('Math typesetting:',err));
   }
 }
-</script></head>
+</script>
+<style id="mathb-nine-typography-20261122">
+/* 共通基準：本文16px、数式17px。図・グラフのSVGやスクリプトは変更しない。 */
+body .paper {font-size:16px;}
+body .paper math, body article math, body main math {font-size:17px!important;}
+body .paper mjx-container[jax="SVG"], body .paper mjx-container[jax="CHTML"],
+body article mjx-container[jax="SVG"], body article mjx-container[jax="CHTML"],
+body main mjx-container[jax="SVG"], body main mjx-container[jax="CHTML"] {font-size:17px!important;}
+/* 数式を含む行に余裕を持たせる */
+body .paper p,body .paper td,body .paper th {line-height:1.8;}
+</style>
+</head>
 <body>
 <header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>漸化式の応用</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" data-hs-lesson="" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>図形や確率の変化を漸化式で表し、一般項を求められるようにする</h2><p>直線を1本増やしたときの交点・領域の増え方や、次の段階に移る確率を考えます。動く図で変化を確かめながら、漸化式の立て方と解き方を学びます。</p></section>
-<nav aria-label="授業の進め方" class="hs-study-nav">
-<a href="#hs-explanation">説明</a>
-<a href="#hs-examples">例題と解説</a>
-<a href="#hs-practice">練習問題</a>
-<a href="#hs-summary">まとめ</a></nav>
+
 <section class="paper"><h2 id="hs-explanation">1．図形の問題と漸化式</h2><p>新しく1本の直線を加えると、それまでの \(n\) 本と最大 \(n\) 個の新しい交点ができます。これが漸化式を立てる出発点です。</p>
 <div class="formula">\[a_{n+1}=a_n+n,\quad a_1=0\quad\Longrightarrow\quad a_n=\frac{n(n-1)}2\]</div>
 <h3 id="hs-examples">例題1　平面上の n 本の直線の交点の数</h3><div class="example"><strong>問題</strong>　平面上に \(n\) 本の異なる直線を引く。どの2本も平行でなく、どの3本も同じ点を通らないとする。交点の個数 \(a_n\) を求めよ。</div><h3>動く図：直線を増やして交点を数える</h3><p class="small">直線の配置は「平行な2本がない・3本が1点で交わらない」ように設定しています。交点を青い点で表示します。表示範囲外の交点も個数には含みます。</p><div class="recurrence-visual-row"><div class="visual"><svg aria-label="直線の本数と交点の数の図" id="linesSvg" viewbox="0 0 680 330"></svg></div><div class="recurrence-sliders"><div class="controls"><label>直線の本数 <input id="linesCount" max="9" min="1" type="range" value="5"/><output id="linesValue">5本</output></label></div><div aria-live="polite" class="sequence-counter" id="linesSequence"></div></div></div><p aria-live="polite" class="note" id="linesResult"></p><div class="answer application-solution"><strong>解答と解説</strong><p>すでに \(n\) 本の直線があるところへ、\(n+1\) 本目を加えると、それまでの \(n\) 本の直線とそれぞれ1回ずつ交わり、<strong>新しい交点がちょうど \(n\) 個</strong>できます。</p><div class="formula">\[a_{n+1}=a_n+n,\qquad a_1=0\]</div><p>したがって</p><div class="formula">\[a_n=0+1+2+\cdots+(n-1)=\frac{n(n-1)}2\]</div><div class="answer"><strong>考え方のポイント</strong>　交点を一度に数えるのではなく、直線を1本追加したときに増える交点を数える。</div></div>

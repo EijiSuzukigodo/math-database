@@ -170,13 +170,20 @@ main.lesson-standard-main article.paper .group-number-formulas mjx-container {fo
 .group-position-labels .dot {font-size:17px!important;}
 /* Summary text matches the rest of the lesson, including list entries. */
 #summary p,#summary li,#summary .good,#summary .good strong {font-size:16px!important;line-height:1.85!important;}
-</style></head><body>
+</style>
+<style id="mathb-nine-typography-20261122">
+/* 共通基準：本文16px、数式17px。図・グラフのSVGやスクリプトは変更しない。 */
+body .paper {font-size:16px;}
+body .paper math, body article math, body main math {font-size:17px!important;}
+body .paper mjx-container[jax="SVG"], body .paper mjx-container[jax="CHTML"],
+body article mjx-container[jax="SVG"], body article mjx-container[jax="CHTML"],
+body main mjx-container[jax="SVG"], body main mjx-container[jax="CHTML"] {font-size:17px!important;}
+/* 数式を含む行に余裕を持たせる */
+body .paper p,body .paper td,body .paper th {line-height:1.8;}
+</style>
+</head><body>
 <header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>いろいろな数列の和</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" data-hs-lesson="" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>項の形に注目して、和の求め方を選ぶ</h2><p>隣り合う項が消えるように分数を差に直したり、公比を掛けた式と元の式を縦に並べたりして、何が残るかを確かめる。群に区切られた数列では、先に項数を数え、目的の群の初項・末項・和を求める。</p></section>
-<nav aria-label="授業の進め方" class="hs-study-nav">
-<a href="#hs-explanation">説明</a>
-<a href="#hs-examples">例題と解説</a>
-<a href="#hs-practice">練習問題</a>
-<a href="#hs-summary">まとめ</a></nav>
+
 <article class="paper"><section id="basic"><h2 id="hs-explanation">和を求める最初の一手</h2><div class="hs-table"><table><thead><tr><th>項や並びの特徴</th><th>最初に確かめること</th></tr></thead><tbody><tr><td>分母が二つの数の積</td><td>二つの分数の差に直し、最初の3項を書く。</td></tr><tr><td>分母が平方根の和</td><td>平方根の差を掛けて有理化する。</td></tr><tr><td>等差数列の項と等比数列の項の積</td><td>和に公比を掛け、同じ累乗が縦に並ぶように書く。</td></tr><tr><td>数列が群に分かれている</td><td>目的の群の直前までに、何項あるかを数える。</td></tr></tbody></table></div><p>基本公式は<a href="mathb_sigma_notation.html">「和の記号Σ」</a>を参照。</p></section>
 <section id="fraction"><h2>1．部分分数分解を利用する和</h2><p>まず \(\displaystyle\frac1{2\cdot3}+\frac1{3\cdot4}+\frac1{4\cdot5}\) を考える。各項を差に直すと、後ろの分数が次の項の先頭にも現れる。</p><div class="formula">\[\left(\frac12-\frac13\right)+\left(\frac13-\frac14\right)+\left(\frac14-\frac15\right)=\frac12-\frac15=\frac3{10}\]</div><p>分母に2つの因数があるとき、<strong>差の形</strong>にすると途中の項が相殺されることがある。これを「望遠鏡型の和（テレスコーピング）」という。</p><h3>基本公式の導出</h3><div class="formula">\[\frac{1}{k(k+1)}=\frac1k-\frac1{k+1}\]</div><p>右辺を通分すると \(\dfrac{(k+1)-k}{k(k+1)}\) となり、左辺と一致する。</p>
 <div class="example"><strong id="hs-examples">例題1　部分分数分解</strong><p>\(\displaystyle\sum\limits_{k=1}^{n}\frac1{k(k+1)}\) を求めよ。</p></div><div class="answer"><strong>解答と解説</strong><p>公式を使うと、</p><div class="formula">\[\begin{aligned}\sum\limits_{k=1}^{n}\frac1{k(k+1)}&amp;=\sum\limits_{k=1}^{n}\left(\frac1k-\frac1{k+1}\right)\\&amp;=\left(1-\frac12\right)+\left(\frac12-\frac13\right)+\cdots+\left(\frac1n-\frac1{n+1}\right)\\&amp;=1-\frac1{n+1}=\frac{n}{n+1}\end{aligned}\]</div><p>最初の \(1\) と最後の \(-\dfrac1{n+1}\) だけが残る。</p></div>

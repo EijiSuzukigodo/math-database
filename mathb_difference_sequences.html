@@ -158,13 +158,20 @@ body math[display="inline"],body math[display="block"],
 body .formula math,body .answer math,body .example math {font-size:18.08px!important;}
 body mjx-container[display="true"] {max-width:100%;overflow-x:auto;overflow-y:hidden;}
 </style>
+
+<style id="mathb-nine-typography-20261122">
+/* 共通基準：本文16px、数式17px。図・グラフのSVGやスクリプトは変更しない。 */
+body .paper {font-size:16px;}
+body .paper math, body article math, body main math {font-size:17px!important;}
+body .paper mjx-container[jax="SVG"], body .paper mjx-container[jax="CHTML"],
+body article mjx-container[jax="SVG"], body article mjx-container[jax="CHTML"],
+body main mjx-container[jax="SVG"], body main mjx-container[jax="CHTML"] {font-size:17px!important;}
+/* 数式を含む行に余裕を持たせる */
+body .paper p,body .paper td,body .paper th {line-height:1.8;}
+</style>
 </head><body>
 <header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>階差数列</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" data-hs-lesson="" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>階差の規則を見つけ、元の数列の一般項を求める</h2><p>隣り合う項の間に差を書き込み、初項から何回進めば目的の項に届くかを調べる。さらに、前の項までの和と今回の和を比べ、最後に加えた1項を取り出す。</p></section>
-<nav aria-label="授業の進め方" class="hs-study-nav">
-<a href="#hs-explanation">説明</a>
-<a href="#hs-examples">例題と解説</a>
-<a href="#hs-practice">練習問題</a>
-<a href="#hs-summary">まとめ</a></nav>
+
 <article class="paper">
 <h2 id="hs-explanation">1．隣り合う項の差を読む</h2>
 <p>数列 \(2,\ 5,\ 10,\ 17,\ 26,\ldots\) を見ると、増え方は一定ではない。そこで、次の項へ進むたびに「いくつ増えたか」を、項と項の間に書いてみよう。</p>

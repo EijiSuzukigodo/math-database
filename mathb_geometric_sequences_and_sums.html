@@ -90,13 +90,20 @@ math mn{font-family:LessonDigits,"Times New Roman",serif!important}
 /* 動的な和の式の分数も通常の表示と同じ比率で描画 */
 #sumResult math { font-size:1.13em; vertical-align:middle; }
 #sumResult math mfrac { math-style:normal; }
-</style></head><body>
+</style>
+<style id="mathb-nine-typography-20261122">
+/* 共通基準：本文16px、数式17px。図・グラフのSVGやスクリプトは変更しない。 */
+body .paper {font-size:16px;}
+body .paper math, body article math, body main math {font-size:17px!important;}
+body .paper mjx-container[jax="SVG"], body .paper mjx-container[jax="CHTML"],
+body article mjx-container[jax="SVG"], body article mjx-container[jax="CHTML"],
+body main mjx-container[jax="SVG"], body main mjx-container[jax="CHTML"] {font-size:17px!important;}
+/* 数式を含む行に余裕を持たせる */
+body .paper p,body .paper td,body .paper th {line-height:1.8;}
+</style>
+</head><body>
 <header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>等比数列とその和</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" data-hs-lesson="" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>等比数列の規則を見つけ、和の公式を導く</h2><p>紙を半分に折るたびに層の数がどう変わるかを考え、初項と公比から各項を求める。次に、和に公比を掛けて項を一つずらし、引き算でどの項が消えるかを表で確かめる。</p></section>
-<nav aria-label="授業の進め方" class="hs-study-nav">
-<a href="#hs-explanation">説明</a>
-<a href="#hs-examples">例題と解説</a>
-<a href="#hs-practice">練習問題</a>
-<a href="#hs-summary">まとめ</a></nav>
+
 <article class="paper">
 <h2 id="hs-explanation">1．等比数列と一般項</h2>
 <p>紙を半分に折ると、重なった紙は2層になる。もう一度折ると4層になる。折る前の1層を第1項として、何回折ると何層になるかを表にまとめる。</p>

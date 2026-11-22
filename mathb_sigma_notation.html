@@ -154,13 +154,20 @@ body .formula math,body .answer math,body .example math {font-size:18.08px!impor
 body mjx-container[display="true"] {max-width:100%;overflow-x:auto;overflow-y:hidden;}
 </style>
 <style id="mathb-sigma-dynamic-label">label[for="count"] math{font-size:1em;vertical-align:middle}</style>
+
+<style id="mathb-nine-typography-20261122">
+/* 共通基準：本文16px、数式17px。図・グラフのSVGやスクリプトは変更しない。 */
+body .paper {font-size:16px;}
+body .paper math, body article math, body main math {font-size:17px!important;}
+body .paper mjx-container[jax="SVG"], body .paper mjx-container[jax="CHTML"],
+body article mjx-container[jax="SVG"], body article mjx-container[jax="CHTML"],
+body main mjx-container[jax="SVG"], body main mjx-container[jax="CHTML"] {font-size:17px!important;}
+/* 数式を含む行に余裕を持たせる */
+body .paper p,body .paper td,body .paper th {line-height:1.8;}
+</style>
 </head><body>
 <header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>和の記号Σ</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" data-hs-lesson="" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>Σで和を表し、規則を使って計算する</h2><p>どの数からどの数まで、何を足すのかを読み取り、足し算とΣの式を行き来する。平方数・立方数の和の公式が成り立つ理由を確かめ、複数の公式を組み合わせて和を求める。</p></section>
-<nav aria-label="授業の進め方" class="hs-study-nav">
-<a href="#hs-explanation">説明</a>
-<a href="#hs-examples">例題と解説</a>
-<a href="#hs-practice">練習問題</a>
-<a href="#hs-summary">まとめ</a></nav>
+
 <article class="paper">
 <h2 id="hs-explanation">1．Σから足し算へ</h2>
 <p>ある展示室には、2番から5番までの棚に順に5冊、7冊、9冊、11冊の本がある。棚番号を \(k\) とすれば、その棚の冊数は \(2k+1\) である。これらの棚の合計を、一つの式で表してみよう。</p>

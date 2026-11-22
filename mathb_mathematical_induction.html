@@ -98,13 +98,20 @@ mjx-container[jax="SVG"] {font-size:92%!important;max-width:100%;}
 .formula,.answer,.example {overflow-wrap:normal;}
 .formula mjx-container[display="true"],.answer mjx-container[display="true"],.example mjx-container[display="true"] {max-width:100%;overflow-x:auto;overflow-y:hidden;}
 /* SVGのwidth/heightはMathJaxの自動計算値を維持する */
-</style></head><body>
+</style>
+<style id="mathb-nine-typography-20261122">
+/* 共通基準：本文16px、数式17px。図・グラフのSVGやスクリプトは変更しない。 */
+body .paper {font-size:16px;}
+body .paper math, body article math, body main math {font-size:17px!important;}
+body .paper mjx-container[jax="SVG"], body .paper mjx-container[jax="CHTML"],
+body article mjx-container[jax="SVG"], body article mjx-container[jax="CHTML"],
+body main mjx-container[jax="SVG"], body main mjx-container[jax="CHTML"] {font-size:17px!important;}
+/* 数式を含む行に余裕を持たせる */
+body .paper p,body .paper td,body .paper th {line-height:1.8;}
+</style>
+</head><body>
 <header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>数学的帰納法</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" data-hs-lesson="" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>数学的帰納法を用いて、自然数についての命題を証明できるようにする</h2><p>初期値の成立と\(n\) から \(n+1\) への移行を示します。</p><p class="hs-outcome">最初の場合を確かめ、次の場合へつなぐ証明の流れを理解する。</p></section>
-<nav aria-label="授業の進め方" class="hs-study-nav">
-<a href="#basic">説明</a>
-<a href="#hs-examples">例題と解説</a>
-<a href="#exercise">練習問題</a>
-<a href="#end">まとめ</a></nav>
+
 <article class="paper">
 <h2 id="basic">1．数学的帰納法のしくみ</h2><div class="hs-table"><table><caption>帰納法で示す二つの段階</caption>
 <thead><tr><th scope="col">段階</th><th scope="col">確かめること</th></tr></thead>

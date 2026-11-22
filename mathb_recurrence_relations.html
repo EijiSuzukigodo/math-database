@@ -168,14 +168,21 @@ body>footer.lesson-standard-footer>div{max-width:970px!important;margin:auto!imp
 #recurrence-equation .recurrence-native-equation {display:block;font-family:Georgia,"Times New Roman",serif;font-size:19px!important;font-weight:400!important;line-height:1.55!important;white-space:nowrap;letter-spacing:0;}
 #recurrence-equation .recurrence-native-initial {display:block;font-size:14px!important;line-height:1.6!important;font-weight:400!important;white-space:nowrap;}
 #recurrence-equation sub {font-size:65%!important;vertical-align:sub;line-height:0;}
-</style></head>
+</style>
+<style id="mathb-nine-typography-20261122">
+/* 共通基準：本文16px、数式17px。図・グラフのSVGやスクリプトは変更しない。 */
+body .paper {font-size:16px;}
+body .paper math, body article math, body main math {font-size:17px!important;}
+body .paper mjx-container[jax="SVG"], body .paper mjx-container[jax="CHTML"],
+body article mjx-container[jax="SVG"], body article mjx-container[jax="CHTML"],
+body main mjx-container[jax="SVG"], body main mjx-container[jax="CHTML"] {font-size:17px!important;}
+/* 数式を含む行に余裕を持たせる */
+body .paper p,body .paper td,body .paper th {line-height:1.8;}
+</style>
+</head>
 <body>
 <header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>漸化式と数列</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" data-hs-lesson="" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>漸化式の形を見分け、数列の一般項を求める</h2><p>初項と漸化式から項を順に求め、等差型・等比型・特性方程式を使う型に整理する。さらに、隣接3項間の漸化式や2つの数列の漸化式も、解きやすい数列に変形して考える。</p></section>
-<nav aria-label="授業の進め方" class="hs-study-nav">
-<a href="#hs-explanation">説明</a>
-<a href="#examples">例題と解説</a>
-<a href="#practice">練習問題</a>
-<a href="#summary">まとめ</a></nav>
+
 <article class="paper">
 <h2 id="basic">1．基本事項</h2><p>漸化式とは、数列の隣り合う項などの関係を表した式です。例えば、公差 \(d\) の等差数列は次の式を満たします。</p><div class="formula">\[a_{n+1}=a_n+d\]</div><p>一般項を求めるときは、<strong>どの型に当たるか</strong> を見分け、等差・等比などの既知の数列に直すことが重要です。求めた一般項を \(a_1\) と漸化式に代入して確認しましょう。</p>
 <h2 id="viz">2．動くグラフで理解する</h2><p>漸化式 \(a_{n+1}=pa_n+q\) の値を変え、項がどのように増減するかを確かめましょう。\(p=1\) なら等差型、\(q=0\) なら等比型です。</p>
