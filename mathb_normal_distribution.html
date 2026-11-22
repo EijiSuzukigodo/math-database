@@ -6,6 +6,8 @@
 <title>正規分布｜みんなの数学データベース</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f2f6fc;color:#1c3148;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.85;font-size:16px}a{color:#186da8}.wrap{max-width:1040px;margin:auto;padding:0 15px}header{background:linear-gradient(110deg,#17365d,#246ca3);color:#fff;padding:24px 0}header a{color:#fff}h1{font-size:clamp(24px,4vw,34px);margin:9px 0 3px}header p{margin:0;color:#e4f0fa}main{padding:22px 0 55px}.nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}.nav a{padding:7px 12px;border-radius:8px;background:#e2effb;text-decoration:none;font-weight:700}.intro{background:#e4f1ff;border-left:5px solid #2585bd;padding:15px;border-radius:9px}.paper{background:white;border:1px solid #d6e3f0;border-radius:14px;padding:clamp(15px,3vw,32px);margin:18px 0}h2{color:#174c7b;border-bottom:2px solid #bcd3e8;padding-bottom:7px;margin:29px 0 14px;font-size:1.4rem}h3{color:#123e65;font-size:1.13rem;margin:20px 0 8px}p{overflow-wrap:anywhere}.formula{background:#f3f8ff;border:1px solid #d6e5fa;border-radius:10px;padding:11px 8px;margin:13px 0;overflow-x:auto;text-align:center;font-size:.98rem}.example{border-left:5px solid #e6a345;background:#fffaf0;border-radius:9px;padding:13px 16px;margin:16px 0 5px}.answer{border-left:5px solid #3ca07b;background:#f0faf5;border-radius:9px;padding:13px 16px;margin:6px 0 18px}.exercise{background:#f8faff;border:1px solid #d6e3f0;border-radius:10px;padding:13px 16px;margin:12px 0}details{margin-top:8px}summary{cursor:pointer;color:#145e95;font-weight:700}.note{border-left:4px solid #3c85b4;background:#edf7fd;border-radius:8px;padding:11px 15px;margin:13px 0}footer{background:#142f4d;color:#e6f2ff;padding:20px 0;font-size:13px}.demo{background:#fbfdff;border:1px solid #bed3e4;border-radius:12px;padding:15px;margin:19px 0}.controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:11px}.control{display:block;background:#f3f8fd;border-radius:9px;padding:9px 11px}.control input{width:100%;accent-color:#256ca3}.value{font-variant-numeric:tabular-nums;font-weight:bold;color:#134d7d}.chart{width:100%;height:auto;max-height:360px;border:1px solid #d7e4ef;background:#fff;border-radius:8px;display:block}.legend{font-size:.9rem;color:#465f79}.stats{font-weight:700;background:#e9f4ff;padding:10px;border-radius:8px}.math-inline{white-space:normal}mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden;padding:3px 0}mjx-container{font-size:100%!important}.scroll{overflow-x:auto}.data-table{border-collapse:collapse;width:100%;font-size:.94rem}.data-table td,.data-table th{border:1px solid #b7cde0;padding:7px;text-align:center}.data-table th{background:#e9f3fd}@media(max-width:430px){body{font-size:15px}.formula{font-size:.9rem}.paper{padding:15px}.wrap{padding:0 12px}h2{font-size:1.25rem}}
+
+.normal-standard-proof .formula {background:transparent !important; border:0 !important; box-shadow:none !important;}
 </style><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},chtml:{scale:1},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
 <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><style id="six-subjects-unified">
 /* 共通デザイン（数学 I/A/II/B/III/C）: 教材のプログラムや数式には非干渉 */
@@ -158,7 +160,7 @@ body .paper mjx-container[display="true"] { overflow-x:auto; overflow-y:visible;
 
 <h2>3．標準化と標準正規分布</h2><p>平均0、分散1の正規分布を<strong>標準正規分布</strong>といい、<strong>\(N(0,1)\)</strong> と表します。すなわち、確率変数 \(Z\) が標準正規分布に従うとき、「\(Z\) は正規分布 \(N(0,1)\) に従う」といいます。</p><p><strong>標準正規分布</strong>とは、平均が0、分散が1（標準偏差が1）の正規分布です。グラフは0を中心として左右対称になり、曲線の下の面積の合計は1です。</p><p>平均や標準偏差が異なる正規分布でも、標準化によって標準正規分布の表を共通に利用できます。</p><div class="formula">\[Z=\frac{X-m}{\sigma}\]</div>
 <p>この変換を<strong>標準化</strong>といいます。まず「平均から何標準偏差だけ離れているか」を考え、\(X\) を \(Z\) に変換します。</p>
-<div class="normal-standard-proof" style="margin:14px 0 18px;padding:0 2px;">
+<div class="normal-standard-proof" style="margin:14px 0 18px;padding:14px 18px;background:#e5f5ff;border-radius:8px;">
 <h3 style="margin:8px 0 10px;">標準化すると平均0、分散1になることの証明</h3>
 <p>\(X\) は平均 \(m\)、分散 \(\sigma^2\) の正規分布 \(N(m,\sigma^2)\) に従うとする。ただし \(\sigma>0\) とする。</p>
 <p><strong>① 平均</strong>　期待値の性質 \(E(aX+b)=aE(X)+b\) より、</p>
@@ -166,7 +168,7 @@ body .paper mjx-container[display="true"] { overflow-x:auto; overflow-y:visible;
 <p><strong>② 分散</strong>　分散の性質 \(V(aX+b)=a^2V(X)\) より、</p>
 <div class="formula">\[V(Z)=V\!\left(\frac{X-m}{\sigma}\right)=\frac{1}{\sigma^2}V(X)=\frac{\sigma^2}{\sigma^2}=1\]</div>
 <p>したがって、\(Z\) の平均は0、分散は1（標準偏差は1）となる。また、正規分布を一次変換した確率変数も正規分布に従うので、</p>
-<div class="formula">\[\boxed{Z\text{ は標準正規分布 }N(0,1)\text{ に従う}}\]</div>
+<div class="formula">\[Z\text{ は標準正規分布 }N(0,1)\text{ に従う}\]</div>
 <p>このように、どのような平均・分散の正規分布でも、標準化によって共通の標準正規分布に直して考えることができます。</p>
 </div>
 <div class="example"><strong>元の例題：標準化</strong><p>平均70、標準偏差10の値80を標準化する。</p></div><div class="answer"><strong>解答と解説</strong><div class="formula">\[Z=\frac{80-70}{10}=\boxed{1}\]</div><p>平均より標準偏差1つ分だけ大きい値です。</p></div>
