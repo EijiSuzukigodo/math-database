@@ -165,6 +165,18 @@ body .paper mjx-container[display="true"] { overflow-x:auto; overflow-y:visible;
 .answer,.answer.example-one-answer{background:#eff8df !important;border:1px solid #d7e7bc !important;border-radius:9px !important;padding:15px 18px !important;box-shadow:none !important;}
 .answer .formula,.answer .example-one-formula,.answer.example-one-answer .formula,.answer mjx-container,.answer.example-one-answer mjx-container{background:transparent !important;border:0 !important;box-shadow:none !important;outline:0 !important;}
 .answer .formula{padding:4px 0 !important;}
+</style><style>
+/* 解答と解説の共通デザイン */
+.answer.answer-green-bar {background:#eff9df!important;border-left:5px solid #58a45c!important;border-top:0!important;border-right:0!important;border-bottom:0!important;border-radius:5px!important;padding:14px 18px!important;margin:12px 0 20px!important;}
+.answer.answer-green-bar .formula,.answer.answer-green-bar .formula *, .answer.answer-green-bar p,.answer.answer-green-bar strong {background:transparent!important;box-shadow:none!important;}
+.answer.answer-green-bar .formula {border:0!important;outline:0!important;}
+.binomial-normal-section {margin:25px 0 30px;}
+.binomial-normal-demo {background:#f7fbff;border:1px solid #d4e4f3;border-radius:10px;padding:14px;margin:12px 0 18px;}
+.binomial-normal-buttons {display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;}
+.binomial-normal-buttons button {font:inherit;font-size:15px;padding:5px 15px;border:1px solid #8faeca;border-radius:7px;background:white;color:#1b4366;cursor:pointer;}
+.binomial-normal-buttons button[aria-pressed="true"] {background:#216ba0;color:white;border-color:#216ba0;}
+#binomialNormalChart {display:block;width:100%;height:auto;max-height:360px;background:white;border-radius:6px;}
+.binomial-normal-caption {font-size:14px;color:#40566e;margin:8px 0 0;}
 </style></head><body>
 <header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>正規分布</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" data-hs-lesson="" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>正規分布の特徴を理解し、標準化によって確率を求めることができる</h2><p>正規分布の形と平均・標準偏差の関係を学び、標準正規分布表を用いて確率を求める。</p></section>
 <article class="paper">
@@ -197,7 +209,7 @@ body .paper mjx-container[display="true"] { overflow-x:auto; overflow-y:visible;
 <div class="formula">\[Z\text{ は標準正規分布 }N(0,1)\text{ に従う}\]</div>
 <p>このように、どのような平均・分散の正規分布でも、標準化によって共通の標準正規分布に直して考えることができます。</p>
 </div>
-<div class="example"><strong>例題1：標準化</strong><p>平均70、標準偏差10の値80を標準化する。</p></div><div class="answer example-one-answer"><strong>解答と解説</strong><div class="formula example-one-formula">\[Z=\frac{80-70}{10}=1\]</div><p>平均より標準偏差1つ分だけ大きい値です。</p></div>
+<div class="example"><strong>例題1：標準化</strong><p>平均70、標準偏差10の値80を標準化する。</p></div><div class="answer example-one-answer answer-green-bar"><strong>解答と解説</strong><div class="formula example-one-formula">\[Z=\frac{80-70}{10}=1\]</div><p>平均より標準偏差1つ分だけ大きい値です。</p></div>
 <p>このように、一般の正規分布を標準正規分布に直すことを標準化という。次に、標準正規分布を利用して確率を求める方法を学ぶ。</p><h2>4．正規分布の確率と分布表</h2><p>標準正規分布に従う確率変数 \(Z\) について、<strong>\(P(u)=P(0\leqq Z\leqq u)\)（\(u\geqq0\)）</strong> と定める。これは、平均0から \(u\) までの曲線の下の面積を表す。</p>
 <p>下のスライダーまたは数値入力で \(z\) を変えると、青く塗られた面積と確率が変わります。表の数値は小数第4位までの近似値です。</p>
 <div class="normal-z-demo">
@@ -211,14 +223,37 @@ body .paper mjx-container[display="true"] { overflow-x:auto; overflow-y:visible;
 <div class="scroll normal-z-table-wrap"><table class="data-table normal-z-table"><thead><tr><th scope="col">\(z\)</th><th scope="col">0.00</th><th scope="col">0.01</th><th scope="col">0.02</th><th scope="col">0.03</th><th scope="col">0.04</th><th scope="col">0.05</th><th scope="col">0.06</th><th scope="col">0.07</th><th scope="col">0.08</th><th scope="col">0.09</th></tr></thead><tbody id="normalZTableBody"></tbody></table></div>
 <p class="normal-z-footnote">\(z\) が負のときは左右対称性を利用します。また、\(P(Z\leqq z)\) や \(P(Z\geqq z)\) なども、0.5と表の値を組み合わせて求められます。</p>
 <div class="formula">\[P(Z\leqq z)=0.5+P(0\leqq Z\leqq z)\quad(z\geqq0)\]</div>
-<div class="example"><strong>例題2：標準正規分布の片側確率</strong><p>\(Z\) が標準正規分布に従うとき、\(P(Z\leqq1)\) を求めよ。</p></div><div class="answer"><strong>解答と解説</strong><p>標準正規分布表より \(P(0\leqq Z\leqq1)=0.3413\)。したがって、\(P(Z\leqq1)\fallingdotseq0.5+0.3413=0.8413\)。</p></div><div class="example"><strong>例題3：中央の確率</strong><p>\(P(-1\leqq Z\leqq1)\) を求めよ。</p></div><div class="answer"><strong>解答と解説</strong><div class="formula">\[2P(0\leqq Z\leqq1)\fallingdotseq2\times0.3413=0.6826\]</div><p>平均の前後1標準偏差に入る確率は約68％です。</p></div><h2 id="hs-examples">5．解説付き例題</h2>
-
-
-<div class="example"><strong>例題4：一般の正規分布</strong><p>\(X\) が平均70、分散 \(10^2\) の正規分布に従うとき、\(P(X\leqq80)\) を求めよ。</p></div><div class="answer"><strong>解答と解説</strong><p>標準化すると \(Z=(80-70)/10=1\)。表より \(P(0\leqq Z\leqq1)=0.3413\) なので、\(P(X\leqq80)\fallingdotseq0.5+0.3413=0.8413\)。</p></div>
-<div class="example"><strong>例題5：区間の確率</strong><p>\(X\) が平均50、分散 \(5^2\) の正規分布に従うとき、\(P(45\leqq X\leqq60)\) を求めよ。</p></div><div class="answer"><strong>解答と解説</strong><p>45と60を標準化するとそれぞれ \(-1,2\)。</p><div class="formula">\[P(0\leqq Z\leqq2)+P(0\leqq Z\leqq1)\fallingdotseq0.4772+0.3413=0.8185\]</div></div>
-<div class="example"><strong>例題6：上側確率</strong><p>\(X\) が平均100、分散 \(15^2\) の正規分布に従うとき、\(P(X\geqq130)\) を求めよ。</p></div><div class="answer"><strong>解答と解説</strong><p>\(Z=(130-100)/15=2\)。表より \(P(0\leqq Z\leqq2)=0.4772\) なので、\(P(X\geqq130)\fallingdotseq0.5-0.4772=0.0228\)。</p></div>
-<div class="example"><strong>例題7：二項分布の正規近似（発展）</strong><p>\(X\sim B(100,0.5)\) のとき、\(P(X\leqq60)\) を連続補正を使って近似せよ。</p></div><div class="answer"><strong>解答と解説</strong><p>平均は50、標準偏差は5。連続補正を行うと \(P(X\leqq60)\fallingdotseq P(Y\leqq60.5)\)（\(Y\) は平均50、分散25の正規分布に従う）。</p><div class="formula">\[z=\frac{60.5-50}{5}=2.1,\qquad P(X\leqq60)\fallingdotseq0.5+P(0\leqq Z\leqq2.1)\fallingdotseq0.9821\]</div><p>二項分布は離散型なので、正規近似では連続補正が役立ちます。</p></div>
-<h2 id="hs-practice">6．練習問題</h2>
+<div class="example"><strong>例題2：標準正規分布の片側確率</strong><p>\(Z\) が標準正規分布に従うとき、\(P(Z\leqq1)\) を求めよ。</p></div><div class="answer answer-green-bar"><strong>解答と解説</strong><p>標準正規分布表より \(P(0\leqq Z\leqq1)=0.3413\)。したがって、\(P(Z\leqq1)\fallingdotseq0.5+0.3413=0.8413\)。</p></div><div class="example"><strong>例題3：中央の確率</strong><p>\(P(-1\leqq Z\leqq1)\) を求めよ。</p></div><div class="answer answer-green-bar"><strong>解答と解説</strong><div class="formula">\[2P(0\leqq Z\leqq1)\fallingdotseq2\times0.3413=0.6826\]</div><p>平均の前後1標準偏差に入る確率は約68％です。</p></div><section aria-labelledby="binomial-normal-title" class="binomial-normal-section">
+<h2 id="binomial-normal-title">5．二項分布の正規分布による近似</h2>
+<p>例えば、表と裏が同じ確率で出る硬貨を <strong>n 回</strong>投げ、表が出る回数を <span>\(X\)</span> とします。1回ごとの表が出る確率は <span>\(p=0.5\)</span> なので、<span>\(X\)</span> は二項分布 <span>\(B(n,0.5)\)</span> に従います。</p>
+<p>二項分布の平均は <span>\(np\)</span>、分散は <span>\(np(1-p)\)</span> です。<span>\(n\)</span> が十分大きいとき、二項分布 <span>\(B(n,p)\)</span> は、平均 <span>\(np\)</span>、分散 <span>\(np(1-p)\)</span> の正規分布で近似できます（一般に <span>\(np\)</span> と <span>\(n(1-p)\)</span> がともに十分大きいことが目安です）。</p>
+<div class="formula">\[B(n,p)\ \approx\ N\bigl(np,\,np(1-p)\bigr)\]</div>
+<h3>動く図：試行回数を増やして比べよう</h3>
+<p>下のボタンで試行回数を変えてみましょう。<strong>青い棒が二項分布、赤い曲線が近似する正規分布</strong>です。形を比較しやすいように、横軸を <span>\(z=\dfrac{k-np}{\sqrt{np(1-p)}}\)</span> にそろえ、棒の面積の合計が1になるように描いています。</p>
+<div class="binomial-normal-demo">
+<div aria-label="硬貨を投げる回数" class="binomial-normal-buttons" role="group"><button data-binom-n="10" type="button">10回</button><button data-binom-n="30" type="button">30回</button><button aria-pressed="true" data-binom-n="100" type="button">100回</button><button data-binom-n="300" type="button">300回</button></div>
+<svg aria-label="二項分布の棒グラフと正規分布の曲線の比較" id="binomialNormalChart" role="img" viewbox="0 0 760 350"></svg>
+<p aria-live="polite" class="binomial-normal-caption" id="binomialNormalCaption">100回：平均50、標準偏差5</p>
+</div>
+<p>10回では棒の一つ一つが目立ちますが、回数を増やすと棒が細かくなり、赤い正規分布の曲線に近い形になります。<strong>二項分布は離散型、正規分布は連続型</strong>であることに注意しましょう。</p>
+<h3>具体例：100回投げたときの確率</h3>
+<p>硬貨を100回投げるとき、表が45回以上55回以下となる確率を求めてみます。</p>
+<div class="example"><strong>例題：二項分布の正規近似</strong><p>硬貨を100回投げ、表が出る回数を <span>\(X\)</span> とする。<span>\(P(45\leqq X\leqq55)\)</span> を正規分布を用いて近似せよ。</p></div>
+<div class="answer answer-green-bar"><strong>解答と解説</strong>
+<p><span>\(X\)</span> は二項分布 <span>\(B(100,0.5)\)</span> に従い、平均と分散は</p>
+<div class="formula">\[m=100\times0.5=50,\qquad \sigma^2=100\times0.5\times0.5=25\]</div>
+<p>です。したがって、<span>\(X\)</span> を平均50、分散25の正規分布に従う確率変数 <span>\(Y\)</span> で近似します。整数値をとる <span>\(X\)</span> の45回から55回までを、連続型の <span>\(Y\)</span> では44.5から55.5までと考えます。これを<strong>連続補正</strong>といいます。</p>
+<div class="formula">\[P(45\leqq X\leqq55)\fallingdotseq P(44.5\leqq Y\leqq55.5)\]</div>
+<p><span>\(Z=\dfrac{Y-50}{5}\)</span> と標準化すると、</p>
+<div class="formula">\[P(-1.1\leqq Z\leqq1.1)=2P(1.1)\fallingdotseq2\times0.3643=0.7286\]</div>
+<p>よって、求める確率は <strong>約0.7286</strong> です。</p>
+</div>
+</section><h2 id="hs-examples">6．解説付き例題</h2>
+<div class="example"><strong>例題4：一般の正規分布</strong><p>\(X\) が平均70、分散 \(10^2\) の正規分布に従うとき、\(P(X\leqq80)\) を求めよ。</p></div><div class="answer answer-green-bar"><strong>解答と解説</strong><p>標準化すると \(Z=(80-70)/10=1\)。表より \(P(0\leqq Z\leqq1)=0.3413\) なので、\(P(X\leqq80)\fallingdotseq0.5+0.3413=0.8413\)。</p></div>
+<div class="example"><strong>例題5：区間の確率</strong><p>\(X\) が平均50、分散 \(5^2\) の正規分布に従うとき、\(P(45\leqq X\leqq60)\) を求めよ。</p></div><div class="answer answer-green-bar"><strong>解答と解説</strong><p>45と60を標準化するとそれぞれ \(-1,2\)。</p><div class="formula">\[P(0\leqq Z\leqq2)+P(0\leqq Z\leqq1)\fallingdotseq0.4772+0.3413=0.8185\]</div></div>
+<div class="example"><strong>例題6：上側確率</strong><p>\(X\) が平均100、分散 \(15^2\) の正規分布に従うとき、\(P(X\geqq130)\) を求めよ。</p></div><div class="answer answer-green-bar"><strong>解答と解説</strong><p>\(Z=(130-100)/15=2\)。表より \(P(0\leqq Z\leqq2)=0.4772\) なので、\(P(X\geqq130)\fallingdotseq0.5-0.4772=0.0228\)。</p></div>
+<div class="example"><strong>例題7：二項分布の正規近似（発展）</strong><p>\(X\sim B(100,0.5)\) のとき、\(P(X\leqq60)\) を連続補正を使って近似せよ。</p></div><div class="answer answer-green-bar"><strong>解答と解説</strong><p>平均は50、標準偏差は5。連続補正を行うと \(P(X\leqq60)\fallingdotseq P(Y\leqq60.5)\)（\(Y\) は平均50、分散25の正規分布に従う）。</p><div class="formula">\[z=\frac{60.5-50}{5}=2.1,\qquad P(X\leqq60)\fallingdotseq0.5+P(0\leqq Z\leqq2.1)\fallingdotseq0.9821\]</div><p>二項分布は離散型なので、正規近似では連続補正が役立ちます。</p></div>
+<h2 id="hs-practice">7．練習問題</h2>
 <div class="exercise"><strong>元の練習問題1</strong><p>平均50、標準偏差5の値40を標準化する。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><div class="formula">\[\frac{40-50}{5}=\boxed{-2}\]</div></details></div>
 <div class="exercise"><strong>練習問題2</strong><p>\(X\) は平均\(80\)、分散\(8^2\)の正規分布に従う。\(X=96\) を標準化せよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\((96-80)/8=\boxed{2}\)。</p></details></div>
 <div class="exercise"><strong>練習問題3</strong><p>\(Z\) は標準正規分布に従う。\(P(Z\geqq1)\) を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(0.5-P(0\leqq Z\leqq1)\approx0.5-0.3413=\boxed{0.1587}\)（近似値）。</p></details></div>
@@ -227,7 +262,7 @@ body .paper mjx-container[display="true"] { overflow-x:auto; overflow-y:visible;
 <div class="exercise"><strong>練習問題6</strong><p>\(X\) は平均\(60\)、分散\(10^2\)の正規分布に従う。\(P(50\leqq X\leqq70)\) を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>標準化して \(-1\leqq Z\leqq1\)。\(2P(0\leqq Z\leqq1)\approx2\times0.3413=\boxed{0.6826}\)（近似値）。</p></details></div>
 <div class="exercise"><strong>練習問題7</strong><p>\(X\) は平均\(100\)、分散\(20^2\)の正規分布に従う。\(P(X\geqq140)\) を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(Z\geqq2\) より \(0.5-0.4772=\boxed{0.0228}\)（近似値）。</p></details></div>
 <div class="exercise"><strong>練習問題8</strong><p>正規分布で、標準偏差を2倍にすると分散は何倍になるか。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(V(X)=\sigma^2\) だから \((2\sigma)^2=4\sigma^2\)。\(\boxed{4\text{倍}}\)。</p></details></div>
-<h2 id="hs-summary">7．まとめ</h2><p>正規分布では、平均 \(m\) が中心、分散 \(\sigma^2\) が広がりを決めます。標準化して標準正規分布の表を利用すると、区間の確率を求められます。例題と練習問題も復習しましょう。</p>
+<h2 id="hs-summary">8．まとめ</h2><p>正規分布では、平均 \(m\) が中心、分散 \(\sigma^2\) が広がりを決めます。標準化して標準正規分布の表を利用すると、区間の確率を求められます。例題と練習問題も復習しましょう。</p>
 </article><nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav></main>
 <script>
 (function(){'use strict';const $=id=>document.getElementById(id);const NS='http://www.w3.org/2000/svg';function E(name,atts,parent){const n=document.createElementNS(NS,name);for(const [k,v] of Object.entries(atts||{}))n.setAttribute(k,v);if(parent)parent.appendChild(n);return n;}function T(x,y,text,parent,extra){const n=E('text',{x,y,'font-size':13,fill:'#4b6177',...extra},parent);n.textContent=text;return n;}
@@ -295,4 +330,29 @@ cells.forEach(c=>c.classList.toggle('normal-z-selected',Number(c.dataset.hundred
 document.querySelectorAll('.normal-z-presets button').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.z)===z)));
 }
 range.addEventListener('input',()=>update(range.value));num.addEventListener('change',()=>update(num.value));document.querySelectorAll('.normal-z-presets button').forEach(b=>b.addEventListener('click',()=>update(b.dataset.z)));update(1);
+})();</script><script>(function(){
+const svg=document.getElementById('binomialNormalChart');if(!svg)return;
+const caption=document.getElementById('binomialNormalCaption');const buttons=[...document.querySelectorAll('[data-binom-n]')];
+const NS='http://www.w3.org/2000/svg';
+function el(name,attrs){const e=document.createElementNS(NS,name);for(const [k,v] of Object.entries(attrs))e.setAttribute(k,String(v));svg.appendChild(e);return e;}
+function draw(n){
+svg.replaceChildren();const W=760,H=350,L=62,R=22,T=23,B=49, xMin=-3.8,xMax=3.8,yMax=.46;
+const xx=x=>L+(x-xMin)/(xMax-xMin)*(W-L-R),yy=y=>H-B-y/yMax*(H-T-B);
+for(let y=0;y<=.4+1e-9;y+=.1){el('line',{x1:L,y1:yy(y),x2:W-R,y2:yy(y),stroke:'#e8edf3'});let t=el('text',{x:L-10,y:yy(y)+5,'text-anchor':'end','font-size':14,fill:'#546b82'});t.textContent=y.toFixed(1);}
+el('line',{x1:L,y1:yy(0),x2:W-R,y2:yy(0),stroke:'#60748a','stroke-width':1.4});
+for(let x=-3;x<=3;x++){el('line',{x1:xx(x),y1:yy(0),x2:xx(x),y2:yy(0)+6,stroke:'#60748a'});let t=el('text',{x:xx(x),y:yy(0)+25,'text-anchor':'middle','font-size':15,fill:'#324c65'});t.textContent=x;}
+let label=el('text',{x:W-R,y:H-8,'text-anchor':'end','font-size':15,fill:'#324c65'});label.textContent='標準化した値 z';
+const sigma=Math.sqrt(n)/2, step=1/sigma;let p=Math.pow(.5,n);
+for(let k=0;k<=n;k++){
+ const z=(k-n/2)/sigma;
+ if(z>=xMin-step&&z<=xMax+step){const barH=p/step;const x1=xx(z-step/2),x2=xx(z+step/2);el('rect',{x:x1,y:yy(barH),width:Math.max(0,x2-x1),height:Math.max(0,yy(0)-yy(barH)),fill:'#6faee1','fill-opacity':.72,stroke:'#3679ad','stroke-width':.55});}
+ if(k<n)p=p*(n-k)/(k+1);
+}
+let path='';for(let i=0;i<=300;i++){const x=xMin+(xMax-xMin)*i/300,y=Math.exp(-x*x/2)/Math.sqrt(2*Math.PI);path+=(i?'L':'M')+xx(x).toFixed(2)+','+yy(y).toFixed(2)+' ';}
+el('path',{d:path,fill:'none',stroke:'#db514b','stroke-width':3});
+let a=el('text',{x:L+9,y:T+19,'font-size':14,fill:'#2d74ab'});a.textContent='■ 二項分布';let b=el('text',{x:L+136,y:T+19,'font-size':14,fill:'#c83c37'});b.textContent='━ 正規分布';
+caption.textContent=n+'回：平均 '+n/2+'、分散 '+n/4+'、標準偏差 '+sigma.toFixed(2);
+buttons.forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.binomN)===n)));
+}
+buttons.forEach(b=>b.addEventListener('click',()=>draw(Number(b.dataset.binomN))));draw(100);
 })();</script></body></html>
