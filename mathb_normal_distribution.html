@@ -78,9 +78,29 @@ body .lesson-standard-main mjx-container[jax="CHTML"],
 body .lesson-standard-main mjx-container[jax="SVG"] { font-size:17px!important; }
 /* 大きな分数や指数の上下を切らない。 */
 body .paper mjx-container[display="true"] { overflow-x:auto; overflow-y:visible; padding:5px 0; }
-</style></head><body>
+</style><style id="normal-introduction-style">.normal-intro-figures{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:16px 0}.normal-intro-figures figure{margin:0;padding:10px;border:1px solid #d6e3f0;border-radius:8px;background:#fbfdff}.normal-intro-figures svg{display:block;width:100%;height:auto}.normal-intro-figures figcaption{text-align:center;font-size:14px;color:#34516b;margin-top:5px}@media(max-width:650px){.normal-intro-figures{grid-template-columns:1fr}}</style>
+</head><body>
 <header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>正規分布</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main" data-hs-lesson=""><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>正規分布の特徴を理解し、標準化によって確率を求めることができる</h2><p>正規分布の形と平均・標準偏差の関係を学び、標準正規分布表を用いて確率を求めます。</p></section>
 <article class="paper">
+<section class="normal-introduction" aria-labelledby="normal-introduction-title">
+<h2 id="normal-introduction-title">身近なデータから正規分布を考えよう</h2>
+<p>例えば、ある学年の生徒の身長を調べ、身長の階級ごとに人数を数えてヒストグラムに表してみます。次の図は、分布の形を理解するための模式図です。</p>
+<div class="normal-intro-figures">
+<figure><svg viewBox="0 0 440 245" role="img" aria-label="平均付近の人数が多く、両端の人数が少ない身長のヒストグラム">
+<line x1="40" y1="196" x2="418" y2="196" stroke="#34465a" stroke-width="1.8"/><line x1="40" y1="196" x2="40" y2="20" stroke="#34465a" stroke-width="1.8"/>
+<g fill="#83b6d7" stroke="#2b6b98" stroke-width="1.4"><rect x="65" y="179" width="43" height="17"/><rect x="108" y="152" width="43" height="44"/><rect x="151" y="106" width="43" height="90"/><rect x="194" y="49" width="43" height="147"/><rect x="237" y="66" width="43" height="130"/><rect x="280" y="117" width="43" height="79"/><rect x="323" y="164" width="43" height="32"/><rect x="366" y="185" width="43" height="11"/></g>
+<g fill="#34465a" font-size="15" text-anchor="middle"><text x="86" y="218">145</text><text x="172" y="218">155</text><text x="258" y="218">165</text><text x="344" y="218">175</text><text x="226" y="240">身長（cm）</text></g><text x="8" y="18" font-size="15" fill="#34465a">人数</text>
+</svg><figcaption>ヒストグラム（模式図）</figcaption></figure>
+<figure><svg viewBox="0 0 440 245" role="img" aria-label="平均付近で高く左右に滑らかに広がる釣鐘型の曲線">
+<line x1="30" y1="196" x2="418" y2="196" stroke="#34465a" stroke-width="1.8"/><line x1="30" y1="196" x2="30" y2="20" stroke="#34465a" stroke-width="1.8"/>
+<path d="M 40 195 C 95 194 112 174 140 119 C 168 59 187 36 224 35 C 261 36 280 59 308 119 C 336 174 353 194 408 195" fill="none" stroke="#176da6" stroke-width="4" stroke-linecap="round"/>
+<line x1="224" y1="35" x2="224" y2="196" stroke="#bd7352" stroke-width="2" stroke-dasharray="6 5"/>
+<g fill="#34465a" font-size="15" text-anchor="middle"><text x="224" y="217">平均付近</text><text x="224" y="240">身長</text></g><text x="8" y="18" font-size="15" fill="#34465a">相対的な多さ</text>
+</svg><figcaption>なめらかな釣鐘型の曲線（模式図）</figcaption></figure>
+</div>
+<p>平均に近い身長の生徒が多く、平均から大きく離れた身長の生徒は少なくなるような分布が見られることがあります。調べる人数を増やし、階級の幅を細かくしていくと、ヒストグラムの形をなめらかな曲線で近似できる場合があります。</p>
+<p>このような左右対称の釣鐘型の分布を表す代表的な確率分布が、<strong>正規分布</strong>です。ただし、実際の身長の分布が必ず正規分布に一致するわけではありません。</p>
+</section>
 <h2 id="hs-explanation">1．正規分布とは</h2><p>平均 \(m\)、分散 \(\sigma^2\) の左右対称な釣鐘型の確率分布です。\(\sigma&gt;0\) とします。</p><p>確率変数 \(X\) が平均 \(m\)、分散 \(\sigma^2\) の正規分布に従うとき、「\(X\) は正規分布 \(N(m,\sigma^2)\) に従う」といいます。</p>
 <p>曲線の下全体の面積が1で、区間に入る確率はその区間の曲線下の面積です。連続型の確率変数なので、1点だけをとる確率は0です。</p>
 <div class="formula">\[f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-m)^2}{2\sigma^2}}\]</div>
