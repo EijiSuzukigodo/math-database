@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <!DOCTYPE html>
 
 <html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
@@ -68,8 +69,8 @@ body>footer.lesson-standard-footer>div{max-width:970px!important;margin:auto!imp
 /* MathJax SVG may not inherit broad responsive SVG sizing */
 mjx-container svg{width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;display:inline-block!important}
 @media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
-</style><link rel="stylesheet" href="lesson_common_style.css">
-<link rel="stylesheet" href="high_school_lesson_reading.css">
+</style><link href="lesson_common_style.css" rel="stylesheet"/>
+<link href="high_school_lesson_reading.css" rel="stylesheet"/>
 <style id="normal-distribution-17px-math-20261122">
 /* 数式の基準サイズを17pxに固定。表・例題・解答でも親のfont-sizeに左右されない。 */
 body .paper mjx-container[jax="CHTML"],
@@ -88,30 +89,55 @@ body .paper mjx-container[display="true"] { overflow-x:auto; overflow-y:visible;
 #normalSampleChart{width:100%;height:auto;display:block;background:white;border-radius:6px}
 .normal-sample-caption,.normal-sample-stats{font-size:14px;color:#38546a;margin:8px 0 0}
 @media(max-width:500px){.normal-sample-demo{padding:10px}.normal-sample-presets button{padding:6px 9px}}
+</style><style id="normal-density-side-by-side-20261122">
+.normal-density-layout{display:grid;grid-template-columns:minmax(0,0.9fr) minmax(0,1.5fr);gap:16px;align-items:start;margin:14px 0 18px}
+.normal-density-layout>*{min-width:0}
+.normal-density-formula{padding:14px 10px;background:#fbfdff;border:1px solid #d6e3f0;border-radius:10px}
+.normal-density-formula>p:first-child{margin:0 0 10px;color:#174c7b}
+.normal-density-formula .formula{padding:14px 2px;margin:0;background:transparent;border:0;overflow-x:auto}
+.normal-density-help{font-size:14px;line-height:1.75;color:#465f79;margin:12px 3px 0}
+.normal-density-graph .demo{margin:0;padding:12px}
+.normal-density-graph .controls{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+.normal-density-graph .control{font-size:14px;padding:7px}
+.normal-density-graph .chart{max-height:none}
+.normal-density-graph .legend,.normal-density-graph .stats{font-size:13px;line-height:1.55;margin:7px 0 0}
+@media(max-width:730px){.normal-density-layout{grid-template-columns:1fr}.normal-density-graph .controls{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:420px){.normal-density-graph .controls{grid-template-columns:1fr}}
+</style><style>
+/* 正規分布の説明と動く図を横並びにする */
+.normal-explanation-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:18px;align-items:start;margin:14px 0 20px}
+.normal-explanation-text p{margin-top:0;line-height:1.9}
+.normal-explanation-layout .normal-density-graph{min-width:0}
+.normal-explanation-layout .normal-density-graph .demo{margin:0}
+@media(max-width:760px){.normal-explanation-layout{grid-template-columns:1fr}.normal-explanation-layout .normal-density-graph{width:100%}}
 </style></head><body>
-<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>正規分布</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main" data-hs-lesson=""><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>正規分布の特徴を理解し、標準化によって確率を求めることができる</h2><p>正規分布の形と平均・標準偏差の関係を学び、標準正規分布表を用いて確率を求めます。</p></section>
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>正規分布</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" data-hs-lesson="" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>正規分布の特徴を理解し、標準化によって確率を求めることができる</h2><p>正規分布の形と平均・標準偏差の関係を学び、標準正規分布表を用いて確率を求める。</p></section>
 <article class="paper">
-<section class="normal-introduction" aria-labelledby="normal-introduction-title">
+<section aria-labelledby="normal-introduction-title" class="normal-introduction">
 <h2 id="normal-introduction-title">1．身近なデータから正規分布を考えよう</h2>
 <p>例えば、ある学年の生徒の身長を調べ、身長の階級ごとに人数を数えてヒストグラムに表してみます。人数が増えれば増えるほど、ヒストグラムはある曲線に近づいていきます。どのような形になるでしょうか。</p>
 <div class="normal-sample-demo">
 <p class="normal-sample-note">下のスライダーで人数を変え、ヒストグラムの形がどのように変化するか観察してみましょう。</p>
-<label class="normal-sample-control" for="normalSampleCount">調べる人数：<output id="normalSampleCountValue" for="normalSampleCount">40</output>人</label>
-<input id="normalSampleCount" type="range" min="20" max="2000" step="20" value="40" aria-label="ヒストグラムの標本数" />
-<div class="normal-sample-presets" aria-label="人数の選択"><button type="button" data-count="40">40人</button><button type="button" data-count="200">200人</button><button type="button" data-count="1000">1000人</button><button type="button" data-count="2000">2000人</button></div>
-<svg id="normalSampleChart" viewBox="0 0 760 350" role="img" aria-label="人数に応じて変化する身長のヒストグラムと正規分布曲線"></svg>
+<label class="normal-sample-control" for="normalSampleCount">調べる人数：<output for="normalSampleCount" id="normalSampleCountValue">40</output>人</label>
+<input aria-label="ヒストグラムの標本数" id="normalSampleCount" max="2000" min="20" step="20" type="range" value="40"/>
+<div aria-label="人数の選択" class="normal-sample-presets"><button data-count="40" type="button">40人</button><button data-count="200" type="button">200人</button><button data-count="1000" type="button">1000人</button><button data-count="2000" type="button">2000人</button></div>
+<svg aria-label="人数に応じて変化する身長のヒストグラムと正規分布曲線" id="normalSampleChart" role="img" viewbox="0 0 760 350"></svg>
 <p class="normal-sample-caption">青い棒：身長のヒストグラム（相対度数を階級幅で割った高さ）／ 赤い曲線：ヒストグラムの形を比べるための、なめらかな曲線</p>
-<p class="normal-sample-stats" id="normalSampleStats" aria-live="polite"></p>
+<p aria-live="polite" class="normal-sample-stats" id="normalSampleStats"></p>
 </div>
 <p>人数が少ないと棒の高さは不規則ですが、人数を増やすと、中央が高く左右に向かって低くなる釣鐘型の形が見えてきます。ただし、人数を増やすたびに必ず滑らかになるわけではありません。</p>
 <p>このような左右対称の釣鐘型の分布を表す代表的な確率分布が、<strong>正規分布</strong>です。この図は平均165cm、標準偏差8cmの正規分布から作った仮想データを使っています。実際の生徒の身長が必ず正規分布に従うわけではありません。</p>
 </section>
-<h2 id="hs-explanation">2．正規分布とは</h2><p>平均 \(m\)、分散 \(\sigma^2\) の左右対称な釣鐘型の確率分布です。\(\sigma&gt;0\) とします。</p><p>確率変数 \(X\) が平均 \(m\)、分散 \(\sigma^2\) の正規分布に従うとき、「\(X\) は正規分布 \(N(m,\sigma^2)\) に従う」といいます。</p>
-<p>曲線の下全体の面積が1で、区間に入る確率はその区間の曲線下の面積です。連続型の確率変数なので、1点だけをとる確率は0です。</p>
-<div class="formula">\[f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-m)^2}{2\sigma^2}}\]</div>
+<h2 id="hs-explanation">2．正規分布とは</h2><div class="normal-explanation-layout"><div class="normal-explanation-text"><p>平均 \(m\)、分散 \(\sigma^2\) の左右対称な釣鐘型の確率分布です。\(\sigma&gt;0\) とします。</p><p>確率変数 \(X\) が平均 \(m\)、分散 \(\sigma^2\) の正規分布に従うとき、「\(X\) は正規分布 \(N(m,\sigma^2)\) に従う」といいます。</p><p>曲線の下全体の面積が1で、区間に入る確率はその区間の曲線下の面積です。連続型の確率変数なので、1点だけをとる確率は0です。</p></div><div class="normal-density-graph"><div class="demo"><div class="controls"><label class="control">平均 m：<span class="value" id="muLabel">0</span><input id="mu" max="3" min="-3" step="0.5" type="range" value="0"/></label><label class="control">標準偏差 σ：<span class="value" id="sigmaLabel">1.0</span><input id="sigma" max="2.5" min="0.5" step="0.1" type="range" value="1"/></label></div><svg aria-label="平均と標準偏差を変える正規分布曲線" class="chart" id="shapeChart" role="img" viewbox="0 0 760 300"></svg><p class="legend">青：現在の分布、点線：標準正規分布（平均0、分散1）。平均と標準偏差を動かすと形が変わります。</p><p aria-live="polite" class="stats" id="shapeStats"></p></div></div></div>
+
+<h2>3．確率密度関数</h2>
+<p>確率密度関数の式と曲線を比べてみましょう。平均と標準偏差を変えると、曲線の位置や広がりが変わります。</p>
+
+<div class="normal-density-formula"><p><strong>確率密度関数</strong></p><div class="formula">\[f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-m)^2}{2\sigma^2}}\]</div><p class="normal-density-help">平均 <span>\(m\)</span> は曲線の中心、標準偏差 <span>\(\sigma\)</span> は曲線の広がりを表します。</p></div>
+
+
 <p><strong>平均 \(m\)</strong> は山の中心を決め、<strong>標準偏差 \(\sigma\)</strong> は山の幅を決めます。標準偏差が大きいと、山が低く横に広がります。</p>
-<h2>3．動く図①：平均と標準偏差を変える</h2><div class="demo"><div class="controls"><label class="control">平均 m：<span class="value" id="muLabel">0</span><input id="mu" max="3" min="-3" step="0.5" type="range" value="0"/></label><label class="control">標準偏差 σ：<span class="value" id="sigmaLabel">1.0</span><input id="sigma" max="2.5" min="0.5" step="0.1" type="range" value="1"/></label></div><svg aria-label="平均と標準偏差を変える正規分布曲線" class="chart" id="shapeChart" role="img" viewbox="0 0 760 300"></svg><p class="legend">青：現在の分布、点線：標準正規分布（平均0、分散1）。平均と標準偏差を動かすと形が変わります。</p><p aria-live="polite" class="stats" id="shapeStats"></p></div>
-<h2>4．標準化と標準正規分布</h2><p><strong>標準正規分布</strong>とは、平均が0、分散が1（標準偏差が1）の正規分布です。グラフは0を中心として左右対称になり、曲線の下の面積の合計は1です。</p><p>平均や標準偏差が異なる正規分布でも、標準化によって標準正規分布の表を共通に利用できます。</p><div class="formula">\[Z=\frac{X-m}{\sigma}\]</div>
+<h2>4．標準化と標準正規分布</h2><p>平均0、分散1の正規分布を<strong>標準正規分布</strong>といい、<strong>\(N(0,1)\)</strong> と表します。すなわち、確率変数 \(Z\) が標準正規分布に従うとき、「\(Z\) は正規分布 \(N(0,1)\) に従う」といいます。</p><p><strong>標準正規分布</strong>とは、平均が0、分散が1（標準偏差が1）の正規分布です。グラフは0を中心として左右対称になり、曲線の下の面積の合計は1です。</p><p>平均や標準偏差が異なる正規分布でも、標準化によって標準正規分布の表を共通に利用できます。</p><div class="formula">\[Z=\frac{X-m}{\sigma}\]</div>
 <p>この変換を<strong>標準化</strong>といいます。標準化した確率変数 \(Z\) は、標準正規分布（平均0、分散1）に従います。まず「平均から何標準偏差だけ離れているか」を考え、\(X\) を \(Z\) に変換します。</p>
 <div class="example"><strong>元の例題：標準化</strong><p>平均70、標準偏差10の値80を標準化する。</p></div><div class="answer"><strong>解答と解説</strong><div class="formula">\[Z=\frac{80-70}{10}=\boxed{1}\]</div><p>平均より標準偏差1つ分だけ大きい値です。</p></div>
 <h2>5．正規分布の確率と分布表</h2><p>\(\Phi(z)=P(Z\leqq z)\) と書くと、次のように表せます。</p><div class="formula">\[\boxed{P(a\leqq X\leqq b)=\Phi\!\left(\frac{b-m}{\sigma}\right)-\Phi\!\left(\frac{a-m}{\sigma}\right)}\]</div>
