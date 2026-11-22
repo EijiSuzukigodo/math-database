@@ -177,6 +177,10 @@ body .paper mjx-container[display="true"] { overflow-x:auto; overflow-y:visible;
 .binomial-normal-buttons button[aria-pressed="true"] {background:#216ba0;color:white;border-color:#216ba0;}
 #binomialNormalChart {display:block;width:100%;height:auto;max-height:360px;background:white;border-radius:6px;}
 .binomial-normal-caption {font-size:14px;color:#40566e;margin:8px 0 0;}
+</style><style>
+.binomial-normal-demo .binomial-panel-title{font-weight:700;font-size:16px;margin:12px 0 3px;color:#234761}
+#binomialDiscreteChart,#binomialContinuousChart{display:block;width:100%;height:auto;max-height:280px;background:#fff;border-radius:6px}
+.binomial-normal-demo{max-width:850px;margin-left:auto;margin-right:auto}
 </style></head><body>
 <header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>正規分布</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" data-hs-lesson="" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>正規分布の特徴を理解し、標準化によって確率を求めることができる</h2><p>正規分布の形と平均・標準偏差の関係を学び、標準正規分布表を用いて確率を求める。</p></section>
 <article class="paper">
@@ -225,17 +229,17 @@ body .paper mjx-container[display="true"] { overflow-x:auto; overflow-y:visible;
 <div class="formula">\[P(Z\leqq z)=0.5+P(0\leqq Z\leqq z)\quad(z\geqq0)\]</div>
 <div class="example"><strong>例題2：標準正規分布の片側確率</strong><p>\(Z\) が標準正規分布に従うとき、\(P(Z\leqq1)\) を求めよ。</p></div><div class="answer answer-green-bar"><strong>解答と解説</strong><p>標準正規分布表より \(P(0\leqq Z\leqq1)=0.3413\)。したがって、\(P(Z\leqq1)\fallingdotseq0.5+0.3413=0.8413\)。</p></div><div class="example"><strong>例題3：中央の確率</strong><p>\(P(-1\leqq Z\leqq1)\) を求めよ。</p></div><div class="answer answer-green-bar"><strong>解答と解説</strong><div class="formula">\[2P(0\leqq Z\leqq1)\fallingdotseq2\times0.3413=0.6826\]</div><p>平均の前後1標準偏差に入る確率は約68％です。</p></div><section aria-labelledby="binomial-normal-title" class="binomial-normal-section">
 <h2 id="binomial-normal-title">5．二項分布の正規分布による近似</h2>
-<p>例えば、表と裏が同じ確率で出る硬貨を <strong>n 回</strong>投げ、表が出る回数を <span>\(X\)</span> とします。1回ごとの表が出る確率は <span>\(p=0.5\)</span> なので、<span>\(X\)</span> は二項分布 <span>\(B(n,0.5)\)</span> に従います。</p>
+<p>例えば、さいころを <strong>n 回</strong> 投げ、1の目が出る回数を <span>\(X\)</span> とします。1回で1の目が出る確率は <span>\(p=\frac16\)</span> なので、<span>\(X\)</span> は二項分布 <span>\(B(n,\frac16)\)</span> に従います。</p>
 <p>二項分布の平均は <span>\(np\)</span>、分散は <span>\(np(1-p)\)</span> です。<span>\(n\)</span> が十分大きいとき、二項分布 <span>\(B(n,p)\)</span> は、平均 <span>\(np\)</span>、分散 <span>\(np(1-p)\)</span> の正規分布で近似できます（一般に <span>\(np\)</span> と <span>\(n(1-p)\)</span> がともに十分大きいことが目安です）。</p>
 <div class="formula">\[B(n,p)\ \approx\ N\bigl(np,\,np(1-p)\bigr)\]</div>
-<h3>動く図：試行回数を増やして比べよう</h3>
-<p>下のボタンで試行回数を変えてみましょう。<strong>青い棒が二項分布、赤い曲線が近似する正規分布</strong>です。形を比較しやすいように、横軸を <span>\(z=\dfrac{k-np}{\sqrt{np(1-p)}}\)</span> にそろえ、棒の面積の合計が1になるように描いています。</p>
+<h3>動く図：二項分布と正規分布を上下で比べよう</h3>
+<p>上段は二項分布の確率を棒と折れ線で、下段は同じ平均・分散をもつ正規分布の曲線で表しています。ボタンを押すと上下のグラフが同時に変わります。横軸を共通にして、形の変化を比べましょう。</p>
 <div class="binomial-normal-demo">
-<div aria-label="硬貨を投げる回数" class="binomial-normal-buttons" role="group"><button data-binom-n="10" type="button">10回</button><button data-binom-n="30" type="button">30回</button><button aria-pressed="true" data-binom-n="100" type="button">100回</button><button data-binom-n="300" type="button">300回</button></div>
-<svg aria-label="二項分布の棒グラフと正規分布の曲線の比較" id="binomialNormalChart" role="img" viewbox="0 0 760 350"></svg>
-<p aria-live="polite" class="binomial-normal-caption" id="binomialNormalCaption">100回：平均50、標準偏差5</p>
-</div>
-<p>10回では棒の一つ一つが目立ちますが、回数を増やすと棒が細かくなり、赤い正規分布の曲線に近い形になります。<strong>二項分布は離散型、正規分布は連続型</strong>であることに注意しましょう。</p>
+<div aria-label="硬貨を投げる回数" class="binomial-normal-buttons" role="group"><button data-binom-n="10" type="button">10回</button><button data-binom-n="20" type="button">20回</button><button data-binom-n="30" type="button">30回</button><button data-binom-n="50" type="button">50回</button></div>
+
+
+<div class="binomial-panel-title">上段：二項分布</div><svg aria-label="二項分布の確率を表す棒グラフ" id="binomialDiscreteChart" role="img" viewBox="0 0 760 250"></svg><div class="binomial-panel-title">下段：対応する正規分布</div><svg aria-label="同じ平均と分散の正規分布の曲線" id="binomialContinuousChart" role="img" viewBox="0 0 760 250"></svg><p aria-live="polite" class="binomial-normal-caption" id="binomialNormalCaption">n = 10：平均 1.67、分散 1.39</p></div>
+<p>試行回数が増えると、二項分布の棒の並びが滑らかな山形になり、下段の正規分布の曲線と似た形になります。二項分布は整数値をとる離散型、正規分布は連続型です。なお、正規近似は一般に np と n(1-p) がともに十分大きいときに精度がよくなります。</p>
 <h3>具体例：100回投げたときの確率</h3>
 <p>硬貨を100回投げるとき、表が45回以上55回以下となる確率を求めてみます。</p>
 <div class="example"><strong>例題：二項分布の正規近似</strong><p>硬貨を100回投げ、表が出る回数を <span>\(X\)</span> とする。<span>\(P(45\leqq X\leqq55)\)</span> を正規分布を用いて近似せよ。</p></div>
@@ -331,28 +335,24 @@ document.querySelectorAll('.normal-z-presets button').forEach(b=>b.setAttribute(
 }
 range.addEventListener('input',()=>update(range.value));num.addEventListener('change',()=>update(num.value));document.querySelectorAll('.normal-z-presets button').forEach(b=>b.addEventListener('click',()=>update(b.dataset.z)));update(1);
 })();</script><script>(function(){
-const svg=document.getElementById('binomialNormalChart');if(!svg)return;
-const caption=document.getElementById('binomialNormalCaption');const buttons=[...document.querySelectorAll('[data-binom-n]')];
-const NS='http://www.w3.org/2000/svg';
-function el(name,attrs){const e=document.createElementNS(NS,name);for(const [k,v] of Object.entries(attrs))e.setAttribute(k,String(v));svg.appendChild(e);return e;}
-function draw(n){
-svg.replaceChildren();const W=760,H=350,L=62,R=22,T=23,B=49, xMin=-3.8,xMax=3.8,yMax=.46;
-const xx=x=>L+(x-xMin)/(xMax-xMin)*(W-L-R),yy=y=>H-B-y/yMax*(H-T-B);
-for(let y=0;y<=.4+1e-9;y+=.1){el('line',{x1:L,y1:yy(y),x2:W-R,y2:yy(y),stroke:'#e8edf3'});let t=el('text',{x:L-10,y:yy(y)+5,'text-anchor':'end','font-size':14,fill:'#546b82'});t.textContent=y.toFixed(1);}
-el('line',{x1:L,y1:yy(0),x2:W-R,y2:yy(0),stroke:'#60748a','stroke-width':1.4});
-for(let x=-3;x<=3;x++){el('line',{x1:xx(x),y1:yy(0),x2:xx(x),y2:yy(0)+6,stroke:'#60748a'});let t=el('text',{x:xx(x),y:yy(0)+25,'text-anchor':'middle','font-size':15,fill:'#324c65'});t.textContent=x;}
-let label=el('text',{x:W-R,y:H-8,'text-anchor':'end','font-size':15,fill:'#324c65'});label.textContent='標準化した値 z';
-const sigma=Math.sqrt(n)/2, step=1/sigma;let p=Math.pow(.5,n);
-for(let k=0;k<=n;k++){
- const z=(k-n/2)/sigma;
- if(z>=xMin-step&&z<=xMax+step){const barH=p/step;const x1=xx(z-step/2),x2=xx(z+step/2);el('rect',{x:x1,y:yy(barH),width:Math.max(0,x2-x1),height:Math.max(0,yy(0)-yy(barH)),fill:'#6faee1','fill-opacity':.72,stroke:'#3679ad','stroke-width':.55});}
- if(k<n)p=p*(n-k)/(k+1);
+'use strict';
+const top=document.getElementById('binomialDiscreteChart'), bottom=document.getElementById('binomialContinuousChart');
+if(!top||!bottom)return;
+const buttons=[...document.querySelectorAll('[data-binom-n]')], caption=document.getElementById('binomialNormalCaption');
+const NS='http://www.w3.org/2000/svg',p=1/6, xmin=0,xmax=19,W=760,H=250,L=55,R=20,T=22,B=38;
+const colors={10:'#b14c3e',20:'#2c659a',30:'#388779',50:'#55505a'};
+function node(svg,tag,attrs,content){let e=document.createElementNS(NS,tag);for(let [k,v] of Object.entries(attrs))e.setAttribute(k,String(v));if(content!==undefined)e.textContent=content;svg.appendChild(e);return e;}
+function render(svg,n,discrete){svg.replaceChildren();const mu=n*p,variance=n*p*(1-p),sd=Math.sqrt(variance),maxY=.36;
+ const X=x=>L+(x-xmin)/(xmax-xmin)*(W-L-R),Y=y=>H-B-y/maxY*(H-T-B);
+ for(let v=0;v<=.3+1e-8;v+=.1){let yy=Y(v);node(svg,'line',{x1:L,y1:yy,x2:W-R,y2:yy,stroke:'#e3e9ee','stroke-dasharray':'4 4'});node(svg,'text',{x:L-9,y:yy+5,'text-anchor':'end','font-size':14,fill:'#4a5865'},v.toFixed(1));}
+ node(svg,'line',{x1:L,y1:Y(0),x2:W-R,y2:Y(0),stroke:'#536576','stroke-width':1.5});node(svg,'line',{x1:L,y1:T,x2:L,y2:Y(0),stroke:'#536576','stroke-width':1.5});
+ for(let k=0;k<=18;k+=3){node(svg,'text',{x:X(k),y:H-B+24,'text-anchor':'middle','font-size':14,fill:'#43566b'},k);}
+ node(svg,'text',{x:W-R,y:H-4,'text-anchor':'end','font-size':14,fill:'#43566b'},'回数');
+ const color=colors[n];
+ if(discrete){let q=Math.pow(1-p,n),d='';for(let k=0;k<=n;k++){if(k<=xmax){let xx=X(k),yy=Y(q);node(svg,'rect',{x:xx-5,y:yy,width:10,height:Y(0)-yy,fill:color,'fill-opacity':.22,stroke:color,'stroke-width':1});node(svg,'circle',{cx:xx,cy:yy,r:3.3,fill:color});d+=(d?' L ':'M ')+xx.toFixed(2)+' '+yy.toFixed(2);}if(k<n)q*=((n-k)/(k+1))*(p/(1-p));}node(svg,'path',{d,fill:'none',stroke:color,'stroke-width':2.3});}
+ else {let d='';for(let i=0;i<=380;i++){let x=xmin+(xmax-xmin)*i/380,y=Math.exp(-.5*((x-mu)/sd)**2)/(sd*Math.sqrt(2*Math.PI));d+=(i?' L ':'M ')+X(x).toFixed(2)+' '+Y(y).toFixed(2);}node(svg,'path',{d,fill:'none',stroke:color,'stroke-width':3});}
+ node(svg,'text',{x:W-R-6,y:T+15,'text-anchor':'end','font-size':16,'font-weight':700,fill:color},'n = '+n);
 }
-let path='';for(let i=0;i<=300;i++){const x=xMin+(xMax-xMin)*i/300,y=Math.exp(-x*x/2)/Math.sqrt(2*Math.PI);path+=(i?'L':'M')+xx(x).toFixed(2)+','+yy(y).toFixed(2)+' ';}
-el('path',{d:path,fill:'none',stroke:'#db514b','stroke-width':3});
-let a=el('text',{x:L+9,y:T+19,'font-size':14,fill:'#2d74ab'});a.textContent='■ 二項分布';let b=el('text',{x:L+136,y:T+19,'font-size':14,fill:'#c83c37'});b.textContent='━ 正規分布';
-caption.textContent=n+'回：平均 '+n/2+'、分散 '+n/4+'、標準偏差 '+sigma.toFixed(2);
-buttons.forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.binomN)===n)));
-}
-buttons.forEach(b=>b.addEventListener('click',()=>draw(Number(b.dataset.binomN))));draw(100);
+function draw(n){render(top,n,true);render(bottom,n,false);let m=n*p,v=n*p*(1-p);caption.textContent='n = '+n+'、p = 1/6 ／ 平均 '+m.toFixed(2)+'、分散 '+v.toFixed(2)+'、標準偏差 '+Math.sqrt(v).toFixed(2);buttons.forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.binomN)===n)));}
+buttons.forEach(b=>b.addEventListener('click',()=>draw(Number(b.dataset.binomN))));draw(10);
 })();</script></body></html>
