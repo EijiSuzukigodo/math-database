@@ -88,8 +88,17 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 #binomial-viz .binom-graph-table table{width:100%;font-size:.88em}
 #binomial-viz .binom-graph-table svg{width:100%;height:auto}
 @media(max-width:650px){#binomial-viz .binom-graph-table{grid-template-columns:minmax(0,1.25fr) minmax(160px,1fr);gap:8px}#binomial-viz .binom-graph-table table{font-size:.78em}#binomial-viz .binom-graph-table th,#binomial-viz .binom-graph-table td{padding:5px 3px}}
+</style><style>
+/* 具体例：分布表と確率の導出を並べる */
+.binom-example-two-col{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:start;margin:14px 0 18px}
+.binom-example-two-col>div{min-width:0}
+.binom-example-two-col h4{margin:0 0 9px;font-size:1rem}
+.binom-example-two-col .table-wrap{margin:0;overflow-x:auto}
+.binom-example-two-col .binom-example-table{width:100%;font-size:.91em}
+.binom-prob-line{padding:7px 0;font-size:.91em;white-space:nowrap;overflow-x:auto}
+@media(max-width:700px){.binom-example-two-col{grid-template-columns:1fr;gap:12px}}
 </style></head><body>
-<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>二項分布</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" data-hs-lesson="" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>反復試行の確率と二項分布</h2><p>成功確率が一定の独立な試行を繰り返すとき、成功回数の確率を求めて確率分布表を作る。その分布を二項分布と呼ぶことを理解し、具体例から平均・分散・標準偏差を計算して、一般の公式を導き確かめる。</p></section>
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>二項分布</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" data-hs-lesson="" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>反復試行の確率と二項分布</h2><p>反復試行で成功回数の確率を求め、確率分布表を作ることができる。二項分布の意味を理解し、平均・分散・標準偏差を確率分布表と公式の両方から計算できる。</p></section>
 <nav aria-label="授業の進め方" class="hs-study-nav">
 <a href="#hs-explanation">説明</a>
 <a href="#hs-examples">例題と解説</a>
@@ -107,22 +116,22 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <h3>具体例：公平な硬貨を3回投げる</h3>
 <p>表が出た回数を \(X\) とします。表が出る確率は毎回 \(\dfrac12\) で、3回の試行は互いに独立です。</p>
 <p>表がちょうど \(k\) 回出る確率は \({}_3\mathrm{C}_k\left(\dfrac12\right)^3\) です。</p>
-<div class="table-wrap"><table class="binom-example-table"><thead><tr><th>\(X\)</th><th>0</th><th>1</th><th>2</th><th>3</th><th>合計</th></tr></thead><tbody><tr><th>\(P(X=k)\)</th><td>\(\dfrac18\)</td><td>\(\dfrac38\)</td><td>\(\dfrac38\)</td><td>\(\dfrac18\)</td><td>1</td></tr></tbody></table></div>
+<div class="binom-example-two-col"><div class="binom-example-left"><h4>確率分布表</h4><div class="table-wrap"><table class="binom-example-table"><thead><tr><th>\(X\)</th><th>0</th><th>1</th><th>2</th><th>3</th><th>合計</th></tr></thead><tbody><tr><th>\(P(X=k)\)</th><td>\(\dfrac18\)</td><td>\(\dfrac38\)</td><td>\(\dfrac38\)</td><td>\(\dfrac18\)</td><td>1</td></tr></tbody></table></div></div><div class="binom-example-right"><h4>確率の具体的な求め方</h4><div class="binom-prob-line">\(P(X=0)={}_3\mathrm{C}_0\left(\frac12\right)^3=\frac18\)</div><div class="binom-prob-line">\(P(X=1)={}_3\mathrm{C}_1\left(\frac12\right)^3=\frac38\)</div><div class="binom-prob-line">\(P(X=2)={}_3\mathrm{C}_2\left(\frac12\right)^3=\frac38\)</div><div class="binom-prob-line">\(P(X=3)={}_3\mathrm{C}_3\left(\frac12\right)^3=\frac18\)</div></div></div>
 <div class="binom-work"><strong>解答と解説：平均・分散・標準偏差を求める</strong>
 <p>平均は、値と確率の積を足して求めます。</p>
 <div class="formula">\[E(X)=0\cdot\frac18+1\cdot\frac38+2\cdot\frac38+3\cdot\frac18=\frac32\]</div>
 <p>分散を求めるため、まず \(E(X^2)\) を計算します。</p>
 <div class="formula">\[E(X^2)=0^2\cdot\frac18+1^2\cdot\frac38+2^2\cdot\frac38+3^2\cdot\frac18=3\]</div>
 <div class="formula">\[V(X)=E(X^2)-\{E(X)\}^2=3-\left(\frac32\right)^2=\frac34\]</div>
-<div class="formula">\[\sigma(X)=\sqrt{V(X)}=\sqrt{\frac34}=\frac{\sqrt3}{2}\]</div></div>
-<h3>一般の二項分布の平均と分散を導く</h3>
-<p>成功確率 \(p\) の独立な試行を \(n\) 回行います。第 \(i\) 回が成功したら1、失敗したら0となる確率変数を \(X_i\) とすると、成功回数は \(X=X_1+X_2+\cdots+X_n\) です。</p>
-<div class="formula">\[\begin{aligned}E(X_i)&amp;=0\cdot(1-p)+1\cdot p=p,\\ E(X_i^2)&amp;=0^2\cdot(1-p)+1^2\cdot p=p,\\ V(X_i)&amp;=p-p^2=p(1-p).\end{aligned}\]</div>
-<p>各試行は独立なので、和の期待値・分散はそれぞれ加えられます。</p>
-<div class="formula">\[\begin{aligned}E(X)&amp;=\underbrace{p+p+\cdots+p}_{n\text{ 個}}=np,\\V(X)&amp;=\underbrace{p(1-p)+\cdots+p(1-p)}_{n\text{ 個}}=np(1-p),\\\sigma(X)&amp;=\sqrt{np(1-p)}.\end{aligned}\]</div>
-<h3>具体例と公式が一致することを確認</h3>
-<p>硬貨を3回投げる場合は \(n=3,\ p=\dfrac12\) です。</p>
-<div class="binom-work"><div class="formula">\[\begin{aligned}E(X)&amp;=3\cdot\frac12=\frac32,\\ V(X)&amp;=3\cdot\frac12\cdot\left(1-\frac12\right)=\frac34,\\\sigma(X)&amp;=\sqrt{\frac34}=\frac{\sqrt3}{2}.\end{aligned}\]</div><p>確率分布表から直接求めた値と、公式から求めた値がすべて一致しました。</p></div>
+<div class="formula">\[\sigma(X)=\sqrt{V(X)}=\sqrt{\frac34}=\frac{\sqrt3}{2}\]</div></div><h3>二項分布の平均・分散・標準偏差の公式</h3><p>成功確率が \(p\) の独立な試行を \(n\) 回行うとき、成功回数 \(X\) の平均・分散・標準偏差は次の公式で求められます。</p><div class="formula">\[E(X)=np,\qquad V(X)=np(1-p),\qquad \sigma(X)=\sqrt{np(1-p)}\]</div><h3>具体例に公式を当てはめて確認する</h3><p>硬貨を3回投げる場合は \(n=3,\ p=\dfrac12\) です。</p><div class="binom-work"><strong>解答と解説：公式を使った計算</strong><div class="formula">\[\begin{aligned}E(X)&amp;=3\cdot\frac12=\frac32,\\ V(X)&amp;=3\cdot\frac12\cdot\left(1-\frac12\right)=\frac34,\\\sigma(X)&amp;=\sqrt{\frac34}=\frac{\sqrt3}{2}.\end{aligned}\]</div><p>確率分布表から直接求めた値と、公式から求めた値がすべて一致しました。</p></div><h3>平均・分散の公式の証明</h3><p>成功確率 \(p\) の独立な試行を \(n\) 回行います。第 \(i\) 回が成功したら1、失敗したら0となる確率変数を \(X_i\) とすると、成功回数は \(X=X_1+X_2+\cdots+X_n\) です。</p><div class="formula">\[\begin{aligned}E(X_i)&amp;=0\cdot(1-p)+1\cdot p=p,\\ E(X_i^2)&amp;=0^2\cdot(1-p)+1^2\cdot p=p,\\ V(X_i)&amp;=p-p^2=p(1-p).\end{aligned}\]</div><p>各試行は独立なので、和の期待値・分散はそれぞれ加えられます。</p><div class="formula">\[\begin{aligned}E(X)&amp;=\underbrace{p+p+\cdots+p}_{n\text{ 個}}=np,\\V(X)&amp;=\underbrace{p(1-p)+\cdots+p(1-p)}_{n\text{ 個}}=np(1-p),\\\sigma(X)&amp;=\sqrt{np(1-p)}.\end{aligned}\]</div>
+
+
+
+
+
+
+
+
 <h2>3．動く教材：二項分布の確率分布</h2>
 <div class="viz" id="binomial-viz"><p>試行回数と成功確率を変更して、棒グラフの形、期待値、分散がどう変わるか調べましょう。</p>
 <div class="controls"><label>試行回数 \(n\)：<output id="n-value">10</output><input id="n-slider" max="20" min="1" step="1" type="range" value="10"/></label>
