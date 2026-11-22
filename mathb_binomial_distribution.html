@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <!DOCTYPE html>
 
 <!DOCTYPE html>
@@ -6,6 +7,8 @@
 <html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>二項分布｜みんなの数学データベース</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f2f6fc;color:#1c3148;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.85;font-size:16px}a{color:#186da8}.wrap{max-width:1040px;margin:auto;padding:0 17px}header{background:linear-gradient(110deg,#17365d,#246ca3);color:#fff;padding:25px 0}header a{color:#fff}header h1{font-size:clamp(24px,3.8vw,34px);margin:10px 0 4px}header p{margin:0;color:#e4f0fa}main{padding:24px 0 60px}h2{font-size:1.34rem;color:#174c7b;border-bottom:2px solid #bcd3e8;padding-bottom:7px;margin:30px 0 16px}h3{font-size:1.09rem;color:#123e65}p{overflow-wrap:anywhere}.nav{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:17px}.nav a{padding:7px 12px;background:#e2effb;border-radius:8px;text-decoration:none;font-weight:700}.intro{background:#e4f1ff;border-left:5px solid #2585bd;padding:16px;border-radius:9px;margin:0 0 20px}.paper{background:#fff;border:1px solid #d6e3f0;border-radius:14px;padding:clamp(16px,3vw,34px);margin:18px 0}.formula{background:#f3f8ff;border:1px solid #d6e5fa;border-radius:10px;padding:12px 8px;margin:14px 0;overflow-x:auto;text-align:center;font-size:.98em}.example{border-left:5px solid #e6a345;background:#fffaf0;border-radius:9px;padding:14px 16px;margin:14px 0}.answer{border-left:5px solid #3ca07b;background:#f0faf5;border-radius:9px;padding:14px 16px;margin:8px 0 20px}.exercise{background:#f8faff;border:1px solid #d6e3f0;border-radius:10px;padding:13px 16px;margin-top:16px}summary{cursor:pointer;color:#145e95;font-weight:700}details{margin-top:9px}footer{background:#142f4d;color:#e6f2ff;padding:20px 0;font-size:13px}.muted{color:#526c82}.chip{display:inline-block;border-radius:25px;background:#e5f3fe;color:#246a96;padding:3px 10px;font-size:12px;font-weight:700}button,a,input{touch-action:manipulation}a:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid orange;outline-offset:3px} .math-scroll{overflow-x:auto}mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden;font-size:100%!important}mjx-container[jax="SVG"] > svg{max-width:unset}.important{border-left:4px solid #2f7ea9;background:#eef7fc;padding:10px 14px;border-radius:8px;margin:14px 0}.viz{background:#f7fbff;border:1px solid #c7dcef;border-radius:12px;padding:16px;margin:20px 0}.controls{display:grid;grid-template-columns:1fr 1fr;gap:14px}.controls label{display:block;font-weight:700}.controls input[type=range]{display:block;width:100%;height:32px;accent-color:#2773a8}.stats{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}.stat{background:#e4f0fb;border-radius:9px;padding:8px 12px;min-width:115px}.stat strong{display:block;font-size:1.15rem}.chart-wrap{overflow-x:auto}.binom-chart{display:block;width:100%;height:auto;min-width:330px;max-height:340px;background:white;border:1px solid #d8e6f2;border-radius:8px}.prob-table{border-collapse:collapse;min-width:320px;width:100%;font-size:.93rem}.prob-table th,.prob-table td{padding:6px 8px;border:1px solid #d8e3ec;text-align:right}.prob-table th{background:#ecf5fd;text-align:center}.prob-table td:first-child{text-align:center}.table-wrap{max-height:270px;overflow:auto}button{cursor:pointer;background:#176ba5;color:white;border:0;border-radius:8px;padding:10px 14px;font-weight:700}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:10px}.step{background:#f6f9ff;border-left:4px solid #6fa3c5;padding:10px 14px;margin:12px 0}@media(max-width:600px){.controls,.two-col{grid-template-columns:1fr}.wrap{padding:0 12px}.paper{padding:16px}.formula{font-size:.93em}.binom-chart{min-width:0}}
+
+.general-binomial-table{width:100%;border-collapse:collapse;font-size:14px;white-space:nowrap}.general-binomial-table th,.general-binomial-table td{border:1px solid #cbdbe9;padding:8px 10px;text-align:center}.general-binomial-table th{background:#eaf3fc}.general-binomial-table mjx-container{font-size:95%!important}
 </style>
 <script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"]]},svg:{fontCache:"global"}};</script><script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script><style id="six-subjects-unified">
 /* 共通デザイン（数学 I/A/II/B/III/C）: 教材のプログラムや数式には非干渉 */
@@ -86,22 +89,21 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 #binomial-viz .binom-graph-table svg{width:100%;height:auto}
 @media(max-width:650px){#binomial-viz .binom-graph-table{grid-template-columns:minmax(0,1.25fr) minmax(160px,1fr);gap:8px}#binomial-viz .binom-graph-table table{font-size:.78em}#binomial-viz .binom-graph-table th,#binomial-viz .binom-graph-table td{padding:5px 3px}}
 </style></head><body>
-<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>二項分布</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" data-hs-lesson="" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>二項分布</h2><p>独立な試行を繰り返すときの成功回数の確率分布を理解し、具体例から平均・分散・標準偏差を計算して、一般の公式を導く。</p></section>
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>二項分布</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" data-hs-lesson="" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>反復試行の確率と二項分布</h2><p>成功確率が一定の独立な試行を繰り返すとき、成功回数の確率を求めて確率分布表を作る。その分布を二項分布と呼ぶことを理解し、具体例から平均・分散・標準偏差を計算して、一般の公式を導き確かめる。</p></section>
 <nav aria-label="授業の進め方" class="hs-study-nav">
 <a href="#hs-explanation">説明</a>
 <a href="#hs-examples">例題と解説</a>
 <a href="#hs-practice">練習問題</a>
 <a href="#hs-summary">まとめ</a></nav>
 <article class="paper">
-<h2 id="hs-explanation">1．基本事項</h2>
-<p>成功する確率が毎回同じ \(p\) で、各試行が互いに独立である試行（ベルヌーイ試行）を \(n\) 回繰り返します。そのうち成功する回数を \(X\) とすると、\(X\) は<strong>二項分布</strong>に従います。</p>
-<div class="formula">\[P(X=k)={}_n\mathrm{C}_k\,p^k(1-p)^{n-k}\]</div>
-<p>ただし \(n\) は正の整数、\(0\leqq p\leqq1\) です。\(X\) が取る値は \(0,1,\ldots,n\) です。</p>
+<h2 id="hs-explanation">1．反復試行の確率</h2><p>1回の試行で成功する確率を \(p\)、失敗する確率を \(1-p\) とします。毎回の成功確率が同じで、各試行が互いに独立である試行を \(n\) 回繰り返し、成功回数を \(X\) とします。</p>
 <h3>成功回数がちょうど \(k\) 回となる確率</h3>
-<div class="formula">\[{P(X=k)={}_nC_k\,p^k(1-p)^{n-k}\quad (k=0,1,\ldots,n)}\]</div>
-<p>成功する \(k\) 回の位置の選び方は \({}_nC_k\) 通りです。1通りの並びが起こる確率は、独立性より \(p^k(1-p)^{n-k}\) です。</p>
-<div class="important"><strong>使える条件を先に確認：</strong>試行回数が決まっている・毎回の成功確率が同じ・各試行が独立・成功回数を数える、という4点です。</div>
-<h2>2．考え方と公式の導出</h2>
+<p>成功する回を選ぶ方法は \({}_n\mathrm{C}_k\) 通りあり、その1通りが起こる確率は \(p^k(1-p)^{n-k}\) です。したがって、</p>
+<div class="formula">\[P(X=k)={}_n\mathrm{C}_k\,p^k(1-p)^{n-k}\quad(k=0,1,\ldots,n)\]</div>
+<h3>成功回数 \(X\) の確率分布表</h3>
+<div class="math-scroll"><table class="general-binomial-table"><thead><tr><th>\(X\)</th><th>\(0\)</th><th>\(1\)</th><th>\(2\)</th><th>\(\cdots\)</th><th>\(k\)</th><th>\(\cdots\)</th><th>\(n\)</th></tr></thead><tbody><tr><th>確率</th><td>\((1-p)^n\)</td><td>\({}_n\mathrm{C}_1p(1-p)^{n-1}\)</td><td>\({}_n\mathrm{C}_2p^2(1-p)^{n-2}\)</td><td>\(\cdots\)</td><td>\({}_n\mathrm{C}_kp^k(1-p)^{n-k}\)</td><td>\(\cdots\)</td><td>\(p^n\)</td></tr></tbody></table></div>
+<p>このように、独立な試行を \(n\) 回繰り返したときの成功回数 \(X\) の確率分布を、<strong>二項分布</strong>といいます。</p>
+<p>この公式を使うには、試行回数が一定、毎回の成功確率が同じ、各試行が独立、という条件が必要です。</p><h2>2．考え方と公式の導出</h2>
 <h3>具体例：公平な硬貨を3回投げる</h3>
 <p>表が出た回数を \(X\) とします。表が出る確率は毎回 \(\dfrac12\) で、3回の試行は互いに独立です。</p>
 <p>表がちょうど \(k\) 回出る確率は \({}_3\mathrm{C}_k\left(\dfrac12\right)^3\) です。</p>
@@ -128,7 +130,6 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <div aria-live="polite" class="stats"><span class="stat">平均 \(E(X)\)<strong id="mean-stat">3.00</strong></span><span class="stat">分散 \(V(X)\)<strong id="var-stat">2.10</strong></span><span class="stat">標準偏差<strong id="sd-stat">1.45</strong></span><span class="stat">最も起こりやすい回数<strong id="mode-stat">3</strong></span></div>
 <div class="binom-graph-table"><div class="chart-wrap"><svg aria-label="成功回数ごとの確率を示す棒グラフ" class="binom-chart" id="binomial-chart" role="img" viewbox="0 0 740 310"></svg></div><div class="table-wrap"><table class="prob-table"><thead><tr><th>成功回数 \(k\)</th><th>確率 \(P(X=k)\)</th></tr></thead><tbody id="probability-body"></tbody></table></div></div>
 <p class="muted">横軸：成功回数 \(k\)、縦軸：確率 \(P(X=k)\)。濃い棒が最も起こりやすい成功回数を表します。</p>
-
 <p class="muted">表は小数第5位まで表示します。端数処理により、表示した値の合計が1とわずかに異なる場合があります。</p></div>
 <h2>4．解説付き例題</h2>
 <div class="example"><strong>例題1（元の例題）</strong><p>成功確率0.3の独立な試行を10回行うときの成功回数 の期待値と分散を求めよ。</p></div><div class="answer"><strong>解答と解説</strong><div class="formula">\[E(X)=10\times0.3=\boxed{3},\qquad V(X)=10\times0.3\times0.7=\boxed{2.1}\]</div></div>
