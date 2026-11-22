@@ -143,14 +143,20 @@ mjx-container {font-size: 92% !important;}
 .proof-small-sigma p mjx-container{font-size:88%!important}
 @media(max-width:600px){.proof-small-sigma .formula mjx-container[display="true"]{font-size:72%!important}}
 </style>
-</head>
+<style>
+/* 正規分布ページに合わせた統一表示（2026-11） */
+body{font-size:16px!important;line-height:1.85!important}
+.lesson-standard-header h1{line-height:1.35!important}
+.answer{background:#f0faf0!important;border-left:5px solid #3ca07b!important;border-top:0!important;border-right:0!important;border-bottom:0!important;border-radius:9px!important;padding:13px 16px!important;margin:9px 0 18px!important;color:inherit!important}
+.answer .formula,.answer .math,.answer .result,.answer .final-answer,.answer .answer-box{background:transparent!important;border:0!important;box-shadow:none!important}
+.answer mjx-container{background:transparent!important}
+.answer strong:first-child{display:inline-block;margin-bottom:5px}
+.formula mjx-container[display="true"]{margin:.55em 0!important}
+@media(max-width:700px){.answer{padding:12px!important}}
+</style></head>
 <body>
 <header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>確率変数の和と期待値</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" data-hs-lesson="" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>同時分布から3つの確率分布を作り、期待値の加法性を理解する</h2><p>くじの具体例を通して周辺分布と和の分布を求め、期待値の加法性を確認する。</p><p class="hs-outcome">同時分布表から X・Y・X+Y の確率分布表を作り、それぞれの期待値を計算する力を身につける。</p></section>
-<nav aria-label="授業の進め方" class="hs-study-nav">
-<a href="#hs-explanation">説明</a>
-<a href="#hs-examples">例題と解説</a>
-<a href="#hs-practice">練習問題</a>
-<a href="#hs-summary">まとめ</a></nav>
+
 <article class="paper">
 <h2>1. 具体例から同時分布を考える</h2>
 <p>10本のくじの中に当たりくじが2本ある。Aさんが先に1本引き、残り9本からBさんが2本引く（引いたくじは戻さない）。Aさんの当たり本数を \(X\)、Bさんの当たり本数を \(Y\) とする。</p>
@@ -163,7 +169,6 @@ mjx-container {font-size: 92% !important;}
 <h3>③ \(X+Y\) の確率分布表</h3>
 <p>\(Z=X+Y\) とおく。同時分布表のうち、\(x+y\) が等しい組の確率を足す。</p>
 <div class="z-distribution-layout"><div class="z-calculation"><div class="formula">\[\begin{aligned}P(Z=0)&amp;=P(X=0,\,Y=0)=\dfrac{7}{15},\\[6pt]P(Z=1)&amp;=P(X=0,\,Y=1)+P(X=1,\,Y=0)\\&amp;=\dfrac{14}{45}+\dfrac{7}{45}=\dfrac{7}{15},\\[6pt]P(Z=2)&amp;=P(X=0,\,Y=2)+P(X=1,\,Y=1)\\&amp;=\dfrac{1}{45}+\dfrac{2}{45}=\dfrac{1}{15}.\end{aligned}\]</div></div><div class="z-distribution-table"><div class="table-wrap"><table><tr><th>\(Z=X+Y\)</th><th>\(0\)</th><th>\(1\)</th><th>\(2\)</th><th>計</th></tr><tr><th>\(P\)</th><td>\(\dfrac7{15}\)</td><td>\(\dfrac7{15}\)</td><td>\(\dfrac1{15}\)</td><td>\(1\)</td></tr></table></div></div></div>
-
 <h3>④ それぞれの期待値を計算する</h3>
 <p>それぞれの値に確率を掛けて足す。</p>
 <div class="answer"><strong>解答と解説</strong><div class="formula">\[\begin{aligned}E(X)&amp;=0\times\frac45+1\times\frac15=\frac15,\\[5pt]E(Y)&amp;=0\times\frac{28}{45}+1\times\frac{16}{45}+2\times\frac1{45}=\frac25,\\[5pt]E(X+Y)&amp;=0\times\frac7{15}+1\times\frac7{15}+2\times\frac1{15}=\frac35.\end{aligned}\]</div>
@@ -176,7 +181,7 @@ mjx-container {font-size: 92% !important;}
 <div class="controls"><label for="t">同時確率 \(t=P(X=1,Y=1)\)：<strong id="tv">0.25</strong></label><input id="t" max="50" min="0" step="1" type="range" value="25"/><p class="muted" id="comment"></p></div>
 <div class="table-wrap"><table><thead><tr><th>\(X\backslash Y\)</th><th>\(Y=0\)</th><th>\(Y=1\)</th><th>計</th></tr></thead><tbody><tr><th>\(X=0\)</th><td id="p00"></td><td id="p01"></td><td>0.50</td></tr><tr><th>\(X=1\)</th><td id="p10"></td><td id="p11"></td><td>0.50</td></tr><tr><th>計</th><td>0.50</td><td>0.50</td><td>1.00</td></tr></tbody></table></div>
 <p class="graph-explain">緑色の棒は X の周辺確率、橙色の棒は Y の周辺確率を表す。各棒の高さは 0.50 のまま、内部を2つの同時確率に分けて示す。スライダーで分かれ方が変わる。</p><svg aria-label="同時確率4種類とXだけ、Yだけの周辺確率を比較する棒グラフ" id="jointGraph" role="img" viewbox="0 0 780 260"></svg>
-<div class="independence-check" aria-live="polite"><strong>独立性の確認</strong><p id="independenceFormula"></p><p id="independenceVerdict"></p></div>
+<div aria-live="polite" class="independence-check"><strong>独立性の確認</strong><p id="independenceFormula"></p><p id="independenceVerdict"></p></div>
 <p>周辺分布が同じでも同時分布が異なることがあります。<strong>独立</strong>なら \(P(X=x,Y=y)=P(X=x)P(Y=y)\) がすべての組で成立します。この例では \(t=0.25\) の場合に独立です。</p>
 <div class="compact-sigma"><h2>4. 同時分布から期待値を求める</h2><p>同時分布表が与えられれば、\(X\)、\(Y\)だけでなく、\(X+Y\) の期待値も直接求められます。</p><div class="formula">\[E(X+Y)=\sum_{i=1}^{n}\sum_{j=1}^{m}(x_i+y_j)p_{ij}\]</div>
 <div class="example"><strong>確認例（同時分布・周辺分布）</strong><p>\(X,Y\) がそれぞれ0,1をとり、\(P(X=0,Y=0)=\dfrac12\)、\(P(X=0,Y=1)=\dfrac14\)、\(P(X=1,Y=0)=\dfrac14\)、\(P(X=1,Y=1)=0\) とする。\(X,Y\) の周辺分布と \(E(X+Y)\) を求めよ。</p></div>
@@ -187,14 +192,14 @@ mjx-container {font-size: 92% !important;}
 <p>同時分布から期待値を計算し、和を2つに分ける。</p>
 <div class="formula">\[\begin{aligned}
 E(X+Y)
-&=\sum_{i=1}^{n}\sum_{j=1}^{m}(x_i+y_j)p_{ij}\\[5pt]
-&=\sum_{i=1}^{n}\sum_{j=1}^{m}x_ip_{ij}
+&amp;=\sum_{i=1}^{n}\sum_{j=1}^{m}(x_i+y_j)p_{ij}\\[5pt]
+&amp;=\sum_{i=1}^{n}\sum_{j=1}^{m}x_ip_{ij}
  +\sum_{i=1}^{n}\sum_{j=1}^{m}y_jp_{ij}\\[5pt]
-&=\sum_{i=1}^{n}x_i\left(\sum_{j=1}^{m}p_{ij}\right)
+&amp;=\sum_{i=1}^{n}x_i\left(\sum_{j=1}^{m}p_{ij}\right)
  +\sum_{j=1}^{m}y_j\left(\sum_{i=1}^{n}p_{ij}\right)\\[5pt]
-&=\sum_{i=1}^{n}x_iP(X=x_i)
+&amp;=\sum_{i=1}^{n}x_iP(X=x_i)
  +\sum_{j=1}^{m}y_jP(Y=y_j)\\[5pt]
-&=E(X)+E(Y).
+&amp;=E(X)+E(Y).
 \end{aligned}\]</div>
 <p>ここで、\(\displaystyle\sum_{j=1}^{m}p_{ij}=P(X=x_i)\)、\(\displaystyle\sum_{i=1}^{n}p_{ij}=P(Y=y_j)\) はそれぞれ周辺確率である。この証明では独立性を仮定していない。</p>
 </div><h2>7. 解説付き例題</h2>

@@ -98,13 +98,19 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 #hs-examples .example.textbook-fraction mjx-container,
 #hs-practice .exercise.textbook-fraction mjx-container,
 p.textbook-fraction mjx-container {font-size:112%!important}
+</style><style>
+/* 正規分布ページに合わせた統一表示（2026-11） */
+body{font-size:16px!important;line-height:1.85!important}
+.lesson-standard-header h1{line-height:1.35!important}
+.answer{background:#f0faf0!important;border-left:5px solid #3ca07b!important;border-top:0!important;border-right:0!important;border-bottom:0!important;border-radius:9px!important;padding:13px 16px!important;margin:9px 0 18px!important;color:inherit!important}
+.answer .formula,.answer .math,.answer .result,.answer .final-answer,.answer .answer-box{background:transparent!important;border:0!important;box-shadow:none!important}
+.answer mjx-container{background:transparent!important}
+.answer strong:first-child{display:inline-block;margin-bottom:5px}
+.formula mjx-container[display="true"]{margin:.55em 0!important}
+@media(max-width:700px){.answer{padding:12px!important}}
 </style></head><body>
 <header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>確率変数の変換</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" data-hs-lesson="" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>確率変数の変換による期待値・分散・標準偏差の変化を理解する</h2><p>点数に一定の値を加える場合と、何倍かする場合を比較し、期待値・分散・標準偏差の変化を求める力を身につける。</p></section>
-<nav aria-label="授業の進め方" class="hs-study-nav">
-<a href="#hs-explanation">説明</a>
-<a href="#hs-examples">例題と解説</a>
-<a href="#hs-practice">練習問題</a>
-<a href="#hs-summary">まとめ</a></nav>
+
 <article class="paper">
 <h2 id="hs-explanation">1. テスト</h2><p>100点満点のテストで、平均点が30点、標準偏差が7点であったとする。分散は \(7^2=49\) である。全員の点数を同じ規則で変更したとき、平均と散らばりがどう変わるか考える。</p>
 <div class="scroll"><table><thead><tr><th>変更</th><th>新しい点数</th><th>平均点</th><th>分散</th><th>標準偏差</th></tr></thead><tbody><tr><th>変更前</th><td>\(X\)</td><td>30</td><td>49</td><td>7</td></tr><tr><th>10点加える</th><td>\(X+10\)</td><td>40</td><td>49</td><td>7</td></tr><tr><th>2倍する</th><td>\(2X\)</td><td>60</td><td>196</td><td>14</td></tr><tr><th>2倍して10点加える</th><td>\(2X+10\)</td><td>70</td><td>196</td><td>14</td></tr></tbody></table></div>
