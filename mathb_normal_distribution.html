@@ -157,7 +157,18 @@ body .paper mjx-container[display="true"] { overflow-x:auto; overflow-y:visible;
 
 
 <h2>3．標準化と標準正規分布</h2><p>平均0、分散1の正規分布を<strong>標準正規分布</strong>といい、<strong>\(N(0,1)\)</strong> と表します。すなわち、確率変数 \(Z\) が標準正規分布に従うとき、「\(Z\) は正規分布 \(N(0,1)\) に従う」といいます。</p><p><strong>標準正規分布</strong>とは、平均が0、分散が1（標準偏差が1）の正規分布です。グラフは0を中心として左右対称になり、曲線の下の面積の合計は1です。</p><p>平均や標準偏差が異なる正規分布でも、標準化によって標準正規分布の表を共通に利用できます。</p><div class="formula">\[Z=\frac{X-m}{\sigma}\]</div>
-<p>この変換を<strong>標準化</strong>といいます。標準化した確率変数 \(Z\) は、標準正規分布（平均0、分散1）に従います。まず「平均から何標準偏差だけ離れているか」を考え、\(X\) を \(Z\) に変換します。</p>
+<p>この変換を<strong>標準化</strong>といいます。まず「平均から何標準偏差だけ離れているか」を考え、\(X\) を \(Z\) に変換します。</p>
+<div class="normal-standard-proof" style="margin:14px 0 18px;padding:0 2px;">
+<h3 style="margin:8px 0 10px;">標準化すると平均0、分散1になることの証明</h3>
+<p>\(X\) は平均 \(m\)、分散 \(\sigma^2\) の正規分布 \(N(m,\sigma^2)\) に従うとする。ただし \(\sigma>0\) とする。</p>
+<p><strong>① 平均</strong>　期待値の性質 \(E(aX+b)=aE(X)+b\) より、</p>
+<div class="formula">\[E(Z)=E\!\left(\frac{X-m}{\sigma}\right)=\frac{E(X)-m}{\sigma}=\frac{m-m}{\sigma}=0\]</div>
+<p><strong>② 分散</strong>　分散の性質 \(V(aX+b)=a^2V(X)\) より、</p>
+<div class="formula">\[V(Z)=V\!\left(\frac{X-m}{\sigma}\right)=\frac{1}{\sigma^2}V(X)=\frac{\sigma^2}{\sigma^2}=1\]</div>
+<p>したがって、\(Z\) の平均は0、分散は1（標準偏差は1）となる。また、正規分布を一次変換した確率変数も正規分布に従うので、</p>
+<div class="formula">\[\boxed{Z\text{ は標準正規分布 }N(0,1)\text{ に従う}}\]</div>
+<p>このように、どのような平均・分散の正規分布でも、標準化によって共通の標準正規分布に直して考えることができます。</p>
+</div>
 <div class="example"><strong>元の例題：標準化</strong><p>平均70、標準偏差10の値80を標準化する。</p></div><div class="answer"><strong>解答と解説</strong><div class="formula">\[Z=\frac{80-70}{10}=\boxed{1}\]</div><p>平均より標準偏差1つ分だけ大きい値です。</p></div>
 <h2>4．正規分布の確率と分布表</h2><p>\(\Phi(z)=P(Z\leqq z)\) と書くと、次のように表せます。</p><div class="formula">\[\boxed{P(a\leqq X\leqq b)=\Phi\!\left(\frac{b-m}{\sigma}\right)-\Phi\!\left(\frac{a-m}{\sigma}\right)}\]</div>
 <p>表によっては \(P(0\leqq Z\leqq z)\) を掲載するものもあります。その場合は、左右対称性と \(P(Z\leqq0)=0.5\) を使ってください。</p><div class="scroll"><table class="data-table"><thead><tr><th>z</th><th>Φ(z) = P(Z ≦ z)（近似値）</th><th>P(0 ≦ Z ≦ z)（近似値）</th></tr></thead><tbody><tr><td>0.00</td><td>0.5000</td><td>0.0000</td></tr><tr><td>0.50</td><td>0.6915</td><td>0.1915</td></tr><tr><td>1.00</td><td>0.8413</td><td>0.3413</td></tr><tr><td>1.64</td><td>0.9495</td><td>0.4495</td></tr><tr><td>1.96</td><td>0.9750</td><td>0.4750</td></tr><tr><td>2.00</td><td>0.9772</td><td>0.4772</td></tr></tbody></table></div>
