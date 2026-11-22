@@ -122,7 +122,42 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 #md-standard-main .paper .answer mjx-container{font-size:100%!important}
 #md-standard-main .paper .binom-work{background:#eff8e7!important}
 @media(max-width:700px){#md-standard-main .paper table.binom-example-table{font-size:13px!important}}
-</style></head><body>
+</style>
+<style id="binomial-uniform-math-20261122">
+/* 数式をすべて本文と同じ16px基準に統一。親要素の縮小指定を解除する。 */
+#md-standard-main .paper .formula,
+#md-standard-main .paper .math-scroll,
+#md-standard-main .paper .general-binomial-table,
+#md-standard-main .paper .general-binomial-table th,
+#md-standard-main .paper .general-binomial-table td,
+#md-standard-main .paper .binom-example-two-col,
+#md-standard-main .paper .binom-example-two-col .binom-prob-line,
+#md-standard-main .paper .binom-example-table,
+#md-standard-main .paper .binom-example-table th,
+#md-standard-main .paper .binom-example-table td,
+#md-standard-main .paper .binom-proof-math,
+#md-standard-main .paper .binom-work,
+#md-standard-main .paper .answer .formula {
+  font-size:16px!important;
+}
+/* インラインと独立行、表中の数式を同じ倍率で描画する。 */
+#md-standard-main .paper mjx-container[jax="SVG"],
+#md-standard-main .paper mjx-container[jax="CHTML"],
+#md-standard-main .paper mjx-container[display="true"],
+#md-standard-main .paper .general-binomial-table mjx-container,
+#md-standard-main .paper .binom-example-table mjx-container,
+#md-standard-main .paper .answer mjx-container {
+  font-size:100%!important;
+}
+/* グラフの数値表も本文基準に統一する。 */
+#md-standard-main .paper .prob-table th,
+#md-standard-main .paper .prob-table td {font-size:15px!important;}
+@media(max-width:650px){
+  #md-standard-main .paper .general-binomial-table,
+  #md-standard-main .paper .binom-example-table {font-size:16px!important;}
+}
+</style>
+</head><body>
 <header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>二項分布</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" data-hs-lesson="" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>反復試行の確率を求め、二項分布の意味と性質を理解する</h2><p>確率分布表から平均・分散・標準偏差を計算し、公式の意味を理解する。</p></section>
 <nav aria-label="授業の進め方" class="hs-study-nav">
 <a href="#hs-explanation">説明</a>
