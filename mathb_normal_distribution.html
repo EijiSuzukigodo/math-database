@@ -79,47 +79,52 @@ body .lesson-standard-main mjx-container[jax="SVG"] { font-size:17px!important; 
 /* 大きな分数や指数の上下を切らない。 */
 body .paper mjx-container[display="true"] { overflow-x:auto; overflow-y:visible; padding:5px 0; }
 </style><style id="normal-introduction-style">.normal-intro-figures{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:16px 0}.normal-intro-figures figure{margin:0;padding:10px;border:1px solid #d6e3f0;border-radius:8px;background:#fbfdff}.normal-intro-figures svg{display:block;width:100%;height:auto}.normal-intro-figures figcaption{text-align:center;font-size:14px;color:#34516b;margin-top:5px}@media(max-width:650px){.normal-intro-figures{grid-template-columns:1fr}}</style>
-</head><body>
+<style>
+.normal-sample-demo{margin:18px 0;padding:16px;border:1px solid #d6e3f0;border-radius:10px;background:#fbfdff}
+.normal-sample-note{margin:0 0 12px}.normal-sample-control{font-weight:700;display:block;margin-bottom:8px}.normal-sample-control output{font-variant-numeric:tabular-nums;color:#145d92;font-size:1.15em}
+#normalSampleCount{display:block;width:100%;max-width:680px;accent-color:#216fac;min-height:32px}.normal-sample-presets{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px}
+.normal-sample-presets button{font:inherit;font-size:14px;border:1px solid #9cb8cd;border-radius:7px;padding:7px 12px;background:white;color:#24485f;cursor:pointer}
+.normal-sample-presets button[aria-pressed="true"]{background:#dcecf8;border-color:#216fac;font-weight:700}
+#normalSampleChart{width:100%;height:auto;display:block;background:white;border-radius:6px}
+.normal-sample-caption,.normal-sample-stats{font-size:14px;color:#38546a;margin:8px 0 0}
+@media(max-width:500px){.normal-sample-demo{padding:10px}.normal-sample-presets button{padding:6px 9px}}
+</style></head><body>
 <header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>正規分布</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main" data-hs-lesson=""><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>正規分布の特徴を理解し、標準化によって確率を求めることができる</h2><p>正規分布の形と平均・標準偏差の関係を学び、標準正規分布表を用いて確率を求めます。</p></section>
 <article class="paper">
 <section class="normal-introduction" aria-labelledby="normal-introduction-title">
-<h2 id="normal-introduction-title">身近なデータから正規分布を考えよう</h2>
-<p>例えば、ある学年の生徒の身長を調べ、身長の階級ごとに人数を数えてヒストグラムに表してみます。次の図は、分布の形を理解するための模式図です。</p>
-<div class="normal-intro-figures">
-<figure><svg viewBox="0 0 440 245" role="img" aria-label="平均付近の人数が多く、両端の人数が少ない身長のヒストグラム">
-<line x1="40" y1="196" x2="418" y2="196" stroke="#34465a" stroke-width="1.8"/><line x1="40" y1="196" x2="40" y2="20" stroke="#34465a" stroke-width="1.8"/>
-<g fill="#83b6d7" stroke="#2b6b98" stroke-width="1.4"><rect x="65" y="179" width="43" height="17"/><rect x="108" y="152" width="43" height="44"/><rect x="151" y="106" width="43" height="90"/><rect x="194" y="49" width="43" height="147"/><rect x="237" y="66" width="43" height="130"/><rect x="280" y="117" width="43" height="79"/><rect x="323" y="164" width="43" height="32"/><rect x="366" y="185" width="43" height="11"/></g>
-<g fill="#34465a" font-size="15" text-anchor="middle"><text x="86" y="218">145</text><text x="172" y="218">155</text><text x="258" y="218">165</text><text x="344" y="218">175</text><text x="226" y="240">身長（cm）</text></g><text x="8" y="18" font-size="15" fill="#34465a">人数</text>
-</svg><figcaption>ヒストグラム（模式図）</figcaption></figure>
-<figure><svg viewBox="0 0 440 245" role="img" aria-label="平均付近で高く左右に滑らかに広がる釣鐘型の曲線">
-<line x1="30" y1="196" x2="418" y2="196" stroke="#34465a" stroke-width="1.8"/><line x1="30" y1="196" x2="30" y2="20" stroke="#34465a" stroke-width="1.8"/>
-<path d="M 40 195 C 95 194 112 174 140 119 C 168 59 187 36 224 35 C 261 36 280 59 308 119 C 336 174 353 194 408 195" fill="none" stroke="#176da6" stroke-width="4" stroke-linecap="round"/>
-<line x1="224" y1="35" x2="224" y2="196" stroke="#bd7352" stroke-width="2" stroke-dasharray="6 5"/>
-<g fill="#34465a" font-size="15" text-anchor="middle"><text x="224" y="217">平均付近</text><text x="224" y="240">身長</text></g><text x="8" y="18" font-size="15" fill="#34465a">相対的な多さ</text>
-</svg><figcaption>なめらかな釣鐘型の曲線（模式図）</figcaption></figure>
+<h2 id="normal-introduction-title">1．身近なデータから正規分布を考えよう</h2>
+<p>例えば、ある学年の生徒の身長を調べ、身長の階級ごとに人数を数えてヒストグラムに表してみます。次の動く図は、平均165cm、標準偏差8cmの正規分布をもとに作った仮想的な身長データの例です。実際の生徒の測定結果ではありません。</p>
+<div class="normal-sample-demo">
+<p class="normal-sample-note">下のスライダーで調べる人数を変えてみましょう。人数が増えるにつれて、ヒストグラムの全体的な形が正規分布の曲線に近づく様子を観察できます。</p>
+<label class="normal-sample-control" for="normalSampleCount">調べる人数：<output id="normalSampleCountValue" for="normalSampleCount">40</output>人</label>
+<input id="normalSampleCount" type="range" min="20" max="2000" step="20" value="40" aria-label="ヒストグラムの標本数" />
+<div class="normal-sample-presets" aria-label="人数の選択"><button type="button" data-count="40">40人</button><button type="button" data-count="200">200人</button><button type="button" data-count="1000">1000人</button><button type="button" data-count="2000">2000人</button></div>
+<svg id="normalSampleChart" viewBox="0 0 760 350" role="img" aria-label="人数に応じて変化する身長のヒストグラムと正規分布曲線"></svg>
+<p class="normal-sample-caption">青い棒：身長のヒストグラム（相対度数を階級幅で割った高さ）／ 赤い曲線：平均165cm・標準偏差8cmの正規分布の確率密度関数</p>
+<p class="normal-sample-stats" id="normalSampleStats" aria-live="polite"></p>
 </div>
-<p>平均に近い身長の生徒が多く、平均から大きく離れた身長の生徒は少なくなるような分布が見られることがあります。調べる人数を増やし、階級の幅を細かくしていくと、ヒストグラムの形をなめらかな曲線で近似できる場合があります。</p>
+<p>平均に近い身長の生徒が多く、平均から大きく離れた身長の生徒は少なくなるような分布が見られることがあります。調べる人数を増やすと、全体としてなめらかな釣鐘型の曲線に近づく傾向があります。ただし、乱数によるばらつきがあるため、人数を増やすたびに必ず滑らかになるわけではありません。</p>
 <p>このような左右対称の釣鐘型の分布を表す代表的な確率分布が、<strong>正規分布</strong>です。ただし、実際の身長の分布が必ず正規分布に一致するわけではありません。</p>
 </section>
-<h2 id="hs-explanation">1．正規分布とは</h2><p>平均 \(m\)、分散 \(\sigma^2\) の左右対称な釣鐘型の確率分布です。\(\sigma&gt;0\) とします。</p><p>確率変数 \(X\) が平均 \(m\)、分散 \(\sigma^2\) の正規分布に従うとき、「\(X\) は正規分布 \(N(m,\sigma^2)\) に従う」といいます。</p>
+<h2 id="hs-explanation">2．正規分布とは</h2><p>平均 \(m\)、分散 \(\sigma^2\) の左右対称な釣鐘型の確率分布です。\(\sigma&gt;0\) とします。</p><p>確率変数 \(X\) が平均 \(m\)、分散 \(\sigma^2\) の正規分布に従うとき、「\(X\) は正規分布 \(N(m,\sigma^2)\) に従う」といいます。</p>
 <p>曲線の下全体の面積が1で、区間に入る確率はその区間の曲線下の面積です。連続型の確率変数なので、1点だけをとる確率は0です。</p>
 <div class="formula">\[f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-m)^2}{2\sigma^2}}\]</div>
 <p><strong>平均 \(m\)</strong> は山の中心を決め、<strong>標準偏差 \(\sigma\)</strong> は山の幅を決めます。標準偏差が大きいと、山が低く横に広がります。</p>
-<h2>2．動く図①：平均と標準偏差を変える</h2><div class="demo"><div class="controls"><label class="control">平均 m：<span class="value" id="muLabel">0</span><input id="mu" max="3" min="-3" step="0.5" type="range" value="0"/></label><label class="control">標準偏差 σ：<span class="value" id="sigmaLabel">1.0</span><input id="sigma" max="2.5" min="0.5" step="0.1" type="range" value="1"/></label></div><svg aria-label="平均と標準偏差を変える正規分布曲線" class="chart" id="shapeChart" role="img" viewbox="0 0 760 300"></svg><p class="legend">青：現在の分布、点線：標準正規分布（平均0、分散1）。平均と標準偏差を動かすと形が変わります。</p><p aria-live="polite" class="stats" id="shapeStats"></p></div>
-<h2>3．標準化と標準正規分布</h2><p><strong>標準正規分布</strong>とは、平均が0、分散が1（標準偏差が1）の正規分布です。グラフは0を中心として左右対称になり、曲線の下の面積の合計は1です。</p><p>平均や標準偏差が異なる正規分布でも、標準化によって標準正規分布の表を共通に利用できます。</p><div class="formula">\[Z=\frac{X-m}{\sigma}\]</div>
+<h2>3．動く図①：平均と標準偏差を変える</h2><div class="demo"><div class="controls"><label class="control">平均 m：<span class="value" id="muLabel">0</span><input id="mu" max="3" min="-3" step="0.5" type="range" value="0"/></label><label class="control">標準偏差 σ：<span class="value" id="sigmaLabel">1.0</span><input id="sigma" max="2.5" min="0.5" step="0.1" type="range" value="1"/></label></div><svg aria-label="平均と標準偏差を変える正規分布曲線" class="chart" id="shapeChart" role="img" viewbox="0 0 760 300"></svg><p class="legend">青：現在の分布、点線：標準正規分布（平均0、分散1）。平均と標準偏差を動かすと形が変わります。</p><p aria-live="polite" class="stats" id="shapeStats"></p></div>
+<h2>4．標準化と標準正規分布</h2><p><strong>標準正規分布</strong>とは、平均が0、分散が1（標準偏差が1）の正規分布です。グラフは0を中心として左右対称になり、曲線の下の面積の合計は1です。</p><p>平均や標準偏差が異なる正規分布でも、標準化によって標準正規分布の表を共通に利用できます。</p><div class="formula">\[Z=\frac{X-m}{\sigma}\]</div>
 <p>この変換を<strong>標準化</strong>といいます。標準化した確率変数 \(Z\) は、標準正規分布（平均0、分散1）に従います。まず「平均から何標準偏差だけ離れているか」を考え、\(X\) を \(Z\) に変換します。</p>
 <div class="example"><strong>元の例題：標準化</strong><p>平均70、標準偏差10の値80を標準化する。</p></div><div class="answer"><strong>解答と解説</strong><div class="formula">\[Z=\frac{80-70}{10}=\boxed{1}\]</div><p>平均より標準偏差1つ分だけ大きい値です。</p></div>
-<h2>4．正規分布の確率と分布表</h2><p>\(\Phi(z)=P(Z\leqq z)\) と書くと、次のように表せます。</p><div class="formula">\[\boxed{P(a\leqq X\leqq b)=\Phi\!\left(\frac{b-m}{\sigma}\right)-\Phi\!\left(\frac{a-m}{\sigma}\right)}\]</div>
+<h2>5．正規分布の確率と分布表</h2><p>\(\Phi(z)=P(Z\leqq z)\) と書くと、次のように表せます。</p><div class="formula">\[\boxed{P(a\leqq X\leqq b)=\Phi\!\left(\frac{b-m}{\sigma}\right)-\Phi\!\left(\frac{a-m}{\sigma}\right)}\]</div>
 <p>表によっては \(P(0\leqq Z\leqq z)\) を掲載するものもあります。その場合は、左右対称性と \(P(Z\leqq0)=0.5\) を使ってください。</p><div class="scroll"><table class="data-table"><thead><tr><th>z</th><th>Φ(z) = P(Z ≦ z)（近似値）</th><th>P(0 ≦ Z ≦ z)（近似値）</th></tr></thead><tbody><tr><td>0.00</td><td>0.5000</td><td>0.0000</td></tr><tr><td>0.50</td><td>0.6915</td><td>0.1915</td></tr><tr><td>1.00</td><td>0.8413</td><td>0.3413</td></tr><tr><td>1.64</td><td>0.9495</td><td>0.4495</td></tr><tr><td>1.96</td><td>0.9750</td><td>0.4750</td></tr><tr><td>2.00</td><td>0.9772</td><td>0.4772</td></tr></tbody></table></div>
-<h2>5．動く図②：範囲を選んで確率を調べる</h2><div class="demo"><p>標準正規分布に従う確率変数 \(Z\) について、\(P(a\leqq Z\leqq b)\) を色で示します。</p><div class="controls"><label class="control">下限 a：<span class="value" id="aLabel">-1.0</span><input id="lower" max="3" min="-3" step="0.1" type="range" value="-1"/></label><label class="control">上限 b：<span class="value" id="bLabel">1.0</span><input id="upper" max="3" min="-3" step="0.1" type="range" value="1"/></label></div><svg aria-label="標準正規分布の区間確率の面積" class="chart" id="areaChart" role="img" viewbox="0 0 760 300"></svg><p aria-live="polite" class="stats" id="areaStats"></p><p class="legend">表示される確率は数値近似です。下限が上限を超えると、区間の確率を0として表示します。</p></div>
-<h2 id="hs-examples">6．解説付き例題</h2>
+<h2>6．動く図②：範囲を選んで確率を調べる</h2><div class="demo"><p>標準正規分布に従う確率変数 \(Z\) について、\(P(a\leqq Z\leqq b)\) を色で示します。</p><div class="controls"><label class="control">下限 a：<span class="value" id="aLabel">-1.0</span><input id="lower" max="3" min="-3" step="0.1" type="range" value="-1"/></label><label class="control">上限 b：<span class="value" id="bLabel">1.0</span><input id="upper" max="3" min="-3" step="0.1" type="range" value="1"/></label></div><svg aria-label="標準正規分布の区間確率の面積" class="chart" id="areaChart" role="img" viewbox="0 0 760 300"></svg><p aria-live="polite" class="stats" id="areaStats"></p><p class="legend">表示される確率は数値近似です。下限が上限を超えると、区間の確率を0として表示します。</p></div>
+<h2 id="hs-examples">7．解説付き例題</h2>
 <div class="example"><strong>例題1：標準正規分布の片側確率</strong><p>\(Z\) が標準正規分布に従うとき、\(P(Z\leqq1)\) を求めよ。</p></div><div class="answer"><strong>解答</strong><p>分布表より \(P(Z\leqq1)=\boxed{0.8413}\)（近似値）。</p></div>
 <div class="example"><strong>例題2：中央の確率</strong><p>\(P(-1\leqq Z\leqq1)\) を求めよ。</p></div><div class="answer"><strong>解答</strong><div class="formula">\[\Phi(1)-\Phi(-1)\approx0.8413-0.1587=\boxed{0.6826}\]</div><p>平均の前後1標準偏差に入る確率は約68％です。</p></div>
 <div class="example"><strong>例題3：一般の正規分布</strong><p>\(X\) が平均70、分散 \(10^2\) の正規分布に従うとき、\(P(X\leqq80)\) を求めよ。</p></div><div class="answer"><strong>解答</strong><p>標準化すると \(Z=(80-70)/10=1\) なので、\(P(X\leqq80)\approx\boxed{0.8413}\)。</p></div>
 <div class="example"><strong>例題4：区間の確率</strong><p>\(X\) が平均50、分散 \(5^2\) の正規分布に従うとき、\(P(45\leqq X\leqq60)\) を求めよ。</p></div><div class="answer"><strong>解答</strong><p>45と60を標準化するとそれぞれ \(-1,2\)。</p><div class="formula">\[\Phi(2)-\Phi(-1)\approx0.9772-0.1587=\boxed{0.8185}\]</div></div>
 <div class="example"><strong>例題5：上側確率</strong><p>\(X\) が平均100、分散 \(15^2\) の正規分布に従うとき、\(P(X\geqq130)\) を求めよ。</p></div><div class="answer"><strong>解答</strong><p>\(Z=(130-100)/15=2\) なので \(P(X\geqq130)\approx1-0.9772=\boxed{0.0228}\)。</p></div>
 <div class="example"><strong>例題6：二項分布の正規近似（発展）</strong><p>\(X\sim B(100,0.5)\) のとき、\(P(X\leqq60)\) を連続補正を使って近似せよ。</p></div><div class="answer"><strong>解答</strong><p>平均は50、標準偏差は5。連続補正を行うと \(P(X\leqq60)\approx P(Y\leqq60.5)\)（\(Y\) は平均50、分散25の正規分布に従う）。</p><div class="formula">\[z=\frac{60.5-50}{5}=2.1,\qquad P(X\leqq60)\approx\Phi(2.1)\approx\boxed{0.9821}\]</div><p>二項分布は離散型なので、正規近似では連続補正が役立ちます。</p></div>
-<h2 id="hs-practice">7．練習問題</h2>
+<h2 id="hs-practice">8．練習問題</h2>
 <div class="exercise"><strong>元の練習問題1</strong><p>平均50、標準偏差5の値40を標準化する。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><div class="formula">\[\frac{40-50}{5}=\boxed{-2}\]</div></details></div>
 <div class="exercise"><strong>練習問題2</strong><p>\(X\) は平均\(80\)、分散\(8^2\)の正規分布に従う。\(X=96\) を標準化せよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\((96-80)/8=\boxed{2}\)。</p></details></div>
 <div class="exercise"><strong>練習問題3</strong><p>\(Z\) は標準正規分布に従う。\(P(Z\geqq1)\) を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(1-\Phi(1)=\boxed{0.1587}\)（近似値）。</p></details></div>
@@ -128,7 +133,7 @@ body .paper mjx-container[display="true"] { overflow-x:auto; overflow-y:visible;
 <div class="exercise"><strong>練習問題6</strong><p>\(X\) は平均\(60\)、分散\(10^2\)の正規分布に従う。\(P(50\leqq X\leqq70)\) を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>標準化して \(-1\leqq Z\leqq1\)。\(\boxed{0.6826}\)（近似値）。</p></details></div>
 <div class="exercise"><strong>練習問題7</strong><p>\(X\) は平均\(100\)、分散\(20^2\)の正規分布に従う。\(P(X\geqq140)\) を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(Z\geqq2\) より \(\boxed{0.0228}\)（近似値）。</p></details></div>
 <div class="exercise"><strong>練習問題8</strong><p>正規分布で、標準偏差を2倍にすると分散は何倍になるか。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(V(X)=\sigma^2\) だから \((2\sigma)^2=4\sigma^2\)。\(\boxed{4\text{倍}}\)。</p></details></div>
-<h2 id="hs-summary">8．まとめ</h2><p>正規分布では、平均 \(m\) が中心、分散 \(\sigma^2\) が広がりを決めます。標準化して標準正規分布の表を利用すると、区間の確率を求められます。元の例題と練習問題も復習しましょう。</p>
+<h2 id="hs-summary">9．まとめ</h2><p>正規分布では、平均 \(m\) が中心、分散 \(\sigma^2\) が広がりを決めます。標準化して標準正規分布の表を利用すると、区間の確率を求められます。元の例題と練習問題も復習しましょう。</p>
 </article><nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav></main>
 <script>
 (function(){'use strict';const $=id=>document.getElementById(id);const NS='http://www.w3.org/2000/svg';function E(name,atts,parent){const n=document.createElementNS(NS,name);for(const [k,v] of Object.entries(atts||{}))n.setAttribute(k,v);if(parent)parent.appendChild(n);return n;}function T(x,y,text,parent,extra){const n=E('text',{x,y,'font-size':13,fill:'#4b6177',...extra},parent);n.textContent=text;return n;}
@@ -138,4 +143,33 @@ function line(svg,mu,s,max,color,dash){const coords=[];for(let i=0;i<=480;i++){c
 function updateShape(){const mu=Number($('mu').value),s=Number($('sigma').value),svg=$('shapeChart');svg.replaceChildren();const max=.85;axes(svg,max);line(svg,0,1,max,'#95aabd',true);line(svg,mu,s,max,'#216fac');E('line',{x1:sx(mu),y1:base,x2:sx(mu),y2:sy(pdf(mu,mu,s),max),stroke:'#216fac','stroke-dasharray':'4 4'},svg);$('muLabel').textContent=mu.toFixed(1);$('sigmaLabel').textContent=s.toFixed(1);$('shapeStats').textContent='平均 m = '+mu.toFixed(1)+' ／ 分散 σ² = '+(s*s).toFixed(2)+' ／ 標準偏差 σ = '+s.toFixed(1);}
 function updateArea(){const a=Number($('lower').value),b=Number($('upper').value),svg=$('areaChart');svg.replaceChildren();const max=.47;axes(svg,max);if(a<b){const coords=['M'+sx(a)+' '+base];for(let i=0;i<=240;i++){const x=a+(b-a)*i/240;coords.push('L'+sx(x).toFixed(2)+' '+sy(pdf(x),max).toFixed(2));}coords.push('L'+sx(b)+' '+base+' Z');E('path',{d:coords.join(' '),fill:'#8ec7ee','fill-opacity':'.67'},svg);}line(svg,0,1,max,'#216fac');for(const [x,col] of [[a,'#be6d31'],[b,'#29815a']]){E('line',{x1:sx(x),y1:base,x2:sx(x),y2:sy(pdf(x),max),stroke:col,'stroke-width':2},svg);}const prob=a<b?Math.max(0,Phi(b)-Phi(a)):0;$('aLabel').textContent=a.toFixed(1);$('bLabel').textContent=b.toFixed(1);$('areaStats').textContent='P('+a.toFixed(1)+' ≦ Z ≦ '+b.toFixed(1)+') ≈ '+prob.toFixed(4)+'（約 '+(prob*100).toFixed(2)+' %）';}
 for(const id of ['mu','sigma'])$(id).addEventListener('input',updateShape);for(const id of ['lower','upper'])$(id).addEventListener('input',updateArea);updateShape();updateArea();})();
-</script><footer class="lesson-standard-footer"><div><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div>みんなの数学データベース｜高校生のための授業</div></footer></body></html>
+</script><footer class="lesson-standard-footer"><div><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div>みんなの数学データベース｜高校生のための授業</div></footer><script>
+(function(){
+'use strict';
+const slider=document.getElementById('normalSampleCount'), value=document.getElementById('normalSampleCountValue'), chart=document.getElementById('normalSampleChart'),stats=document.getElementById('normalSampleStats');
+if(!slider||!chart)return;
+const NS='http://www.w3.org/2000/svg',mean=165,sd=8,lo=125,hi=205,binWidth=5,binCount=(hi-lo)/binWidth;
+let seed=20261122;
+function random(){seed=(1664525*seed+1013904223)>>>0;return (seed+.5)/4294967296;}
+const samples=[];
+for(let i=0;i<2000;i+=2){let u=Math.max(random(),1e-12),v=random(),r=Math.sqrt(-2*Math.log(u)),t=2*Math.PI*v;samples.push(mean+sd*r*Math.cos(t),mean+sd*r*Math.sin(t));}
+function el(tag,attrs,parent){let n=document.createElementNS(NS,tag);for(const [k,v] of Object.entries(attrs||{}))n.setAttribute(k,v);(parent||chart).appendChild(n);return n;}
+function txt(x,y,str,attrs){const n=el('text',{x,y,fill:'#34465a','font-size':15,...attrs});n.textContent=str;return n;}
+function pdf(x){let z=(x-mean)/sd;return Math.exp(-z*z/2)/(sd*Math.sqrt(2*Math.PI));}
+function draw(){let n=Number(slider.value);value.textContent=n;chart.replaceChildren();const L=58,R=735,T=24,B=286,plotW=R-L,plotH=B-T,ymax=.075;
+const sx=x=>L+(x-lo)/(hi-lo)*plotW,sy=y=>B-y/ymax*plotH;
+el('line',{x1:L,y1:B,x2:R,y2:B,stroke:'#41576a','stroke-width':2});el('line',{x1:L,y1:T,x2:L,y2:B,stroke:'#41576a','stroke-width':2});
+for(let v=0;v<=.06+.00001;v+=.02){let y=sy(v);el('line',{x1:L,y1:y,x2:R,y2:y,stroke:'#e7eef4','stroke-width':1});txt(L-8,y+5,v.toFixed(2),{'text-anchor':'end','font-size':13});}
+for(let x=135;x<=195;x+=10){let xx=sx(x);el('line',{x1:xx,y1:B,x2:xx,y2:B+5,stroke:'#41576a'});txt(xx,B+23,String(x),{'text-anchor':'middle','font-size':14});}
+txt(12,16,'密度',{'font-size':14});txt((L+R)/2,341,'身長（cm）',{'text-anchor':'middle'});
+const counts=Array(binCount).fill(0);for(let i=0;i<n;i++){let k=Math.floor((samples[i]-lo)/binWidth);if(k>=0&&k<binCount)counts[k]++;}
+for(let k=0;k<binCount;k++){let h=counts[k]/(n*binWidth),x=sx(lo+k*binWidth),w=plotW*binWidth/(hi-lo);el('rect',{x:x+.5,y:sy(Math.min(h,ymax)),width:w-1,height:Math.max(0,B-sy(Math.min(h,ymax))),fill:'#83b6d7',stroke:'#397da7','stroke-width':1});}
+let path='';for(let i=0;i<=320;i++){let x=lo+(hi-lo)*i/320;path+=(i?' L':'M')+sx(x).toFixed(2)+' '+sy(pdf(x)).toFixed(2);}
+el('path',{d:path,fill:'none',stroke:'#c34f43','stroke-width':3.5,'stroke-linecap':'round'});
+el('line',{x1:sx(mean),y1:sy(pdf(mean)),x2:sx(mean),y2:B,stroke:'#c34f43','stroke-dasharray':'5 5','stroke-width':1.4});
+const avg=samples.slice(0,n).reduce((a,b)=>a+b,0)/n;stats.textContent='人数 '+n+'人 ／ 標本平均 約'+avg.toFixed(1)+'cm（想定した平均165cm）';
+for(const btn of document.querySelectorAll('.normal-sample-presets button'))btn.setAttribute('aria-pressed',String(Number(btn.dataset.count)===n));
+}
+slider.addEventListener('input',draw);for(const btn of document.querySelectorAll('.normal-sample-presets button'))btn.addEventListener('click',()=>{slider.value=btn.dataset.count;draw();});draw();
+})();
+</script></body></html>
