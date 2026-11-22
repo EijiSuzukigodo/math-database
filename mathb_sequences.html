@@ -86,13 +86,22 @@ math mn{font-family:LessonDigits,"Times New Roman",serif!important}
 .example mjx-container,.answer mjx-container,.formula mjx-container {font-size:100%!important}
 mjx-container[display="true"] {max-width:100%;overflow-x:auto;overflow-y:hidden}
 </style><style id="mathb-sequences-math-readable-pilot">
-/* 数式だけを調整。本文の日本語・見出し・動く図の文字は維持。 */
-.paper math { font-size:1.13em!important; font-weight:normal; }
-.paper .formula math,.paper .answer math,.paper .example math {font-size:1.13em!important;}
-.paper math mfrac { math-style:normal; }
-.paper .formula,.paper .equation {max-width:100%;overflow-x:auto;overflow-y:hidden;}
-.paper .answer {background:#eff8e9!important;border-left:5px solid #76ae73!important;}
-.paper .answer .formula,.paper .answer .math-box {background:transparent!important;box-shadow:none!important;}
+/* 数列・共通文字サイズ試験版。以前の1.13em拡大指定を廃止。 */
+/* 本文の文字サイズを基準にし、数式は配置場所によって拡大しない。 */
+#md-standard-main .paper math,
+#md-standard-main .paper .formula math,
+#md-standard-main .paper .answer math,
+#md-standard-main .paper .example math {font-size:1em!important;font-weight:normal;}
+#md-standard-main .paper mjx-container,
+#md-standard-main .paper .formula mjx-container,
+#md-standard-main .paper .answer mjx-container,
+#md-standard-main .paper .example mjx-container {font-size:100%!important;}
+/* 分数は教科書の上下分数を維持し、切れを防ぐ。 */
+#md-standard-main .paper .formula,
+#md-standard-main .paper .equation {max-width:100%;overflow-x:auto;overflow-y:visible;}
+#md-standard-main .paper .answer {background:#eff8e9!important;border-left:5px solid #76ae73!important;}
+#md-standard-main .paper .answer .formula,
+#md-standard-main .paper .answer .math-box {background:transparent!important;box-shadow:none!important;}
 </style></head><body>
 <header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>数列</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" data-hs-lesson="" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>数列の意味を理解する</h2><p>劇場の座席を例に、「何列目か」と「その列に何席あるか」を対応させ、項番号と項の値の違いを学ぶ。一般項に項番号を代入して各項の値を求め、数の並びから規則を見つけて一般項を予想する。</p></section>
 <nav aria-label="授業の進め方" class="hs-study-nav">
