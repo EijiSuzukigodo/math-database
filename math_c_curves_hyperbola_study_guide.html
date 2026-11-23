@@ -166,7 +166,43 @@ for(const id of ['asymA','asymB','asymX'])g(id).addEventListener('input',draw);g
 g('asymReset').addEventListener('click',()=>{if(raf)cancelAnimationFrame(raf);raf=0;g('asymA').value=3;g('asymB').value=2;g('asymX').value=5;g('asymScale').value=1;draw()});
 function tick(ts){if(!raf)return;if(ts-last>45){let x=+g('asymX').value+.12;if(x>30){cancelAnimationFrame(raf);raf=0;return}g('asymX').value=x;draw();last=ts}raf=requestAnimationFrame(tick)}
 g('asymPlay').addEventListener('click',()=>{if(!raf){if(+g('asymX').value>=30)g('asymX').value=+g('asymA').value;raf=requestAnimationFrame(tick)}});g('asymStop').addEventListener('click',()=>{if(raf)cancelAnimationFrame(raf);raf=0});document.addEventListener('visibilitychange',()=>{if(document.hidden&&raf){cancelAnimationFrame(raf);raf=0}});draw()})();</script>
-<section class="card"><h2>4．焦点が y 軸上にある双曲線</h2><p>xとyの役割を入れ替えると、上下に開く双曲線になります。</p><div class="formula">\[\boxed{\frac{y^2}{b^2}-\frac{x^2}{a^2}=1}\]</div><p>頂点は \((0,b),(0,-b)\)、焦点は \((0,c),(0,-c)\)、\(c=\sqrt{a^2+b^2}\) です。漸近線は</p><div class="formula">\[y=\frac{b}{a}x,\qquad y=-\frac{b}{a}x\]</div><p class="warn">記号の約束に注意：この教材では、<strong>横方向の長さを a、縦方向の長さを b</strong> としています。上下に開く式では \(y^2\) の分母が \(b^2\) です。教科書によっては上下に開く場合の記号を入れ替えて表すこともあります。</p><p>上の動く図の「双曲線の開く向き」を<strong>上下</strong>にすると、焦点と頂点の位置を確認できます。</p></section>
+<section class="card" id="hyperbola-vertical"><h2>4．焦点が y 軸上にある双曲線</h2><div class="hyperbola-vertical-grid"><div class="hyperbola-vertical-text">
+<h3>上下に開く双曲線</h3><p>横開きの双曲線では焦点が \(x\) 軸上にあった。今度は焦点が \(y\) 軸上にある場合を考える。\(x\) と \(y\) の役割を入れ替えると、上下に開く双曲線が得られる。</p>
+<div class="formula">\[\boxed{\frac{y^2}{a^2}-\frac{x^2}{b^2}=1}\qquad(a>0,\ b>0)\]</div>
+<p>この節では、<strong>\(a\) を中心から頂点までの距離</strong>、\(b\) を補助長方形の横方向の半幅とする。</p>
+<h3>頂点と焦点</h3><p>中心は原点、頂点は \((0,\pm a)\)、焦点は \((0,\pm c)\) である。ただし、</p><div class="formula">\[\boxed{c^2=a^2+b^2}\]</div>
+<p>焦点は \(y\) 軸上にあり、双曲線は上下に開く。\(x\) 軸、\(y\) 軸、原点に関して対称である。</p>
+<h3>漸近線</h3><p>第3節と同様に、右辺の \(1\) を \(0\) に置いて漸近線を予想する。</p>
+<div class="formula">\[\begin{aligned}\frac{y^2}{a^2}-\frac{x^2}{b^2}&=0\\\left(\frac ya-\frac xb\right)\left(\frac ya+\frac xb\right)&=0\end{aligned}\]</div>
+<p>したがって、漸近線は</p><div class="formula">\[\boxed{y=\pm\frac ab x}\]</div>
+<p>横開きの場合の \(y=\pm\dfrac ba x\) と比較し、分子と分母の違いに注意しよう。</p>
+</div><div class="hyperbola-vertical-visual"><h3>縦開きの双曲線を動かす</h3><p class="small">頂点までの距離 \(a\)、幅を決める \(b\)、点Pの位置を変えてみましょう。</p>
+<div class="controls"><div class="control"><label for="vertA">a：<output id="vertAv">4.0</output></label><input type="range" id="vertA" min="1" max="6" step="0.5" value="4"></div><div class="control"><label for="vertB">b：<output id="vertBv">3.0</output></label><input type="range" id="vertB" min="1" max="6" step="0.5" value="3"></div><div class="control"><label for="vertT">点Pの位置：<output id="vertTv">0.70</output></label><input type="range" id="vertT" min="-2" max="2" step="0.05" value="0.7"></div></div>
+<div class="hyperbola-scale-control"><label for="vertScale">グラフのスケール（1目盛）</label><select id="vertScale"><option value="0.5">0.5</option><option value="1" selected>1</option><option value="2">2</option><option value="5">5</option></select></div>
+<p class="vertical-equation" id="vertEquation">漸近線：\(y=\pm\dfrac43 x\)</p>
+<canvas id="vertCanvas" class="graph" width="900" height="600" role="img" aria-label="y軸上の焦点をもつ上下に開く双曲線と漸近線"></canvas>
+<p id="vertStatus" aria-live="polite"></p><p class="small">青：双曲線　赤：焦点　紫の破線：漸近線　橙・緑：点Pと焦点を結ぶ線分</p>
+<div class="btns"><button id="vertPlay" type="button" class="primary">▶ 点Pを動かす</button><button id="vertStop" type="button">■ 停止</button><button id="vertReset" type="button">初期値に戻す</button></div>
+</div></div></section>
+<style id="hyperbola-vertical-layout">.hyperbola-vertical-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;align-items:start}.hyperbola-vertical-text,.hyperbola-vertical-visual{min-width:0}.hyperbola-vertical-text .formula{font-size:14px!important;padding:5px 4px!important;margin:6px 0!important;overflow-x:auto}.hyperbola-vertical-text .formula mjx-container{font-size:88%!important}.hyperbola-vertical-text p mjx-container:not([display="true"]){font-size:82%!important}.hyperbola-vertical-visual{background:#f6faff;border:1px solid #d6e5f2;border-radius:12px;padding:14px}.hyperbola-vertical-visual .controls{grid-template-columns:1fr!important}.hyperbola-vertical-visual canvas{width:100%;height:auto;display:block}.vertical-equation{text-align:center;background:#fff;border:1px solid #d6e5f2;border-radius:8px;padding:8px 4px;margin:10px 0 6px;font-weight:700}@media(max-width:760px){.hyperbola-vertical-grid{grid-template-columns:1fr}}</style>
+<script id="hyperbola-vertical-motion">(function(){'use strict';const el=id=>document.getElementById(id),cv=el('vertCanvas'),ctx=cv.getContext('2d');let raf=0,last=0,phase=.7;
+function draw(){const a=+el('vertA').value,b=+el('vertB').value,t=+el('vertT').value,u=+el('vertScale').value,c=Math.hypot(a,b),W=cv.width,H=cv.height,S=Math.min(W/20,H/14)/u,cx=W/2,cy=H/2;
+el('vertAv').textContent=a.toFixed(1);el('vertBv').textContent=b.toFixed(1);el('vertTv').textContent=t.toFixed(2);
+const gcd=(m,n)=>n?gcd(n,m%n):m,A=Math.round(a*2),B=Math.round(b*2),d=gcd(A,B),num=A/d,den=B/d,frac=den===1?String(num):'\\dfrac{'+num+'}{'+den+'}';
+const eq=el('vertEquation');if(eq.dataset.eq!==frac){eq.dataset.eq=frac;eq.innerHTML='漸近線：\\(y=\\pm '+frac+'x\\)';if(window.MathJax&&MathJax.typesetPromise)MathJax.typesetPromise([eq])}
+ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);const xy=(x,y)=>[cx+x*S,cy-y*S],line=(p,q,color,w=2,dash=[])=>{ctx.beginPath();ctx.setLineDash(dash);ctx.moveTo(...xy(...p));ctx.lineTo(...xy(...q));ctx.strokeStyle=color;ctx.lineWidth=w;ctx.stroke();ctx.setLineDash([])},dot=(p,color)=>{let [x,y]=xy(...p);ctx.beginPath();ctx.arc(x,y,6,0,Math.PI*2);ctx.fillStyle=color;ctx.fill()},label=(str,p)=>{let [x,y]=xy(...p);ctx.font='15px sans-serif';ctx.fillStyle='#344e65';ctx.fillText(str,x+7,y-8)};
+for(let k=-10;k<=10;k++)line([k*u,-7*u],[k*u,7*u],'#edf2f7',1);for(let k=-7;k<=7;k++)line([-10*u,k*u],[10*u,k*u],'#edf2f7',1);
+line([-10*u,0],[10*u,0],'#8297a8');line([0,-7*u],[0,7*u],'#8297a8');label('x',[9.4*u,0]);label('y',[0,6.4*u]);label('O',[0,0]);
+for(let k=-8;k<=8;k+=2)if(k)label(String(k*u),[k*u,-.2*u]);for(let k=-6;k<=6;k+=2)if(k)label(String(k*u),[.12*u,k*u]);
+for(const sign of [-1,1])line([-10*u,-sign*10*u*a/b],[10*u,sign*10*u*a/b],'#9676b6',2,[10,6]);
+for(const branch of [-1,1])for(const sign of [-1,1]){ctx.beginPath();let first=true;for(let v=0;v<=3.5;v+=.01){let x=sign*b*Math.sinh(v),y=branch*a*Math.cosh(v);if(Math.abs(x)>10.2*u||Math.abs(y)>7.2*u)break;let [px,py]=xy(x,y);if(first){ctx.moveTo(px,py);first=false}else ctx.lineTo(px,py)}ctx.strokeStyle='#147fba';ctx.lineWidth=4;ctx.stroke()}
+const F1=[0,-c],F2=[0,c],P=[b*Math.sinh(t),a*Math.cosh(t)];line(P,F1,'#eb8d2b',3);line(P,F2,'#239c78',3);dot(F1,'#cf4942');dot(F2,'#cf4942');dot(P,'#174c7b');dot([0,a],'#0b699e');dot([0,-a],'#0b699e');label('F₁',F1);label('F₂',F2);label('P',P);
+el('vertStatus').textContent='頂点 (0, ±'+a.toFixed(1)+') ｜ 焦点 (0, ±'+c.toFixed(2)+') ｜ 距離の差 2a = '+(2*a).toFixed(1);
+}
+for(const id of ['vertA','vertB','vertT'])el(id).addEventListener('input',draw);el('vertScale').addEventListener('change',draw);
+el('vertReset').addEventListener('click',()=>{if(raf)cancelAnimationFrame(raf);raf=0;el('vertA').value=4;el('vertB').value=3;el('vertT').value=.7;el('vertScale').value=1;draw()});
+function tick(ts){if(!raf)return;if(ts-last>30){phase+=.025;el('vertT').value=(1.8*Math.sin(phase)).toFixed(2);draw();last=ts}raf=requestAnimationFrame(tick)}
+el('vertPlay').addEventListener('click',()=>{if(!raf)raf=requestAnimationFrame(tick)});el('vertStop').addEventListener('click',()=>{if(raf)cancelAnimationFrame(raf);raf=0});document.addEventListener('visibilitychange',()=>{if(document.hidden&&raf){cancelAnimationFrame(raf);raf=0}});draw()})();</script>
 <section class="card"><h2>5．直角双曲線</h2><p>\(a=b\) なら漸近線の傾きは \(\pm1\) となり、2直線は直交します。このとき<strong>直角双曲線</strong>といいます。</p><div class="formula">\[\frac{x^2}{a^2}-\frac{y^2}{a^2}=1\quad\Longleftrightarrow\quad x^2-y^2=a^2\]</div><p>漸近線は \(y=x\) と \(y=-x\) です。動く図で \(a=b\) にしてみましょう。</p></section>
 <section class="card"><h2 id="hs-practice">6．例題と練習問題</h2><p>まず自分で考え、解答・解説を開いて確認しましょう。</p>
 <h3 id="hs-examples">例題2　頂点・焦点・漸近線</h3><p>\(\dfrac{x^2}{9}-\dfrac{y^2}{4}=1\) の頂点、焦点、漸近線を求めましょう。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(a=3,b=2,c=\sqrt{13}\) より、</p><div class="formula">\[\text{頂点 }(\pm3,0),\quad\text{焦点 }(\pm\sqrt{13},0)\]\[\text{漸近線 }y=\pm\frac23 x\]</div></details>
