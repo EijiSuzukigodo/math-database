@@ -73,22 +73,33 @@ window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},opt
 <link rel="stylesheet" href="lesson_common_style.css">
 <link rel="stylesheet" href="high_school_lesson_reading.css">
 </head><body>
-<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_c.html">数学Cの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学C</div><h1>楕円</h1><p class="lesson-standard-bottom">数学C ／ 式と曲線</p></div></header><main class="lesson-standard-main" id="md-standard-main" data-hs-lesson=""><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>楕円の基本を理解し、問題に活用できるようになる</h2><p>2つの焦点からの距離と楕円の方程式を学びます。</p><p class="hs-outcome"><strong>この授業でできるようになること</strong><br>二つの焦点までの距離の和が一定であることを使い、楕円の頂点や焦点を求める。</p></section>
-<nav class="hs-study-nav" aria-label="授業の進め方">
-<a href="#hs-explanation">説明</a>
-<a href="#hs-examples">例題と解説</a>
-<a href="#hs-practice">練習問題</a>
-<a href="#hs-summary">まとめ</a></nav>
-
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_c.html">数学Cの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学C</div><h1>楕円</h1><p class="lesson-standard-bottom">数学C ／ 式と曲線</p></div></header><main class="lesson-standard-main" id="md-standard-main" data-hs-lesson=""><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>軌跡の条件から楕円の方程式へ</h2><p>2点からの距離の和が一定となる点の軌跡を求め、その曲線が楕円であることを理解します。さらに、焦点と標準形の関係へ一般化します。</p></section>
 <section class="card toc" hidden="" style="display:none!important"><p class="small">※ 数式の整形にはMathJaxを利用しています。数式の表示にはインターネット接続が必要です。</p><span class="pill">学習の道順</span><p>① 楕円の定義　→　② 方程式の導出　→　③ 縦長の楕円　→　④ 円の伸縮　→　⑤ 内分点の軌跡　→　⑥ 練習問題</p><a href="#definition">定義と動く図</a><a href="#proof">方程式の導出</a><a href="#vertical">縦長の楕円</a><a href="#scaling">円の伸縮</a><a href="#locus">軌跡</a><a href="#practice">練習問題</a></section>
-<section class="card" id="definition"><span class="pill">1　楕円の定義</span><h2 id="hs-explanation">2つの焦点からの距離の和が一定</h2><p>異なる2点 <strong>F₁, F₂</strong> からの距離の和が一定 <strong>2a</strong> となる点 P の軌跡を、<strong>楕円</strong>といいます。焦点を F₁(−c, 0), F₂(c, 0) として考えます。</p>
+<section class="card" id="ellipse-introduction"><h2>1．2点からの距離の和が一定となる点の軌跡</h2>
+<p>まず、曲線の名前や特別な用語を使わずに、点の軌跡を求めてみましょう。</p>
+<div class="mini"><h3>例題1　2点からの距離の和が10となる点</h3>
+<p>座標平面上に2点 \(A(4,0)\)、\(B(-4,0)\) があります。点 \(P(x,y)\) が \(PA+PB=10\) を満たしながら動くとき、点 \(P\) の軌跡を表す方程式を求めましょう。</p>
+<p><strong>解答・解説</strong></p>
+<p>距離の公式より、</p>
+<div class="formula eq">\[\sqrt{(x-4)^2+y^2}+\sqrt{(x+4)^2+y^2}=10\]</div>
+<p>\(PA=u\)、\(PB=v\) とおくと、\(u+v=10\) です。また、</p>
+<div class="formula eq">\[\begin{aligned}u^2-v^2&=((x-4)^2+y^2)-((x+4)^2+y^2)\\&=-16x\end{aligned}\]</div>
+<p>よって \((u-v)(u+v)=-16x\) から、\(u-v=-\dfrac{8x}{5}\) です。和と差を使うと、</p>
+<div class="formula eq">\[u=5-\frac{4x}{5},\qquad v=5+\frac{4x}{5}\]</div>
+<p>\(u^2=(x-4)^2+y^2\) に代入して整理します。</p>
+<div class="formula eq">\[\begin{aligned}\left(5-\frac{4x}{5}\right)^2&=(x-4)^2+y^2\\25-8x+\frac{16x^2}{25}&=x^2-8x+16+y^2\\9&=\frac{9x^2}{25}+y^2\end{aligned}\]</div>
+<p>したがって、求める方程式は</p>
+<div class="formula eq">\[\boxed{\frac{x^2}{25}+\frac{y^2}{9}=1}\]</div>
+<p>逆に、この式を満たす点では \(|x|\leq5\) なので \(5\pm\frac{4x}{5}>0\) です。距離の式を逆にたどると \(PA=5-\frac{4x}{5}\)、\(PB=5+\frac{4x}{5}\) となり、確かに \(PA+PB=10\) です。</p>
+<p>この方程式が表す曲線を<strong>楕円</strong>といいます。2点からの距離の和が一定となる点の軌跡です。次に、この2点を「焦点」と呼んで一般化します。</p></div></section>
+<section class="card" id="definition"><span class="pill">2　楕円の定義</span><h2 id="hs-explanation">2つの焦点からの距離の和が一定</h2><p>異なる2点 <strong>F₁, F₂</strong> からの距離の和が一定 <strong>2a</strong> となる点 P の軌跡を、<strong>楕円</strong>といいます。焦点を F₁(−c, 0), F₂(c, 0) として考えます。</p>
 <div class="formula eq">\[PF_1+PF_2=2a\qquad(a&gt;c&gt;0)\]</div>
 <div class="controls"><div class="control"><label for="a">長半径 a = <output id="aOut">4.0</output></label><input id="a" type="range" min="2.5" max="6" step="0.1" value="4"></div><div class="control"><label for="ratio">焦点の位置 c/a = <output id="ratioOut">0.65</output></label><input id="ratio" type="range" min="0.10" max="0.92" step="0.01" value="0.65"></div><div class="control"><label for="t">楕円上の点 P の位置 = <output id="tOut">50</output>°</label><input id="t" type="range" min="0" max="360" step="1" value="50"></div></div>
 <div class="btns"><button id="play" class="primary" type="button">▶ 点Pを動かす</button><button id="reset" type="button">初期位置に戻す</button></div>
 <canvas id="ellipse" class="graph" width="860" height="540" role="img" aria-label="横長の楕円、二つの焦点と点P、焦点からPまでの線分を表す動く座標平面"></canvas>
 <p class="status" id="values" aria-live="polite">計算中…</p><p class="hint">青い曲線が楕円です。オレンジ色と緑色の線分を合わせた長さは、Pをどこへ動かしても <strong>2a</strong> のままです。焦点間の距離が大きいほど細長い楕円になります。</p>
 <div class="btns"><button hidden="" aria-hidden="true" tabindex="-1" style="display:none!important" type="button" class="speak" data-speak="焦点 F1 と F2 からの距離の和が一定になる点の集まりを、楕円といいます。2つの焦点から点Pまでの距離を足すと、常に2aになります。点Pを動かして確かめましょう。">▶ この説明を読み上げる</button><button hidden="" aria-hidden="true" tabindex="-1" style="display:none!important" class="ghost stopSpeech" type="button">■ 読み上げ停止</button></div></section>
-<section class="card" id="proof"><span class="pill">2　公式の導出</span><h2>楕円の方程式を定義から導こう</h2><p>焦点を F₁(−c, 0), F₂(c, 0) とし、P(x, y) から焦点までの距離をそれぞれ r₁, r₂ とおきます。</p>
+<section class="card" id="proof"><span class="pill">3　公式の導出</span><h2>楕円の方程式を定義から導こう</h2><p>焦点を F₁(−c, 0), F₂(c, 0) とし、P(x, y) から焦点までの距離をそれぞれ r₁, r₂ とおきます。</p>
 <div class="formula eq">\[\begin{aligned}r_1&amp;=\sqrt{(x+c)^2+y^2}\\r_2&amp;=\sqrt{(x-c)^2+y^2}\end{aligned}\]</div>
 <p><span class="number">①</span>定義より <strong>\(r_1+r_2=2a\)</strong> です。</p>
 <p><span class="number">②</span>平方の差を計算すると、<strong>\(r_1^2-r_2^2=4cx\)</strong> です。そこで</p>
@@ -101,7 +112,7 @@ window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},opt
 <p>逆に、この式上の点では上の距離の式が成立し、2つの焦点からの距離の和が 2a になります。</p>
 <div class="twocol"><div class="mini"><h3>長軸と短軸</h3><p>横長の楕円では長軸は x 軸方向で長さ <strong>2a</strong>、短軸は y 軸方向で長さ <strong>2b</strong> です。</p></div><div class="mini"><h3>中心・頂点・対称性</h3><p>中心は原点。頂点は (±a, 0) と (0, ±b)。x 軸、y 軸、原点について対称です。</p></div></div>
 <div class="btns"><button hidden="" aria-hidden="true" tabindex="-1" style="display:none!important" type="button" class="speak" data-speak="楕円の標準形を導きます。焦点からの距離をそれぞれ r1、r2 とすると、和は2aです。平方の差を使うと、差は2cx割るaです。これを距離の式に代入し、bの2乗をaの2乗引くcの2乗とおけば、xの2乗割るaの2乗、足す、yの2乗割るbの2乗、イコール1、が得られます。">▶ 導出を読み上げる</button><button hidden="" aria-hidden="true" tabindex="-1" style="display:none!important" class="ghost stopSpeech" type="button">■ 読み上げ停止</button></div></section>
-<section class="card" id="vertical"><span class="pill">3　縦長の楕円</span><h2>長軸が y 軸上にある場合</h2><p>長半径が b、短半径が a（b &gt; a &gt; 0）の場合も同じ考え方です。焦点は <strong>(0, ±c)</strong>、ただし <strong>\(c^2=b^2-a^2\)</strong> です。</p><div class="formula eq">\[\boxed{\frac{x^2}{a^2}+\frac{y^2}{b^2}=1}\qquad(b&gt;a&gt;0)\]</div>
+<section class="card" id="vertical"><span class="pill">6　縦長の楕円</span><h2>長軸が y 軸上にある場合</h2><p>長半径が b、短半径が a（b &gt; a &gt; 0）の場合も同じ考え方です。焦点は <strong>(0, ±c)</strong>、ただし <strong>\(c^2=b^2-a^2\)</strong> です。</p><div class="formula eq">\[\boxed{\frac{x^2}{a^2}+\frac{y^2}{b^2}=1}\qquad(b&gt;a&gt;0)\]</div>
 <div class="twocol"><div class="mini"><h3 id="hs-examples">例題1：横長</h3><p>\(\dfrac{x^2}{9}+\dfrac{y^2}{4}=1\)</p><p>a=3、b=2、c=√(9−4)=√5</p><p><strong>焦点：(±√5, 0)</strong>、長軸 6、短軸 4。</p></div><div class="mini"><h3>例題2：縦長</h3><p>\(\dfrac{x^2}{9}+\dfrac{y^2}{16}=1\)</p><p>長半径 4、短半径 3、c=√(16−9)=√7</p><p><strong>焦点：(0, ±√7)</strong>、長軸 8、短軸 6。</p></div></div>
 <div class="btns"><button hidden="" aria-hidden="true" tabindex="-1" style="display:none!important" type="button" class="speak" data-speak="楕円には横長と縦長があります。分母が大きいほうが長軸の方向です。例えば、xの2乗割る9、足すyの2乗割る16、イコール1なら、縦長です。焦点は、0、プラスマイナスルート7です。">▶ 例題を読み上げる</button><button hidden="" aria-hidden="true" tabindex="-1" style="display:none!important" class="ghost stopSpeech" type="button">■ 読み上げ停止</button></div></section>
 <section class="card" id="scaling"><span class="pill">4　円と楕円</span><h2>円を縮小・拡大すると楕円になる</h2><p>円 \(x^2+y^2=9\) の各点の <strong>y 座標を k 倍</strong>してみましょう。新しい点を (X,Y) とすると X=x、Y=ky より、</p>
