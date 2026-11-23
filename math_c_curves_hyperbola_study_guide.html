@@ -245,7 +245,13 @@ for(const id of ['rectA','rectB'])el(id).addEventListener('input',draw);el('rect
 <h3>練習1：焦点から方程式をつくる</h3><p>2点 \((5,0),(-5,0)\) を焦点とし、焦点からの距離の差の絶対値が \(8\) である双曲線の方程式を求めましょう。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(c=5,2a=8\) より \(a=4\)、\(b^2=c^2-a^2=25-16=9\)。</p><div class="formula">\[\boxed{\frac{x^2}{16}-\frac{y^2}{9}=1}\]</div></details>
 <h3>練習2：漸近線を求める</h3><p>\(9x^2-4y^2=-36\) を標準形にして、頂点・焦点・漸近線を求めましょう。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><div class="formula">\[\frac{y^2}{9}-\frac{x^2}{4}=1\]</div><p>\(a=2,b=3,c=\sqrt{13}\)、頂点 \((0,\pm3)\)、焦点 \((0,\pm\sqrt{13})\)、漸近線 \(y=\pm\dfrac32x\)。</p></details>
 <h3>練習3：直角双曲線</h3><p>頂点が \((2,0),(-2,0)\) で、漸近線が直交する左右に開く双曲線の方程式を求めましょう。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><div class="formula">\[\boxed{x^2-y^2=4}\]</div><p>直角双曲線では \(a=b\)、頂点から \(a=2\) です。</p></details></section>
-<section class="card"><h2 id="hs-summary">学習のまとめ</h2><div class="formula">\[\text{楕円：}\ \frac{x^2}{a^2}+\frac{y^2}{b^2}=1\]</div><div class="formula">\[\text{双曲線：}\ \frac{x^2}{a^2}-\frac{y^2}{b^2}=1\]</div><p>楕円は距離の<strong>和</strong>、双曲線は距離の<strong>差</strong>。さらに焦点の関係も、楕円は \(c^2=a^2-b^2\)、双曲線は \(c^2=a^2+b^2\) と異なります。</p><p></p></section>
+<section class="card"><h2 id="hs-summary">学習のまとめ</h2><h3>双曲線の性質</h3><p>双曲線 \(\dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}=1\)（\(a>0,\ b>0\)）について、次の性質を確認しましょう。</p>
+<ol class="hyperbola-summary-list"><li>中心は原点、頂点は2点 \((a,0),\ (-a,0)\) である。</li>
+<li>焦点は2点 \((\sqrt{a^2+b^2},0),\ (-\sqrt{a^2+b^2},0)\) である。</li>
+<li>双曲線は \(x\) 軸、\(y\) 軸、原点に関して対称である。</li>
+<li>漸近線は2直線 \(\displaystyle y=\frac ba x,\quad y=-\frac ba x\) である。</li>
+<li>双曲線上の点から2つの焦点までの距離の<strong>差の絶対値</strong>は \(2a\) である。</li></ol>
+</section><style id="hyperbola-summary-style">.hyperbola-summary-list{padding-left:1.9em;line-height:1.95}.hyperbola-summary-list li{padding-left:.25em;margin:.45em 0}.hyperbola-summary-list mjx-container:not([display="true"]){font-size:92%!important}</style>
 <nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav></main><script>
 (()=>{'use strict';
 const c=document.getElementById('graph'),ctx=c.getContext('2d'),el=id=>document.getElementById(id);let raf=0,phase=0,last=0;
