@@ -99,16 +99,16 @@ window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},opt
 <h3>具体例　円を \(y\) 軸方向に縮小する</h3>
 <div class="ellipse-example-layout"><div class="ellipse-example-explain">
 <p>円 \(x^2+y^2=9\) を、<strong>\(y\) 軸方向に \(\dfrac{2}{3}\) 倍</strong>した曲線を考えましょう。円上の点 \(Q(s,t)\) が、縮小後に点 \(P(x,y)\) に移るとします。</p>
-<p>横方向には動かさないので \(x=s\)、縦方向だけ \(\dfrac{2}{3}\) 倍するので \(y=\dfrac{2}{3}t\) です。したがって、\(s=x,\ t=\dfrac{3}{2}y\) となります。</p>
+<div class="formula eq">\[x=s,\qquad y=\dfrac{2}{3}t\]</div><p>ゆえに、</p><div class="formula eq">\[s=x,\qquad t=\dfrac{3}{2}y\]</div>
 <p>もとの円の方程式 \(s^2+t^2=9\) に代入すると、</p>
 <div class="formula eq">\[x^2+\left(\dfrac{3}{2}y\right)^2=9\]</div>
 <div class="formula eq">\[\boxed{\dfrac{x^2}{9}+\dfrac{y^2}{4}=1}\]</div>
 <p>半径 \(3\) の円を縦方向に \(\dfrac{2}{3}\) 倍すると、横半径 \(3\)、縦半径 \(2\) の楕円になります。</p>
 </div><div class="ellipse-example-visual"><p class="small"><strong>動く図</strong>　円上の点 \(Q\) と、それに対応する楕円上の点 \(P\)</p>
 <canvas id="circleToEllipse" class="graph" width="560" height="510" role="img" aria-label="円上の点Qが動くと、縦座標を3分の2倍した楕円上の点Pが連動して動くグラフ"></canvas>
-<div class="control"><label for="circlePointAngle">円上の点 \(Q\) の位置：<output id="circlePointAngleOut">45</output>°</label><input id="circlePointAngle" type="range" min="0" max="360" step="1" value="45"></div>
+<div class="control"><label for="circlePointAngle">円上の点 \(Q\) の位置：<output id="circlePointAngleOut">0</output>°</label><input id="circlePointAngle" type="range" min="0" max="360" step="1" value="0"></div>
 <div class="btns"><button type="button" id="circlePointPlay">▶ 点を動かす</button><button type="button" id="circlePointReset">最初に戻す</button></div>
-<p class="small">灰色の破線：もとの円／青色：縮小後の楕円。オレンジの点 \(Q\) と緑の点 \(P\) は連動します。</p>
+<p class="small">灰色の破線：もとの円／青色：点 \(P\) が通った軌跡。初めは楕円を描かず、点 \(Q\) の移動に合わせて少しずつ描きます。</p>
 <p id="circlePointInfo" class="small" aria-live="polite"></p></div></div>
 <h3>同じように考えてみよう</h3>
 <p>今度は計算をせず、円の<strong>横幅と縦幅がどう変わるか</strong>に注目しましょう。</p>
@@ -157,7 +157,7 @@ drawScale();drawLocus();})();
 (function(){'use strict';
 const canvas=document.getElementById('circleToEllipse'),angle=document.getElementById('circlePointAngle'),out=document.getElementById('circlePointAngleOut'),info=document.getElementById('circlePointInfo'),play=document.getElementById('circlePointPlay'),reset=document.getElementById('circlePointReset');
 if(!canvas||!angle||!out||!info||!play||!reset)return;
-const ctx=canvas.getContext('2d'),W=canvas.width,H=canvas.height,S=66,cx=W/2,cy=H/2;let raf=0,last=0;
+const ctx=canvas.getContext('2d'),W=canvas.width,H=canvas.height,S=66,cx=W/2,cy=H/2;let raf=0,last=0,progress=0;
 function draw(){const deg=Number(angle.value),t=deg*Math.PI/180,qx=3*Math.cos(t),qy=3*Math.sin(t),px=qx,py=qy*2/3;
 ctx.clearRect(0,0,W,H);ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
 ctx.lineWidth=1;ctx.strokeStyle='#e5edf3';for(let i=-4;i<=4;i++){ctx.beginPath();ctx.moveTo(cx+i*S,0);ctx.lineTo(cx+i*S,H);ctx.moveTo(0,cy+i*S);ctx.lineTo(W,cy+i*S);ctx.stroke();}
@@ -165,12 +165,13 @@ ctx.strokeStyle='#627789';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(0,cy);ctx.l
 ctx.fillStyle='#40586c';ctx.font='17px sans-serif';ctx.fillText('O',cx+8,cy+20);ctx.fillText('x',W-24,cy-10);ctx.fillText('y',cx+10,20);
 for(const n of [-3,-2,-1,1,2,3]){ctx.fillText(String(n),cx+n*S-6,cy+20);ctx.fillText(String(n),cx+8,cy-n*S+6);}
 ctx.beginPath();ctx.ellipse(cx,cy,3*S,3*S,0,0,Math.PI*2);ctx.strokeStyle='#9baab9';ctx.lineWidth=3;ctx.setLineDash([9,7]);ctx.stroke();ctx.setLineDash([]);
-ctx.beginPath();ctx.ellipse(cx,cy,3*S,2*S,0,0,Math.PI*2);ctx.strokeStyle='#176cae';ctx.lineWidth=4;ctx.stroke();
+if(progress>0){ctx.beginPath();for(let d=0;d<=progress;d++){const u=d*Math.PI/180,x=cx+3*S*Math.cos(u),y=cy-2*S*Math.sin(u);if(d===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);}ctx.strokeStyle='#176cae';ctx.lineWidth=4;ctx.lineJoin='round';ctx.stroke();}
 const q=[cx+qx*S,cy-qy*S],p=[cx+px*S,cy-py*S];
 ctx.strokeStyle='#c17835';ctx.lineWidth=2;ctx.setLineDash([5,5]);ctx.beginPath();ctx.moveTo(q[0],q[1]);ctx.lineTo(p[0],p[1]);ctx.stroke();ctx.setLineDash([]);
 for(const [xy,color,label,dy] of [[q,'#dd7733','Q',-13],[p,'#087b8e','P',20]]){ctx.beginPath();ctx.arc(xy[0],xy[1],6,0,Math.PI*2);ctx.fillStyle=color;ctx.fill();ctx.fillStyle=color;ctx.font='bold 19px sans-serif';ctx.fillText(label,xy[0]+10,xy[1]+dy);}
 out.textContent=String(deg);const fmt=v=>Math.abs(v)<.005?'0':v.toFixed(2);info.textContent='Q('+fmt(qx)+', '+fmt(qy)+') → P('+fmt(px)+', '+fmt(py)+')　｜　x座標は同じ、y座標は2/3倍';}
-angle.addEventListener('input',draw);play.addEventListener('click',()=>{if(raf){cancelAnimationFrame(raf);raf=0;play.textContent='▶ 点を動かす';return;}last=0;const tick=now=>{if(!raf)return;if(now-last>35){angle.value=(Number(angle.value)+2)%361;draw();last=now;}raf=requestAnimationFrame(tick);};raf=requestAnimationFrame(tick);play.textContent='■ 一時停止';});
-reset.addEventListener('click',()=>{if(raf){cancelAnimationFrame(raf);raf=0;}play.textContent='▶ 点を動かす';angle.value=45;draw();});window.addEventListener('pagehide',()=>{if(raf)cancelAnimationFrame(raf)});draw();
+angle.addEventListener('input',()=>{progress=Math.max(progress,Number(angle.value));draw();});
+play.addEventListener('click',()=>{if(raf){cancelAnimationFrame(raf);raf=0;play.textContent='▶ 点を動かす';return;}if(Number(angle.value)>=360){angle.value=0;progress=0;draw();}last=0;const tick=now=>{if(!raf)return;if(now-last>35){const next=Math.min(360,Number(angle.value)+2);angle.value=next;progress=Math.max(progress,next);draw();last=now;if(next>=360){cancelAnimationFrame(raf);raf=0;play.textContent='▶ もう一度描く';return;}}raf=requestAnimationFrame(tick);};raf=requestAnimationFrame(tick);play.textContent='■ 一時停止';});
+reset.addEventListener('click',()=>{if(raf){cancelAnimationFrame(raf);raf=0;}play.textContent='▶ 点を動かす';angle.value=0;progress=0;draw();});window.addEventListener('pagehide',()=>{if(raf)cancelAnimationFrame(raf)});draw();
 })();
 </script></body></html>
