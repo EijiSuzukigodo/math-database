@@ -111,23 +111,29 @@ window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},opt
 <p class="small">灰色の破線：もとの円／青色：点 \(P\) が通った軌跡。初めは楕円を描かず、点 \(Q\) の移動に合わせて少しずつ描きます。点 \(H\) は \(Q\) と \(P\) から (x) 軸に下ろした垂線の足です。</p>
 <p id="circlePointInfo" class="small" aria-live="polite"></p></div></div>
 <h3>同じように考えてみよう</h3>
-<p>今度は計算をせず、円の<strong>横幅と縦幅がどう変わるか</strong>に注目しましょう。</p>
-<div class="mini"><p><strong>① \(y\) 軸方向に拡大</strong>　横幅はそのまま、縦幅だけ大きくなります。</p><p><strong>② \(x\) 軸方向に縮小</strong>　縦幅はそのまま、横幅だけ小さくなります。</p><p><strong>③ \(x\) 軸方向に拡大</strong>　縦幅はそのまま、横幅だけ大きくなります。</p></div>
-<div class="mini" style="margin-top:12px"><h3>①②③の具体例</h3><p>いずれも、もとの円は \(x^2+y^2=9\)（半径 \(3\)）です。<strong>変わらない方向の半径はそのまま</strong>で考えましょう。</p>
-<p><strong>① \(y\) 軸方向に \(2\) 倍に拡大</strong>：横半径 \(3\)、縦半径 \(6\)</p><div class="formula eq">\[\boxed{\dfrac{x^2}{9}+\dfrac{y^2}{36}=1}\]</div>
-<p><strong>② \(x\) 軸方向に \(\dfrac{1}{2}\) 倍に縮小</strong>：横半径 \(\dfrac{3}{2}\)、縦半径 \(3\)</p><div class="formula eq">\[\boxed{\dfrac{x^2}{\frac{9}{4}}+\dfrac{y^2}{9}=1}\]</div>
-<p><strong>③ \(x\) 軸方向に \(2\) 倍に拡大</strong>：横半径 \(6\)、縦半径 \(3\)</p><div class="formula eq">\[\boxed{\dfrac{x^2}{36}+\dfrac{y^2}{9}=1}\]</div></div>
-<p class="hint">縦方向に伸び縮みさせるときは \(y\) 座標だけ、横方向に伸び縮みさせるときは \(x\) 座標だけが変わります。</p>
-<h3>動くグラフ　一定の楕円を上下・左右に伸縮する</h3>
-<p>ここでは、<strong>もとの楕円 \(\dfrac{x^2}{9}+\dfrac{y^2}{4}=1\) を固定</strong>します。横方向・縦方向の倍率を別々に動かして、形の変化を確かめましょう。</p>
-<div class="controls">
-<div class="control"><label for="scaleX">左右（\(x\) 軸方向）の倍率：<output id="scaleXOut">1.00</output> 倍</label><input id="scaleX" type="range" min="0.4" max="1.8" step="0.05" value="1"></div>
-<div class="control"><label for="scaleY">上下（\(y\) 軸方向）の倍率：<output id="scaleYOut">1.00</output> 倍</label><input id="scaleY" type="range" min="0.4" max="1.8" step="0.05" value="1"></div>
+<p>もとの円は、半径 \(3\) の <strong>\(x^2+y^2=9\)</strong> です。横半径・縦半径の変化から、計算をせずに楕円の方程式を考えてみましょう。</p>
+<div class="ellipse-example-layout ellipse-scale-layout">
+<div class="ellipse-example-explain">
+<div class="mini"><p><strong>① \(y\) 軸方向に拡大</strong>　横幅はそのまま、縦幅だけ大きくなります。</p>
+<p><strong>具体例：\(y\) 軸方向に \(2\) 倍</strong>　横半径 \(3\)、縦半径 \(6\)</p>
+<div class="formula eq">\[\boxed{\dfrac{x^2}{9}+\dfrac{y^2}{36}=1}\]</div></div>
+<div class="mini" style="margin-top:12px"><p><strong>② \(x\) 軸方向に縮小</strong>　縦幅はそのまま、横幅だけ小さくなります。</p>
+<p><strong>具体例：\(x\) 軸方向に \(\dfrac{1}{2}\) 倍</strong>　横半径 \(\dfrac{3}{2}\)、縦半径 \(3\)</p>
+<div class="formula eq">\[\boxed{\dfrac{x^2}{\frac94}+\dfrac{y^2}{9}=1}\]</div></div>
+<div class="mini" style="margin-top:12px"><p><strong>③ \(x\) 軸方向に拡大</strong>　縦幅はそのまま、横幅だけ大きくなります。</p>
+<p><strong>具体例：\(x\) 軸方向に \(2\) 倍</strong>　横半径 \(6\)、縦半径 \(3\)</p>
+<div class="formula eq">\[\boxed{\dfrac{x^2}{36}+\dfrac{y^2}{9}=1}\]</div></div>
 </div>
-<canvas id="scale" class="graph" width="860" height="500" role="img" aria-label="固定した楕円と、左右および上下方向に拡大縮小した楕円を重ねて表示する動くグラフ"></canvas>
-<p class="small">灰色の破線：もとの楕円（固定）／青色の実線：拡大・縮小した楕円。座標の目盛りは固定されています。</p>
-<p id="scaleDescription" class="hint" aria-live="polite">左右・上下ともに1倍なので、もとの楕円と重なっています。</p>
+<div class="ellipse-example-visual">
+<p><strong>動くグラフ　円を上下・左右に拡大縮小</strong></p>
+<p class="small">灰色の点線は、もとの円 \(x^2+y^2=9\) です。倍率を動かして青い曲線と比べましょう。</p>
+<canvas id="scale" class="graph" width="560" height="560" role="img" aria-label="固定した点線の円と、左右・上下に拡大縮小する青色の楕円を比較するグラフ"></canvas>
+<div class="control"><label for="scaleX">左右（\(x\) 軸方向）の倍率：<output id="scaleXOut">1.00</output> 倍</label><input id="scaleX" type="range" min="0.4" max="2" step="0.05" value="1"></div>
+<div class="control"><label for="scaleY">上下（\(y\) 軸方向）の倍率：<output id="scaleYOut">1.00</output> 倍</label><input id="scaleY" type="range" min="0.4" max="2" step="0.05" value="1"></div>
+<p id="scaleDescription" class="small" aria-live="polite">左右・上下ともに1倍なので、もとの円と重なっています。</p>
 <button id="scaleReset" type="button">倍率を1倍に戻す</button>
+</div></div>
+<p class="hint">縦方向に伸び縮みさせるときは \(y\) 座標だけ、横方向に伸び縮みさせるときは \(x\) 座標だけが変わります。</p>
 </section>
 <section class="card" id="locus"><h2>2．線分の内分点が描く軌跡</h2><p>長さ L=5 の線分 AB の端点 A は x 軸上、端点 B は y 軸上を動きます。P は AB を <strong>AP:PB = 2:3</strong> に内分するとします。</p>
 <p>A=(s, 0)、B=(0, t) とすれば、<strong>\(s^2+t^2=25\)</strong>。内分点の公式から P=\(\left(\frac{3s}{5},\frac{2t}{5}\right)\) なので、</p><div class="formula eq">\[\boxed{\frac{x^2}{3^2}+\frac{y^2}{2^2}=1}\]</div>
@@ -146,7 +152,7 @@ function dot(ctx,x,y,color,label,dx=10,dy=-10){ctx.beginPath();ctx.fillStyle=col
 function base(ctx,W,H,S,extent=7){ctx.clearRect(0,0,W,H);ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);const cx=W/2,cy=H/2;ctx.strokeStyle='#e5edf3';ctx.lineWidth=1;for(let i=-Math.ceil(extent);i<=extent;i++){let x=cx+i*S,y=cy+i*S;line(ctx,x,0,x,H,'#e5edf3',1);line(ctx,0,y,W,y,'#e5edf3',1);}line(ctx,0,cy,W,cy,'#657789',2);line(ctx,cx,0,cx,H,'#657789',2);ctx.fillStyle='#51687b';ctx.font='17px sans-serif';ctx.fillText('x',W-27,cy-12);ctx.fillText('y',cx+10,22);ctx.fillText('O',cx+8,cy+21);return{cx,cy};}
 function ellipsePath(ctx,S,rx,ry,cx,cy,color='#176cae',w=4,dash=[]){ctx.beginPath();ctx.ellipse(cx,cy,rx*S,ry*S,0,0,PI*2);ctx.strokeStyle=color;ctx.lineWidth=w;ctx.setLineDash(dash);ctx.stroke();ctx.setLineDash([]);}
 function drawEllipse(){let {ctx,W,H}=setup('ellipse'),a=+$('a').value,r=+$('ratio').value,c=a*r,b=Math.sqrt(a*a-c*c),t=+$('t').value*PI/180,S=Math.min((W-110)/(2*a+1.0),(H-95)/(2*a+1));let {cx,cy}=base(ctx,W,H,S,a+1);let X=a*Math.cos(t),Y=b*Math.sin(t),p=xray(ctx,W,H,S,X,Y),f1=xray(ctx,W,H,S,-c,0),f2=xray(ctx,W,H,S,c,0);ellipsePath(ctx,S,a,b,cx,cy);line(ctx,f1[0],f1[1],p[0],p[1],'#ed8139',3);line(ctx,f2[0],f2[1],p[0],p[1],'#17a08a',3);dot(ctx,f1[0],f1[1],'#ed8139','F₁',-29,-12);dot(ctx,f2[0],f2[1],'#17a08a','F₂',8,-12);dot(ctx,p[0],p[1],'#b34ec0','P');let r1=Math.hypot(X+c,Y),r2=Math.hypot(X-c,Y);$('aOut').textContent=a.toFixed(1);$('ratioOut').textContent=r.toFixed(2);$('tOut').textContent=$('t').value;$('values').textContent=`b = ${fmt(b)}　c = ${fmt(c)}　｜　PF₁ = ${fmt(r1)}　PF₂ = ${fmt(r2)}　和 = ${fmt(r1+r2)} （2a = ${fmt(2*a)}）`;}
-function drawScale(){let {ctx,W,H}=setup('scale'),sx=+$('scaleX').value,sy=+$('scaleY').value,S=54;let {cx,cy}=base(ctx,W,H,S,7);ellipsePath(ctx,S,3,2,cx,cy,'#9daaba',3,[11,7]);ellipsePath(ctx,S,3*sx,2*sy,cx,cy,'#176cae',4);$('scaleXOut').textContent=sx.toFixed(2);$('scaleYOut').textContent=sy.toFixed(2);const label=v=>Math.abs(v-1)<.001?'そのまま':v<1?'縮小':'拡大';$('scaleDescription').textContent='左右：'+label(sx)+'（'+sx.toFixed(2)+'倍）／上下：'+label(sy)+'（'+sy.toFixed(2)+'倍）。灰色の楕円を基準に形を比べましょう。';}
+function drawScale(){let {ctx,W,H}=setup('scale'),sx=+$('scaleX').value,sy=+$('scaleY').value,S=39;let {cx,cy}=base(ctx,W,H,S,7);ellipsePath(ctx,S,3,3,cx,cy,'#9daaba',3,[9,7]);ellipsePath(ctx,S,3*sx,3*sy,cx,cy,'#176cae',4);$('scaleXOut').textContent=sx.toFixed(2);$('scaleYOut').textContent=sy.toFixed(2);const label=v=>Math.abs(v-1)<.001?'そのまま':v<1?'縮小':'拡大';$('scaleDescription').textContent='左右：'+label(sx)+'（'+sx.toFixed(2)+'倍）／上下：'+label(sy)+'（'+sy.toFixed(2)+'倍）。灰色の点線の円と比べましょう。';}
 function drawLocus(){let {ctx,W,H}=setup('locusGraph'),S=44,L=5,ang=+$('locusT').value*PI/180;let {cx,cy}=base(ctx,W,H,S,6);ellipsePath(ctx,S,3,2,cx,cy,'#176cae',4);let s=L*Math.cos(ang),t=L*Math.sin(ang),PX=3*s/5,PY=2*t/5;let A=xray(ctx,W,H,S,s,0),B=xray(ctx,W,H,S,0,t),P=xray(ctx,W,H,S,PX,PY);line(ctx,...A,...B,'#de8a43',4);dot(ctx,...A,'#ed8139','A');dot(ctx,...B,'#ed8139','B');dot(ctx,...P,'#0b918a','P');$('locusOut').textContent=$('locusT').value;}
 $('scaleX').addEventListener('input',drawScale);$('scaleY').addEventListener('input',drawScale);$('scaleReset').addEventListener('click',()=>{$('scaleX').value=1;$('scaleY').value=1;drawScale();});$('locusT').addEventListener('input',drawLocus);
 if($('play'))$('play').addEventListener('click',()=>{if(animation){cancelAnimationFrame(animation);animation=null;$('play').textContent='▶ 点Pを動かす';return;}let last=0;const move=now=>{if(!animation)return;if(now-last>30){$('t').value=(+$('t').value+2)%361;drawEllipse();last=now;}animation=requestAnimationFrame(move);};animation=requestAnimationFrame(move);$('play').textContent='■ 一時停止';});
