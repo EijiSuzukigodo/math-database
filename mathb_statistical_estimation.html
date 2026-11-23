@@ -15,14 +15,21 @@
 <p>それでは、なぜこの範囲を計算できるのか、標本平均の分布と正規分布を使って説明しましょう。</p>
 <h3>標本平均の分布から信頼区間を導く</h3>
 <p>母平均を \(m\)、母標準偏差を \(\sigma\)、標本の大きさを \(n\) とします。\(n\) が十分大きいとき、標本平均 \(\overline X\) は近似的に正規分布 \(N\left(m,\dfrac{\sigma^2}{n}\right)\) に従います。</p>
-<p>そこで、標本平均を標準化した確率変数を</p><div class="math">\[Z=\dfrac{\sqrt n(\overline X-m)}{\sigma}\]</div>
+<p>そこで、標本平均を標準化した確率変数を</p><div class="math">\[Z=\dfrac{\overline X-m}{\dfrac{\sigma}{\sqrt n}}\]</div>
 <p>とおくと、\(Z\) は近似的に標準正規分布 \(N(0,1)\) に従います。標準正規分布の中央約95％に対応する範囲は、</p>
 <div class="math">\[P(-1.96\leqq Z\leqq1.96)\fallingdotseq0.95\]</div>
 <p>です。これに \(Z\) の式を代入して、次のように変形します。</p>
-<div class="math">\[-1.96\leqq\dfrac{\sqrt n(\overline X-m)}{\sigma}\leqq1.96\]</div>
+<div class="math">\[-1.96\leqq\dfrac{\overline X-m}{\dfrac{\sigma}{\sqrt n}}\leqq1.96\]</div>
 <div class="math">\[-1.96\frac{\sigma}{\sqrt n}\leqq\overline X-m\leqq1.96\frac{\sigma}{\sqrt n}\]</div>
 <div class="math">\[\overline X-1.96\frac{\sigma}{\sqrt n}\leqq m\leqq\overline X+1.96\frac{\sigma}{\sqrt n}\]</div>
 <p>標本から求めた標本平均を代入すれば、母平均 \(m\) に対する信頼度95％の信頼区間が得られます。母標準偏差がわかっている場合の公式です。</p><h3>信頼度95％の意味</h3><p>同じ方法で標本抽出を繰り返して信頼区間を作ると、その約95％が真の母平均を含むという意味です。</p><div class="info">標本を1回抽出して得た区間について、母平均そのものが95％の確率で変動するという意味ではありません。</div>
+<h3>母標準偏差がわからないとき</h3>
+<p>実際の調査では、母平均だけでなく、母標準偏差 \(\sigma\) もわからないことが多くあります。その場合、無作為に取り出した標本から<strong>標本標準偏差 \(s\)</strong> を計算し、母標準偏差の代わりに用いることを考えます。</p>
+<div class="math">\[s=\sqrt{\frac{1}{n}\sum_{i=1}^{n}(X_i-\overline X)^2}\]</div>
+<p>標本の大きさ \(n\) が十分大きいとき、標本標準偏差 \(s\) は母標準偏差 \(\sigma\) に近い値になると考えられます。そこで、母平均の95％信頼区間を近似的に</p>
+<div class="math">\[\overline X-1.96\frac{s}{\sqrt n}\leqq m\leqq\overline X+1.96\frac{s}{\sqrt n}\]</div>
+<p>として求めることができます。例えば、次の「米の購入量」の例題では、母標準偏差がわからないため、標本標準偏差30.6kgを使います。</p>
+<div class="info">※この方法は標本の大きさが十分大きい場合の近似です。標本数が小さく、母集団が正規分布に従うときには、大学数学では通常、標本から求めた不偏分散と <i>t</i> 分布を使って信頼区間を求めます。</div>
 <h3>母平均の推定の例題</h3><div class="example"><strong>例題1　食塩の袋の重さ</strong><p>大量に生産された食塩の袋から100個を無作為に抽出したところ、平均の重さは297.4gであった。母標準偏差を7.5gとして、母平均を信頼度95％で推定しなさい。</p></div><div class="answer"><strong>解答</strong><div class="math">\[297.4\pm1.96\times\frac{7.5}{\sqrt{100}}=297.4\pm1.47\]</div><div class="math">\[\boxed{295.93\leqq m\leqq298.87}\]</div><p>よって信頼区間は295.93g以上298.87g以下です。</p></div>
 <div class="example"><strong>例題2　米の購入量</strong><p>2500世帯を無作為に抽出したところ、年間の米購入量の平均は85.0kg、標本標準偏差は30.6kgであった。標本数が十分大きいとして、母平均を信頼度95％で推定しなさい。</p></div><div class="answer"><strong>解答</strong><p>母標準偏差を標本標準偏差30.6kgで近似します。</p><div class="math">\[85.0\pm1.96\times\frac{30.6}{\sqrt{2500}}\fallingdotseq85.0\pm1.20\]</div><div class="math">\[\boxed{83.8\leqq m\leqq86.2}\]</div><p>よって信頼区間は約83.8kg以上86.2kg以下です。</p></div>
 <h3>信頼区間の幅と標本の大きさ</h3>
