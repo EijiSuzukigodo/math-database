@@ -108,7 +108,7 @@ window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},opt
 <canvas id="circleToEllipse" class="graph" width="560" height="510" role="img" aria-label="円上の点Qが動くと、縦座標を3分の2倍した楕円上の点Pが連動して動くグラフ"></canvas>
 <div class="control"><label for="circlePointAngle">円上の点 \(Q\) の位置：<output id="circlePointAngleOut">0</output>°</label><input id="circlePointAngle" type="range" min="0" max="360" step="1" value="0"></div>
 <div class="btns"><button type="button" id="circlePointPlay">▶ 点を動かす</button><button type="button" id="circlePointReset">最初に戻す</button></div>
-<p class="small">灰色の破線：もとの円／青色：点 \(P\) が通った軌跡。初めは楕円を描かず、点 \(Q\) の移動に合わせて少しずつ描きます。</p>
+<p class="small">灰色の破線：もとの円／青色：点 \(P\) が通った軌跡。初めは楕円を描かず、点 \(Q\) の移動に合わせて少しずつ描きます。点 \(H\) は \(Q\) と \(P\) から (x) 軸に下ろした垂線の足です。</p>
 <p id="circlePointInfo" class="small" aria-live="polite"></p></div></div>
 <h3>同じように考えてみよう</h3>
 <p>今度は計算をせず、円の<strong>横幅と縦幅がどう変わるか</strong>に注目しましょう。</p>
@@ -166,9 +166,10 @@ ctx.fillStyle='#40586c';ctx.font='17px sans-serif';ctx.fillText('O',cx+8,cy+20);
 for(const n of [-3,-2,-1,1,2,3]){ctx.fillText(String(n),cx+n*S-6,cy+20);ctx.fillText(String(n),cx+8,cy-n*S+6);}
 ctx.beginPath();ctx.ellipse(cx,cy,3*S,3*S,0,0,Math.PI*2);ctx.strokeStyle='#9baab9';ctx.lineWidth=3;ctx.setLineDash([9,7]);ctx.stroke();ctx.setLineDash([]);
 if(progress>0){ctx.beginPath();for(let d=0;d<=progress;d++){const u=d*Math.PI/180,x=cx+3*S*Math.cos(u),y=cy-2*S*Math.sin(u);if(d===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);}ctx.strokeStyle='#176cae';ctx.lineWidth=4;ctx.lineJoin='round';ctx.stroke();}
-const q=[cx+qx*S,cy-qy*S],p=[cx+px*S,cy-py*S];
+const q=[cx+qx*S,cy-qy*S],p=[cx+px*S,cy-py*S],h=[cx+qx*S,cy];
 ctx.strokeStyle='#c17835';ctx.lineWidth=2;ctx.setLineDash([5,5]);ctx.beginPath();ctx.moveTo(q[0],q[1]);ctx.lineTo(p[0],p[1]);ctx.stroke();ctx.setLineDash([]);
-for(const [xy,color,label,dy] of [[q,'#dd7733','Q',-13],[p,'#087b8e','P',20]]){ctx.beginPath();ctx.arc(xy[0],xy[1],6,0,Math.PI*2);ctx.fillStyle=color;ctx.fill();ctx.fillStyle=color;ctx.font='bold 19px sans-serif';ctx.fillText(label,xy[0]+10,xy[1]+dy);}
+ctx.strokeStyle='#8d9cac';ctx.lineWidth=1.5;ctx.setLineDash([4,5]);ctx.beginPath();ctx.moveTo(h[0],h[1]);ctx.lineTo(q[0],q[1]);ctx.stroke();ctx.setLineDash([]);
+for(const [xy,color,label,dy] of [[q,'#dd7733','Q',-13],[p,'#087b8e','P',20],[h,'#7656a4','H',23]]){ctx.beginPath();ctx.arc(xy[0],xy[1],6,0,Math.PI*2);ctx.fillStyle=color;ctx.fill();ctx.fillStyle=color;ctx.font='bold 19px sans-serif';ctx.fillText(label,xy[0]+10,xy[1]+dy);}
 out.textContent=String(deg);const fmt=v=>Math.abs(v)<.005?'0':v.toFixed(2);info.textContent='Q('+fmt(qx)+', '+fmt(qy)+') → P('+fmt(px)+', '+fmt(py)+')　｜　x座標は同じ、y座標は2/3倍';}
 angle.addEventListener('input',()=>{progress=Math.max(progress,Number(angle.value));draw();});
 play.addEventListener('click',()=>{if(raf){cancelAnimationFrame(raf);raf=0;play.textContent='▶ 点を動かす';return;}if(Number(angle.value)>=360){angle.value=0;progress=0;draw();}last=0;const tick=now=>{if(!raf)return;if(now-last>35){const next=Math.min(360,Number(angle.value)+2);angle.value=next;progress=Math.max(progress,next);draw();last=now;if(next>=360){cancelAnimationFrame(raf);raf=0;play.textContent='▶ もう一度描く';return;}}raf=requestAnimationFrame(tick);};raf=requestAnimationFrame(tick);play.textContent='■ 一時停止';});
