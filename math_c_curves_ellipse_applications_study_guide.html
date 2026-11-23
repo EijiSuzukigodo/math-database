@@ -135,12 +135,31 @@ window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},opt
 </div></div>
 <p class="hint">縦方向に伸び縮みさせるときは \(y\) 座標だけ、横方向に伸び縮みさせるときは \(x\) 座標だけが変わります。</p>
 </section>
-<section class="card" id="locus"><h2>2．線分の内分点が描く軌跡</h2><p>長さ L=5 の線分 AB の端点 A は x 軸上、端点 B は y 軸上を動きます。P は AB を <strong>AP:PB = 2:3</strong> に内分するとします。</p>
-<p>A=(s, 0)、B=(0, t) とすれば、<strong>\(s^2+t^2=25\)</strong>。内分点の公式から P=\(\left(\frac{3s}{5},\frac{2t}{5}\right)\) なので、</p><div class="formula eq">\[\boxed{\frac{x^2}{3^2}+\frac{y^2}{2^2}=1}\]</div>
-<div class="control"><label for="locusT">線分 AB の位置：<output id="locusOut">40</output>°</label><input id="locusT" type="range" min="0" max="360" step="1" value="40"></div>
-<canvas id="locusGraph" class="graph" width="860" height="450" role="img" aria-label="両端が座標軸上を動く線分ABと、その内分点Pが描く楕円"></canvas>
-<p class="hint">点Pの軌跡は、半径 3 と 2 の楕円です。内分点の位置を座標で表し、端点の条件を代入するのがポイントです。</p>
-<div class="btns"><button hidden="" aria-hidden="true" tabindex="-1" style="display:none!important" type="button" class="speak" data-speak="両端が座標軸上を動く、長さ5の線分を考えます。点Pが線分を2対3に内分するとき、Pのx座標はAのx座標の5分の3、y座標はBのy座標の5分の2です。AとBの座標の2乗の和が25であることを使うと、Pの軌跡は横半径3、縦半径2の楕円になることが分かります。">▶ 軌跡の解説を読み上げる</button><button hidden="" aria-hidden="true" tabindex="-1" style="display:none!important" class="ghost stopSpeech" type="button">■ 読み上げ停止</button></div></section>
+<section class="card" id="locus"><h2>2．線分の内分点が描く軌跡</h2>
+<div class="ellipse-example-layout">
+<div class="ellipse-example-explain">
+<h3>例題</h3><p>長さ \(5\) の線分 \(AB\) の端点 \(A\) は \(x\) 軸上、端点 \(B\) は \(y\) 軸上を動く。線分 \(AB\) を \(AP:PB=2:3\) に内分する点 \(P(x,y)\) の軌跡を求めよ。</p>
+<h3>解答</h3>
+<p>\(A(s,0),\ B(0,t)\) とおく。\(AB=5\) より、</p>
+<div class="formula eq">\[s^2+t^2=25\qquad\cdots\text{①}\]</div>
+<p>\(P\) は \(AB\) を \(2:3\) に内分するので、内分点の公式より、</p>
+<div class="formula eq">\[x=\dfrac{3s+2\cdot0}{5}=\dfrac35s,\qquad y=\dfrac{3\cdot0+2t}{5}=\dfrac25t\]</div>
+<p>ゆえに、</p>
+<div class="formula eq">\[s=\dfrac53x,\qquad t=\dfrac52y\]</div>
+<p>これを①に代入すると、</p>
+<div class="formula eq">\[\left(\dfrac53x\right)^2+\left(\dfrac52y\right)^2=25\]</div>
+<div class="formula eq">\[\boxed{\dfrac{x^2}{9}+\dfrac{y^2}{4}=1}\]</div>
+<p>したがって、点 \(P\) の軌跡は、原点を中心とし、横半径 \(3\)、縦半径 \(2\) の<strong>楕円</strong>である。</p>
+</div>
+<div class="ellipse-example-visual">
+<p><strong>動くグラフ　内分点 \(P\) の軌跡</strong></p>
+<p class="small">線分 \(AB\) の両端が座標軸上を動くと、点 \(P\) が通ったところに青い曲線が描かれます。最初は楕円を表示しません。</p>
+<canvas id="locusGraph" class="graph" width="560" height="560" role="img" aria-label="座標軸上を動くAとBを結ぶ長さ5の線分と、内分点Pが移動するにつれ描かれる楕円の軌跡"></canvas>
+<div class="control"><label for="locusT">線分 \(AB\) の位置：<output id="locusOut">0</output>°</label><input id="locusT" type="range" min="0" max="360" step="1" value="0"></div>
+<div class="btns"><button id="locusPlay" type="button">▶ 点を動かす</button><button id="locusReset" type="button">最初に戻す</button></div>
+<p id="locusInfo" class="small" aria-live="polite"></p>
+</div></div>
+</section>
 
 <section class="card"><h2 id="hs-summary">学習のまとめ</h2><p>円の一方向への伸縮は楕円を生みます。また、線分の内分点の座標を式で表すことで、その軌跡が楕円になることを確かめられます。</p><p></p></section>
 <p><a href="math_c_curves_ellipse_study_guide.html">← 楕円の基本に戻る</a></p><nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav></main><script>
@@ -153,8 +172,16 @@ function base(ctx,W,H,S,extent=7){ctx.clearRect(0,0,W,H);ctx.fillStyle='#fff';ct
 function ellipsePath(ctx,S,rx,ry,cx,cy,color='#176cae',w=4,dash=[]){ctx.beginPath();ctx.ellipse(cx,cy,rx*S,ry*S,0,0,PI*2);ctx.strokeStyle=color;ctx.lineWidth=w;ctx.setLineDash(dash);ctx.stroke();ctx.setLineDash([]);}
 function drawEllipse(){let {ctx,W,H}=setup('ellipse'),a=+$('a').value,r=+$('ratio').value,c=a*r,b=Math.sqrt(a*a-c*c),t=+$('t').value*PI/180,S=Math.min((W-110)/(2*a+1.0),(H-95)/(2*a+1));let {cx,cy}=base(ctx,W,H,S,a+1);let X=a*Math.cos(t),Y=b*Math.sin(t),p=xray(ctx,W,H,S,X,Y),f1=xray(ctx,W,H,S,-c,0),f2=xray(ctx,W,H,S,c,0);ellipsePath(ctx,S,a,b,cx,cy);line(ctx,f1[0],f1[1],p[0],p[1],'#ed8139',3);line(ctx,f2[0],f2[1],p[0],p[1],'#17a08a',3);dot(ctx,f1[0],f1[1],'#ed8139','F₁',-29,-12);dot(ctx,f2[0],f2[1],'#17a08a','F₂',8,-12);dot(ctx,p[0],p[1],'#b34ec0','P');let r1=Math.hypot(X+c,Y),r2=Math.hypot(X-c,Y);$('aOut').textContent=a.toFixed(1);$('ratioOut').textContent=r.toFixed(2);$('tOut').textContent=$('t').value;$('values').textContent=`b = ${fmt(b)}　c = ${fmt(c)}　｜　PF₁ = ${fmt(r1)}　PF₂ = ${fmt(r2)}　和 = ${fmt(r1+r2)} （2a = ${fmt(2*a)}）`;}
 function drawScale(){let {ctx,W,H}=setup('scale'),sx=+$('scaleX').value,sy=+$('scaleY').value,S=39;let {cx,cy}=base(ctx,W,H,S,7);ellipsePath(ctx,S,3,3,cx,cy,'#9daaba',3,[9,7]);ellipsePath(ctx,S,3*sx,3*sy,cx,cy,'#176cae',4);$('scaleXOut').textContent=sx.toFixed(2);$('scaleYOut').textContent=sy.toFixed(2);const label=v=>Math.abs(v-1)<.001?'そのまま':v<1?'縮小':'拡大';$('scaleDescription').textContent='左右：'+label(sx)+'（'+sx.toFixed(2)+'倍）／上下：'+label(sy)+'（'+sy.toFixed(2)+'倍）。灰色の点線の円と比べましょう。';}
-function drawLocus(){let {ctx,W,H}=setup('locusGraph'),S=44,L=5,ang=+$('locusT').value*PI/180;let {cx,cy}=base(ctx,W,H,S,6);ellipsePath(ctx,S,3,2,cx,cy,'#176cae',4);let s=L*Math.cos(ang),t=L*Math.sin(ang),PX=3*s/5,PY=2*t/5;let A=xray(ctx,W,H,S,s,0),B=xray(ctx,W,H,S,0,t),P=xray(ctx,W,H,S,PX,PY);line(ctx,...A,...B,'#de8a43',4);dot(ctx,...A,'#ed8139','A');dot(ctx,...B,'#ed8139','B');dot(ctx,...P,'#0b918a','P');$('locusOut').textContent=$('locusT').value;}
-$('scaleX').addEventListener('input',()=>{$('scaleY').value=1;drawScale();});$('scaleY').addEventListener('input',()=>{$('scaleX').value=1;drawScale();});$('scaleReset').addEventListener('click',()=>{$('scaleX').value=1;$('scaleY').value=1;drawScale();});$('locusT').addEventListener('input',drawLocus);
+let locusProgress=0,locusRaf=0,locusLast=0;
+function drawLocus(){let {ctx,W,H}=setup('locusGraph'),S=39,L=5,deg=+$('locusT').value,ang=deg*PI/180;let {cx,cy}=base(ctx,W,H,S,7);let sv=L*Math.cos(ang),tv=L*Math.sin(ang),PX=3*sv/5,PY=2*tv/5;let A=xray(ctx,W,H,S,sv,0),B=xray(ctx,W,H,S,0,tv),P=xray(ctx,W,H,S,PX,PY);
+if(locusProgress>0){ctx.beginPath();for(let d=0;d<=locusProgress;d++){let u=d*PI/180,x=cx+3*S*Math.cos(u),y=cy-2*S*Math.sin(u);if(d===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);}ctx.strokeStyle='#176cae';ctx.lineWidth=4;ctx.lineJoin='round';ctx.stroke();}
+line(ctx,...A,...B,'#de8a43',3);dot(ctx,...A,'#ed8139','A');dot(ctx,...B,'#ed8139','B');dot(ctx,...P,'#0b918a','P');$('locusOut').textContent=deg;const fmt=v=>Math.abs(v)<.005?'0':v.toFixed(2);$('locusInfo').textContent='A('+fmt(sv)+', 0)　B(0, '+fmt(tv)+')　P('+fmt(PX)+', '+fmt(PY)+')';}
+function stopLocus(){if(locusRaf){cancelAnimationFrame(locusRaf);locusRaf=0;}$('locusPlay').textContent='▶ 点を動かす';}
+$('locusT').addEventListener('input',()=>{locusProgress=Math.max(locusProgress,+$('locusT').value);drawLocus();});
+$('locusPlay').addEventListener('click',()=>{if(locusRaf){stopLocus();return;}if(+$('locusT').value>=360){$('locusT').value=0;locusProgress=0;drawLocus();}locusLast=0;const tick=now=>{if(!locusRaf)return;if(now-locusLast>35){const d=Math.min(360,+$('locusT').value+2);$('locusT').value=d;locusProgress=Math.max(locusProgress,d);drawLocus();locusLast=now;if(d>=360){stopLocus();$('locusPlay').textContent='▶ もう一度描く';return;}}locusRaf=requestAnimationFrame(tick);};locusRaf=requestAnimationFrame(tick);$('locusPlay').textContent='■ 一時停止';});
+$('locusReset').addEventListener('click',()=>{stopLocus();$('locusT').value=0;locusProgress=0;drawLocus();});
+window.addEventListener('pagehide',stopLocus);
+$('scaleX').addEventListener('input',()=>{$('scaleY').value=1;drawScale();});$('scaleY').addEventListener('input',()=>{$('scaleX').value=1;drawScale();});$('scaleReset').addEventListener('click',()=>{$('scaleX').value=1;$('scaleY').value=1;drawScale();});
 if($('play'))$('play').addEventListener('click',()=>{if(animation){cancelAnimationFrame(animation);animation=null;$('play').textContent='▶ 点Pを動かす';return;}let last=0;const move=now=>{if(!animation)return;if(now-last>30){$('t').value=(+$('t').value+2)%361;drawEllipse();last=now;}animation=requestAnimationFrame(move);};animation=requestAnimationFrame(move);$('play').textContent='■ 一時停止';});
 if($('reset'))$('reset').addEventListener('click',()=>{$('a').value=4;$('ratio').value=.65;$('t').value=50;drawEllipse();});
 function stop(){if('speechSynthesis'in window)window.speechSynthesis.cancel();}document.querySelectorAll('.stopSpeech').forEach(b=>b.addEventListener('click',stop));document.querySelectorAll('[data-speak]').forEach(b=>b.addEventListener('click',()=>{if(!('speechSynthesis'in window)){alert('このブラウザでは音声読み上げが利用できません。Safariでお試しください。');return;}stop();const msg=new SpeechSynthesisUtterance(b.dataset.speak);msg.lang='ja-JP';msg.rate=.88;let voices=window.speechSynthesis.getVoices(),v=voices.find(v=>v.lang.toLowerCase()==='ja-jp')||voices.find(v=>v.lang.toLowerCase().startsWith('ja'));if(v)msg.voice=v;window.speechSynthesis.speak(msg);}));window.addEventListener('pagehide',()=>{stop();if(animation)cancelAnimationFrame(animation)});
