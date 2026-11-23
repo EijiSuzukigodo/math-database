@@ -160,6 +160,34 @@ window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},opt
 <p id="locusInfo" class="small" aria-live="polite"></p>
 </div></div>
 </section>
+<section class="card" id="external-locus"><h2>3．線分の外分点が描く軌跡</h2>
+<div class="ellipse-example-layout">
+<div class="ellipse-example-explain">
+<h3>例題</h3>
+<p>長さ \(5\) の線分 \(AB\) の端点 \(A\) は \(x\) 軸上、端点 \(B\) は \(y\) 軸上を動く。線分 \(AB\) を \(AP:PB=2:3\) に<strong>外分</strong>する点 \(P(x,y)\) の軌跡を求めよ。</p>
+<h3>解答</h3>
+<p>\(A(s,0),\ B(0,t)\) とおく。\(AB=5\) より、</p>
+<div class="formula eq">\[s^2+t^2=25\qquad\cdots\text{①}\]</div>
+<p>外分点の公式より、</p>
+<div class="formula eq">\[x=\dfrac{3s-2\cdot0}{3-2}=3s,\qquad y=\dfrac{3\cdot0-2t}{3-2}=-2t\]</div>
+<p>ゆえに、</p>
+<div class="formula eq">\[s=\dfrac{x}{3},\qquad t=-\dfrac{y}{2}\]</div>
+<p>これを①に代入すると、</p>
+<div class="formula eq">\[\left(\dfrac{x}{3}\right)^2+\left(-\dfrac{y}{2}\right)^2=25\]</div>
+<div class="formula eq">\[\boxed{\dfrac{x^2}{225}+\dfrac{y^2}{100}=1}\]</div>
+<p>したがって、点 \(P\) の軌跡は、原点を中心とし、横半径 \(15\)、縦半径 \(10\) の<strong>楕円</strong>である。</p>
+<p class="hint">内分点は線分 \(AB\) の内側、外分点は線分 \(AB\) の延長上にあります。外分点の公式では、分母と分子の<strong>引き算</strong>に注意しましょう。</p>
+</div>
+<div class="ellipse-example-visual">
+<p><strong>動くグラフ　外分点 \(P\) の軌跡</strong></p>
+<p class="small">\(A\)、\(B\) が動くと、その外分点 \(P\) が連動します。青い曲線は \(P\) が通った部分だけを描き、最初は楕円を表示しません。</p>
+<canvas id="externalLocusGraph" class="graph" width="560" height="560" role="img" aria-label="軸上を動く線分ABの外分点Pが軌跡を描き楕円を完成させるグラフ"></canvas>
+<div class="control"><label for="externalLocusT">線分 \(AB\) の位置：<output id="externalLocusOut">0</output>°</label><input id="externalLocusT" type="range" min="0" max="360" step="1" value="0"></div>
+<div class="btns"><button id="externalLocusPlay" type="button">▶ 点を動かす</button><button id="externalLocusReset" type="button">最初に戻す</button></div>
+<p id="externalLocusInfo" class="small" aria-live="polite"></p>
+<p class="small">※ 外分点は遠くまで動くため、第2節より目盛りを広くしています。</p>
+</div></div>
+</section>
 
 <section class="card"><h2 id="hs-summary">学習のまとめ</h2><p>円の一方向への伸縮は楕円を生みます。また、線分の内分点の座標を式で表すことで、その軌跡が楕円になることを確かめられます。</p><p></p></section>
 <p><a href="math_c_curves_ellipse_study_guide.html">← 楕円の基本に戻る</a></p><nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav></main><script>
@@ -207,5 +235,26 @@ out.textContent=String(deg);const fmt=v=>Math.abs(v)<.005?'0':v.toFixed(2);info.
 angle.addEventListener('input',()=>{progress=Math.max(progress,Number(angle.value));draw();});
 play.addEventListener('click',()=>{if(raf){cancelAnimationFrame(raf);raf=0;play.textContent='▶ 点を動かす';return;}if(Number(angle.value)>=360){angle.value=0;progress=0;draw();}last=0;const tick=now=>{if(!raf)return;if(now-last>35){const next=Math.min(360,Number(angle.value)+2);angle.value=next;progress=Math.max(progress,next);draw();last=now;if(next>=360){cancelAnimationFrame(raf);raf=0;play.textContent='▶ もう一度描く';return;}}raf=requestAnimationFrame(tick);};raf=requestAnimationFrame(tick);play.textContent='■ 一時停止';});
 reset.addEventListener('click',()=>{if(raf){cancelAnimationFrame(raf);raf=0;}play.textContent='▶ 点を動かす';angle.value=0;progress=0;draw();});window.addEventListener('pagehide',()=>{if(raf)cancelAnimationFrame(raf)});draw();
+})();
+</script><script id="external-locus-motion">
+(function(){'use strict';
+const $=id=>document.getElementById(id),canvas=$('externalLocusGraph'),slider=$('externalLocusT'),play=$('externalLocusPlay'),reset=$('externalLocusReset');if(!canvas||!slider||!play||!reset)return;
+const ctx=canvas.getContext('2d'),W=canvas.width,H=canvas.height,S=15,cx=W/2,cy=H/2;let progress=0,raf=0,last=0;
+function draw(){const deg=+slider.value,u=deg*Math.PI/180,s=5*Math.cos(u),t=5*Math.sin(u),px=3*s,py=-2*t;
+ctx.clearRect(0,0,W,H);ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
+ctx.strokeStyle='#e7edf3';ctx.lineWidth=1;for(let n=-18;n<=18;n+=2){ctx.beginPath();ctx.moveTo(cx+n*S,0);ctx.lineTo(cx+n*S,H);ctx.moveTo(0,cy+n*S);ctx.lineTo(W,cy+n*S);ctx.stroke();}
+ctx.strokeStyle='#637b8e';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(0,cy);ctx.lineTo(W,cy);ctx.moveTo(cx,0);ctx.lineTo(cx,H);ctx.stroke();
+ctx.fillStyle='#40586c';ctx.font='15px sans-serif';ctx.fillText('O',cx+7,cy+17);ctx.fillText('x',W-20,cy-10);ctx.fillText('y',cx+10,18);
+for(const n of [-15,-10,-5,5,10,15]){ctx.fillText(String(n),cx+n*S-10,cy+17);ctx.fillText(String(n),cx+7,cy-n*S+5);}
+if(progress>0){ctx.beginPath();for(let d=0;d<=progress;d++){const v=d*Math.PI/180,x=cx+15*S*Math.cos(v),y=cy+10*S*Math.sin(v);if(d===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);}ctx.strokeStyle='#176cae';ctx.lineWidth=4;ctx.lineJoin='round';ctx.stroke();}
+const A=[cx+s*S,cy],B=[cx,cy-t*S],P=[cx+px*S,cy-py*S];
+ctx.strokeStyle='#de8a43';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(...A);ctx.lineTo(...B);ctx.stroke();
+ctx.strokeStyle='#de8a43';ctx.setLineDash([6,5]);ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(...B);ctx.lineTo(...P);ctx.stroke();ctx.setLineDash([]);
+for(const [v,c,label] of [[A,'#ed8139','A'],[B,'#ed8139','B'],[P,'#0b918a','P']]){ctx.beginPath();ctx.arc(v[0],v[1],6,0,Math.PI*2);ctx.fillStyle=c;ctx.fill();ctx.font='bold 18px sans-serif';ctx.fillText(label,v[0]+9,v[1]-10);}
+$('externalLocusOut').textContent=String(deg);const fmt=n=>Math.abs(n)<.005?'0':n.toFixed(2);$('externalLocusInfo').textContent='A('+fmt(s)+', 0)　B(0, '+fmt(t)+')　P('+fmt(px)+', '+fmt(py)+')';}
+function stop(){if(raf){cancelAnimationFrame(raf);raf=0;}play.textContent='▶ 点を動かす';}
+slider.addEventListener('input',()=>{progress=Math.max(progress,+slider.value);draw();});
+play.addEventListener('click',()=>{if(raf){stop();return;}if(+slider.value>=360){slider.value=0;progress=0;draw();}last=0;const tick=now=>{if(!raf)return;if(now-last>35){const d=Math.min(360,+slider.value+2);slider.value=d;progress=Math.max(progress,d);draw();last=now;if(d>=360){stop();play.textContent='▶ もう一度描く';return;}}raf=requestAnimationFrame(tick);};raf=requestAnimationFrame(tick);play.textContent='■ 一時停止';});
+reset.addEventListener('click',()=>{stop();slider.value=0;progress=0;draw();});window.addEventListener('pagehide',stop);draw();
 })();
 </script></body></html>
