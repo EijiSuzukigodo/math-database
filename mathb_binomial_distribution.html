@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
 <html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>二項分布｜みんなの数学データベース</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f2f6fc;color:#1c3148;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.85;font-size:16px}a{color:#186da8}.wrap{max-width:1040px;margin:auto;padding:0 17px}header{background:linear-gradient(110deg,#17365d,#246ca3);color:#fff;padding:25px 0}header a{color:#fff}header h1{font-size:clamp(24px,3.8vw,34px);margin:10px 0 4px}header p{margin:0;color:#e4f0fa}main{padding:24px 0 60px}h2{font-size:1.34rem;color:#174c7b;border-bottom:2px solid #bcd3e8;padding-bottom:7px;margin:30px 0 16px}h3{font-size:1.09rem;color:#123e65}p{overflow-wrap:anywhere}.nav{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:17px}.nav a{padding:7px 12px;background:#e2effb;border-radius:8px;text-decoration:none;font-weight:700}.intro{background:#e4f1ff;border-left:5px solid #2585bd;padding:16px;border-radius:9px;margin:0 0 20px}.paper{background:#fff;border:1px solid #d6e3f0;border-radius:14px;padding:clamp(16px,3vw,34px);margin:18px 0}.formula{background:#f3f8ff;border:1px solid #d6e5fa;border-radius:10px;padding:12px 8px;margin:14px 0;overflow-x:auto;text-align:center;font-size:.98em}.example{border-left:5px solid #e6a345;background:#fffaf0;border-radius:9px;padding:14px 16px;margin:14px 0}.answer{border-left:5px solid #3ca07b;background:#f0faf5;border-radius:9px;padding:14px 16px;margin:8px 0 20px}.exercise{background:#f8faff;border:1px solid #d6e3f0;border-radius:10px;padding:13px 16px;margin-top:16px}summary{cursor:pointer;color:#145e95;font-weight:700}details{margin-top:9px}footer{background:#142f4d;color:#e6f2ff;padding:20px 0;font-size:13px}.muted{color:#526c82}.chip{display:inline-block;border-radius:25px;background:#e5f3fe;color:#246a96;padding:3px 10px;font-size:12px;font-weight:700}button,a,input{touch-action:manipulation}a:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid orange;outline-offset:3px} .math-scroll{overflow-x:auto}mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden;font-size:100%!important}mjx-container[jax="SVG"] > svg{max-width:unset}.important{border-left:4px solid #2f7ea9;background:#eef7fc;padding:10px 14px;border-radius:8px;margin:14px 0}.viz{background:#f7fbff;border:1px solid #c7dcef;border-radius:12px;padding:16px;margin:20px 0}.controls{display:grid;grid-template-columns:1fr 1fr;gap:14px}.controls label{display:block;font-weight:700}.controls input[type=range]{display:block;width:100%;height:32px;accent-color:#2773a8}.stats{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}.stat{background:#e4f0fb;border-radius:9px;padding:8px 12px;min-width:115px}.stat strong{display:block;font-size:1.15rem}.chart-wrap{overflow-x:auto}.binom-chart{display:block;width:100%;height:auto;min-width:330px;max-height:340px;background:white;border:1px solid #d8e6f2;border-radius:8px}.prob-table{border-collapse:collapse;min-width:320px;width:100%;font-size:.93rem}.prob-table th,.prob-table td{padding:6px 8px;border:1px solid #d8e3ec;text-align:right}.prob-table th{background:#ecf5fd;text-align:center}.prob-table td:first-child{text-align:center}.table-wrap{max-height:270px;overflow:auto}button{cursor:pointer;background:#176ba5;color:white;border:0;border-radius:8px;padding:10px 14px;font-weight:700}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:10px}.step{background:#f6f9ff;border-left:4px solid #6fa3c5;padding:10px 14px;margin:12px 0}@media(max-width:600px){.controls,.two-col{grid-template-columns:1fr}.wrap{padding:0 12px}.paper{padding:16px}.formula{font-size:.93em}.binom-chart{min-width:0}}
@@ -122,19 +117,71 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 #md-standard-main .paper .answer mjx-container{font-size:100%!important}
 #md-standard-main .paper .binom-work{background:#eff8e7!important}
 @media(max-width:700px){#md-standard-main .paper table.binom-example-table{font-size:13px!important}}
-</style><style>
-/* 正規分布ページに合わせた統一表示（2026-11） */
-body{font-size:16px!important;line-height:1.85!important}
-.lesson-standard-header h1{line-height:1.35!important}
-.answer{background:#f0faf0!important;border-left:5px solid #3ca07b!important;border-top:0!important;border-right:0!important;border-bottom:0!important;border-radius:9px!important;padding:13px 16px!important;margin:9px 0 18px!important;color:inherit!important}
-.answer .formula,.answer .math,.answer .result,.answer .final-answer,.answer .answer-box{background:transparent!important;border:0!important;box-shadow:none!important}
-.answer mjx-container{background:transparent!important}
-.answer strong:first-child{display:inline-block;margin-bottom:5px}
-.formula mjx-container[display="true"]{margin:.55em 0!important}
-@media(max-width:700px){.answer{padding:12px!important}}
+</style>
+<style id="binomial-uniform-math-20261122">
+/* 数式をすべて本文と同じ16px基準に統一。親要素の縮小指定を解除する。 */
+#md-standard-main .paper .formula,
+#md-standard-main .paper .math-scroll,
+#md-standard-main .paper .general-binomial-table,
+#md-standard-main .paper .general-binomial-table th,
+#md-standard-main .paper .general-binomial-table td,
+#md-standard-main .paper .binom-example-two-col,
+#md-standard-main .paper .binom-example-two-col .binom-prob-line,
+#md-standard-main .paper .binom-example-table,
+#md-standard-main .paper .binom-example-table th,
+#md-standard-main .paper .binom-example-table td,
+#md-standard-main .paper .binom-proof-math,
+#md-standard-main .paper .binom-work,
+#md-standard-main .paper .answer .formula {
+  font-size:16px!important;
+}
+/* インラインと独立行、表中の数式を同じ倍率で描画する。 */
+#md-standard-main .paper mjx-container[jax="SVG"],
+#md-standard-main .paper mjx-container[jax="CHTML"],
+#md-standard-main .paper mjx-container[display="true"],
+#md-standard-main .paper .general-binomial-table mjx-container,
+#md-standard-main .paper .binom-example-table mjx-container,
+#md-standard-main .paper .answer mjx-container {
+  font-size:100%!important;
+}
+/* グラフの数値表も本文基準に統一する。 */
+#md-standard-main .paper .prob-table th,
+#md-standard-main .paper .prob-table td {font-size:15px!important;}
+@media(max-width:650px){
+  #md-standard-main .paper .general-binomial-table,
+  #md-standard-main .paper .binom-example-table {font-size:16px!important;}
+}
+</style>
+<style id="binomial-textbook-math-small-20261122">
+/* 数式全体を昨日までの教科書表示に近づける。HTMLやJSは変更しない。 */
+#md-standard-main .paper mjx-container[jax="SVG"],
+#md-standard-main .paper mjx-container[jax="CHTML"],
+#md-standard-main .paper mjx-container[display="true"],
+#md-standard-main .paper .general-binomial-table mjx-container,
+#md-standard-main .paper .binom-example-table mjx-container,
+#md-standard-main .paper .answer mjx-container {font-size:92%!important;}
+/* 具体例の長い確率式は本文の大きさを維持し、数式だけ縮小。 */
+</style>
+<style id="mathb-statistics-unified">
+/* 統計的な推測12教材：文字・見出し・数式表示の共通調整 */
+html{overflow-x:hidden}body{font-size:16px!important;line-height:1.8!important}
+main{font-size:16px;line-height:1.8}
+main h2{font-size:23px;line-height:1.5}main h3{font-size:19px;line-height:1.5}
+main p,main li{line-height:1.8}
+main table{max-width:100%}main .math,main .formula,main .table-scroll{max-width:100%;overflow-x:auto}
+mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden}
+mjx-container svg{max-width:none!important}
+canvas,svg{max-width:100%}
+.mathb-review-return{max-width:970px;margin:24px auto 12px;padding:0 17px}
+.mathb-review-return a{display:inline-block;background:#e5f1fd;color:#175988;text-decoration:none;font-size:15px;font-weight:700;border-radius:9px;padding:10px 15px}
+@media(max-width:640px){main h2{font-size:21px}main h3{font-size:18px}main section{max-width:100%}}
 </style></head><body>
 <header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>二項分布</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" data-hs-lesson="" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>反復試行の確率を求め、二項分布の意味と性質を理解する</h2><p>確率分布表から平均・分散・標準偏差を計算し、公式の意味を理解する。</p></section>
-
+<nav aria-label="授業の進め方" class="hs-study-nav">
+<a href="#hs-explanation">説明</a>
+<a href="#hs-examples">例題と解説</a>
+<a href="#hs-practice">練習問題</a>
+<a href="#hs-summary">まとめ</a></nav>
 <article class="paper">
 <h2 id="hs-explanation">1．反復試行の確率</h2><p>1回の試行で成功する確率を \(p\)、失敗する確率を \(1-p\) とします。毎回の成功確率が同じで、各試行が互いに独立である試行を \(n\) 回繰り返し、成功回数を \(X\) とします。</p>
 <h3>成功回数がちょうど \(k\) 回となる確率</h3>

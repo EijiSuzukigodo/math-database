@@ -1,9 +1,20 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
-
 <html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>仮説検定｜みんなの数学データベース</title>
 <style>*{box-sizing:border-box}body{margin:0;background:#f2f7fc;color:#19334e;font:16px/1.8 -apple-system,BlinkMacSystemFont,Meiryo,sans-serif}header{background:linear-gradient(110deg,#17365d,#215f99);color:#fff;padding:24px 0}.wrap{max-width:970px;margin:auto;padding:0 17px}h1{font-size:clamp(25px,4vw,35px);margin:7px 0}header p{font-size:14px;color:#e4effc;margin:0}main{padding:22px 17px 40px}section{background:#fff;border:1px solid #dbe6f1;border-radius:14px;padding:22px;margin:0 0 20px}.table-scroll{overflow-x:auto}.data-table{width:100%;border-collapse:collapse;font-size:15px;text-align:center}.data-table th,.data-table td{border:1px solid #ccdce9;padding:6px 9px}.data-table th{background:#eaf3fb}.data-table tr:nth-child(even){background:#f8fbff}.data-table .total{font-weight:700;background:#eaf3fb}.note{background:#f3f8ff;border-left:4px solid #3984b8;padding:12px;border-radius:6px}h2{font-size:23px;color:#174b78;margin:0 0 12px}.goal h2{margin-top:17px}mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden}mjx-container svg{max-width:none!important;width:auto!important}h3{font-size:19px;color:#174b78}.formula{text-align:center;background:#f3f8ff;padding:12px;overflow-x:auto;border-radius:9px;margin:13px 0}.example{background:#fff9ed;border-left:5px solid #d9943e;padding:14px;border-radius:9px}.answer{background:#eff9f3;border-left:5px solid #3ca07b;padding:14px;border-radius:9px;margin:10px 0 20px}.goal small{background:#e6f3ff;color:#145888;padding:4px 12px;border-radius:20px}label{display:inline-flex;flex-direction:column;margin:6px 15px 6px 0;font-weight:700}select,input{font:inherit;padding:7px}button{font:inherit;background:#2169a6;color:white;border:0;border-radius:8px;padding:10px;margin:5px}canvas{display:block;width:100%;height:auto;background:#fff;border:1px solid #dbe6f1;border-radius:9px}.status{background:#e8f3ff;border-radius:9px;padding:12px;margin:12px 0}details{background:#f4f8fd;padding:12px;margin:10px 0;border-radius:8px}summary{cursor:pointer;font-weight:700}footer{background:#112e4c;color:white;padding:18px}a{color:#176cae}@media(max-width:600px){section{padding:16px}}</style>
-<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]}};</script><script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script></head><body>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]}};</script><script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><style id="mathb-statistics-unified">
+/* 統計的な推測12教材：文字・見出し・数式表示の共通調整 */
+html{overflow-x:hidden}body{font-size:16px!important;line-height:1.8!important}
+main{font-size:16px;line-height:1.8}
+main h2{font-size:23px;line-height:1.5}main h3{font-size:19px;line-height:1.5}
+main p,main li{line-height:1.8}
+main table{max-width:100%}main .math,main .formula,main .table-scroll{max-width:100%;overflow-x:auto}
+mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden}
+mjx-container svg{max-width:none!important}
+canvas,svg{max-width:100%}
+.mathb-review-return{max-width:970px;margin:24px auto 12px;padding:0 17px}
+.mathb-review-return a{display:inline-block;background:#e5f1fd;color:#175988;text-decoration:none;font-size:15px;font-weight:700;border-radius:9px;padding:10px 15px}
+@media(max-width:640px){main h2{font-size:21px}main h3{font-size:18px}main section{max-width:100%}}
+</style></head><body>
 <header><div class="wrap"><p>みんなの数学データベース ／ 高校数学 ／ 数学B</p><h1>仮説検定</h1><p>数学B ／ 統計的な推測</p></div></header><main class="wrap">
 <section class="goal"><small>授業のねらい</small><h2>度数表から二項分布・正規分布による検定へ</h2><p>数学Ⅰで学んだ「偶然として起こりにくい結果か」という考え方を、反復試行の確率で計算し、正規分布による近似から母比率・母平均の仮説検定へ発展させます。</p></section>
 <section><h2>1．数学Ⅰからの出発：実験の表から判断する</h2>

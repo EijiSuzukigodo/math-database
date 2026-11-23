@@ -1,24 +1,10 @@
 <!DOCTYPE html>
-
-<!DOCTYPE html>
-
 <html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>母集団と標本｜みんなの数学データベース</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f2f6fc;color:#1c3148;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.85;font-size:16px}a{color:#186da8}.wrap{max-width:1040px;margin:auto;padding:0 15px}header{background:linear-gradient(110deg,#17365d,#246ca3);color:#fff;padding:24px 0}header a{color:#fff}h1{font-size:clamp(24px,4vw,34px);margin:9px 0 3px}header p{margin:0;color:#e4f0fa}main{padding:22px 0 55px}.nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}.nav a{padding:7px 12px;border-radius:8px;background:#e2effb;text-decoration:none;font-weight:700}.intro{background:#e4f1ff;border-left:5px solid #2585bd;padding:15px;border-radius:9px}.paper{background:white;border:1px solid #d6e3f0;border-radius:14px;padding:clamp(15px,3vw,32px);margin:18px 0}h2{color:#174c7b;border-bottom:2px solid #bcd3e8;padding-bottom:7px;margin:29px 0 14px;font-size:1.4rem}h3{color:#123e65;font-size:1.13rem;margin:20px 0 8px}p{overflow-wrap:anywhere}.formula{background:#f3f8ff;border:1px solid #d6e5fa;border-radius:10px;padding:11px 8px;margin:13px 0;overflow-x:auto;text-align:center;font-size:.98rem}.example{border-left:5px solid #e6a345;background:#fffaf0;border-radius:9px;padding:13px 16px;margin:16px 0 5px}.answer{border-left:5px solid #3ca07b;background:#f0faf5;border-radius:9px;padding:13px 16px;margin:6px 0 18px}.exercise{background:#f8faff;border:1px solid #d6e3f0;border-radius:10px;padding:13px 16px;margin:12px 0}details{margin-top:8px}summary{cursor:pointer;color:#145e95;font-weight:700}.note{border-left:4px solid #3c85b4;background:#edf7fd;border-radius:8px;padding:11px 15px;margin:13px 0}footer{background:#142f4d;color:#e6f2ff;padding:20px 0;font-size:13px}.demo{background:#fbfdff;border:1px solid #bed3e4;border-radius:12px;padding:15px;margin:19px 0}.controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:11px}.control{display:block;background:#f3f8fd;border-radius:9px;padding:9px 11px}.control input{width:100%;accent-color:#256ca3}.value{font-variant-numeric:tabular-nums;font-weight:bold;color:#134d7d}.chart{width:100%;height:auto;max-height:360px;border:1px solid #d7e4ef;background:#fff;border-radius:8px;display:block}.legend{font-size:.9rem;color:#465f79}.stats{font-weight:700;background:#e9f4ff;padding:10px;border-radius:8px}.math-inline{white-space:normal}mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden;padding:3px 0}mjx-container{font-size:100%!important}.scroll{overflow-x:auto}.data-table{border-collapse:collapse;width:100%;font-size:.94rem}.data-table td,.data-table th{border:1px solid #b7cde0;padding:7px;text-align:center}.data-table th{background:#e9f3fd}@media(max-width:430px){body{font-size:15px}.formula{font-size:.9rem}.paper{padding:15px}.wrap{padding:0 12px}h2{font-size:1.25rem}}
 
-#drawOnce,#drawMany,#clearHistory{padding:9px 12px;border-radius:8px;border:1px solid #91b0cc;background:#eaf4ff;color:#134d7d;font-size:14px;font-weight:700;cursor:pointer;margin:3px}#drawOnce:active,#drawMany:active{background:#d3e8ff}svg.chart{width:100%;height:auto;max-height:none}svg.chart text{font-family:-apple-system,BlinkMacSystemFont,Meiryo,sans-serif;font-size:13px}article .formula mjx-container{font-size:100%!important}@media(max-width:430px){svg.chart text{font-size:11px}}
-.sampling-distribution-explain{margin:.35rem 0 .8rem;line-height:1.75}
-.mean-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:12px 0 8px}
-.mean-summary>div{background:#eaf6ff;border:1px solid #b9dff5;border-radius:10px;padding:10px 12px;display:flex;flex-direction:column;gap:7px;min-width:0}
-.mean-summary span{font-size:.91rem;color:#244a62;line-height:1.5}
-.mean-summary strong{font-size:1.15rem;color:#153e59;overflow-wrap:anywhere}
-.mean-summary-note{font-size:.93rem;line-height:1.8;margin:6px 0 15px}
-@media(max-width:540px){.mean-summary{grid-template-columns:1fr;gap:7px}.mean-summary>div{flex-direction:row;justify-content:space-between;align-items:center;gap:12px}.mean-summary strong{font-size:1.05rem;text-align:right}}
-
-/* Section 7: answer without surrounding border */
-.section7-unboxed-answer{border:0!important;border-left:0!important;box-shadow:none!important;}
-</style><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},chtml:{scale:1},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+#drawOnce,#drawMany,#clearHistory{padding:9px 12px;border-radius:8px;border:1px solid #91b0cc;background:#eaf4ff;color:#134d7d;font-size:14px;font-weight:700;cursor:pointer;margin:3px}#drawOnce:active,#drawMany:active{background:#d3e8ff}svg.chart{width:100%;height:auto;max-height:none}svg.chart text{font-family:-apple-system,BlinkMacSystemFont,Meiryo,sans-serif;font-size:13px}article .formula mjx-container{font-size:100%!important}@media(max-width:430px){svg.chart text{font-size:11px}}</style><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},chtml:{scale:1},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
 <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><style id="six-subjects-unified">
 /* 共通デザイン（数学 I/A/II/B/III/C）: 教材のプログラムや数式には非干渉 */
 :root{--course-navy:#17365d;--course-blue:#24689c;--course-paper:#ffffff;--course-muted:#526a80}
@@ -81,182 +67,73 @@ body>footer.lesson-standard-footer>div{max-width:970px!important;margin:auto!imp
 /* MathJax SVG may not inherit broad responsive SVG sizing */
 mjx-container svg{width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;display:inline-block!important}
 @media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
-</style><link href="lesson_common_style.css" rel="stylesheet"/>
-<link href="high_school_lesson_reading.css" rel="stylesheet"/>
-<style>
-/* 正規分布の授業と共通の表示調整 */
-.lesson-standard-goal h2{font-size:clamp(1.35rem,3.4vw,1.75rem);line-height:1.55}
-.lesson-standard-goal>p{font-size:1rem;line-height:1.9;margin:10px 0 0}
-.lesson-standard-main .paper{font-size:1rem;line-height:1.85}
-.lesson-standard-main .formula{font-size:1rem;line-height:1.75}
-.lesson-standard-main .answer{background:#f0f8ed;border-left:5px solid #65a86b;border-radius:8px;padding:14px 16px;margin:14px 0}
-.lesson-standard-main .answer .formula{background:transparent;border:0;padding:4px 0}
-@media(max-width:600px){.lesson-standard-main .formula{font-size:.96rem}}
-</style><style>
-.sampling-comparison{margin:22px 0 30px}.sampling-comparison .comparison-intro{line-height:1.85}
-.sampling-pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;align-items:stretch;margin:16px 0 22px}
-.sampling-column{min-width:0;border:1px solid #cad8e2;border-radius:10px;padding:14px;background:#fff}
-.sampling-column h4{font-size:1.08rem;color:#174765;margin:0 0 10px;padding-bottom:8px;border-bottom:2px solid #a4c6d9}
-.sampling-column .data-table{width:100%;font-size:.92rem;margin:10px 0;table-layout:auto}
-.sampling-column .data-table th,.sampling-column .data-table td{padding:7px 5px;text-align:center;white-space:nowrap}
-.sampling-column .data-table th{background:#edf4f8}
-.sampling-column .data-table td{font-variant-numeric:tabular-nums}
-.sampling-column .stat-line{background:#f0f8ed;border-left:4px solid #7aaf78;padding:10px 12px;line-height:1.9;margin-top:10px}
-.sampling-column .sample-note{font-size:.94rem;line-height:1.8}
-.sampling-steps{border-top:1px solid #d6e3e9;padding-top:16px;margin-top:16px}
-.sampling-steps h3{font-size:1.14rem;margin:0 0 8px}
-.sampling-comparison .footnote{font-size:.94rem;color:#405261}
-@media(max-width:690px){.sampling-pair{grid-template-columns:minmax(0,1fr)}.sampling-column .data-table{font-size:.92rem}}
-</style><style>
-/* 横向き確率分布表：上段が標本平均の値、下段が確率 */
-.sampling-column .probability-scroll{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0 18px}
-.sampling-column table.horizontal-probability-table{width:max-content;min-width:100%;table-layout:auto!important;border-collapse:collapse;font-size:1rem!important;margin:0!important}
-.sampling-column .horizontal-probability-table th{min-width:160px;text-align:center!important;background:#e8f2f9!important;white-space:nowrap}
-.sampling-column .horizontal-probability-table td{min-width:73px;padding:13px 10px!important;white-space:nowrap;font-size:1rem!important}
-.sampling-column .horizontal-probability-table mjx-container,.sampling-column .stat-line mjx-container{font-size:108%!important}
-.sampling-column .stat-line{font-size:1rem!important;line-height:2.4!important}
-.sampling-comparison .comparison-intro mjx-container{font-size:106%!important}
-@media(max-width:690px){.sampling-column .horizontal-probability-table th{min-width:140px}}
-</style><style>
-/* 標本平均の比較欄：教科書サイズの分数を維持 */
-.sampling-comparison .comparison-intro{font-size:1rem;line-height:2}
-.sampling-comparison .comparison-intro .MathJax,.sampling-comparison .stat-line .MathJax,.sampling-comparison .horizontal-probability-table .MathJax{font-size:110%!important}
-.sampling-comparison .stat-line{font-size:1rem;line-height:2.3}
-.sampling-comparison .horizontal-probability-table th,.sampling-comparison .horizontal-probability-table td{font-size:1rem;line-height:2.2;min-height:2.7em}
-.population-calculation{margin:14px 0 18px;padding:12px 16px;background:#f2f7fb;border-left:4px solid #6b99b9;font-weight:600}
-.population-calculation .formula{font-weight:400;font-size:1.05rem;overflow-x:auto}
-</style><style>
-.horizontal-probability-table .probability-total{background:#eef5ef;font-weight:700;border-left:2px solid #a8c4b0;white-space:nowrap}
-.sampling-bridge{margin:18px 0;padding:14px 16px;background:#edf5fc;border-left:4px solid #699ac4;line-height:1.85}
-.sampling-proof{margin:18px 0;padding:16px;background:#f8fafc;border-left:4px solid #6a9c80;border-radius:4px;line-height:1.85}
-.sampling-proof .formula,.note .formula{font-size:1.05em;overflow-x:auto}
-.sampling-proof h3{margin-top:0}
-</style><style>
-/* 標本平均の比較：抽出方法ごとに縦方向に学習する */
-.sampling-vertical-layout{display:block;margin:18px 0}
-.sampling-method-section{margin:0 0 26px;padding:16px 14px;border:1px solid #dce5e8;border-radius:10px;background:#fff}
-.sampling-method-section>h3{margin:0 0 12px}
-.sampling-n-unit{margin:16px 0 22px;padding-top:12px;border-top:1px solid #e5e9eb}
-.sampling-n-unit>h4{margin:0 0 10px;font-size:1.08em}
-.sampling-n-unit .sampling-column{width:100%;max-width:100%;min-width:0;box-sizing:border-box}
-.sampling-n-unit .probability-scroll{overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch}
-.sampling-n-unit .horizontal-probability-table{font-size:1em}
-.sampling-n-unit .horizontal-probability-table th,.sampling-n-unit .horizontal-probability-table td{padding:9px 10px;white-space:nowrap}
-.sampling-n-unit mjx-container,.sampling-summary mjx-container{font-size:108%!important}
-.sampling-summary{margin:20px 0;padding:14px 12px}
-.sampling-summary-table{width:100%;max-width:650px}
-.sampling-summary-table th,.sampling-summary-table td{text-align:center;padding:10px 8px}
-@media(max-width:600px){.sampling-method-section{padding:12px 8px}.sampling-n-unit .horizontal-probability-table th,.sampling-n-unit .horizontal-probability-table td{padding:8px 7px}.sampling-n-unit mjx-container{font-size:112%!important}}
-</style><style>
-/* 2026-11 教材改訂: コンパクトな母集団計算、スクロール不要の確率分布表 */
-.sampling-comparison .compact-blue-calculation{background:#eaf5fc!important;border:0!important;border-left:0!important;box-shadow:none!important;border-radius:5px;padding:7px 12px!important;margin:8px 0 12px!important;font-weight:600}
-.sampling-comparison .compact-blue-calculation .formula{margin:3px 0!important;padding:0!important;line-height:1.45!important;font-size:1rem!important;overflow:visible!important;background:transparent!important;border:0!important}
-.sampling-comparison .compact-blue-calculation mjx-container[display="true"]{margin:.25em 0!important}
-.sampling-comparison .sampling-mean-expression{margin:8px 0 5px;font-size:1rem;line-height:1.8}
-.sampling-comparison .sampling-n-unit .probability-scroll{overflow-x:visible!important;width:100%;max-width:100%;margin:8px 0 12px}
-.sampling-comparison .sampling-n-unit table.horizontal-probability-table{width:100%!important;min-width:0!important;max-width:100%!important;table-layout:fixed!important;font-size:1rem!important}
-.sampling-comparison .sampling-n-unit .horizontal-probability-table th,.sampling-comparison .sampling-n-unit .horizontal-probability-table td{min-width:0!important;width:auto!important;max-width:none!important;padding:9px 2px!important;white-space:nowrap!important;line-height:1.9!important;box-sizing:border-box;font-size:1rem!important}
-.sampling-comparison .sampling-n-unit .horizontal-probability-table th:first-child{width:13%!important}
-.sampling-comparison .sampling-n-unit .horizontal-probability-table th.total-narrow,.sampling-comparison .sampling-n-unit .horizontal-probability-table td.total-narrow{width:8%!important;min-width:0!important;padding:7px 1px!important;border-left:1px solid #a8c4b0!important}
-.sampling-comparison .sampling-n-unit .horizontal-probability-table mjx-container{font-size:100%!important;margin:0!important}
-.sampling-comparison .sampling-n-unit .horizontal-probability-table mjx-mfrac{font-size:100%!important}
-.sampling-comparison .sampling-advanced-note{font-size:.95rem;line-height:1.9;color:inherit;background:#f1f7fc;border-left:3px solid #8ab6d4;padding:10px 12px;margin:10px 0}
-@media(max-width:600px){
- .sampling-comparison .sampling-method-section{padding:10px 5px!important}
- .sampling-comparison .sampling-n-unit .sampling-column{padding:9px 4px!important}
- .sampling-comparison .sampling-n-unit .horizontal-probability-table th,.sampling-comparison .sampling-n-unit .horizontal-probability-table td{font-size:.85rem!important;padding:8px 0!important}
- .sampling-comparison .sampling-n-unit .horizontal-probability-table mjx-container{font-size:100%!important}
-}
-</style><style>
-.sampling-interactive .sampling-controls{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin:12px 0}
-.sampling-interactive .sampling-controls .control{min-width:190px;flex:1}
-.sampling-interactive select{font:inherit;padding:8px 12px;border:1px solid #94b6d0;border-radius:7px;background:#fff;color:#173e5b;max-width:100%}
-.sampling-buttons{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
-.sampling-buttons button{margin:0;flex:1 1 140px;min-height:42px}
-.sampling-buttons button:disabled{opacity:.55;cursor:default}
-.sampling-instructions{background:#e9f6ff;border-radius:8px;padding:10px 13px;margin:10px 0;color:#20465d}
-.sampling-instructions p{margin:6px 0 0}
-.sampling-sequence{margin:12px 0;padding:10px 12px;background:#f3f8fc;border-radius:8px}
-.sampling-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;font-size:.89em}
-.sampling-chip{background:#fff;border:1px solid #b4d4e8;border-radius:6px;padding:5px 8px}
-.sampling-chip.sampling-repeat{background:#d9eafb;border-color:#3982bd}
-.sampling-chip.sampling-repeat-many{background:#e8d9f8;border-color:#8a5ac3}
-.sampling-interactive .chart{width:100%;height:auto}
-@media(max-width:540px){.sampling-buttons button{flex:1 1 44%}.sampling-chip{font-size:.88em}}
-</style><style>
-/* Section 5: textbook formulas and proof */
-.sampling-formula-trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:14px 0 18px;align-items:stretch}
-.sampling-formula-item{background:#eaf7ff;border:0;border-radius:9px;padding:12px 6px;text-align:center;min-width:0}
-.sampling-formula-item>strong{display:block;color:#1a526d;font-size:.96em;margin-bottom:4px}
-.sampling-formula-math{font-size:1.02em;overflow:visible}
-.sampling-formula-math .MathJax{max-width:100%}
-.sampling-proof-blue,.sampling-proof{background:#eaf7ff !important;border:0 !important;border-left:0 !important;box-shadow:none !important;border-radius:10px;padding:16px 18px;margin:16px 0}
-.sampling-proof-blue .formula{background:transparent !important;border:0 !important;box-shadow:none !important}
-@media(max-width:540px){.sampling-formula-trio{gap:4px}.sampling-formula-item{padding:10px 2px}.sampling-formula-item>strong{font-size:.84em}.sampling-formula-math{font-size:.79em}.sampling-proof-blue{padding:12px 10px}}
+</style><link rel="stylesheet" href="lesson_common_style.css">
+<link rel="stylesheet" href="high_school_lesson_reading.css">
+<style id="mathb-statistics-unified">
+/* 統計的な推測12教材：文字・見出し・数式表示の共通調整 */
+html{overflow-x:hidden}body{font-size:16px!important;line-height:1.8!important}
+main{font-size:16px;line-height:1.8}
+main h2{font-size:23px;line-height:1.5}main h3{font-size:19px;line-height:1.5}
+main p,main li{line-height:1.8}
+main table{max-width:100%}main .math,main .formula,main .table-scroll{max-width:100%;overflow-x:auto}
+mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden}
+mjx-container svg{max-width:none!important}
+canvas,svg{max-width:100%}
+.mathb-review-return{max-width:970px;margin:24px auto 12px;padding:0 17px}
+.mathb-review-return a{display:inline-block;background:#e5f1fd;color:#175988;text-decoration:none;font-size:15px;font-weight:700;border-radius:9px;padding:10px 15px}
+@media(max-width:640px){main h2{font-size:21px}main h3{font-size:18px}main section{max-width:100%}}
 </style></head><body>
-<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>母集団と標本</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" data-hs-lesson="" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>母集団と標本の違いを理解し、無作為抽出と標本平均の意味を説明できるようになる</h2><p>母集団と標本を区別し、無作為抽出の方法を理解する。標本平均を計算し、標本の取り方による値の変化を説明できる。</p></section>
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>母集団と標本</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main" data-hs-lesson=""><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>母集団と標本</h2><p>全体を母集団、そこから選んだ一部を標本といいます。</p><p class="hs-outcome"><strong>この授業でできるようになること</strong><br>母集団と標本を区別し、無作為に抽出した標本から標本平均を求める。</p></section>
+<nav class="hs-study-nav" aria-label="授業の進め方">
+<a href="#hs-explanation">説明</a>
+<a href="#hs-examples">例題と解説</a>
+<a href="#hs-practice">練習問題</a>
+<a href="#hs-summary">まとめ</a></nav>
 <article class="paper">
 <h2 id="hs-explanation">1．母集団と標本</h2>
 <p>ある集団全体の性質を調べたいとき、その<strong>調査対象全体を母集団</strong>、母集団から実際に選んだ一部分を<strong>標本</strong>といいます。母集団に属する個体の数を<strong>母集団の大きさ</strong>、選んだ個体の数を<strong>標本の大きさ</strong>といいます。</p>
 <div class="note"><strong id="hs-examples">例：</strong>ある学校の生徒800人の身長を調べるとき、800人全員が母集団です。その中から選んだ40人は標本で、標本の大きさは40です。</div>
 <p>標本から計算した値は、選ばれる人によって変わります。母集団全体の値と、標本から求めた値を区別することが重要です。</p>
 <table class="data-table"><thead><tr><th>母集団の性質</th><th>標本から計算する値</th></tr></thead><tbody>
-<tr><td>母平均 \(m\)</td><td>標本平均 \(\bar X\)</td></tr>
+<tr><td>母平均 \(\mu\)</td><td>標本平均 \(\bar X\)</td></tr>
 <tr><td>母分散 \(\sigma^2\)</td><td>標本分散（不偏分散と区別）</td></tr>
 <tr><td>母標準偏差 \(\sigma\)</td><td>標本から求める標準偏差</td></tr>
 </tbody></table>
 <h2>2．標本平均</h2>
+<p>母集団から選ばれた標本を \(X_1,X_2,\ldots,X_n\) とすると、標本平均は次の式で表されます。</p>
+<div class="formula">\[\boxed{\bar X=\frac{X_1+X_2+\cdots+X_n}{n}}\]</div>
 <p>標本平均は標本の取り方で変わるので、標本を無作為に選ぶときは<strong>確率変数</strong>として考えます。</p>
-<div class="example"><strong>例題：標本平均を計算しよう</strong><p>標本が 3, 5, 7 のとき、標本平均を求めよ。</p></div>
-<div class="answer"><strong>解答・解説</strong><div class="formula">\[\bar X=\frac{3+5+7}{3}=5\]</div><p>標本の3つの値を足して、標本の大きさ3で割ります。</p></div>
-<section class="sampling-comparison"><h3>具体例：復元抽出と非復元抽出で標本平均の分布を比較する</h3><p class="comparison-intro">母集団を \(\{1,2,3\}\) とする。母集団の大きさは3、母平均は \(m=2\)、母分散は \(\sigma^2=\dfrac{2}{3}\) である。標本の大きさを \(n=1,2,3\) と変え、標本平均 \(\displaystyle\bar X=\dfrac{X_1+\cdots+X_n}{n}\) の確率分布を求める。</p><div class="population-calculation compact-blue-calculation">母平均と母分散の計算<div class="formula">\[m=\dfrac{1+2+3}{3}=2\]</div><div class="formula">\[\sigma^2=\dfrac{(1-2)^2+(2-2)^2+(3-2)^2}{3}=\dfrac{1+0+1}{3}=\dfrac{2}{3}\]</div></div><p class="comparison-intro">同じ数値の並びでも、復元抽出では各回が独立、非復元抽出では残りの個体数が変化する。以下の表は、取り出し順を区別したすべての結果を数え、その確率をまとめたものである。</p><div class="sampling-vertical-layout"><section class="sampling-method-section"><h3>① 復元抽出</h3><p class="sample-note">取り出したものを毎回戻すため、同じ値を繰り返し選べる。</p><div class="sampling-n-unit"><h4>標本の大きさ \(n=1\)</h4><div class="sampling-column"><p class="sample-note">各回で1・2・3を同じ確率で選び、選んだ値を戻す。</p><p><strong>標本平均 \(\bar X\) の確率分布</strong></p><p class="sampling-mean-expression">標本平均： \(\bar X=X_1\)</p><div class="probability-scroll"><table class="data-table horizontal-probability-table"><tbody><tr><th>\(\bar X\)</th><td>\(1\)</td><td>\(2\)</td><td>\(3\)</td><th class="probability-total total-narrow">合計</th></tr><tr><th>\(P(\bar X=x)\)</th><td>\(\dfrac{1}{3}\)</td><td>\(\dfrac{1}{3}\)</td><td>\(\dfrac{1}{3}\)</td><td class="probability-total total-narrow">\(1\)</td></tr></tbody></table></div><div class="stat-line">平均：\(E(\bar X)=2\)<br/>分散：\(V(\bar X)=\dfrac{2}{3}\)<br/>標準偏差：\(\sigma(\bar X)=\dfrac{\sqrt{6}}{3}\)</div></div></div><div class="sampling-n-unit"><h4>標本の大きさ \(n=2\)</h4><div class="sampling-column"><p class="sample-note">各回で1・2・3を同じ確率で選び、選んだ値を戻す。</p><p><strong>標本平均 \(\bar X\) の確率分布</strong></p><p class="sampling-mean-expression">標本平均： \(\bar X=\dfrac{X_1+X_2}{2}\)</p><div class="probability-scroll"><table class="data-table horizontal-probability-table"><tbody><tr><th>\(\bar X\)</th><td>\(1\)</td><td>\(\dfrac{3}{2}\)</td><td>\(2\)</td><td>\(\dfrac{5}{2}\)</td><td>\(3\)</td><th class="probability-total total-narrow">合計</th></tr><tr><th>\(P(\bar X=x)\)</th><td>\(\dfrac{1}{9}\)</td><td>\(\dfrac{2}{9}\)</td><td>\(\dfrac{1}{3}\)</td><td>\(\dfrac{2}{9}\)</td><td>\(\dfrac{1}{9}\)</td><td class="probability-total total-narrow">\(1\)</td></tr></tbody></table></div><div class="stat-line">平均：\(E(\bar X)=2\)<br/>分散：\(V(\bar X)=\dfrac{1}{3}\)<br/>標準偏差：\(\sigma(\bar X)=\dfrac{\sqrt{3}}{3}\)</div></div></div><div class="sampling-n-unit"><h4>標本の大きさ \(n=3\)</h4><div class="sampling-column"><p class="sample-note">各回で1・2・3を同じ確率で選び、選んだ値を戻す。</p><p><strong>標本平均 \(\bar X\) の確率分布</strong></p><p class="sampling-mean-expression">標本平均： \(\bar X=\dfrac{X_1+X_2+X_3}{3}\)</p><div class="probability-scroll"><table class="data-table horizontal-probability-table"><tbody><tr><th>\(\bar X\)</th><td>\(1\)</td><td>\(\dfrac{4}{3}\)</td><td>\(\dfrac{5}{3}\)</td><td>\(2\)</td><td>\(\dfrac{7}{3}\)</td><td>\(\dfrac{8}{3}\)</td><td>\(3\)</td><th class="probability-total total-narrow">合計</th></tr><tr><th>\(P(\bar X=x)\)</th><td>\(\dfrac{1}{27}\)</td><td>\(\dfrac{1}{9}\)</td><td>\(\dfrac{2}{9}\)</td><td>\(\dfrac{7}{27}\)</td><td>\(\dfrac{2}{9}\)</td><td>\(\dfrac{1}{9}\)</td><td>\(\dfrac{1}{27}\)</td><td class="probability-total total-narrow">\(1\)</td></tr></tbody></table></div><div class="stat-line">平均：\(E(\bar X)=2\)<br/>分散：\(V(\bar X)=\dfrac{2}{9}\)<br/>標準偏差：\(\sigma(\bar X)=\dfrac{\sqrt{2}}{3}\)</div></div></div></section><section class="sampling-method-section"><h3>② 非復元抽出</h3><p class="sample-note">取り出したものは戻さないため、同じ個体を繰り返し選べない。</p><div class="sampling-n-unit"><h4>標本の大きさ \(n=1\)</h4><div class="sampling-column"><p class="sample-note">選んだ値は戻さず、残りから選ぶ。</p><p><strong>標本平均 \(\bar X\) の確率分布</strong></p><p class="sampling-mean-expression">標本平均： \(\bar X=X_1\)</p><div class="probability-scroll"><table class="data-table horizontal-probability-table"><tbody><tr><th>\(\bar X\)</th><td>\(1\)</td><td>\(2\)</td><td>\(3\)</td><th class="probability-total total-narrow">合計</th></tr><tr><th>\(P(\bar X=x)\)</th><td>\(\dfrac{1}{3}\)</td><td>\(\dfrac{1}{3}\)</td><td>\(\dfrac{1}{3}\)</td><td class="probability-total total-narrow">\(1\)</td></tr></tbody></table></div><div class="stat-line">平均：\(E(\bar X)=2\)<br/>分散：\(V(\bar X)=\dfrac{2}{3}\)<br/>標準偏差：\(\sigma(\bar X)=\dfrac{\sqrt{6}}{3}\)</div></div></div><div class="sampling-n-unit"><h4>標本の大きさ \(n=2\)</h4><div class="sampling-column"><p class="sample-note">選んだ値は戻さず、残りから選ぶ。</p><p><strong>標本平均 \(\bar X\) の確率分布</strong></p><p class="sampling-mean-expression">標本平均： \(\bar X=\dfrac{X_1+X_2}{2}\)</p><div class="probability-scroll"><table class="data-table horizontal-probability-table"><tbody><tr><th>\(\bar X\)</th><td>\(\dfrac{3}{2}\)</td><td>\(2\)</td><td>\(\dfrac{5}{2}\)</td><th class="probability-total total-narrow">合計</th></tr><tr><th>\(P(\bar X=x)\)</th><td>\(\dfrac{1}{3}\)</td><td>\(\dfrac{1}{3}\)</td><td>\(\dfrac{1}{3}\)</td><td class="probability-total total-narrow">\(1\)</td></tr></tbody></table></div><div class="stat-line">平均：\(E(\bar X)=2\)<br/>分散：\(V(\bar X)=\dfrac{1}{6}\)<br/>標準偏差：\(\sigma(\bar X)=\dfrac{\sqrt{6}}{6}\)</div></div></div><div class="sampling-n-unit"><h4>標本の大きさ \(n=3\)</h4><div class="sampling-column"><p class="sample-note">選んだ値は戻さず、残りから選ぶ。</p><p><strong>標本平均 \(\bar X\) の確率分布</strong></p><p class="sampling-mean-expression">標本平均： \(\bar X=\dfrac{X_1+X_2+X_3}{3}\)</p><div class="probability-scroll"><table class="data-table horizontal-probability-table"><tbody><tr><th>\(\bar X\)</th><td>\(2\)</td><th class="probability-total total-narrow">合計</th></tr><tr><th>\(P(\bar X=x)\)</th><td>\(1\)</td><td class="probability-total total-narrow">\(1\)</td></tr></tbody></table></div><div class="stat-line">平均：\(E(\bar X)=2\)<br/>分散：\(V(\bar X)=0\)<br/>標準偏差：\(\sigma(\bar X)=0\)</div></div></div></section></div><p class="footnote">確率分布表の各確率を足すと1になる。分散は \(V(\bar X)=E(\bar X^2)-\{E(\bar X)\}^2\) により計算する。ここで求めた標準偏差は、標本平均の分布の標準偏差であり、各標本内のデータの標準偏差ではない。</p><div class="sampling-summary"><h3>③ 復元抽出と非復元抽出の比較</h3><p>標本平均の平均はどちらも \(2\) である。分散と標準偏差を比べる。</p><table class="data-table sampling-summary-table"><tr><th>標本の大きさ</th><th>復元抽出の分散</th><th>非復元抽出の分散</th></tr><tr><td>\(n=1\)</td><td>\(\dfrac{2}{3}\)</td><td>\(\dfrac{2}{3}\)</td></tr><tr><td>\(n=2\)</td><td>\(\dfrac{1}{3}\)</td><td>\(\dfrac{1}{6}\)</td></tr><tr><td>\(n=3\)</td><td>\(\dfrac{2}{9}\)</td><td>\(0\)</td></tr></table></div><div class="note"><strong>比較してわかること：</strong>どちらも標本平均の平均は母平均 \(m=2\) に等しい。標本の大きさが大きいほど、標本平均のばらつきは小さくなる。非復元抽出では母集団の全3個を選ぶと \(\bar X=2\) に確定し、分散は0になる。</div><p>復元抽出では、標本平均の分散は \(V(\bar X)=\dfrac{\sigma^2}{n}\) となる。非復元抽出では標本平均の分散は一般にはこれより小さい。母集団の大きさ \(N\) が標本の大きさ \(n\) に比べて十分大きいときは、非復元抽出を復元抽出と近似して、この公式を利用できる。</p><p class="sampling-advanced-note">【参考】有限母集団から非復元抽出する場合の正確な分散は \(V(\bar X)=\dfrac{\sigma^2}{n}\cdot\dfrac{N-n}{N-1}\) である（母分散を \(N\) で割って定義するとき）。高校数学では、この補正係数の証明までは扱わなくてよい。</p></section><h2>3．無作為抽出と復元抽出・非復元抽出</h2>
+<div class="example"><strong>元の例題：標本平均を計算しよう</strong><p>標本が 3, 5, 7 のとき、標本平均を求めよ。</p></div>
+<div class="answer"><strong>解答・解説</strong><div class="formula">\[\bar X=\frac{3+5+7}{3}=\boxed{5}\]</div><p>標本の3つの値を足して、標本の大きさ3で割ります。</p></div>
+<h2>3．無作為抽出と復元抽出・非復元抽出</h2>
 <p><strong>無作為抽出</strong>とは、個体の選び方に特定の偏りが出ないよう、確率を用いて標本を選ぶことです。標本を選ぶ手続きが偏っていると、標本数を増やしても母集団の推測が適切でない場合があります。</p>
 <ul><li><strong>復元抽出：</strong>取り出した個体を元に戻して次を選びます。同じ個体が再び選ばれる場合があります。</li><li><strong>非復元抽出：</strong>取り出した個体を戻さずに選びます。同じ個体は2回選ばれません。</li></ul>
-<p>下の動く教材では、<strong>復元抽出と非復元抽出を切り替え</strong>、標本を1個ずつ選ぶ過程を確かめます。</p>
+<p>下の動く教材は<strong>60個の値から重複なく選ぶ単純無作為抽出（非復元抽出）</strong>を再現したものです。</p>
 <h2>4．動く教材：母集団から標本を選ぼう</h2>
-<div class="demo sampling-interactive">
-<div class="sampling-instructions"><strong>抽出の仕方を観察しよう</strong><p>「次の1個を抽出」を押すたびに、1個目、2個目、3個目……と順に選びます。「1組を自動抽出」では、選んだ個体が約0.4秒ごとに順番に色づきます。途中まで手動で抽出した場合も、自動抽出は新しい1組の最初から始まります。<strong>復元抽出</strong>では選んだ個体を次の抽出前に戻し、<strong>非復元抽出</strong>では選んだ個体を除いて次を選びます。標本が完成したら、標本平均を記録します。</p></div>
-<div class="sampling-controls">
-<label class="control">抽出方法 <select id="samplingMode"><option value="replace">復元抽出</option><option value="noreplace">非復元抽出</option></select></label>
-<label class="control">標本の大きさ n：<span class="value" id="nLabel">10</span><input id="sampleN" max="40" min="1" step="1" type="range" value="10"/></label>
+<div class="demo">
+<div class="controls"><label class="control">標本の大きさ n：<span class="value" id="nLabel">8</span><input id="sampleN" max="40" min="2" step="1" type="range" value="8"/></label><div class="control">操作<br/><button id="drawOnce" type="button">標本を1回抽出</button> <button id="drawMany" type="button">100回繰り返す</button> <button id="clearHistory" type="button">記録を消す</button></div></div>
+<p class="legend">母集団の60個の点から選ばれた点を橙色で示します。標本は毎回無作為に選ばれます。</p>
+<svg aria-label="60個の母集団の点と選ばれた標本" class="chart" id="populationChart" role="img" viewbox="0 0 760 236"></svg>
+<p aria-live="polite" class="stats" id="sampleStats">「標本を1回抽出」を押してください。</p>
+<h3>標本平均の記録</h3><svg aria-label="抽出を繰り返した際の標本平均の分布" class="chart" id="meanChart" role="img" viewbox="0 0 760 230"></svg>
+<p class="legend">点は1回の標本抽出から得られた標本平均。青の縦線は母平均です。各点の位置は標本によって変わります。</p>
 </div>
-<div class="sampling-buttons"><button id="drawStep" type="button">次の1個を抽出（0／10個）</button><button id="newSample" type="button">次の1組を始める</button><button id="drawOnce" type="button">1組を自動抽出</button><button id="drawMany" type="button">100組をまとめて抽出</button><button id="clearHistory" type="button">記録を消す</button></div>
-<p aria-live="polite" class="stats" id="samplingProgress">0 / 10 個。抽出方法を選び、「次の1個を抽出」を押してください。</p>
-<p class="legend" id="samplingLegend">未抽出：水色 ／ 1回選択：オレンジ ／ 2回選択：青 ／ 3回以上：紫（復元抽出）</p>
-<svg aria-label="60個の母集団から標本を1個ずつ選ぶ様子" class="chart" id="populationChart" role="img" viewbox="0 0 760 236"></svg>
-<div class="sampling-sequence"><strong>今回選んだ個体（抽出順）</strong><div aria-live="polite" class="sampling-chips" id="samplingSequence">まだ選んでいません。</div></div>
-<p aria-live="polite" class="stats" id="sampleStats">10個そろうと標本平均が表示されます。</p>
-<h3>標本平均の分布</h3><p class="sampling-distribution-explain">標本抽出を繰り返して得られた標本平均を記録し、その平均とばらつきを調べる。</p><svg aria-label="標本抽出を繰り返したときの標本平均の分布" class="chart" id="meanChart" role="img" viewbox="0 0 760 230"></svg>
-<p class="legend">橙色の点1個が、完成した1組の標本から得た標本平均です。青い縦線は母平均です。100組の抽出では、毎組、母集団を最初の60個の状態から選び直します。</p>
-<div aria-live="polite" class="mean-summary"><div><span>母平均 \(m\)</span><strong id="meanPopulation">—</strong></div><div><span>記録した標本平均の平均</span><strong id="meanRecorded">—</strong></div><div><span>記録した標本平均の分散</span><strong id="varianceRecorded">—</strong></div></div><p class="mean-summary-note">記録した標本平均の平均・分散は、実際の抽出結果から計算した値です。理論上の \(E(\bar X)\)、\(V(\bar X)\) とは区別します。復元抽出では \(E(\bar X)=m\)、\(V(\bar X)=\dfrac{\sigma^2}{n}\) です。</p>
-<div class="sampling-instructions"><strong>考察のポイント</strong><p>復元抽出では同じ個体が1組の中に繰り返し現れることがあります。選ばれた回数によって色が変わることを確かめましょう。非復元抽出では現れません。次に、100組を抽出して標本平均のばらつきを比較しましょう。</p></div>
-</div>
-<div class="sampling-bridge">具体例で抽出方法の違いを学び、動く教材で1個ずつ選ぶ過程と標本平均の分布を確かめた。次に、各回が独立になる復元抽出の場合について、標本平均の期待値と分散の公式を証明する。</div><h2>5．標本平均の期待値とばらつき</h2>
-<p>母平均を \(m\)、母分散を \(\sigma^2\) とします。母集団から<strong>独立に同じ分布で抽出する場合（復元抽出など）</strong>、標本平均には次の性質があります。</p>
-<div class="sampling-formula-trio"><div class="sampling-formula-item"><strong>平均</strong><div class="sampling-formula-math">\[E(\bar X)=m\]</div></div><div class="sampling-formula-item"><strong>分散</strong><div class="sampling-formula-math">\[V(\bar X)=\dfrac{\sigma^2}{n}\]</div></div><div class="sampling-formula-item"><strong>標準偏差</strong><div class="sampling-formula-math">\[\sigma_{\bar X}=\dfrac{\sigma}{\sqrt n}\]</div></div></div>
-<section class="sampling-proof sampling-proof-blue"><h3>復元抽出の場合の公式の証明</h3>
-<p>母平均を \(m\)、母分散を \(\sigma^2\) とする。復元抽出で得られる \(X_1,X_2,\ldots,X_n\) は互いに独立で、いずれも同じ母集団の分布に従う。したがって、\(E(X_i)=m\)、\(V(X_i)=\sigma^2\) である。</p>
-<p>標本平均は次のように表される。</p>
-<div class="formula">\[\bar X=\dfrac{X_1+X_2+\cdots+X_n}{n}\]</div>
-<p><strong>期待値</strong>：期待値の和の性質を用いる。</p>
-<div class="formula">\[\begin{aligned}E(\bar X)&amp;=\dfrac{E(X_1)+E(X_2)+\cdots+E(X_n)}{n}\\&amp;=\dfrac{nm}{n}=m\end{aligned}\]</div>
-<p><strong>分散</strong>：各 \(X_i\) が独立であるため、分散を加えることができる。</p>
-<div class="formula">\[\begin{aligned}V(\bar X)&amp;=\dfrac{V(X_1)+V(X_2)+\cdots+V(X_n)}{n^2}\\&amp;=\dfrac{n\sigma^2}{n^2}=\dfrac{\sigma^2}{n}\end{aligned}\]</div>
-<p>よって、標本平均の標準偏差は次のようになる。</p>
-<div class="formula">\[\sigma_{\bar X}=\sqrt{V(\bar X)}=\dfrac{\sigma}{\sqrt n}\]</div>
-<p>このように、標本平均の期待値は母平均と一致し、分散は標本の大きさ \(n\) に反比例する。</p></section>
+<h2>5．標本平均の期待値とばらつき</h2>
+<p>母平均を \(\mu\)、母分散を \(\sigma^2\) とします。母集団から<strong>独立に同じ分布で抽出する場合（復元抽出など）</strong>、標本平均には次の性質があります。</p>
+<div class="formula">\[\boxed{E(\bar X)=\mu}\qquad\boxed{V(\bar X)=\frac{\sigma^2}{n}}\]</div>
+<div class="formula">\[\boxed{\sigma_{\bar X}=\frac{\sigma}{\sqrt n}}\]</div>
 <p>標本の大きさを4倍にすると、標本平均の標準偏差は半分になります。大きい標本ほど平均が安定しやすいのです。</p>
-<div class="note">注意：動く教材は復元抽出・非復元抽出を切り替えられる。復元抽出では上の公式が成り立つ。非復元抽出では母集団の大きさを N、標本の大きさを n とすると、<div class="formula">\[V(\bar X)=\dfrac{\sigma^2}{n}\cdot\dfrac{N-n}{N-1}\]</div>となる。復元抽出の場合の分散とは異なる。</div>
+<div class="note"><strong>注意：</strong>動く教材は有限母集団からの<strong>非復元抽出</strong>です。この場合の標本平均の分散は、母分散を \(\sigma^2=\frac1N\sum_{i=1}^N(x_i-\mu)^2\) と定義すると、\(V(\bar X)=\frac{\sigma^2}{n}\frac{N-n}{N-1}\) となります。上の \(\sigma^2/n\) をそのまま当てはめません。</div>
 <h2>6．図で考える：標本数の違い</h2>
 <p>下の図では、2つの標本の大きさについて標本平均の標準偏差（独立な抽出を仮定した理論値）を比較します。</p>
 <div class="demo"><label class="control">標本の大きさ：<span class="value" id="theoryNLabel">4</span><input id="theoryN" max="100" min="1" type="range" value="4"/></label><svg aria-label="標本の大きさによる標本平均の標準偏差の比較" class="chart" id="theoryChart" role="img" viewbox="0 0 760 220"></svg><p class="stats" id="theoryStats"></p></div>
 <h2>7．解説付き例題</h2>
-<div class="example"><strong>例題1：母集団と標本</strong><p>ある市の中学生全員1万人のうち、無作為に300人を選んで通学時間を調べた。母集団と標本、標本の大きさを答えよ。</p></div><div class="answer section7-unboxed-answer"><strong>解答と解説</strong><p>母集団は市の中学生1万人、標本は選ばれた300人、標本の大きさは300です。</p></div>
-<div class="example"><strong>例題2：標本平均</strong><p>標本 12, 15, 17, 16 の平均を求めよ。</p></div><div class="answer section7-unboxed-answer"><strong>解答と解説</strong><div class="formula">\[\bar X=\frac{12+15+17+16}{4}=15\]</div></div>
-<div class="example"><strong>例題3：標本平均の分散</strong><p>母平均50、母標準偏差12の母集団から独立に36個を抽出するとき、標本平均の期待値・分散・標準偏差を求めよ。</p></div><div class="answer section7-unboxed-answer"><strong>解答と解説</strong><div class="formula">\[E(\bar X)=50,\quad V(\bar X)=\frac{12^2}{36}=4,\quad\sigma_{\bar X}=2\]</div></div>
-<div class="example"><strong>例題4：標本の大きさ</strong><p>母標準偏差が20のとき、独立な標本の標本平均の標準偏差を2以下にしたい。標本の大きさは最低いくつ必要か。</p></div><div class="answer section7-unboxed-answer"><strong>解答と解説</strong><div class="formula">\[\frac{20}{\sqrt n}\leqq2\iff\sqrt n\geqq10\iff n\geqq100\]</div><p>したがって最低 \(100\) 個です。</p></div>
-<div class="example"><strong>例題5：非復元抽出</strong><p>母集団が100個、母分散が25である。非復元で10個を単純無作為抽出するとき、標本平均の分散を求めよ。</p></div><div class="answer section7-unboxed-answer"><strong>解答と解説</strong><div class="formula">\[V(\bar X)=\frac{25}{10}\cdot\frac{100-10}{100-1}=\dfrac{25}{11}\]</div></div>
-<div class="example"><strong>例題6：抽出の偏り</strong><p>学校全体の平均通学時間を調べたい。朝早く登校する生徒だけを選ぶ方法に問題はあるか。</p></div><div class="answer section7-unboxed-answer"><strong>解答と解説</strong><p>早く登校する生徒は通学時間などの特徴が全校と異なるおそれがあります。標本の大きさにかかわらず偏りが生じる可能性があります。</p></div>
+<div class="example"><strong>例題1：母集団と標本</strong><p>ある市の中学生全員1万人のうち、無作為に300人を選んで通学時間を調べた。母集団と標本、標本の大きさを答えよ。</p></div><div class="answer"><strong>解答</strong><p>母集団は市の中学生1万人、標本は選ばれた300人、標本の大きさは300です。</p></div>
+<div class="example"><strong>例題2：標本平均</strong><p>標本 12, 15, 17, 16 の平均を求めよ。</p></div><div class="answer"><strong>解答</strong><div class="formula">\[\bar X=\frac{12+15+17+16}{4}=\boxed{15}\]</div></div>
+<div class="example"><strong>例題3：標本平均の分散</strong><p>母平均50、母標準偏差12の母集団から独立に36個を抽出するとき、標本平均の期待値・分散・標準偏差を求めよ。</p></div><div class="answer"><strong>解答</strong><div class="formula">\[E(\bar X)=50,\quad V(\bar X)=\frac{12^2}{36}=\boxed4,\quad\sigma_{\bar X}=\boxed2\]</div></div>
+<div class="example"><strong>例題4：標本の大きさ</strong><p>母標準偏差が20のとき、独立な標本の標本平均の標準偏差を2以下にしたい。標本の大きさは最低いくつ必要か。</p></div><div class="answer"><strong>解答</strong><div class="formula">\[\frac{20}{\sqrt n}\leqq2\iff\sqrt n\geqq10\iff n\geqq100\]</div><p>したがって最低 \(\boxed{100}\) 個です。</p></div>
+<div class="example"><strong>例題5：非復元抽出</strong><p>母集団が100個、母分散が25である。非復元で10個を単純無作為抽出するとき、標本平均の分散を求めよ。</p></div><div class="answer"><strong>解答</strong><div class="formula">\[V(\bar X)=\frac{25}{10}\cdot\frac{100-10}{100-1}=\boxed{\frac{25}{11}}\]</div></div>
+<div class="example"><strong>例題6：抽出の偏り</strong><p>学校全体の平均通学時間を調べたい。朝早く登校する生徒だけを選ぶ方法に問題はあるか。</p></div><div class="answer"><strong>解答</strong><p>早く登校する生徒は通学時間などの特徴が全校と異なるおそれがあります。標本の大きさにかかわらず偏りが生じる可能性があります。</p></div>
 <h2 id="hs-practice">8．練習問題</h2>
 <div class="exercise"><strong>元の練習問題</strong><p>標本 2, 4, 6, 8 の平均を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><div class="formula">\[\bar X=\frac{2+4+6+8}{4}=\boxed5\]</div></details></div>
 <div class="exercise"><strong>練習1</strong><p>標本 4, 9, 5, 10, 7 の平均を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>和は35、標本の大きさは5だから平均は \(\boxed7\)。</p></details></div>
@@ -267,7 +144,7 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <div class="exercise"><strong>練習6</strong><p>母集団200個から重複なしで標本を選ぶ方法を何という？</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>非復元抽出。無作為に重複なく選べば非復元の単純無作為抽出です。</p></details></div>
 <div class="exercise"><strong>練習7</strong><p>母集団100個、母分散36から10個を非復元で単純無作為抽出する。標本平均の分散は？</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><div class="formula">\[V(\bar X)=\frac{36}{10}\frac{90}{99}=\boxed{\frac{36}{11}}\]</div></details></div>
 <div class="exercise"><strong>練習8</strong><p>昼休みに食堂を利用する生徒だけにアンケートして「全校生徒」の昼食を推測することの問題点を説明せよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>食堂を使わない生徒が調査対象から外れるため、抽出に偏りが生じる可能性があります。</p></details></div>
-<h2 id="hs-summary">9．まとめ</h2><ul><li>母集団は調べたい全体、標本はその一部。</li><li>標本平均は標本ごとに変わり、無作為抽出では確率変数となる。</li><li>独立な抽出では \(E(\bar X)=m\)、\(V(\bar X)=\sigma^2/n\)。</li><li>標本数が多いほど標本平均は安定しやすい。ただし、偏った抽出には注意する。</li></ul>
+<h2 id="hs-summary">9．まとめ</h2><ul><li>母集団は調べたい全体、標本はその一部。</li><li>標本平均は標本ごとに変わり、無作為抽出では確率変数となる。</li><li>独立な抽出では \(E(\bar X)=\mu\)、\(V(\bar X)=\sigma^2/n\)。</li><li>標本数が多いほど標本平均は安定しやすい。ただし、偏った抽出には注意する。</li></ul>
 </article><nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav></main>
 <script>
 (function(){'use strict';const $=id=>document.getElementById(id);const NS='http://www.w3.org/2000/svg';function E(name,atts,parent){const n=document.createElementNS(NS,name);for(const [k,v] of Object.entries(atts||{}))n.setAttribute(k,v);if(parent)parent.appendChild(n);return n;}function T(x,y,text,parent,extra){const n=E('text',{x,y,'font-size':13,fill:'#4b6177',...extra},parent);n.textContent=text;return n;}
@@ -277,95 +154,34 @@ function line(svg,mu,s,max,color,dash){const coords=[];for(let i=0;i<=480;i++){c
 function updateShape(){const mu=Number($('mu').value),s=Number($('sigma').value),svg=$('shapeChart');svg.replaceChildren();const max=.85;axes(svg,max);line(svg,0,1,max,'#95aabd',true);line(svg,mu,s,max,'#216fac');E('line',{x1:sx(mu),y1:base,x2:sx(mu),y2:sy(pdf(mu,mu,s),max),stroke:'#216fac','stroke-dasharray':'4 4'},svg);$('muLabel').textContent=mu.toFixed(1);$('sigmaLabel').textContent=s.toFixed(1);$('shapeStats').textContent='平均 μ = '+mu.toFixed(1)+' ／ 分散 σ² = '+(s*s).toFixed(2)+' ／ 標準偏差 σ = '+s.toFixed(1);}
 function updateArea(){const a=Number($('lower').value),b=Number($('upper').value),svg=$('areaChart');svg.replaceChildren();const max=.47;axes(svg,max);if(a<b){const coords=['M'+sx(a)+' '+base];for(let i=0;i<=240;i++){const x=a+(b-a)*i/240;coords.push('L'+sx(x).toFixed(2)+' '+sy(pdf(x),max).toFixed(2));}coords.push('L'+sx(b)+' '+base+' Z');E('path',{d:coords.join(' '),fill:'#8ec7ee','fill-opacity':'.67'},svg);}line(svg,0,1,max,'#216fac');for(const [x,col] of [[a,'#be6d31'],[b,'#29815a']]){E('line',{x1:sx(x),y1:base,x2:sx(x),y2:sy(pdf(x),max),stroke:col,'stroke-width':2},svg);}const prob=a<b?Math.max(0,Phi(b)-Phi(a)):0;$('aLabel').textContent=a.toFixed(1);$('bLabel').textContent=b.toFixed(1);$('areaStats').textContent='P('+a.toFixed(1)+' ≦ Z ≦ '+b.toFixed(1)+') ≈ '+prob.toFixed(4)+'（約 '+(prob*100).toFixed(2)+' %）';}
 for(const id of ['mu','sigma'])$(id).addEventListener('input',updateShape);for(const id of ['lower','upper'])$(id).addEventListener('input',updateArea);updateShape();updateArea();})();
-</script><script>(function(){
+</script><script>
+(function(){
 'use strict';
 const N=60;
 const population=Array.from({length:N},(_,i)=>25+((i*17+9)%51));
 const mu=population.reduce((a,b)=>a+b,0)/N;
 const popVar=population.reduce((a,b)=>a+(b-mu)**2,0)/N;
-let selected=[],history=[],lastId=-1,autoTimer=null;
+let selected=[],history=[];
 const $=id=>document.getElementById(id);
-const el=(name,attrs={},text)=>{const e=document.createElementNS('http://www.w3.org/2000/svg',name);for(const [k,v] of Object.entries(attrs))e.setAttribute(k,v);if(text!==undefined)e.textContent=text;return e;};
-function line(svg,x1,y1,x2,y2,color='#c8d8e5',width=1){svg.appendChild(el('line',{x1,y1,x2,y2,stroke:color,'stroke-width':width}));}
-function txt(svg,x,y,t,color='#405b72'){const e=el('text',{x,y,fill:color,'text-anchor':'middle'},String(t));svg.appendChild(e);}
-const mode=()=>$('samplingMode').value;
-const n=()=>Number($('sampleN').value);
+const el=(name,attrs={},text)=>{const n=document.createElementNS('http://www.w3.org/2000/svg',name);for(const [k,v] of Object.entries(attrs))n.setAttribute(k,v);if(text!==undefined)n.textContent=text;return n};
+function line(svg,x1,y1,x2,y2,color='#c8d8e5',width=1){svg.appendChild(el('line',{x1,y1,x2,y2,stroke:color,'stroke-width':width}))}
+function txt(svg,x,y,t,color='#405b72'){svg.appendChild(el('text',{x,y,fill:color,'text-anchor':'middle'},String(t)))}
 function drawPopulation(){
- const svg=$('populationChart');svg.replaceChildren();
- const counts=new Map();selected.forEach(id=>counts.set(id,(counts.get(id)||0)+1));
- for(let i=0;i<N;i++){
-  const x=33+(i%12)*62,y=30+Math.floor(i/12)*39;
-  const count=counts.get(i)||0,recent=i===lastId;
-  const fill=count>=3?'#a778d5':count===2?'#62a8e4':count===1?'#f4aa4b':'#bcd9ef';
-  const stroke=count>=3?'#68389d':count===2?'#206ca7':count===1?'#a96012':'#6798bf';
-  svg.appendChild(el('circle',{cx:x,cy:y,r:recent?13:10,fill,stroke:recent?'#253c56':stroke,'stroke-width':recent?3:1.5}));
-  txt(svg,x,y+4,population[i],count?'#172f4b':'#173e5b');
-  if(count>=2){const label=el('text',{x:x+11,y:y-9,'font-size':12,'font-weight':'bold',fill:'#593087','text-anchor':'middle'},'×'+count);svg.appendChild(label);}
- }
- txt(svg,380,225,`全${N}個　橙：1回　青：2回　紫：3回以上（同じ個体の抽出回数）`);
+ const svg=$('populationChart');svg.replaceChildren();const set=new Set(selected);
+ for(let i=0;i<N;i++){const x=33+(i%12)*62,y=30+Math.floor(i/12)*39;svg.appendChild(el('circle',{cx:x,cy:y,r:10,fill:set.has(i)?'#ef9b38':'#bcd9ef',stroke:set.has(i)?'#ae6013':'#6798bf','stroke-width':1.5}));txt(svg,x,y+4,population[i],set.has(i)?'#4b2a00':'#173e5b')}
+ txt(svg,380,225,`全${N}個　青：母集団　橙：抽出した標本`);
 }
-function pickOne(){
- if(selected.length>=n())return false;
- let id;
- if(mode()==='replace')id=Math.floor(Math.random()*N);
- else{const candidates=[];for(let i=0;i<N;i++)if(!selected.includes(i))candidates.push(i);id=candidates[Math.floor(Math.random()*candidates.length)];}
- selected.push(id);lastId=id;
- if(selected.length===n())finish();
- return true;
+function sample(){const ids=Array.from({length:N},(_,i)=>i);for(let i=N-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[ids[i],ids[j]]=[ids[j],ids[i]]}selected=ids.slice(0,+$('sampleN').value);const avg=selected.reduce((s,i)=>s+population[i],0)/selected.length;history.push(avg);if(history.length>400)history.shift();return avg}
+function drawMeans(){let svg=$('meanChart');svg.replaceChildren();const min=24,max=77,left=38,right=726,top=12,bottom=190,x=v=>left+(v-min)/(max-min)*(right-left);line(svg,left,bottom,right,bottom,'#496981',2);for(let v=30;v<=70;v+=10){let t=x(v);line(svg,t,bottom,t,bottom+5);txt(svg,t,210,v)}line(svg,x(mu),top,x(mu),bottom,'#1870b5',2.5);
+ const bins={};history.forEach(v=>{const key=Math.round(v*2)/2;const count=bins[key]||0;bins[key]=count+1;svg.appendChild(el('circle',{cx:x(v),cy:bottom-7-Math.min(count,17)*9,r:3.5,fill:'#e28a31',opacity:.7}))});txt(svg,400,224,`青線：母平均 ${mu.toFixed(1)} ／ 記録 ${history.length} 回`);
 }
-function finish(){const avg=selected.reduce((sum,id)=>sum+population[id],0)/selected.length;history.push(avg);if(history.length>400)history.shift();}
-function resetSample(){selected=[];lastId=-1;}
-function drawOneSet(){resetSample();while(selected.length<n())pickOne();}
-function stopAuto(){if(autoTimer!==null){clearInterval(autoTimer);autoTimer=null;} }
-function setAutoState(running){$('drawOnce').disabled=running;$('drawStep').disabled=running||selected.length>=n();$('newSample').disabled=running||selected.length===0;$('drawMany').disabled=running;$('sampleN').disabled=running;$('samplingMode').disabled=running;}
-function autoDrawSet(){
- stopAuto();resetSample();render();setAutoState(true);
- $('drawOnce').textContent='抽出中…';
- autoTimer=setInterval(()=>{
-  pickOne();render();
-  if(selected.length>=n()){
-   stopAuto();setAutoState(false);$('drawOnce').textContent='1組を自動抽出';render();
-  }
- },400);
-}
-function drawMeans(){const svg=$('meanChart');svg.replaceChildren();const min=24,max=77,left=38,right=726,top=12,bottom=190,x=v=>left+(v-min)/(max-min)*(right-left);
- line(svg,left,bottom,right,bottom,'#496981',2);for(let v=30;v<=70;v+=10){const t=x(v);line(svg,t,bottom,t,bottom+5);txt(svg,t,210,v);}
- line(svg,x(mu),top,x(mu),bottom,'#1870b5',2.5);
- const bins={};history.forEach(v=>{const key=Math.round(v*2)/2;const count=bins[key]||0;bins[key]=count+1;svg.appendChild(el('circle',{cx:x(v),cy:bottom-7-Math.min(count,17)*9,r:3.5,fill:'#e28a31',opacity:.7}));});
- txt(svg,400,224,`青線：母平均 ${mu.toFixed(1)} ／ 記録 ${history.length} 組`);
-}
-function updateMeanSummary(){
- const k=history.length;
- $('meanPopulation').textContent=mu.toFixed(2);
- if(!k){$('meanRecorded').textContent='記録なし';$('varianceRecorded').textContent='記録なし';return;}
- const avg=history.reduce((sum,v)=>sum+v,0)/k;
- const variance=history.reduce((sum,v)=>sum+(v-avg)**2,0)/k;
- $('meanRecorded').textContent=avg.toFixed(2)+'（'+k+'組）';
- $('varianceRecorded').textContent=variance.toFixed(2);
-}
-function render(){
- drawPopulation();drawMeans();updateMeanSummary();$('nLabel').textContent=n();
- $('samplingProgress').textContent=`${selected.length} / ${n()} 個 ${selected.length===n()?'（1組完成）':''}`;
- $('drawStep').disabled=autoTimer!==null||selected.length>=n();
- $('drawStep').textContent=selected.length>=n()?'1組完成（'+n()+'／'+n()+'個）':'次の1個を抽出（'+selected.length+'／'+n()+'個）';
- $('newSample').disabled=autoTimer!==null||selected.length===0;
- $('samplingLegend').textContent=mode()==='replace'?'復元抽出：水色＝未抽出、オレンジ＝1回、青＝2回、紫＝3回以上。同じ個体が再び選ばれることがあります。':'非復元抽出：水色＝未抽出、オレンジ＝選択済み。同じ個体は再び選ばれません。';
- const area=$('samplingSequence');area.replaceChildren();
- if(!selected.length)area.textContent='まだ選んでいません。';
- selected.forEach((id,i)=>{const span=document.createElement('span');span.className='sampling-chip';span.textContent=`${i+1}個目：No.${id+1}（値 ${population[id]}）`;const repetitions=selected.slice(0,i+1).filter(v=>v===id).length;if(repetitions===2)span.classList.add('sampling-repeat');if(repetitions>=3)span.classList.add('sampling-repeat-many');area.appendChild(span);});
- if(selected.length===n()){
-  const avg=selected.reduce((a,id)=>a+population[id],0)/n();
-  $('sampleStats').textContent=`今回の標本平均 ${avg.toFixed(2)} ／ 母平均 ${mu.toFixed(2)} ／ 差 ${(avg-mu).toFixed(2)} ／ 記録 ${history.length} 組。「次の1組を始める」で手動抽出を続けられます。`;
- }else $('sampleStats').textContent=`現在 ${selected.length} 個選択。${n()-selected.length} 個選ぶと標本平均を計算します。`;
-}
-$('drawStep').addEventListener('click',()=>{pickOne();render();});
-$('newSample').addEventListener('click',()=>{resetSample();render();});
-$('drawOnce').addEventListener('click',autoDrawSet);
-$('drawMany').addEventListener('click',()=>{for(let i=0;i<100;i++)drawOneSet();resetSample();render();$('samplingSequence').textContent='記録なし（100組の一括抽出では個体の抽出順を表示しません）';const m=history.reduce((a,b)=>a+b,0)/history.length;$('sampleStats').textContent=`100組を抽出しました。母平均 ${mu.toFixed(2)} ／ 標本平均の平均 ${m.toFixed(2)} ／ 記録 ${history.length} 組（直近最大400組）。`;});
-$('clearHistory').addEventListener('click',()=>{stopAuto();setAutoState(false);$('drawOnce').textContent='1組を自動抽出';history=[];resetSample();render();});
-for(const id of ['sampleN','samplingMode'])$(id).addEventListener('change',()=>{history=[];resetSample();render();});
-$('sampleN').addEventListener('input',()=>{$('nLabel').textContent=n();});
-function theory(){let size=+$('theoryN').value,sd=Math.sqrt(popVar),value=sd/Math.sqrt(size);$('theoryNLabel').textContent=size;$('theoryStats').textContent=`母標準偏差を ${sd.toFixed(2)} とすると、独立な抽出で n=${size} の標本平均の標準偏差は ${value.toFixed(2)} です。`;
- const svg=$('theoryChart');svg.replaceChildren();const x0=150,w=550,h=32;txt(svg,78,67,'n = 1');txt(svg,78,138,`n = ${size}`);svg.appendChild(el('rect',{x:x0,y:45,width:w,height:h,rx:5,fill:'#9bc4e6'}));svg.appendChild(el('rect',{x:x0,y:116,width:w/Math.sqrt(size),height:h,rx:5,fill:'#e8a24d'}));txt(svg,360,30,'標本平均の標準偏差（相対的な大きさ）');txt(svg,380,188,`長さの比  1 : 1/√${size} = ${(1/Math.sqrt(size)).toFixed(3)}`);}
-$('theoryN').addEventListener('input',theory);render();theory();
-})();</script><footer class="lesson-standard-footer"><div><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div>みんなの数学データベース｜高校生のための授業</div></footer></body></html>
+function redraw(){drawPopulation();drawMeans();$('nLabel').textContent=$('sampleN').value}
+$('drawOnce').addEventListener('click',()=>{const v=sample();redraw();$('sampleStats').textContent=`母平均 ${mu.toFixed(2)} ／ 今回の標本平均 ${v.toFixed(2)} ／ 差 ${(v-mu).toFixed(2)} ／ 標本の大きさ ${selected.length} ／ 記録 ${history.length} 回`});
+$('drawMany').addEventListener('click',()=>{for(let i=0;i<100;i++)sample();redraw();const mean=history.reduce((a,b)=>a+b,0)/history.length;$('sampleStats').textContent=`母平均 ${mu.toFixed(2)} ／ これまでの標本平均の平均 ${mean.toFixed(2)} ／ 記録 ${history.length} 回（直近最大400回）`});
+$('clearHistory').addEventListener('click',()=>{history=[];selected=[];redraw();$('sampleStats').textContent='記録を消去しました。「標本を1回抽出」を押してください。'});
+$('sampleN').addEventListener('input',()=>{history=[];selected=[];redraw();$('sampleStats').textContent='標本の大きさを変更しました。新しく抽出してください。'});
+function theory(){let n=+$('theoryN').value,sd=Math.sqrt(popVar),value=sd/Math.sqrt(n);$('theoryNLabel').textContent=n;$('theoryStats').textContent=`母標準偏差を ${sd.toFixed(2)} とすると、独立な抽出で n=${n} の標本平均の標準偏差は ${value.toFixed(2)} です。`;
+ let svg=$('theoryChart');svg.replaceChildren();let x0=150,w=550,h=32;txt(svg,78,67,'n = 1');txt(svg,78,138,`n = ${n}`);svg.appendChild(el('rect',{x:x0,y:45,width:w,height:h,rx:5,fill:'#9bc4e6'}));svg.appendChild(el('rect',{x:x0,y:116,width:w/Math.sqrt(n),height:h,rx:5,fill:'#e8a24d'}));txt(svg,360,30,`標本平均の標準偏差（相対的な大きさ）`);txt(svg,380,188,`長さの比  1 : 1/√${n} = ${(1/Math.sqrt(n)).toFixed(3)}`)}
+$('theoryN').addEventListener('input',theory);redraw();theory();
+})();
+</script><footer class="lesson-standard-footer"><div><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div>みんなの数学データベース｜高校生のための授業</div></footer></body></html>

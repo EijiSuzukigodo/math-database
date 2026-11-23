@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>確率変数と確率分布｜みんなの数学データベース</title>
 <style>
@@ -79,31 +78,38 @@ mjx-container[jax="SVG"] { font-size:92% !important; max-width:100%; }
 #table table td mjx-container, #examples .answer table td mjx-container { vertical-align:middle; }
 #md-standard-main .lesson-standard-goal h2 { font-size:clamp(20px,2.7vw,23px)!important; line-height:1.55!important; }
 @media(max-width:580px){#table table td,#examples .answer table td{padding-top:10px;padding-bottom:10px}}
-</style><style>
-/* 正規分布ページに合わせた統一表示（2026-11） */
-body{font-size:16px!important;line-height:1.85!important}
-.lesson-standard-header h1{line-height:1.35!important}
-.answer{background:#f0faf0!important;border-left:5px solid #3ca07b!important;border-top:0!important;border-right:0!important;border-bottom:0!important;border-radius:9px!important;padding:13px 16px!important;margin:9px 0 18px!important;color:inherit!important}
-.answer .formula,.answer .math,.answer .result,.answer .final-answer,.answer .answer-box{background:transparent!important;border:0!important;box-shadow:none!important}
-.answer mjx-container{background:transparent!important}
-.answer strong:first-child{display:inline-block;margin-bottom:5px}
-.formula mjx-container[display="true"]{margin:.55em 0!important}
-@media(max-width:700px){.answer{padding:12px!important}}
+</style><style id="mathb-statistics-unified">
+/* 統計的な推測12教材：文字・見出し・数式表示の共通調整 */
+html{overflow-x:hidden}body{font-size:16px!important;line-height:1.8!important}
+main{font-size:16px;line-height:1.8}
+main h2{font-size:23px;line-height:1.5}main h3{font-size:19px;line-height:1.5}
+main p,main li{line-height:1.8}
+main table{max-width:100%}main .math,main .formula,main .table-scroll{max-width:100%;overflow-x:auto}
+mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden}
+mjx-container svg{max-width:none!important}
+canvas,svg{max-width:100%}
+.mathb-review-return{max-width:970px;margin:24px auto 12px;padding:0 17px}
+.mathb-review-return a{display:inline-block;background:#e5f1fd;color:#175988;text-decoration:none;font-size:15px;font-weight:700;border-radius:9px;padding:10px 15px}
+@media(max-width:640px){main h2{font-size:21px}main h3{font-size:18px}main section{max-width:100%}}
 </style></head>
 <body>
 <header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_b.html">数学Bの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学B</div><h1>確率変数と確率分布</h1><p class="lesson-standard-bottom">数学B</p></div></header><main class="wrap lesson-standard-main" data-hs-lesson="" id="md-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>確率変数と確率分布の意味を理解し、確率分布表を作る力を身につける</h2><p>確率変数の取り得る値とその確率を整理し、硬貨やサイコロの例から確率分布表を作る。動く棒グラフや例題を通して、確率の合計が1になることを確かめる。</p></section>
-
+<nav aria-label="授業の進め方" class="hs-study-nav">
+<a href="#hs-explanation">説明</a>
+<a href="#hs-examples">例題と解説</a>
+<a href="#hs-practice">練習問題</a>
+<a href="#hs-summary">まとめ</a></nav>
 <article class="paper">
 <section id="basic"><h2 id="hs-explanation">1．確率変数とは</h2><p>偶然の結果に応じて値が決まる変数を<strong>確率変数</strong>といいます。たとえば、公平な硬貨を1回投げて表なら <strong>1</strong>、裏なら <strong>0</strong> と決めたとき、結果に対応する数を $X$ と書きます。</p><p><strong>離散型確率変数</strong>では、取り得る値ごとに確率を割り当てます。確率変数が取る値と確率の対応を<strong>確率分布</strong>といいます。</p><div class="formula">\[P(X=x_i)=p_i,\qquad p_i\geqq 0,\qquad \displaystyle\sum_{i=1}^{n}p_i=1\]</div><div class="tip">$P(X=x_i)$ は「確率変数 $X$ が $x_i$ という値になる確率」という意味です。$P(X=1)$ と $X=1$ は同じものではありません。</div><p>数学Ⅰ「データの分析」で扱う度数分布は、観察したデータの個数を整理するものです。こちらでは、実験を行う<strong>前に考えられる結果の確率</strong>を整理します。</p></section>
 <section id="table"><h2>2．確率分布表の作り方</h2><p>公平な硬貨を1回投げる。表が出たら $X=1$、裏が出たら $X=0$ とします。</p><table><thead><tr><th>$X$ の値</th><th>$0$</th><th>$1$</th><th>計</th></tr></thead><tbody><tr><th>確率</th><td>$\dfrac12$</td><td>$\dfrac12$</td><td>$1$</td></tr></tbody></table><p>もとの教材の例題はこの表に対応します。<strong>表のすべての確率の合計は必ず1</strong> です。</p><h3>公平なサイコロ1個</h3><p>出た目を $X$ とすれば、$X=1,2,3,4,5,6$ がそれぞれ確率 $\dfrac16$ で起こります。</p><table><thead><tr><th>$x$</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th></tr></thead><tbody><tr><th>$P(X=x)$</th><td>$\dfrac16$</td><td>$\dfrac16$</td><td>$\dfrac16$</td><td>$\dfrac16$</td><td>$\dfrac16$</td><td>$\dfrac16$</td></tr></tbody></table><p class="muted">値が等間隔であっても、確率が等しいとは限りません。試行の条件から確率を求めます。</p></section>
 <section id="visual"><h2>3．動く教材：確率分布の棒グラフ</h2><p>硬貨の「表の出る確率」$p$ と「投げる回数」$n$ を変えて、表の枚数 $X$ の確率分布を調べましょう。各回の結果は独立とします。これは後の「二項分布」の導入にもなります。</p><div class="controls"><div class="control"><label for="trials">投げる回数 $n$ <output id="trialsLabel">3</output></label><input id="trials" max="8" min="1" step="1" type="range" value="3"/></div><div class="control"><label for="chance">表の出る確率 $p$ <output id="chanceLabel">0.5</output></label><input id="chance" max="0.9" min="0.1" step="0.1" type="range" value="0.5"/></div></div><svg aria-label="表の枚数ごとの確率を示す棒グラフ" id="probChart" role="img" viewbox="0 0 660 315"></svg><div aria-live="polite" class="result" id="probResult"></div><div id="probTable"></div><div class="formula">\[P(X=k)={}_n\mathrm C_k\,p^k(1-p)^{n-k}\quad (k=0,1,\ldots,n)\]</div><p>この式は「どの $k$ 回が表かを選ぶ通り数」と「その並びが起こる確率」を掛け合わせたものです。棒の高さが変わっても、すべてを足した確率は $1$ のままです。</p><div class="warn">棒グラフでは、横軸に $X$ の値、縦軸に $P(X=k)$ を取ります。各棒の高さは確率であり、試行のたびに観察した度数ではありません。</div></section>
 <section id="examples"><h2 id="hs-examples">4．解説付き例題</h2>
-<div class="example"><strong>例題1：元の教材の例題</strong><p>公平な硬貨を1回投げ、表なら $X=1$、裏なら $X=0$ とする。$X$ の確率分布を求めよ。</p></div><div class="answer"><strong>解答と解説</strong><p>表と裏はそれぞれ確率 $\dfrac12$ だから、</p><div class="formula">\[P(X=0)=\dfrac12,\qquad P(X=1)=\dfrac12\]</div><p>両者の合計が $1$ になることも確認できます。</p></div>
-<div class="example"><strong>例題2：2枚の硬貨</strong><p>公平な硬貨を2枚投げるとき、表の枚数 $X$ の確率分布を求めよ。</p></div><div class="answer"><strong>解答と解説</strong><p>結果は（裏,裏）、（裏,表）、（表,裏）、（表,表）の4通りで同様に確からしい。表の枚数はそれぞれ $0,1,1,2$。</p><table><tr><th>$X$</th><td>0</td><td>1</td><td>2</td></tr><tr><th>$P(X=x)$</th><td>$\dfrac14$</td><td>$\dfrac12$</td><td>$\dfrac14$</td></tr></table><p>$\dfrac14+\dfrac12+\dfrac14=1$。</p></div>
-<div class="example"><strong>例題3：サイコロの偶奇</strong><p>公平なサイコロを投げ、偶数なら $X=1$、奇数なら $X=0$ とする。確率分布を求めよ。</p></div><div class="answer"><strong>解答と解説</strong><p>偶数は $2,4,6$、奇数は $1,3,5$ の各3通り。</p><div class="formula">\[P(X=0)=\frac36=\frac12,\qquad P(X=1)=\frac36=\frac12\]</div><p>数え方を変えても、確率変数は $0$ または $1$ です。</p></div>
-<div class="example"><strong>例題4：2個のサイコロの和</strong><p>公平なサイコロ2個の出た目の和を $S$ とする。$P(S=7)$ を求めよ。また $S$ の確率分布の特徴を説明せよ。</p></div><div class="answer"><strong>解答と解説</strong><p>出方は $6\times6=36$ 通り。和が7となるのは $(1,6),(2,5),(3,4),(4,3),(5,2),(6,1)$ の6通り。</p><div class="formula">\[P(S=7)=\frac6{36}=\frac16\]</div><p>和 $2,3,\ldots,12$ に対する場合の数は $1,2,3,4,5,6,5,4,3,2,1$ なので、確率はそれぞれを36で割った値です。合計は $36/36=1$ となります。</p></div>
-<div class="example"><strong>例題5：当たりくじ</strong><p>当たり2本、外れ3本から1本引き、当たりなら $X=5$、外れなら $X=-1$ とする。確率分布を求めよ。</p></div><div class="answer"><strong>解答と解説</strong><p>値は $-1$ と $5$ の2通りです。</p><table><tr><th>$X$</th><td>$-1$</td><td>$5$</td></tr><tr><th>$P(X=x)$</th><td>$\dfrac35$</td><td>$\dfrac25$</td></tr></table><p>確率変数は0以上の値だけとは限りません。</p></div>
-<div class="example"><strong>例題6：未知の確率を求める</strong><p>$X$ が $0,1,2$ を取り、$P(X=0)=a$, $P(X=1)=2a$, $P(X=2)=3a$ のとき $a$ を求めよ。</p></div><div class="answer"><strong>解答と解説</strong><div class="formula">\[a+2a+3a=1\quad\Longrightarrow\quad a=\dfrac16\]</div><p>よって確率は順に $\dfrac16,\dfrac13,\dfrac12$ となります。</p></div>
+<div class="example"><strong>例題1：元の教材の例題</strong><p>公平な硬貨を1回投げ、表なら $X=1$、裏なら $X=0$ とする。$X$ の確率分布を求めよ。</p></div><div class="answer"><strong>解答</strong><p>表と裏はそれぞれ確率 $\dfrac12$ だから、</p><div class="formula">\[P(X=0)=\dfrac12,\qquad P(X=1)=\dfrac12\]</div><p>両者の合計が $1$ になることも確認できます。</p></div>
+<div class="example"><strong>例題2：2枚の硬貨</strong><p>公平な硬貨を2枚投げるとき、表の枚数 $X$ の確率分布を求めよ。</p></div><div class="answer"><strong>解答</strong><p>結果は（裏,裏）、（裏,表）、（表,裏）、（表,表）の4通りで同様に確からしい。表の枚数はそれぞれ $0,1,1,2$。</p><table><tr><th>$X$</th><td>0</td><td>1</td><td>2</td></tr><tr><th>$P(X=x)$</th><td>$\dfrac14$</td><td>$\dfrac12$</td><td>$\dfrac14$</td></tr></table><p>$\dfrac14+\dfrac12+\dfrac14=1$。</p></div>
+<div class="example"><strong>例題3：サイコロの偶奇</strong><p>公平なサイコロを投げ、偶数なら $X=1$、奇数なら $X=0$ とする。確率分布を求めよ。</p></div><div class="answer"><strong>解答</strong><p>偶数は $2,4,6$、奇数は $1,3,5$ の各3通り。</p><div class="formula">\[P(X=0)=\frac36=\frac12,\qquad P(X=1)=\frac36=\frac12\]</div><p>数え方を変えても、確率変数は $0$ または $1$ です。</p></div>
+<div class="example"><strong>例題4：2個のサイコロの和</strong><p>公平なサイコロ2個の出た目の和を $S$ とする。$P(S=7)$ を求めよ。また $S$ の確率分布の特徴を説明せよ。</p></div><div class="answer"><strong>解答</strong><p>出方は $6\times6=36$ 通り。和が7となるのは $(1,6),(2,5),(3,4),(4,3),(5,2),(6,1)$ の6通り。</p><div class="formula">\[P(S=7)=\frac6{36}=\frac16\]</div><p>和 $2,3,\ldots,12$ に対する場合の数は $1,2,3,4,5,6,5,4,3,2,1$ なので、確率はそれぞれを36で割った値です。合計は $36/36=1$ となります。</p></div>
+<div class="example"><strong>例題5：当たりくじ</strong><p>当たり2本、外れ3本から1本引き、当たりなら $X=5$、外れなら $X=-1$ とする。確率分布を求めよ。</p></div><div class="answer"><strong>解答</strong><p>値は $-1$ と $5$ の2通りです。</p><table><tr><th>$X$</th><td>$-1$</td><td>$5$</td></tr><tr><th>$P(X=x)$</th><td>$\dfrac35$</td><td>$\dfrac25$</td></tr></table><p>確率変数は0以上の値だけとは限りません。</p></div>
+<div class="example"><strong>例題6：未知の確率を求める</strong><p>$X$ が $0,1,2$ を取り、$P(X=0)=a$, $P(X=1)=2a$, $P(X=2)=3a$ のとき $a$ を求めよ。</p></div><div class="answer"><strong>解答</strong><div class="formula">\[a+2a+3a=1\quad\Longrightarrow\quad a=\dfrac16\]</div><p>よって確率は順に $\dfrac16,\dfrac13,\dfrac12$ となります。</p></div>
 </section>
 <section id="exercise"><h2 id="hs-practice">5．練習問題（解答・解説付き）</h2>
 <div class="exercise"><strong>問題1（既存問題）</strong><p>公平なサイコロで、出た目を $X$ とする。$P(X=1)$ を求めよ。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>6通りの目は同様に確からしいので、$P(X=1)=\frac16$。</p></details></div>
