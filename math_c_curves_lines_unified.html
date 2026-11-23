@@ -72,15 +72,7 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 </style><link rel="stylesheet" href="lesson_common_style.css">
 <link rel="stylesheet" href="high_school_lesson_reading.css">
 </head><body>
-<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_c.html">数学Cの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学C</div><h1>2次曲線と直線</h1><p class="lesson-standard-bottom">数学C</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main" data-hs-lesson=""><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>2次曲線と直線</h2><p>直線との共有点、判別式、放物線・楕円・双曲線の接線を1ページで学びます。</p><p class="hs-outcome"><strong>この授業でできるようになること</strong><br>曲線と直線の連立方程式を立て、共有点や接線を求める。</p></section>
-<nav class="hs-study-nav" aria-label="授業の進め方">
-<a href="#hs-explanation">説明</a>
-<a href="#hs-examples">例題と解説</a>
-<a href="#hs-practice">練習問題</a>
-<a href="#hs-summary">まとめ</a></nav>
-
-
-<section><h2>1．この授業で学ぶこと</h2><p>放物線・楕円・双曲線と直線の共有点の個数を調べ、接線の方程式を求めます。直線を動かして、共有点が2個・1個・0個となる様子を確かめましょう。</p></section>
+<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_c.html">数学Cの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学C</div><h1>2次曲線と直線</h1><p class="lesson-standard-bottom">数学C</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main" data-hs-lesson=""><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>2次曲線と直線</h2><p>放物線・楕円・双曲線と直線の共有点の個数を調べ、判別式を利用して接線の方程式を求めます。直線を動かして、共有点が2個・1個・0個となる様子を確かめましょう。</p></section>
 <section id="cross"><h2 id="hs-explanation">1．2次曲線と直線の共有点</h2><p>二次曲線と直線の式を連立し、一方の文字を消去します。二次方程式になる場合、その判別式から共有点の個数を判断できます。</p><div class="eq">\[Ax^2+Bx+C=0\quad (A\ne 0),\qquad D=B^2-4AC\]</div><p>判別式が正なら2個、0なら1個（接する）、負なら0個です。ただし二次の係数が0になる場合は一次方程式として別に調べます。</p>
 <h3 id="hs-examples">例題1：放物線と直線</h3><p>放物線 \(y=x^2\) と直線 \(y=x+k\) の共有点の個数を求めましょう。</p><div class="eq">\[x^2-x-k=0,\quad D=1+4k\]</div><div class="eq">\[\begin{cases}2\text{個}&amp;(k&gt;-\frac14)\\1\text{個}&amp;(k=-\frac14)\\0\text{個}&amp;(k&lt;-\frac14)\end{cases}\]</div>
 <h3>動く図：曲線と直線の共有点</h3><div class="tabs" id="modes"><button class="active" data-mode="parabola">放物線</button><button data-mode="ellipse">楕円</button><button data-mode="hyperbola">双曲線</button></div><label>直線の位置（k = <output id="kv">1.0</output>）<input id="k" max="4" min="-4" step="0.05" type="range" value="1"/></label><canvas aria-label="二次曲線と動く直線の共有点を表示" height="520" id="plot" role="img" width="860"></canvas><div aria-live="polite" class="result" id="state"></div>
