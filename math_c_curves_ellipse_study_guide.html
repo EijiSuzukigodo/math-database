@@ -99,12 +99,28 @@ window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},opt
 <p><strong>解答・解説</strong></p>
 <p>距離の公式より、</p>
 <div class="formula eq">\[\sqrt{(x-4)^2+y^2}+\sqrt{(x+4)^2+y^2}=10\]</div>
-<p>\(PA=u\)、\(PB=v\) とおくと、\(u+v=10\) です。また、</p>
-<div class="formula eq">\[\begin{aligned}u^2-v^2&=((x-4)^2+y^2)-((x+4)^2+y^2)\\&=-16x\end{aligned}\]</div>
-<p>よって \((u-v)(u+v)=-16x\) から、\(u-v=-\dfrac{8x}{5}\) です。和と差を使うと、</p>
-<div class="formula eq">\[u=5-\frac{4x}{5},\qquad v=5+\frac{4x}{5}\]</div>
-<p>\(u^2=(x-4)^2+y^2\) に代入して整理します。</p>
-<div class="formula eq">\[\begin{aligned}\left(5-\frac{4x}{5}\right)^2&=(x-4)^2+y^2\\25-8x+\frac{16x^2}{25}&=x^2-8x+16+y^2\\9&=\frac{9x^2}{25}+y^2\end{aligned}\]</div>
+<p>左側の平方根を残して移項すると、</p>
+<div class="formula eq">\[\begin{aligned}
+\sqrt{(x-4)^2+y^2}
+=10-\sqrt{(x+4)^2+y^2}
+\end{aligned}\]</div>
+<p>両辺を2乗します。</p>
+<div class="formula eq">\[\begin{aligned}
+(x-4)^2+y^2
+={}&100-20\sqrt{(x+4)^2+y^2}\\
+&+(x+4)^2+y^2
+\end{aligned}\]</div>
+<p>両辺を整理すると、</p>
+<div class="formula eq">\[\begin{aligned}
+-16x&=100-20\sqrt{(x+4)^2+y^2}\\
+\sqrt{(x+4)^2+y^2}&=5+\frac{4x}{5}
+\end{aligned}\]</div>
+<p>もう一度両辺を2乗して整理します。</p>
+<div class="formula eq">\[\begin{aligned}
+(x+4)^2+y^2&=\left(5+\frac{4x}{5}\right)^2\\
+x^2+8x+16+y^2&=25+8x+\frac{16x^2}{25}\\
+\frac{9x^2}{25}+y^2&=9
+\end{aligned}\]</div>
 <p>したがって、求める方程式は</p>
 <div class="formula eq">\[\boxed{\frac{x^2}{25}+\frac{y^2}{9}=1}\]</div>
 <p>逆に、この式を満たす点では \(|x|\leq5\) なので \(5\pm\frac{4x}{5}>0\) です。距離の式を逆にたどると \(PA=5-\frac{4x}{5}\)、\(PB=5+\frac{4x}{5}\) となり、確かに \(PA+PB=10\) です。</p>
