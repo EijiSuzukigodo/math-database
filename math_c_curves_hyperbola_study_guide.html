@@ -203,7 +203,40 @@ for(const id of ['vertA','vertB','vertT'])el(id).addEventListener('input',draw);
 el('vertReset').addEventListener('click',()=>{if(raf)cancelAnimationFrame(raf);raf=0;el('vertA').value=4;el('vertB').value=3;el('vertT').value=.7;el('vertScale').value=1;draw()});
 function tick(ts){if(!raf)return;if(ts-last>30){phase+=.025;el('vertT').value=(1.8*Math.sin(phase)).toFixed(2);draw();last=ts}raf=requestAnimationFrame(tick)}
 el('vertPlay').addEventListener('click',()=>{if(!raf)raf=requestAnimationFrame(tick)});el('vertStop').addEventListener('click',()=>{if(raf)cancelAnimationFrame(raf);raf=0});document.addEventListener('visibilitychange',()=>{if(document.hidden&&raf){cancelAnimationFrame(raf);raf=0}});draw()})();</script>
-<section class="card"><h2>5．直角双曲線</h2><p>\(a=b\) なら漸近線の傾きは \(\pm1\) となり、2直線は直交します。このとき<strong>直角双曲線</strong>といいます。</p><div class="formula">\[\frac{x^2}{a^2}-\frac{y^2}{a^2}=1\quad\Longleftrightarrow\quad x^2-y^2=a^2\]</div><p>漸近線は \(y=x\) と \(y=-x\) です。動く図で \(a=b\) にしてみましょう。</p></section>
+<section class="card" id="hyperbola-rectangular"><h2>5．直角双曲線</h2><div class="hyperbola-rect-grid"><div class="hyperbola-rect-text">
+<h3>直角双曲線とは</h3><p>双曲線の2本の漸近線が<strong>直交する</strong>とき、その双曲線を<strong>直角双曲線</strong>という。</p>
+<div class="formula">\[\frac{x^2}{a^2}-\frac{y^2}{b^2}=1\qquad(a>0,\ b>0)\]</div>
+<p>この双曲線の漸近線は</p><div class="formula">\[y=\frac ba x,\qquad y=-\frac ba x\]</div>
+<p>2直線の傾きの積が \(-1\) になるとき、2直線は直交する。</p>
+<div class="formula">\[\frac ba\cdot\left(-\frac ba\right)=-1\]</div>
+<p>よって、\(a=b\) となる。したがって、直角双曲線の方程式は</p>
+<div class="formula">\[\boxed{\frac{x^2}{a^2}-\frac{y^2}{a^2}=1}\]</div>
+<p>すなわち、</p><div class="formula">\[\boxed{x^2-y^2=a^2}\]</div>
+<p>このとき漸近線は</p><div class="formula">\[\boxed{y=x,\qquad y=-x}\]</div>
+<h3>具体例</h3><p>\(a=b=3\) のとき、双曲線は \(x^2-y^2=9\)、漸近線は \(y=\pm x\) となる。頂点は \((\pm3,0)\)、焦点は \((\pm3\sqrt2,0)\) である。</p>
+<p>右のグラフで \(a,b\) を変え、漸近線が直交する場合を調べよう。</p>
+</div><div class="hyperbola-rect-visual"><h3>直角になる条件を確かめる</h3><p class="small">a と b を同じ値にすると、2本の漸近線が直交します。</p>
+<div class="controls"><div class="control"><label for="rectA">a：<output id="rectAv">3.0</output></label><input id="rectA" type="range" min="1" max="6" step="0.5" value="3"></div><div class="control"><label for="rectB">b：<output id="rectBv">3.0</output></label><input id="rectB" type="range" min="1" max="6" step="0.5" value="3"></div></div>
+<div class="hyperbola-scale-control"><label for="rectScale">グラフのスケール（1目盛）</label><select id="rectScale"><option value="0.5">0.5</option><option value="1" selected>1</option><option value="2">2</option><option value="5">5</option></select></div>
+<p class="rect-equation" id="rectEquation">漸近線：\(y=\pm x\)</p><canvas id="rectCanvas" class="graph" width="900" height="600" role="img" aria-label="直角双曲線と漸近線を示す動くグラフ"></canvas><p id="rectStatus" aria-live="polite"></p>
+<p class="small">青：双曲線　紫の破線：漸近線　赤：焦点　緑：頂点</p><div class="btns"><button id="rectEqual" type="button" class="primary">a＝b にする</button><button id="rectReset" type="button">初期値に戻す</button></div>
+</div></div></section>
+<style id="hyperbola-rect-layout">.hyperbola-rect-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;align-items:start}.hyperbola-rect-text,.hyperbola-rect-visual{min-width:0}.hyperbola-rect-text .formula{font-size:14px!important;padding:5px 4px!important;margin:6px 0!important;overflow-x:auto}.hyperbola-rect-text .formula mjx-container{font-size:88%!important}.hyperbola-rect-text p mjx-container:not([display="true"]){font-size:82%!important}.hyperbola-rect-visual{background:#f6faff;border:1px solid #d6e5f2;border-radius:12px;padding:14px}.hyperbola-rect-visual .controls{grid-template-columns:1fr!important}.hyperbola-rect-visual canvas{display:block;width:100%;height:auto}.rect-equation{text-align:center;background:#fff;border:1px solid #d6e5f2;border-radius:8px;padding:8px 4px;margin:10px 0 6px;font-weight:700}@media(max-width:760px){.hyperbola-rect-grid{grid-template-columns:1fr}}</style>
+<script id="hyperbola-rect-motion">(function(){'use strict';const el=id=>document.getElementById(id),cv=el('rectCanvas'),ctx=cv.getContext('2d');
+function draw(){const a=+el('rectA').value,b=+el('rectB').value,u=+el('rectScale').value,c=Math.hypot(a,b),W=cv.width,H=cv.height,S=Math.min(W/20,H/14)/u,cx=W/2,cy=H/2;
+el('rectAv').textContent=a.toFixed(1);el('rectBv').textContent=b.toFixed(1);
+const gcd=(m,n)=>n?gcd(n,m%n):m,A=Math.round(a*2),B=Math.round(b*2),d=gcd(A,B),num=B/d,den=A/d,frac=den===1?(num===1?'':String(num)):'\\dfrac{'+num+'}{'+den+'}';
+const eq=el('rectEquation');if(eq.dataset.eq!==frac){eq.dataset.eq=frac;eq.innerHTML='漸近線：\\(y=\\pm '+frac+'x\\)';if(window.MathJax&&MathJax.typesetPromise)MathJax.typesetPromise([eq])}
+ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);const xy=(x,y)=>[cx+x*S,cy-y*S],line=(p,q,color,w=2,dash=[])=>{ctx.beginPath();ctx.setLineDash(dash);ctx.moveTo(...xy(...p));ctx.lineTo(...xy(...q));ctx.strokeStyle=color;ctx.lineWidth=w;ctx.stroke();ctx.setLineDash([])},dot=(p,color)=>{let [x,y]=xy(...p);ctx.beginPath();ctx.arc(x,y,6,0,Math.PI*2);ctx.fillStyle=color;ctx.fill()},label=(str,p)=>{let [x,y]=xy(...p);ctx.fillStyle='#344e65';ctx.font='15px sans-serif';ctx.fillText(str,x+7,y-8)};
+for(let k=-10;k<=10;k++)line([k*u,-7*u],[k*u,7*u],'#edf2f7',1);for(let k=-7;k<=7;k++)line([-10*u,k*u],[10*u,k*u],'#edf2f7',1);
+line([-10*u,0],[10*u,0],'#8297a8');line([0,-7*u],[0,7*u],'#8297a8');label('x',[9.5*u,0]);label('y',[0,6.4*u]);label('O',[0,0]);
+for(let k=-8;k<=8;k+=2)if(k)label(String(k*u),[k*u,-.22*u]);for(let k=-6;k<=6;k+=2)if(k)label(String(k*u),[.12*u,k*u]);
+for(let sign of [-1,1])line([-10*u,-sign*10*u*b/a],[10*u,sign*10*u*b/a],'#9676b6',2,[10,6]);
+for(let branch of [-1,1])for(let sign of [-1,1]){ctx.beginPath();let first=true;for(let t=0;t<=3.5;t+=.01){let x=branch*a*Math.cosh(t),y=sign*b*Math.sinh(t);if(Math.abs(x)>10.2*u||Math.abs(y)>7.2*u)break;let [px,py]=xy(x,y);if(first){ctx.moveTo(px,py);first=false}else ctx.lineTo(px,py)}ctx.strokeStyle='#147fba';ctx.lineWidth=4;ctx.stroke()}
+dot([-c,0],'#cf4942');dot([c,0],'#cf4942');dot([-a,0],'#239c78');dot([a,0],'#239c78');
+el('rectStatus').textContent='a='+a.toFixed(1)+'、b='+b.toFixed(1)+' ｜ 漸近線の傾きの積 = '+(-(b/a)**2).toFixed(3)+' ｜ '+(a===b?'直角双曲線（漸近線は直交）':'漸近線は直交しない');
+}
+for(const id of ['rectA','rectB'])el(id).addEventListener('input',draw);el('rectScale').addEventListener('change',draw);el('rectEqual').addEventListener('click',()=>{el('rectB').value=el('rectA').value;draw()});el('rectReset').addEventListener('click',()=>{el('rectA').value=3;el('rectB').value=3;el('rectScale').value=1;draw()});draw()})();</script>
 <section class="card"><h2 id="hs-practice">6．例題と練習問題</h2><p>まず自分で考え、解答・解説を開いて確認しましょう。</p>
 <h3 id="hs-examples">例題2　頂点・焦点・漸近線</h3><p>\(\dfrac{x^2}{9}-\dfrac{y^2}{4}=1\) の頂点、焦点、漸近線を求めましょう。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(a=3,b=2,c=\sqrt{13}\) より、</p><div class="formula">\[\text{頂点 }(\pm3,0),\quad\text{焦点 }(\pm\sqrt{13},0)\]\[\text{漸近線 }y=\pm\frac23 x\]</div></details>
 <h3>例題3　縦に開く双曲線</h3><p>\(\dfrac{y^2}{16}-\dfrac{x^2}{9}=1\) の頂点、焦点、漸近線を求めましょう。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(a=3,b=4,c=5\) なので、</p><div class="formula">\[\text{頂点 }(0,\pm4),\quad\text{焦点 }(0,\pm5)\]\[\text{漸近線 }y=\pm\frac43 x\]</div></details>
