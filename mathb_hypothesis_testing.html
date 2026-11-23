@@ -1,9 +1,11 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
+
 <html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>仮説検定｜みんなの数学データベース</title>
 <style>*{box-sizing:border-box}body{margin:0;background:#f2f7fc;color:#19334e;font:16px/1.8 -apple-system,BlinkMacSystemFont,Meiryo,sans-serif}header{background:linear-gradient(110deg,#17365d,#215f99);color:#fff;padding:24px 0}.wrap{max-width:970px;margin:auto;padding:0 17px}h1{font-size:clamp(25px,4vw,35px);margin:7px 0}header p{font-size:14px;color:#e4effc;margin:0}main{padding:22px 17px 40px}section{background:#fff;border:1px solid #dbe6f1;border-radius:14px;padding:22px;margin:0 0 20px}.table-scroll{overflow-x:auto}.data-table{width:100%;border-collapse:collapse;font-size:15px;text-align:center}.data-table th,.data-table td{border:1px solid #ccdce9;padding:6px 9px}.data-table th{background:#eaf3fb}.data-table tr:nth-child(even){background:#f8fbff}.data-table .total{font-weight:700;background:#eaf3fb}.note{background:#f3f8ff;border-left:4px solid #3984b8;padding:12px;border-radius:6px}h2{font-size:23px;color:#174b78;margin:0 0 12px}.goal h2{margin-top:17px}mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden}mjx-container svg{max-width:none!important;width:auto!important}h3{font-size:19px;color:#174b78}.formula{text-align:center;background:#f3f8ff;padding:12px;overflow-x:auto;border-radius:9px;margin:13px 0}.example{background:#fff9ed;border-left:5px solid #d9943e;padding:14px;border-radius:9px}.answer{background:#eff9f3;border-left:5px solid #3ca07b;padding:14px;border-radius:9px;margin:10px 0 20px}.goal small{background:#e6f3ff;color:#145888;padding:4px 12px;border-radius:20px}label{display:inline-flex;flex-direction:column;margin:6px 15px 6px 0;font-weight:700}select,input{font:inherit;padding:7px}button{font:inherit;background:#2169a6;color:white;border:0;border-radius:8px;padding:10px;margin:5px}canvas{display:block;width:100%;height:auto;background:#fff;border:1px solid #dbe6f1;border-radius:9px}.status{background:#e8f3ff;border-radius:9px;padding:12px;margin:12px 0}details{background:#f4f8fd;padding:12px;margin:10px 0;border-radius:8px}summary{cursor:pointer;font-weight:700}footer{background:#112e4c;color:white;padding:18px}a{color:#176cae}@media(max-width:600px){section{padding:16px}}</style>
 <script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]}};</script><script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script></head><body>
 <header><div class="wrap"><p>みんなの数学データベース ／ 高校数学 ／ 数学B</p><h1>仮説検定</h1><p>数学B ／ 統計的な推測</p></div></header><main class="wrap">
-<section class="goal"><small>授業のねらい</small><h2>度数表から二項分布・正規分布による検定へ</h2><p>数学Ⅰで学んだ「偶然として起こりにくい結果か」という考え方を、反復試行の確率で計算し、数学Bの母平均・母比率の検定へ発展させます。</p></section>
+<section class="goal"><small>授業のねらい</small><h2>度数表から二項分布・正規分布による検定へ</h2><p>数学Ⅰで学んだ「偶然として起こりにくい結果か」という考え方を、反復試行の確率で計算し、正規分布による近似から母比率・母平均の仮説検定へ発展させます。</p></section>
 <section><h2>1．数学Ⅰからの出発：実験の表から判断する</h2>
 <h3>公正なコインを使った200セットの実験</h3>
 <p>表と裏が同じ確率で出ると考えられるコインを、<strong>1セットにつき30回</strong>投げます。この実験を<strong>200セット</strong>行い、各セットで表が出た回数を記録します。</p>
@@ -64,26 +66,26 @@
 <label>観測値 Z：<output id="zout">1.8</output><input id="z" max="4" min="-4" step=".1" type="range" value="1.8"/></label>
 <canvas aria-label="標準正規分布と棄却域" height="350" id="graph" width="850"></canvas><div aria-live="polite" class="status" id="result"></div>
 </section>
-<section><h2>3．母平均の仮説検定</h2>
-<p>ある学校では、数学のテストの平均点が60点とされていました。400人を無作為に調べたところ、標本平均は60.9点、母標準偏差は10点とみなせるものとします。平均点が上がったといえるでしょうか。</p>
-<div class="example"><h3>例題4　右片側検定（有意水準5％）</h3><p>母平均を \(m\) として \(H_0:m=60,\ H_1:m&gt;60\) を検定しなさい。</p></div>
-<div class="answer"><strong>解答</strong><p>標本平均の標準偏差は</p><div class="formula">\[\frac{\sigma}{\sqrt n}=\frac{10}{\sqrt{400}}=0.5\]</div>
-<p>帰無仮説のもとで</p><div class="formula">\[Z=\frac{\overline X-60}{\dfrac{10}{\sqrt{400}}}=\frac{60.9-60}{0.5}=1.8\]</div>
-<p>右側確率は \(P(Z\geqq1.8)\fallingdotseq0.0359&lt;0.05\)。よって帰無仮説を棄却し、平均点が60点より高いと判断する根拠がある。</p></div>
-<div class="example"><h3>例題5　両側検定（有意水準5％）</h3><p>同じデータで「母平均は60点と異なるか」を検定しなさい。</p></div>
-<div class="answer"><strong>解答</strong><p>\(H_0:m=60,\ H_1:m\ne60\)。検定統計量は同じく \(Z=1.8\)。</p>
-<div class="formula">\[P(|Z|\geqq1.8)\fallingdotseq2\times0.0359=0.0719&gt;0.05\]</div>
-<p>帰無仮説を棄却できない。母平均が60点と異なると判断するだけの根拠は得られない。</p></div>
-<p><strong>大切な点：</strong>同じ標本平均60.9点でも、「高くなったか」と「異なるか」では対立仮説が違うため、結論が変わることがあります。</p></section>
-<section><h2>4．母比率の仮説検定</h2>
-<p>ある地域で、政策Aの支持率は以前36％でした。今回、無作為に選んだ100人のうち45人が支持しました。支持率が上がったといえるでしょうか。</p>
-<div class="example"><h3>例題6　支持率が上がったか（右片側検定）</h3><p>有意水準5％で検定しなさい。</p></div>
+<section><h2>3．母比率の仮説検定</h2>
+<p>コインの表が出る確率を調べた方法は、商品の支持率やアンケートの回答割合など、母比率の検定にも応用できます。ここでは、正規分布を利用して母比率を検定します。</p><p>ある地域で、政策Aの支持率は以前36％でした。今回、無作為に選んだ100人のうち45人が支持しました。支持率が上がったといえるでしょうか。</p>
+<div class="example"><h3>例題4　支持率が上がったか（右片側検定）</h3><p>有意水準5％で検定しなさい。</p></div>
 <div class="answer"><strong>解答</strong><p>今回の母比率を \(p\) とすると</p><div class="formula">\[H_0:p=0.36,\qquad H_1:p&gt;0.36\]</div>
 <p>標本比率は \(R=45/100=0.45\)。帰無仮説のもとで、標本比率の平均は0.36、標準偏差は</p>
 <div class="formula">\[\sqrt{\frac{0.36(1-0.36)}{100}}=0.048\]</div>
 <p>したがって</p><div class="formula">\[Z=\frac{0.45-0.36}{\sqrt{\dfrac{0.36(1-0.36)}{100}}}=1.875\]</div>
 <p>右側確率は \(P(Z\geqq1.875)\fallingdotseq0.0304&lt;0.05\)。帰無仮説を棄却し、支持率が以前より上がったと判断する根拠がある。</p>
-<p>※ここでは標本比率の正規近似を用いています。</p></div></section>
+<p>※ここでは標本比率の正規近似を用いています。</p></div></section><section><h2>4．母平均の仮説検定</h2>
+<p>ある学校では、数学のテストの平均点が60点とされていました。400人を無作為に調べたところ、標本平均は60.9点、母標準偏差は10点とみなせるものとします。平均点が上がったといえるでしょうか。</p>
+<div class="example"><h3>例題5　右片側検定（有意水準5％）</h3><p>母平均を \(m\) として \(H_0:m=60,\ H_1:m&gt;60\) を検定しなさい。</p></div>
+<div class="answer"><strong>解答</strong><p>標本平均の標準偏差は</p><div class="formula">\[\frac{\sigma}{\sqrt n}=\frac{10}{\sqrt{400}}=0.5\]</div>
+<p>帰無仮説のもとで</p><div class="formula">\[Z=\frac{\overline X-60}{\dfrac{10}{\sqrt{400}}}=\frac{60.9-60}{0.5}=1.8\]</div>
+<p>右側確率は \(P(Z\geqq1.8)\fallingdotseq0.0359&lt;0.05\)。よって帰無仮説を棄却し、平均点が60点より高いと判断する根拠がある。</p></div>
+<div class="example"><h3>例題6　両側検定（有意水準5％）</h3><p>同じデータで「母平均は60点と異なるか」を検定しなさい。</p></div>
+<div class="answer"><strong>解答</strong><p>\(H_0:m=60,\ H_1:m\ne60\)。検定統計量は同じく \(Z=1.8\)。</p>
+<div class="formula">\[P(|Z|\geqq1.8)\fallingdotseq2\times0.0359=0.0719&gt;0.05\]</div>
+<p>帰無仮説を棄却できない。母平均が60点と異なると判断するだけの根拠は得られない。</p></div>
+<p><strong>大切な点：</strong>同じ標本平均60.9点でも、「高くなったか」と「異なるか」では対立仮説が違うため、結論が変わることがあります。</p></section>
+
 <section><h2>5．練習問題</h2>
 <p><strong>問題1</strong>　公平な硬貨を30回投げて19回表が出た。右片側検定で有意水準5％ならどう判断するか。</p>
 <details><summary>解答と解説</summary><div class="formula">\[P(X\geqq19)=\sum_{k=19}^{30}\frac{{}_{30}\mathrm C_k}{2^{30}}\fallingdotseq0.10024\]</div><p>0.05より大きいので棄却できない。</p></details>
@@ -91,7 +93,7 @@
 <p><strong>問題3</strong>　\(n=100,\ p_0=0.36,\ R=0.40\) のとき、母比率の右片側検定に用いる \(Z\) を求めなさい。</p>
 <details><summary>解答と解説</summary><div class="formula">\[Z=\frac{0.40-0.36}{\sqrt{\dfrac{0.36(1-0.36)}{100}}}\fallingdotseq0.833\]</div><p>5％右片側の境界1.645より小さいので、棄却できない。</p></details></section>
 <section><h2>6．まとめ</h2>
-<p>数学Ⅰでは、観測した結果が偶然として起こりにくいかを考えました。数学Aの反復試行の確率を使えば、その確率を理論的に計算できます。さらに数学Bでは、二項分布の正規近似や標本平均の分布を利用して、母平均・母比率の仮説検定へ発展させます。</p>
+<p>数学Ⅰでは、観測した結果が偶然として起こりにくいかを考えました。数学Aの反復試行の確率を使えば、その確率を理論的に計算できます。さらに数学Bでは、二項分布の正規近似から母比率の仮説検定へ進み、同じ考え方を母平均の仮説検定へ発展させます。</p>
 <div class="formula">\[\text{仮説を立てる}\ \longrightarrow\ \text{確率を求める}\ \longrightarrow\ \text{有意水準と比較する}\ \longrightarrow\ \text{判断する}\]</div>
 <p>「棄却できない」は「正しいと証明した」という意味ではありません。また、対立仮説が片側か両側かを、問題の問い方から判断しましょう。</p><div class="status"><strong>検定の結論の読み方</strong><p>帰無仮説を棄却する：観測結果は帰無仮説のもとでは起こりにくく、対立仮説を支持する統計的な根拠がある。</p><p>帰無仮説を棄却できない：観測結果は帰無仮説のもとでも十分起こり得るため、対立仮説を支持する十分な根拠がない。</p><p>どちらの判断も、仮説の正しさを数学的に証明するものではありません。</p></div></section>
 <p><a href="math_subject_b.html">← 数学Bに戻る</a></p>
