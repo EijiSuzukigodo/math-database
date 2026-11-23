@@ -238,8 +238,8 @@ el('rectStatus').textContent='a='+a.toFixed(1)+'、b='+b.toFixed(1)+' ｜ 漸近
 }
 for(const id of ['rectA','rectB'])el(id).addEventListener('input',draw);el('rectScale').addEventListener('change',draw);el('rectEqual').addEventListener('click',()=>{el('rectB').value=el('rectA').value;draw()});el('rectReset').addEventListener('click',()=>{el('rectA').value=3;el('rectB').value=3;el('rectScale').value=1;draw()});draw()})();</script>
 <section class="card" id="hs-examples-section"><h2 id="hs-practice">6．例題</h2><p>例題を通して、頂点・焦点・漸近線の求め方を確認しましょう。</p>
-<h3 id="hs-examples">例題2　頂点・焦点・漸近線</h3><p>\(\dfrac{x^2}{9}-\dfrac{y^2}{4}=1\) の頂点、焦点、漸近線を求めましょう。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(a=3,b=2,c=\sqrt{13}\) より、</p><div class="formula">\[\text{頂点 }(\pm3,0),\quad\text{焦点 }(\pm\sqrt{13},0)\]\[\text{漸近線 }y=\pm\frac23 x\]</div></details>
-<h3>例題3　縦に開く双曲線</h3><p>\(\dfrac{y^2}{16}-\dfrac{x^2}{9}=1\) の頂点、焦点、漸近線を求めましょう。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(a=3,b=4,c=5\) なので、</p><div class="formula">\[\text{頂点 }(0,\pm4),\quad\text{焦点 }(0,\pm5)\]\[\text{漸近線 }y=\pm\frac43 x\]</div></details>
+<h3 id="hs-examples">例題2　頂点・焦点・漸近線</h3><p>\(\dfrac{x^2}{9}-\dfrac{y^2}{4}=1\) の頂点、焦点、漸近線を求めましょう。</p><div class="hs-example-solution"><p><strong>解答・解説</strong></p><p>\(a=3,b=2,c=\sqrt{13}\) より、</p><div class="formula">\[\text{頂点 }(\pm3,0),\quad\text{焦点 }(\pm\sqrt{13},0)\]\[\text{漸近線 }y=\pm\frac23 x\]</div></div>
+<h3>例題3　縦に開く双曲線</h3><p>\(\dfrac{y^2}{16}-\dfrac{x^2}{9}=1\) の頂点、焦点、漸近線を求めましょう。</p><div class="hs-example-solution"><p><strong>解答・解説</strong></p><p>\(a=3,b=4,c=5\) なので、</p><div class="formula">\[\text{頂点 }(0,\pm4),\quad\text{焦点 }(0,\pm5)\]\[\text{漸近線 }y=\pm\frac43 x\]</div></div>
 </section>
 <section class="card" id="hs-exercises-section"><h2>7．練習問題</h2><p>まず自分で考え、解答・解説を開いて確認しましょう。</p>
 <h3>練習1：焦点から方程式をつくる</h3><p>2点 \((5,0),(-5,0)\) を焦点とし、焦点からの距離の差の絶対値が \(8\) である双曲線の方程式を求めましょう。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>\(c=5,2a=8\) より \(a=4\)、\(b^2=c^2-a^2=25-16=9\)。</p><div class="formula">\[\boxed{\frac{x^2}{16}-\frac{y^2}{9}=1}\]</div></details>
