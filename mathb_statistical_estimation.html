@@ -40,7 +40,24 @@
 <div class="answer"><strong>解答</strong><div class="math">\[2\times1.96\frac{6}{\sqrt n}\leqq0.6\]</div><div class="math">\[\sqrt n\geqq\frac{2\times1.96\times6}{0.6}=39.2\]</div><div class="math">\[n\geqq39.2^2=1536.64\]</div><p>したがって、標本の大きさは少なくとも <strong>1537</strong> とすればよいです。</p></div><h3>動く図：信頼区間の幅</h3><p>標本の大きさを増やすと、信頼区間が狭くなる様子を確かめましょう。</p><div class="controls"><label>標本の大きさ n<input id="n" max="400" min="25" step="25" type="range" value="100"/><output id="nval">100</output></label><label>標準偏差 σ<input id="sd" max="20" min="2" step="1" type="range" value="10"/><output id="sdval">10</output></label><label>標本平均<input id="mean" max="70" min="30" step="1" type="range" value="50"/><output id="meanval">50</output></label></div><canvas aria-label="母平均の95％信頼区間" height="190" id="widthChart" width="840"></canvas><div aria-live="polite" class="info" id="widthInfo"></div>
 <h3>動く図：95％信頼区間を繰り返し作る</h3><p>真の母平均50、母標準偏差10の正規母集団から標本を抽出します。青い区間は母平均を含み、橙色は含みません。</p><div class="controls"><label>標本の大きさ n<select id="simn"><option>10</option><option selected="">25</option><option>50</option><option>100</option></select></label><button id="sim20">20回抽出</button><button id="sim100">100回抽出</button><button id="clear">リセット</button></div><canvas aria-label="繰り返し抽出した信頼区間" height="410" id="coverageChart" width="840"></canvas><div aria-live="polite" class="info" id="coverageInfo">抽出ボタンを押してください。</div></section>
 
-<section><h2>2．母比率の推定</h2><p>母集団におけるある性質をもつ割合を <strong>母比率</strong> \(p\)、標本の中でその性質をもつ割合を <strong>標本比率</strong> \(R\) とします。</p><p>大きさ \(n\) の無作為標本では、標本比率の平均と標準偏差は</p><div class="math">\[E(R)=p,\qquad\sigma(R)=\sqrt{\frac{p(1-p)}{n}}\]</div><p>\(n\) が十分大きく正規近似が適切なら、未知の \(p\) を \(R\) で置き換えて、信頼度95％の信頼区間は近似的に</p><div class="math">\[\boxed{R-1.96\sqrt{\frac{R(1-R)}{n}}\leqq p\leqq R+1.96\sqrt{\frac{R(1-R)}{n}}}\]</div><p>と求められます。計算した区間が0より小さい、または1より大きい場合は、母比率が0以上1以下であることにも注意します。</p><h3>二項分布から母比率の信頼区間を導く</h3>
+<section><h2>2．母比率の推定</h2>
+<h3>まず、母比率の推定をイメージしよう</h3>
+<p>あるテレビ番組について、全国の世帯のうち、何％が視聴したのかを調べたいとします。しかし、全国すべての世帯を調査するのは大変です。</p>
+<p>そこで、全国の世帯から<strong>1600世帯を無作為に選んで</strong>調べたところ、<strong>320世帯</strong>がその番組を視聴していました。</p>
+<div class="info"><strong>全国の視聴率は何％くらいだろう？</strong>
+<p>調べた1600世帯のうち、視聴した世帯の割合（標本比率）は</p>
+<div class="math">\[R=\frac{320}{1600}=0.20\]</div>
+<p>つまり<strong>20％</strong>です。では、全国の世帯全体の視聴率（母比率）も、ちょうど20％といえるでしょうか。</p></div>
+<div style="border:1px solid #d4e4f0;border-radius:12px;padding:14px;margin:16px 0;background:#f8fbfe">
+<p style="font-weight:bold;margin:0 0 12px">1600世帯を調べた結果</p>
+<div style="display:flex;height:38px;overflow:hidden;border-radius:7px;max-width:650px"><div style="width:20%;background:#287bb6;color:white;display:flex;align-items:center;justify-content:center;font-weight:bold">320世帯</div><div style="width:80%;background:#dbe8f3;display:flex;align-items:center;justify-content:center;color:#244963">1280世帯</div></div>
+<p style="margin:8px 0 0;font-size:.92em">■ 視聴した世帯：20％　／　視聴しなかった世帯：80％</p>
+</div>
+<p>無作為に選ぶ1600世帯が変われば、標本比率も少し変わります。したがって、標本比率20％が全国の母比率とぴったり一致するとは限りません。</p>
+<p>そこで、<strong>「母比率は20％の近くの、ある範囲にあるだろう」</strong>と考えます。これが<strong>母比率の推定</strong>です。</p>
+<p>この調査結果から信頼度95％の信頼区間を計算すると、近似的に<strong>18.04％以上21.96％以下</strong>となります。具体的な計算は後の例題で扱います。</p>
+<p>それでは、なぜこの範囲を求められるのか、標本比率の分布と二項分布を使って説明しましょう。</p>
+<h3>母比率と標本比率</h3><p>母集団におけるある性質をもつ割合を <strong>母比率</strong> \(p\)、標本の中でその性質をもつ割合を <strong>標本比率</strong> \(R\) とします。</p><p>大きさ \(n\) の無作為標本では、標本比率の平均と標準偏差は</p><div class="math">\[E(R)=p,\qquad\sigma(R)=\sqrt{\frac{p(1-p)}{n}}\]</div><p>\(n\) が十分大きく正規近似が適切なら、未知の \(p\) を \(R\) で置き換えて、信頼度95％の信頼区間は近似的に</p><div class="math">\[\boxed{R-1.96\sqrt{\frac{R(1-R)}{n}}\leqq p\leqq R+1.96\sqrt{\frac{R(1-R)}{n}}}\]</div><p>と求められます。計算した区間が0より小さい、または1より大きい場合は、母比率が0以上1以下であることにも注意します。</p><h3>二項分布から母比率の信頼区間を導く</h3>
 <p>母集団の中である性質をもつ個体の割合を \(p\) とします。大きさ \(n\) の無作為標本の中で、その性質をもつ個体の個数を \(X\) とすると、独立な抽出とみなせる場合、</p>
 <div class="math">\[X\sim B(n,p)\]</div>
 <p>となります。二項分布の平均と分散は、</p>
