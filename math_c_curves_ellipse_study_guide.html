@@ -72,12 +72,29 @@ window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},opt
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <link rel="stylesheet" href="lesson_common_style.css">
 <link rel="stylesheet" href="high_school_lesson_reading.css">
-</head><body>
+<style id="ellipse-intro-matching-style">
+/* 放物線の教材に合わせ、数式の大きさと余白を統一 */
+.formula{font-family:inherit;font-weight:400;font-size:1rem;padding:7px 8px;margin:8px 0;line-height:1.4;overflow-x:auto;overflow-y:hidden}
+.formula mjx-container{font-size:100%!important}
+.formula mjx-container[display="true"]{margin:6px 0!important}
+.ellipse-intro-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:18px;align-items:start}
+.ellipse-intro-grid>*{min-width:0}
+.ellipse-intro-text{margin:0}
+.ellipse-intro-visual{background:#f4f8fd;border:1px solid #d5e3ef;border-radius:12px;padding:12px}
+.ellipse-intro-visual h3{margin:0 0 10px}
+#ellipse-intro-canvas{display:block;width:100%;height:auto;background:#fff;border:1px solid #d5e3ef;border-radius:8px}
+.ellipse-intro-visual label{display:block;margin-top:10px}
+#ellipse-intro-t{width:100%}
+.ellipse-intro-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.ellipse-intro-actions button{cursor:pointer}
+#ellipse-intro-value{font-size:.95rem;margin:8px 0 0}
+@media(max-width:700px){.ellipse-intro-grid{grid-template-columns:1fr}}
+</style></head><body>
 <header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_c.html">数学Cの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学C</div><h1>楕円</h1><p class="lesson-standard-bottom">数学C ／ 式と曲線</p></div></header><main class="lesson-standard-main" id="md-standard-main" data-hs-lesson=""><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>軌跡の条件から楕円の方程式へ</h2><p>2点からの距離の和が一定となる点の軌跡を求め、その曲線が楕円であることを理解します。さらに、焦点と標準形の関係へ一般化します。</p></section>
 <section class="card toc" hidden="" style="display:none!important"><p class="small">※ 数式の整形にはMathJaxを利用しています。数式の表示にはインターネット接続が必要です。</p><span class="pill">学習の道順</span><p>① 楕円の定義　→　② 方程式の導出　→　③ 縦長の楕円　→　④ 円の伸縮　→　⑤ 内分点の軌跡　→　⑥ 練習問題</p><a href="#definition">定義と動く図</a><a href="#proof">方程式の導出</a><a href="#vertical">縦長の楕円</a><a href="#scaling">円の伸縮</a><a href="#locus">軌跡</a><a href="#practice">練習問題</a></section>
 <section class="card" id="ellipse-introduction"><h2>1．2点からの距離の和が一定となる点の軌跡</h2>
 <p>まず、曲線の名前や特別な用語を使わずに、点の軌跡を求めてみましょう。</p>
-<div class="mini"><h3>例題1　2点からの距離の和が10となる点</h3>
+<div class="ellipse-intro-grid"><div class="mini ellipse-intro-text"><h3>例題1　2点からの距離の和が10となる点</h3>
 <p>座標平面上に2点 \(A(4,0)\)、\(B(-4,0)\) があります。点 \(P(x,y)\) が \(PA+PB=10\) を満たしながら動くとき、点 \(P\) の軌跡を表す方程式を求めましょう。</p>
 <p><strong>解答・解説</strong></p>
 <p>距離の公式より、</p>
@@ -91,7 +108,7 @@ window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},opt
 <p>したがって、求める方程式は</p>
 <div class="formula eq">\[\boxed{\frac{x^2}{25}+\frac{y^2}{9}=1}\]</div>
 <p>逆に、この式を満たす点では \(|x|\leq5\) なので \(5\pm\frac{4x}{5}>0\) です。距離の式を逆にたどると \(PA=5-\frac{4x}{5}\)、\(PB=5+\frac{4x}{5}\) となり、確かに \(PA+PB=10\) です。</p>
-<p>この方程式が表す曲線を<strong>楕円</strong>といいます。2点からの距離の和が一定となる点の軌跡です。次に、この2点を「焦点」と呼んで一般化します。</p></div></section>
+<p>この方程式が表す曲線を<strong>楕円</strong>といいます。2点からの距離の和が一定となる点の軌跡です。次に、この2点を「焦点」と呼んで一般化します。</p></div><div class="ellipse-intro-visual"><h3>2点からの距離の和を確かめる</h3><canvas id="ellipse-intro-canvas" width="600" height="460" role="img" aria-label="2点A、Bからの距離の和が10となる点Pの軌跡を描く図"></canvas><label for="ellipse-intro-t">点 P の位置　<output id="ellipse-intro-angle">0</output>°</label><input id="ellipse-intro-t" type="range" min="0" max="360" value="0" step="1"><div class="ellipse-intro-actions"><button type="button" id="ellipse-intro-play">軌跡を描く</button><button type="button" id="ellipse-intro-reset">初期位置に戻す</button></div><p id="ellipse-intro-value">PA + PB = 10</p></div></div></section>
 <section class="card" id="definition"><span class="pill">2　楕円の定義</span><h2 id="hs-explanation">2．楕円の定義と動く図</h2><p>異なる2点 <strong>F₁, F₂</strong> からの距離の和が一定 <strong>2a</strong> となる点 P の軌跡を、<strong>楕円</strong>といいます。焦点を F₁(−c, 0), F₂(c, 0) として考えます。</p>
 <div class="formula eq">\[PF_1+PF_2=2a\qquad(a&gt;c&gt;0)\]</div>
 <div class="controls"><div class="control"><label for="a">長半径 a = <output id="aOut">4.0</output></label><input id="a" type="range" min="2.5" max="6" step="0.1" value="4"></div><div class="control"><label for="ratio">焦点の位置 c/a = <output id="ratioOut">0.65</output></label><input id="ratio" type="range" min="0.10" max="0.92" step="0.01" value="0.65"></div><div class="control"><label for="t">楕円上の点 P の位置 = <output id="tOut">50</output>°</label><input id="t" type="range" min="0" max="360" step="1" value="50"></div></div>
@@ -150,4 +167,26 @@ $('play').addEventListener('click',()=>{if(animation){cancelAnimationFrame(anima
 $('reset').addEventListener('click',()=>{$('a').value=4;$('ratio').value=.65;$('t').value=50;drawEllipse();});
 function stop(){if('speechSynthesis'in window)window.speechSynthesis.cancel();}document.querySelectorAll('.stopSpeech').forEach(b=>b.addEventListener('click',stop));document.querySelectorAll('[data-speak]').forEach(b=>b.addEventListener('click',()=>{if(!('speechSynthesis'in window)){alert('このブラウザでは音声読み上げが利用できません。Safariでお試しください。');return;}stop();const msg=new SpeechSynthesisUtterance(b.dataset.speak);msg.lang='ja-JP';msg.rate=.88;let voices=window.speechSynthesis.getVoices(),v=voices.find(v=>v.lang.toLowerCase()==='ja-jp')||voices.find(v=>v.lang.toLowerCase().startsWith('ja'));if(v)msg.voice=v;window.speechSynthesis.speak(msg);}));window.addEventListener('pagehide',()=>{stop();if(animation)cancelAnimationFrame(animation)});
 drawEllipse();drawScale();drawLocus();})();
-</script><footer class="site-parent-landmark"><div class="site-parent-link"><a href="math_subject_c.html">数学Cの授業一覧に戻る</a></div><div>みんなの数学データベース</div></footer></body></html>
+</script><footer class="site-parent-landmark"><div class="site-parent-link"><a href="math_subject_c.html">数学Cの授業一覧に戻る</a></div><div>みんなの数学データベース</div></footer><script id="ellipse-intro-trajectory-script">
+(()=>{'use strict';
+const canvas=document.getElementById('ellipse-intro-canvas'),slider=document.getElementById('ellipse-intro-t'),out=document.getElementById('ellipse-intro-angle'),value=document.getElementById('ellipse-intro-value'),play=document.getElementById('ellipse-intro-play'),reset=document.getElementById('ellipse-intro-reset');
+if(!canvas||!slider||!out||!value||!play||!reset)return;
+const ctx=canvas.getContext('2d'),W=canvas.width,H=canvas.height,S=42,cx=W/2,cy=H/2;
+let maxAngle=0,raf=null,last=0;
+function xy(x,y){return[cx+x*S,cy-y*S]}
+function draw(){let angle=Number(slider.value),theta=angle*Math.PI/180,x=5*Math.cos(theta),y=3*Math.sin(theta);out.textContent=angle;
+ctx.clearRect(0,0,W,H);ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
+ctx.strokeStyle='#e5edf3';ctx.lineWidth=1;for(let i=-7;i<=7;i++){let xx=cx+i*S,yy=cy+i*S;ctx.beginPath();ctx.moveTo(xx,0);ctx.lineTo(xx,H);ctx.moveTo(0,yy);ctx.lineTo(W,yy);ctx.stroke()}
+ctx.strokeStyle='#64788b';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(0,cy);ctx.lineTo(W,cy);ctx.moveTo(cx,0);ctx.lineTo(cx,H);ctx.stroke();
+ctx.fillStyle='#536a7e';ctx.font='17px sans-serif';ctx.fillText('x',W-24,cy-12);ctx.fillText('y',cx+10,20);ctx.fillText('O',cx+8,cy+20);
+ctx.beginPath();for(let k=0;k<=maxAngle;k++){let q=xy(5*Math.cos(k*Math.PI/180),3*Math.sin(k*Math.PI/180));if(k===0)ctx.moveTo(...q);else ctx.lineTo(...q)}ctx.strokeStyle='#176cae';ctx.lineWidth=4;ctx.stroke();
+let A=xy(4,0),B=xy(-4,0),P=xy(x,y);
+for(const [Q,color] of [[A,'#df863b'],[B,'#219b85']]){ctx.beginPath();ctx.moveTo(...Q);ctx.lineTo(...P);ctx.strokeStyle=color;ctx.lineWidth=3;ctx.stroke()}
+for(const [Q,label,color,dx,dy] of [[A,'A(4,0)','#df863b',8,22],[B,'B(-4,0)','#219b85',-80,22],[P,'P','#176cae',9,-12]]){ctx.beginPath();ctx.arc(Q[0],Q[1],5,0,Math.PI*2);ctx.fillStyle=color;ctx.fill();ctx.font='bold 17px sans-serif';ctx.fillStyle='#17365d';ctx.fillText(label,Q[0]+dx,Q[1]+dy)}
+let pa=Math.hypot(x-4,y),pb=Math.hypot(x+4,y);value.textContent='PA = '+pa.toFixed(2)+'、PB = '+pb.toFixed(2)+'、PA + PB = '+(pa+pb).toFixed(2)}
+function stop(){if(raf!==null)cancelAnimationFrame(raf);raf=null;play.textContent='軌跡を描く'}
+slider.addEventListener('input',()=>{maxAngle=Math.max(maxAngle,Number(slider.value));draw()});
+play.addEventListener('click',()=>{if(raf!==null){stop();return}if(Number(slider.value)>=360){slider.value=0;maxAngle=0}play.textContent='一時停止';last=0;const step=now=>{if(raf===null)return;if(now-last>=30){let v=Math.min(360,Number(slider.value)+2);slider.value=v;maxAngle=Math.max(maxAngle,v);draw();last=now;if(v>=360){stop();return}}raf=requestAnimationFrame(step)};raf=requestAnimationFrame(step)});
+reset.addEventListener('click',()=>{stop();slider.value=0;maxAngle=0;draw()});window.addEventListener('pagehide',stop);draw();
+})();
+</script></body></html>
