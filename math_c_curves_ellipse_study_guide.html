@@ -89,7 +89,7 @@ window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},opt
 .ellipse-intro-actions button{cursor:pointer}
 #ellipse-intro-value{font-size:.95rem;margin:8px 0 0}
 @media(max-width:700px){.ellipse-intro-grid{grid-template-columns:1fr}}
-</style></head><body>
+</style><style id="ellipse-standard-comparison-css">.ellipse-standard-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:16px;align-items:start}.ellipse-standard-layout>*{min-width:0}.ellipse-standard-visual{background:#f4f8fd;border:1px solid #d5e3ef;border-radius:12px;padding:12px}.ellipse-standard-visual label{margin-right:10px}.ellipse-standard-visual select{font-size:1rem;padding:5px}#ellipse-standard-canvas{display:block;width:100%;height:auto;background:#fff;border:1px solid #d5e3ef;border-radius:8px;margin-top:10px}#ellipse-standard-caption{margin:6px 0;font-size:.95rem}@media(max-width:700px){.ellipse-standard-layout{grid-template-columns:1fr}}</style></head><body>
 <header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_c.html">数学Cの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学C</div><h1>楕円</h1><p class="lesson-standard-bottom">数学C ／ 式と曲線</p></div></header><main class="lesson-standard-main" id="md-standard-main" data-hs-lesson=""><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>軌跡の条件から楕円の方程式へ</h2><p>2点からの距離の和が一定となる点の軌跡を求め、その曲線が楕円であることを理解します。さらに、焦点と標準形の関係へ一般化します。</p></section>
 <section class="card toc" hidden="" style="display:none!important"><p class="small">※ 数式の整形にはMathJaxを利用しています。数式の表示にはインターネット接続が必要です。</p><span class="pill">学習の道順</span><p>① 楕円の定義　→　② 方程式の導出　→　③ 縦長の楕円　→　④ 円の伸縮　→　⑤ 内分点の軌跡　→　⑥ 練習問題</p><a href="#definition">定義と動く図</a><a href="#proof">方程式の導出</a><a href="#vertical">縦長の楕円</a><a href="#scaling">円の伸縮</a><a href="#locus">軌跡</a><a href="#practice">練習問題</a></section>
 <section class="card" id="ellipse-introduction"><h2>1．2点からの距離の和が一定となる点の軌跡</h2>
@@ -132,22 +132,43 @@ x^2+8x+16+y^2&=25+8x+\frac{16x^2}{25}\\
 <canvas id="ellipse" class="graph" width="860" height="540" role="img" aria-label="横長の楕円、二つの焦点と点P、焦点からPまでの線分を表す動く座標平面"></canvas>
 <p class="status" id="values" aria-live="polite">計算中…</p><p class="hint">青い曲線が楕円です。オレンジ色と緑色の線分を合わせた長さは、Pをどこへ動かしても <strong>2a</strong> のままです。焦点間の距離が大きいほど細長い楕円になります。</p>
 <div class="btns"><button hidden="" aria-hidden="true" tabindex="-1" style="display:none!important" type="button" class="speak" data-speak="焦点 F1 と F2 からの距離の和が一定になる点の集まりを、楕円といいます。2つの焦点から点Pまでの距離を足すと、常に2aになります。点Pを動かして確かめましょう。">▶ この説明を読み上げる</button><button hidden="" aria-hidden="true" tabindex="-1" style="display:none!important" class="ghost stopSpeech" type="button">■ 読み上げ停止</button></div></section>
-<section class="card" id="proof"><span class="pill">3　公式の導出</span><h2>楕円の方程式を定義から導こう</h2><p>焦点を F₁(−c, 0), F₂(c, 0) とし、P(x, y) から焦点までの距離をそれぞれ r₁, r₂ とおきます。</p>
-<div class="formula eq">\[\begin{aligned}r_1&amp;=\sqrt{(x+c)^2+y^2}\\r_2&amp;=\sqrt{(x-c)^2+y^2}\end{aligned}\]</div>
-<p><span class="number">①</span>定義より <strong>\(r_1+r_2=2a\)</strong> です。</p>
-<p><span class="number">②</span>平方の差を計算すると、<strong>\(r_1^2-r_2^2=4cx\)</strong> です。そこで</p>
-<div class="formula eq">\[\begin{aligned}(r_1-r_2)(r_1+r_2)&amp;=4cx\\r_1-r_2&amp;=\frac{2cx}{a}\end{aligned}\]</div>
-<p><span class="number">③</span>和と差を解くと、<strong>\(r_1=a+\frac{cx}{a}\)</strong>、<strong>\(r_2=a-\frac{cx}{a}\)</strong> が得られます。</p>
-<p><span class="number">④</span>例えば \(r_1^2=(x+c)^2+y^2\) に \(r_1=a+\frac{cx}{a}\) を代入すると、</p>
-<div class="formula eq">\[\left(a+\frac{cx}{a}\right)^2=(x+c)^2+y^2\]</div><p>両辺を整理して、</p><div class="formula eq">\[a^2y^2+(a^2-c^2)x^2=a^2(a^2-c^2)\]</div>
-<p>ここで <strong>\(b^2=a^2-c^2\)</strong> とおくと、標準形になります。</p>
-<div class="formula eq">\[\boxed{\frac{x^2}{a^2}+\frac{y^2}{b^2}=1}\]</div><p class="small" style="text-align:center">\(a&gt;b&gt;0,\quad c^2=a^2-b^2\)</p>
-<p>逆に、この式上の点では上の距離の式が成立し、2つの焦点からの距離の和が 2a になります。</p>
-<div class="twocol"><div class="mini"><h3>長軸と短軸</h3><p>横長の楕円では長軸は x 軸方向で長さ <strong>2a</strong>、短軸は y 軸方向で長さ <strong>2b</strong> です。</p></div><div class="mini"><h3>中心・頂点・対称性</h3><p>中心は原点。頂点は (±a, 0) と (0, ±b)。x 軸、y 軸、原点について対称です。</p></div></div>
-<div class="btns"><button hidden="" aria-hidden="true" tabindex="-1" style="display:none!important" type="button" class="speak" data-speak="楕円の標準形を導きます。焦点からの距離をそれぞれ r1、r2 とすると、和は2aです。平方の差を使うと、差は2cx割るaです。これを距離の式に代入し、bの2乗をaの2乗引くcの2乗とおけば、xの2乗割るaの2乗、足す、yの2乗割るbの2乗、イコール1、が得られます。">▶ 導出を読み上げる</button><button hidden="" aria-hidden="true" tabindex="-1" style="display:none!important" class="ghost stopSpeech" type="button">■ 読み上げ停止</button></div></section>
-<section class="card" id="vertical"><span class="pill">4　縦長の楕円</span><h2>長軸が y 軸上にある場合</h2><p>長半径が b、短半径が a（b &gt; a &gt; 0）の場合も同じ考え方です。焦点は <strong>(0, ±c)</strong>、ただし <strong>\(c^2=b^2-a^2\)</strong> です。</p><div class="formula eq">\[\boxed{\frac{x^2}{a^2}+\frac{y^2}{b^2}=1}\qquad(b&gt;a&gt;0)\]</div>
-<div class="twocol"><div class="mini"><h3 id="hs-examples">例題1：横長</h3><p>\(\dfrac{x^2}{9}+\dfrac{y^2}{4}=1\)</p><p>a=3、b=2、c=√(9−4)=√5</p><p><strong>焦点：(±√5, 0)</strong>、長軸 6、短軸 4。</p></div><div class="mini"><h3>例題2：縦長</h3><p>\(\dfrac{x^2}{9}+\dfrac{y^2}{16}=1\)</p><p>長半径 4、短半径 3、c=√(16−9)=√7</p><p><strong>焦点：(0, ±√7)</strong>、長軸 8、短軸 6。</p></div></div>
-<div class="btns"><button hidden="" aria-hidden="true" tabindex="-1" style="display:none!important" type="button" class="speak" data-speak="楕円には横長と縦長があります。分母が大きいほうが長軸の方向です。例えば、xの2乗割る9、足すyの2乗割る16、イコール1なら、縦長です。焦点は、0、プラスマイナスルート7です。">▶ 例題を読み上げる</button><button hidden="" aria-hidden="true" tabindex="-1" style="display:none!important" class="ghost stopSpeech" type="button">■ 読み上げ停止</button></div></section>
+<section class="card" id="proof"><span class="pill">3　横長の楕円の標準形</span><h2>焦点からの距離の和を一般化する</h2>
+<p>例題1では2点の座標が \((\pm4,0)\)、距離の和が \(10\) でした。今度は2点を焦点 \(F_1(-c,0)\)、\(F_2(c,0)\) とし、距離の和を \(2a\) として一般化します。ただし \(a>c>0\) とします。</p>
+<div class="formula eq">\[PF_1+PF_2=2a\]</div>
+<p>点 \(P(x,y)\) について距離の公式を使うと、</p>
+<div class="formula eq">\[\sqrt{(x+c)^2+y^2}+\sqrt{(x-c)^2+y^2}=2a\]</div>
+<p>例題1と同様に、一方の平方根を移項して2乗します。</p>
+<div class="formula eq">\[\begin{aligned}
+\sqrt{(x+c)^2+y^2}
+&=2a-\sqrt{(x-c)^2+y^2}\\
+(x+c)^2+y^2
+&=4a^2-4a\sqrt{(x-c)^2+y^2}\\
+&\quad +(x-c)^2+y^2
+\end{aligned}\]</div>
+<p>整理すると、</p>
+<div class="formula eq">\[\sqrt{(x-c)^2+y^2}=a-\frac{cx}{a}\]</div>
+<p>もう一度両辺を2乗して、</p>
+<div class="formula eq">\[\begin{aligned}
+(x-c)^2+y^2&=\left(a-\frac{cx}{a}\right)^2\\
+x^2-2cx+c^2+y^2
+&=a^2-2cx+\frac{c^2x^2}{a^2}\\
+(a^2-c^2)x^2+a^2y^2
+&=a^2(a^2-c^2)
+\end{aligned}\]</div>
+<p>ここで \(b^2=a^2-c^2\) とおきます。\(a>c>0\) なので \(a>b>0\) です。</p>
+<div class="formula eq">\[\boxed{\frac{x^2}{a^2}+\frac{y^2}{b^2}=1}\]</div>
+<p>これが<strong>横長の楕円の標準形</strong>です。焦点は \((\pm c,0)\)、\(c^2=a^2-b^2\) です。</p>
+<p>逆に、この式を満たす点では \(|x|\le a\) なので \(a\pm cx/a>0\) です。距離の公式を逆に確かめると、2焦点からの距離の和は確かに \(2a\) になります。</p>
+<div class="twocol"><div class="mini"><h3>長軸と短軸</h3><p>長軸は \(x\) 軸方向で長さ \(2a\)、短軸は \(y\) 軸方向で長さ \(2b\) です。</p></div><div class="mini"><h3>中心と頂点</h3><p>中心は原点、軸との交点は \((\pm a,0)\)、\((0,\pm b)\) です。両座標軸について対称です。</p></div></div>
+</section>
+<section class="card" id="vertical"><span class="pill">4　縦長の楕円の標準形</span><h2>焦点が \(y\) 軸上にある場合</h2>
+<p>横長の楕円では焦点が \(x\) 軸上にありました。焦点を \(F_1(0,-c)\)、\(F_2(0,c)\) とすると、\(x\) と \(y\) の役割を入れ替えるだけで、縦長の楕円になります。</p>
+<div class="formula eq">\[\boxed{\frac{x^2}{b^2}+\frac{y^2}{a^2}=1}\qquad(a>b>0)\]</div>
+<p>この場合も \(c^2=a^2-b^2\) で、焦点は \((0,\pm c)\) です。長軸は \(y\) 軸方向で長さ \(2a\)、短軸は \(x\) 軸方向で長さ \(2b\) になります。</p>
+<h3>横長と縦長を動く図で比べる</h3>
+<div class="ellipse-standard-layout"><div class="ellipse-standard-explain"><p><strong>横長</strong>：\(\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1\)</p><p><strong>縦長</strong>：\(\dfrac{x^2}{b^2}+\dfrac{y^2}{a^2}=1\)</p><p>どちらも分母が大きい項の変数の方向が長軸になります。向きを切り替えて、焦点と長軸・短軸の位置を確かめましょう。</p></div>
+<div class="ellipse-standard-visual"><label for="ellipse-standard-axis">楕円の向き</label><select id="ellipse-standard-axis"><option value="horizontal">横長</option><option value="vertical">縦長</option></select><canvas id="ellipse-standard-canvas" width="600" height="450" role="img" aria-label="横長と縦長の楕円の焦点、長軸、短軸を比較する図"></canvas><p id="ellipse-standard-caption">横長の楕円</p></div></div>
+</section>
 <section class="card" id="scaling"><span class="pill">5　円と楕円</span><h2>円を縮小・拡大すると楕円になる</h2><p>円 \(x^2+y^2=9\) の各点の <strong>y 座標を k 倍</strong>してみましょう。新しい点を (X,Y) とすると X=x、Y=ky より、</p>
 <div class="formula eq">\[\boxed{\frac{X^2}{9}+\frac{Y^2}{(3k)^2}=1}\]</div>
 <div class="control"><label for="k">縦方向の倍率 k = <output id="kOut">0.67</output></label><input id="k" type="range" min="0.35" max="1.65" step="0.01" value="0.67"></div>
@@ -205,4 +226,4 @@ slider.addEventListener('input',()=>{maxAngle=Math.max(maxAngle,Number(slider.va
 play.addEventListener('click',()=>{if(raf!==null){stop();return}if(Number(slider.value)>=360){slider.value=0;maxAngle=0}play.textContent='一時停止';last=0;const step=now=>{if(raf===null)return;if(now-last>=30){let v=Math.min(360,Number(slider.value)+2);slider.value=v;maxAngle=Math.max(maxAngle,v);draw();last=now;if(v>=360){stop();return}}raf=requestAnimationFrame(step)};raf=requestAnimationFrame(step)});
 reset.addEventListener('click',()=>{stop();slider.value=0;maxAngle=0;draw()});window.addEventListener('pagehide',stop);draw();
 })();
-</script></body></html>
+</script><script id="ellipse-standard-comparison-js">(()=>{'use strict';const cv=document.getElementById('ellipse-standard-canvas'),select=document.getElementById('ellipse-standard-axis'),caption=document.getElementById('ellipse-standard-caption');if(!cv||!select||!caption)return;const ctx=cv.getContext('2d'),W=cv.width,H=cv.height,cx=W/2,cy=H/2,S=43;function draw(){const vertical=select.value==='vertical',a=5,b=3,c=4,rx=vertical?b:a,ry=vertical?a:b;ctx.clearRect(0,0,W,H);ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);ctx.strokeStyle='#e5edf3';ctx.lineWidth=1;for(let i=-6;i<=6;i++){ctx.beginPath();ctx.moveTo(cx+i*S,0);ctx.lineTo(cx+i*S,H);ctx.moveTo(0,cy+i*S);ctx.lineTo(W,cy+i*S);ctx.stroke()}ctx.strokeStyle='#677c90';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(0,cy);ctx.lineTo(W,cy);ctx.moveTo(cx,0);ctx.lineTo(cx,H);ctx.stroke();ctx.beginPath();ctx.ellipse(cx,cy,rx*S,ry*S,0,0,Math.PI*2);ctx.strokeStyle='#176cae';ctx.lineWidth=4;ctx.stroke();ctx.strokeStyle='#e4a247';ctx.lineWidth=3;ctx.beginPath();if(vertical){ctx.moveTo(cx,cy-a*S);ctx.lineTo(cx,cy+a*S)}else{ctx.moveTo(cx-a*S,cy);ctx.lineTo(cx+a*S,cy)}ctx.stroke();ctx.fillStyle='#17365d';ctx.font='17px sans-serif';ctx.fillText('x',W-24,cy-12);ctx.fillText('y',cx+10,20);ctx.fillText('O',cx+8,cy+20);for(let sign of [-1,1]){let x=vertical?cx:cx+sign*c*S,y=vertical?cy-sign*c*S:cy;ctx.beginPath();ctx.arc(x,y,6,0,Math.PI*2);ctx.fillStyle='#d87935';ctx.fill();ctx.fillStyle='#17365d';ctx.fillText(sign<0?'F₁':'F₂',x+9,y-9)}caption.textContent=vertical?'縦長：焦点 (0, ±4)、長軸 10、短軸 6':'横長：焦点 (±4, 0)、長軸 10、短軸 6'}select.addEventListener('change',draw);draw()})();</script></body></html>
