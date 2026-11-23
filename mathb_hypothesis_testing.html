@@ -74,13 +74,31 @@
 <div class="formula">\[\sqrt{\frac{0.36(1-0.36)}{100}}=0.048\]</div>
 <p>したがって</p><div class="formula">\[Z=\frac{0.45-0.36}{\sqrt{\dfrac{0.36(1-0.36)}{100}}}=1.875\]</div>
 <p>右側確率は \(P(Z\geqq1.875)\fallingdotseq0.0304&lt;0.05\)。帰無仮説を棄却し、支持率が以前より上がったと判断する根拠がある。</p>
-<p>※ここでは標本比率の正規近似を用いています。</p></div></section><section><h2>4．母平均の仮説検定</h2>
+<p>※ここでは標本比率の正規近似を用いています。</p></div>
+<div class="example"><h3>例題5　支持率が変化したか（両側検定）</h3><p>ある製品の支持率はこれまで40％であった。無作為に選んだ400人を調査したところ、180人が支持していた。支持率が40％から変化したといえるか。有意水準5％で検定しなさい。</p></div>
+<div class="answer"><strong>解答</strong>
+<p>母比率を \(p\) とすると、今回は支持率が上がった場合も下がった場合も調べるので、両側検定を行う。</p>
+<div class="formula">\[H_0:p=0.4,\qquad H_1:p\ne0.4\]</div>
+<p>標本比率を \(R\) とすると、</p>
+<div class="formula">\[R=\frac{180}{400}=0.45\]</div>
+<p>帰無仮説が正しいとき、標本比率の平均は0.4、標準偏差は \(\sqrt{\dfrac{0.4(1-0.4)}{400}}\) である。したがって、標準化すると、</p>
+<div class="formula">\[Z=\frac{R-0.4}{\sqrt{\dfrac{0.4(1-0.4)}{400}}}=\frac{0.45-0.4}{\sqrt{0.0006}}\fallingdotseq2.04\]</div>
+<p>有意水準5％の両側検定では、左右それぞれ2.5％が棄却域となる。したがって、棄却域は</p>
+<div class="formula">\[Z\leqq-1.96\quad\text{または}\quad Z\geqq1.96\]</div>
+<p>\(2.04&gt;1.96\) なので、帰無仮説を棄却する。したがって、<strong>支持率が40％から変化したと判断する統計的な根拠がある。</strong></p>
+<p>ただし、支持率が変化したことが確実に証明されたわけではない。</p>
+</div>
+<h3>両側検定の棄却域をグラフで確認しよう</h3>
+<p>赤く塗った左右の部分が、それぞれ2.5％、合わせて5％の棄却域です。縦線は例題5で求めた \(Z\fallingdotseq2.04\) の位置を示します。</p>
+<canvas id="twoSidedPropGraph" width="850" height="340" role="img" aria-label="標準正規分布の両側5％の棄却域。左右の2.5％を塗り、Z=2.04の位置を示すグラフ"></canvas>
+<p class="note"><strong>片側検定との違い：</strong>「支持率が上がったか」なら右側だけを調べます。「支持率が変化したか」なら上昇と下降の両方を考えるため、左右に2.5％ずつ棄却域を取ります。</p>
+</section><section><h2>4．母平均の仮説検定</h2>
 <p>ある学校では、数学のテストの平均点が60点とされていました。400人を無作為に調べたところ、標本平均は60.9点、母標準偏差は10点とみなせるものとします。平均点が上がったといえるでしょうか。</p>
-<div class="example"><h3>例題5　右片側検定（有意水準5％）</h3><p>母平均を \(m\) として \(H_0:m=60,\ H_1:m&gt;60\) を検定しなさい。</p></div>
+<div class="example"><h3>例題6　右片側検定（有意水準5％）</h3><p>母平均を \(m\) として \(H_0:m=60,\ H_1:m&gt;60\) を検定しなさい。</p></div>
 <div class="answer"><strong>解答</strong><p>標本平均の標準偏差は</p><div class="formula">\[\frac{\sigma}{\sqrt n}=\frac{10}{\sqrt{400}}=0.5\]</div>
 <p>帰無仮説のもとで</p><div class="formula">\[Z=\frac{\overline X-60}{\dfrac{10}{\sqrt{400}}}=\frac{60.9-60}{0.5}=1.8\]</div>
 <p>右側確率は \(P(Z\geqq1.8)\fallingdotseq0.0359&lt;0.05\)。よって帰無仮説を棄却し、平均点が60点より高いと判断する根拠がある。</p></div>
-<div class="example"><h3>例題6　両側検定（有意水準5％）</h3><p>同じデータで「母平均は60点と異なるか」を検定しなさい。</p></div>
+<div class="example"><h3>例題7　両側検定（有意水準5％）</h3><p>同じデータで「母平均は60点と異なるか」を検定しなさい。</p></div>
 <div class="answer"><strong>解答</strong><p>\(H_0:m=60,\ H_1:m\ne60\)。検定統計量は同じく \(Z=1.8\)。</p>
 <div class="formula">\[P(|Z|\geqq1.8)\fallingdotseq2\times0.0359=0.0719&gt;0.05\]</div>
 <p>帰無仮説を棄却できない。母平均が60点と異なると判断するだけの根拠は得られない。</p></div>
@@ -89,11 +107,11 @@
 <section><h2>5．練習問題</h2>
 <p><strong>問題1</strong>　公平な硬貨を30回投げて19回表が出た。右片側検定で有意水準5％ならどう判断するか。</p>
 <details><summary>解答と解説</summary><div class="formula">\[P(X\geqq19)=\sum_{k=19}^{30}\frac{{}_{30}\mathrm C_k}{2^{30}}\fallingdotseq0.10024\]</div><p>0.05より大きいので棄却できない。</p></details>
-<p>問題2　母平均の検定の例題4と例題5では、なぜ結論が異なるのか。</p><details><summary>解答と解説</summary><p>右片側検定と両側検定では、極端な結果として数える範囲が異なるから。片側では約0.0359、両側では約0.0719になる。</p></details>
+<p>問題2　母平均の検定の例題6と例題7では、なぜ結論が異なるのか。</p><details><summary>解答と解説</summary><p>右片側検定と両側検定では、極端な結果として数える範囲が異なるから。片側では約0.0359、両側では約0.0719になる。</p></details>
 <p><strong>問題3</strong>　\(n=100,\ p_0=0.36,\ R=0.40\) のとき、母比率の右片側検定に用いる \(Z\) を求めなさい。</p>
 <details><summary>解答と解説</summary><div class="formula">\[Z=\frac{0.40-0.36}{\sqrt{\dfrac{0.36(1-0.36)}{100}}}\fallingdotseq0.833\]</div><p>5％右片側の境界1.645より小さいので、棄却できない。</p></details></section>
 <section><h2>6．まとめ</h2>
-<p>数学Ⅰでは、観測した結果が偶然として起こりにくいかを考えました。数学Aの反復試行の確率を使えば、その確率を理論的に計算できます。さらに数学Bでは、二項分布の正規近似から母比率の仮説検定へ進み、同じ考え方を母平均の仮説検定へ発展させます。</p>
+<p>数学Ⅰでは、観測した結果が偶然として起こりにくいかを考えました。数学Aの反復試行の確率を使えば、その確率を理論的に計算できます。さらに数学Bでは、二項分布の正規近似から母比率の片側検定・両側検定へ進み、同じ考え方を母平均の仮説検定へ発展させます。</p>
 <div class="formula">\[\text{仮説を立てる}\ \longrightarrow\ \text{確率を求める}\ \longrightarrow\ \text{有意水準と比較する}\ \longrightarrow\ \text{判断する}\]</div>
 <p>「棄却できない」は「正しいと証明した」という意味ではありません。また、対立仮説が片側か両側かを、問題の問い方から判断しましょう。</p><div class="status"><strong>検定の結論の読み方</strong><p>帰無仮説を棄却する：観測結果は帰無仮説のもとでは起こりにくく、対立仮説を支持する統計的な根拠がある。</p><p>帰無仮説を棄却できない：観測結果は帰無仮説のもとでも十分起こり得るため、対立仮説を支持する十分な根拠がない。</p><p>どちらの判断も、仮説の正しさを数学的に証明するものではありません。</p></div></section>
 <p><a href="math_subject_b.html">← 数学Bに戻る</a></p>
@@ -123,6 +141,20 @@ c.beginPath();for(let j=0;j<=700;j++){let x=-5.2+10.4*j/700;j?c.lineTo(xx(x),yy(
 c.beginPath();c.moveTo(xx(z),B);c.lineTo(xx(z),yy(pdf(z)));c.strokeStyle='#19334e';c.lineWidth=2;c.stroke();
 $('result').textContent='p値 ≒ '+Math.max(0,p).toFixed(4)+' ／ 有意水準 '+a*100+'％ → '+(p<=a?'帰無仮説を棄却する':'帰無仮説を棄却できない');
 }
+function drawTwoSidedProportion(){
+const el=$('twoSidedPropGraph');if(!el)return;
+const c=el.getContext('2d'),L=48,R=822,B=282,T=24;
+const xx=x=>L+(x+4.3)/8.6*(R-L),yy=y=>B-y/.44*(B-T);
+c.clearRect(0,0,850,340);c.font='15px sans-serif';c.textAlign='center';
+c.strokeStyle='#667b90';c.lineWidth=1.2;c.beginPath();c.moveTo(L,B);c.lineTo(R,B);c.stroke();
+for(let i=-4;i<=4;i++){c.strokeStyle='#e1e8ef';c.beginPath();c.moveTo(xx(i),T);c.lineTo(xx(i),B);c.stroke();c.fillStyle='#3f556b';c.fillText(String(i),xx(i),B+22)}
+for(let j=0;j<860;j++){let x=-4.3+j*.01;if(Math.abs(x)>=1.96){c.fillStyle='rgba(210,76,68,.43)';c.fillRect(xx(x),yy(pdf(x)),Math.max(1,xx(x+.01)-xx(x)),B-yy(pdf(x)))}}
+c.beginPath();for(let j=0;j<=860;j++){let x=-4.3+j*.01;j?c.lineTo(xx(x),yy(pdf(x))):c.moveTo(xx(x),yy(pdf(x)))}c.strokeStyle='#2169a6';c.lineWidth=2.6;c.stroke();
+for(const v of [-1.96,1.96]){c.strokeStyle='#b94d43';c.lineWidth=1.6;c.setLineDash([5,4]);c.beginPath();c.moveTo(xx(v),B);c.lineTo(xx(v),yy(pdf(v)));c.stroke();c.setLineDash([]);c.fillStyle='#9d3830';c.fillText(v.toFixed(2),xx(v),B+42)}
+const z=2.04;c.strokeStyle='#184d79';c.lineWidth=2.5;c.beginPath();c.moveTo(xx(z),B);c.lineTo(xx(z),yy(pdf(z)));c.stroke();c.fillStyle='#184d79';c.fillText('Z ≒ 2.04',xx(2.72),yy(.14));
+c.fillStyle='#a13c35';c.fillText('2.5％',xx(-2.6),yy(.085));c.fillText('2.5％',xx(2.6),yy(.085));
+}
+drawTwoSidedProportion();
 $('coinRange').addEventListener('input',drawCoin);['side','alpha','z'].forEach(id=>$(id).addEventListener('input',drawNormal));drawCoin();drawNormal();
 })();
 </script></body></html>
