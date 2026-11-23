@@ -234,7 +234,7 @@ for(let k=-8;k<=8;k+=2)if(k)label(String(k*u),[k*u,-.22*u]);for(let k=-6;k<=6;k+
 for(let sign of [-1,1])line([-10*u,-sign*10*u*b/a],[10*u,sign*10*u*b/a],'#9676b6',2,[10,6]);
 for(let branch of [-1,1])for(let sign of [-1,1]){ctx.beginPath();let first=true;for(let t=0;t<=3.5;t+=.01){let x=branch*a*Math.cosh(t),y=sign*b*Math.sinh(t);if(Math.abs(x)>10.2*u||Math.abs(y)>7.2*u)break;let [px,py]=xy(x,y);if(first){ctx.moveTo(px,py);first=false}else ctx.lineTo(px,py)}ctx.strokeStyle='#147fba';ctx.lineWidth=4;ctx.stroke()}
 dot([-c,0],'#cf4942');dot([c,0],'#cf4942');dot([-a,0],'#239c78');dot([a,0],'#239c78');
-el('rectStatus').textContent='a='+a.toFixed(1)+'、b='+b.toFixed(1)+' ｜ 漸近線の傾きの積 = '+(-(b/a)**2).toFixed(3)+' ｜ '+(a===b?'直角双曲線（漸近線は直交）':'漸近線は直交しない');
+el('rectStatus').textContent='a='+a.toFixed(1)+'、b='+b.toFixed(1)+' ｜ 漸近線の傾きの積 = '+(-((b/a)**2)).toFixed(3)+' ｜ '+(a===b?'直角双曲線（漸近線は直交）':'漸近線は直交しない');
 }
 for(const id of ['rectA','rectB'])el(id).addEventListener('input',draw);el('rectScale').addEventListener('change',draw);el('rectEqual').addEventListener('click',()=>{el('rectB').value=el('rectA').value;draw()});el('rectReset').addEventListener('click',()=>{el('rectA').value=3;el('rectB').value=3;el('rectScale').value=1;draw()});draw()})();</script>
 <section class="card"><h2 id="hs-practice">6．例題と練習問題</h2><p>まず自分で考え、解答・解説を開いて確認しましょう。</p>
