@@ -190,7 +190,45 @@ window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},opt
 </section>
 
 <section class="card"><h2 id="hs-summary">学習のまとめ</h2><p>円の一方向への伸縮は楕円を生みます。また、線分の内分点の座標を式で表すことで、その軌跡が楕円になることを確かめられます。</p><p></p></section>
-<p><a href="math_c_curves_ellipse_study_guide.html">← 楕円の基本に戻る</a></p><nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav></main><script>
+<p><a href="math_c_curves_ellipse_study_guide.html">← 楕円の基本に戻る</a></p><nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav>
+<section class="card" id="ellipse-practice"><h2>練習問題</h2>
+<p>第1節から第3節までの内容を確認しましょう。まず自分で解き、<strong>「解答・解説を見る」</strong>を押して確かめてください。</p>
+<div class="mini"><p><strong>問題1　円の拡大・縮小</strong></p><p>円 \(x^2+y^2=16\) を、\(y\) 軸方向に \(\dfrac12\) 倍した曲線の方程式を求めよ。</p>
+<details class="answer"><summary>解答・解説を見る</summary>
+<p>円上の点を \(Q(s,t)\)、移った点を \(P(x,y)\) とすると、</p>
+<div class="formula eq">\[x=s,\qquad y=\dfrac12t\]</div>
+<p>ゆえに、</p><div class="formula eq">\[s=x,\qquad t=2y\]</div>
+<p>\(s^2+t^2=16\) に代入して、</p><div class="formula eq">\[x^2+4y^2=16\]</div>
+<div class="formula eq">\[\boxed{\dfrac{x^2}{16}+\dfrac{y^2}{4}=1}\]</div>
+</details></div>
+<div class="mini" style="margin-top:14px"><p><strong>問題2　楕円の拡大</strong></p><p>楕円 \(\dfrac{x^2}{9}+\dfrac{y^2}{4}=1\) を、\(x\) 軸方向に \(2\) 倍した曲線の方程式を求めよ。</p>
+<details class="answer"><summary>解答・解説を見る</summary>
+<p>横半径 \(3\) は \(6\) になり、縦半径 \(2\) は変わらない。したがって、</p>
+<div class="formula eq">\[\boxed{\dfrac{x^2}{36}+\dfrac{y^2}{4}=1}\]</div>
+</details></div>
+<div class="mini" style="margin-top:14px"><p><strong>問題3　内分点の軌跡</strong></p><p>長さ \(10\) の線分 \(AB\) の端点 \(A\) は \(x\) 軸上、端点 \(B\) は \(y\) 軸上を動く。線分 \(AB\) を \(AP:PB=1:4\) に内分する点 \(P(x,y)\) の軌跡を求めよ。</p>
+<details class="answer"><summary>解答・解説を見る</summary>
+<p>\(A(s,0),\ B(0,t)\) とおくと、</p>
+<div class="formula eq">\[s^2+t^2=100\]</div>
+<p>内分点の公式より、</p>
+<div class="formula eq">\[x=\dfrac45s,\qquad y=\dfrac15t\]</div>
+<p>ゆえに、</p>
+<div class="formula eq">\[s=\dfrac54x,\qquad t=5y\]</div>
+<p>これを代入して、</p>
+<div class="formula eq">\[\boxed{\dfrac{x^2}{64}+\dfrac{y^2}{4}=1}\]</div>
+</details></div>
+<div class="mini" style="margin-top:14px"><p><strong>問題4　外分点の軌跡</strong></p><p>長さ \(6\) の線分 \(AB\) の端点 \(A\) は \(x\) 軸上、端点 \(B\) は \(y\) 軸上を動く。線分 \(AB\) を \(AP:PB=1:2\) に外分する点 \(P(x,y)\) の軌跡を求めよ。</p>
+<details class="answer"><summary>解答・解説を見る</summary>
+<p>\(A(s,0),\ B(0,t)\) とおくと、</p>
+<div class="formula eq">\[s^2+t^2=36\]</div>
+<p>外分点の公式より、</p>
+<div class="formula eq">\[x=\dfrac{2s-1\cdot0}{2-1}=2s,\qquad y=\dfrac{2\cdot0-1t}{2-1}=-t\]</div>
+<p>ゆえに、</p><div class="formula eq">\[s=\dfrac{x}{2},\qquad t=-y\]</div>
+<p>これを代入して、</p>
+<div class="formula eq">\[\boxed{\dfrac{x^2}{144}+\dfrac{y^2}{36}=1}\]</div>
+</details></div>
+</section>
+</main><script>
 (()=>{'use strict';const $=id=>document.getElementById(id);let animation=null;const PI=Math.PI;
 const fmt=v=>(Math.round(v*100)/100).toFixed(2);const xray=(ctx,W,H,S,x,y,ox=W/2,oy=H/2)=>[ox+x*S,oy-y*S];
 function setup(id){let cv=$(id),ctx=cv.getContext('2d');return{ctx,W:cv.width,H:cv.height};}
