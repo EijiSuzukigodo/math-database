@@ -25,7 +25,7 @@
 <div class="status"><strong>帰無仮説の判断と、対立仮説についていえること</strong><div class="table-scroll"><table class="data-table"><thead><tr><th>帰無仮説について</th><th>対立仮説について</th></tr></thead><tbody><tr><td>棄却する</td><td>対立仮説を支持する統計的な根拠がある</td></tr><tr><td>棄却できない</td><td>対立仮説を支持する十分な根拠がない</td></tr></tbody></table></div><p>棄却できる場合も、対立仮説が絶対に正しいと証明されたわけではありません。</p></div><p class="note"><strong>注意：</strong>この段階では、度数表から求めた<strong>相対度数による判断</strong>です。相対度数は実験のたびに変わるため、数学Bでは理論的な確率や分布を用いて検定します。また、棄却できないことは帰無仮説が正しいと証明したことではありません。</p>
 <h3>度数表から反復試行の確率へ</h3>
 <p>実験を何度も繰り返さなくても、数学Aの反復試行の確率を使えば、帰無仮説のもとで表が出る回数の確率を計算できます。</p>
-<div class="formula">\[X:\text{30回中に表が出る回数},\qquad X\sim B\left(30,\frac12\right)\]</div>
+<p>30回のうち表が出る回数を確率変数 \(X\) とすると、\(X\) は二項分布 \(B\left(30,\frac12\right)\) に従います。</p>
 <p>30回中ちょうど \(k\) 回表が出る確率は</p><div class="formula">\[P(X=k)={}_{30}\mathrm C_k\left(\frac12\right)^k\left(\frac12\right)^{30-k}=\frac{{}_{30}\mathrm C_k}{2^{30}}\]</div>
 <p>したがって、21回以上と19回以上の理論的な確率は、それぞれ</p>
 <div class="formula">\[P(X\geqq21)=\sum_{k=21}^{30}\frac{{}_{30}\mathrm C_k}{2^{30}}\fallingdotseq0.02139\]</div>
