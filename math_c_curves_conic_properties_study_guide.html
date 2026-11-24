@@ -74,14 +74,14 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 </head><body>
 <header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_c.html">数学Cの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学C</div><h1>2次曲線の性質</h1><p class="lesson-standard-bottom">数学C ／ 式と曲線</p></div></header><main class="lesson-standard-main" id="md-standard-main" data-hs-lesson=""><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>焦点と準線までの距離の比から、2次曲線の方程式を導く</h2><p>軌跡の条件を式で表し、楕円・双曲線・放物線ができる様子を動くグラフで確かめます。</p></section>
 <section class="card conic-unit-heading"><h2>1．定点と定直線からの距離の比が一定である点の軌跡</h2>
-<section class="conic-example" data-e="0.5"><h2 class="conic-example-title">例題1　楕円になる軌跡</h2><p class="conic-question">点 \(P\) から焦点 \(F(1,0)\) までの距離と、準線 \(x=-1\) までの距離の比が \(1:2\) であるとき、点 \(P\) の軌跡を求めなさい。</p>
-<div class="conic-two"><div class="conic-solution"><h3>解答・解説</h3><p>\(P(x,y)\) とすると、</p><div class="math">\[PF=\sqrt{(x-1)^2+y^2},\quad PH=|x+1|\]</div><p>軌跡の条件 \(PF:PH=1:2\) より、</p><div class="math">\[\sqrt{(x-1)^2+y^2}=\frac12|x+1|\]</div><p>両辺を2乗して整理すると、</p><div class="math">\[3x^2-10x+4y^2+3=0\]</div><p>平方完成して、</p><div class="math">\[\boxed{\frac{(x-\frac53)^2}{\frac{16}{9}}+\frac{y^2}{\frac43}=1}\]</div><p>したがって、軌跡は<strong>楕円</strong>です。</p></div><div class="conic-visual"><h3>軌跡ができる動くグラフ</h3><canvas id="conic-plot-1" width="700" height="480" role="img" aria-label="焦点と準線から楕円の軌跡が次第に描かれるグラフ"></canvas><div class="conic-buttons"><button type="button" data-play="1">▶ 最初から描く</button><button type="button" data-reset="1">最初に戻す</button></div><p id="conic-status-1" class="conic-status" aria-live="polite">曲線はまだ描かれていません。</p><p class="conic-legend">赤：焦点　緑：準線　橙：動く点 \(P\)　青：軌跡</p></div></div></section>
-<section class="conic-example" data-e="2"><h2 class="conic-example-title">例題2　双曲線になる軌跡</h2><p class="conic-question">点 \(P\) から焦点 \(F(1,0)\) までの距離と、準線 \(x=-1\) までの距離の比が \(2:1\) であるとき、点 \(P\) の軌跡を求めなさい。</p>
-<div class="conic-two"><div class="conic-solution"><h3>解答・解説</h3><p>軌跡の条件 \(PF:PH=2:1\) より、</p><div class="math">\[\sqrt{(x-1)^2+y^2}=2|x+1|\]</div><p>両辺を2乗して整理すると、</p><div class="math">\[3x^2+10x-y^2+3=0\]</div><p>平方完成すると、</p><div class="math">\[3\left(x+\frac53\right)^2-y^2=\frac{16}{3}\]</div><p>したがって、</p><div class="math">\[\boxed{\frac{(x+\frac53)^2}{\frac{16}{9}}-\frac{y^2}{\frac{16}{3}}=1}\]</div><p>軌跡は<strong>双曲線</strong>です。左右に分かれた2つの枝が描かれることを確認しましょう。</p></div><div class="conic-visual"><h3>軌跡ができる動くグラフ</h3><canvas id="conic-plot-2" width="700" height="480" role="img" aria-label="焦点と準線から双曲線の2つの枝が次第に描かれるグラフ"></canvas><div class="conic-buttons"><button type="button" data-play="2">▶ 最初から描く</button><button type="button" data-reset="2">最初に戻す</button></div><p id="conic-status-2" class="conic-status" aria-live="polite">曲線はまだ描かれていません。</p><p class="conic-legend">赤：焦点　緑：準線　橙：動く点 \(P\)　青：軌跡</p></div></div></section>
-<section class="conic-example" data-e="1"><h2 class="conic-example-title">例題3　放物線になる軌跡</h2><p class="conic-question">点 \(P\) から焦点 \(F(1,0)\) までの距離と、準線 \(x=-1\) までの距離が等しいとき、点 \(P\) の軌跡を求めなさい。</p>
+<section class="conic-example" data-e="0.5" data-fx="1" data-dx="4"><h2 class="conic-example-title">例題1　楕円になる軌跡</h2><p class="conic-question">点 \(P\) から焦点 \(F(1,0)\) までの距離と、準線 \(x=4\) までの距離の比が \(1:2\) であるとき、点 \(P\) の軌跡を求めなさい。</p>
+<div class="conic-two"><div class="conic-solution"><h3>解答・解説</h3><p>\(P(x,y)\) とすると、</p><div class="math">\[PF=\sqrt{(x-1)^2+y^2},\quad PH=|x-4|\]</div><p>軌跡の条件 \(PF:PH=1:2\) より、</p><div class="math">\[\sqrt{(x-1)^2+y^2}=\frac12|x-4|\]</div><p>両辺を2乗して整理すると、</p><div class="math">\[3x^2+4y^2=12\]</div><p>平方完成して、</p><div class="math">\[\boxed{\frac{x^2}{4}+\frac{y^2}{3}=1}\]</div><p>したがって、軌跡は<strong>楕円</strong>です。</p></div><div class="conic-visual"><h3>軌跡ができる動くグラフ</h3><canvas id="conic-plot-1" width="700" height="480" role="img" aria-label="焦点と準線から楕円の軌跡が次第に描かれるグラフ"></canvas><div class="conic-buttons"><button type="button" data-play="1">▶ 最初から描く</button><button type="button" data-reset="1">最初に戻す</button></div><p id="conic-status-1" class="conic-status" aria-live="polite">曲線はまだ描かれていません。</p><p class="conic-legend">赤：焦点　緑：準線　橙：動く点 \(P\)　青：軌跡</p></div></div></section>
+<section class="conic-example" data-e="2" data-fx="4" data-dx="1"><h2 class="conic-example-title">例題2　双曲線になる軌跡</h2><p class="conic-question">点 \(P\) から焦点 \(F(4,0)\) までの距離と、準線 \(x=1\) までの距離の比が \(2:1\) であるとき、点 \(P\) の軌跡を求めなさい。</p>
+<div class="conic-two"><div class="conic-solution"><h3>解答・解説</h3><p>軌跡の条件 \(PF:PH=2:1\) より、</p><div class="math">\[\sqrt{(x-4)^2+y^2}=2|x-1|\]</div><p>両辺を2乗して整理すると、</p><div class="math">\[3x^2-y^2=12\]</div><p>展開して整理すると、</p><div class="math">\[(x-4)^2+y^2=4(x-1)^2\]</div><p>したがって、</p><div class="math">\[\boxed{\frac{x^2}{4}-\frac{y^2}{12}=1}\]</div><p>軌跡は<strong>双曲線</strong>です。左右に分かれた2つの枝が描かれることを確認しましょう。</p></div><div class="conic-visual"><h3>軌跡ができる動くグラフ</h3><canvas id="conic-plot-2" width="700" height="480" role="img" aria-label="焦点と準線から双曲線の2つの枝が次第に描かれるグラフ"></canvas><div class="conic-buttons"><button type="button" data-play="2">▶ 最初から描く</button><button type="button" data-reset="2">最初に戻す</button></div><p id="conic-status-2" class="conic-status" aria-live="polite">曲線はまだ描かれていません。</p><p class="conic-legend">赤：焦点　緑：準線　橙：動く点 \(P\)　青：軌跡</p></div></div></section>
+<section class="conic-example" data-e="1" data-fx="1" data-dx="-1"><h2 class="conic-example-title">例題3　放物線になる軌跡</h2><p class="conic-question">点 \(P\) から焦点 \(F(1,0)\) までの距離と、準線 \(x=-1\) までの距離が等しいとき、点 \(P\) の軌跡を求めなさい。</p>
 <div class="conic-two"><div class="conic-solution"><h3>解答・解説</h3><p>軌跡の条件 \(PF=PH\) より、</p><div class="math">\[\sqrt{(x-1)^2+y^2}=|x+1|\]</div><p>両辺を2乗して整理すると、</p><div class="math">\[(x-1)^2+y^2=(x+1)^2\]</div><p>よって、</p><div class="math">\[\boxed{y^2=4x}\]</div><p>軌跡は頂点 \((0,0)\) をもち、右向きに開く<strong>放物線</strong>です。</p></div><div class="conic-visual"><h3>軌跡ができる動くグラフ</h3><canvas id="conic-plot-3" width="700" height="480" role="img" aria-label="焦点と準線から放物線の軌跡が次第に描かれるグラフ"></canvas><div class="conic-buttons"><button type="button" data-play="3">▶ 最初から描く</button><button type="button" data-reset="3">最初に戻す</button></div><p id="conic-status-3" class="conic-status" aria-live="polite">曲線はまだ描かれていません。</p><p class="conic-legend">赤：焦点　緑：準線　橙：動く点 \(P\)　青：軌跡</p></div></div></section>
 </section>
-<section class="card conic-intro"><h2>焦点と準線から2次曲線を考える</h2><p>定点 \(F(1,0)\) を<strong>焦点</strong>、直線 \(x=-1\) を<strong>準線</strong>とします。点 \(P(x,y)\) から準線に下ろした垂線の足を \(H\) とし、距離の比を \(e\) とすると、</p><div class="math">\[\frac{PF}{PH}=e\qquad(e>0)\]</div><p>この \(e\) を<strong>離心率</strong>といいます。\(0<e<1\) なら楕円、\(e>1\) なら双曲線、\(e=1\) なら放物線になります。</p></section>
+<section class="card conic-intro"><h2>焦点と準線から2次曲線を考える</h2><p>定点 \(F\) を<strong>焦点</strong>、焦点を通らない直線 \(\ell\) を<strong>準線</strong>とします。点 \(P(x,y)\) から準線に下ろした垂線の足を \(H\) とし、距離の比を \(e\) とすると、</p><div class="math">\[\frac{PF}{PH}=e\qquad(e>0)\]</div><p>この \(e\) を<strong>離心率</strong>といいます。\(0<e<1\) なら楕円、\(e>1\) なら双曲線、\(e=1\) なら放物線になります。</p></section>
 <section class="card"><h2>練習問題</h2><p><b>問題1：</b> 焦点 \(F(2,0)\)、準線 \(x=0\) に対し、\(PF:PH=1:1\) となる点 \(P\) の軌跡を求めなさい。</p><details><summary>解答・解説を表示</summary><p>距離の条件から \(\sqrt{(x-2)^2+y^2}=|x|\) となり、\(\boxed{y^2=4(x-1)}\) です。</p></details><p><b>問題2：</b> 同じ焦点と準線について、\(PF:PH=2:1\) のとき、軌跡はどの種類の2次曲線ですか。</p><details><summary>解答・解説を表示</summary><p>離心率 \(e=2>1\) なので、<b>双曲線</b>です。</p></details></section>
 <section class="card" id="hs-summary"><h2>学習のまとめ</h2><p>焦点 \(F\) と準線までの距離の比 \(PF:PH=e:1\) を一定にすると、点 \(P\) の軌跡は2次曲線になります。\(0<e<1\) は楕円、\(e=1\) は放物線、\(e>1\) は双曲線です。距離の条件を方程式に表し、両辺を2乗して整理すると、それぞれの曲線の方程式が得られます。</p></section>
 </main>
@@ -110,21 +110,21 @@ const X=x=>(x-xmin)/(xmax-xmin)*W,Y=y=>(ymax-y)/(ymax-ymin)*H;
 const instances={};
 function curves(id){
  const N=650, result=[];
- if(id===1){const arr=[];for(let i=0;i<=N;i++){const t=Math.PI*2*i/N;arr.push({x:5/3+4/3*Math.cos(t),y:Math.sqrt(4/3)*Math.sin(t)})}result.push(arr)}
- if(id===2){for(const sign of [-1,1]){const arr=[];for(let i=0;i<=N;i++){const t=-1.6+3.2*i/N;arr.push({x:-5/3+sign*4/3*Math.cosh(t),y:Math.sqrt(16/3)*Math.sinh(t)})}result.push(arr)}}
+ if(id===1){const arr=[];for(let i=0;i<=N;i++){const t=Math.PI*2*i/N;arr.push({x:2*Math.cos(t),y:Math.sqrt(3)*Math.sin(t)})}result.push(arr)}
+ if(id===2){for(const sign of [-1,1]){const arr=[];for(let i=0;i<=N;i++){const t=-1.35+2.7*i/N;arr.push({x:sign*2*Math.cosh(t),y:Math.sqrt(12)*Math.sinh(t)})}result.push(arr)}}
  if(id===3){const arr=[];for(let i=0;i<=N;i++){const y=-5.7+11.4*i/N;arr.push({x:y*y/4,y})}result.push(arr)}
  return result;
 }
 function draw(id){
- const a=instances[id],ctx=a.ctx;ctx.clearRect(0,0,W,H);ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
+ const a=instances[id],ctx=a.ctx,fx=a.fx,dx=a.dx;ctx.clearRect(0,0,W,H);ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
  ctx.lineWidth=1;ctx.strokeStyle='#e8eef5';
  for(let x=-8;x<=9;x++){ctx.beginPath();ctx.moveTo(X(x),0);ctx.lineTo(X(x),H);ctx.stroke()}
  for(let y=-6;y<=6;y++){ctx.beginPath();ctx.moveTo(0,Y(y));ctx.lineTo(W,Y(y));ctx.stroke()}
  ctx.strokeStyle='#8597a8';ctx.lineWidth=1.5;ctx.beginPath();ctx.moveTo(0,Y(0));ctx.lineTo(W,Y(0));ctx.moveTo(X(0),0);ctx.lineTo(X(0),H);ctx.stroke();
- ctx.strokeStyle='#13996c';ctx.lineWidth=3;ctx.setLineDash([8,5]);ctx.beginPath();ctx.moveTo(X(-1),0);ctx.lineTo(X(-1),H);ctx.stroke();ctx.setLineDash([]);
+ ctx.strokeStyle='#13996c';ctx.lineWidth=3;ctx.setLineDash([8,5]);ctx.beginPath();ctx.moveTo(X(dx),0);ctx.lineTo(X(dx),H);ctx.stroke();ctx.setLineDash([]);
  ctx.font='italic 19px Georgia,serif';ctx.fillStyle='#506579';ctx.fillText('x',W-18,Y(0)-10);ctx.fillText('y',X(0)+9,20);
- ctx.fillStyle='#087c59';ctx.fillText('x = −1',X(-1)+9,35);
- ctx.fillStyle='#d14c61';ctx.beginPath();ctx.arc(X(1),Y(0),6,0,Math.PI*2);ctx.fill();ctx.fillStyle='#a52c42';ctx.fillText('F(1, 0)',X(1)+10,Y(0)+25);
+ ctx.fillStyle='#087c59';ctx.fillText('x = '+dx,X(dx)+9,35);
+ ctx.fillStyle='#d14c61';ctx.beginPath();ctx.arc(X(fx),Y(0),6,0,Math.PI*2);ctx.fill();ctx.fillStyle='#a52c42';ctx.fillText('F('+fx+', 0)',X(fx)+10,Y(0)+25);
  if(a.progress<=0)return;
  let chosen=null;
  for(const branch of a.branches){
@@ -137,19 +137,19 @@ function draw(id){
  }
  if(!chosen)return;
  const p=chosen;ctx.save();ctx.beginPath();ctx.rect(0,0,W,H);ctx.clip();
- ctx.strokeStyle='#f39834';ctx.lineWidth=2.5;ctx.beginPath();ctx.moveTo(X(p.x),Y(p.y));ctx.lineTo(X(1),Y(0));ctx.stroke();
- ctx.strokeStyle='#13996c';ctx.lineWidth=2.5;ctx.setLineDash([7,4]);ctx.beginPath();ctx.moveTo(X(p.x),Y(p.y));ctx.lineTo(X(-1),Y(p.y));ctx.stroke();ctx.setLineDash([]);
- ctx.fillStyle='#168365';ctx.beginPath();ctx.arc(X(-1),Y(p.y),4.5,0,Math.PI*2);ctx.fill();
+ ctx.strokeStyle='#f39834';ctx.lineWidth=2.5;ctx.beginPath();ctx.moveTo(X(p.x),Y(p.y));ctx.lineTo(X(fx),Y(0));ctx.stroke();
+ ctx.strokeStyle='#13996c';ctx.lineWidth=2.5;ctx.setLineDash([7,4]);ctx.beginPath();ctx.moveTo(X(p.x),Y(p.y));ctx.lineTo(X(dx),Y(p.y));ctx.stroke();ctx.setLineDash([]);
+ ctx.fillStyle='#168365';ctx.beginPath();ctx.arc(X(dx),Y(p.y),4.5,0,Math.PI*2);ctx.fill();
  ctx.fillStyle='#e57d23';ctx.beginPath();ctx.arc(X(p.x),Y(p.y),6,0,Math.PI*2);ctx.fill();ctx.restore();
  ctx.font='italic 19px Georgia,serif';ctx.fillStyle='#9c550d';ctx.fillText('P',Math.max(4,Math.min(W-24,X(p.x)+9)),Math.max(20,Math.min(H-8,Y(p.y)-11)));
- ctx.fillStyle='#128260';ctx.fillText('H',Math.max(5,X(-1)-23),Math.max(20,Math.min(H-8,Y(p.y)-10)));
- const pf=Math.hypot(p.x-1,p.y),ph=Math.abs(p.x+1);
+ ctx.fillStyle='#128260';ctx.fillText('H',Math.max(5,X(dx)-23),Math.max(20,Math.min(H-8,Y(p.y)-10)));
+ const pf=Math.hypot(p.x-fx,p.y),ph=Math.abs(p.x-dx);
  const status=document.getElementById('conic-status-'+id);
  status.textContent='PF ≈ '+pf.toFixed(2)+'、PH ≈ '+ph.toFixed(2)+'、PF / PH ≈ '+(pf/ph).toFixed(2)+'（一定）'+(a.progress>=1?'　軌跡が完成しました。':'');
 }
 function reset(id){const a=instances[id];if(a.raf)cancelAnimationFrame(a.raf);a.raf=0;a.progress=0;draw(id);document.getElementById('conic-status-'+id).textContent='曲線はまだ描かれていません。'}
 function play(id){reset(id);const a=instances[id],start=performance.now();function tick(t){a.progress=Math.min(1,(t-start)/5200);draw(id);if(a.progress<1)a.raf=requestAnimationFrame(tick);else a.raf=0}a.raf=requestAnimationFrame(tick)}
-document.querySelectorAll('.conic-example').forEach((el,i)=>{const id=i+1,c=document.getElementById('conic-plot-'+id);if(!c)return;instances[id]={ctx:c.getContext('2d'),branches:curves(id),progress:0,raf:0};draw(id)});
+document.querySelectorAll('.conic-example').forEach((el,i)=>{const id=i+1,c=document.getElementById('conic-plot-'+id);if(!c)return;instances[id]={ctx:c.getContext('2d'),branches:curves(id),fx:Number(el.dataset.fx),dx:Number(el.dataset.dx),progress:0,raf:0};draw(id)});
 document.querySelectorAll('[data-play]').forEach(b=>b.addEventListener('click',()=>play(Number(b.dataset.play))));
 document.querySelectorAll('[data-reset]').forEach(b=>b.addEventListener('click',()=>reset(Number(b.dataset.reset))));
 })();
