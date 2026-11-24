@@ -101,13 +101,13 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 <div class="ecc-layout">
 <div class="ecc-explain"><h3>離心率の意味</h3><p>定点 \(F\) を<strong>焦点</strong>、焦点を通らない直線 \(\ell\) を<strong>準線</strong>とします。点 \(P\) から準線に下ろした垂線の足を \(H\) とすると、距離の比</p><div class="math">\[\boxed{e=\frac{PF}{PH}}\qquad(e>0)\]</div><p>が一定のとき、この \(e\) を<strong>離心率</strong>といいます。</p>
 <p>離心率の大きさによって、軌跡の種類が決まります。</p>
-<div class="ecc-cases"><p>\(0<e<1\)　<strong>楕円</strong></p><p>\(e=1\)　<strong>放物線</strong></p><p>\(e>1\)　<strong>双曲線</strong></p></div>
+<div class="ecc-cases"><p>\(0\lt e\lt 1\)　<strong>楕円</strong></p><p>\(e=1\)　<strong>放物線</strong></p><p>\(e>1\)　<strong>双曲線</strong></p></div>
 <p>右のグラフでは焦点 \(F(1,0)\) と準線 \(x=-1\) を固定し、離心率だけを変えます。曲線がどのように変わるか確かめましょう。</p><p class="ecc-note">※ \(e=1\) に近づくと曲線が大きく広がるため、表示範囲の外にも曲線が続きます。</p></div>
 <div class="ecc-visual"><h3>離心率を変えてみよう</h3><canvas id="ecc-plot" width="700" height="480" role="img" aria-label="離心率をスライダーで変えると楕円・放物線・双曲線が切り替わるグラフ"></canvas>
 <div class="ecc-controls"><label for="ecc-slider">離心率 \(e\)：<strong id="ecc-value">0.5</strong></label><input id="ecc-slider" type="range" min="0.2" max="2.5" step="0.1" value="0.5"><p id="ecc-kind" class="ecc-kind" aria-live="polite">現在の図形：楕円</p><div class="ecc-buttons"><button type="button" id="ecc-one">\(e=1\)（放物線）</button><button type="button" id="ecc-reset">最初に戻す</button></div></div>
 <p class="conic-legend">赤：焦点 \(F\)　緑：準線 \(\ell\)　青：軌跡</p></div></div></section>
-<section class="card"><h2>練習問題</h2><p><b>問題1：</b> 焦点 \(F(2,0)\)、準線 \(x=0\) に対し、\(PF:PH=1:1\) となる点 \(P\) の軌跡を求めなさい。</p><details><summary>解答・解説を表示</summary><p>距離の条件から \(\sqrt{(x-2)^2+y^2}=|x|\) となり、\(\boxed{y^2=4(x-1)}\) です。</p></details><p><b>問題2：</b> 同じ焦点と準線について、\(PF:PH=2:1\) のとき、軌跡はどの種類の2次曲線ですか。</p><details><summary>解答・解説を表示</summary><p>離心率 \(e=2>1\) なので、<b>双曲線</b>です。</p></details></section>
-<section class="card" id="hs-summary"><h2>学習のまとめ</h2><p>焦点 \(F\) と準線までの距離の比 \(PF:PH=e:1\) を一定にすると、点 \(P\) の軌跡は2次曲線になります。\(0<e<1\) は楕円、\(e=1\) は放物線、\(e>1\) は双曲線です。距離の条件を方程式に表し、両辺を2乗して整理すると、それぞれの曲線の方程式が得られます。</p></section>
+<section class="card conic-practice"><h2>3．練習問題</h2><p><b>問題1：</b> 焦点 \(F(2,0)\)、準線 \(x=0\) に対し、\(PF:PH=1:1\) となる点 \(P\) の軌跡を求めなさい。</p><details><summary>解答・解説を表示</summary><p>距離の条件から \(\sqrt{(x-2)^2+y^2}=|x|\) となり、\(\boxed{y^2=4(x-1)}\) です。</p></details><p><b>問題2：</b> 同じ焦点と準線について、\(PF:PH=2:1\) のとき、軌跡はどの種類の2次曲線ですか。</p><details><summary>解答・解説を表示</summary><p>離心率 \(e=2>1\) なので、<b>双曲線</b>です。</p></details></section>
+<section class="card" id="hs-summary"><h2>学習のまとめ</h2><p>焦点 \(F\) と準線 \(\ell\) を固定し、点 \(P\) から準線に下ろした垂線の足を \(H\) とする。距離の比</p><div class="math">\[e=\frac{PF}{PH}\qquad(e>0)\]</div><p>が一定のとき、その値 \(e\) を離心率という。離心率によって点 \(P\) の軌跡は次のように分類される。</p><div class="ecc-cases"><p>\(0\lt e\lt 1\)　楕円</p><p>\(e=1\)　放物線</p><p>\(e>1\)　双曲線</p></div><p>距離の条件 \(PF=e\,PH\) を座標で表し、両辺を2乗して整理することで、2次曲線の方程式を求めることができる。</p></section>
 </main>
 <style id="conic-locus-rebuild-20261124">
 .conic-unit-heading{padding:19px 20px!important;margin-bottom:12px!important}.conic-unit-heading>h2{margin:0 0 14px!important;font-size:clamp(19px,2.7vw,23px)!important}.conic-unit-heading>.conic-example{padding:16px 0 18px;border-top:1px solid #d9e5ef}.conic-unit-heading>.conic-example:last-child{padding-bottom:0}.conic-unit-heading .conic-example > h2.conic-example-title{font-size:1.06rem!important;line-height:1.5!important;font-weight:700!important;margin:0 0 10px!important;color:#174b78!important}.conic-example-number{font-size:.9em;color:#176cae;margin-right:.3em}.conic-intro{margin-top:16px}
@@ -214,4 +214,10 @@ document.getElementById('ecc-one').addEventListener('click',()=>{slider.value='1
 document.getElementById('ecc-reset').addEventListener('click',()=>{slider.value='0.5';draw()});
 draw();
 })();
-</script></body></html>
+</script><style id="conic-final-layout-adjustments">
+body main.lesson-standard-main .conic-practice mjx-container:not([display="true"]),body main.lesson-standard-main #hs-summary mjx-container:not([display="true"]){font-size:88%!important}
+body main.lesson-standard-main .conic-practice mjx-container[display="true"],body main.lesson-standard-main #hs-summary mjx-container[display="true"]{font-size:90%!important}
+body main.lesson-standard-main #hs-summary .math{font-size:.93rem;padding:10px 5px;margin:9px 0}
+body>footer.site-parent-landmark>.site-parent-link{box-sizing:border-box!important;max-width:970px!important;width:100%!important;margin:0 auto 10px!important;padding:0 17px!important;text-align:left!important}
+body>footer.site-parent-landmark>.site-parent-link>a{display:inline!important;text-align:left!important}
+</style></body></html>
