@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 
 <html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>コンピュータといろいろな曲線｜数学C｜みんなの数学データベース</title>
@@ -71,81 +70,8 @@ mjx-container svg{width:auto!important;height:auto!important;max-width:none!impo
 @media(max-width:640px){body>main.lesson-standard-main>.lesson-standard-goal{padding:17px 15px!important}}
 </style><link rel="stylesheet" href="lesson_common_style.css">
 <link rel="stylesheet" href="high_school_lesson_reading.css">
-</head><body>
-<header class="lesson-standard-header"><div class="lesson-standard-width"><div class="site-parent-link"><a href="math_subject_c.html">数学Cの授業一覧に戻る</a></div><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学C</div><h1>コンピュータといろいろな曲線</h1><p class="lesson-standard-bottom">数学C</p></div></header><main class="wrap lesson-standard-main" id="md-standard-main" data-hs-lesson=""><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>コンピュータといろいろな曲線</h2><p>サイクロイド、アステロイド、リサージュ曲線、カージオイドを動くグラフと媒介変数表示で学びます。</p><p class="goal-expanded">点の位置を媒介変数 \(t\) で表すと、複雑な曲線も描けます。曲線を選び、スライダーを動かして、点の軌跡と式の対応を確かめましょう。</p><p class="hs-outcome"><strong>この授業でできるようになること</strong><br>曲線の描画を操作し、媒介変数の範囲や式の変更が曲線に与える影響を説明する。</p></section>
-<nav class="hs-study-nav" aria-label="授業の進め方">
-<a href="#hs-explanation">説明</a>
-<a href="#hs-examples">例題と解説</a>
-<a href="#hs-practice">練習問題</a>
-<a href="#hs-summary">まとめ</a></nav>
-
-<section><h2 id="hs-explanation">1．曲線を動かして確かめよう</h2>
-<div aria-label="曲線を選択" class="tabs" role="group">
-<button aria-pressed="true" data-curve="cycloid" type="button">サイクロイド</button>
-<button aria-pressed="false" data-curve="astroid" type="button">アステロイド</button>
-<button aria-pressed="false" data-curve="lissajous" type="button">リサージュ曲線</button>
-<button aria-pressed="false" data-curve="cardioid" type="button">カージオイド</button></div>
-<div class="graph-grid"><div><canvas aria-label="選択した曲線と動く点を示す座標グラフ" height="510" id="plot" role="img" width="720"></canvas>
-<div class="controls"><div class="control"><label for="time">媒介変数</label><input id="time" max="1000" min="0" type="range" value="280"/><output for="time" id="timeLabel">28%</output></div><button id="play" type="button">▶ 動かす</button><button id="reset" type="button">最初に戻す</button></div>
-<div class="controls"><div class="control"><label for="size">大きさ \(a\)</label><input id="size" max="4" min="1" step="0.25" type="range" value="2"/><output id="sizeLabel">2</output></div></div>
-<p aria-live="polite" class="small" id="pointInfo"></p></div>
-<div class="panel"><h3 id="curveName" style="margin-top:0">サイクロイド</h3><div class="formula math" id="formula">\[x=a(t-\sin t),\quad y=a(1-\cos t)\]</div><p id="description">半径 \(a\) の円が滑らずに転がるとき、円周上の点が描く曲線です。</p><p class="small" id="paramRange">範囲：\(0\leqq t\leqq 4\pi\)</p><p class="note">青い線は軌跡、赤い点は現在の位置です。点の位置を変えながら形を観察してください。</p></div></div>
-</section>
-<section><h2>2．4種類の曲線の公式と特徴</h2>
-<h3>① サイクロイド</h3><div class="math">\[\begin{cases}x=a(t-\sin t)\\y=a(1-\cos t)\end{cases}\quad (0\leqq t\leqq4\pi)\]</div><p>半径 \(a\) の円が直線上を滑らずに転がるときの、円周上の1点の軌跡です。\(t=2\pi\) で次の尖点に達します。</p>
-<h3>② アステロイド</h3><div class="math">\[\begin{cases}x=a\cos^3 t\\y=a\sin^3 t\end{cases}\quad (0\leqq t\leqq2\pi)\]</div><p>4つの尖点をもつ曲線です。媒介変数を消去すると、\(a&gt;0\) に対して \(\lvert x\rvert^{2/3}+\lvert y\rvert^{2/3}=a^{2/3}\) となります。</p>
-<h3>③ リサージュ曲線</h3><div class="math">\[\begin{cases}x=a\sin(3t+\frac{\pi}{2})\\y=a\sin(2t)\end{cases}\quad (0\leqq t\leqq2\pi)\]</div><p>横方向と縦方向の周期運動を重ねた曲線です。振動数の比が \(3:2\) なので、特徴的な閉じた軌跡が現れます。</p>
-<h3>④ カージオイド</h3><div class="math">\[r=a(1+\cos\theta),\quad\begin{cases}x=r\cos\theta\\y=r\sin\theta\end{cases}\]</div><p>極方程式 \(r=a(1+\cos\theta)\) で表されるハート形の曲線です。\(\theta=\pi\) で原点に尖点ができます。</p></section>
-<section><h2 id="hs-examples">3．例題と解説</h2>
-<h3>例題1：サイクロイドの位置</h3><p>\(a=2\)、\(t=\pi\) のときの点の座標を求めましょう。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><div class="math">\[x=2(\pi-\sin\pi)=2\pi,\quad y=2(1-\cos\pi)=4\]</div><p>答えは \((2\pi,4)\) です。</p></details>
-<h3>例題2：アステロイドの方程式</h3><p>\(x=a\cos^3t\)、\(y=a\sin^3t\) から媒介変数を消去しましょう。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><p>両辺の絶対値をとって \(2/3\) 乗します。</p><div class="math">\[\lvert x\rvert^{2/3}=a^{2/3}\cos^2t,\qquad\lvert y\rvert^{2/3}=a^{2/3}\sin^2t\]</div><div class="math">\[\therefore\ \lvert x\rvert^{2/3}+\lvert y\rvert^{2/3}=a^{2/3}\]</div></details>
-<h3>例題3：カージオイドの座標</h3><p>\(a=2\)、\(\theta=\frac{\pi}{2}\) のときの点の座標を求めましょう。</p><details><summary class="hs-answer-toggle">解答・解説を表示</summary><div class="math">\[r=2(1+\cos\frac{\pi}{2})=2\]</div><div class="math">\[x=2\cos\frac{\pi}{2}=0,\quad y=2\sin\frac{\pi}{2}=2\]</div><p>答えは \((0,2)\) です。</p></details></section>
-<section><h2 id="hs-practice">4．練習問題</h2>
-<ol><li>サイクロイド \(x=a(t-\sin t)\)、\(y=a(1-\cos t)\) で、\(t=0\) と \(t=2\pi\) の点の座標を求めなさい。</li>
-<li>アステロイドで \(t=\frac{\pi}{2}\) の点の座標を求めなさい。</li>
-<li>リサージュ曲線 \(x=a\sin(3t+\frac\pi2)\)、\(y=a\sin(2t)\) で、\(t=0\) の点の座標を求めなさい。</li>
-<li>カージオイド \(r=a(1+\cos\theta)\) で、曲線が原点を通る \(\theta\) を \(0\leqq\theta&lt;2\pi\) の範囲で求めなさい。</li></ol>
-<details><summary class="hs-answer-toggle">解答・解説を表示</summary><ol><li>\(t=0\) では \((0,0)\)、\(t=2\pi\) では \((2\pi a,0)\)。\(\sin 0=\sin2\pi=0\)、\(\cos0=\cos2\pi=1\) を代入します。</li><li>\((0,a)\)。\(\cos\frac\pi2=0\)、\(\sin\frac\pi2=1\) です。</li><li>\((a,0)\)。\(\sin\frac\pi2=1\)、\(\sin0=0\) です。</li><li>\(\theta=\pi\)。\(r=0\) となるのは \(1+\cos\theta=0\) のときです。</li></ol></details>
-</section>
-<nav aria-label="授業一覧に戻る" class="lesson-standard-return"></nav>
-<section class="hs-study-panel" id="hs-summary">
-<h2>まとめ</h2>
-<p>媒介変数の値を順に動かして、点が通る範囲や描く向きを調べます。曲線が一周する範囲は周期も確認します。</p>
-</section>
-</main><script>
-(function(){'use strict';
-const cv=document.getElementById('plot'),ctx=cv.getContext('2d');
-const time=document.getElementById('time'),scale=document.getElementById('size'),play=document.getElementById('play');
-let type='cycloid',running=false,last=0,raf=0;
-const TAU=2*Math.PI;
-const model={
-cycloid:{name:'サイクロイド',formula:String.raw`\[x=a(t-\sin t),\quad y=a(1-\cos t)\]`,description:'円が直線上を滑らずに転がるとき、円周上の点が描く軌跡です。',range:String.raw`\(0\leqq t\leqq4\pi\)`,end:2*TAU,f:(t,a)=>[a*(t-Math.sin(t)),a*(1-Math.cos(t))]},
-astroid:{name:'アステロイド',formula:String.raw`\[x=a\cos^3 t,\quad y=a\sin^3 t\]`,description:'4つの尖点がある閉じた曲線です。',range:String.raw`\(0\leqq t\leqq2\pi\)`,end:TAU,f:(t,a)=>[a*Math.cos(t)**3,a*Math.sin(t)**3]},
-lissajous:{name:'リサージュ曲線',formula:String.raw`\[x=a\sin(3t+\frac{\pi}{2}),\quad y=a\sin(2t)\]`,description:'横と縦の周期運動を組み合わせた曲線です。',range:String.raw`\(0\leqq t\leqq2\pi\)`,end:TAU,f:(t,a)=>[a*Math.sin(3*t+Math.PI/2),a*Math.sin(2*t)]},
-cardioid:{name:'カージオイド',formula:String.raw`\[r=a(1+\cos t),\quad x=r\cos t,\quad y=r\sin t\]`,description:'極方程式で表すハート形の曲線です。',range:String.raw`\(0\leqq t\leqq2\pi\)`,end:TAU,f:(t,a)=>{const r=a*(1+Math.cos(t));return[r*Math.cos(t),r*Math.sin(t)]}}
-};
-function paint(){const m=model[type],a=+scale.value,t=m.end*(+time.value/1000),w=cv.width,h=cv.height;ctx.clearRect(0,0,w,h);
-let samples=[];for(let i=0;i<=500;i++)samples.push(m.f(m.end*i/500,a));
-let xmin=Math.min(0,...samples.map(v=>v[0])),xmax=Math.max(0,...samples.map(v=>v[0])),ymin=Math.min(0,...samples.map(v=>v[1])),ymax=Math.max(0,...samples.map(v=>v[1]));
-const xpad=Math.max((xmax-xmin)*.11,.5),ypad=Math.max((ymax-ymin)*.15,.5);xmin-=xpad;xmax+=xpad;ymin-=ypad;ymax+=ypad;
-const k=Math.min((w-90)/(xmax-xmin),(h-70)/(ymax-ymin));const x0=(w-k*(xmax-xmin))/2,y0=(h-k*(ymax-ymin))/2;
-const X=x=>x0+(x-xmin)*k,Y=y=>h-y0-(y-ymin)*k;
-ctx.lineWidth=1;ctx.strokeStyle='#e7eef4';const step=Math.pow(10,Math.floor(Math.log10(Math.max((xmax-xmin)/7,(ymax-ymin)/6))));
-const nice=step*(Math.max((xmax-xmin)/7,(ymax-ymin)/6)/step>5?10:Math.max((xmax-xmin)/7,(ymax-ymin)/6)/step>2?5:2);
-for(let n=Math.ceil(xmin/nice);n*nice<=xmax;n++){const x=n*nice;ctx.beginPath();ctx.moveTo(X(x),0);ctx.lineTo(X(x),h);ctx.stroke()}
-for(let n=Math.ceil(ymin/nice);n*nice<=ymax;n++){const y=n*nice;ctx.beginPath();ctx.moveTo(0,Y(y));ctx.lineTo(w,Y(y));ctx.stroke()}
-ctx.strokeStyle='#738aa0';ctx.lineWidth=1.5;ctx.beginPath();ctx.moveTo(0,Y(0));ctx.lineTo(w,Y(0));ctx.moveTo(X(0),0);ctx.lineTo(X(0),h);ctx.stroke();
-ctx.fillStyle='#526679';ctx.font='17px sans-serif';ctx.fillText('x',w-23,Math.max(20,Math.min(h-8,Y(0)-10)));ctx.fillText('y',Math.min(w-24,X(0)+10),20);
-ctx.beginPath();samples.forEach((p,i)=>i?ctx.lineTo(X(p[0]),Y(p[1])):ctx.moveTo(X(p[0]),Y(p[1])));ctx.strokeStyle='#2577b1';ctx.lineWidth=4;ctx.lineJoin='round';ctx.stroke();
-const pt=m.f(t,a);ctx.beginPath();ctx.arc(X(pt[0]),Y(pt[1]),8,0,TAU);ctx.fillStyle='#d94947';ctx.fill();ctx.strokeStyle='white';ctx.lineWidth=2;ctx.stroke();
-document.getElementById('timeLabel').textContent=Math.round(+time.value/10)+'%';document.getElementById('sizeLabel').textContent=a.toFixed(2).replace(/\.00$/,'');document.getElementById('pointInfo').textContent=`現在の値：t ≈ ${t.toFixed(2)}、点 P ≈ (${pt[0].toFixed(2)}, ${pt[1].toFixed(2)})`;
-}
-function select(t){type=t;for(const b of document.querySelectorAll('[data-curve]'))b.setAttribute('aria-pressed',String(b.dataset.curve===t));const m=model[t];document.getElementById('curveName').textContent=m.name;document.getElementById('formula').textContent=m.formula;document.getElementById('description').textContent=m.description;document.getElementById('paramRange').textContent='範囲：'+m.range;if(window.MathJax?.typesetPromise){window.MathJax.typesetPromise([document.getElementById('formula'),document.getElementById('paramRange')]).catch(()=>{})}paint()}
-function stop(){running=false;play.textContent='▶ 動かす';cancelAnimationFrame(raf)}
-function frame(ms){if(!running)return;if(last){let next=+time.value+(ms-last)*.07;time.value=next>=1000?0:next}last=ms;paint();raf=requestAnimationFrame(frame)}
-play.addEventListener('click',()=>{if(running){stop()}else{running=true;last=0;play.textContent='Ⅱ 停止';raf=requestAnimationFrame(frame)}});
-document.getElementById('reset').addEventListener('click',()=>{stop();time.value=0;paint()});
-for(const b of document.querySelectorAll('[data-curve]'))b.addEventListener('click',()=>{stop();time.value=280;select(b.dataset.curve)});
-time.addEventListener('input',()=>{stop();paint()});scale.addEventListener('input',paint);document.addEventListener('visibilitychange',()=>{if(document.hidden)stop()});paint();
-})();
-</script><footer class="lesson-standard-footer"><div><div class="site-parent-link"><a href="math_subject_c.html">数学Cの授業一覧に戻る</a></div>みんなの数学データベース｜高校生のための授業</div></footer></body></html>
+</head><body><header class="lesson-standard-header"><div class="lesson-standard-width"><div class="lesson-standard-top">みんなの数学データベース ／ 高校数学 ／ 数学C</div><h1>コンピュータといろいろな曲線</h1><p class="lesson-standard-bottom">数学C ／ 式と曲線</p></div></header><main class="lesson-standard-main"><section class="lesson-standard-goal"><span class="lesson-standard-goal-label">授業のねらい</span><h2>コンピュータで曲線を描く</h2><p>媒介変数表示や極方程式で表された曲線を描き、定数を変えると形がどのように変化するかを観察する。</p></section>
+<section><h2>1．リサージュ曲線</h2><div class="curve-pair"><div><p>正の整数 \(a,b\) に対して、媒介変数表示</p><div class="math">\[\begin{cases}x=\sin at\\y=\sin bt\end{cases}\]</div><p>で表される曲線をリサージュ曲線という。ここでは \(0\leqq t\leqq2\pi\) の範囲で描く。</p><div class="controls"><label>\(a\)：<select id="a"></select></label><label>\(b\)：<select id="b"></select></label></div><div class="controls"><button data-ab="1,2">1 : 2</button><button data-ab="2,3">2 : 3</button><button data-ab="4,5">4 : 5</button></div><p>定数 \(a,b\) の組を変えて、曲線の形を比較してみよう。</p></div><div><canvas id="plot0" width="480" height="440" aria-label="リサージュ曲線"></canvas><div id="formula0" class="math"></div><label>媒介変数 \(t\)：<output id="out0"></output><input id="slider0" type="range" min="0" max="1000" value="0"></label><div class="controls"><button id="play0">▶ 再生</button><button id="reset0">最初に戻す</button></div></div></div></section>
+<section><h2>2．アルキメデスの渦巻線</h2><div class="curve-pair"><div><p>正の定数 \(a\) に対して、極方程式</p><div class="math">\[r=a\theta\quad(\theta\geqq0)\]</div><p>で表される曲線をアルキメデスの渦巻線という。</p><p>偏角が増加するにつれて、極からの距離 \(r\) が一定の割合で増加する。1周するごとに距離は \(2\pi a\) ずつ増加する。</p><h3>例</h3><div class="math">\[r=\frac{\theta}{2}\]</div><table class="curve-table"><tr><th>\(\theta\)</th><td>\(0\)</td><td>\(\frac{\pi}{2}\)</td><td>\(\pi\)</td><td>\(2\pi\)</td></tr><tr><th>\(r\)</th><td>\(0\)</td><td>\(\frac{\pi}{4}\)</td><td>\(\frac{\pi}{2}\)</td><td>\(\pi\)</td></tr></table><label>定数 \(a\)：<select id="spirala"><option value=".25">1/4</option><option value=".5" selected>1/2</option><option value="1">1</option><option value="2">2</option></select></label></div><div><canvas id="plot1" width="480" height="440" aria-label="アルキメデスの渦巻線"></canvas><div id="formula1" class="math"></div><label>偏角 \(\theta\)：<output id="out1"></output><input id="slider1" type="range" min="0" max="1000" value="0"></label><div class="controls"><button id="play1">▶ 再生</button><button id="reset1">最初に戻す</button></div></div></div></section><section><h2>学習のまとめ</h2><p>媒介変数表示や極方程式を用いると、直交座標の方程式では表しにくい曲線もコンピュータで描くことができる。</p><div class="math">\[\begin{array}{ll}\text{リサージュ曲線}&x=\sin at,\ y=\sin bt\\[5pt]\text{アルキメデスの渦巻線}&r=a\theta\end{array}\]</div></section></main><footer class="site-parent-landmark"><div class="site-parent-link"><a href="math_subject_c.html">数学Cの授業一覧に戻る</a></div><div>みんなの数学データベース</div></footer>
+<style>.curve-pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:start}.curve-pair>div{min-width:0}.curve-pair input[type=range]{display:block;width:100%;accent-color:#2071a9}.curve-pair select{font:inherit;padding:5px 10px}.curve-table{border-collapse:collapse;width:100%;text-align:center}.curve-table td,.curve-table th{border:1px solid #d5e2ed;padding:5px}.curve-table th{background:#eaf4ff}mjx-container{font-size:90%!important}body>footer.site-parent-landmark{max-width:none!important;width:100%!important;text-align:left!important}body>footer.site-parent-landmark>div{box-sizing:border-box!important;max-width:970px!important;width:100%!important;margin:0 auto 8px!important;padding:0 17px!important;text-align:left!important}@media(max-width:620px){.curve-pair{grid-template-columns:1fr}}</style>
+<script>(()=>{const $=id=>document.getElementById(id),pi=Math.PI;for(let id of ['a','b']){for(let n=1;n<=6;n++)$(id).add(new Option(n,n));$(id).value=id==='a'?1:2}function caption(i){let e=$('formula'+i),a=+$('spirala').value,t=i===0?'\\[x=\\sin '+($('a').value==='1'?'':$('a').value)+'t,\\quad y=\\sin '+($('b').value==='1'?'':$('b').value)+'t\\]':'\\[r='+({'.25':'\\frac{\\theta}{4}','.5':'\\frac{\\theta}{2}','1':'\\theta','2':'2\\theta'}[$('spirala').value])+'\\]';if(window.MathJax?.typesetClear)MathJax.typesetClear([e]);e.textContent=t;if(window.MathJax?.typesetPromise)MathJax.typesetPromise([e]).catch(()=>{})}for(let i=0;i<2;i++){let el=$('slider'+i),btn=$('play'+i),frame=0;function draw(){let c=$('plot'+i),g=c.getContext('2d'),ox=240,oy=220,a=+$('a').value,b=+$('b').value,A=+$('spirala').value,T=i?6*pi:2*pi,t=T*el.value/1000,k=i?195/(A*T):165;let X=x=>ox+k*x,Y=y=>oy-k*y;g.fillStyle='#fff';g.fillRect(0,0,480,440);function line(x,y,u,v,col){g.strokeStyle=col;g.lineWidth=1;g.beginPath();g.moveTo(x,y);g.lineTo(u,v);g.stroke()}if(i){g.strokeStyle='#e1eaf2';for(let n=1;n<=6;n++){g.beginPath();g.arc(ox,oy,n*195/6,0,2*pi);g.stroke()}for(let n=0;n<12;n++)line(ox,oy,ox+230*Math.cos(n*pi/6),oy-230*Math.sin(n*pi/6),'#e1eaf2')}else for(let n=-2;n<=2;n++){line(X(n/2),0,X(n/2),440,'#e1eaf2');line(0,Y(n/2),480,Y(n/2),'#e1eaf2')}line(0,oy,480,oy,'#8395a8');line(ox,0,ox,440,'#8395a8');g.font='italic 18px Times New Roman,serif';g.fillStyle='#405a72';g.fillText('O',ox+6,oy+18);g.fillText(i?'X':'x',461,oy-8);g.fillText('y',ox+8,17);function p(q){return i?[A*q*Math.cos(q),A*q*Math.sin(q)]:[Math.sin(a*q),Math.sin(b*q)]}function trace(end,dotted){g.strokeStyle='#237ab5';g.lineWidth=dotted?1.5:3;g.setLineDash(dotted?[4,5]:[]);g.beginPath();for(let n=0;n<=1200;n++){let [x,y]=p(end*n/1200);if(n===0)g.moveTo(X(x),Y(y));else g.lineTo(X(x),Y(y))}g.stroke();g.setLineDash([])}trace(T,true);trace(t,false);let [x,y]=p(t);if(i)line(ox,oy,X(x),Y(y),'#d58a32');g.fillStyle='#d34b43';g.beginPath();g.arc(X(x),Y(y),5,0,2*pi);g.fill();g.fillText('P',X(x)+8,Y(y)-8);$('out'+i).textContent=t===0?'0':t===T?(i?'6π':'2π'):'≒ '+t.toFixed(3)}function stop(){cancelAnimationFrame(frame);frame=0;btn.textContent='▶ 再生'}function reset(){stop();el.value=0;draw()}el.oninput=()=>{stop();draw()};$('reset'+i).onclick=reset;btn.onclick=()=>{if(frame){stop();return}let start;btn.textContent='■ 停止';function tick(now){start??=now;let v=Math.min(1,(now-start)/10000);el.value=v*1000;draw();if(v<1)frame=requestAnimationFrame(tick);else stop()}frame=requestAnimationFrame(tick)};if(i)$('spirala').onchange=()=>{caption(i);reset()};else{$('a').onchange=$('b').onchange=()=>{caption(i);reset()};document.querySelectorAll('[data-ab]').forEach(b=>b.onclick=()=>{let [a,c]=b.dataset.ab.split(',');$('a').value=a;$('b').value=c;caption(i);reset()})}caption(i);draw()}})();</script></body></html>
